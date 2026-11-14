@@ -117,13 +117,17 @@ def publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, w
             continue
         try:
             lane.run_lane(root, fdir, branch, True, ci_wait, python,
-                          resume=receipt['id'] if receipt else None, wait_lane=wait_lane,
+                          resume=receipt['id'] if receipt else None, wait_lane=False,
                           soft_free_gb=soft_free_gb, allow_low_disk=allow_low_disk)
-        except f.FlowError:
+        except f.FlowError as error:
             # Another runner may have completed our request while this runner waited.
             current, receipt = outcome()
-            if current['state'] != 'done':
-                raise
+            if current['state'] == 'done':
+                continue
+            if wait_lane and ('push lane already running' in str(error) or 'live publisher busy' in str(error)):
+                time.sleep(0.25)
+                continue
+            raise
 
 
 def isolate_failure(root, fdir, receipt, python, branch, error, soft_free_gb=None,
