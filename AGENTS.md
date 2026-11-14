@@ -21,10 +21,14 @@ Cargo/build/cache instructions here or modify its checkout as part of a research
 - Use `.local/` for legally obtained executables, toolchains, databases, raw decompiler output,
   traces, saves and generated objects. Never force-add ignored paths.
 - No game files, binary bytes, disassembly, dumps, proprietary symbols/SDKs, leaked code or
-  unlicensed copied code in commits, PRs, issues, logs, releases or CI artifacts. One maintainer
-  exception: names, declarations and code from the FNV decompilation `momusdigital/fnv_decomp@91e1b6e8`
+  unlicensed copied code in commits, PRs, issues, logs, releases or CI artifacts. Maintainer
+  exceptions: names, declarations and code from the FNV decompilation `momusdigital/fnv_decomp@91e1b6e8`
   may be reused in reconstructions, labelled `SIBLING(...)`, although its LICENSE grants none
-  (`docs/authorizations.md`, Notes; `LEGAL.md`). It is never evidence about the Skyrim binary.
+  (`docs/authorizations.md`, Notes; `LEGAL.md`). The anonymous private Fallout 4 sibling
+  `fo4-private@1b765c70` is also permitted for game-code folders only, with author permission conditional on anonymity, labelled
+  `SIBLING(fo4-private@1b765c70, author-permission)` (same policy references). Its middleware
+  folders and mixed generated aggregates are excluded. Neither sibling is
+  evidence about the Skyrim binary.
 - Do not upload game-derived material to an AI/cloud service without explicit owner authorization
   and assessment of the service terms. Permission to research locally is not permission to upload.
   An external contributor may let their own coding agent read listings made locally from their own

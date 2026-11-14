@@ -109,3 +109,37 @@ existing sampling safeguard.
 Maintainer decisions on Reviewer provenance access and Terra drafting (awarebayes, 2026-11-13, answers to the planning orchestrator, recorded by an Engineer; questions and answers verbatim). Q1: "May Reviewers (Terra and Sol included) read the FNV decompilation for the provenance comparison? A yes lets me record it so no reviewer stops on this again." A: "of course thats intended thats why we have fnv source" Q2: "If Haiku fails on a medium function, may Terra draft it? The recorded permission lets Terra and Sol read function sheets for orchestration, triage and review, but not for drafting. Until you answer, failed medium functions wait." A: "yes"
 
 Every admitted Reviewer model, including `gpt-6.1-terra` and `gpt-6.1-sol` under `claude-low`, may read `momusdigital/fnv_decomp@91e1b6e8` (the private clone and local FNV index) for the provenance comparison required by the Reviewer runbook. The limits of the FNV note above remain unchanged. `gpt-6.1-terra`, through the maintainer's Codex subscription, may draft functions that a Haiku drafter failed on, reading the same function sheets and packs as a Drafter. `gpt-6.1-sol`, through the maintainer's Codex subscription, may draft functions that both the first-tier Drafter and the Terra fallback Drafter failed on, reading the same function sheets, packs and FNV material as a Drafter. The orchestrator asked awarebayes on 2026-11-13: "may Sol draft the functions Haiku and Terra both failed on? Sol drafting is not covered by your recorded permissions. The alternative is Sonnet, which spends your Claude subscription." The maintainer answered: "sol may yeah". A function drafted by Sol receives its first review from Terra and its second pass or strong duties from a fresh Sol run that did not draft it; independence is per run. The comparator gate and acceptance rule remain unchanged; a model run that drafted a function never reviews it.
+
+**Sibling decompilation (`fo4-private`): maintainer decision by awarebayes, 2026-11-14.**
+Source: a private Fallout 4 decompilation, revision `1b765c70`, used with its author's
+permission on condition of anonymity (author's terms quoted: 'no attribution. or credit anonymus').
+Engineers, Drafters and admitted Reviewers may read and reuse its game-code names, declarations
+and bodies within their existing authorized model/account roles, including in reconstructions
+published after acceptance. This records the maintainer's policy decision, not a legal opinion
+or a grant of third-party rights. The permission is not a general licence to the upstream tree.
+
+Scope is game-code folders only: `src/BSAnimation`, `src/BSAudio`, `src/BSCompanion`,
+`src/BSCore`, `src/BSDevices`, `src/BSDiag`, `src/BSHavok`, `src/BSHavokMigration`,
+`src/BSMain`, `src/BSMenu`, `src/BSMovie`, `src/BSMusic`, `src/BSPathfinding`,
+`src/BSResource`, `src/BSScript`, `src/BSShader`, `src/BSSystem`, `src/BSSystemMonitor`,
+`src/BSSystemUtilities`, `src/Game` and `src/Shared`, at full pin
+`1b765c7031394e5019767dff83e73e8b194f16b0`. Excluded: its Havok, HavokLib, Scaleform,
+SDK and Gamebryo folders, mixed generated aggregates (`src/_gen`), and vendor-derived material
+wherever located. No executables, PDBs, SDKs or middleware source may be acquired under this decision.
+
+Everything taken carries `SIBLING(fo4-private@1b765c70, author-permission)`; each reused body
+also has `Sibling source: fo4-private@1b765c70 <allowed path>:<line>` in the unit header.
+Use only `fo4-private` as the source identity: never put the upstream repository name,
+owner/author name or handle, URL or product nickname in tracked files, commit messages, CI,
+or any file under `reconstruction/`. The real mapping stays under `.local/` only.
+The publication guard reads forbidden strings from gitignored `.local/anonymity.json`
+(`forbidden_strings` list); `SR_ANONYMITY_CONFIG` carries that private file into publication
+lane clones. Before every commit, run case-insensitive `git grep --cached` using the private
+owner/repository terms, without printing any matches. CI has no private identity config;
+the publishing Engineer must run the configured guard locally.
+
+This sibling is never evidence about the Skyrim binary. It is a different game built with
+VS2012: no layout, vtable slot, offset, form ID or address transfers without proof on the
+Skyrim target. Every function still needs the unchanged two-host comparator pass, independent
+admitted review and integration under `docs/verification.md`. Exposure is recorded as for FNV;
+this decision grants no new provider, paid compute, cloud placement or clean-room status.

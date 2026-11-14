@@ -45,7 +45,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lint_reconstruction import LABEL_LINE, LABELS_VERSION, SIBLING_HEADER, SIBLING_SOURCES  # noqa: E402
+from lint_reconstruction import LABEL_LINE, LABELS_VERSION, SIBLING_HEADER, SIBLING_SOURCES, SIBLING_ID  # noqa: E402
 from build_fnv_index import split_symbol  # noqa: E402
 
 DEFAULT_CHECKOUTS = {
@@ -54,15 +54,16 @@ DEFAULT_CHECKOUTS = {
     'meh321/AddressLibraryDatabase': '.local/sources/AddressLibraryDatabase',
 }
 # Sibling decompilations (other games of the engine family) usable by maintainer decision,
-# docs/authorizations.md. Only their headers and build list are indexed: their source trees are
-# large and every name a unit can cite is in one of the two.
-DEFAULT_SIBLINGS = {'momusdigital/fnv_decomp': '.local/sources/fnv_decomp'}
+# docs/authorizations.md. FNV uses headers and its build list; the anonymous sibling uses
+# only its allowed game-code folders and never mixed generated aggregates.
+DEFAULT_SIBLINGS = {'momusdigital/fnv_decomp': '.local/sources/fnv_decomp',
+                    'fo4-private': '.local/sources/fo4-private'}
 SIBLING_DIRS = ('include',)
 # Name lists at a checkout's root, read as declarations (meh321's has no headers).
 NAME_LISTS = ('skyrimae.rename',)
 UNITS_LIST = 'build/units.json'
 COMMUNITY = re.compile(r'COMMUNITY\(([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40}), [^)]*\)')
-SIBLING = re.compile(r'SIBLING\(([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40}), [^)]*\)')
+SIBLING = re.compile(rf'SIBLING\(({SIBLING_ID})@([0-9a-f]{{7,40}}), [^)]*\)')
 NAME = re.compile(r'~?[A-Za-z_]\w*(?:::~?[A-Za-z_]\w*)*')
 IDENT = re.compile(r'[A-Za-z_]\w*')
 COMMENTS = re.compile(r'//[^\n]*|/\*.*?\*/|"(?:[^"\\\n]|\\.)*"|\'(?:[^\'\\\n]|\\.)*\'', re.S)
@@ -156,7 +157,7 @@ def enumerators(body):
 class Index:
     """Scopes, declared identifiers and enum values of one community checkout."""
 
-    def __init__(self, root, dirs=('include', 'src')):
+    def __init__(self, root, dirs=('include', 'src'), function_names=False):
         self.root = Path(root)
         self.scopes = {}     # simple name -> {'declared': set, 'bases': set}
         self.enums = {}      # enum simple name -> {enumerator: set of values (None when unknown)}
@@ -166,10 +167,19 @@ class Index:
         self.lines = {}      # relative path -> original lines
         for path in sorted(p for d in dirs for p in (self.root / d).rglob('*')
                            if p.suffix in SOURCE_SUFFIXES and p.is_file()):
-            raw = path.read_text(errors='replace')
             rel = path.relative_to(self.root).as_posix()
+            if function_names and path.resolve() != self.root.resolve() / rel:
+                continue  # anonymous sibling: never follow a game-folder link into excluded source
+            raw = path.read_text(errors='replace')
             self.lines[rel] = raw.splitlines()
             self.add(strip(raw), rel)
+            if function_names:
+                from sibling_cpp import functions
+                for fn in functions(strip(raw)):
+                    self.declared.add(fn['name'])
+                    self.tokens.update(fn['qualified'].split('::'))
+                    entry = self.scopes.setdefault(fn['class'].split('::')[-1], {'declared': set(), 'bases': set()})
+                    entry['declared'].add(fn['name'])
         for name in NAME_LISTS:
             if (self.root / name).is_file():
                 self.add_name_list(self.root / name)
@@ -360,9 +370,17 @@ class Checker:
         path = self.siblings.get(repo)
         if path is None or not path.is_dir():
             return None
+        if repo == 'fo4-private':
+            from fo4_private import REVISION
+            if checkout_head(path) != REVISION:
+                return None  # no source reads outside the author-permitted revision
         key = ('sibling', repo)
         if key not in self.indexes:
-            self.indexes[key] = Index(path, dirs=SIBLING_DIRS)
+            if repo == 'fo4-private':
+                from fo4_private import GAME_DIRS
+                self.indexes[key] = Index(path, dirs=GAME_DIRS, function_names=True)
+            else:
+                self.indexes[key] = Index(path, dirs=SIBLING_DIRS)
         return self.indexes[key]
 
     def index(self, repo, rev, where, findings, sibling=False):
@@ -382,7 +400,9 @@ class Checker:
             key = ('rev', repo, rev)
             if key not in self.reported:
                 self.reported.add(key)
-                findings.append(f'{where}: sibling checkout revision differs from the label; names were checked as is'
+                findings.append(f'{where}: fo4-private checkout revision differs from the label; source not read'
+                                if repo == 'fo4-private' else
+                                f'{where}: sibling checkout revision differs from the label; names were checked as is'
                                 if sibling and self.no_sibling_names else
                                 f'{where}: checkout of {repo} is at {head or "an unknown revision"}, the label pins '
                                 f'{rev}; names were checked against the checkout as it is')
@@ -469,6 +489,11 @@ class Checker:
             repo, rev, path, line = m.group(1), m.group(2), m.group(3), m.group(4)
             if repo not in SIBLING_SOURCES:
                 continue  # the lint refuses it
+            if repo == 'fo4-private':
+                from fo4_private import allowed_path
+                if not allowed_path(path):
+                    out.append(f'{rel}: fo4-private citation is outside the allowed game-code folders; not read')
+                    continue
             root = self.siblings.get(repo)
             if root is None or not root.is_dir():
                 if ('missing', repo) not in self.reported:
@@ -476,6 +501,11 @@ class Checker:
                     out.append(f'{rel}: no local checkout of {repo}; its Sibling source lines were not verified')
                 continue
             head = checkout_head(root)
+            if repo == 'fo4-private':
+                from fo4_private import REVISION
+                if head != REVISION:
+                    out.append(f'{rel}: fo4-private checkout revision differs from the approved pin; not read')
+                    continue
             if head is None or not head.startswith(rev):
                 key = ('rev', repo, rev)
                 if key not in self.reported:
@@ -486,6 +516,9 @@ class Checker:
             # path must stay inside the clone before anything is read.
             if '..' in Path(path).parts or not target.is_relative_to(root.resolve()):
                 out.append(f'{rel}: Sibling source {path} leads outside the {repo} clone; not read')
+                continue
+            if repo == 'fo4-private' and target != root.resolve() / path:
+                out.append(f'{rel}: fo4-private source citation follows a link; not read')
                 continue
             if not target.is_file():
                 out.append(f'{rel}: Sibling source {path} does not exist in {repo}')
@@ -631,7 +664,7 @@ def configured_siblings(root=ROOT, env=None):
         config = json.loads(config_path.read_text())
     except (OSError, ValueError):
         config = {}
-    return config.get('sibling_checkouts') or DEFAULT_SIBLINGS
+    return {**DEFAULT_SIBLINGS, **(config.get('sibling_checkouts') or {})}
 
 
 def check(files, checkouts=None, root=ROOT, siblings=None, no_sibling_names=None, env=None):

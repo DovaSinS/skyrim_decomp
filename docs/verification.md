@@ -102,13 +102,13 @@ A function is accepted only when ALL of these hold:
      bytes (a lint-required justification that is not a reason a programmer had counts here);
    - code that cannot be what it claims, such as an unreachable branch or impossible type use
      that signals a wrong binding or a wrong class;
-   - provenance: code from unlicensed projects other than the FNV decompilation
-     `momusdigital/fnv_decomp@91e1b6e8`, which the maintainer allowed (`docs/authorizations.md`,
-     Notes); leaked or proprietary material; a source header that does not state provenance and
-     source exposure, or whose origin or licence statement is false; and undeclared reuse of
-     sibling code, meaning a unit that reuses an FNV body or a substantial part of one without a
-     `Sibling source: <repo>@<rev> <path>[:<line>]` header line. FNV material is never evidence
-     for the match claim;
+   - provenance: code from unlicensed projects other than the permitted sibling decompilations
+     `momusdigital/fnv_decomp@91e1b6e8` and game-only `fo4-private@1b765c70`, which the
+     maintainer allowed (`docs/authorizations.md`, Notes); leaked or proprietary material; a
+     source header that does not state provenance and source exposure, or whose origin or licence statement is false; and undeclared reuse of
+     sibling code, meaning a unit that reuses a permitted sibling body or a substantial part of
+     one without a `Sibling source: <repo>@<rev> <path>[:<line>]` header line. Sibling material
+     is never evidence for the match claim;
    - claim scope beyond a byte match of the checked code (a claim of behaviour, or of a name
      being right);
    - publication hygiene per `PROVENANCE.md` and `LEGAL.md`;

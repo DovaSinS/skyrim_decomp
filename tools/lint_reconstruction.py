@@ -119,17 +119,19 @@ DECLSPEC = re.compile(r'(?<![A-Za-z0-9_])__declspec\s*\(')
 # digests and reopen accepted matches.
 LABELS_VERSION = re.compile(r'\bLabels:\s*v(\d+)\b')
 LABEL = (r'(?:COMMUNITY\([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+@[0-9a-f]{7,40}, [A-Za-z0-9.+-]+\)'
-         r'|SIBLING\([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+@[0-9a-f]{7,40}, [A-Za-z0-9.+-]+\)'
+         r'|SIBLING\((?:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+|fo4-private)@[0-9a-f]{7,40}, [A-Za-z0-9.+-]+\)'
          r'|GUESS(?:\((?:low|medium|high)\))?|EXE_RTTI|STANDIN|OBSERVED)')
 # Decompilations of other games of the engine family that the maintainer allowed as a source of
 # names, declarations and code (docs/authorizations.md, Notes): repository -> (pinned revision
 # prefix, the licence word its labels must carry). A SIBLING label or `Sibling source:` line
 # citing anything else is refused, so a new sibling needs a recorded decision and an entry here.
-SIBLING_SOURCES = {'momusdigital/fnv_decomp': ('91e1b6e8', 'no-licence')}
-SIBLING_LABEL = re.compile(r'SIBLING\(([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40}), ([A-Za-z0-9.+-]+)\)')
+SIBLING_SOURCES = {'momusdigital/fnv_decomp': ('91e1b6e8', 'no-licence'),
+                   'fo4-private': ('1b765c70', 'author-permission')}
+SIBLING_ID = r'(?:[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+|fo4-private)'
+SIBLING_LABEL = re.compile(rf'SIBLING\(({SIBLING_ID})@([0-9a-f]{{7,40}}), ([A-Za-z0-9.+-]+)\)')
 # Header line of a unit that reuses a body, or a substantial part of one, from a sibling:
 # `Sibling source: <owner>/<repo>@<rev> <path>[:<line>]` (several lines for several bodies).
-SIBLING_HEADER = re.compile(r'Sibling source:\s*([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40})\s+'
+SIBLING_HEADER = re.compile(rf'Sibling source:\s*({SIBLING_ID})@([0-9a-f]{{7,40}})\s+'
                             r'((?:src|include)/[^\s:]+)(?::(\d+))?')
 LABEL_LINE = re.compile(rf'^\s*//\s*(?P<names>\S(?:.*?\S)?)\s*:\s*(?P<labels>{LABEL}(?:\s+{LABEL})*)'
                         r'\s*(?:;\s*(?P<note>.*))?$')
@@ -234,10 +236,14 @@ def sibling_problems(where, repo, rev, licence=None):
                 'a new one needs a maintainer decision in docs/authorizations.md)']
     pin, word = allowed
     out = []
-    if not (rev.startswith(pin) or pin.startswith(rev)):
+    valid_pin = rev.startswith(pin) or pin.startswith(rev)
+    if repo == 'fo4-private':
+        from fo4_private import REVISION
+        valid_pin = rev in (pin, REVISION)
+    if not valid_pin:
         out.append(f'{where}: {repo} is pinned at {pin}, the citation gives {rev}')
     if licence is not None and licence != word:
-        out.append(f'{where}: a {repo} label carries the licence word "{word}" (its LICENSE grants none), not "{licence}"')
+        out.append(f'{where}: a {repo} label carries the recorded permission/licence word "{word}", not "{licence}"')
     return out
 
 
@@ -255,6 +261,10 @@ def sibling_header_problems(name, header):
         if '..' in PurePosixPath(m.group(3)).parts:
             # check_labels.py opens this path in the clone; `..` would let it read outside it.
             problems.append(f'{name}: a Sibling source path may not contain ".." components')
+        if m.group(1) == 'fo4-private':
+            from fo4_private import allowed_path
+            if not allowed_path(m.group(3)):
+                problems.append(f'{name}: fo4-private citation is outside the allowed game-code folders')
         problems += sibling_problems(name, m.group(1), m.group(2))
     return problems
 
