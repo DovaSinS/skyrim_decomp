@@ -31,9 +31,9 @@ This includes Git history, LFS, issues, comments, screenshots, releases, logs an
 Do not acquire or use leaked/confidential source, unofficial proprietary debug symbols or
 unlawfully obtained development material. Do not assume a public URL establishes authorization.
 No copy-protection removal tools or instructions belong here. A reference link is not adoption
-of the linked project's practices or a license to reproduce its contents. The one exception the
-maintainer has made concerns a published third-party project, not material this project obtains
-itself: see "Sibling decompilation (FNV)" below.
+of the linked project's practices or a license to reproduce its contents. The sibling-source
+exceptions below record the maintainer's decisions; they do not authorize this project to obtain
+prohibited material itself.
 
 ## Research publication and source reconstruction
 
@@ -65,6 +65,25 @@ objects. The decision does not cover any other repository or revision, does not 
 material evidence about the Skyrim binary, and changes no other rule here: game files, binary
 bytes and decompiler output stay private, and this project still never acquires leaked code,
 PDBs or middleware source itself.
+
+**Sibling decompilation (`fo4-private`): maintainer decision by awarebayes, 2026-11-14.**
+Source: a private Fallout 4 decompilation, revision `1b765c70`, used with its author's permission
+on condition of anonymity (author's terms quoted: 'no attribution. or credit anonymus').
+Its game-code names, declarations and bodies may be read and reused on the same reconstruction
+and publication terms as the FNV decision above, within the exact game-code folder allowlist
+and pin in `docs/authorizations.md`. Its Havok, HavokLib, Scaleform, SDK and Gamebryo folders,
+vendor-derived material elsewhere and mixed generated aggregates are excluded. Everything
+reused is labelled `SIBLING(fo4-private@1b765c70, author-permission)` and each reused body has
+an anonymous unit-header source/path/line citation. This permission is not a general licence
+or a grant of third-party rights, and is not covered by this repository's infrastructure licence.
+The upstream repository, owner/author identities, URL and product nickname must never appear
+in tracked files, commit messages, CI or any file under `reconstruction/`; use only
+`fo4-private` and keep the real mapping under `.local/`. The local publication guard uses a
+gitignored private denylist; public CI cannot independently check undisclosed identities.
+It is never evidence about the Skyrim binary: no layout, vtable slot, offset or form ID
+transfers without proof. Every function still requires the unchanged two-host comparator pass,
+independent admitted review and integration. This is a maintainer policy decision, not a legal
+opinion or clean-room approval; all private-input and research-boundary rules still apply.
 
 Each function is published only once accepted under the acceptance rule in
 `docs/verification.md`, which includes provenance review by an admitted Reviewer under the
