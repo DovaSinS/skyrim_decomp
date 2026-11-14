@@ -1,0 +1,122 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "headers": {
+    "reconstruction/bsengine/BoundingVolumeDeleteLayout.h": "584945ec1d76ebfe3d7ac96a752d61eb87355a0328ef9b00341bae571794a19c"
+  },
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "members": [
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline BoxScalarDeleteLayout::~BoxScalarDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 72,
+      "owner": "NiBoxBV",
+      "owner_rtti": ".?AVNiBoxBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594352,
+      "rva": 15958896,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GBoxScalarDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594352,
+          "symbol": "??_7BoxScalarDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::BoxScalarDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline CapsuleDeleteLayout::~CapsuleDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 64,
+      "owner": "NiCapsuleBV",
+      "owner_rtti": ".?AVNiCapsuleBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594568,
+      "rva": 15964944,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GCapsuleDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594568,
+          "symbol": "??_7CapsuleDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CapsuleDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline HalfSpaceDeleteLayout::~HalfSpaceDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 40,
+      "owner": "NiHalfSpaceBV",
+      "owner_rtti": ".?AVNiHalfSpaceBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594824,
+      "rva": 15973552,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GHalfSpaceDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594824,
+          "symbol": "??_7HalfSpaceDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HalfSpaceDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline SphereDeleteLayout::~SphereDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 24,
+      "owner": "NiSphereBV",
+      "owner_rtti": ".?AVNiSphereBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594960,
+      "rva": 15979024,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GSphereDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594960,
+          "symbol": "??_7SphereDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::SphereDeleteLayout"
+    }
+  ],
+  "schema": 1
+}

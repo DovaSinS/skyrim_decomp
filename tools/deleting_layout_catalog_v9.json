@@ -1,0 +1,1750 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "headers": {
+    "reconstruction/bsengine/ArrayAllocatorLeafLayout.h": "a86415b6e2507901bc42577808c509b7fcb9d2dd942db37173a4de89bf07f0f5",
+    "reconstruction/bsengine/BoundingVolumeDeleteLayout.h": "584945ec1d76ebfe3d7ac96a752d61eb87355a0328ef9b00341bae571794a19c",
+    "reconstruction/bsengine/EventCaptureDeleteLayout.h": "b0e01252b7019fbdb4ab20f31527cb53e9db698b754075e25fcfa7af58afceb6",
+    "reconstruction/bsengine/MovementSchemeDeleteLayout.h": "5a466514bef78ab8b7277e0c6db3813c1a336837e29adca7c068d99ea61bc439"
+  },
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "members": [
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<VBSScrapArrayAllocator@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@VBSScrapArrayAllocator@@@@",
+      "owner_slot": 3,
+      "owner_table": 25099072,
+      "rva": 1113392,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25099072,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<VBSTArrayHeapAllocator@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@VBSTArrayHeapAllocator@@@@",
+      "owner_slot": 3,
+      "owner_table": 25040616,
+      "rva": 1113456,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25040616,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0BA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0BA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 25078608,
+      "rva": 1556576,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25078608,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0CKA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0CKA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 25099032,
+      "rva": 1686400,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25099032,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0EAA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0EAA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 25136232,
+      "rva": 1958752,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25136232,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0CA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0CA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 25163680,
+      "rva": 2142848,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25163680,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$07@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$07@@@@",
+      "owner_slot": 3,
+      "owner_table": 25386296,
+      "rva": 3328112,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25386296,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$03@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$03@@@@",
+      "owner_slot": 3,
+      "owner_table": 25953256,
+      "rva": 4427376,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25953256,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0BI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0BI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26075736,
+      "rva": 5150352,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26075736,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0EA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0EA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26075776,
+      "rva": 5150400,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26075776,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0HA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0HA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26079160,
+      "rva": 5191824,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26079160,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0GM@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0GM@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26099760,
+      "rva": 5391568,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26099760,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0EI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0EI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26126968,
+      "rva": 5576736,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26126968,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout::~EventCaptureDeleteLayout() {}",
+        "inline EventCapture5e82b0::~EventCapture5e82b0() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 16,
+      "owner": "(anonymous)::MenuModeChangeListener",
+      "owner_rtti": ".?AVMenuModeChangeListener@?A0x64c0a5c9@@",
+      "owner_slot": 0,
+      "owner_table": 26203632,
+      "rva": 6193840,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<MenuModeChangeEvent>",
+      "stored_table": 26203608,
+      "symbol": "??_GEventCapture5e82b0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26203608,
+          "symbol": "??_7EventCaptureDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26203632,
+          "symbol": "??_7EventCapture5e82b0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture5e82b0"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout1::~EventCaptureDeleteLayout1() {}",
+        "inline EventCapture66d180::~EventCapture66d180() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 16,
+      "owner": "(anonymous)::ActorKillToMiscStatHandler",
+      "owner_rtti": ".?AUActorKillToMiscStatHandler@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26302112,
+      "rva": 6738304,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<ActorKill::Event>",
+      "stored_table": 26302088,
+      "symbol": "??_GEventCapture66d180@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26302088,
+          "symbol": "??_7EventCaptureDeleteLayout1@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26302112,
+          "symbol": "??_7EventCapture66d180@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66d180"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout2::~EventCaptureDeleteLayout2() {}",
+        "inline EventCapture66e400::~EventCapture66e400() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@Jailing@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@Jailing@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303264,
+      "rva": 6743040,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<Jailing::Event>",
+      "stored_table": 26303240,
+      "symbol": "??_GEventCapture66e400@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303240,
+          "symbol": "??_7EventCaptureDeleteLayout2@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303264,
+          "symbol": "??_7EventCapture66e400@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e400"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout3::~EventCaptureDeleteLayout3() {}",
+        "inline EventCapture66e480::~EventCapture66e480() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@ChestsLooted@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@ChestsLooted@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303312,
+      "rva": 6743168,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<ChestsLooted::Event>",
+      "stored_table": 26303288,
+      "symbol": "??_GEventCapture66e480@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303288,
+          "symbol": "??_7EventCaptureDeleteLayout3@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303312,
+          "symbol": "??_7EventCapture66e480@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e480"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout4::~EventCaptureDeleteLayout4() {}",
+        "inline EventCapture66e500::~EventCapture66e500() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@TimesTrained@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@TimesTrained@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303360,
+      "rva": 6743296,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<TimesTrained::Event>",
+      "stored_table": 26303336,
+      "symbol": "??_GEventCapture66e500@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303336,
+          "symbol": "??_7EventCaptureDeleteLayout4@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303360,
+          "symbol": "??_7EventCapture66e500@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e500"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout5::~EventCaptureDeleteLayout5() {}",
+        "inline EventCapture66e580::~EventCapture66e580() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@TimesBartered@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@TimesBartered@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303408,
+      "rva": 6743424,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<TimesBartered::Event>",
+      "stored_table": 26303384,
+      "symbol": "??_GEventCapture66e580@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303384,
+          "symbol": "??_7EventCaptureDeleteLayout5@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303408,
+          "symbol": "??_7EventCapture66e580@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e580"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout6::~EventCaptureDeleteLayout6() {}",
+        "inline EventCapture66e600::~EventCapture66e600() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@ContractedDisease@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@ContractedDisease@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303456,
+      "rva": 6743552,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<ContractedDisease::Event>",
+      "stored_table": 26303432,
+      "symbol": "??_GEventCapture66e600@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303432,
+          "symbol": "??_7EventCaptureDeleteLayout6@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303456,
+          "symbol": "??_7EventCapture66e600@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e600"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout7::~EventCaptureDeleteLayout7() {}",
+        "inline EventCapture66e680::~EventCapture66e680() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@SpellsLearned@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@SpellsLearned@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303504,
+      "rva": 6743680,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<SpellsLearned::Event>",
+      "stored_table": 26303480,
+      "symbol": "??_GEventCapture66e680@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303480,
+          "symbol": "??_7EventCaptureDeleteLayout7@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303504,
+          "symbol": "??_7EventCapture66e680@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e680"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout8::~EventCaptureDeleteLayout8() {}",
+        "inline EventCapture66e700::~EventCapture66e700() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@DragonSoulGained@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@DragonSoulGained@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303552,
+      "rva": 6743808,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<DragonSoulGained::Event>",
+      "stored_table": 26303528,
+      "symbol": "??_GEventCapture66e700@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303528,
+          "symbol": "??_7EventCaptureDeleteLayout8@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303552,
+          "symbol": "??_7EventCapture66e700@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e700"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout9::~EventCaptureDeleteLayout9() {}",
+        "inline EventCapture66e780::~EventCapture66e780() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@SoulGemsUsed@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@SoulGemsUsed@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303600,
+      "rva": 6743936,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<SoulGemsUsed::Event>",
+      "stored_table": 26303576,
+      "symbol": "??_GEventCapture66e780@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303576,
+          "symbol": "??_7EventCaptureDeleteLayout9@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303600,
+          "symbol": "??_7EventCapture66e780@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e780"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout10::~EventCaptureDeleteLayout10() {}",
+        "inline EventCapture66e800::~EventCapture66e800() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@SoulsTrapped@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@SoulsTrapped@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303648,
+      "rva": 6744064,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<SoulsTrapped::Event>",
+      "stored_table": 26303624,
+      "symbol": "??_GEventCapture66e800@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303624,
+          "symbol": "??_7EventCaptureDeleteLayout10@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303648,
+          "symbol": "??_7EventCapture66e800@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e800"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout11::~EventCaptureDeleteLayout11() {}",
+        "inline EventCapture66e880::~EventCapture66e880() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@PoisonedWeapon@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@PoisonedWeapon@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303696,
+      "rva": 6744192,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<PoisonedWeapon::Event>",
+      "stored_table": 26303672,
+      "symbol": "??_GEventCapture66e880@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303672,
+          "symbol": "??_7EventCaptureDeleteLayout11@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303696,
+          "symbol": "??_7EventCapture66e880@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e880"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout12::~EventCaptureDeleteLayout12() {}",
+        "inline EventCapture66e900::~EventCapture66e900() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@ShoutAttack@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@ShoutAttack@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303744,
+      "rva": 6744320,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<ShoutAttack::Event>",
+      "stored_table": 26303720,
+      "symbol": "??_GEventCapture66e900@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303720,
+          "symbol": "??_7EventCaptureDeleteLayout12@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303744,
+          "symbol": "??_7EventCapture66e900@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e900"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout13::~EventCaptureDeleteLayout13() {}",
+        "inline EventCapture66e980::~EventCapture66e980() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@JailEscape@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@JailEscape@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303792,
+      "rva": 6744448,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<JailEscape::Event>",
+      "stored_table": 26303768,
+      "symbol": "??_GEventCapture66e980@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303768,
+          "symbol": "??_7EventCaptureDeleteLayout13@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303792,
+          "symbol": "??_7EventCapture66e980@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66e980"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout14::~EventCaptureDeleteLayout14() {}",
+        "inline EventCapture66ea00::~EventCapture66ea00() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@GrandTheftHorse@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@GrandTheftHorse@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303840,
+      "rva": 6744576,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<GrandTheftHorse::Event>",
+      "stored_table": 26303816,
+      "symbol": "??_GEventCapture66ea00@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303816,
+          "symbol": "??_7EventCaptureDeleteLayout14@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303840,
+          "symbol": "??_7EventCapture66ea00@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66ea00"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout15::~EventCaptureDeleteLayout15() {}",
+        "inline EventCapture66ea80::~EventCapture66ea80() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@AssaultCrime@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@AssaultCrime@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303888,
+      "rva": 6744704,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<AssaultCrime::Event>",
+      "stored_table": 26303864,
+      "symbol": "??_GEventCapture66ea80@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303864,
+          "symbol": "??_7EventCaptureDeleteLayout15@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303888,
+          "symbol": "??_7EventCapture66ea80@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66ea80"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout16::~EventCaptureDeleteLayout16() {}",
+        "inline EventCapture66eb00::~EventCapture66eb00() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@MurderCrime@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@MurderCrime@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303936,
+      "rva": 6744832,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<MurderCrime::Event>",
+      "stored_table": 26303912,
+      "symbol": "??_GEventCapture66eb00@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303912,
+          "symbol": "??_7EventCaptureDeleteLayout16@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303936,
+          "symbol": "??_7EventCapture66eb00@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66eb00"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout17::~EventCaptureDeleteLayout17() {}",
+        "inline EventCapture66eb80::~EventCapture66eb80() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@LocksPicked@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@LocksPicked@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26303984,
+      "rva": 6744960,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<LocksPicked::Event>",
+      "stored_table": 26303960,
+      "symbol": "??_GEventCapture66eb80@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26303960,
+          "symbol": "??_7EventCaptureDeleteLayout17@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26303984,
+          "symbol": "??_7EventCapture66eb80@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66eb80"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout18::~EventCaptureDeleteLayout18() {}",
+        "inline EventCapture66ec00::~EventCapture66ec00() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@LocationCleared@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@LocationCleared@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26304032,
+      "rva": 6745088,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<LocationCleared::Event>",
+      "stored_table": 26304008,
+      "symbol": "??_GEventCapture66ec00@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26304008,
+          "symbol": "??_7EventCaptureDeleteLayout18@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26304032,
+          "symbol": "??_7EventCapture66ec00@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66ec00"
+    },
+    {
+      "definitions": [
+        "inline EventCaptureDeleteLayout19::~EventCaptureDeleteLayout19() {}",
+        "inline EventCapture66ec80::~EventCapture66ec80() {}"
+      ],
+      "header": "reconstruction/bsengine/EventCaptureDeleteLayout.h",
+      "object_size": 24,
+      "owner": "MiscStatIncrementer<UEvent@ShoutMastered@@@?A0x76ca921f>",
+      "owner_rtti": ".?AV?$MiscStatIncrementer@UEvent@ShoutMastered@@@?A0x76ca921f@@",
+      "owner_slot": 0,
+      "owner_table": 26304080,
+      "rva": 6745216,
+      "size": 43,
+      "stored_rtti": "BSTEventSink<ShoutMastered::Event>",
+      "stored_table": 26304056,
+      "symbol": "??_GEventCapture66ec80@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26304056,
+          "symbol": "??_7EventCaptureDeleteLayout19@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26304080,
+          "symbol": "??_7EventCapture66ec80@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::EventCapture66ec80"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0PA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0PA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26331008,
+      "rva": 7061776,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26331008,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0BAA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0BAA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26409816,
+      "rva": 8003312,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26409816,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0CI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0CI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26409936,
+      "rva": 8003360,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26409936,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0DA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0DA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26409896,
+      "rva": 8003408,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26409896,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0DI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0DI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26409856,
+      "rva": 8003456,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26409856,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0KA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0KA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26459688,
+      "rva": 8242976,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26459688,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0ICA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0ICA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26459952,
+      "rva": 8245088,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26459952,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0IAA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0IAA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26506304,
+      "rva": 8567216,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26506304,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0GI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0GI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26664008,
+      "rva": 9421952,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26664008,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0M@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0M@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26689896,
+      "rva": 9556192,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26689896,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0OA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0OA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26704352,
+      "rva": 9697024,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26704352,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0CE@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0CE@@@@@",
+      "owner_slot": 3,
+      "owner_table": 26716512,
+      "rva": 9790848,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26716512,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0IA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0IA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 27397680,
+      "rva": 13469008,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27397680,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline BoxScalarDeleteLayout::~BoxScalarDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 72,
+      "owner": "NiBoxBV",
+      "owner_rtti": ".?AVNiBoxBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594352,
+      "rva": 15958896,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GBoxScalarDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594352,
+          "symbol": "??_7BoxScalarDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::BoxScalarDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline CapsuleDeleteLayout::~CapsuleDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 64,
+      "owner": "NiCapsuleBV",
+      "owner_rtti": ".?AVNiCapsuleBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594568,
+      "rva": 15964944,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GCapsuleDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594568,
+          "symbol": "??_7CapsuleDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CapsuleDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline HalfSpaceDeleteLayout::~HalfSpaceDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 40,
+      "owner": "NiHalfSpaceBV",
+      "owner_rtti": ".?AVNiHalfSpaceBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594824,
+      "rva": 15973552,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GHalfSpaceDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594824,
+          "symbol": "??_7HalfSpaceDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HalfSpaceDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline BoundingVolumeDeleteLayout::~BoundingVolumeDeleteLayout() {}",
+        "inline SphereDeleteLayout::~SphereDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/BoundingVolumeDeleteLayout.h",
+      "object_size": 24,
+      "owner": "NiSphereBV",
+      "owner_rtti": ".?AVNiSphereBV@@",
+      "owner_slot": 2,
+      "owner_table": 27594960,
+      "rva": 15979024,
+      "size": 43,
+      "stored_rtti": "NiBoundingVolume",
+      "stored_table": 27594256,
+      "symbol": "??_GSphereDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27594256,
+          "symbol": "??_7BoundingVolumeDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27594960,
+          "symbol": "??_7SphereDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::SphereDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0LA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0LA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 28036504,
+      "rva": 18650464,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28036504,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout::~MovementSchemeDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationAverage<M>",
+      "owner_rtti": ".?AV?$MovementArbitrationAverage@M@@",
+      "owner_slot": 0,
+      "owner_table": 28054192,
+      "rva": 18864736,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<float>",
+      "stored_table": 28054168,
+      "symbol": "??_GMovementSchemeDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054168,
+          "symbol": "??_7MovementSchemeDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout1::~MovementSchemeDeleteLayout1() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationMaxWeight<V?$BSTSmartPointer@VIMovementParameters@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$MovementArbitrationMaxWeight@V?$BSTSmartPointer@VIMovementParameters@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 28054264,
+      "rva": 18864784,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<BSTSmartPointer<IMovementParameters, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 28054240,
+      "symbol": "??_GMovementSchemeDeleteLayout1@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054240,
+          "symbol": "??_7MovementSchemeDeleteLayout1@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout1"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout2::~MovementSchemeDeleteLayout2() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationMaxWeight<VNiPoint3@@>",
+      "owner_rtti": ".?AV?$MovementArbitrationMaxWeight@VNiPoint3@@@@",
+      "owner_slot": 0,
+      "owner_table": 28054336,
+      "rva": 18864832,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<NiPoint3>",
+      "stored_table": 28054312,
+      "symbol": "??_GMovementSchemeDeleteLayout2@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054312,
+          "symbol": "??_7MovementSchemeDeleteLayout2@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout2"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout::~MovementSchemeDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationScheme<M>",
+      "owner_rtti": ".?AV?$MovementArbitrationScheme@M@@",
+      "owner_slot": 0,
+      "owner_table": 28054168,
+      "rva": 18864880,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<float>",
+      "stored_table": 28054168,
+      "symbol": "??_GMovementSchemeDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054168,
+          "symbol": "??_7MovementSchemeDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout1::~MovementSchemeDeleteLayout1() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationScheme<V?$BSTSmartPointer@VIMovementParameters@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$MovementArbitrationScheme@V?$BSTSmartPointer@VIMovementParameters@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 28054240,
+      "rva": 18864928,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<BSTSmartPointer<IMovementParameters, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 28054240,
+      "symbol": "??_GMovementSchemeDeleteLayout1@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054240,
+          "symbol": "??_7MovementSchemeDeleteLayout1@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout1"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout2::~MovementSchemeDeleteLayout2() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationScheme<VNiPoint3@@>",
+      "owner_rtti": ".?AV?$MovementArbitrationScheme@VNiPoint3@@@@",
+      "owner_slot": 0,
+      "owner_table": 28054312,
+      "rva": 18864976,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<NiPoint3>",
+      "stored_table": 28054312,
+      "symbol": "??_GMovementSchemeDeleteLayout2@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054312,
+          "symbol": "??_7MovementSchemeDeleteLayout2@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout2"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout::~MovementSchemeDeleteLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationAverageFloat",
+      "owner_rtti": ".?AVMovementArbitrationAverageFloat@@",
+      "owner_slot": 0,
+      "owner_table": 28054216,
+      "rva": 18865024,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<float>",
+      "stored_table": 28054168,
+      "symbol": "??_GMovementSchemeDeleteLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054168,
+          "symbol": "??_7MovementSchemeDeleteLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout1::~MovementSchemeDeleteLayout1() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationMaxWeightParameters",
+      "owner_rtti": ".?AVMovementArbitrationMaxWeightParameters@@",
+      "owner_slot": 0,
+      "owner_table": 28054288,
+      "rva": 18865072,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<BSTSmartPointer<IMovementParameters, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 28054240,
+      "symbol": "??_GMovementSchemeDeleteLayout1@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054240,
+          "symbol": "??_7MovementSchemeDeleteLayout1@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout1"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout2::~MovementSchemeDeleteLayout2() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationMaxWeightPoint",
+      "owner_rtti": ".?AVMovementArbitrationMaxWeightPoint@@",
+      "owner_slot": 0,
+      "owner_table": 28054360,
+      "rva": 18865120,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<NiPoint3>",
+      "stored_table": 28054312,
+      "symbol": "??_GMovementSchemeDeleteLayout2@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28054312,
+          "symbol": "??_7MovementSchemeDeleteLayout2@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout2"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0HI@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0HI@@@@@",
+      "owner_slot": 3,
+      "owner_table": 28079208,
+      "rva": 19032768,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28079208,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline AllocatorLeafInterface::~AllocatorLeafInterface() {}",
+        "template<class Allocator> inline ArrayAllocatorLeafLayout<Allocator>::~ArrayAllocatorLeafLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/ArrayAllocatorLeafLayout.h",
+      "object_size": 16,
+      "owner": "BSTArrayAllocatorFunctor<V?$BSTSmallArrayHeapAllocator@$0GA@@@>",
+      "owner_rtti": ".?AU?$BSTArrayAllocatorFunctor@V?$BSTSmallArrayHeapAllocator@$0GA@@@@@",
+      "owner_slot": 3,
+      "owner_table": 28093192,
+      "rva": 19128448,
+      "size": 43,
+      "stored_rtti": "BSTArrayBase::IAllocatorFunctor",
+      "stored_table": 25039880,
+      "symbol": "??_G?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25039880,
+          "symbol": "??_7AllocatorLeafInterface@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28093192,
+          "symbol": "??_7?$ArrayAllocatorLeafLayout@X@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::ArrayAllocatorLeafLayout<void>"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout3::~MovementSchemeDeleteLayout3() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationScheme<VMovementVector@@>",
+      "owner_rtti": ".?AV?$MovementArbitrationScheme@VMovementVector@@@@",
+      "owner_slot": 0,
+      "owner_table": 28097832,
+      "rva": 19205008,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<MovementVector>",
+      "stored_table": 28097832,
+      "symbol": "??_GMovementSchemeDeleteLayout3@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28097832,
+          "symbol": "??_7MovementSchemeDeleteLayout3@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout3"
+    },
+    {
+      "definitions": [
+        "inline MovementSchemeDeleteLayout3::~MovementSchemeDeleteLayout3() {}"
+      ],
+      "header": "reconstruction/bsengine/MovementSchemeDeleteLayout.h",
+      "object_size": 16,
+      "owner": "MovementArbitrationVectorAdd",
+      "owner_rtti": ".?AVMovementArbitrationVectorAdd@@",
+      "owner_slot": 0,
+      "owner_table": 28097856,
+      "rva": 19205056,
+      "size": 43,
+      "stored_rtti": "MovementArbitrationScheme<MovementVector>",
+      "stored_table": 28097832,
+      "symbol": "??_GMovementSchemeDeleteLayout3@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28097832,
+          "symbol": "??_7MovementSchemeDeleteLayout3@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::MovementSchemeDeleteLayout3"
+    }
+  ],
+  "schema": 1
+}
