@@ -199,6 +199,21 @@ class Runtime:
         if login.casefold() != REPOSITORY.split('/')[0].casefold():
             raise Stop('gh must use the maintainer account')
 
+    def ci_hash_signal(self, head):
+        """Observe exact-head GitHub CI only; failure/absence never bypasses local gates."""
+        from contrib_hash_signal import advisory_hash_signal
+        if not SHA.fullmatch(head):
+            raise Stop('invalid PR head SHA')
+        try:
+            result = self.command(['gh', 'api', '--paginate', '--slurp',
+                                   f'repos/{REPOSITORY}/commits/{head}/check-runs'])
+            pages = json.loads(result.stdout)
+            return advisory_hash_signal([run for page in pages for run in page['check_runs']], head)
+        except (Stop, OSError, ValueError, KeyError, TypeError, subprocess.TimeoutExpired):
+            # Observation is optional: API availability can never waive or block comparison.
+            return dict(kind='target-hash-ci', head_sha=head, state='unavailable', advisory=True,
+                        acceptance='not-evaluated')
+
     def view_pr(self, number):
         return json.loads(self.gh('pr', 'view', str(number), '--json',
                           'number,author,headRefOid,isDraft,files,state,baseRefName').stdout)
@@ -817,6 +832,8 @@ def process(runtime, state, pr, dry_run=False):
         revision['done'] = True
         state.save()
         return revision
+    revision['ci_hash'] = runtime.ci_hash_signal(revision['head'])
+    state.save()
     fetched = state.once(revision, 'fetch', lambda: runtime.fetch(pr))
     if fetched.get('problem'):
         label = 'needs-maintainer' if 'scope' in fetched['problem'] or 'history' in fetched['problem'] else 'needs-changes'

@@ -1,0 +1,217 @@
+#!/usr/bin/env python3
+"""Advisory PR compilation using trusted base tools and target-hash commitments only.
+
+Never run PR tools or resulting objects. Compiler output remains in scratch. No image input,
+acceptance record, network credential, artifact upload or cache is part of this check.
+"""
+import argparse
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'tools'))
+import ci_hash_check as public
+import contrib
+import lint_reconstruction as lint
+from pecoff import Reject
+from source_digest import include_closure, tu_digest
+import target_hashes as hashes
+
+DEFAULT_RECIPE = 'reconstruction/recipes/msvc-19.16.27054-o2.json'
+# Optional source-header request for a new unit with no accepted symbol binding yet. It is a
+# claim about which public target to try, never evidence of identity or acceptance.
+REQUEST = re.compile(r'^// CI hash: (0x[0-9a-fA-F]+) (\S+)\s*$', re.M)
+SHA = re.compile(r'[0-9a-f]{40}')
+
+
+def git(root, *args):
+    return subprocess.run(['git', *args], cwd=root, capture_output=True, check=True).stdout
+
+
+def trusted_inputs(root):
+    manifest = hashes.load_manifest(root)
+    return dict(manifest_sha256=hashes.digest((root / hashes.MANIFEST).read_bytes()),
+                normalizer_sha256=manifest['normalizer_sha256'],
+                comparator_sha256=manifest['comparator_sha256'],
+                compiler_pins_sha256=hashes.digest((root / 'tools/verifier/pinned.sha256').read_bytes()))
+
+
+def prepare(root, base, head, work):
+    if not SHA.fullmatch(base) or not SHA.fullmatch(head):
+        raise ValueError('revision must be a full SHA')
+    if git(root, 'rev-parse', 'HEAD').decode().strip() != base:
+        raise ValueError('tools must be from the trusted base revision')
+    merge_base = git(root, 'merge-base', base, head).decode().strip()
+    diff = git(root, 'diff', '--no-renames', '--name-status', '-z', merge_base, head).split(b'\0')
+    rows = []
+    for i in range(0, len(diff) - 1, 2):
+        status, name = diff[i].decode('ascii'), diff[i + 1].decode('utf-8')
+        if status not in ('A', 'M') or not contrib.UNIT_PATH.fullmatch(name):
+            raise ValueError('outside contributor intake scope')
+        # Read only bounded, regular source blobs. Never follow a PR symlink or check out head.
+        meta = git(root, 'ls-tree', head, '--', name).decode().split()
+        if len(meta) < 3 or meta[0] != '100644' or meta[1] != 'blob':
+            raise ValueError('source is not a regular file')
+        size = int(git(root, 'cat-file', '-s', meta[2]))
+        if size > contrib.MAX_UNIT_FILE_BYTES:
+            raise ValueError('source exceeds contributor file cap')
+        blob = git(root, 'cat-file', 'blob', meta[2])
+        if b'\0' in blob:
+            raise ValueError('source is not text')
+        blob.decode('utf-8-sig')
+        rows.append((name, blob))
+    tree = work / 'source'
+    tree.mkdir(parents=True)
+    for name in ('reconstruction', 'builds', 'findings', 'reports'):
+        shutil.copytree(root / name, tree / name, symlinks=False)
+    target = json.loads((root / 'builds/target.json').read_text())['build_id']
+    for name, blob in rows:
+        path = tree / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(blob)
+    for name, _blob in rows:
+        if lint.lint_file(tree, name, target):
+            raise ValueError('contributor source lint failed')
+    return tree, [name for name, _ in rows]
+
+
+def bindings(root):
+    """Only public main records provide existing symbol/recipe bindings."""
+    inventory = json.loads((root / 'data/progress.json').read_text())
+    result = {}
+    for fn in inventory['functions']:
+        if not fn.get('report') or not (root / fn['report']).is_file():
+            continue
+        record = json.loads((root / fn['report']).read_text())
+        if not record.get('source', {}).get('compiled') or not record.get('runs'):
+            continue
+        report = record['runs'][0]['report']
+        # Contract v3 internal selectors require more than a bare symbol; report no-target.
+        if report.get('contract_version') != 2:
+            continue
+        result.setdefault(record['source']['compiled'], []).append(
+            dict(rva=fn['rva'], symbol=report['function']['symbol'], recipe=record['recipe']['path']))
+    return result
+
+
+def requests(tree, changed, known):
+    units = {name for name in changed if name.endswith('.cpp')}
+    for path in sorted((tree / 'reconstruction').rglob('*.cpp')):
+        unit = path.relative_to(tree).as_posix()
+        if set(include_closure(tree, unit)) & set(changed):
+            units.add(unit)
+    result = []
+    for unit in sorted(units):
+        entries = {r['rva']: dict(r) for r in known.get(unit, [])}
+        # New source may request an RVA/symbol, but cannot select the target mask, size or recipe.
+        for rva, symbol in REQUEST.findall((tree / unit).read_text(encoding='utf-8-sig')[:8192]):
+            value = int(rva, 16)
+            if value not in entries:
+                entries[value] = dict(rva=value, symbol=symbol, recipe=DEFAULT_RECIPE)
+        if not entries:
+            result.append(dict(unit=unit, rva=None, symbol=None, recipe=DEFAULT_RECIPE))
+        else:
+            result += [dict(unit=unit, **r) for r in entries.values()]
+    return result
+
+
+def compile_requests(root, tree, requests_, bindir, work, manifest):
+    ctx = contrib.Ctx(repo=root, platform='win32', interactive=False)
+    tool = dict(status='ok', flavour='native', bin=str(bindir), root=str(bindir.parents[6]))
+    targets = {row['rva']: row for row in manifest['functions']}
+    built = {}
+    rows = []
+    for ref in requests_:
+        target = targets.get(ref['rva'])
+        row = dict(rva=hex(ref['rva']) if ref['rva'] is not None else None, unit=ref['unit'],
+                   result='no-target')
+        if (target is None or ref['symbol'] is None or target['extraction'] == 'unmasked-unsupported'
+                or ref['recipe'] not in manifest['recipe_sha256']):
+            rows.append(row)
+            continue
+        key = ref['unit'], ref['recipe']
+        if key not in built:
+            try:
+                recipe = json.loads((root / ref['recipe']).read_text())
+                _, includes = contrib.sdk_include_dirs(ctx, tool['root'], recipe['sdk'])
+                if not includes or includes[0].parent.name != recipe['sdk']:
+                    raise ValueError('pinned SDK missing')
+                built[key] = contrib.compile_unit(ctx, tree, ref['unit'], ref['recipe'],
+                                                work / str(len(built)), tool)['object'].read_bytes()
+            except (ValueError, OSError, Reject, contrib.Stop, subprocess.TimeoutExpired):
+                built[key] = None
+        if built[key] is None:
+            row['result'], row['reason'] = 'mismatch', 'compile-failed'
+        else:
+            try:
+                row['result'] = hashes.candidate(built[key], ref['symbol'], target)
+                row['source_sha256'] = tu_digest(tree, include_closure(tree, ref['unit']))
+                row['recipe_sha256'] = hashes.digest((root / ref['recipe']).read_bytes())
+            except (ValueError, Reject):
+                row['result'], row['reason'] = 'no-target', 'unsupported-object-layout'
+        rows.append(row)
+    return rows
+
+
+def sample(root, bindir, work, manifest):
+    rvas = json.loads((root / 'data/target-hashes/determinism-sample.json').read_text())['rvas']
+    refs = [dict(public.reference(root, rva), rva=rva) for rva in rvas]
+    requests_ = [dict(unit=r['unit'], rva=r['rva'], symbol=r['symbol'], recipe=r['recipe']) for r in refs]
+    first = compile_requests(root, root, requests_, bindir, work / 'first', manifest)
+    second = compile_requests(root, root, requests_, bindir, work / 'second', manifest)
+    return [dict(row, deterministic=row['result'] == other['result'] == 'hash-match')
+            for row, other in zip(first, second)]
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('command', choices=('prepare', 'check', 'sample'))
+    p.add_argument('--base')
+    p.add_argument('--head')
+    p.add_argument('--bin', type=Path)
+    p.add_argument('--work', type=Path, required=True)
+    p.add_argument('--out', type=Path, required=True)
+    a = p.parse_args(argv)
+    report = dict(schema=1, kind='target-hash-check', head_sha=a.head,
+                  base_sha=a.base, normalization_version=hashes.VERSION, acceptance='not-evaluated')
+    try:
+        a.work.mkdir(parents=True, exist_ok=True)
+        report.update(trusted_inputs(ROOT))
+        manifest = hashes.load_manifest(ROOT)
+        if a.command == 'prepare':
+            tree, changed = prepare(ROOT, a.base, a.head, a.work)
+            refs = requests(tree, changed, bindings(ROOT))
+            (a.work / 'requests.json').write_text(json.dumps(refs))
+            report['intake'] = 'pass'
+            report['requested_functions'] = len(refs)
+        else:
+            if not a.bin or public.probe(ROOT, a.bin)['toolset'] != 'MATCH':
+                raise ValueError('compiler pin mismatch')
+            report['toolset'] = 'MATCH'
+            if a.command == 'sample':
+                report['functions'] = sample(ROOT, a.bin, a.work, manifest)
+            else:
+                refs = json.loads((a.work / 'requests.json').read_text())
+                report['functions'] = compile_requests(ROOT, a.work / 'source', refs, a.bin,
+                                                       a.work / 'objects', manifest)
+    except (ValueError, OSError, KeyError, StopIteration, Reject, contrib.Stop,
+            subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
+        report['error'] = type(exc).__name__
+    a.out.parent.mkdir(parents=True, exist_ok=True)
+    a.out.write_text(json.dumps(report, indent=2) + '\n')
+    print(json.dumps(report, indent=2))
+    if os.environ.get('GITHUB_STEP_SUMMARY'):
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+            summary.write('Advisory only; two local hosts and Reviewer remain required.\n\n```json\n'
+                          + json.dumps(report, indent=2) + '\n```\n')
+    return int('error' in report or any(r['result'] == 'mismatch' for r in report.get('functions', []))
+               or (a.command == 'sample' and any(not r['deterministic'] for r in report['functions'])))
+
+
+if __name__ == '__main__':
+    sys.exit(main())

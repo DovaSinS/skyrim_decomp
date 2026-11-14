@@ -131,6 +131,10 @@ class FakeRuntime:
             raise OSError('simulated crash')
         return copy.deepcopy(value)
 
+    def ci_hash_signal(self, head):
+        return dict(kind='target-hash-ci', head_sha=head, state=getattr(self, 'hash_state', 'absent'),
+                    advisory=True, acceptance='not-evaluated')
+
     def fetch(self, pr):
         return self.call('fetch', dict(tree='synthetic', base='b' * 40, files=pr['files'], diff='synthetic'))
 
@@ -189,6 +193,32 @@ class ResumeAndLimits(unittest.TestCase):
         ap.process(self.runtime, self.state, pr())
         self.assertEqual(self.runtime.calls.count('fetch'), 1)
         self.assertEqual(self.runtime.calls.count('publish'), 1)
+
+    def test_ci_hash_api_is_exact_head_and_failures_are_only_unavailable(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        run = dict(id=3, head_sha='a' * 40, app=dict(slug='github-actions'),
+                   name='target-hashes', status='completed', conclusion='success')
+        runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0,
+                               json.dumps([dict(check_runs=[run])]).encode(), b''))
+        self.assertEqual(runtime.ci_hash_signal('a' * 40)['state'], 'success')
+        self.assertEqual(runtime.ci_hash_signal('b' * 40)['state'], 'absent')
+        for error in (ap.Stop('API unavailable'), subprocess.TimeoutExpired('gh', 1)):
+            runtime.command.side_effect = error
+            got = runtime.ci_hash_signal('a' * 40)
+            self.assertEqual(got['state'], 'unavailable')
+            self.assertEqual(got['acceptance'], 'not-evaluated')
+
+    def test_ci_hash_signal_never_bypasses_intake_confirmation_or_review(self):
+        for status in ('success', 'failure', 'pending', 'absent', 'unavailable'):
+            with self.subTest(status=status), tempfile.TemporaryDirectory() as tmp:
+                state = ap.State(Path(tmp), self.config)
+                runtime = FakeRuntime()
+                runtime.hash_state = status
+                result = ap.process(runtime, state, pr())
+                self.assertEqual(result['ci_hash']['state'], status)
+                self.assertEqual(result['ci_hash']['acceptance'], 'not-evaluated')
+                for required in ('intake', 'screen', 'confirm', 'reviews', 'publish'):
+                    self.assertIn(required, runtime.calls)
 
     def test_crash_at_every_stage_resumes_without_repeating_successes(self):
         stages = ['fetch', 'intake', 'functions', 'screen', 'export', 'confirm', 'groups', 'reviews', 'publish', 'finish']
@@ -572,6 +602,9 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.commands.append(argv)
         output = b''
         if argv[0] == 'gh':
+            if argv[1] == 'api':
+                self.assertTrue(argv[-1].endswith('/check-runs'))
+                return subprocess.CompletedProcess(argv, 0, b'[{"check_runs": []}]', b'')
             self.assertEqual(argv[1:3], ['pr', 'view'])
             output = json.dumps(dict(headRefOid=self.head, state='OPEN')).encode()
         elif len(argv) > 1 and argv[1] == 'tools/contrib.py':
@@ -664,7 +697,10 @@ reasons: original synthetic source and comparator reports
         self.assertFalse((self.root / '.local/flow/groups').exists())
         for argv in self.commands:
             if argv[0] == 'gh':
-                self.assertEqual(argv[1:3], ['pr', 'view'])
+                if argv[1] == 'api':
+                    self.assertTrue(argv[-1].endswith('/check-runs'))
+                else:
+                    self.assertEqual(argv[1:3], ['pr', 'view'])
             if argv[0] == 'git':
                 self.assertNotIn(argv[1], ('merge', 'commit-tree', 'push', 'commit'))
                 if argv[1] == 'checkout':
