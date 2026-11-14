@@ -1,6 +1,6 @@
 {
   "batch_schema": 1,
-  "commitment": null,
+  "commitment": "2c554d4f377d0b1566356e1232596740663e8355",
   "family_path": "reports/sse-steam-1-7-104/families/875880e1bed27e4d284613d62b8c6b0a6b0901a044ff43a55fe9a7658c20dd74.json",
   "family_sha256": "5b194ebb58a5d7e8446635f68df7f734afb0cba77c9110b72af793078020dca0",
   "members": {
@@ -23,6 +23,15 @@
     "sse-steam-1-7-104-0x9efa20",
     "sse-steam-1-7-104-0xbc3ba0"
   ],
-  "sample": null,
+  "sample": [
+    "sse-steam-1-7-104-0x116cb00",
+    "sse-steam-1-7-104-0x11f78c0",
+    "sse-steam-1-7-104-0x14c87d0",
+    "sse-steam-1-7-104-0x14c8800",
+    "sse-steam-1-7-104-0x17c280",
+    "sse-steam-1-7-104-0x17c2b0",
+    "sse-steam-1-7-104-0x9efa20",
+    "sse-steam-1-7-104-0xbc3ba0"
+  ],
   "seed": "p104b-layout-leaf-v10-20261114"
 }
