@@ -1,0 +1,28 @@
+{
+  "batch_schema": 1,
+  "commitment": null,
+  "family_path": "reports/sse-steam-1-7-104/families/875880e1bed27e4d284613d62b8c6b0a6b0901a044ff43a55fe9a7658c20dd74.json",
+  "family_sha256": "5b194ebb58a5d7e8446635f68df7f734afb0cba77c9110b72af793078020dca0",
+  "members": {
+    "sse-steam-1-7-104-0x116cb00": "7bb3b7632ceb7afb420863601e4e8bab9de60f87d4a42aa519fa59faad300151",
+    "sse-steam-1-7-104-0x11f78c0": "b52d64579a9ff2886697d09c1c1f5426f4fbabf0dc5eb7a1d484cb33fb915d07",
+    "sse-steam-1-7-104-0x14c87d0": "bbf03274a216c5d2d44f6e9a397ee388c54066ed08bbeb6cc2a11a2e492895a9",
+    "sse-steam-1-7-104-0x14c8800": "f82489b06e3ed4769eefca66dfcd079236eabaf916e9c2bbf76b64b7d1e3f0d0",
+    "sse-steam-1-7-104-0x17c280": "60aa63c44f926742a9cedfe3f2da5d229b191414e6939105f54bc2d9e3653010",
+    "sse-steam-1-7-104-0x17c2b0": "f19fca8b3d96c736461fa374a19f9ea7f9155660a996bed85626c6134efc99d0",
+    "sse-steam-1-7-104-0x9efa20": "1a660d641534ec27405572efb65b3f06270ce7a25154da755b49ddaebd4640d1",
+    "sse-steam-1-7-104-0xbc3ba0": "540a683ff225a8e968dd0606bedd73398578c156871e3de5dc710989ebe0b062"
+  },
+  "population": [
+    "sse-steam-1-7-104-0x116cb00",
+    "sse-steam-1-7-104-0x11f78c0",
+    "sse-steam-1-7-104-0x14c87d0",
+    "sse-steam-1-7-104-0x14c8800",
+    "sse-steam-1-7-104-0x17c280",
+    "sse-steam-1-7-104-0x17c2b0",
+    "sse-steam-1-7-104-0x9efa20",
+    "sse-steam-1-7-104-0xbc3ba0"
+  ],
+  "sample": null,
+  "seed": "p104b-layout-leaf-v10-20261114"
+}
