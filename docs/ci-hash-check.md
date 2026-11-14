@@ -164,3 +164,7 @@ does not by itself prove binary identity. GitHub documents [cache visibility and
 These are public documentation sources consulted on 2026-11-14; successful installation and
 binary identity must be measured in the actual workflow run. The private handoff records the
 pushed revision, run URL, observed results and remaining limits.
+
+The raw compiler-pin file is LF-pinned in `.gitattributes`, like Python and JSON inputs.
+A Windows checkout with `core.autocrlf=true` otherwise changes its raw digest even though
+all four parsed binary hashes match; p128 found this in the first native target-hash CI run.

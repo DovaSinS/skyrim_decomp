@@ -126,6 +126,21 @@ class TargetHashTest(unittest.TestCase):
         self.assertEqual(len(set(sample)), 50)
         self.assertTrue(set(sample) <= {row['rva'] for row in manifest['functions']})
 
+    def test_windows_checkout_preserves_raw_pin_file_digest(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            def git(*args):
+                return subprocess.check_output(['git', *args], cwd=root)
+            git('init', '-q')
+            (root / '.gitattributes').write_bytes((ROOT / '.gitattributes').read_bytes())
+            pins = b'a' * 64 + b'  cl.exe\n'
+            path = root / 'pinned.sha256'
+            path.write_bytes(pins)
+            git('add', '.gitattributes', 'pinned.sha256')
+            path.unlink()
+            git('-c', 'core.autocrlf=true', 'checkout-index', '--all', '--force')
+            self.assertEqual(path.read_bytes(), pins)
+
     def test_missing_and_stale_manifest_is_no_pass(self):
         with tempfile.TemporaryDirectory() as tmp:
             with patch.object(ci, 'ROOT', Path(tmp)), patch('builtins.print'):
