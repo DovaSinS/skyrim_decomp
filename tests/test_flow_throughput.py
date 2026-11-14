@@ -435,6 +435,42 @@ class Throughput(unittest.TestCase):
         self.assertEqual((Path(result['tree']) / 'same.txt').read_text(), 'first input\n')
         self.assertEqual(result['tooling_dropped'][0]['revision'], bounced['revision'])
 
+    def test_waiter_observes_its_completion_while_next_batch_holds_lane(self):
+        self.tooling_commit()
+        item = tooling.enqueue(self.root, self.fdir, 'main')
+        published = lane.run_lane(self.root, self.fdir, python=sys.executable, ci_wait=0)
+        path = self.fdir / 'lane/tooling-queue' / (item['id'] + '.json')
+        finished = lane.read(path)
+        # Reproduce a waiter that entered admission before another runner completed it.
+        # The completion restored below is from the real synthetic publication above.
+        lane.write(path, dict(item, state='queued', run=None, integrated=None))
+        attempted, done = threading.Event(), threading.Event()
+        original, results, errors = lane.run_lane, [], []
+        def attempt(*args, **kwargs):
+            attempted.set()
+            return original(*args, **kwargs)
+        def publish():
+            try:
+                results.append(lane.publish_tooling(self.root, self.fdir, python=sys.executable,
+                                                    ci_wait=0, wait_lane=True))
+            except BaseException as error:
+                errors.append(error)
+            finally:
+                done.set()
+        with patch.object(lane, 'run_lane', side_effect=attempt):
+            try:
+                with lane.lane_lock(self.fdir):
+                    worker = threading.Thread(target=publish)
+                    worker.start()
+                    self.assertTrue(attempted.wait(5))
+                    with lane.state_lock(self.fdir):
+                        lane.write(path, finished)
+                    self.assertTrue(done.wait(3), 'waiter blocked behind an unrelated batch')
+            finally:
+                if 'worker' in locals(): worker.join(10)
+        self.assertEqual(errors, [])
+        self.assertEqual(results[0]['integrated']['commit'], published['integrated']['commit'])
+
     def test_bisection_has_logarithmic_depth_and_checks_final_survivors(self):
         roots = [self.other('split-' + str(i), 'split-' + str(i) + '.txt', 'synthetic\n')
                  for i in range(8)]
