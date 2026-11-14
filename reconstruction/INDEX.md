@@ -8154,6 +8154,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf1ee490` | `Leaf1ee490::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1ee490` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1ee490.json` | matched | family | open |
 | `forms/TESProduceForm` | `TESProduceForm::~TESProduceForm` (COMMUNITY) | `sse-steam-1-7-104` / `0x1eee40` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1eee40.json` | matched | delta | open |
 | - | `StorageInit1eeee0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1eeee0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_1ef250` | `p117_1ef250::LockedSource_F063_1ef250::Add` (GUESS) | `sse-steam-1-7-104` / `0x1ef250` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1ef250.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_1ef430` | `p117_1ef430::LockedSource_F068_1ef430::Remove` (GUESS) | `sse-steam-1-7-104` / `0x1ef430` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1ef430.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeaf1ef630::~TableStoreLeaf1ef630` (GUESS) | `sse-steam-1-7-104` / `0x1ef630` / 11 | - | - | mapped | - | - |
 | `forms/TESQualityForm` | `TESQualityForm::InitializeDataComponent` (COMMUNITY) | `sse-steam-1-7-104` / `0x1ef650` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1ef650.json` | matched | full | open |
 | `forms/TESQualityForm` | `Leaf1ef660::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1ef660` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1ef660.json` | matched | full | open |
@@ -8343,6 +8345,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/BGSActionData` | `BGSActionData::Process` (COMMUNITY) | `sse-steam-1-7-104` / `0x240f40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x240f40.json` | matched | full | open |
 | `bsengine/BSPointerHandleManagerInterface` | `BSPointerHandleManagerInterface::GetHandle` (COMMUNITY) | `sse-steam-1-7-104` / `0x240f50` / 54 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x240f50.json` | matched | label-only | - |
 | `leaves/Leaf241190` | `Leaf241190::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x241190` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x241190.json` | matched | family | open |
+| `bsengine/LockedSource_F063_241b90` | `p117_241b90::LockedSource_F063_241b90::Add` (GUESS) | `sse-steam-1-7-104` / `0x241b90` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x241b90.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_2420e0` | `p117_2420e0::LockedSource_F068_2420e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x2420e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2420e0.json` | mapped, record awaiting review | - | - |
 | - | `DeletingLeaf242650::~DeletingLeaf242650` (GUESS) | `sse-steam-1-7-104` / `0x242650` / 43 | - | - | mapped | - | - |
 | `leaves/LeafAddress242e80` | `LeafAddress242e80::Address` (GUESS) | `sse-steam-1-7-104` / `0x242e80` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x242e80.json` | matched | family | open |
 | - | `DeletingLeaf244650::~DeletingLeaf244650` (GUESS) | `sse-steam-1-7-104` / `0x244650` / 43 | - | - | mapped | - | - |
@@ -8627,6 +8631,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/TESObjectBOOK` | `TESObjectBOOK::LoadGame` (COMMUNITY) | `sse-steam-1-7-104` / `0x280540` / 77 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x280540.json` | matched | full | open |
 | - | `TESObjectBOOK::~TESObjectBOOK` (COMMUNITY) | `sse-steam-1-7-104` / `0x280760` / 383 | - | - | mapped | - | - |
 | - | `StorageInit280950::initialize` (GUESS) | `sse-steam-1-7-104` / `0x280950` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_280cc0` | `p117_280cc0::LockedSource_F063_280cc0::Add` (GUESS) | `sse-steam-1-7-104` / `0x280cc0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x280cc0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_280f10` | `p117_280f10::LockedSource_F068_280f10::Remove` (GUESS) | `sse-steam-1-7-104` / `0x280f10` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x280f10.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf281250` | `Leaf281250::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x281250` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x281250.json` | matched | family | open |
 | `leaves/Leaf2812d0` | `Leaf2812d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2812d0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2812d0.json` | matched | family | open |
 | `leaves/Leaf2812e0` | `Leaf2812e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2812e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2812e0.json` | matched | family | open |
@@ -8642,6 +8648,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf2857c0::~DeletingLeaf2857c0` (GUESS) | `sse-steam-1-7-104` / `0x2857c0` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf2857f0::~DeletingLeaf2857f0` (GUESS) | `sse-steam-1-7-104` / `0x2857f0` / 43 | - | - | mapped | - | - |
 | - | `StorageInit2859f0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x2859f0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_285f10` | `p117_285f10::LockedSource_F063_285f10::Add` (GUESS) | `sse-steam-1-7-104` / `0x285f10` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285f10.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_2861e0` | `p117_2861e0::LockedSource_F068_2861e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x2861e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2861e0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf2865c0` | `Leaf2865c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2865c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2865c0.json` | matched | family | open |
 | `leaves/Leaf286640` | `Leaf286640::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x286640` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x286640.json` | matched | family | open |
 | `leaves/Leaf286650` | `Leaf286650::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x286650` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x286650.json` | matched | family | open |
@@ -8711,6 +8719,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf29d030` | `Leaf29d030::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29d030` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29d030.json` | matched | family | open |
 | `leaves/Leaf29d040` | `Leaf29d040::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29d040` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29d040.json` | matched | family | open |
 | `leaves/Leaf29d050` | `Leaf29d050::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29d050` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29d050.json` | matched | family | open |
+| `bsengine/LockedSource_F063_29d390` | `p117_29d390::LockedSource_F063_29d390::Add` (GUESS) | `sse-steam-1-7-104` / `0x29d390` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29d390.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_29e1f0` | `p117_29e1f0::LockedSource_F068_29e1f0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x29e1f0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29e1f0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf29e4f0` | `Leaf29e4f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29e4f0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29e4f0.json` | matched | family | open |
 | `leaves/Leaf29e570` | `Leaf29e570::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29e570` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29e570.json` | matched | family | open |
 | `leaves/Leaf29e580` | `Leaf29e580::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x29e580` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x29e580.json` | matched | family | open |
@@ -8892,6 +8902,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf2fb850` | `Leaf2fb850::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fb850` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fb850.json` | matched | family | open |
 | `leaves/Leaf2fb860` | `Leaf2fb860::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fb860` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fb860.json` | matched | family | open |
 | `leaves/Leaf2fb9f0` | `Leaf2fb9f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fb9f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fb9f0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_2fba00` | `p117_2fba00::LockedSource_F063_2fba00::Add` (GUESS) | `sse-steam-1-7-104` / `0x2fba00` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fba00.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf2fbd00` | `Leaf2fbd00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbd00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbd00.json` | matched | family | open |
 | `leaves/Leaf2fbd80` | `Leaf2fbd80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbd80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbd80.json` | matched | family | open |
 | `leaves/Leaf2fbd90` | `Leaf2fbd90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbd90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbd90.json` | matched | family | open |
@@ -8901,6 +8912,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf2fbdd0` | `Leaf2fbdd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbdd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbdd0.json` | matched | family | open |
 | `leaves/Leaf2fbf30` | `Leaf2fbf30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbf30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbf30.json` | matched | family | open |
 | `leaves/Leaf2fbf40` | `Leaf2fbf40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fbf40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbf40.json` | matched | family | open |
+| `bsengine/LockedSource_F068_2fbf50` | `p117_2fbf50::LockedSource_F068_2fbf50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x2fbf50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fbf50.json` | mapped, record awaiting review | - | - |
 | - | `TESObjectREFR::PopulateGraphNodesToTarget` (COMMUNITY) | `sse-steam-1-7-104` / `0x2fd4f0` / 121 | - | - | mapped | - | - |
 | - | `TESObjectREFR::ConstructAnimationGraph` (COMMUNITY) | `sse-steam-1-7-104` / `0x2fd570` / 174 | - | - | mapped | - | - |
 | `leaves/Leaf2fd790` | `Leaf2fd790::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2fd790` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fd790.json` | matched | family | open |
@@ -8909,6 +8921,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf2fe320::~DeletingLeaf2fe320` (GUESS) | `sse-steam-1-7-104` / `0x2fe320` / 43 | - | - | mapped | - | - |
 | - | `StorageInit2fe3c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x2fe3c0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit2fe400::initialize` (GUESS) | `sse-steam-1-7-104` / `0x2fe400` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_2fe580` | `p117_2fe580::LockedSource_F063_2fe580::Add` (GUESS) | `sse-steam-1-7-104` / `0x2fe580` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2fe580.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeaf2fe850::~TableStoreLeaf2fe850` (GUESS) | `sse-steam-1-7-104` / `0x2fe850` / 11 | - | - | mapped | - | - |
 | - | `TableStoreLeaf2fe9d0::~TableStoreLeaf2fe9d0` (GUESS) | `sse-steam-1-7-104` / `0x2fe9d0` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf2feba0::~DeletingLeaf2feba0` (GUESS) | `sse-steam-1-7-104` / `0x2feba0` / 43 | - | - | mapped | - | - |
@@ -8988,6 +9001,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/BGSDefaultObjectManager` | `BGSDefaultObjectManager::InitItemImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x31bad0` / 226 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31bad0.json` | matched | full | open |
 | `forms/BGSDefaultObjectManager` | `BGSDefaultObjectManager::~BGSDefaultObjectManager` (COMMUNITY) | `sse-steam-1-7-104` / `0x31bd50` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31bd50.json` | matched | delta | open |
 | - | `StorageInit31be00::initialize` (GUESS) | `sse-steam-1-7-104` / `0x31be00` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_31c170` | `p117_31c170::LockedSource_F063_31c170::Add` (GUESS) | `sse-steam-1-7-104` / `0x31c170` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31c170.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_31c350` | `p117_31c350::LockedSource_F068_31c350::Remove` (GUESS) | `sse-steam-1-7-104` / `0x31c350` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31c350.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf31c630` | `Leaf31c630::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x31c630` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31c630.json` | matched | family | open |
 | `leaves/Leaf31c6b0` | `Leaf31c6b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x31c6b0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31c6b0.json` | matched | family | open |
 | `leaves/Leaf31c6c0` | `Leaf31c6c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x31c6c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x31c6c0.json` | matched | family | open |
@@ -9320,11 +9335,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/BGSAbilityPerkEntry` | `BGSAbilityPerkEntry::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x3984c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3984c0.json` | matched | delta | open |
 | `forms/BGSEntryPointPerkEntry` | `BGSEntryPointPerkEntry::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x3984d0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3984d0.json` | matched | full | open |
 | `leaves/Leaf3984f0` | `Leaf3984f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3984f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3984f0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_398910` | `p117_398910::LockedSource_F063_398910::Add` (GUESS) | `sse-steam-1-7-104` / `0x398910` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x398910.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_398b50` | `p117_398b50::LockedSource_F068_398b50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x398b50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x398b50.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit39a6d0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x39a6d0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit39a710::initialize` (GUESS) | `sse-steam-1-7-104` / `0x39a710` / 63 | - | - | mapped | - | - |
 | - | `StorageInit39c040::initialize` (GUESS) | `sse-steam-1-7-104` / `0x39c040` / 63 | - | - | mapped | - | - |
 | - | `StorageInit39c080::initialize` (GUESS) | `sse-steam-1-7-104` / `0x39c080` / 63 | - | - | mapped | - | - |
 | - | `StorageInit39c0c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x39c0c0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_39c430` | `p117_39c430::LockedSource_F063_39c430::Add` (GUESS) | `sse-steam-1-7-104` / `0x39c430` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x39c430.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_39c610` | `p117_39c610::LockedSource_F068_39c610::Remove` (GUESS) | `sse-steam-1-7-104` / `0x39c610` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x39c610.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf39c860` | `Leaf39c860::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x39c860` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x39c860.json` | matched | family | open |
 | `leaves/Leaf39c8e0` | `Leaf39c8e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x39c8e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x39c8e0.json` | matched | family | open |
 | `leaves/Leaf39c8f0` | `Leaf39c8f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x39c8f0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x39c8f0.json` | matched | family | open |
@@ -9466,9 +9485,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf3ccb70` | `Leaf3ccb70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3ccb70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ccb70.json` | matched | family | open |
 | `leaves/Leaf3ccb80` | `Leaf3ccb80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3ccb80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ccb80.json` | matched | family | open |
 | `leaves/Leaf3ccb90` | `Leaf3ccb90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3ccb90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ccb90.json` | matched | family | open |
+| `bsengine/LockedSource_F063_3ccde0` | `p117_3ccde0::LockedSource_F063_3ccde0::Add` (GUESS) | `sse-steam-1-7-104` / `0x3ccde0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ccde0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf3cd8b0` | `Leaf3cd8b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3cd8b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cd8b0.json` | matched | family | open |
 | `leaves/Leaf3cd8c0` | `Leaf3cd8c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3cd8c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cd8c0.json` | matched | family | open |
 | `forms/TESNPC` | `TESNPC::SetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x3cd8d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cd8d0.json` | matched | delta | open |
+| `bsengine/LockedSource_F068_3cd9e0` | `p117_3cd9e0::LockedSource_F068_3cd9e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x3cd9e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cd9e0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf3cddb0` | `Leaf3cddb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3cddb0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cddb0.json` | matched | family | open |
 | `leaves/Leaf3cde30` | `Leaf3cde30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3cde30` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cde30.json` | matched | family | open |
 | `leaves/Leaf3cde40` | `Leaf3cde40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3cde40` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3cde40.json` | matched | family | open |
@@ -9493,6 +9514,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/TESQuest` | `TESQuest::GetFormEditorID` (COMMUNITY) | `sse-steam-1-7-104` / `0x3df9b0` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3df9b0.json` | matched | full | open |
 | `leaves/Leaf3dfa10` | `Leaf3dfa10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3dfa10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3dfa10.json` | matched | family | open |
 | `forms/TESQuest` | `TESQuest::QConditions` (COMMUNITY) | `sse-steam-1-7-104` / `0x3dfeb0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3dfeb0.json` | matched | label-only | open |
+| `bsengine/LockedSource_F063_3e0040` | `p117_3e0040::LockedSource_F063_3e0040::Add` (GUESS) | `sse-steam-1-7-104` / `0x3e0040` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3e0040.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_3e0cc0` | `p117_3e0cc0::LockedSource_F068_3e0cc0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x3e0cc0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3e0cc0.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafAddress3e12a0` | `LeafAddress3e12a0::Address` (GUESS) | `sse-steam-1-7-104` / `0x3e12a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3e12a0.json` | matched | family | open |
 | - | `StorageInit3e2440::initialize` (GUESS) | `sse-steam-1-7-104` / `0x3e2440` / 63 | - | - | mapped | - | - |
 | - | `StorageInit3e2480::initialize` (GUESS) | `sse-steam-1-7-104` / `0x3e2480` / 63 | - | - | mapped | - | - |
@@ -10276,6 +10299,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit4854d0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x4854d0` / 63 | - | - | mapped | - | - |
 | `leaves/LeafAddress485630` | `LeafAddress485630::Address` (GUESS) | `sse-steam-1-7-104` / `0x485630` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x485630.json` | matched | family | open |
 | `leaves/LeafAddress485640` | `LeafAddress485640::Address` (GUESS) | `sse-steam-1-7-104` / `0x485640` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x485640.json` | matched | family | open |
+| `bsengine/LockedSource_F063_485650` | `p117_485650::LockedSource_F063_485650::Add` (GUESS) | `sse-steam-1-7-104` / `0x485650` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x485650.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_485830` | `p117_485830::LockedSource_F068_485830::Remove` (GUESS) | `sse-steam-1-7-104` / `0x485830` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x485830.json` | mapped, record awaiting review | - | - |
 | `forms/BGSProcedureSit` | `BGSProcedureSit::Slot17` (GUESS) | `sse-steam-1-7-104` / `0x4859c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4859c0.json` | matched | family | open |
 | `forms/BGSProcedureSleep` | `BGSProcedureSleep::Slot17` (GUESS) | `sse-steam-1-7-104` / `0x486170` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x486170.json` | matched | family | open |
 | - | `TableStoreLeaf487990::~TableStoreLeaf487990` (GUESS) | `sse-steam-1-7-104` / `0x487990` / 11 | - | - | mapped | - | - |
@@ -10457,6 +10482,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit4b89c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x4b89c0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit4b8a00::initialize` (GUESS) | `sse-steam-1-7-104` / `0x4b8a00` / 63 | - | - | mapped | - | - |
 | - | `BSTerrainEffect::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x4b8a40` / 3 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_4b8a50` | `p117_4b8a50::LockedSource_F063_4b8a50::Add` (GUESS) | `sse-steam-1-7-104` / `0x4b8a50` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4b8a50.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_4b8c50` | `p117_4b8c50::LockedSource_F068_4b8c50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x4b8c50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4b8c50.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf4b8ef0` | `Leaf4b8ef0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4b8ef0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4b8ef0.json` | matched | family | open |
 | `leaves/Leaf4b9630` | `Leaf4b9630::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4b9630` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4b9630.json` | matched | family | open |
 | - | `StorageInit4c0580::initialize` (GUESS) | `sse-steam-1-7-104` / `0x4c0580` / 63 | - | - | mapped | - | - |
@@ -10922,6 +10949,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf5b9260::~DeletingLeaf5b9260` (GUESS) | `sse-steam-1-7-104` / `0x5b9260` / 43 | - | - | mapped | - | - |
 | - | `StorageInit5b94a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5b94a0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit5b94e0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5b94e0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_5b9680` | `p117_5b9680::LockedSource_F063_5b9680::Add` (GUESS) | `sse-steam-1-7-104` / `0x5b9680` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5b9680.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_5b9800` | `p117_5b9800::LockedSource_F063_5b9800::Add` (GUESS) | `sse-steam-1-7-104` / `0x5b9800` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5b9800.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_5b9a40` | `p117_5b9a40::LockedSource_F068_5b9a40::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5b9a40` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5b9a40.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_5b9bd0` | `p117_5b9bd0::LockedSource_F068_5b9bd0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5b9bd0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5b9bd0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf5ba060` | `Leaf5ba060::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x5ba060` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ba060.json` | matched | family | open |
 | `leaves/Leaf5ba070` | `Leaf5ba070::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x5ba070` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ba070.json` | matched | family | open |
 | `leaves/Leaf5ba080` | `Leaf5ba080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x5ba080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ba080.json` | matched | family | open |
@@ -11096,6 +11127,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit5eb110::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5eb110` / 63 | - | - | mapped | - | - |
 | - | `StorageInit5eb150::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5eb150` / 63 | - | - | mapped | - | - |
 | `leaves/Leaf5eb1d0` | `Leaf5eb1d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x5eb1d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5eb1d0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_5eb300` | `p117_5eb300::LockedSource_F063_5eb300::Add` (GUESS) | `sse-steam-1-7-104` / `0x5eb300` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5eb300.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_5eb480` | `p117_5eb480::LockedSource_F063_5eb480::Add` (GUESS) | `sse-steam-1-7-104` / `0x5eb480` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5eb480.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_5eba40` | `p117_5eba40::LockedSource_F068_5eba40::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5eba40` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5eba40.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_5ebbd0` | `p117_5ebbd0::LockedSource_F068_5ebbd0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5ebbd0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ebbd0.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward5f3ce0` | `LeafForward5f3ce0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x5f3ce0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5f3ce0.json` | matched | family | open |
 | - | `StorageInit5fd050::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5fd050` / 63 | - | - | mapped | - | - |
 | - | `StorageInit5fd090::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5fd090` / 63 | - | - | mapped | - | - |
@@ -11146,6 +11181,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit60afe0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x60afe0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit60b020::initialize` (GUESS) | `sse-steam-1-7-104` / `0x60b020` / 63 | - | - | mapped | - | - |
 | - | `StorageInit60b060::initialize` (GUESS) | `sse-steam-1-7-104` / `0x60b060` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_60b0a0` | `p117_60b0a0::LockedSource_F063_60b0a0::Add` (GUESS) | `sse-steam-1-7-104` / `0x60b0a0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60b0a0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_60b2e0` | `p117_60b2e0::LockedSource_F068_60b2e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x60b2e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60b2e0.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafAddress60b4e0` | `LeafAddress60b4e0::Address` (GUESS) | `sse-steam-1-7-104` / `0x60b4e0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60b4e0.json` | matched | family | open |
 | `leaves/LeafForward60b760` | `LeafForward60b760::Forward` (GUESS) | `sse-steam-1-7-104` / `0x60b760` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60b760.json` | matched | family | open |
 | - | `StorageInit60d520::initialize` (GUESS) | `sse-steam-1-7-104` / `0x60d520` / 63 | - | - | mapped | - | - |
@@ -11183,6 +11220,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf62f260` | `Leaf62f260::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x62f260` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x62f260.json` | matched | family | open |
 | `leaves/Leaf62f270` | `Leaf62f270::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x62f270` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x62f270.json` | matched | family | open |
 | `leaves/Leaf62f280` | `Leaf62f280::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x62f280` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x62f280.json` | matched | family | open |
+| `bsengine/LockedSource_F063_62f900` | `p117_62f900::LockedSource_F063_62f900::Add` (GUESS) | `sse-steam-1-7-104` / `0x62f900` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x62f900.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6309a0` | `p117_6309a0::LockedSource_F068_6309a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6309a0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6309a0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf632610` | `Leaf632610::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x632610` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632610.json` | matched | family | open |
 | `leaves/Leaf632620` | `Leaf632620::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x632620` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632620.json` | matched | family | open |
 | - | `StorageInit636bc0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x636bc0` / 63 | - | - | mapped | - | - |
@@ -11220,6 +11259,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf63d4f0` | `Leaf63d4f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x63d4f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63d4f0.json` | matched | family | open |
 | `leaves/Leaf63d500` | `Leaf63d500::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x63d500` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63d500.json` | matched | family | open |
 | `leaves/Leaf63d510` | `Leaf63d510::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x63d510` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63d510.json` | matched | family | open |
+| `bsengine/LockedSource_F063_63d8d0` | `p117_63d8d0::LockedSource_F063_63d8d0::Add` (GUESS) | `sse-steam-1-7-104` / `0x63d8d0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63d8d0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_63e1e0` | `p117_63e1e0::LockedSource_F068_63e1e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x63e1e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63e1e0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf63e510` | `Leaf63e510::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x63e510` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x63e510.json` | matched | family | open |
 | - | `StorageInit641060::initialize` (GUESS) | `sse-steam-1-7-104` / `0x641060` / 63 | - | - | mapped | - | - |
 | `leaves/Leaf641120` | `Leaf641120::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x641120` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x641120.json` | matched | family | open |
@@ -11238,9 +11279,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf644af0::~DeletingLeaf644af0` (GUESS) | `sse-steam-1-7-104` / `0x644af0` / 43 | - | - | mapped | - | - |
 | - | `StorageInit644c20::initialize` (GUESS) | `sse-steam-1-7-104` / `0x644c20` / 63 | - | - | mapped | - | - |
 | - | `StorageInit644c60::initialize` (GUESS) | `sse-steam-1-7-104` / `0x644c60` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_644f40` | `p117_644f40::LockedSource_F063_644f40::Add` (GUESS) | `sse-steam-1-7-104` / `0x644f40` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644f40.json` | mapped, record awaiting review | - | - |
 | `forms/BGSMoviePlayer` | `Leaf645120::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x645120` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645120.json` | matched | full | open |
 | `forms/BGSMoviePlayer` | `Leaf645130::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x645130` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645130.json` | matched | full | open |
+| `bsengine/LockedSource_F068_645140` | `p117_645140::LockedSource_F068_645140::Remove` (GUESS) | `sse-steam-1-7-104` / `0x645140` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645140.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit646e40::initialize` (GUESS) | `sse-steam-1-7-104` / `0x646e40` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_6471b0` | `p117_6471b0::LockedSource_F063_6471b0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6471b0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6471b0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_647390` | `p117_647390::LockedSource_F068_647390::Remove` (GUESS) | `sse-steam-1-7-104` / `0x647390` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x647390.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf6496b0` | `Leaf6496b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6496b0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6496b0.json` | matched | family | open |
 | - | `StorageInit64ada0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x64ada0` / 63 | - | - | mapped | - | - |
 | `leaves/LeafAddress64b0c0` | `LeafAddress64b0c0::Address` (GUESS) | `sse-steam-1-7-104` / `0x64b0c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x64b0c0.json` | matched | family | open |
@@ -11255,7 +11300,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf64c6e0::~DeletingLeaf64c6e0` (GUESS) | `sse-steam-1-7-104` / `0x64c6e0` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf64c710::~DeletingLeaf64c710` (GUESS) | `sse-steam-1-7-104` / `0x64c710` / 43 | - | - | mapped | - | - |
 | - | `StorageInit64c8f0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x64c8f0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_64ccc0` | `p117_64ccc0::LockedSource_F063_64ccc0::Add` (GUESS) | `sse-steam-1-7-104` / `0x64ccc0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x64ccc0.json` | mapped, record awaiting review | - | - |
 | `forms/Explosion` | `Explosion::SetActorCause` (COMMUNITY) | `sse-steam-1-7-104` / `0x64cea0` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x64cea0.json` | matched | full | open |
+| `bsengine/LockedSource_F068_64ced0` | `p117_64ced0::LockedSource_F068_64ced0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x64ced0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x64ced0.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit650640::initialize` (GUESS) | `sse-steam-1-7-104` / `0x650640` / 63 | - | - | mapped | - | - |
 | - | `StorageInit650680::initialize` (GUESS) | `sse-steam-1-7-104` / `0x650680` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6506c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6506c0` / 63 | - | - | mapped | - | - |
@@ -11300,6 +11347,19 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit6626a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6626a0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6626e0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6626e0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit662720::initialize` (GUESS) | `sse-steam-1-7-104` / `0x662720` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_662fb0` | `p117_662fb0::LockedSource_F063_662fb0::Add` (GUESS) | `sse-steam-1-7-104` / `0x662fb0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x662fb0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663130` | `p117_663130::LockedSource_F063_663130::Add` (GUESS) | `sse-steam-1-7-104` / `0x663130` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663130.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6632b0` | `p117_6632b0::LockedSource_F063_6632b0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6632b0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6632b0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663430` | `p117_663430::LockedSource_F063_663430::Add` (GUESS) | `sse-steam-1-7-104` / `0x663430` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663430.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6635b0` | `p117_6635b0::LockedSource_F063_6635b0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6635b0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6635b0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663730` | `p117_663730::LockedSource_F063_663730::Add` (GUESS) | `sse-steam-1-7-104` / `0x663730` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663730.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6638b0` | `p117_6638b0::LockedSource_F063_6638b0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6638b0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6638b0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663a30` | `p117_663a30::LockedSource_F063_663a30::Add` (GUESS) | `sse-steam-1-7-104` / `0x663a30` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663a30.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663bb0` | `p117_663bb0::LockedSource_F063_663bb0::Add` (GUESS) | `sse-steam-1-7-104` / `0x663bb0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663bb0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_663d30` | `p117_663d30::LockedSource_F063_663d30::Add` (GUESS) | `sse-steam-1-7-104` / `0x663d30` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x663d30.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_664370` | `p117_664370::LockedSource_F068_664370::Remove` (GUESS) | `sse-steam-1-7-104` / `0x664370` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x664370.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_664500` | `p117_664500::LockedSource_F068_664500::Remove` (GUESS) | `sse-steam-1-7-104` / `0x664500` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x664500.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_664690` | `p117_664690::LockedSource_F068_664690::Remove` (GUESS) | `sse-steam-1-7-104` / `0x664690` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x664690.json` | mapped, record awaiting review | - | - |
 | `leaves/DeletingWrapper665040` | `DeletingWrapper665040::~DeletingWrapper665040` (GUESS) | `sse-steam-1-7-104` / `0x665040` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x665040.json` | matched | full | checked |
 | `leaves/DeletingWrapper6653d0` | `DeletingWrapper6653d0::~DeletingWrapper6653d0` (GUESS) | `sse-steam-1-7-104` / `0x6653d0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6653d0.json` | matched | full | checked |
 | `leaves/LeafAddress665880` | `LeafAddress665880::Address` (GUESS) | `sse-steam-1-7-104` / `0x665880` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x665880.json` | matched | family | open |
@@ -11486,6 +11546,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf6beb30` | `Leaf6beb30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6beb30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6beb30.json` | matched | family | open |
 | `leaves/Leaf6beb40` | `Leaf6beb40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6beb40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6beb40.json` | matched | family | open |
 | `leaves/Leaf6c06b0` | `Leaf6c06b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c06b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c06b0.json` | matched | full | checked |
+| `bsengine/LockedSource_F063_6c11f0` | `p117_6c11f0::LockedSource_F063_6c11f0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c11f0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c11f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1370` | `p117_6c1370::LockedSource_F063_6c1370::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1370` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1370.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c14f0` | `p117_6c14f0::LockedSource_F063_6c14f0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c14f0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c14f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1670` | `p117_6c1670::LockedSource_F063_6c1670::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1670` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1670.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c17f0` | `p117_6c17f0::LockedSource_F063_6c17f0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c17f0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c17f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1970` | `p117_6c1970::LockedSource_F063_6c1970::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1970` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1970.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1af0` | `p117_6c1af0::LockedSource_F063_6c1af0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1af0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1af0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1c70` | `p117_6c1c70::LockedSource_F063_6c1c70::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1c70` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1c70.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6c1df0` | `p117_6c1df0::LockedSource_F063_6c1df0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1df0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1df0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf6c2a20` | `Leaf6c2a20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2a20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2a20.json` | matched | family | open |
 | `leaves/Leaf6c2a30` | `Leaf6c2a30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2a30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2a30.json` | matched | family | open |
 | `leaves/Leaf6c2a50` | `Leaf6c2a50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2a50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2a50.json` | matched | family | open |
@@ -11501,10 +11570,22 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf6c2ba0` | `Leaf6c2ba0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2ba0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2ba0.json` | matched | family | open |
 | `leaves/Leaf6c2cb0` | `Leaf6c2cb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2cb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2cb0.json` | matched | family | open |
 | `leaves/Leaf6c2d20` | `Leaf6c2d20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2d20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2d20.json` | matched | family | open |
+| `bsengine/LockedSource_F068_6c2dd0` | `p117_6c2dd0::LockedSource_F068_6c2dd0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c2dd0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2dd0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c2f60` | `p117_6c2f60::LockedSource_F068_6c2f60::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c2f60` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2f60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c30f0` | `p117_6c30f0::LockedSource_F068_6c30f0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c30f0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c30f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c3280` | `p117_6c3280::LockedSource_F068_6c3280::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c3280` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c3280.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c3410` | `p117_6c3410::LockedSource_F068_6c3410::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c3410` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c3410.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c35a0` | `p117_6c35a0::LockedSource_F068_6c35a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c35a0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c35a0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c3730` | `p117_6c3730::LockedSource_F068_6c3730::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c3730` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c3730.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c38c0` | `p117_6c38c0::LockedSource_F068_6c38c0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c38c0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c38c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c3a50` | `p117_6c3a50::LockedSource_F068_6c3a50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c3a50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c3a50.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c3be0` | `p117_6c3be0::LockedSource_F068_6c3be0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c3be0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c3be0.json` | mapped, record awaiting review | - | - |
 | `actors/Actor` | `Actor::GetActorValueModifier` (COMMUNITY) | `sse-steam-1-7-104` / `0x6c5440` / 115 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c5440.json` | matched | delta | open |
 | - | `TableStoreLeaf6c72d0::~TableStoreLeaf6c72d0` (GUESS) | `sse-steam-1-7-104` / `0x6c72d0` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf6c7360::~DeletingLeaf6c7360` (GUESS) | `sse-steam-1-7-104` / `0x6c7360` / 43 | - | - | mapped | - | - |
 | - | `StorageInit6c7400::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6c7400` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_6c7770` | `p117_6c7770::LockedSource_F063_6c7770::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c7770` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c7770.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6c7950` | `p117_6c7950::LockedSource_F068_6c7950::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c7950` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c7950.json` | mapped, record awaiting review | - | - |
 | `actors/Actor` | `Actor::IsAttacking` (COMMUNITY) | `sse-steam-1-7-104` / `0x6cb920` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cb920.json` | matched | delta | open |
 | `leaves/Leaf6cc3b0` | `Leaf6cc3b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6cc3b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc3b0.json` | matched | family | open |
 | `actors/Character` | `Character::StartDeferredKill` (COMMUNITY) | `sse-steam-1-7-104` / `0x6cc910` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc910.json` | matched | delta | open |
@@ -11512,6 +11593,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit6d0b50::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6d0b50` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6d0b90::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6d0b90` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6d0bd0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6d0bd0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_6d1840` | `p117_6d1840::LockedSource_F063_6d1840::Add` (GUESS) | `sse-steam-1-7-104` / `0x6d1840` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d1840.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6d19c0` | `p117_6d19c0::LockedSource_F063_6d19c0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6d19c0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d19c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6d1b40` | `p117_6d1b40::LockedSource_F063_6d1b40::Add` (GUESS) | `sse-steam-1-7-104` / `0x6d1b40` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d1b40.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6d1f80` | `p117_6d1f80::LockedSource_F068_6d1f80::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6d1f80` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d1f80.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6d2110` | `p117_6d2110::LockedSource_F068_6d2110::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6d2110` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d2110.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6d22a0` | `p117_6d22a0::LockedSource_F068_6d22a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6d22a0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d22a0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf6d43d0` | `Leaf6d43d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6d43d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d43d0.json` | matched | family | open |
 | `actors/Actor` | `Actor::HasShout` (COMMUNITY) | `sse-steam-1-7-104` / `0x6d7750` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d7750.json` | matched | delta | open |
 | `actors/Actor` | `Actor::GetVoiceRecoveryTime` (COMMUNITY) | `sse-steam-1-7-104` / `0x6d92b0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d92b0.json` | matched | delta | open |
@@ -11538,6 +11625,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit6dade0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6dade0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6dae20::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6dae20` / 63 | - | - | mapped | - | - |
 | - | `StorageInit6dae60::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6dae60` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_6db7c0` | `p117_6db7c0::LockedSource_F063_6db7c0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6db7c0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6db7c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_6db940` | `p117_6db940::LockedSource_F063_6db940::Add` (GUESS) | `sse-steam-1-7-104` / `0x6db940` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6db940.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6dbb80` | `p117_6dbb80::LockedSource_F068_6dbb80::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6dbb80` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6dbb80.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_6dbd10` | `p117_6dbd10::LockedSource_F068_6dbd10::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6dbd10` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6dbd10.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeaf6df890::~TableStoreLeaf6df890` (GUESS) | `sse-steam-1-7-104` / `0x6df890` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf6df8f0::~DeletingLeaf6df8f0` (GUESS) | `sse-steam-1-7-104` / `0x6df8f0` / 43 | - | - | mapped | - | - |
 | - | `StorageInit6df920::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6df920` / 63 | - | - | mapped | - | - |
@@ -11566,6 +11657,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit71d3b0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x71d3b0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit71d3f0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x71d3f0` / 63 | - | - | mapped | - | - |
 | `leaves/Leaf71de00` | `Leaf71de00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x71de00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x71de00.json` | matched | family | open |
+| `bsengine/LockedSource_F063_71f010` | `p117_71f010::LockedSource_F063_71f010::Add` (GUESS) | `sse-steam-1-7-104` / `0x71f010` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x71f010.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward735150` | `LeafForward735150::Forward` (GUESS) | `sse-steam-1-7-104` / `0x735150` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x735150.json` | matched | family | open |
 | - | `TableStoreLeaf735210::~TableStoreLeaf735210` (GUESS) | `sse-steam-1-7-104` / `0x735210` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf735a20::~DeletingLeaf735a20` (GUESS) | `sse-steam-1-7-104` / `0x735a20` / 43 | - | - | mapped | - | - |
@@ -11574,6 +11666,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit735ba0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x735ba0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit735be0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x735be0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit737780::initialize` (GUESS) | `sse-steam-1-7-104` / `0x737780` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_7377c0` | `p117_7377c0::LockedSource_F063_7377c0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7377c0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7377c0.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafAddress737f30` | `LeafAddress737f30::Address` (GUESS) | `sse-steam-1-7-104` / `0x737f30` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x737f30.json` | matched | family | open |
 | `leaves/LeafAddress7382f0` | `LeafAddress7382f0::Address` (GUESS) | `sse-steam-1-7-104` / `0x7382f0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7382f0.json` | matched | family | open |
 | - | `BSSimpleScaleController::TargetIsRequiredType` (COMMUNITY) | `sse-steam-1-7-104` / `0x7384e0` / 60 | - | - | mapped | - | - |
@@ -11599,6 +11692,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `inventory/ArmorRatingVisitor` | `ArmorRatingVisitorBase::Visit` (COMMUNITY) | `sse-steam-1-7-104` / `0x73ae00` / 172 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x73ae00.json` | matched | label-only | - |
 | - | `StorageInit73b300::initialize` (GUESS) | `sse-steam-1-7-104` / `0x73b300` / 63 | - | - | mapped | - | - |
 | - | `StorageInit73b340::initialize` (GUESS) | `sse-steam-1-7-104` / `0x73b340` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_73b9e0` | `p117_73b9e0::LockedSource_F063_73b9e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x73b9e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x73b9e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_73bb60` | `p117_73bb60::LockedSource_F063_73bb60::Add` (GUESS) | `sse-steam-1-7-104` / `0x73bb60` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x73bb60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_73bda0` | `p117_73bda0::LockedSource_F068_73bda0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x73bda0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x73bda0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_73bf30` | `p117_73bf30::LockedSource_F068_73bf30::Remove` (GUESS) | `sse-steam-1-7-104` / `0x73bf30` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x73bf30.json` | mapped, record awaiting review | - | - |
 | - | `DeletingLeaf73c7b0::~DeletingLeaf73c7b0` (GUESS) | `sse-steam-1-7-104` / `0x73c7b0` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf73c8e0::~DeletingLeaf73c8e0` (GUESS) | `sse-steam-1-7-104` / `0x73c8e0` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf73c910::~DeletingLeaf73c910` (GUESS) | `sse-steam-1-7-104` / `0x73c910` / 43 | - | - | mapped | - | - |
@@ -11653,9 +11750,43 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf76b180` | `Leaf76b180::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x76b180` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76b180.json` | matched | family | open |
 | `leaves/Leaf76e8b0` | `Leaf76e8b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x76e8b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76e8b0.json` | matched | family | open |
 | `leaves/Leaf76e8d0` | `Leaf76e8d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x76e8d0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76e8d0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_76f860` | `p117_76f860::LockedSource_F063_76f860::Add` (GUESS) | `sse-steam-1-7-104` / `0x76f860` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76f860.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_76f9e0` | `p117_76f9e0::LockedSource_F063_76f9e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x76f9e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76f9e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_76fb60` | `p117_76fb60::LockedSource_F063_76fb60::Add` (GUESS) | `sse-steam-1-7-104` / `0x76fb60` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76fb60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_76fce0` | `p117_76fce0::LockedSource_F063_76fce0::Add` (GUESS) | `sse-steam-1-7-104` / `0x76fce0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76fce0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_76fe60` | `p117_76fe60::LockedSource_F063_76fe60::Add` (GUESS) | `sse-steam-1-7-104` / `0x76fe60` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76fe60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_76ffe0` | `p117_76ffe0::LockedSource_F063_76ffe0::Add` (GUESS) | `sse-steam-1-7-104` / `0x76ffe0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x76ffe0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770160` | `p117_770160::LockedSource_F063_770160::Add` (GUESS) | `sse-steam-1-7-104` / `0x770160` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770160.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_7702e0` | `p117_7702e0::LockedSource_F063_7702e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7702e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7702e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770460` | `p117_770460::LockedSource_F063_770460::Add` (GUESS) | `sse-steam-1-7-104` / `0x770460` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770460.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_7705e0` | `p117_7705e0::LockedSource_F063_7705e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7705e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7705e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770760` | `p117_770760::LockedSource_F063_770760::Add` (GUESS) | `sse-steam-1-7-104` / `0x770760` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770760.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_7708e0` | `p117_7708e0::LockedSource_F063_7708e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7708e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7708e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770a60` | `p117_770a60::LockedSource_F063_770a60::Add` (GUESS) | `sse-steam-1-7-104` / `0x770a60` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770a60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770be0` | `p117_770be0::LockedSource_F063_770be0::Add` (GUESS) | `sse-steam-1-7-104` / `0x770be0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770be0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770d60` | `p117_770d60::LockedSource_F063_770d60::Add` (GUESS) | `sse-steam-1-7-104` / `0x770d60` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770d60.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_770ee0` | `p117_770ee0::LockedSource_F063_770ee0::Add` (GUESS) | `sse-steam-1-7-104` / `0x770ee0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x770ee0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_771060` | `p117_771060::LockedSource_F063_771060::Add` (GUESS) | `sse-steam-1-7-104` / `0x771060` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x771060.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf772b00` | `Leaf772b00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x772b00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x772b00.json` | matched | family | open |
 | `leaves/Leaf7730f0` | `Leaf7730f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7730f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7730f0.json` | matched | family | open |
 | `leaves/LeafForward773240` | `LeafForward773240::Forward` (GUESS) | `sse-steam-1-7-104` / `0x773240` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773240.json` | matched | family | open |
+| `bsengine/LockedSource_F068_773250` | `p117_773250::LockedSource_F068_773250::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773250` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773250.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7733e0` | `p117_7733e0::LockedSource_F068_7733e0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7733e0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7733e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773570` | `p117_773570::LockedSource_F068_773570::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773570` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773570.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773700` | `p117_773700::LockedSource_F068_773700::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773700` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773700.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773890` | `p117_773890::LockedSource_F068_773890::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773890` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773890.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773a20` | `p117_773a20::LockedSource_F068_773a20::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773a20` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773a20.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773bb0` | `p117_773bb0::LockedSource_F068_773bb0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773bb0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773bb0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773d40` | `p117_773d40::LockedSource_F068_773d40::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773d40` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773d40.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_773ed0` | `p117_773ed0::LockedSource_F068_773ed0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x773ed0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x773ed0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_774060` | `p117_774060::LockedSource_F068_774060::Remove` (GUESS) | `sse-steam-1-7-104` / `0x774060` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774060.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7741f0` | `p117_7741f0::LockedSource_F068_7741f0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7741f0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7741f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_774380` | `p117_774380::LockedSource_F068_774380::Remove` (GUESS) | `sse-steam-1-7-104` / `0x774380` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774380.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_774510` | `p117_774510::LockedSource_F068_774510::Remove` (GUESS) | `sse-steam-1-7-104` / `0x774510` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774510.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7746a0` | `p117_7746a0::LockedSource_F068_7746a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7746a0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7746a0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_774830` | `p117_774830::LockedSource_F068_774830::Remove` (GUESS) | `sse-steam-1-7-104` / `0x774830` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774830.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7749c0` | `p117_7749c0::LockedSource_F068_7749c0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7749c0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7749c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_774b50` | `p117_774b50::LockedSource_F068_774b50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x774b50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774b50.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf774ce0` | `Leaf774ce0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x774ce0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774ce0.json` | matched | family | open |
 | `leaves/Leaf774cf0` | `Leaf774cf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x774cf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774cf0.json` | matched | family | open |
 | `leaves/Leaf774d00` | `Leaf774d00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x774d00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x774d00.json` | matched | family | open |
@@ -11872,6 +12003,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit7b1f30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7b1f30` / 63 | - | - | mapped | - | - |
 | - | `StorageInit7b1f70::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7b1f70` / 63 | - | - | mapped | - | - |
 | `leaves/LeafForward7b4840` | `LeafForward7b4840::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7b4840` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b4840.json` | matched | family | open |
+| `bsengine/LockedSource_F063_7b4850` | `p117_7b4850::LockedSource_F063_7b4850::Add` (GUESS) | `sse-steam-1-7-104` / `0x7b4850` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b4850.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_7b49d0` | `p117_7b49d0::LockedSource_F063_7b49d0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7b49d0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b49d0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7b54f0` | `p117_7b54f0::LockedSource_F068_7b54f0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7b54f0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b54f0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7b5680` | `p117_7b5680::LockedSource_F068_7b5680::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7b5680` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b5680.json` | mapped, record awaiting review | - | - |
 | `leaves/DeletingWrapper7b67b0` | `DeletingWrapper7b67b0::~DeletingWrapper7b67b0` (GUESS) | `sse-steam-1-7-104` / `0x7b67b0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b67b0.json` | matched | full | checked |
 | - | `StorageInit7b6860::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7b6860` / 63 | - | - | mapped | - | - |
 | - | `StorageInit7b68a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7b68a0` / 63 | - | - | mapped | - | - |
@@ -11890,6 +12025,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit7c0160::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c0160` / 63 | - | - | mapped | - | - |
 | `leaves/Leaf7c01a0` | `Leaf7c01a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7c01a0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c01a0.json` | matched | family | open |
 | - | `StorageInit7c3340::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c3340` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_7c36c0` | `p117_7c36c0::LockedSource_F063_7c36c0::Add` (GUESS) | `sse-steam-1-7-104` / `0x7c36c0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c36c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_7c38a0` | `p117_7c38a0::LockedSource_F068_7c38a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x7c38a0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c38a0.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit7c4a50::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c4a50` / 63 | - | - | mapped | - | - |
 | - | `StorageInit7c4a90::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c4a90` / 63 | - | - | mapped | - | - |
 | `leaves/LeafForward7c6160` | `LeafForward7c6160::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7c6160` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c6160.json` | matched | family | open |
@@ -12410,6 +12547,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BeamProjectile::GetKillOnCollision` (COMMUNITY) | `sse-steam-1-7-104` / `0x7e0410` / 3 | - | - | mapped | - | - |
 | - | `DeletingLeaf7e1080::~DeletingLeaf7e1080` (GUESS) | `sse-steam-1-7-104` / `0x7e1080` / 43 | - | - | mapped | - | - |
 | - | `StorageInit7e1180::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7e1180` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_7e1460` | `p117_7e1460::LockedSource_F063_7e1460::Add` (GUESS) | `sse-steam-1-7-104` / `0x7e1460` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7e1460.json` | mapped, record awaiting review | - | - |
 | `forms/ConeProjectile` | `ConeProjectile::Slot194` (GUESS) | `sse-steam-1-7-104` / `0x7e1880` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7e1880.json` | matched | full | open |
 | `leaves/LeafForward7e1da0` | `LeafForward7e1da0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7e1da0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7e1da0.json` | matched | family | open |
 | `leaves/LeafForward7e1db0` | `LeafForward7e1db0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7e1db0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7e1db0.json` | matched | family | open |
@@ -12477,6 +12615,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit804ec0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x804ec0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit804f00::initialize` (GUESS) | `sse-steam-1-7-104` / `0x804f00` / 63 | - | - | mapped | - | - |
 | - | `StorageInit804f40::initialize` (GUESS) | `sse-steam-1-7-104` / `0x804f40` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_8054b0` | `p117_8054b0::LockedSource_F063_8054b0::Add` (GUESS) | `sse-steam-1-7-104` / `0x8054b0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8054b0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_805860` | `p117_805860::LockedSource_F068_805860::Remove` (GUESS) | `sse-steam-1-7-104` / `0x805860` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x805860.json` | mapped, record awaiting review | - | - |
 | - | `DeletingLeaf809540::~DeletingLeaf809540` (GUESS) | `sse-steam-1-7-104` / `0x809540` / 43 | - | - | mapped | - | - |
 | - | `StorageInit809570::initialize` (GUESS) | `sse-steam-1-7-104` / `0x809570` / 63 | - | - | mapped | - | - |
 | - | `DeletingLeaf809750::~DeletingLeaf809750` (GUESS) | `sse-steam-1-7-104` / `0x809750` / 43 | - | - | mapped | - | - |
@@ -13995,6 +14135,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf904d50::~DeletingLeaf904d50` (GUESS) | `sse-steam-1-7-104` / `0x904d50` / 43 | - | - | mapped | - | - |
 | - | `StorageInit904ef0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x904ef0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit904f30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x904f30` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_905990` | `p117_905990::LockedSource_F063_905990::Add` (GUESS) | `sse-steam-1-7-104` / `0x905990` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x905990.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_905d30` | `p117_905d30::LockedSource_F068_905d30::Remove` (GUESS) | `sse-steam-1-7-104` / `0x905d30` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x905d30.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward907280` | `LeafForward907280::Forward` (GUESS) | `sse-steam-1-7-104` / `0x907280` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x907280.json` | matched | family | open |
 | - | `StorageInit908af0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x908af0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit908b30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x908b30` / 63 | - | - | mapped | - | - |
@@ -14008,6 +14150,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForward9149d0` | `LeafForward9149d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x9149d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9149d0.json` | matched | family | open |
 | - | `StorageInit914fa0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x914fa0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit914fe0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x914fe0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_915800` | `p117_915800::LockedSource_F063_915800::Add` (GUESS) | `sse-steam-1-7-104` / `0x915800` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x915800.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_915980` | `p117_915980::LockedSource_F063_915980::Add` (GUESS) | `sse-steam-1-7-104` / `0x915980` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x915980.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_915c20` | `p117_915c20::LockedSource_F068_915c20::Remove` (GUESS) | `sse-steam-1-7-104` / `0x915c20` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x915c20.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_915db0` | `p117_915db0::LockedSource_F068_915db0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x915db0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x915db0.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward91b850` | `LeafForward91b850::Forward` (GUESS) | `sse-steam-1-7-104` / `0x91b850` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x91b850.json` | matched | family | open |
 | - | `TableStoreLeaf91bcc0::~TableStoreLeaf91bcc0` (GUESS) | `sse-steam-1-7-104` / `0x91bcc0` / 11 | - | - | mapped | - | - |
 | `leaves/LeafForward91bde0` | `LeafForward91bde0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x91bde0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x91bde0.json` | matched | family | open |
@@ -14028,6 +14174,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf9242c0` | `Leaf9242c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9242c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9242c0.json` | matched | family | open |
 | `leaves/LeafForward924510` | `LeafForward924510::Forward` (GUESS) | `sse-steam-1-7-104` / `0x924510` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x924510.json` | matched | family | open |
 | `leaves/Leaf924520` | `Leaf924520::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x924520` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x924520.json` | matched | family | open |
+| `bsengine/LockedSource_F063_924a40` | `p117_924a40::LockedSource_F063_924a40::Add` (GUESS) | `sse-steam-1-7-104` / `0x924a40` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x924a40.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_926df0` | `p117_926df0::LockedSource_F068_926df0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x926df0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x926df0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf926f80` | `Leaf926f80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x926f80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x926f80.json` | matched | family | open |
 | `leaves/Leaf9278c0` | `Leaf9278c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9278c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9278c0.json` | matched | family | open |
 | - | `StorageInit92ea40::initialize` (GUESS) | `sse-steam-1-7-104` / `0x92ea40` / 63 | - | - | mapped | - | - |
@@ -14038,7 +14186,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit93c480::initialize` (GUESS) | `sse-steam-1-7-104` / `0x93c480` / 63 | - | - | mapped | - | - |
 | - | `StorageInit93c4c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x93c4c0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit93c500::initialize` (GUESS) | `sse-steam-1-7-104` / `0x93c500` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_93c990` | `p117_93c990::LockedSource_F063_93c990::Add` (GUESS) | `sse-steam-1-7-104` / `0x93c990` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x93c990.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf93cb10` | `Leaf93cb10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x93cb10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x93cb10.json` | matched | family | open |
+| `bsengine/LockedSource_F068_93d020` | `p117_93d020::LockedSource_F068_93d020::Remove` (GUESS) | `sse-steam-1-7-104` / `0x93d020` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x93d020.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeaf93f630::~TableStoreLeaf93f630` (GUESS) | `sse-steam-1-7-104` / `0x93f630` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf93f700::~DeletingLeaf93f700` (GUESS) | `sse-steam-1-7-104` / `0x93f700` / 43 | - | - | mapped | - | - |
 | - | `TableStoreLeaf9426c0::~TableStoreLeaf9426c0` (GUESS) | `sse-steam-1-7-104` / `0x9426c0` / 11 | - | - | mapped | - | - |
@@ -14046,6 +14196,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit946650::initialize` (GUESS) | `sse-steam-1-7-104` / `0x946650` / 63 | - | - | mapped | - | - |
 | - | `StorageInit946690::initialize` (GUESS) | `sse-steam-1-7-104` / `0x946690` / 63 | - | - | mapped | - | - |
 | - | `StorageInit9466d0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x9466d0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_946c20` | `p117_946c20::LockedSource_F063_946c20::Add` (GUESS) | `sse-steam-1-7-104` / `0x946c20` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x946c20.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_946e00` | `p117_946e00::LockedSource_F068_946e00::Remove` (GUESS) | `sse-steam-1-7-104` / `0x946e00` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x946e00.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward94a410` | `LeafForward94a410::Forward` (GUESS) | `sse-steam-1-7-104` / `0x94a410` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x94a410.json` | matched | family | open |
 | - | `TableStoreLeaf94a420::~TableStoreLeaf94a420` (GUESS) | `sse-steam-1-7-104` / `0x94a420` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeaf94a8f0::~DeletingLeaf94a8f0` (GUESS) | `sse-steam-1-7-104` / `0x94a8f0` / 43 | - | - | mapped | - | - |
@@ -14054,6 +14206,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit94cbe0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x94cbe0` / 63 | - | - | mapped | - | - |
 | `leaves/LeafForward94d630` | `LeafForward94d630::Forward` (GUESS) | `sse-steam-1-7-104` / `0x94d630` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x94d630.json` | matched | family | open |
 | - | `StorageInit9508a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x9508a0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_950c90` | `p117_950c90::LockedSource_F063_950c90::Add` (GUESS) | `sse-steam-1-7-104` / `0x950c90` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x950c90.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_950e70` | `p117_950e70::LockedSource_F068_950e70::Remove` (GUESS) | `sse-steam-1-7-104` / `0x950e70` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x950e70.json` | mapped, record awaiting review | - | - |
 | - | `MagicFavorites::SetFavorite` (COMMUNITY) | `sse-steam-1-7-104` / `0x951050` / 241 | - | - | mapped | - | - |
 | - | `MagicFavorites::RemoveFavorite` (COMMUNITY) | `sse-steam-1-7-104` / `0x951150` / 213 | - | - | mapped | - | - |
 | - | `MagicItemData::GetName` (COMMUNITY) | `sse-steam-1-7-104` / `0x951d00` / 9 | - | - | mapped | - | - |
@@ -14103,7 +14257,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `StorageInit9735c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x9735c0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit973600::initialize` (GUESS) | `sse-steam-1-7-104` / `0x973600` / 63 | - | - | mapped | - | - |
 | - | `StorageInit973640::initialize` (GUESS) | `sse-steam-1-7-104` / `0x973640` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_9744e0` | `p117_9744e0::LockedSource_F063_9744e0::Add` (GUESS) | `sse-steam-1-7-104` / `0x9744e0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9744e0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_9746c0` | `p117_9746c0::LockedSource_F068_9746c0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x9746c0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9746c0.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit975770::initialize` (GUESS) | `sse-steam-1-7-104` / `0x975770` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_975c30` | `p117_975c30::LockedSource_F063_975c30::Add` (GUESS) | `sse-steam-1-7-104` / `0x975c30` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x975c30.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_975e10` | `p117_975e10::LockedSource_F068_975e10::Remove` (GUESS) | `sse-steam-1-7-104` / `0x975e10` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x975e10.json` | mapped, record awaiting review | - | - |
 | - | `DeletingLeaf983730::~DeletingLeaf983730` (GUESS) | `sse-steam-1-7-104` / `0x983730` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf9837d0::~DeletingLeaf9837d0` (GUESS) | `sse-steam-1-7-104` / `0x9837d0` / 43 | - | - | mapped | - | - |
 | - | `StorageInit983a30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x983a30` / 63 | - | - | mapped | - | - |
@@ -14116,6 +14274,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf983e50::~DeletingLeaf983e50` (GUESS) | `sse-steam-1-7-104` / `0x983e50` / 43 | - | - | mapped | - | - |
 | - | `StorageInit984cd0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x984cd0` / 63 | - | - | mapped | - | - |
 | - | `StorageInit986370::initialize` (GUESS) | `sse-steam-1-7-104` / `0x986370` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_986850` | `p117_986850::LockedSource_F063_986850::Add` (GUESS) | `sse-steam-1-7-104` / `0x986850` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x986850.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_986a30` | `p117_986a30::LockedSource_F068_986a30::Remove` (GUESS) | `sse-steam-1-7-104` / `0x986a30` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x986a30.json` | mapped, record awaiting review | - | - |
 | - | `StorageInit988fc0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x988fc0` / 63 | - | - | mapped | - | - |
 | `leaves/LeafForward98c330` | `LeafForward98c330::Forward` (GUESS) | `sse-steam-1-7-104` / `0x98c330` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x98c330.json` | matched | family | open |
 | - | `StorageInit98c590::initialize` (GUESS) | `sse-steam-1-7-104` / `0x98c590` / 63 | - | - | mapped | - | - |
@@ -14240,6 +14400,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DeletingLeaf9c2a80::~DeletingLeaf9c2a80` (GUESS) | `sse-steam-1-7-104` / `0x9c2a80` / 43 | - | - | mapped | - | - |
 | - | `StorageInit9c2bb0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x9c2bb0` / 63 | - | - | mapped | - | - |
 | `leaves/Leaf9c2bf0` | `Leaf9c2bf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9c2bf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c2bf0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_9c2c00` | `p117_9c2c00::LockedSource_F063_9c2c00::Add` (GUESS) | `sse-steam-1-7-104` / `0x9c2c00` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c2c00.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_9c3070` | `p117_9c3070::LockedSource_F068_9c3070::Remove` (GUESS) | `sse-steam-1-7-104` / `0x9c3070` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c3070.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForward9c51f0` | `LeafForward9c51f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x9c51f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c51f0.json` | matched | family | open |
 | `leaves/Leaf9c5890` | `Leaf9c5890::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9c5890` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c5890.json` | matched | family | open |
 | `leaves/Leaf9c58a0` | `Leaf9c58a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9c58a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9c58a0.json` | matched | family | open |
@@ -14251,6 +14413,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf9cb900` | `Leaf9cb900::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9cb900` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cb900.json` | matched | family | open |
 | `leaves/Leaf9cb910` | `Leaf9cb910::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9cb910` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cb910.json` | matched | family | open |
 | `leaves/Leaf9cb920` | `Leaf9cb920::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9cb920` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cb920.json` | matched | family | open |
+| `bsengine/LockedSource_F063_9cb930` | `p117_9cb930::LockedSource_F063_9cb930::Add` (GUESS) | `sse-steam-1-7-104` / `0x9cb930` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cb930.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_9cc910` | `p117_9cc910::LockedSource_F068_9cc910::Remove` (GUESS) | `sse-steam-1-7-104` / `0x9cc910` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cc910.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_9ccaa0` | `p117_9ccaa0::LockedSource_F068_9ccaa0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x9ccaa0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9ccaa0.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf9ce440` | `Leaf9ce440::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9ce440` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9ce440.json` | matched | family | open |
 | `leaves/Leaf9cf200` | `Leaf9cf200::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x9cf200` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9cf200.json` | matched | family | open |
 | `leaves/LeafForward9d2920` | `LeafForward9d2920::Forward` (GUESS) | `sse-steam-1-7-104` / `0x9d2920` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9d2920.json` | matched | family | open |
@@ -15239,6 +15404,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/BSXAudio2DataSrc` | `BSXAudio2DataSrc::~BSXAudio2DataSrc` (COMMUNITY) | `sse-steam-1-7-104` / `0xcdc8e0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdc8e0.json` | matched | full | open |
 | - | `TableStoreLeafcde9c0::~TableStoreLeafcde9c0` (GUESS) | `sse-steam-1-7-104` / `0xcde9c0` / 11 | - | - | mapped | - | - |
 | - | `StorageInitcdec10::initialize` (GUESS) | `sse-steam-1-7-104` / `0xcdec10` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_cdef90` | `p117_cdef90::LockedSource_F063_cdef90::Add` (GUESS) | `sse-steam-1-7-104` / `0xcdef90` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdef90.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_cdf170` | `p117_cdf170::LockedSource_F068_cdf170::Remove` (GUESS) | `sse-steam-1-7-104` / `0xcdf170` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdf170.json` | mapped, record awaiting review | - | - |
 | `leaves/Leafcdfdb0` | `Leafcdfdb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcdfdb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfdb0.json` | matched | family | open |
 | `leaves/Leafcdfee0` | `Leafcdfee0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcdfee0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfee0.json` | matched | family | open |
 | `leaves/Leafce0ca0` | `Leafce0ca0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce0ca0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce0ca0.json` | matched | family | open |
@@ -15249,6 +15416,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leafce1930` | `Leafce1930::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce1930` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce1930.json` | matched | family | open |
 | - | `DeletingLeafce1ce0::~DeletingLeafce1ce0` (GUESS) | `sse-steam-1-7-104` / `0xce1ce0` / 43 | - | - | mapped | - | - |
 | - | `StorageInitce1d80::initialize` (GUESS) | `sse-steam-1-7-104` / `0xce1d80` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_ce1eb0` | `p117_ce1eb0::LockedSource_F063_ce1eb0::Add` (GUESS) | `sse-steam-1-7-104` / `0xce1eb0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce1eb0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_ce2090` | `p117_ce2090::LockedSource_F068_ce2090::Remove` (GUESS) | `sse-steam-1-7-104` / `0xce2090` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce2090.json` | mapped, record awaiting review | - | - |
 | - | `BSReadWriteLock::LockForRead` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3250` / 112 | - | - | mapped | - | - |
 | - | `BSReadWriteLock::LockForWrite` (COMMUNITY) | `sse-steam-1-7-104` / `0xce32d0` / 126 | - | - | mapped | - | - |
 | `bsengine/BSReadWriteLock` | `BSReadWriteLock::UnlockForRead` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3510` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3510.json` | matched | label-only | - |
@@ -15272,6 +15441,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/BSThread` | `BSThread::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0xceb190` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xceb190.json` | matched | full | open |
 | `leaves/Leafceb260` | `Leafceb260::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xceb260` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xceb260.json` | matched | family | open |
 | - | `StorageInitceb6e0::initialize` (GUESS) | `sse-steam-1-7-104` / `0xceb6e0` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_ceb960` | `p117_ceb960::LockedSource_F063_ceb960::Add` (GUESS) | `sse-steam-1-7-104` / `0xceb960` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xceb960.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_cebb40` | `p117_cebb40::LockedSource_F068_cebb40::Remove` (GUESS) | `sse-steam-1-7-104` / `0xcebb40` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcebb40.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeafcebd40::~TableStoreLeafcebd40` (GUESS) | `sse-steam-1-7-104` / `0xcebd40` / 11 | - | - | mapped | - | - |
 | - | `TableStoreLeafcebd80::~TableStoreLeafcebd80` (GUESS) | `sse-steam-1-7-104` / `0xcebd80` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeafcebdb0::~DeletingLeafcebdb0` (GUESS) | `sse-steam-1-7-104` / `0xcebdb0` / 43 | - | - | mapped | - | - |
@@ -15528,6 +15699,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leafecbac0` | `Leafecbac0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xecbac0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecbac0.json` | matched | family | open |
 | `leaves/Leafecc2e0` | `Leafecc2e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xecc2e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecc2e0.json` | matched | family | open |
 | `leaves/Leafecc2f0` | `Leafecc2f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xecc2f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecc2f0.json` | matched | family | open |
+| `bsengine/LockedSource_F063_ecc8a0` | `p117_ecc8a0::LockedSource_F063_ecc8a0::Add` (GUESS) | `sse-steam-1-7-104` / `0xecc8a0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecc8a0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_ecd110` | `p117_ecd110::LockedSource_F068_ecd110::Remove` (GUESS) | `sse-steam-1-7-104` / `0xecd110` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecd110.json` | mapped, record awaiting review | - | - |
 | - | `TableStoreLeafecd3f0::~TableStoreLeafecd3f0` (GUESS) | `sse-steam-1-7-104` / `0xecd3f0` / 11 | - | - | mapped | - | - |
 | - | `DeletingLeafecde10::~DeletingLeafecde10` (GUESS) | `sse-steam-1-7-104` / `0xecde10` / 43 | - | - | mapped | - | - |
 | - | `TableStoreLeafed07a0::~TableStoreLeafed07a0` (GUESS) | `sse-steam-1-7-104` / `0xed07a0` / 11 | - | - | mapped | - | - |
@@ -15539,6 +15712,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leafed1db0` | `Leafed1db0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed1db0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed1db0.json` | matched | full | checked |
 | `leaves/Leafed1f80` | `Leafed1f80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed1f80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed1f80.json` | matched | family | open |
 | `leaves/Leafed2630` | `Leafed2630::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed2630` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed2630.json` | matched | full | checked |
+| `bsengine/LockedSource_F063_ed2f90` | `p117_ed2f90::LockedSource_F063_ed2f90::Add` (GUESS) | `sse-steam-1-7-104` / `0xed2f90` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed2f90.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_ed3110` | `p117_ed3110::LockedSource_F063_ed3110::Add` (GUESS) | `sse-steam-1-7-104` / `0xed3110` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3110.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F063_ed3290` | `p117_ed3290::LockedSource_F063_ed3290::Add` (GUESS) | `sse-steam-1-7-104` / `0xed3290` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3290.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_ed3730` | `p117_ed3730::LockedSource_F068_ed3730::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed3730` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3730.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_ed38c0` | `p117_ed38c0::LockedSource_F068_ed38c0::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed38c0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed38c0.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_ed3a50` | `p117_ed3a50::LockedSource_F068_ed3a50::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed3a50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3a50.json` | mapped, record awaiting review | - | - |
 | `leaves/LeafForwarded54e0` | `LeafForwarded54e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xed54e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed54e0.json` | matched | family | open |
 | `leaves/Leafed7600` | `Leafed7600::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed7600` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed7600.json` | matched | family | open |
 | `leaves/Leafed79c0` | `Leafed79c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed79c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed79c0.json` | matched | family | open |
@@ -19419,6 +19598,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `TableStoreLeaf158fb70::~TableStoreLeaf158fb70` (GUESS) | `sse-steam-1-7-104` / `0x158fb70` / 11 | - | - | mapped | - | - |
 | `leaves/LeafForward1596570` | `LeafForward1596570::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1596570` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1596570.json` | matched | family | open |
 | - | `StorageInit1596930::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1596930` / 63 | - | - | mapped | - | - |
+| `bsengine/LockedSource_F063_1596c70` | `p117_1596c70::LockedSource_F063_1596c70::Add` (GUESS) | `sse-steam-1-7-104` / `0x1596c70` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1596c70.json` | mapped, record awaiting review | - | - |
+| `bsengine/LockedSource_F068_1596e50` | `p117_1596e50::LockedSource_F068_1596e50::Remove` (GUESS) | `sse-steam-1-7-104` / `0x1596e50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1596e50.json` | mapped, record awaiting review | - | - |
 | `leaves/Leaf1599060` | `Leaf1599060::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599060` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599060.json` | matched | full | checked |
 | `leaves/Leaf1599070` | `Leaf1599070::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599070` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599070.json` | matched | family | open |
 | `leaves/Leaf1599080` | `Leaf1599080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599080` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599080.json` | matched | family | open |
