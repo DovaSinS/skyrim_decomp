@@ -1,0 +1,70 @@
+name: Advisory target hashes
+on:
+  pull_request:
+    paths:
+      - 'reconstruction/**'
+  push:
+    branches: [main]
+    paths:
+      - 'data/target-hashes/**'
+      - 'tools/target_hashes.py'
+      - 'tools/ci_target_hash_check.py'
+      - '.github/workflows/ci-target-hash.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  target-hashes:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # PR tools, recipes and target commitments always come from the immutable base.
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - name: Read PR source blobs and enforce contributor intake
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags origin $env:PR_HEAD
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tools/ci_target_hash_check.py prepare --base "$env:BASE_SHA" --head "$env:PR_HEAD" --work "$env:RUNNER_TEMP/target-hash" --out "$env:RUNNER_TEMP/intake.json"
+      - name: Install pinned v141 (compiler-package cache prohibited)
+        id: install
+        shell: pwsh
+        run: tools/ci_msvc_install.ps1 -Source v141
+      - name: Probe exact compiler pins
+        id: probe
+        shell: pwsh
+        env:
+          MSVC_BIN: ${{ steps.install.outputs.bin }}
+        run: python tools/ci_hash_check.py probe --bin "$env:MSVC_BIN" --out "$env:RUNNER_TEMP/probe.json"
+      - name: Try official VS2017 with the fixed catalog on pin mismatch
+        if: steps.probe.outputs.toolset != 'MATCH'
+        id: fallback
+        shell: pwsh
+        run: tools/ci_msvc_install.ps1 -Source vs2017
+      - name: Compile changed units and check published target hashes
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          MSVC_BIN: ${{ steps.fallback.outputs.bin || steps.install.outputs.bin }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python tools/ci_target_hash_check.py check --base "$env:BASE_SHA" --head "$env:PR_HEAD" --bin "$env:MSVC_BIN" --work "$env:RUNNER_TEMP/target-hash" --out "$env:RUNNER_TEMP/target-result.json"
+      - name: Compile 50 accepted references twice against published target hashes
+        if: github.event_name != 'pull_request'
+        shell: pwsh
+        env:
+          MSVC_BIN: ${{ steps.fallback.outputs.bin || steps.install.outputs.bin }}
+          BASE_SHA: ${{ github.sha }}
+        run: python tools/ci_target_hash_check.py sample --base "$env:BASE_SHA" --bin "$env:MSVC_BIN" --work "$env:RUNNER_TEMP/target-hash" --out "$env:RUNNER_TEMP/target-result.json"
+      # No cache/artifact: compiler packages, objects and diagnostics remain in runner scratch.
