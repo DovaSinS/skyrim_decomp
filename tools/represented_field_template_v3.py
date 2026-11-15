@@ -14,7 +14,7 @@ EVIDENCE = 'findings/ghidra-import.md'
 
 
 def origin():
-    return dict(family='represented-field-leaf', version='3',
+    return dict(family='represented-field-leaf', version='3-labels2',
                 template_digest=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
 
 
@@ -40,7 +40,7 @@ def emit(row):
 // Recipe: {RECIPE}
 // Source exposure: mixed (represented declarations and local binary analysis).
 // Drafted by tools/represented_field_template_v3.py (GPT-6.1 Sol).
-// Labels: v3
+// Labels: v2
 // {cls}, Read: GUESS(low) STANDIN
 // Code origin: original trivial field operation using an included represented layout.
 // No external implementation body reused; included declarations retain their own provenance.
