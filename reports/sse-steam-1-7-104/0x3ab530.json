@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "2cb9d06ef23f8a9867454dd69550846059ae5f4215c379a6f65012b8890a68df",
+        "object_sha256": "e89adc58d3c5dd4c42b26d189844e0b3b7c8c4c94466eee3aa6f6b2066679008",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/forms/BGSSceneActionDialogue.cpp",
@@ -46,7 +46,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "1bfea51dc60bc2085e4f0c1d468d9c4f0d4e19431e6add5ef723862f714ab828",
+        "object_sha256": "fc60abb7b2415eeddd253205b66c8a678f691dd644ee5850ff418015ffec708c",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/forms/BGSSceneActionDialogue.cpp",
@@ -64,7 +64,8 @@
     "/showIncludes was measured once, on the first accepted unit, to change no object section except the object-path record in .debug$S (and the .chks64 checksum of it); it was not re-measured for this unit.",
     "Whole-object hashes differ between compiles in the COFF timestamp, the object path recorded in .debug$S (each host compiles to its own path) and the .chks64 checksum of that section.",
     "A byte match shows that this source and recipe produce the checked code. It does not verify the community name, and it does not show that the original source looked like this.",
-    "Source state: working tree on base commit 2d834816263e41d7cfd8e3e4b4169cfd02d31a99, with uncommitted changes to reconstruction/forms/BGSSceneActionDialogue.cpp, reconstruction/forms/BGSSceneActionDialogue.h, reports/sse-steam-1-7-104/unit-symbols/c5826cf71d7675c91912db8348418b134216904344105e4ba27e7eda657333ed.json at confirm time. The runs bind the unit digest, recipe and symbol-map hashes above and comparator source sha256 a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55 (each report's comparator.source_sha256), not a commit; tools/check.py recomputes them from whatever tree this record is committed in."
+    "p172: additive same-class source reconciliation; preserved existing definitions.",
+    "Source state: working tree on base commit e1bc3ca296194347f5db5917e6abbefc1008a82c, with uncommitted changes to reconstruction/forms/BGSSceneActionDialogue.cpp, reconstruction/forms/BGSSceneActionDialogue.h at confirm time. The runs bind the unit digest, recipe and symbol-map hashes above and comparator source sha256 6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46 (each report's comparator.source_sha256), not a commit; tools/check.py recomputes them from whatever tree this record is committed in."
   ],
   "recipe": {
     "path": "reconstruction/recipes/msvc-19.16.27054-o2.json",
@@ -80,11 +81,11 @@
         "candidate": {
           "code_section_sha256": "938c5cb393b5131191947802a9c6e4364d9c76f198af73375648c7490f02936d",
           "code_sections": 1,
-          "object_sha256": "2cb9d06ef23f8a9867454dd69550846059ae5f4215c379a6f65012b8890a68df"
+          "object_sha256": "e89adc58d3c5dd4c42b26d189844e0b3b7c8c4c94466eee3aa6f6b2066679008"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -141,7 +142,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/forms/BGSSceneActionDialogue.cpp",
-          "source_revision": "8e7ee356e3703d58236ba48b4ab54bed0c25ddb677ff7209376c2aa4e477366c"
+          "source_revision": "20f0ba0fbd2361eb6792f4bbbc5a7a654e48a885fe7af13c0755e8c827f2ffa8"
         },
         "symbol_map_sha256": "c5826cf71d7675c91912db8348418b134216904344105e4ba27e7eda657333ed",
         "target": {
@@ -159,11 +160,11 @@
         "candidate": {
           "code_section_sha256": "938c5cb393b5131191947802a9c6e4364d9c76f198af73375648c7490f02936d",
           "code_sections": 1,
-          "object_sha256": "1bfea51dc60bc2085e4f0c1d468d9c4f0d4e19431e6add5ef723862f714ab828"
+          "object_sha256": "fc60abb7b2415eeddd253205b66c8a678f691dd644ee5850ff418015ffec708c"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -220,7 +221,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/forms/BGSSceneActionDialogue.cpp",
-          "source_revision": "8e7ee356e3703d58236ba48b4ab54bed0c25ddb677ff7209376c2aa4e477366c"
+          "source_revision": "20f0ba0fbd2361eb6792f4bbbc5a7a654e48a885fe7af13c0755e8c827f2ffa8"
         },
         "symbol_map_sha256": "c5826cf71d7675c91912db8348418b134216904344105e4ba27e7eda657333ed",
         "target": {
@@ -238,11 +239,11 @@
         "candidate": {
           "code_section_sha256": "938c5cb393b5131191947802a9c6e4364d9c76f198af73375648c7490f02936d",
           "code_sections": 1,
-          "object_sha256": "1bfea51dc60bc2085e4f0c1d468d9c4f0d4e19431e6add5ef723862f714ab828"
+          "object_sha256": "fc60abb7b2415eeddd253205b66c8a678f691dd644ee5850ff418015ffec708c"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -299,7 +300,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/forms/BGSSceneActionDialogue.cpp",
-          "source_revision": "8e7ee356e3703d58236ba48b4ab54bed0c25ddb677ff7209376c2aa4e477366c"
+          "source_revision": "20f0ba0fbd2361eb6792f4bbbc5a7a654e48a885fe7af13c0755e8c827f2ffa8"
         },
         "symbol_map_sha256": "c5826cf71d7675c91912db8348418b134216904344105e4ba27e7eda657333ed",
         "target": {
@@ -312,7 +313,7 @@
   ],
   "source": {
     "compiled": "reconstruction/forms/BGSSceneActionDialogue.cpp",
-    "digest": "8e7ee356e3703d58236ba48b4ab54bed0c25ddb677ff7209376c2aa4e477366c",
+    "digest": "20f0ba0fbd2361eb6792f4bbbc5a7a654e48a885fe7af13c0755e8c827f2ffa8",
     "digest_method": "tu-sha256-v1",
     "translation_unit": [
       "reconstruction/forms/BGSSceneActionDialogue.cpp",

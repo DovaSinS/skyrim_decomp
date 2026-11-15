@@ -22,6 +22,19 @@
 #include "BSProceduralLightningController.h"
 
 // RVA 0xffd880, 12 bytes.
+NiInterpolator* BSProceduralLightningController::CreatePoseInterpolator(std::uint16_t)
+{
+    return nullptr;
+}
+
+void BSProceduralLightningController::SynchronizePoseInterpolator(NiInterpolator*, std::uint16_t)
+{
+}
+
+void BSProceduralLightningController::GuaranteeTimeRange(float, float)
+{
+}
+
 NiInterpolator* BSProceduralLightningController::GetInterpolator(std::uint16_t a_index) const
 {
     return interpolators[a_index];

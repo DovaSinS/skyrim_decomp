@@ -38,6 +38,8 @@ public:
     void SetFlagBit(std::uint32_t a_bit, bool a_value, bool a_unknown);
 };
 
+class TESCombatStyle;
+
 class TESActorBase : public TESBoundAnimObject
 {
 public:
@@ -45,6 +47,11 @@ public:
     virtual bool GetIsPlayerOwner() const;  // compared: 0x3b03a0
     virtual bool IsAutoCalc() const;  // compared: 0x3afed0
     virtual void SetAutoCalc(bool a_autoCalc);  // compared: 0x3afef0
+    // GetCombatStyle, GetHasPLSpecTex: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+    // RestoreActorValue argument types: GUESS(low)
+    virtual TESCombatStyle* GetCombatStyle();
+    virtual bool GetHasPLSpecTex() const;
+    virtual void RestoreActorValue(std::uint32_t a_modifier, std::uint32_t a_akValue, float a_value);
     virtual ~TESActorBase();  // compared: 0x3cbc60 (scalar deleting destructor)
 
     std::uint8_t padding[0x130];

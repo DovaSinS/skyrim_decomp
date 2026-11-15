@@ -285,6 +285,8 @@ public:
     virtual void   unk0a();
     virtual void   unk0b();
     virtual Actor* GetCasterAsActor() const;  // 0C
+    virtual void   SetCurrentSpellImpl(MagicItem* a_spell);  // compared: 0x5cd260
+    virtual void   SelectSpellImpl();  // compared: 0x5cd2e0
 
     float        GetCurrentSpellCost();
     void         InterruptCast(bool a_refund);

@@ -106,6 +106,10 @@ static_assert(sizeof(NiInterpController) == 0x48, "NiInterpController size");
 class BSProceduralLightningController : public NiInterpController
 {
 public:
+    // CreatePoseInterpolator, SynchronizePoseInterpolator, GuaranteeTimeRange: COMMUNITY(powerof3/CommonLibSSE@654e55f, GPL-3.0); compared at RVA 0xffd8f0, 0xffd900, 0xffd9e0
+    virtual NiInterpolator* CreatePoseInterpolator(std::uint16_t a_index);  // compared: 0xffd8f0
+    virtual void SynchronizePoseInterpolator(NiInterpolator* a_interp, std::uint16_t a_index = 0);  // compared: 0xffd900
+    virtual void GuaranteeTimeRange(float a_startTime, float a_endTime);  // compared: 0xffd9e0
     // GetInterpolatorCount: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
     virtual std::uint32_t GetInterpolatorCount() const;
     // GetInterpolator: COMMUNITY(powerof3/CommonLibSSE@654e55f, GPL-3.0); RVA 0xffd880

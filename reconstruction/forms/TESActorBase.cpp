@@ -58,3 +58,20 @@ void TESActorBase::SetAutoCalc(bool a_autoCalc)
 // TODO body: RVA 0x3cbc60, 52 bytes, TESActorBase::~TESActorBase; compared as the scalar deleting
 // destructor. If the target calls a separate destructor, keep only the declaration and delete this
 // definition (cookbook rule 18).
+
+// TESActorBase::GetCombatStyle: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+TESCombatStyle* TESActorBase::GetCombatStyle()
+{
+    return nullptr;
+}
+
+// TESActorBase::GetHasPLSpecTex: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+bool TESActorBase::GetHasPLSpecTex() const
+{
+    return false;
+}
+
+// TESActorBase::RestoreActorValue: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+void TESActorBase::RestoreActorValue(std::uint32_t a_modifier, std::uint32_t a_akValue, float a_value)
+{
+}

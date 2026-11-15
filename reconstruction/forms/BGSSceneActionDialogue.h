@@ -37,6 +37,9 @@ class BGSSceneActionDialogue : public BGSSceneActionBase
 {
 public:
     BGSSceneActionDialogue();
+    // BGSSceneActionDialogue::GetType: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); compared at RVA 0x3ab520; the underlying type is a stand-in of four bytes, and only the zero value is returned
+    enum class Type : std::uint32_t {};
+    virtual Type GetType() const;  // compared: 0x3ab520
     virtual EmotionType GetEmotionType() const;  // compared: 0x3ab280
     virtual std::uint32_t GetEmotionValue() const;  // compared: 0x3ab290
     virtual bool Loops() const;  // compared: 0x3ab530

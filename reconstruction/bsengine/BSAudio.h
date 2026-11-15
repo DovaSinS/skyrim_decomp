@@ -39,10 +39,15 @@ public:
 
 extern BSAudioMonitor::Receiver g_bsAudioDefaultReceiver;
 
+class BSIReverbType;
+
 class BSAudio
 {
 public:
     virtual void Shutdown();  // compared: 0xcd4b70
+    virtual void ApplyReverbType(const BSIReverbType* a_reverbType, std::uint32_t a_tickLength);  // compared: 0xcd4ba0
+    virtual std::uint32_t CreateMonitor();  // compared: 0xcd4c10
+    virtual void PostGameSoundUpdates();  // compared: 0xcd4c30
     virtual bool Init(REX::W32::HWND* a_wnd);  // compared: 0xcd4b60
     virtual BSAudioMonitor::Receiver GetReceiver(std::uint32_t a_monitor);  // compared: 0xcd4c20
 

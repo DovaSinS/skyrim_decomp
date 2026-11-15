@@ -31,6 +31,11 @@ BGSSceneActionDialogue::BGSSceneActionDialogue()
 {
 }
 
+BGSSceneActionDialogue::Type BGSSceneActionDialogue::GetType() const
+{
+    return static_cast<Type>(0);
+}
+
 EmotionType BGSSceneActionDialogue::GetEmotionType() const
 {
     return static_cast<EmotionType>(RawAt<std::uint32_t>(this, 0x38));

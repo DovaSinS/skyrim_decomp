@@ -16,7 +16,20 @@
 // community names or that the original source looked like this.
 #include "NiGeometryData.h"
 
-// TODO body: RVA 0xefbff0, 5 bytes, NiGeometryData::GetActiveVertexCount.
+NiTriShapeData* NiGeometryData::AsTriShapeData()
+{
+    return nullptr;
+}
+
+NiTriStripsData* NiGeometryData::AsTriStripsData()
+{
+    return nullptr;
+}
+
+void NiGeometryData::SetActiveVertexCount(std::uint16_t)
+{
+}
+
 std::uint16_t NiGeometryData::GetActiveVertexCount() const
 {
     return activeVertexCount;

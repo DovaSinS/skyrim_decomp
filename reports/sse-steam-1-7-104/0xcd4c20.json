@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "de27150d65f5011cc1a5036d691d188e3929e6927940c3b13a6d74b987f546f9",
+        "object_sha256": "d915df048a9097b13f0c102ac9a8d5783008287c39b572bf424f7e98ab2ca1d0",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsengine/BSAudio.cpp",
@@ -46,7 +46,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "f46dbc22bf1c8989e440e82be650d151e08f86d35f41d28cfc76cb1f94784c2d",
+        "object_sha256": "c7d9e017ef2c2bfdd0d2e94a5ebbb3151a4c943cd17f029b1e065bcf5279b123",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsengine/BSAudio.cpp",
@@ -64,7 +64,8 @@
     "/showIncludes was measured once, on the first accepted unit, to change no object section except the object-path record in .debug$S (and the .chks64 checksum of it); it was not re-measured for this unit.",
     "Whole-object hashes differ between compiles in the COFF timestamp, the object path recorded in .debug$S (each host compiles to its own path) and the .chks64 checksum of that section.",
     "A byte match shows that this source and recipe produce the checked code. It does not verify the community name, and it does not show that the original source looked like this.",
-    "Source state: working tree on base commit 7e48c6d918ff9267a936f03344ae1b650fc2effd, with uncommitted changes to reconstruction/bsengine/BSAudio.cpp, reconstruction/bsengine/BSAudio.h, reports/sse-steam-1-7-104/unit-symbols/f5c588c6be7706dd14c13b988cb8e83bd0a8b711c2a6dd4563ecfbd878fc4dd5.json at confirm time. The runs bind the unit digest, recipe and symbol-map hashes above and comparator source sha256 a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55 (each report's comparator.source_sha256), not a commit; tools/check.py recomputes them from whatever tree this record is committed in."
+    "p172: additive same-class source reconciliation; preserved existing definitions.",
+    "Source state: working tree on base commit e1bc3ca296194347f5db5917e6abbefc1008a82c, with uncommitted changes to reconstruction/bsengine/BSAudio.cpp, reconstruction/bsengine/BSAudio.h at confirm time. The runs bind the unit digest, recipe and symbol-map hashes above and comparator source sha256 6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46 (each report's comparator.source_sha256), not a commit; tools/check.py recomputes them from whatever tree this record is committed in."
   ],
   "recipe": {
     "path": "reconstruction/recipes/msvc-19.16.27054-o2.json",
@@ -80,11 +81,11 @@
         "candidate": {
           "code_section_sha256": "8281cb8b56c9a34c576e132c41be36887d2284bb873d85106e3861b3262c22f6",
           "code_sections": 1,
-          "object_sha256": "de27150d65f5011cc1a5036d691d188e3929e6927940c3b13a6d74b987f546f9"
+          "object_sha256": "d915df048a9097b13f0c102ac9a8d5783008287c39b572bf424f7e98ab2ca1d0"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -143,7 +144,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsengine/BSAudio.cpp",
-          "source_revision": "8f91560358b23a19d453805b51338145899a22d4264d61d0efcd08a538612933"
+          "source_revision": "103f32117fa3d38e0cab8080c862aed2dcfeebc668603f9454e85ec73d301cb4"
         },
         "symbol_map_sha256": "f5c588c6be7706dd14c13b988cb8e83bd0a8b711c2a6dd4563ecfbd878fc4dd5",
         "target": {
@@ -161,11 +162,11 @@
         "candidate": {
           "code_section_sha256": "8281cb8b56c9a34c576e132c41be36887d2284bb873d85106e3861b3262c22f6",
           "code_sections": 1,
-          "object_sha256": "f46dbc22bf1c8989e440e82be650d151e08f86d35f41d28cfc76cb1f94784c2d"
+          "object_sha256": "c7d9e017ef2c2bfdd0d2e94a5ebbb3151a4c943cd17f029b1e065bcf5279b123"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -224,7 +225,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsengine/BSAudio.cpp",
-          "source_revision": "8f91560358b23a19d453805b51338145899a22d4264d61d0efcd08a538612933"
+          "source_revision": "103f32117fa3d38e0cab8080c862aed2dcfeebc668603f9454e85ec73d301cb4"
         },
         "symbol_map_sha256": "f5c588c6be7706dd14c13b988cb8e83bd0a8b711c2a6dd4563ecfbd878fc4dd5",
         "target": {
@@ -242,11 +243,11 @@
         "candidate": {
           "code_section_sha256": "8281cb8b56c9a34c576e132c41be36887d2284bb873d85106e3861b3262c22f6",
           "code_sections": 1,
-          "object_sha256": "f46dbc22bf1c8989e440e82be650d151e08f86d35f41d28cfc76cb1f94784c2d"
+          "object_sha256": "c7d9e017ef2c2bfdd0d2e94a5ebbb3151a4c943cd17f029b1e065bcf5279b123"
         },
         "comparator": {
-          "source_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
-          "version": "0.6.0"
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
         },
         "contract_version": 2,
         "coverage": {
@@ -305,7 +306,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsengine/BSAudio.cpp",
-          "source_revision": "8f91560358b23a19d453805b51338145899a22d4264d61d0efcd08a538612933"
+          "source_revision": "103f32117fa3d38e0cab8080c862aed2dcfeebc668603f9454e85ec73d301cb4"
         },
         "symbol_map_sha256": "f5c588c6be7706dd14c13b988cb8e83bd0a8b711c2a6dd4563ecfbd878fc4dd5",
         "target": {
@@ -318,7 +319,7 @@
   ],
   "source": {
     "compiled": "reconstruction/bsengine/BSAudio.cpp",
-    "digest": "8f91560358b23a19d453805b51338145899a22d4264d61d0efcd08a538612933",
+    "digest": "103f32117fa3d38e0cab8080c862aed2dcfeebc668603f9454e85ec73d301cb4",
     "digest_method": "tu-sha256-v1",
     "translation_unit": [
       "reconstruction/bsengine/BSAudio.cpp",

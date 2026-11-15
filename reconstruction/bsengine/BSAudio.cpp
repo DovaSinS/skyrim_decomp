@@ -17,6 +17,19 @@
 // community names or that the original source looked like this.
 #include "BSAudio.h"
 
+void BSAudio::ApplyReverbType(const BSIReverbType*, std::uint32_t)
+{
+}
+
+std::uint32_t BSAudio::CreateMonitor()
+{
+    return 0;
+}
+
+void BSAudio::PostGameSoundUpdates()
+{
+}
+
 void BSAudio::Shutdown()
 {
     field08 = false;

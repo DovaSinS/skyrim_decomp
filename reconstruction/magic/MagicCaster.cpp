@@ -16,6 +16,19 @@
 // are guessed names (labelled in MagicCaster.h) bound by RVA hint. A byte match would not verify the names or the original source.
 #include "MagicCaster.h"
 
+Actor* MagicCaster::GetCasterAsActor() const
+{
+    return nullptr;
+}
+
+void MagicCaster::SetCurrentSpellImpl(MagicItem*)
+{
+}
+
+void MagicCaster::SelectSpellImpl()
+{
+}
+
 float MagicCaster::GetCurrentSpellCost()
 {
     MagicItem* spell = currentSpell;
