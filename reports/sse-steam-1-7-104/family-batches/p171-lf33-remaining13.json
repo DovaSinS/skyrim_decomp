@@ -1,0 +1,38 @@
+{
+  "batch_schema": 1,
+  "commitment": null,
+  "family_path": "reports/sse-steam-1-7-104/families/3b3c9c9bbe48aacdbd7782a83339e004d448941f2835dd83ee687e6efcb5197c.json",
+  "family_sha256": "230d447e23272e465749eb6ed59a7a675234b2971eaefd8b76b0bb8029c23caa",
+  "members": {
+    "sse-steam-1-7-104-0x2f93c0": "726ceb435273aad3d40d4f7d114a5e534a0251fbb5356ed1a6f4c4912d28a082",
+    "sse-steam-1-7-104-0x6398b0": "a50e8404ca56ead9e733053eb46308fc6bc6bf3ba988e0bcc010a82c1cd5af8a",
+    "sse-steam-1-7-104-0x7dfcf0": "e812e16a855b2779fe4e94098c2d72cf318221f3396f8d757ff134093088e9ec",
+    "sse-steam-1-7-104-0x80d9c0": "253bc893212df9dcd49fa1f5406e346678434f328ff0bb5fc57f4525a8c82776",
+    "sse-steam-1-7-104-0x82f1a0": "0befd2e2a14c0a5d1150f0f38cedd05e83e00d13916c4bbb345e4db74bbc5e7b",
+    "sse-steam-1-7-104-0x82fa90": "f35e17ab107089a6151489bbb62fbd3d75e280696827595a2e41ea3b89746d58",
+    "sse-steam-1-7-104-0x83bc10": "054445b761b5f8ba591e00995cb9b5338e18184c6e37407365974ccdffec86f7",
+    "sse-steam-1-7-104-0x83bc50": "967e0af5cb030a5dfab4347b0571fe8dbe1eaf42fd43946b2dd9fbf248890e4d",
+    "sse-steam-1-7-104-0x83bd60": "693356b16c2448bec8e7a43d489d83c689e875ee12929abdcd6164884421f0a4",
+    "sse-steam-1-7-104-0x83be00": "54a09ecdec6d6f776120c20a9cdc8950a47c31cf684a1a883bb3191ba00afd83",
+    "sse-steam-1-7-104-0xf0f0b0": "3a33fbb347180ea2015807e526d302f4dbb5c520c3688ea10143dbdfa860efcc",
+    "sse-steam-1-7-104-0xfc80c0": "a1579b16f2c04c267230716ca54687c07c3534639c5a6a365beb1fb99deb1fbb",
+    "sse-steam-1-7-104-0xff1b50": "c6f5bd251439767e14e012e05ea5097e2203e1d2ae4107178cc50d98680f8830"
+  },
+  "population": [
+    "sse-steam-1-7-104-0x2f93c0",
+    "sse-steam-1-7-104-0x6398b0",
+    "sse-steam-1-7-104-0x7dfcf0",
+    "sse-steam-1-7-104-0x80d9c0",
+    "sse-steam-1-7-104-0x82f1a0",
+    "sse-steam-1-7-104-0x82fa90",
+    "sse-steam-1-7-104-0x83bc10",
+    "sse-steam-1-7-104-0x83bc50",
+    "sse-steam-1-7-104-0x83bd60",
+    "sse-steam-1-7-104-0x83be00",
+    "sse-steam-1-7-104-0xf0f0b0",
+    "sse-steam-1-7-104-0xfc80c0",
+    "sse-steam-1-7-104-0xff1b50"
+  ],
+  "sample": null,
+  "seed": "p171-remainder-v2-last13-20261116"
+}
