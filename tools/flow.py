@@ -2142,9 +2142,16 @@ def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, p
 
 
 
-def _integration_origin_unchanged(root, base, destination, carried, build_id, rvas):
-    changed_paths = sorted({path for batch in path_batches(carried)
-                            for path in git(root, 'diff', '--name-only', base, destination, '--', *batch).splitlines()})
+def _integration_origin_unchanged(root, base, destination, carried, build_id, rvas, *, headers=()):
+    # A confirmed input may contain unpublished headers, including additions supplied by
+    # this lane's pinned tooling. Only the origin side of that history can stale them.
+    # Keep the existing comparison for records, compiled sources, maps and inventory.
+    headers = set(headers)
+    upstream_base = git(root, 'merge-base', base, destination) if headers else base
+    changed_paths = sorted({path for revision, paths in (
+        (base, set(carried) - headers), (upstream_base, headers))
+        for batch in path_batches(sorted(paths))
+        for path in git(root, 'diff', '--name-only', revision, destination, '--', *batch).splitlines()})
     refuse(not changed_paths, 'origin changed carried files; reconcile before retry: ' + ', '.join(changed_paths))
     old = json.loads(git(root, 'show', base + ':data/progress.json'))
     new = json.loads(git(root, 'show', destination + ':data/progress.json'))
