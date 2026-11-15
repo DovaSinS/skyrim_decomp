@@ -21273,8 +21273,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt1258630` (GUESS) | `sse-steam-1-7-104` / `0x1258630` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1258630.json` | matched | full | checked |
 | `bsengine/LogFunctionCallableLayout` | `LogFunctionCallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259aa0` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1259aa0.json` | matched | full | checked |
 | `bsengine/CopyableLogFunctionCallableLayout` | `CopyableLogFunctionCallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259b00` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1259b00.json` | matched | full | checked |
+| - | `ErasedSignature1259cb0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259cb0` / 33 | - | - | mapped | - | - |
 | `bsengine/LogCallableInterfaceLayout` | `LogCallableInterfaceLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259ce0` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1259ce0.json` | matched | full | checked |
+| - | `ErasedSignature1259d10CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259d10` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1259cb0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259d40` / 33 | - | - | mapped | - | - |
 | `bsengine/LogCopyableInterfaceLayout` | `LogCopyableInterfaceLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259d70` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1259d70.json` | matched | full | checked |
+| - | `ErasedSignature1259d10CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1259da0` / 33 | - | - | mapped | - | - |
 | `leaves/Leaf125a6d0` | `Leaf125a6d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x125a6d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x125a6d0.json` | matched | family | open |
 | `leaves/VirtualTail125a820` | `VirtualTail125a820::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x125a820` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x125a820.json` | matched | full | open |
 | `leaves/VirtualTail125a830` | `VirtualTail125a830::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x125a830` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x125a830.json` | matched | family | open |
@@ -21322,6 +21326,16 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt127f340` (GUESS) | `sse-steam-1-7-104` / `0x127f340` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x127f340.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt127f380` (GUESS) | `sse-steam-1-7-104` / `0x127f380` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x127f380.json` | matched | family | open |
 | `leaves/LeafForward12818d0` | `LeafForward12818d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x12818d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12818d0.json` | matched | family | open |
+| - | `ErasedSignature1283250CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283250` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1283280CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283280` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12832b0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12832b0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12832e0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12832e0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1283310CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283310` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1283250CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283340` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1283280CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283370` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12832b0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12833a0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12832e0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12833d0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1283310CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1283400` / 33 | - | - | mapped | - | - |
 | `storage/StorageInit1283430` | `StorageInit1283430::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1283430` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1283430.json` | matched | family | open |
 | `leaves/ReturnLeaf1284150` | `ReturnLeaf1284150::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1284150` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1284150.json` | matched | family | open |
 | `leaves/VirtualTail1284e20` | `VirtualTail1284e20::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x1284e20` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1284e20.json` | matched | family | open |
@@ -21393,6 +21407,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt1299110` (GUESS) | `sse-steam-1-7-104` / `0x1299110` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1299110.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt1299150` (GUESS) | `sse-steam-1-7-104` / `0x1299150` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1299150.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt1299190` (GUESS) | `sse-steam-1-7-104` / `0x1299190` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1299190.json` | matched | family | open |
+| - | `ErasedSignature129a590CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129a590` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129a5c0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129a5c0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129a590CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129a5f0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129a5c0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129a620` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail129b2f0` | `VirtualTail129b2f0::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x129b2f0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129b2f0.json` | matched | family | open |
 | `leaves/VirtualTail129b300` | `VirtualTail129b300::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x129b300` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129b300.json` | matched | family | open |
 | `leaves/VirtualTail129b310` | `VirtualTail129b310::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x129b310` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129b310.json` | matched | family | open |
@@ -21409,6 +21427,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt129d650` (GUESS) | `sse-steam-1-7-104` / `0x129d650` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129d650.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt129d690` (GUESS) | `sse-steam-1-7-104` / `0x129d690` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129d690.json` | matched | family | open |
 | `leaves/LeafForward129e330` | `LeafForward129e330::Forward` (GUESS) | `sse-steam-1-7-104` / `0x129e330` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129e330.json` | matched | family | open |
+| - | `ErasedSignature129e740CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129e740` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129e770CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129e770` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129e740CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129e7a0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature129e770CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x129e7d0` / 33 | - | - | mapped | - | - |
 | `storage/StorageInit129e880` | `StorageInit129e880::initialize` (GUESS) | `sse-steam-1-7-104` / `0x129e880` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129e880.json` | matched | family | open |
 | `storage/StorageInit129e8c0` | `StorageInit129e8c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x129e8c0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129e8c0.json` | matched | family | open |
 | `leaves/VirtualTail129f250` | `VirtualTail129f250::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x129f250` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x129f250.json` | matched | full | open |
@@ -21422,6 +21444,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a0600` (GUESS) | `sse-steam-1-7-104` / `0x12a0600` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a0600.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a0640` (GUESS) | `sse-steam-1-7-104` / `0x12a0640` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a0640.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a0680` (GUESS) | `sse-steam-1-7-104` / `0x12a0680` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a0680.json` | matched | family | open |
+| - | `ErasedSignature12a2770CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12a2770` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12a27a0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12a27a0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12a2770CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12a27d0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12a27a0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12a2800` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail12a30f0` | `VirtualTail12a30f0::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12a30f0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a30f0.json` | matched | family | open |
 | `leaves/VirtualTail12a3100` | `VirtualTail12a3100::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12a3100` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a3100.json` | matched | full | open |
 | `leaves/ReturnLeaf12a3360` | `ReturnLeaf12a3360::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x12a3360` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a3360.json` | matched | family | open |
@@ -21458,6 +21484,22 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a9360` (GUESS) | `sse-steam-1-7-104` / `0x12a9360` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a9360.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a93a0` (GUESS) | `sse-steam-1-7-104` / `0x12a93a0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a93a0.json` | matched | full | checked |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12a93e0` (GUESS) | `sse-steam-1-7-104` / `0x12a93e0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12a93e0.json` | matched | family | open |
+| - | `ErasedSignature12add90CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12add90` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12addc0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12addc0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12addf0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12addf0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade20CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ade20` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade50CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ade50` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade80CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ade80` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12adeb0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adeb0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12adee0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adee0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12add90CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adf10` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12addc0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adf40` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12addf0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adf70` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade20CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adfa0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade50CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12adfd0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12ade80CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ae000` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12adeb0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ae030` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12adee0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12ae060` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail12b1110` | `VirtualTail12b1110::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12b1110` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12b1110.json` | matched | family | open |
 | `leaves/VirtualTail12b1120` | `VirtualTail12b1120::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12b1120` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12b1120.json` | matched | family | open |
 | `leaves/VirtualTail12b1130` | `VirtualTail12b1130::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12b1130` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12b1130.json` | matched | family | open |
@@ -21522,6 +21564,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12bae60` (GUESS) | `sse-steam-1-7-104` / `0x12bae60` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12bae60.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12baea0` (GUESS) | `sse-steam-1-7-104` / `0x12baea0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12baea0.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12baee0` (GUESS) | `sse-steam-1-7-104` / `0x12baee0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12baee0.json` | matched | family | open |
+| - | `ErasedSignature12bc5f0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12bc5f0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12bc620CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12bc620` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12bc5f0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12bc650` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12bc620CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12bc680` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail12bd540` | `VirtualTail12bd540::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12bd540` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12bd540.json` | matched | family | open |
 | `leaves/VirtualTail12bd550` | `VirtualTail12bd550::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12bd550` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12bd550.json` | matched | family | open |
 | `leaves/VirtualTail12bd560` | `VirtualTail12bd560::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12bd560` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12bd560.json` | matched | family | open |
@@ -21582,6 +21628,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/TableStoreLeaf12c8f80` | `TableStoreLeaf12c8f80::~TableStoreLeaf12c8f80` (GUESS) | `sse-steam-1-7-104` / `0x12c8f80` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12c8f80.json` | matched | family | open |
 | - | `DeletingLeaf12c9930::~DeletingLeaf12c9930` (GUESS) | `sse-steam-1-7-104` / `0x12c9930` / 43 | - | - | mapped | - | - |
 | - | `DeletingLeaf12c9960::~DeletingLeaf12c9960` (GUESS) | `sse-steam-1-7-104` / `0x12c9960` / 43 | - | - | mapped | - | - |
+| - | `ErasedSignature12c9990CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12c9990` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12c99c0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12c99c0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12c9990CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12c99f0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12c99c0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12c9a20` / 33 | - | - | mapped | - | - |
 | - | `DeletingLeaf12c9a50::~DeletingLeaf12c9a50` (GUESS) | `sse-steam-1-7-104` / `0x12c9a50` / 43 | - | - | mapped | - | - |
 | `leaves/VirtualTail12cbae0` | `VirtualTail12cbae0::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12cbae0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12cbae0.json` | matched | family | open |
 | `leaves/VirtualTail12cbaf0` | `VirtualTail12cbaf0::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12cbaf0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12cbaf0.json` | matched | full | open |
@@ -21619,6 +21669,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12cd350` (GUESS) | `sse-steam-1-7-104` / `0x12cd350` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12cd350.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12cd390` (GUESS) | `sse-steam-1-7-104` / `0x12cd390` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12cd390.json` | matched | family | open |
 | `unknown/ConditionalVirtualCall` | `ConditionalCallAt12cd3d0` (GUESS) | `sse-steam-1-7-104` / `0x12cd3d0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12cd3d0.json` | matched | family | open |
+| - | `ErasedSignature12cdf40CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12cdf40` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12cdf40CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12cdf70` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail12ceb90` | `VirtualTail12ceb90::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12ceb90` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12ceb90.json` | matched | family | open |
 | `fields/FieldLeaf12ced50` | `FieldLeaf12ced50::Read` (GUESS) | `sse-steam-1-7-104` / `0x12ced50` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12ced50.json` | matched | family | open |
 | `leaves/LeafAddress12ced80` | `LeafAddress12ced80::Address` (GUESS) | `sse-steam-1-7-104` / `0x12ced80` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12ced80.json` | matched | family | open |
@@ -21642,6 +21694,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForward12d17f0` | `LeafForward12d17f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x12d17f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12d17f0.json` | matched | family | open |
 | `leaves/LeafForward12d1860` | `LeafForward12d1860::Forward` (GUESS) | `sse-steam-1-7-104` / `0x12d1860` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12d1860.json` | matched | full | open |
 | - | `DeletingLeaf12d22b0::~DeletingLeaf12d22b0` (GUESS) | `sse-steam-1-7-104` / `0x12d22b0` / 43 | - | - | mapped | - | - |
+| - | `ErasedSignature12d22e0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d22e0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12d2310CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d2310` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12d2340CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d2340` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12d22e0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d2370` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12d2310CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d23a0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature12d2340CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x12d23d0` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail12d3a70` | `VirtualTail12d3a70::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12d3a70` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12d3a70.json` | matched | family | open |
 | `leaves/VirtualTail12d3a80` | `VirtualTail12d3a80::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12d3a80` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12d3a80.json` | matched | family | open |
 | `leaves/VirtualTail12d3a90` | `VirtualTail12d3a90::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x12d3a90` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12d3a90.json` | matched | family | open |
@@ -21943,6 +22001,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForward13360f0` | `LeafForward13360f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x13360f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x13360f0.json` | matched | family | open |
 | `leaves/LeafForward1336b70` | `LeafForward1336b70::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1336b70` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1336b70.json` | matched | family | open |
 | - | `DeletingLeaf1338c70::~DeletingLeaf1338c70` (GUESS) | `sse-steam-1-7-104` / `0x1338c70` / 43 | - | - | mapped | - | - |
+| - | `ErasedSignature1338ca0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338ca0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338cd0CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338cd0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338d00CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338d00` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338d30CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338d30` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338ca0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338d60` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338cd0CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338d90` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338d00CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338dc0` / 33 | - | - | mapped | - | - |
+| - | `ErasedSignature1338d30CopyableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x1338df0` / 33 | - | - | mapped | - | - |
 | `leaves/VirtualTail133b740` | `VirtualTail133b740::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x133b740` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x133b740.json` | matched | family | open |
 | `leaves/VirtualTail133b750` | `VirtualTail133b750::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x133b750` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x133b750.json` | matched | family | open |
 | `leaves/VirtualTail133b760` | `VirtualTail133b760::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x133b760` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x133b760.json` | matched | family | open |
