@@ -2117,7 +2117,7 @@ def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, p
         # Draft/worktree pruning is explicit opt-in via flow.py worktrees prune.
     if integ.get('ci') != 'green':
         started = time.monotonic()
-        r = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        r = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                            cwd=root, capture_output=True, text=True)
         wall = integ.setdefault('wall_seconds', {})
         wall['ci'] = wall.get('ci', 0) + time.monotonic() - started
@@ -2305,7 +2305,7 @@ def _legacy_integrate_groups(root, fdir, names, batch_name, branch='main', push=
         # Draft/worktree pruning is explicit opt-in via flow.py worktrees prune.
     if integ.get('ci') != 'green':
         started = time.monotonic()
-        result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                                 cwd=root, capture_output=True, text=True)
         wall = integ['wall_seconds']
         wall['ci'] = wall.get('ci', 0) + time.monotonic() - started
@@ -2558,6 +2558,7 @@ def parser():
     s.add_argument('run_id')
     s.add_argument('--reason', required=True)
     s = sub.add_parser('tooling-push')
+    s.add_argument('--repair-red', help='exact red SHA; isolated, recorded repair of related advisory inputs only')
     s.add_argument('--branch', default='main')
     s.add_argument('--ci-wait', type=int, default=600)
     s.add_argument('--resume')
@@ -2742,7 +2743,7 @@ def execute(a, root, fdir):
         elif a.cmd == 'tooling-push':
             import flow_lane
             print(json.dumps(flow_lane.publish_tooling(root, fdir, a.branch, a.ci_wait, resume=a.resume, wait_lane=a.wait_lane,
-                             soft_free_gb=a.soft_free_gb, allow_low_disk=a.allow_low_disk), indent=2))
+                             soft_free_gb=a.soft_free_gb, allow_low_disk=a.allow_low_disk, repair_red=a.repair_red), indent=2))
         elif a.cmd == 'cleanup':
             import flow_cleanup
             print(json.dumps(flow_cleanup.cleanup(root, fdir, a.dry_run, a.prune_claims, a.keep_task_prefix), indent=2))

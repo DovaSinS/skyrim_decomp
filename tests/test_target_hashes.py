@@ -126,6 +126,17 @@ class TargetHashTest(unittest.TestCase):
         self.assertEqual(len(set(sample)), 50)
         self.assertTrue(set(sample) <= {row['rva'] for row in manifest['functions']})
 
+    def test_all_offered_candidates_and_individual_claims_have_published_targets(self):
+        manifest=h.load_manifest(ROOT); covered={f['rva'] for f in manifest['functions']}
+        progress=ci.contrib.inventory(ROOT)
+        candidates={ci.contrib.parse_rva(c['rva']) for c in ci.contrib.candidates(ROOT,progress) if c['startable']}
+        offered=json.loads((ROOT/h.OFFERED).read_text())
+        claimed={a for claim in offered['claims'] for a,b in claim['entries'] if b==a+1}
+        self.assertTrue(candidates <= covered)
+        self.assertTrue(claimed <= covered)
+        self.assertFalse(offered['unresolved_rvas'])
+        self.assertTrue(any(f['rva'] not in {p['rva'] for p in progress['functions']} for f in offered['functions']))
+
     def test_windows_checkout_preserves_raw_pin_file_digest(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

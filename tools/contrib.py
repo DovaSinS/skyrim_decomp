@@ -551,6 +551,10 @@ def compile_unit(ctx, root, compiled, recipe_rel, out_dir, tool):
         sdk_root, includes = sdk_include_dirs(ctx, tool['root'], recipe_constants(ctx.repo)['SDK_VERSION'])
         vc_include = Path(tool['bin']).parents[2] / 'include'
         env['INCLUDE'] = ';'.join(str(p) for p in [vc_include, *includes])
+        sdk_version = includes[0].parent.name if includes else recipe_constants(ctx.repo)['SDK_VERSION']
+        env['LIB'] = ';'.join(str(p) for p in (Path(tool['bin']).parents[2] / 'lib/x64',
+            (includes[0].parents[2] if includes else Path(tool['root']) / 'Windows Kits/10') / 'Lib' / sdk_version / 'ucrt/x64',
+            (includes[0].parents[2] if includes else Path(tool['root']) / 'Windows Kits/10') / 'Lib' / sdk_version / 'um/x64'))
         cmd, roots, flavour = [str(Path(tool['bin']) / 'cl.exe')], [tool['root'], sdk_root], 'native'
     cmd = cmd + recipe['flags'] + [unit_build.SHOW_INCLUDES, f'/Fo{obj}', compiled]
     try:

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "file_count": 4199,
+  "package_plan_sha256": "75f79eb0f2881ad636dc4f96e6e4e8abbd747a41ecfada8dc80d9351342e223e",
+  "compiler_pins": {
+    "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+    "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+    "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+    "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+  },
+  "shards": [
+    {
+      "path": "tools/toolchain/v141-files-000.json",
+      "sha256": "1a1c33301092e886ccc43eaaada56312b73d56b75dbf5f081ab41f61d3ee7279"
+    },
+    {
+      "path": "tools/toolchain/v141-files-001.json",
+      "sha256": "1eb95f7dfb52458f67f3c500cf48c3ec39f91abea9b1e16c3790a44cf654e4a4"
+    },
+    {
+      "path": "tools/toolchain/v141-files-002.json",
+      "sha256": "9eda26f95bf885cf9e3ea977fa0f789e5cd7ac2a5c6e61dd10057942d8c5eeb1"
+    }
+  ]
+}
