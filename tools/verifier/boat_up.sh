@@ -4,7 +4,7 @@
 #   running  -> reuse it (prints its auto-stop deadline)
 #   stopped  -> boat resume (seconds; the disk with the toolchain comes back)
 #   missing  -> refuse, unless BOAT_ALLOW_CREATE=1: then create a no-env machine and run
-#               setup_boat_machine.sh (minutes, and it accepts the Build Tools licence)
+#               setup_toolchain.sh (minutes, and it accepts the Build Tools licence)
 #
 # Then copies this checkout's tools/ (tracked and unignored files only) to ~/sr/tools and checks
 # the compiler binaries against tools/verifier/pinned.sha256. Last stdout line:
@@ -70,8 +70,8 @@ say "copying tools/ to $REMOTE_SR/tools"
 "$BOAT" push "$ID" "$REPO/tools" --to "$REMOTE_SR/tools" --json >/dev/null
 
 if [ "${STATE:-missing}" = missing ]; then
-    say "running setup_boat_machine.sh (several minutes)"
-    remote "$ID" 0 "cd $REMOTE_SR && tools/verifier/setup_boat_machine.sh $REMOTE_HOME/msvc"
+    say "running setup_toolchain.sh (several minutes)"
+    remote "$ID" 0 "cd $REMOTE_SR && tools/verifier/setup_toolchain.sh $REMOTE_HOME/msvc"
 fi
 
 say "checking compiler binaries against pinned.sha256"

@@ -34,6 +34,11 @@ bodies tools/check_origin.py finds close to a same-named community or FNV body. 
 machine stops itself at its deadline; an Engineer ends a session with `tools/verifier/session
 down` (attempt never stops a machine; --stop is retired).
 
+Attribution is required before compiling: inherit a queue claim, pass --model/--agent, or use
+a project --profile default. Progress lines show matching bytes versus the previous attempt and
+a best-score no-improvement count. Keep improving until N attempts without improvement or the
+existing hard attempt cap. Progress never decides a match.
+
 Exit status: 0 every function passed, 1 a function failed, 3 compile failed, 4 unit or include
 problem, 5 budget exhausted, 2 anything else. A pass is evidence for review only; it makes
 nothing `matched`.
@@ -56,6 +61,9 @@ import runners  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import work_queue as wq  # noqa: E402
 import profiles  # noqa: E402
+import agent_advice  # noqa: E402
+import agent_identity  # noqa: E402
+import attempt_progress  # noqa: E402
 
 LABEL = 'standing'
 
@@ -142,13 +150,23 @@ def fallback_budget(task_dir, qdir, tier='fallback'):
     return entry['attempts_per_function'] * len(wq.unpassed(qdir, unit, tier))
 
 
-def attempt(task_dir, tier='first', qdir=None):
+def attempt(task_dir, tier='first', qdir=None, model=None, agent=None, profile=None):
     started = time.monotonic()
     task = pipeline.load_task(task_dir)
     import draft_worktrees
     draft_worktrees.route_attempt(task['dir'], pipeline.REPO)
     task_dir = task['dir']
-    handle = pipeline.lock(task_dir)  # noqa: F841 (held until exit)
+    handle = pipeline.lock(task_dir)  # held before attribution or attempt writes
+    raw = json.loads((task_dir / 'task.json').read_text())
+    identity_path = task_dir / f'attribution-{tier}.json'
+    identity = attempt_progress.read_json(identity_path)
+    profile = profile or identity.get('profile') or raw.get('drafter_profile')
+    model = agent_identity.resolve(model or identity.get('model') or raw.get('drafter_model') or raw.get('model'),
+                                   agent=agent or raw.get('agent') or (raw.get('export') or {}).get('generator'),
+                                   profile=profile, tier=tier)
+    patience = profiles.get(profile)['stuck_after']
+    # Task bytes can be pinned by a generator's resume digest. Keep attribution alongside them.
+    draft_worktrees.save(identity_path, dict(model=model, profile=profile or profiles.DEFAULT))
     attempts = task_dir / 'attempts'
     done = sorted(p for p in attempts.glob('[0-9][0-9][0-9]') if p.is_dir()) if attempts.is_dir() else []
     number = int(done[-1].name) + 1 if done else 1
@@ -166,7 +184,7 @@ def attempt(task_dir, tier='first', qdir=None):
     problem = pipeline.compiler_include_problem(task)
     if problem:
         # Refused before any upload or log entry, so it neither uses the machine nor counts.
-        print(f'attempt {number} {task["task_id"]}: REFUSED include (not counted)\n    {problem}')
+        print(f'attempt {number} {task["task_id"]}: REFUSED include (not counted)\n    {agent_advice.explain(problem, "attempt")}')
         return 4
     config = pipeline.load_config(task_dir)
     runner = runners.for_attempt()
@@ -191,7 +209,7 @@ def attempt(task_dir, tier='first', qdir=None):
             report = bind.bind(task_dir, dest / 'candidate.obj', config.get('image'), config.get('objdump'))
         except (OSError, ValueError) as exc:
             report = None
-            bind_lines.append(f'  binding failed: {exc}')
+            bind_lines.append('  ' + agent_advice.explain(f'binding failed: {exc}', 'attempt'))
         if report is not None:
             bind_lines += bind.describe(report, task_dir)
             if report['changed']:
@@ -249,6 +267,25 @@ def attempt(task_dir, tier='first', qdir=None):
         lines += rows[:10]
         if len(rows) > 10:
             lines.append(f'  ... {len(rows) - 10} more lines in {dest / "attempt.txt"}')
+    lines.insert(1, f'model/agent: {model}')
+    current = {}
+    for fn in task['functions']:
+        rva = f'0x{fn["rva"]:x}'
+        fdir = dest / rva
+        report = attempt_progress.read_json(fdir / 'report.json')
+        alignment = attempt_progress.read_json(fdir / 'align.json')
+        if report.get('result') == 'pass' and 'internal_selector' not in fn:
+            alignment = dict(matching_bytes=fn['size'], target_bytes=fn['size'], matching_regions=1)
+        current[rva] = attempt_progress.measure(report, alignment)
+    history = [r for r in log_rows(task_dir / 'attempts.jsonl') if r.get('tier', 'first') == tier]
+    progress = attempt_progress.update(current, history, counted)
+    lines += [attempt_progress.describe(rva, metric, patience) for rva, metric in progress.items()]
+    lines.append(attempt_progress.guidance(patience))
+    if code == 1 and error is None:
+        lines.append('Next: revise the source using the aligned differences and retry; keep going while matching bytes rise.')
+    elif code != 0:
+        problem = 'compile failed' if code == 3 else (error or {}).get('detail', 'host input failed')
+        lines.append('Next: ' + agent_advice.next_action(problem, 'attempt'))
     lines += bind_lines
     lines += label_warnings(closure)
     lines += origin_lines(closure)
@@ -262,7 +299,7 @@ def attempt(task_dir, tier='first', qdir=None):
     text = '\n'.join(lines)
     (dest / 'attempt.txt').write_text(text + '\n' + ''.join(f'{r}\n' for r in all_rows))
     with open(task_dir / 'attempts.jsonl', 'a') as log:
-        log.write(json.dumps({'attempt': number, 'exit': code, 'counted': counted, 'tier': tier,
+        log.write(json.dumps({'attempt': number, 'exit': code, 'counted': counted, 'tier': tier, 'model': model, 'progress': progress,
                               **({'free_compile_failure': True} if free_compile else {}),
                               'seconds': round(time.monotonic() - started, 1),
                               'runner': runner['host_id'] if runner else 'boat',
@@ -360,10 +397,13 @@ def clean(task_dir):
 
 
 def main():
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = agent_advice.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('task_dir', nargs='?')
     p.add_argument('--tier', choices=('first', 'fallback', 'strong'), default='first')
     p.add_argument('--queue-dir', type=Path)
+    p.add_argument('--model', help='actual model id; normally inherited from the queue claim')
+    p.add_argument('--agent', help='agent/tool name when no model is used')
+    p.add_argument('--profile', choices=sorted(profiles.PROFILES), help='project Drafter profile default')
     p.add_argument('--clean', action='store_true', help="remove the task's files on the machine")
     p.add_argument('--stop', action='store_true', help=argparse.SUPPRESS)
     p.add_argument('--force', action='store_true', help=argparse.SUPPRESS)
@@ -385,9 +425,9 @@ def main():
             return 2
         if a.tier != 'first' and not a.queue_dir:
             p.error(f'--tier {a.tier} requires --queue-dir')
-        return attempt(a.task_dir, a.tier, a.queue_dir)
-    except (PipelineError, boatctl.BoatError, runners.RunnerError, wq.QueueError, ValueError, KeyError) as exc:
-        print(f'attempt: {exc}', file=sys.stderr)
+        return attempt(a.task_dir, a.tier, a.queue_dir, a.model, a.agent, a.profile)
+    except (PipelineError, boatctl.BoatError, runners.RunnerError, wq.QueueError, OSError, ValueError, KeyError, TypeError) as exc:
+        print(f'attempt: {agent_advice.explain(exc, "attempt")}', file=sys.stderr)
         return 2
 
 

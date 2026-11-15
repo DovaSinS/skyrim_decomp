@@ -28,7 +28,8 @@ DEFAULT_RECIPE = 'reconstruction/recipes/msvc-19.16.27054-o2.json'
 REQUEST = re.compile(r'^// CI hash: (0x[0-9a-fA-F]+) (\S+)\s*$', re.M)
 SHA = re.compile(r'[0-9a-f]{40}')
 CI_INPUTS = ('data/target-hashes/', 'tools/toolchain/', 'tools/ci_',
-             'tools/target_hashes.py', 'tools/contrib.py', '.gitattributes',
+             'tools/target_hashes.py', 'tools/contrib.py', 'tools/contributor_standing.py',
+             'tools/build_leaderboard.py', 'tools/build_model_trend.py', '.gitattributes',
              '.github/workflows/ci-target-hash.yml')
 
 
@@ -154,8 +155,7 @@ def compile_requests(root, tree, requests_, bindir, work, manifest):
         target = targets.get(ref['rva'])
         row = dict(rva=hex(ref['rva']) if ref['rva'] is not None else None, unit=ref['unit'],
                    result='no-target')
-        if (target is None or ref['symbol'] is None or target['extraction'] == 'unmasked-unsupported'
-                or ref['recipe'] not in manifest['recipe_sha256']):
+        if ref['recipe'] not in manifest['recipe_sha256']:
             rows.append(row)
             continue
         key = ref['unit'], ref['recipe']
@@ -171,6 +171,8 @@ def compile_requests(root, tree, requests_, bindir, work, manifest):
                 built[key] = None
         if built[key] is None:
             row['result'], row['reason'] = 'mismatch', 'compile-failed'
+        elif target is None or ref['symbol'] is None or target['extraction'] == 'unmasked-unsupported':
+            row['reason'] = 'published-target-or-binding-unavailable'
         else:
             try:
                 row['result'] = hashes.candidate(built[key], ref['symbol'], target)
@@ -190,6 +192,18 @@ def sample(root, bindir, work, manifest):
     second = compile_requests(root, root, requests_, bindir, work / 'second', manifest)
     return [dict(row, deterministic=row['result'] == other['result'] == 'hash-match')
             for row, other in zip(first, second)]
+
+
+def summary_text(report):
+    lines = ['Advisory target hash results; acceptance not evaluated. The current acceptance rule',
+             'still requires its independent hosts and Reviewer. Hash equality omits reference identity.',
+             '', '| Function RVA | Unit | Result |', '| --- | --- | --- |']
+    for row in report.get('functions', []):
+        result = {'hash-match': 'PASS (hash only)', 'mismatch': 'FAIL', 'no-target': 'UNVERIFIED'}.get(row['result'], 'ERROR')
+        lines.append(f'| {row["rva"] or "unbound"} | {row["unit"]} | {result} |')
+    if report.get('error'):
+        lines += ['', 'Check could not complete: ' + report['error'] + '. No strike.']
+    return '\n'.join(lines) + '\n'
 
 
 def main(argv=None):
@@ -234,8 +248,7 @@ def main(argv=None):
     print(json.dumps(report, indent=2))
     if os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
-            summary.write('Advisory only; two local hosts and Reviewer remain required.\n\n```json\n'
-                          + json.dumps(report, indent=2) + '\n```\n')
+            summary.write(summary_text(report))
     return int('error' in report or any(r['result'] == 'mismatch' for r in report.get('functions', []))
                or (a.command == 'sample' and any(not r['deterministic'] for r in report['functions'])))
 

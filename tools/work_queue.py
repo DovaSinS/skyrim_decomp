@@ -13,7 +13,7 @@ The queue lives in `.local/queue/small/` (or `--queue-dir`, or $SKYRIM_QUEUE_DIR
 - `queue.tsv`: one line per unit, tab-separated: unit task dir, source paths (comma-separated),
   functions (comma-separated RVAs), attempt budget. Lines starting with `#` are comments.
 - `claims/<unit>.lock`: created with O_EXCL, so of two sessions asking at once exactly one gets a
-  unit. It holds the worker label and the claim time. A claim older than STALE_SECONDS with no
+  unit. It holds the worker label, model/agent attribution and the claim time. A claim older than STALE_SECONDS with no
   result is taken over (the session that held it is assumed dead): the stale lock is renamed away
   first, and a rename succeeds for one caller only, so a takeover is atomic too.
 - `done/<unit>.json` marks a unit finished; `results.jsonl` gets every result line, stamped with
@@ -24,6 +24,10 @@ The queue lives in `.local/queue/small/` (or `--queue-dir`, or $SKYRIM_QUEUE_DIR
 - On a claim, near-miss files left in `<unit dir>/near-miss/` by an earlier session are moved to
   `near-miss/earlier-<time>/`: they were written against an older unit source and confused later
   sessions when left beside the new run's files. They stay readable there.
+
+Use `next --worker <label> --model <actual-model-id>` to record the model before drafting.
+`--agent` aliases `--worker`; a model-named worker label also supplies attribution. `attempt` and
+`done` inherit the claim model. Project standalone attempts may use their profile default.
 
 A worker label names model and effort and ends in a session number (`luna56-medium-1`,
 `haiku-1`); `stats` groups by the label and by the label without its trailing `-<n>`.
@@ -45,6 +49,8 @@ import time
 
 import claims as github_claims
 import profiles
+import agent_identity
+import agent_advice
 import draft_worktrees as drafts
 
 REPO = Path(__file__).resolve().parents[1]
@@ -114,14 +120,14 @@ def read_claim(path):
             return None
 
 
-def try_create(path, worker, t, profile=None, tier="first"):
+def try_create(path, worker, t, profile=None, tier="first", model=None):
     try:
         fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)
     except FileExistsError:
         return False
     with os.fdopen(fd, 'w') as out:
         json.dump({'worker': worker, 'time': t, 'claimed': iso(t), 'pid': os.getpid(), 'profile': profile,
-                   'tier': tier, 'draft_requested': True}, out)
+                   'tier': tier, 'model': model, 'draft_requested': True}, out)
     return True
 
 
@@ -141,7 +147,7 @@ def set_aside_near_misses(unit_dir, t, repo):
     return dest
 
 
-def claim(qdir, worker, t=None, profile=None, repo=None, refresh=False, tier="first"):
+def claim(qdir, worker, t=None, profile=None, repo=None, refresh=False, tier="first", model=None):
     """Claim a unit for `worker`: its own unfinished claim first, then the first unclaimed unit,
     then the first stale claim. Returns the unit dict, or None when nothing is left to claim.
     Relative unit dirs resolve against `repo`, by default the queue's own (queue_repo)."""
@@ -149,12 +155,24 @@ def claim(qdir, worker, t=None, profile=None, repo=None, refresh=False, tier="fi
         raise QueueError('--worker must be a label like luna56-medium-1 (letters, digits, . _ -)')
     if tier != 'first' and (not profile or tier not in profiles.drafter_tiers(profile)):
         raise QueueError(f'{tier} tier requires a profile with that Drafter tier')
+    explicit_model = model is not None
+    model = agent_identity.resolve(model, agent=worker, profile=profile, tier=tier)
     t = now() if t is None else t
-    u = _claim(qdir, worker, t, profile, tier=tier, external=github_claims.project_claims(queue_repo(qdir) if repo is None else repo, refresh))
+    u = _claim(qdir, worker, t, profile, tier=tier, model=model, external=github_claims.project_claims(queue_repo(qdir) if repo is None else repo, refresh))
     if u is not None:
         lock = tier_dir(qdir, 'claims', tier) / f'{u["key"]}.lock'
         c = read_claim(lock)
         root = queue_repo(qdir) if repo is None else repo
+        if not c.get('model'):
+            c['model'] = model
+            drafts.save(lock, c)
+        elif explicit_model and c['model'] != model:
+            raise QueueError('claim model differs; resume with --model ' + c['model'])
+        u['model'] = c['model']
+        directory = drafts.task_dir(root, u)
+        if (directory / 'task.json').is_file():
+            drafts.save(directory / f'attribution-{tier}.json',
+                        dict(model=c['model'], profile=profile or profiles.DEFAULT))
         try:
             check_coverage(root, u)
         except QueueError as exc:
@@ -236,7 +254,7 @@ def eligible(qdir, unit, tier, tier_order=None):
     return (tier_dir(qdir, 'done', previous) / f'{unit["key"]}.json').exists() and bool(unpassed(qdir, unit, tier, order))
 
 
-def _claim(qdir, worker, t, profile, external, tier='first'):
+def _claim(qdir, worker, t, profile, external, tier='first', model=None):
     units = [u for u in read_queue(qdir) if not blocked_functions(u['functions'], external)]
     claims, done = tier_dir(qdir, 'claims', tier), tier_dir(qdir, 'done', tier)
     claims.mkdir(parents=True, exist_ok=True)
@@ -247,7 +265,7 @@ def _claim(qdir, worker, t, profile, external, tier='first'):
         if c and c.get('worker') == worker:
             return dict(u, resumed=True)
     for u in open_units:
-        if try_create(claims / f'{u["key"]}.lock', worker, t, profile, tier):
+        if try_create(claims / f'{u["key"]}.lock', worker, t, profile, tier, model):
             return u
     for u in open_units:
         lock = claims / f'{u["key"]}.lock'
@@ -260,7 +278,7 @@ def _claim(qdir, worker, t, profile, external, tier='first'):
         except FileNotFoundError:
             continue
         tomb.unlink(missing_ok=True)
-        if try_create(lock, worker, t, profile, tier):
+        if try_create(lock, worker, t, profile, tier, model):
             return u
     return None
 
@@ -283,7 +301,7 @@ def find_unit(qdir, unit_dir):
     raise QueueError(f'{unit_dir} is not a unit of {qdir / "queue.tsv"}')
 
 
-def finish(qdir, unit_dir, lines, worker=None, t=None, tier="first"):
+def finish(qdir, unit_dir, lines, worker=None, t=None, tier="first", model=None):
     """Record result lines for a unit, mark it done and release its claim. Returns the records."""
     t = now() if t is None else t
     u = find_unit(qdir, unit_dir)
@@ -294,7 +312,11 @@ def finish(qdir, unit_dir, lines, worker=None, t=None, tier="first"):
         raise QueueError(f'{u["dir"]} is not claimed; pass --worker <label> to record a result anyway')
     if tier != 'first' and not c:
         raise QueueError(f'{tier} result requires a {tier} claim')
-    stamp = {'profile': (c or {}).get('profile'), 'tier': tier}
+    recorded_model = (c or {}).get('model')
+    if model and recorded_model and model.strip() != recorded_model:
+        raise QueueError('done model differs from claim; use --model ' + recorded_model)
+    model = agent_identity.resolve(recorded_model or model, agent=worker)
+    stamp = {'profile': (c or {}).get('profile'), 'tier': tier, 'model': model}
     if c and c.get('time') is not None:
         stamp['claimed'] = iso(float(c['time']))
     if not lines:
@@ -324,7 +346,7 @@ def finish(qdir, unit_dir, lines, worker=None, t=None, tier="first"):
         with open(qdir / 'results.jsonl', 'a') as out:
             for rec in records:
                 out.write(json.dumps(rec, sort_keys=True) + '\n')
-        (tier_dir(qdir, 'done', tier) / f'{u["key"]}.json').write_text(json.dumps({'worker': worker, 'done': iso(t),
+        (tier_dir(qdir, 'done', tier) / f'{u["key"]}.json').write_text(json.dumps({'worker': worker, 'model': model, 'done': iso(t),
             **({'harvest': harvest} if harvest else {})}) + '\n')
         lock.unlink(missing_ok=True)
     hold = qdir / 'holds' / f'{u["key"]}.json'
@@ -353,7 +375,7 @@ def release(qdir, unit_dir, worker=None, t=None, tier="first"):
         raise QueueError(f'{u["dir"]} is claimed by {c.get("worker")}, not {worker}')
     with locked(qdir / 'results.lock'):
         with open(qdir / 'releases.jsonl', 'a') as out:
-            out.write(json.dumps({'queue_unit': u['dir'], 'worker': c.get('worker'), 'profile': c.get('profile'),
+            out.write(json.dumps({'queue_unit': u['dir'], 'worker': c.get('worker'), 'profile': c.get('profile'), 'model': c.get('model'),
                                   'tier': tier, 'claimed': iso(float(c.get('time', t))), 'released': iso(t)}, sort_keys=True) + '\n')
         if c.get('draft'):
             with locked(drafts.task_dir(queue_repo(qdir), u) / 'draft-lifecycle.lock'):
@@ -438,6 +460,10 @@ def status(qdir, t=None):
     return rows
 
 
+def recorded_model(record):
+    return record.get('model') if agent_identity.named(record.get('model')) else model_of(record.get('worker') or record.get('agent'))
+
+
 def model_of(label):
     return re.sub(r'-\d+$', '', label or '?')
 
@@ -448,7 +474,7 @@ def stats(qdir):
     recs = [json.loads(line) for line in path.read_text().splitlines() if line.strip()] if path.exists() else []
     out = {kind: defaultdict(lambda: defaultdict(int)) for kind in ('worker', 'model', 'profile')}
     for r in recs:
-        for kind, key in (('worker', r.get('worker')), ('model', model_of(r.get('worker'))),
+        for kind, key in (('worker', r.get('worker')), ('model', recorded_model(r)),
                           ('profile', r.get('profile') or 'unrecorded')):
             s = out[kind][key]
             if 'rva' in r:
@@ -469,12 +495,12 @@ def stats(qdir):
 
 
 def parser():
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = agent_advice.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('--queue-dir', help='default $SKYRIM_QUEUE_DIR or .local/queue/small')
     sub = p.add_subparsers(dest='cmd', required=True)
     n = sub.add_parser('next', help='claim the next unit and print its unit dir (EMPTY when none is left)')
     n.add_argument('--refresh', action='store_true', help='refresh GitHub claims cache')
-    n.add_argument('--worker', required=True, help='model, effort and session number, e.g. luna56-medium-1')
+    n.add_argument('--worker', '--agent', required=True, help='model, effort and session number, e.g. luna56-medium-1')
     n.add_argument('--profile', choices=sorted(profiles.PROFILES), help='drafting profile (tools/profiles.py); recorded with the results')
     r = sub.add_parser('release', help='give back a claimed unit you will not work on')
     r.add_argument('unit_dir')
@@ -482,7 +508,7 @@ def parser():
     d = sub.add_parser('done', help='record result lines for a unit and release it')
     d.add_argument('unit_dir')
     d.add_argument('--result', action='append', default=[], help='one JSON line; repeat for each line')
-    d.add_argument('--worker', help='only when the unit has no claim (default: the claim\'s label)')
+    d.add_argument('--worker', '--agent', help='only when the unit has no claim (default: the claim\'s label)')
     hold = sub.add_parser('hold', help='exclude a unit from dispatch')
     hold.add_argument('unit_dir')
     hold.add_argument('--reason', required=True)
@@ -493,6 +519,8 @@ def parser():
     ad = sub.add_parser('add', help='append unit or group task dirs to the queue (queue order = order given)')
     ad.add_argument('--refresh', action='store_true', help='refresh GitHub claims cache')
     ad.add_argument('dirs', nargs='+')
+    for command in (n, d):
+        command.add_argument('--model', help='actual model id; default: the model/agent named by --worker')
     for command in (n, r, d):
         command.add_argument('--tier', choices=('first', 'fallback', 'strong'), default='first')
     for command in sub.choices.values():
@@ -506,7 +534,7 @@ def main(argv=None):
     qdir = queue_dir(a.queue_dir)
     try:
         if a.cmd == 'next':
-            u = claim(qdir, a.worker, profile=a.profile, refresh=a.refresh, tier=a.tier)
+            u = claim(qdir, a.worker, profile=a.profile, refresh=a.refresh, tier=a.tier, model=a.model)
             if u is None:
                 busy = (sum(1 for state, _, _ in status(qdir) if state == 'claimed') if a.tier == 'first' else
                         sum(1 for u in read_queue(qdir) if (tier_dir(qdir, 'claims', a.tier) / f'{u["key"]}.lock').exists()))
@@ -524,11 +552,11 @@ def main(argv=None):
                       'match the current unit source', file=sys.stderr)
             budget = (u['budget'] if a.tier == 'first' else
                       profiles.role(a.profile, 'drafter_' + a.tier)['attempts_per_function'] * len(unpassed(qdir, u, a.tier)))
-            print(f'# sources: {" ".join(u["sources"])}; functions: {" ".join(u["functions"])}; '
+            print(f'# model: {u["model"]}; sources: {" ".join(u["sources"])}; functions: {" ".join(u["functions"])}; '
                   f'budget: {budget} counted attempts', file=sys.stderr)
             return 0
         if a.cmd == 'done':
-            recs = finish(qdir, a.unit_dir, a.result, a.worker, tier=a.tier)
+            recs = finish(qdir, a.unit_dir, a.result, a.worker, tier=a.tier, model=a.model)
             print(f'recorded {len(recs)} line(s) for {recs[0]["queue_unit"]} as {recs[0]["worker"]}; '
                   'next: python3 tools/work_queue.py --queue-dir ' + str(qdir) + ' next --worker ' + recs[0]['worker'] +
                   (f' --tier {a.tier} --profile {recs[0]["profile"]}' if a.tier != 'first' else ''))
@@ -567,8 +595,8 @@ def main(argv=None):
         if a.cmd == 'stats':
             print(json.dumps(stats(qdir), indent=2))
             return 0
-    except QueueError as exc:
-        print(f'queue: {exc}', file=sys.stderr)
+    except (QueueError, ValueError) as exc:
+        print(f'queue: {agent_advice.explain(exc)}', file=sys.stderr)
         return 2
     return 2
 

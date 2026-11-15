@@ -14,12 +14,15 @@ from pathlib import Path
 import shutil
 import shlex
 import socket
+import signal
 import subprocess
 import sys
 import time
 import uuid
 
 import flow as f
+import flow_heartbeat
+import agent_advice
 import resource_admission
 import check as check_gate
 from check_source_digest import source_digest_cache
@@ -149,6 +152,8 @@ def lane_lock(fdir, wait=False, purpose=None):
     path = Path(fdir) / 'lane/.lane.lock'
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open('a') as handle:
+        if wait:
+            print('Waiting for the lane lock is not a stall; keep waiting with --wait-lane. Queued items are kept.', file=sys.stderr, flush=True)
         try:
             fcntl.flock(handle, fcntl.LOCK_EX | (0 if wait else fcntl.LOCK_NB))
         except BlockingIOError:
@@ -205,7 +210,12 @@ def snapshot(fdir, destination):
             if (fdir / name).is_file():
                 (destination / name).parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(fdir / name, destination / name)
-    write(destination / 'lane-live.json', dict(running=running(fdir), flow_dir=str(Path(fdir).resolve())))
+    # The publication clone must enforce the owner's ignored policy too. Never track this file.
+    policy = Path(fdir).parent / 'publication-forbidden.json'
+    if policy.is_file():
+        shutil.copyfile(policy, destination.parent / policy.name)
+    write(destination / 'lane-live.json', dict(running=running(fdir), flow_dir=str(Path(fdir).resolve()),
+                                               service_enabled=(Path(fdir) / 'lane/service/config.json').is_file()))
 
 
 def process_owner():
@@ -224,6 +234,65 @@ def owner_alive(owner):
         return True  # An unknown host is not evidence of a dead process.
     birth = process_birth(owner['pid'])
     return bool(birth and birth == owner.get('birth'))
+
+
+@contextmanager
+def service_authority(fdir):
+    """Private service role bound to this process and a held permanent lock, not a CLI flag."""
+    private = Path(fdir) / 'lane/service'
+    private.mkdir(parents=True, exist_ok=True)
+    with (private / '.worker.lock').open('a') as handle:
+        fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        owner = dict(process_owner(), active=True)
+        f.refuse(owner.get('birth'), 'cannot establish lane service process birth; no control authority granted')
+        write(private / 'worker-owner.json', owner)
+        try:
+            yield
+        finally:
+            write(private / 'worker-owner.json', dict(owner, active=False))
+
+
+def service_caller(fdir):
+    private = Path(fdir) / 'lane/service'
+    marker = private / 'worker-owner.json'
+    if not marker.is_file():
+        return False
+    owner = read(marker)
+    current = process_owner()
+    if not current.get('birth') or not owner.get('active') or {k: owner.get(k) for k in ('pid', 'host', 'birth')} != current:
+        return False
+    with (private / '.worker.lock').open('a') as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            return True
+    return False
+
+
+def require_control(fdir, receipt, action):
+    current = process_owner()
+    f.refuse((bool(current.get('birth')) and receipt.get('owner') == current) or service_caller(fdir),
+             f'cannot {action} lane {receipt["id"]}: only the lane service or its recorded owner may do that; '
+             "never kill a lane process you didn't start")
+
+
+def stop_run(root, fdir, run_id, reason):
+    requested = read(receipt_path(fdir, run_id))
+    if requested.get('kind') == 'tooling-request':
+        run_id = requested['run']
+    with state_lock(fdir):
+        path = receipt_path(fdir, run_id)
+        receipt = read(path)
+        require_control(fdir, receipt, 'stop')
+        owner = receipt.get('owner') or {}
+        f.refuse(owner.get('host') == socket.gethostname() and owner_alive(owner),
+                 'lane owner is not a live local process; no signal sent')
+        receipt.update(stop_requested_at=f.utc(), stop_reason=reason, stop_requested_by=process_owner(),
+                       error='Publication intentionally stopped: ' + reason)
+        write(path, flow_heartbeat.preserve(path, receipt))
+        # Signal only the birth-checked recorded PID; never a shared process group.
+        os.kill(owner['pid'], signal.SIGTERM)
+        return receipt
 
 
 def run_status(root, fdir, receipt, active=None):
@@ -261,20 +330,44 @@ def receipt_path(fdir, run_id):
     return found[0]
 
 
-def retire(root, fdir, run_id, reason):
+def retire(root, fdir, run_id, reason, *, requeue_stale=False):
     requested = read(receipt_path(fdir, run_id))
     if requested.get('kind') == 'tooling-request':
         run_id = requested['run']
+        requested = read(receipt_path(fdir, run_id))
+    require_control(fdir, requested, 'retire')
     with lane_lock(fdir), state_lock(fdir):
         path = receipt_path(fdir, run_id)
         receipt = read(path)
+        require_control(fdir, receipt, 'retire')
         f.refuse(receipt['state'] in ('running', 'stale', 'failed', 'conflict'), 'only an unfinished or failed run can be retired')
         f.refuse(not (receipt.get('integrated') or {}).get('pushed'), 'pushed run must resume CI; cannot retire it')
+        if requeue_stale:
+            owner = receipt.get('owner') or {}
+            f.refuse(owner.get('host') == socket.gethostname() and not owner_alive(owner),
+                     'automatic recovery requires a dead local owner')
+            f.refuse(not receipt.get('error') and receipt['state'] in ('running', 'stale'),
+                     'recorded failures require triage, not automatic recovery')
+            f.refuse(path.parent.name == 'runs', 'legacy tooling requires explicit resume')
+            recovered = []
+            for directory, key in (('queue', 'items'), ('tooling-queue', 'tooling')):
+                for original in receipt.get(key, []):
+                    queued = Path(fdir) / 'lane' / directory / (original['id'] + '.json')
+                    # Another run or a worker may already have replaced this selection.
+                    current = read(queued) if queued.is_file() else original
+                    if current.get('run') != run_id or current.get('state') not in ('running', 'stale'):
+                        continue
+                    current.update(state='queued', recovered_from=run_id, queued_at=f.utc())
+                    for field in ('run', 'error', 'integrated'):
+                        current.pop(field, None)
+                    write(queued, current)
+                    recovered.append(current['id'])
+            receipt['requeued_items'] = recovered
         receipt.update(state='retired', retired_at=f.utc(), retirement_reason=reason)
         for item in receipt.get('items', []):
             item['state'] = 'retired'
-        if path.parent.name == 'tooling':
-            write(path, receipt)
+        if path.parent.name == 'tooling' or requeue_stale:
+            write(path, compact_receipt(path, receipt))
         else:
             save_run(fdir, receipt)
         f.log_event(Path(fdir), 'lane-retired', lane=run_id, kind=receipt.get('kind', 'integration'), reason=reason)
@@ -419,6 +512,7 @@ def recover_stale(fdir):
 
 def wait_for_owner(root, fdir, directory, resume, wait):
     """A live other publisher is a queue wait; own/stale work needs an explicit resume."""
+    announced = False
     while True:
         with state_lock(fdir):
             unfinished = [read(p) for p in (Path(fdir) / 'lane' / directory).glob('*.json')
@@ -439,10 +533,14 @@ def wait_for_owner(root, fdir, directory, resume, wait):
                      'unfinished ' + ('tooling publication' if directory == 'tooling' else 'lane run')
                      + '; resume own or stale receipt: ' + command)
         f.refuse(wait, 'live publisher busy; retry with --wait-lane')
+        if not announced:
+            print('Waiting for the live publisher is not a stall; keep waiting with --wait-lane. Queued items are kept.', file=sys.stderr, flush=True)
+            announced = True
         time.sleep(0.25)
 
 
 def require_green(root, commit, python, ci_wait):
+    flow_heartbeat.phase('origin exact-SHA CI')
     result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', commit, '--wait', str(ci_wait)],
                             cwd=root, capture_output=True, text=True)
     f.refuse(result.returncode == 0, 'origin CI is not green: ' + result.stdout.strip())
@@ -475,6 +573,7 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                                   soft_free_gb, allow_low_disk)
 
 
+@flow_heartbeat.publisher
 def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executable, resume=None, wait_lane=False,
                     soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Check and publish committed tooling under the same lane lock as acceptance work."""
@@ -530,11 +629,10 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
             receipt['owner'] = process_owner()
             receipt.update(state='running', python=python)
             path = fdir / 'lane/tooling' / (receipt['id'] + '.json')
-            write(path, receipt)
+            save_tooling(fdir, receipt)
 
         def save():
-            with state_lock(fdir):
-                write(path, receipt)
+            save_tooling(fdir, receipt)
 
         try:
             integ = receipt.get('integrated') or {}
@@ -623,7 +721,7 @@ def ci_serialized(directory):
     """Only one observer updates a pushed receipt; this lock never covers building or pushing."""
     def decorate(function):
         @wraps(function)
-        def finish(root, fdir, receipt, python, ci_wait):
+        def finish(root, fdir, receipt, python, ci_wait, **kwargs):
             path = Path(fdir) / 'lane' / directory / (receipt['id'] + '.json')
             lock = Path(fdir) / 'lane/ci-locks' / (receipt['id'] + '.lock')
             lock.parent.mkdir(parents=True, exist_ok=True)
@@ -638,7 +736,7 @@ def ci_serialized(directory):
                 if current.get('state') == 'done' and terminal_ci:
                     return current
                 try:
-                    return function(root, fdir, current, python, ci_wait)
+                    return function(root, fdir, current, python, ci_wait, **kwargs)
                 except BaseException as error:
                     current['error'] = str(error)
                     if directory == 'runs':
@@ -652,14 +750,18 @@ def ci_serialized(directory):
 
 def save_tooling(fdir, receipt):
     with state_lock(fdir):
-        write(Path(fdir) / 'lane/tooling' / (receipt['id'] + '.json'), receipt)
+        path = Path(fdir) / 'lane/tooling' / (receipt['id'] + '.json')
+        flow_heartbeat.watch(fdir, path, receipt.get('owner'))
+        write(path, flow_heartbeat.preserve(path, receipt))
 
 
+@flow_heartbeat.publisher
 @ci_serialized('tooling')
 def finish_tooling(root, fdir, receipt, python, ci_wait):
     integ = receipt['integrated']
     receipt['owner'] = process_owner()
     save_tooling(fdir, receipt)
+    flow_heartbeat.phase('exact-SHA CI')
     args = [python, 'tools/ci_status.py']
     if receipt.get('repair'):
         for workflow in ('Infrastructure checks', 'Publish research report', *receipt['repair']['workflows']):
@@ -867,7 +969,12 @@ def accept(tree, requests, python):
 
 
 def save_run(fdir, receipt):
+    for field in ('dropped', 'gate_dropped', 'tooling_dropped'):
+        for item in receipt.get(field, []):
+            if item.get('reason'):
+                item['next'] = agent_advice.next_action(item['reason'])
     path = fdir / 'lane/runs' / (receipt['id'] + '.json')
+    flow_heartbeat.watch(fdir, path, receipt.get('owner'))
     compact = compact_receipt(path, receipt)
     with state_lock(fdir):
         for item in receipt['items']:
@@ -875,7 +982,7 @@ def save_run(fdir, receipt):
         import flow_tooling
         flow_tooling.save_items(fdir, receipt, receipt.get('state') == 'done')
         compact_tooling(compact, receipt)
-        write(path, compact)
+        write(path, flow_heartbeat.preserve(path, compact))
         integ = receipt.get('integrated')
         if integ:
             group_members = {}
@@ -1337,11 +1444,12 @@ def disk_preflight(fdir, min_free_gb=None):
     free = shutil.disk_usage(path).free / 1_000_000_000
     f.refuse(free >= threshold,
              f'insufficient free disk space for push lane: {free:.2f} GB free; need {threshold:g} GB. '
-             'Free disk space or configure --min-free-gb / SKYRIM_LANE_MIN_FREE_GB.')
+             'Free disk space, then retry; keep machine-specific paths in private configuration.')
 
 
+@flow_heartbeat.publisher
 def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.executable, min_free_gb=None,
-             soft_free_gb=None, allow_low_disk=False, resume=None, wait_lane=False):
+             soft_free_gb=None, allow_low_disk=False, resume=None, wait_lane=False, sync_claims=True):
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
     require_base_tools(root, branch)
     import flow_cleanup
@@ -1356,7 +1464,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
         with state_lock(fdir):
             previous = read(receipt_path(fdir, resume))
         if (previous.get('integrated') or {}).get('pushed'):
-            return finish_run(root, fdir, previous, python, ci_wait)
+            return finish_run(root, fdir, previous, python, ci_wait, sync_claims=sync_claims)
     disk_preflight(fdir, min_free_gb)
     wait_for_owner(root, fdir, 'runs', resume, wait_lane)
     wait_for_owner(root, fdir, 'tooling', None, wait_lane)
@@ -1485,7 +1593,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                 lease.release()
                 receipt['lane_hold_seconds'] = lease.seconds
                 save_run(fdir, receipt)
-                return finish_run(root, fdir, receipt, python, ci_wait)
+                return finish_run(root, fdir, receipt, python, ci_wait, sync_claims=sync_claims)
 
         except BaseException as error:
             if (receipt.get('integrated') or {}).get('pushed'):
@@ -1495,14 +1603,16 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
             raise
 
 
+@flow_heartbeat.publisher
 @ci_serialized('runs')
-def finish_run(root, fdir, receipt, python, ci_wait):
+def finish_run(root, fdir, receipt, python, ci_wait, *, sync_claims=True):
     tree, integ = Path(receipt['tree']), receipt['integrated']
     integ.setdefault('accepted', sum(len(r.get('functions', [])) for r in receipt.get('accepted', [])))
     branch = receipt['branch']
     receipt['owner'] = process_owner()
     save_run(fdir, receipt)
     if integ['ci'] != 'green':
+        flow_heartbeat.phase('exact-SHA CI')
         started = time.monotonic()
         result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                                 cwd=tree, capture_output=True, text=True)
@@ -1524,7 +1634,7 @@ def finish_run(root, fdir, receipt, python, ci_wait):
     save_run(fdir, receipt)
     f.log_event(fdir, 'integrated', lane=receipt['id'], accepted=integ['accepted'], commit=integ['commit'])
     f.log_event(fdir, 'ci', lane=receipt['id'], result=integ['ci'], commit=integ['commit'])
-    if receipt.get('accepted'):
+    if sync_claims and receipt.get('accepted'):
         import claims
         claims.sync_safe(tree)
     receipt.update(finished_owner=receipt.get('owner'), owner=None)

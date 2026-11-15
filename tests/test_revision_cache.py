@@ -95,6 +95,15 @@ class RevisionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Anonymous sibling guard'):
             check.check_git(self.root, staged=True)
 
+    def test_staged_cache_rechecks_changed_private_workflow_policy(self):
+        self.assertEqual(check.check_git(self.root, staged=True), 6)
+        with patch.object(check, 'index_blob', side_effect=AssertionError('unexpected reread')):
+            self.assertEqual(check.check_git(self.root, staged=True), 6)
+        self.write('.local/publication-forbidden.json',
+                   json.dumps({'forbidden_strings': ['synthetic header']}))
+        with self.assertRaisesRegex(ValueError, 'Private workflow guard'):
+            check.check_git(self.root, staged=True)
+
     def test_immutable_head_metadata_and_blobs_ignore_working_edits(self):
         first, entries = git_context.tree_entries(self.root, 'HEAD')
         self.write('reconstruction/a/A.h', '// uncommitted\n')

@@ -2,8 +2,7 @@
 
 `tools/verifier/permute.py` searches for a source spelling of one near-miss function that compiles
 to the target's bytes, with no model in the loop (proposal P3 in [ideas-next.md](ideas-next.md),
-in the spirit of decomp-permuter). It is step 7 of the operating procedure in
-[pipeline-review.md](pipeline-review.md): run it on a near-miss before an Engineer triages it.
+in the spirit of decomp-permuter). Run it on a near-miss before an Engineer triages it, within the ordinary attempt budget.
 A permuter result is a draft like any other. It is evidence of nothing until `attempt` passes on
 the winning source, the lint passes, and a Reviewer approves it under the rule in
 [verification.md](verification.md).
@@ -73,7 +72,7 @@ tidy its spelling, and run `attempt`; the Reviewer sees the mutation list from `
    says pass. Distance 0 alone is not a pass: `align.py` is run without the unwind infos.
 
 The run's wall time is queued to the cost ledger as stage `draft`, as `attempt` does. The
-budget agreed in pipeline-review.md is 10 Boat minutes per function (`--budget 600`), capped at
+default budget is 600 seconds per function (`--budget 600`), capped at
 20 hours per 1,000 functions.
 
 ## Measured (sse-steam-1-7-104, recipe msvc-19.16.27054-o2, standing machine, 4 vCPU)

@@ -175,7 +175,7 @@ def carry_legacy_passes(root, unit, tier, state):
     state['carryover'] = {'kind': 'legacy', 'passing': sorted(retained)}
 
 
-def prepare_regressions(root, unit, tree):
+def prepare_regressions(root, unit, tree, tier='first'):
     """Check integrated functions before spending a Drafter's attempt budget."""
     directory = task_dir(root, unit)
     task = read(directory / 'task.json')
@@ -205,8 +205,11 @@ def prepare_regressions(root, unit, tree):
             shutil.copyfile(directory / name, probe / name)
     if task.get('symbols', '').startswith('reports/'):
         shutil.copyfile(tree / task['symbols'], probe / 'symbols.json')
+    identity = directory / f'attribution-{tier}.json'
+    if identity.is_file():
+        shutil.copyfile(identity, probe / 'attribution-first.json')
     save(probe / 'task.json', dict(task, functions=selected, max_attempts=None, symbols='symbols.json'))
-    proc = subprocess.run([sys.executable, str(tree / 'tools/verifier/attempt'), str(probe)],
+    proc = subprocess.run([sys.executable, str(tree / 'tools/verifier/attempt'), str(probe), '--agent', 'tools/draft_worktrees.py'],
                           cwd=tree, capture_output=True, text=True)
     (probe / 'preparation.log').write_text(proc.stdout + proc.stderr)
     reports = [read(probe / f'attempts/001/0x{int(str(f["rva"]), 0):x}/report.json', {})
@@ -323,7 +326,7 @@ def _create(root, unit, tier, owner):
         if not (tree / unit['sources'][-1]).exists():
             from unit_skeleton import write_skeleton
             write_skeleton(directory, repo=tree)
-        prepare_regressions(root, unit, tree)
+        prepare_regressions(root, unit, tree, tier)
         state['ready'] = True
         save(state_path, state)
         save(directory / 'draft-managed.json', {'unit': unit['key']})
@@ -582,6 +585,9 @@ def harvest(qdir, unit, claim, records, _accepted_emissions=()):
             shutil.copyfile(directory / name, clean / name)
     if raw.get('symbols', '').startswith('reports/'):
         shutil.copyfile(tree / raw['symbols'], clean / 'symbols.json')
+    identity = read(directory / f'attribution-{tier}.json', {})
+    identity['model'] = claim.get('model') or identity.get('model') or claim.get('worker') or 'tools/draft_worktrees.py'
+    save(clean / 'attribution-first.json', identity)
     raw.update(functions=selected, max_attempts=None, symbols='symbols.json')
     save(clean / 'task.json', raw)
     # All comparisons run afresh in an empty attempt directory, outside the tier retry budget.

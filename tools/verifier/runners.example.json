@@ -7,7 +7,7 @@
     "mac": {
       "backend": "local",
       "host_id": "mac-wine",
-      "machine": "maintainer-mac",
+      "machine": "example-wine",
       "loader": "wine",
       "msvc": ".local/toolchains/msvc-19.16.27054",
       "wine_bin": ".local/toolchains/wine-11.0_1/Wine Stable.app/Contents/Resources/wine/bin",
@@ -18,14 +18,14 @@
     "winpc": {
       "backend": "ssh",
       "host_id": "winpc-native",
-      "machine": "maintainer-winpc",
+      "machine": "example-windows",
       "loader": "native",
       "ssh_config": ".local/winpc/ssh_config",
       "ssh_host": "winpc",
       "python": ["py", "-3.12"],
-      "msvc": "C:/sr-test/msvc",
-      "image": "C:/sr-test/private/SkyrimSE.exe",
-      "work": "C:/sr-test/work",
+      "msvc": "C:/example/verifier/msvc",
+      "image": "C:/example/verifier/private/SkyrimSE.exe",
+      "work": "C:/example/verifier/work",
       "max_parallel": 8,
       "max_sessions": 4,
       "batch": 16

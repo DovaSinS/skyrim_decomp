@@ -3,6 +3,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import sys
 import time
 
 import flow as f
@@ -93,6 +94,15 @@ def publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, w
     import flow_lane as lane
     item = enqueue(root, fdir, branch)
     path = Path(fdir) / 'lane/tooling-queue' / (item['id'] + '.json')
+    announced = False
+
+    def waiting():
+        nonlocal announced
+        if not announced:
+            print('Waiting for the push lane is not a stall; keep waiting with --wait-lane. Queued items are kept.',
+                  file=sys.stderr, flush=True)
+            announced = True
+        time.sleep(0.25)
 
     def outcome():
         with state_lock(fdir):
@@ -115,7 +125,7 @@ def publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, w
             raise f.FlowError(receipt['error'])
         if receipt and lane.owner_alive(receipt.get('owner')) and lane.running(fdir):
             f.refuse(wait_lane, 'push lane already running; queued request ' + current['id'])
-            time.sleep(0.25)
+            waiting()
             continue
         try:
             lane.run_lane(root, fdir, branch, True, ci_wait, python,
@@ -127,7 +137,7 @@ def publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, w
             if current['state'] == 'done':
                 continue
             if wait_lane and ('push lane already running' in str(error) or 'live publisher busy' in str(error)):
-                time.sleep(0.25)
+                waiting()
                 continue
             raise
 

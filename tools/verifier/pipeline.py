@@ -413,7 +413,7 @@ def ensure_standing(ttl=DEFAULT_TTL, log=print):
     machine, state = boatctl.lookup()
     if machine is None:
         raise PipelineError(f'no machine named {boatctl.STANDING}; it is rebuilt only by an Engineer '
-                            '(docs/boat-agent-guidelines.md, lifecycle rule 3)')
+                            '(retired Boat backend; configure local/SSH runners)')
     if state == 'stopping':
         state = wait_state(machine, {'stopped'})
     if state in {'provisioning', 'provisioned', 'starting', 'cloning'}:

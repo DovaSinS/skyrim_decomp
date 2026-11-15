@@ -6,7 +6,6 @@ cluster_lists. Cluster lists are JSON objects with build_id and clusters, each w
 members (RVA integers or hex strings). They become half-open ranges of function starts.
 Only the publication builder below may turn local state into issue text.
 """
-import argparse
 from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
@@ -16,8 +15,10 @@ import sys
 import time
 import tempfile
 
+import agent_advice
+
 ROOT = Path(__file__).resolve().parents[1]
-REPO = 'awarebayes/skyrim-research'
+REPO = 'awarebayes/skyrim_decomp'
 MARKER = 'skyrim-claim-v1'
 MANAGED = '<!-- skyrim-project-claim -->'
 BODY_LIMIT = 60000
@@ -213,7 +214,7 @@ def cached(root, refresh=False, gh=None, cache_dir=None):
         gh = gh or GitHub(root)
         login, items = gh.user(), gh.issues()
     except (OSError, ValueError, RuntimeError):
-        print('warning: GitHub claims unavailable; using stale claims cache', file=sys.stderr)
+        print('warning: GitHub claims unavailable; using stale claims cache; check gh auth login and your connection, then retry with --refresh', file=sys.stderr)
         return ClaimIndex(saved.get('items', [])), saved.get('login')
     try:
         base.mkdir(parents=True, exist_ok=True)
@@ -251,7 +252,7 @@ def scope(entries, public, build):
 
 
 def body(build, entries, public, me, total=None, done=0, managed=False):
-    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or not re.fullmatch(r'[A-Za-z0-9-]+', me):
+    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or (me is not None and not re.fullmatch(r'[A-Za-z0-9-]+', me)):
         raise ValueError('invalid build id or GitHub login')
     names = {f['rva']: f.get('name') for f in public['functions'] if f['build_id'] == build}
     lines = []
@@ -264,7 +265,8 @@ def body(build, entries, public, me, total=None, done=0, managed=False):
             text += ' ' + name
         lines.append(text)
     total = len(entries) if total is None else total
-    text = (f'Claimant: @{me}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
+    claimant = f'@{me}' if me else '(issue author)'
+    text = (f'Claimant: {claimant}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
             f'Functions: {total}\nAccepted on origin/main: {done} / {total}\n\n'
             'This claim lapses after 24 hours without activity (a comment, an update or a linked pull request); anyone may then take it over.\n'
             'Only public metadata belongs in this issue.\n\n'
@@ -516,12 +518,12 @@ def sync(root, gh=None):
 def sync_safe(root):
     try:
         sync(root)
-    except (OSError, ValueError, RuntimeError) as exc:
-        print(f'warning: claim sync failed ({exc}); integration remains successful', file=sys.stderr)
+    except (OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:
+        print(f'warning: claim sync failed ({exc}); integration remains successful; retry claims.py sync when online', file=sys.stderr)
 
 
 def main(argv=None):
-    p = argparse.ArgumentParser(description=__doc__)
+    p = agent_advice.ArgumentParser(description=__doc__)
     p.add_argument('--root', type=Path, default=ROOT)
     p.add_argument('--cache-dir', type=Path)
     sub = p.add_subparsers(dest='cmd', required=True)
@@ -561,8 +563,8 @@ def main(argv=None):
                     total = int(count[1]) if count else len(rows)
                     age = (datetime.now(timezone.utc) - stamp(it.get('created_at') or it['updated_at'])).days
                     print(f'{it["number"]}\t{it["author"]}\t{total}\t{sum(f["status"] == "matched" for f in rows)}\t{age}')
-    except (OSError, ValueError, RuntimeError) as exc:
-        print(f'claims: {exc}', file=sys.stderr)
+    except (OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:
+        print(f'claims: {agent_advice.explain(exc, "claims")}', file=sys.stderr)
         return 1
     return 0
 

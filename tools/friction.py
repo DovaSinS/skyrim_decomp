@@ -28,6 +28,7 @@ TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS))
 import accept_function as af  # noqa: E402
 import flow  # noqa: E402
+import agent_identity  # noqa: E402
 import profiles  # noqa: E402
 import work_queue as wq  # noqa: E402
 
@@ -66,7 +67,7 @@ def summarise(root, now=None):
     table = {'model': defaultdict(lambda: defaultdict(list)), 'profile': defaultdict(lambda: defaultdict(list)), 'tier': defaultdict(lambda: defaultdict(list))}
     messages = Counter()
     for r in recs:
-        keys = (('model', wq.model_of(r.get('worker')) + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '')), ('profile', (r.get('profile') or 'unrecorded') + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '')),
+        keys = (('model', wq.recorded_model(r) + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '')), ('profile', (r.get('profile') or 'unrecorded') + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '')),
                 ('tier', r.get('tier', 'first')))
         for kind, key in keys:
             s = table[kind][key]
@@ -87,13 +88,13 @@ def summarise(root, now=None):
         if state in ('claimed', 'stale'):
             age = now - float((claim or {}).get('time', now))
             if age >= flow.CLAIM_LOOK_SECONDS:
-                stalls.append({'unit': u['dir'], 'worker': who, 'profile': profile, 'tier': 'first', 'minutes': int(age // 60)})
+                stalls.append({'unit': u['dir'], 'worker': who, 'model': (claim or {}).get('model'), 'profile': profile, 'tier': 'first', 'minutes': int(age // 60)})
         for tier in ('fallback', 'strong'):
             claim = wq.read_claim(wq.tier_dir(qdir, 'claims', tier) / f'{u["key"]}.lock')
             if claim:
                 age = now - float(claim.get('time', now))
                 if age >= flow.CLAIM_LOOK_SECONDS:
-                    stalls.append({'unit': u['dir'], 'worker': claim.get('worker'),
+                    stalls.append({'unit': u['dir'], 'worker': claim.get('worker'), 'model': claim.get('model'),
                                    'profile': claim.get('profile') or profile, 'tier': tier, 'minutes': int(age // 60)})
     rows = {}
     for kind, groups in table.items():
@@ -105,7 +106,7 @@ def summarise(root, now=None):
             for r in fns:
                 by_unit[r.get('queue_unit')].append(r)
             abandoned = sum(1 for rs in by_unit.values() if not any(r.get('result') == 'pass' for r in rs))
-            abandoned += sum(1 for r in rel if (wq.model_of(r.get('worker')) + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '') if kind == 'model' else (r.get('tier', 'first') if kind == 'tier' else (r.get('profile') or 'unrecorded') + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else ''))) == key)
+            abandoned += sum(1 for r in rel if (wq.recorded_model(r) + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else '') if kind == 'model' else (r.get('tier', 'first') if kind == 'tier' else (r.get('profile') or 'unrecorded') + ('/' + r.get('tier') if r.get('tier', 'first') != 'first' else ''))) == key)
             walls = []
             for r in s['units']:
                 a, b = parse_time(r.get('claimed')), parse_time(r.get('recorded'))
@@ -116,7 +117,7 @@ def summarise(root, now=None):
                 'pass_rate': round(len(passed) / len(fns), 3) if fns else None,
                 'attempts_per_pass': round(sum(int(r.get('attempts') or 0) for r in fns) / len(passed), 2) if passed else None,
                 'units': len(s['units']), 'abandoned_units': abandoned,
-                'stalls_now': sum(1 for st in stalls if (wq.model_of(st['worker']) + ('/' + st['tier'] if st['tier'] != 'first' else '') if kind == 'model' else (st['tier'] if kind == 'tier' else st['profile'] + ('/' + st['tier'] if st['tier'] != 'first' else ''))) == key),
+                'stalls_now': sum(1 for st in stalls if (wq.recorded_model(st) + ('/' + st['tier'] if st['tier'] != 'first' else '') if kind == 'model' else (st['tier'] if kind == 'tier' else st['profile'] + ('/' + st['tier'] if st['tier'] != 'first' else ''))) == key),
                 'median_minutes_per_unit': round(statistics.median(walls), 1) if walls else None,
             }
     rejects = Counter()
@@ -138,7 +139,8 @@ def summarise(root, now=None):
     if cheap.get('pass_rate') is not None and cheap['pass_rate'] < profiles.CHEAP_MIN_PASS_RATE:
         flag = (f'cheap pass rate {cheap["pass_rate"]} is below {profiles.CHEAP_MIN_PASS_RATE}: '
                 'a direction check should consider making `full` the default again')
-    return {'generated': flow.utc(), 'by_model': rows['model'], 'by_profile': rows['profile'], 'by_tier': rows['tier'], 'stalls': stalls,
+    missing_model = sum(1 for r in recs if 'rva' in r and not agent_identity.named(wq.recorded_model(r)))
+    return {'missing_model_functions': missing_model, 'generated': flow.utc(), 'by_model': rows['model'], 'by_profile': rows['profile'], 'by_tier': rows['tier'], 'stalls': stalls,
             'releases': len(rel), 'rejects_by_reason': rejects.most_common(15),
             'top_failure_messages': messages.most_common(15), 'default_profile': profiles.DEFAULT,
             'cheap_threshold': profiles.CHEAP_MIN_PASS_RATE, 'cheap_flag': flag}
@@ -148,6 +150,7 @@ def render(rep):
     out = [f'# Friction report {rep["generated"]}', '',
            f'Default profile: `{rep["default_profile"]}`; cheap pass-rate threshold {rep["cheap_threshold"]}. '
            + (f'**{rep["cheap_flag"]}**' if rep['cheap_flag'] else 'Cheap profile at or above the threshold (or no data).'), '']
+    out += [f'Functions with no model or agent recorded: {rep["missing_model_functions"]}', '']
     cols = ('functions', 'passed', 'pass_rate', 'attempts_per_pass', 'units', 'abandoned_units', 'stalls_now',
             'median_minutes_per_unit')
     for title, key in (('By tier', 'by_tier'), ('By profile', 'by_profile'), ('By model', 'by_model')):

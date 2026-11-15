@@ -98,7 +98,10 @@ class Operations(unittest.TestCase):
                                         '--offline', 'next-actions']), 0)
         self.assertIn('--flow-dir ' + str(self.fdir), output.getvalue())
         self.assertEqual(before, path.read_bytes())
-        retired = lane.retire(self.root, self.fdir, receipt['id'], 'synthetic replacement')
+        with self.assertRaisesRegex(flow.FlowError, 'only the lane service or its recorded owner'):
+            lane.retire(self.root, self.fdir, receipt['id'], 'foreign refusal')
+        with lane.service_authority(self.fdir):
+            retired = lane.retire(self.root, self.fdir, receipt['id'], 'synthetic replacement')
         self.assertEqual(retired['state'], 'retired')
         self.assertTrue(Path(retired['tree']).exists())
         self.assertEqual(self.enqueue()[0]['state'], 'queued')
@@ -148,7 +151,7 @@ class Operations(unittest.TestCase):
         self.assertEqual(path.read_bytes(), before)
         head = git(self.root, 'rev-parse', 'HEAD')
         output = io.StringIO()
-        with contextlib.redirect_stdout(output):
+        with lane.service_authority(self.fdir), contextlib.redirect_stdout(output):
             self.assertEqual(flow.main(['--root', str(self.root), '--flow-dir', str(self.fdir),
                                         'lane-retire', receipt['id'], '--reason', 'synthetic replacement']), 0)
         self.assertEqual(lane.read(path)['state'], 'retired')
@@ -215,7 +218,7 @@ class Operations(unittest.TestCase):
         receipt = self.lane()
         receipt['state'] = 'running'
         lane.save_run(self.fdir, receipt)
-        with self.assertRaisesRegex(flow.FlowError, 'pushed run must resume CI'):
+        with lane.service_authority(self.fdir), self.assertRaisesRegex(flow.FlowError, 'pushed run must resume CI'):
             lane.retire(self.root, self.fdir, receipt['id'], 'must refuse')
 
     def test_legacy_dead_run_is_stale_even_while_another_tooling_job_owns_lane(self):

@@ -12,25 +12,22 @@ target was built with.
 
 ## Per-function commands
 
-The Boat machines A and B were deleted (`docs/authorizations.md`, Notes); the local and ssh runners (`runners.py`) replace them, so the Boat `session`, `--boat` and `boat_*.sh` paths have no machine to use.
+Use the independently configured local/SSH runners. Boat is retired.
 
 ```sh
-tools/verifier/session up | status | extend | down     # verifier session: machines A and B (Engineers/orchestrator)
-tools/verifier/attempt .local/tasks/<task-id>          # one attempt: compile the unit, compare each function
-tools/verifier/attempt --clean .local/tasks/<task-id>  # remove the task's files on the machine
-tools/verifier/confirm .local/tasks/<task-id>          # acceptance evidence: A and B compile, 3 compare hosts, records
-tools/verifier/confirm --session <task-dir>... [--out DIR] # many units on A then B, no starts, one table
-tools/verifier/confirm --fork .local/tasks/<task-id>   # old path: one fork (one start) per unit
+tools/verifier/attempt .local/tasks/<task-id>          # compile and compare one unit
+tools/verifier/attempt --clean .local/tasks/<task-id>  # clean this task's runner scratch
+tools/verifier/confirm .local/tasks/<task-id>          # reproduce on configured independent hosts
+tools/verifier/confirm --session <task-dir>... [--out DIR] # confirm a batch
 ```
 
 ## Runners: where attempts and confirms run
 
 `.local/verifier/runners.json` (private; example `runners.example.json`, parser `runners.py`)
-names the hosts. Backends: `boat` (the session machines below, unchanged), `local` (this Mac:
-the pinned compiler under Wine from `.local/toolchains/`, no network) and `ssh` (a host reached
-with its own ssh_config; first use the maintainer's Windows PC, the pinned compiler run natively).
+names the hosts. Supported operation uses `local` (a local
+compiler installation, no network) and `ssh` (a host reached with its own private ssh_config).
 `"attempt"` picks the host `attempt` uses; `"confirm"` lists the compile hosts of a runner confirm
-(two machines, two loaders). Without the file, attempt and confirm use Boat as before.
+(two machines, two loaders). Configure these explicitly; the historical Boat fallback is retired.
 
 A local or ssh run uploads one archive (the unit's include closure, the comparator and host
 scripts, the spec) and `host_agent.py`; the command line holds only paths and fixed options. The
@@ -49,8 +46,7 @@ into `reports/` only with a `local` host among the confirm hosts (it cross-compa
 hosts' objects), after every host hashed its toolchain during that run and reported the loader
 its config names, Windows for a native compile, and two operating systems between them. `--out`
 writes inspection records under the same checks except the `local` host requirement. `reproduce_records.py` keeps each
-run's summary under `summaries/` of its output directory. `confirm --boat` keeps the Boat
-session path.
+run's summary under `summaries/` of its output directory. Boat provisioning is retired.
 
 Speed and restarts of a runner confirm. Each host takes the units in list order: the local host
 one unit per slot, an ssh host in batches of `batch` units (default twice `max_parallel`) with
@@ -71,32 +67,15 @@ run again after a commit. A run into `reports/` needs no prior `--out` pass: rec
 before they are written, `check.py` runs at the end, and `git diff` shows every change before it
 is committed.
 
-A session (`session`, `vsession.py`) brings up the standing machine A and the separately
-installed B once per work period, at most one start each, and checks their toolchain and image
-hashes; `attempt` and `confirm` then never start or stop a machine (`confirm_session.py`). Every
-start by any tool goes through `starts.py` (budget from `boat limits`, a daily reserve, a log in
-`.local/verifier/starts.jsonl`). Rules: `docs/boat-agent-guidelines.md`.
+`<task-id>/task.json` (private) names the build id, translation unit, recipe, symbol map
+and functions. The format is in `pipeline.py`. Sources come from the current checkout.
+Runner attempts bind symbols using the compiled object, retain private diagnostics, and count
+attempts under the profile budget. Infrastructure refusals are not comparator evidence.
 
-`<task-id>/task.json` (private) names the build id, compiled file, recipe, symbol map and the
-functions (RVA, size, symbol); the format is in `pipeline.py`. Sources come from the checkout the
-command runs in. `attempt` resumes or reuses the standing machine (extending its deadline when
-under 15 minutes remain), uploads only changed files, and fetches reports, the object, the
-compile log and private diagnostics to `<task-id>/attempts/<NNN>/`, with a local side-by-side
-disassembly per function (`llvm-objdump`; G2 material, never printed; rows that differ only in
-relocated fields are not marked). It binds unbound or renamed symbols from the compiled object
-itself (`bind.py`, hints in `<task-id>/bind-hints.json`) and compares again in the same run; a run
-that compared nothing because of binding is not counted against `max_attempts`, nor are a unit's
-first three compile failures, nor a host refusal before compiling (exit 42 to 45: image,
-copy, toolchain or host agent); a repository include the compiler would not find with the recipe's
-include roots is refused locally before upload, also uncounted. `confirm` runs on the
-working tree (records bind the unit digest, recipe and map hashes and, per report, the comparator
-source hash, not a commit; a note in each record names the base commit, the comparator source hash
-and every uncommitted input among the unit, recipe, map, comparator and verifier files), needs
-inventory entries and the
-repository symbol map, and refuses to overwrite a record without `--replace`. Both keep the target image on each machine at `~/private/<build id>/`
-(uploaded once, checked by hash once per boot) and print only sanitized lines through
-`boat exec`. Private settings live in `.local/verifier/config.json`:
-`{"image": "<local SkyrimSE.exe>", "objdump": "<llvm-objdump>"}`.
+Confirmation binds source/include digests, recipe and map hashes, and the comparator revision.
+It checks independently installed toolchains and target copies on configured hosts, cross-compares
+objects, validates records before publication, and refuses to overwrite records without
+`--replace`. Private image, toolchain, scratch and diagnostic paths belong in ignored config.
 
 ## Files
 
@@ -127,7 +106,7 @@ repository symbol map, and refuses to overwrite a record without `--replace`. Bo
   boot), compiles with the build-path checks of `docs/verification.md` (cleared `INCLUDE`/`CL`/
   `_CL_`, `/showIncludes` equal to the include closure), then runs `verify_function.py` per
   function.
-- `setup_boat_machine.sh`: installs Wine and msitools from the Ubuntu archive, checks out
+- `setup_toolchain.sh`: installs Wine and msitools from the Ubuntu archive, checks out
   msvc-wine at a pinned commit, downloads a pinned Visual Studio installer manifest (checked by
   SHA-256), downloads and unpacks the toolset and Windows SDK from Microsoft's servers, then
   checks the compiler binaries against `pinned.sha256`. Running it accepts the Microsoft Build
@@ -162,19 +141,9 @@ repository symbol map, and refuses to overwrite a record without `--replace`. Bo
   `builds/target.json`, and the source revision from `tools/source_digest.py`.
 - `match_record.py`: assembles a match record under `reports/` from comparator reports and refuses
   any record `tools/check.py` would reject (`reports/README.md`).
-- `boat_up.sh`, `boat_run.sh`, `boat_down.sh` (with `boat_lib.sh`): resume the standing Boat
-  verifier machine and check `pinned.sha256`, run one task in its own `~/tasks/<task-id>` with a
-  file round trip, and stop it while printing compute used. Usage and rules are in
-  `docs/boat-agent-guidelines.md`; `BOAT_CLI` overrides the CLI path.
 
-After the comparison lines `attempt` prints the findings of `tools/check_labels.py` on the unit's
-sources as `label warning:` lines (COMMUNITY names and enumerator values checked against the local
-pinned community checkouts, GUESS names those checkouts declare, Evidence files that miss a compared
-RVA). They never change the exit status; the check reads private clones and does not run in CI.
-
-`attempt` and `confirm` queue their Boat usage for the cost ledger through `tools/cost_hooks.py`
-when that module is present (wall time for an attempt, the compute counter delta for a confirm);
-without it they skip the bookkeeping.
+After comparison, `attempt` prints nonblocking label warnings from `tools/check_labels.py`.
+They never change comparison exit status and are not match evidence.
 
 Related tools outside this directory:
 
@@ -192,7 +161,7 @@ From a checkout (or a copy of `tools/compare.py`, `tools/pecoff.py` and `tools/v
 the worker machine. Copy no credentials and no game-derived files to it.
 
 ```sh
-tools/verifier/setup_boat_machine.sh "$HOME/msvc"
+tools/verifier/setup_toolchain.sh "$HOME/msvc"
 tools/verifier/build_pilot.sh "$HOME/msvc" .local/pilot/a
 tools/verifier/build_pilot.sh "$HOME/msvc" .local/pilot/b
 python3 -I tools/verifier/pilot_compare.py determinism .local/pilot/a .local/pilot/b

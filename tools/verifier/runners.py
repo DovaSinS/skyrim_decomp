@@ -8,8 +8,7 @@ Three backends:
 
 - `boat`: the Boat machines of tools/verifier/session (pipeline.Host); unchanged behaviour.
 - `local`: this machine. The pinned toolchain under Wine (or natively on Windows), no network.
-- `ssh`: a named host reached over key-based SSH with its own ssh_config; first use the
-  maintainer's Windows PC with the pinned compiler run natively.
+- `ssh`: a configured host reached over key-based SSH with its own ssh_config.
 
 Local and ssh hosts keep no repository and need nothing installed but Python 3 (stdlib only), the
 unpacked toolchain and, for comparing, the pinned image. Every run uploads a fresh minimal copy:

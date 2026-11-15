@@ -11,7 +11,7 @@ import flow as f
 
 # Deliberately closed set: no source, evidence, symbol map or acceptance record belongs here.
 DERIVED_FILES = frozenset({
-    'reconstruction/INDEX.md',
+    'reconstruction/INDEX.md', 'LEADERBOARD.md', 'data/contributors.json',
     'docs/progress.svg', 'docs/progress-map.svg',
     'docs/model-trend.svg', 'docs/progress-trend.svg',
 })

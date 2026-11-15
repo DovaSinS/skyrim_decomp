@@ -31,7 +31,7 @@ from test_unit_build import FAKE_CL, sha  # noqa: E402
 
 
 def host(**over):
-    h = {'backend': 'local', 'host_id': 'mac-wine', 'machine': 'maintainer-mac', 'loader': 'wine',
+    h = {'backend': 'local', 'host_id': 'mac-wine', 'machine': 'example-wine', 'loader': 'wine',
          'msvc': '/opt/msvc', 'work': '/opt/work', 'wine_bin': '/opt/wine/bin', 'wineprefix': '/opt/prefix',
          'image': '/opt/SkyrimSE.exe', 'max_parallel': 2}
     h.update(over)
@@ -39,9 +39,9 @@ def host(**over):
 
 
 def ssh_host(**over):
-    h = {'backend': 'ssh', 'host_id': 'winpc-native', 'machine': 'maintainer-winpc', 'loader': 'native',
+    h = {'backend': 'ssh', 'host_id': 'winpc-native', 'machine': 'example-windows', 'loader': 'native',
          'ssh_config': '.local/winpc/ssh_config', 'ssh_host': 'winpc', 'python': ['py', '-3.12'],
-         'msvc': 'C:/sr-test/msvc', 'image': 'C:/sr-test/private/SkyrimSE.exe', 'work': 'C:/sr-test/work',
+         'msvc': 'C:/example/verifier/msvc', 'image': 'C:/example/verifier/private/SkyrimSE.exe', 'work': 'C:/example/verifier/work',
          'max_parallel': 4}
     h.update(over)
     return h
@@ -60,7 +60,7 @@ class Config(unittest.TestCase):
                                            'winpc': ssh_host()}), root='/repo')
         self.assertEqual(c['hosts']['mac']['msvc'], '/repo/.local/toolchains/msvc')
         self.assertEqual(c['hosts']['winpc']['ssh_config'], '/repo/.local/winpc/ssh_config')
-        self.assertEqual(c['hosts']['winpc']['msvc'], 'C:/sr-test/msvc')
+        self.assertEqual(c['hosts']['winpc']['msvc'], 'C:/example/verifier/msvc')
         self.assertEqual(c['attempt'], 'mac')
         # An ssh host gets units in batches by default; a local host one at a time.
         self.assertEqual((c['hosts']['mac']['batch'], c['hosts']['winpc']['batch']), (1, 8))
@@ -107,7 +107,7 @@ class Config(unittest.TestCase):
 
     def test_describe_names_no_paths(self):
         line = runners.describe(runners.validate(config(), root='/repo')['hosts']['winpc'])
-        self.assertEqual(line, 'winpc-native (machine maintainer-winpc, ssh, native)')
+        self.assertEqual(line, 'winpc-native (machine example-windows, ssh, native)')
 
 
 class Independence(unittest.TestCase):
@@ -115,7 +115,7 @@ class Independence(unittest.TestCase):
         mac, pc = host(), ssh_host()
         self.assertIsNone(runners.independence_problem([mac, pc]))
         self.assertIn('two compile hosts', runners.independence_problem([mac]))
-        self.assertIn('one machine', runners.independence_problem([mac, ssh_host(machine='maintainer-mac')]))
+        self.assertIn('one machine', runners.independence_problem([mac, ssh_host(machine='example-wine')]))
         self.assertIn('loaders', runners.independence_problem([mac, ssh_host(loader='wine')]))
         # What the hosts reported decides, not what the config claims.
         facts = {'mac-wine': {'loader': 'wine'}, 'winpc-native': {'loader': 'wine'}}

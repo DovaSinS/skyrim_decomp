@@ -30,7 +30,7 @@ from pipeline import REPO, PipelineError
 MAC_LABEL = 'macos-arm64-local'
 SESSION_NOTE = (
     'independence: separate-machine. The two Boat compile hosts are separately installed machines: each was '
-    'created from scratch and ran tools/verifier/setup_boat_machine.sh itself (neither is a disk fork of the '
+    'created from scratch and ran tools/verifier/setup_toolchain.sh itself (neither is a disk fork of the '
     'other), so the pair also checks the toolchain install; both use the same pinned recipe, Ubuntu image and '
     'cloud provider. Each host checked its compiler binaries against pinned.sha256 and its image against '
     'builds/target.json before compiling. The macOS host only compared; it did not compile.')

@@ -109,7 +109,7 @@ unused ones. Output: `.local/packs/_plan/<label>/list.txt` (input for `packs`) a
 (criteria, choice, runners-up with reasons, rejection counts, and per-class statistics of the
 supported named functions for sizing later batches). Review the list before running `packs`.
 
-Timing on the maintainer's Mac (Ghidra 12.2, project already analysed): about 8 to 9 s of fixed
+Measured timing on one macOS host (Ghidra 12.2, project already analysed): about 8 to 9 s of fixed
 Ghidra start-up per run, then roughly 0.003 s per function for the listing and decompilation of a
 random sample. A run of 8 functions took 8.6 s (1.1 s per function); 2,000 functions took 15.7 s
 (0.01 s per function). Batch many functions per run. `plan` takes about 0.6 s; `packs` for 40

@@ -273,7 +273,7 @@ class ClaimsTests(unittest.TestCase):
         ctx = contrib.Ctx(repo=self.root, private=self.root / '.local/contrib', github=Adapter(), as_json=True, interactive=False)
         with patch.object(contrib, 'inventory', return_value=PUBLIC), contextlib.redirect_stdout(io.StringIO()):
             with self.assertRaises(contrib.Stop) as error:
-                contrib.cmd_claim(ctx, contrib.parser().parse_args(['claim', '--range', '0x1000-0x1040']))
+                contrib.cmd_claim(ctx, contrib.parser().parse_args(['claim', '--model', 'synthetic-agent', '--range', '0x1000-0x1040']))
         self.assertEqual(error.exception.code, 6)
         self.assertIn('#1', error.exception.message)
 

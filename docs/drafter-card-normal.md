@@ -23,8 +23,9 @@ and shared class context; preserve the existing layout and function bodies.
    intuition when the target does different work.
 5. A normal unit gets three counted attempts per selected function plus four for shared setup.
    The sheet gives the exact total. The first three compile failures are free, as in the small kit.
-   Stop changing a function after three counted attempts with the same first mismatch, or when the
-   unit budget is spent. Save it under `<unit dir>/near-miss/<rva>.cpp`, explaining the difference.
+   Keep going while matching bytes rise, even if the first mismatch stays put.
+   Stop changing a function after three counted attempts with no improvement over the best
+   matching-byte progress, or when the hard unit budget is spent. Save it under `<unit dir>/near-miss/<rva>.cpp`, explaining the difference.
 6. Run attempt again after setting aside a function so the remaining functions still compile.
    Run `tools/lint_reconstruction.py <h> <cpp>` and `tools/check_labels.py <h> <cpp>`; fix every
    finding, attempt again after a code change, then report with `work_queue.py done` and take the

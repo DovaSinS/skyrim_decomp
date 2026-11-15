@@ -64,8 +64,8 @@ address is taken and then optimised out), tried first on one dense run.
 
 ## Reproduction and sanitized evidence
 
-Private scripts, logs and tables: `<worktree>/.local/p9/`; handoff
-`.local/handoffs/p9-ltcg-experiment.md`. Machine: `sr-verifier-msvc141`, five short runs.
+Private scripts, logs, tables and reproduction commands are retained in the operator's
+ignored research archive. Five short runs used the pinned MSVC verifier.
 
 ## Negative results and limitations
 

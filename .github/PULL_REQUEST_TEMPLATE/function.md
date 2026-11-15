@@ -1,3 +1,5 @@
+Function intake: project confirmation/review follows this PR; no prior acceptance is required.
+
 ## Reconstructed function(s)
 
 | RVA | name (community, unverified) | local result | reason | candidate/target bytes | code section (first 16) |
@@ -31,10 +33,10 @@ reason codes only; no bytes, listings or decompiler output.
 - [ ] I read LEGAL.md, PROVENANCE.md and the licensing scope, and can contribute this material.
 - [ ] Only reconstruction source is in this pull request: no game files, bytes, listings,
   disassembly, decompiler output, dumps, proprietary symbols or secrets, here or in comments.
-- [ ] Every name carries its origin label (`docs/drafter-card.md`); a body adapted from a community
+- [ ] Every name carries its origin label (`docs/contributor-card.md`); a body adapted from a community
   source is declared in the unit header with its licence.
 - [ ] Anything taken from the FNV decompilation (`momusdigital/fnv_decomp@91e1b6e8`) is labelled
   `SIBLING(...)`, and a reused body has a `Sibling source:` header line; it is never evidence about the
   Skyrim binary.
 - [ ] AI assistance and source exposure are stated above and in the unit header.
-- [ ] `python3 tools/check.py` and `python3 tools/contrib.py submit --dry-run` ran clean.
+- [ ] `./sr submit --dry-run` ran clean (including the publication checks).

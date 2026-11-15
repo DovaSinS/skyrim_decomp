@@ -2,16 +2,16 @@
 """Contributor helper: set up, claim a function, get its bytes from your own game, write C++,
 compare locally and open a pull request. Python 3.11+ standard library only; Linux, macOS, Windows.
 
-    python3 tools/contrib.py go [--profile cheap|full]   # one command: setup, pick, claim and start a function
-    python3 tools/contrib.py doctor             # what is present, what is missing, the one next step
-    python3 tools/contrib.py setup [--yes] [--exe PATH] [--accept-microsoft-license]
-    python3 tools/contrib.py next               # easy unclaimed functions
-    python3 tools/contrib.py claim 0x<rva>      # GitHub issue as a claim (or a prefilled link)
-    python3 tools/contrib.py start 0x<rva>      # branch, unit skeleton, local pack from your exe
-    python3 tools/contrib.py compare            # compile with the pinned MSVC and run the comparator
-    python3 tools/contrib.py submit [--dry-run] # checks, commit, push, pull request
-    python3 tools/contrib.py release 0x<rva>    # give a claim back
-    python3 tools/contrib.py intake --base REF  # contributor-scope checks of a diff (CI, maintainers)
+    ./sr go [--profile cheap|full]   # one command: setup, pick, claim and start a function
+    ./sr doctor             # what is present, what is missing, the one next step
+    ./sr setup [--yes] [--exe PATH] [--accept-microsoft-license]
+    ./sr next               # easy unclaimed functions
+    ./sr claim 0x<rva>      # GitHub issue as a claim (or a prefilled link)
+    ./sr start 0x<rva>      # branch, unit skeleton, local pack from your exe
+    ./sr compare            # compile with the pinned MSVC and run the comparator
+    ./sr submit [--dry-run] # checks, commit, push, pull request
+    ./sr release 0x<rva>    # give a claim back
+    ./sr intake --base REF  # contributor-scope checks of a diff (CI, maintainers)
 
 Every command takes --json (one JSON object on stdout) and never prompts when stdin is not a
 terminal or --json is given: a step that needs a person exits 7 and names the flag to pass.
@@ -50,6 +50,9 @@ import urllib.parse
 import urllib.request
 
 import profiles
+import agent_advice
+import agent_identity
+import attempt_progress
 from local_paths import local_dir, local_path, no_sibling_names
 
 REPO = Path(__file__).resolve().parents[1]
@@ -59,7 +62,7 @@ for _p in (TOOLS, TOOLS / 'verifier', TOOLS / 'analysis', TOOLS / 'ghidra'):
         sys.path.insert(0, str(_p))
 
 OK, FAILED, USAGE, COMPILE, UNIT, MISSING, CLAIMED, CONSENT, NETWORK = 0, 1, 2, 3, 4, 5, 6, 7, 8
-UPSTREAM = 'awarebayes/skyrim-research'
+UPSTREAM = 'awarebayes/skyrim_decomp'
 COMPILE_TIMEOUT = 180
 # Contributor units are small; a cap keeps a pathological file away from the compiler and reviewers.
 MAX_UNIT_FILE_BYTES = 64 * 1024
@@ -103,7 +106,8 @@ class Stop(Exception):
 
     def __init__(self, code, message, next_action=None, **data):
         super().__init__(message)
-        self.code, self.message, self.next_action, self.data = code, message, next_action, data
+        self.code, self.message, self.data = code, message, data
+        self.next_action = next_action or (agent_advice.next_action(message, 'contrib') if code else None)
 
 
 # ------------------------------------------------------------------ context and output
@@ -146,11 +150,7 @@ class Ctx:
     @property
     def cli(self):
         # sr.cmd names itself: a newcomer it bootstrapped has no `py` launcher on PATH.
-        if self.windows and self.env.get('SR_LAUNCHER') == '.\\sr.cmd':
-            return '.\\sr.cmd'
-        if not self.windows and self.env.get('SR_LAUNCHER') == './sr':
-            return './sr'
-        return 'py tools\\contrib.py' if self.windows else 'python3 tools/contrib.py'
+        return '.\\sr.cmd' if self.windows else './sr'
 
     def which(self, name):
         return shutil.which(name, path=self.env.get('PATH'))
@@ -1045,7 +1045,7 @@ def cmd_doctor(ctx, args):
         ctx.say(f'{mark} {name}: {detail}')
         if not ok and required and nxt is None:
             nxt = fix
-    add('python', sys.version_info >= (3, 11), sys.version.split()[0], 'install Python 3.11 or newer')
+    add('python', sys.version_info >= (3, 11), sys.version.split()[0], 'use ./sr (Windows: .\\sr.cmd), which finds Python 3.11+; or install Python 3.11 or newer')
     add('git', bool(ctx.which('git')), ctx.which('git') or 'not found', 'install git')
     info, how = resolve_exe(ctx, target, getattr(args, 'exe', None))
     if info is None:
@@ -1575,6 +1575,17 @@ def claim_selection(ctx, args, data):
 
 
 def cmd_claim(ctx, args):
+    config = load_config(ctx)
+    try:
+        model = agent_identity.resolve(getattr(args, 'model', None) or config.get('model'),
+                                       agent=getattr(args, 'agent', None),
+                                       drafted_by=getattr(args, 'drafted_by', None) or config.get('drafted_by'))
+    except ValueError as error:
+        raise Stop(USAGE, str(error)) from None
+    save_config(ctx, model=model)
+    ctx.say(f'model/agent: {model}')
+    def save_claim(address, record):
+        save_local_claim(ctx, address, dict(record, model=model))
     data = inventory(ctx.repo)
     functions, entries = claim_selection(ctx, args, data)
     build = functions[0]['build_id']
@@ -1588,7 +1599,7 @@ def cmd_claim(ctx, args):
             raise Stop(NETWORK, f'cannot reach GitHub to check claims ({exc})',
                        f'{ctx.cli} claim 0x{first:x} when online, or --offline-ok to start unclaimed')
         for address in addresses:
-            save_local_claim(ctx, address, {'status': 'unpublished', 'url': None})
+            save_claim(address, {'status': 'unpublished', 'url': None})
         ctx.say('WARNING: claim recorded locally only; others cannot see it. Run claim again when online.')
         return OK, {'rva': f'0x{first:x}', 'claim': 'unpublished'}, f'{ctx.cli} start 0x{first:x}'
     if getattr(args, 'github_user', None):
@@ -1618,12 +1629,12 @@ def cmd_claim(ctx, args):
                          for start, end in entries if end > start + 1)
     if mine and ranges_covered and all(any(it in mine for it in index.get(address, [])) for address in addresses):
         for address in addresses:
-            save_local_claim(ctx, address, {'status': 'published', 'url': mine[0]['url']})
+            save_claim(address, {'status': 'published', 'url': mine[0]['url']})
         ctx.say(f'already yours: {mine[0]["url"]}')
         return OK, {'rva': f'0x{first:x}', 'claim': mine[0]['url']}, f'{ctx.cli} start 0x{first:x}'
     public = batch_claims.git_json(ctx.repo)
     counts = {e: sum(e[0] <= f['rva'] < e[1] and f['build_id'] == build for f in data['functions']) for e in entries}
-    plans = batch_claims.parts(build, entries, public, me or 'claimant', counts=counts)
+    plans = batch_claims.parts(build, entries, public, me, counts=counts)
     urls, links = [], []
     for title, text, chunk in plans:
         url = gh.create_issue(title, text)
@@ -1646,7 +1657,7 @@ def cmd_claim(ctx, args):
             raise Stop(CLAIMED, f'older claim #{rivals[0]["number"]} won; your claim was withdrawn', claims=rivals)
         for address in addresses:
             if any(a <= address < b for a, b in chunk):
-                save_local_claim(ctx, address, {'status': 'published', 'url': url})
+                save_claim(address, {'status': 'published', 'url': url})
         ctx.say(f'claimed: {url}')
     if links:
         ctx.say('gh is not signed in; file these issues, then run claim again:')
@@ -1761,6 +1772,7 @@ def start(ctx, args, quiet=False):
     save_config(ctx, profile=prof['name'])
     task = {'task_id': tdir.name, 'build_id': target['build_id'], 'compiled': cpp, 'recipe': recipe,
             'symbols': 'symbols.json', 'functions': sorted(functions.values(), key=lambda f: parse_rva(f['rva'])),
+            'drafter_model': getattr(args, 'model', None) or load_config(ctx).get('model') or load_config(ctx).get('drafted_by'),
             'contrib': {'practice': bool(args.practice), 'unit': [header, cpp], 'profile': prof['name']}}
     (tdir / 'task.json').write_text(json.dumps(task, indent=2) + '\n')
     refresh_symbols(ctx, tdir, target['build_id'])
@@ -1778,8 +1790,9 @@ def start(ctx, args, quiet=False):
         if sibling:
             ctx.say(f'sibling source pointers (FNV; shape and names only, never evidence): {tdir / "sibling.md"}')
         ctx.say(f'unit: {header} and {cpp}' + (' (skeleton created)' if created else ''))
-        ctx.say(f'profile {prof["name"]}: read {"; ".join(prof["contrib_docs"])}; stop after '
-                f'{prof["contrib_max_tries"]} compare runs without a pass. {prof["cost"]}')
+        ctx.say(f'profile {prof["name"]}: read {"; ".join(prof["contrib_docs"])}; '
+                + attempt_progress.guidance(prof['stuck_after'])
+                + f' Hard cap: {prof["contrib_max_tries"]} compare runs. {prof["cost"]}')
     return OK, {'task': tdir.name, 'unit': [header, cpp], 'created': created, 'packs': packs, 'branch': branch,
                 'practice': bool(args.practice), 'sibling': str(tdir / 'sibling.md') if sibling else None,
                 'profile': prof['name'], 'read': prof['contrib_docs'], 'max_tries': prof['contrib_max_tries'],
@@ -1840,6 +1853,9 @@ def run_compare(ctx, ident=None, root=None):
     root = Path(root or ctx.repo)
     tdir, task = load_task(ctx, ident)
     target = target_manifest(root)
+    config = load_config(ctx)
+    model = task.get('drafter_model') or config.get('model') or config.get('drafted_by')
+    # Legacy comparison-only tasks may predate claims; new claims require attribution up front.
     exe = require_exe(ctx, target)['path']
     tool = check_toolchain(ctx)
     runs = tdir / 'runs'
@@ -1851,7 +1867,7 @@ def run_compare(ctx, ident=None, root=None):
     bound = bind.bind(tdir, built['object'], exe, objdump, repo=root)
     bind_lines = bind.describe(bound, tdir)
     task = json.loads((tdir / 'task.json').read_text())
-    results = []
+    results, current = [], {}
     for fn in task['functions']:
         rva = parse_rva(fn['rva'])
         fdir = out / f'0x{rva:x}'
@@ -1881,19 +1897,30 @@ def run_compare(ctx, ident=None, root=None):
                         'coverage': {k: cov.get(k) for k in ('code_bytes_total', 'code_bytes_exact',
                                                              'code_bytes_by_reference', 'unwind')},
                         'code_section_sha256': (report.get('candidate') or {}).get('code_section_sha256')})
+        alignment = None
+        if report.get('result') == 'pass':
+            alignment = dict(matching_bytes=fn['size'], target_bytes=fn['size'], matching_regions=1)
+        elif objdump:
+            import align
+            align.attempt_summary(fdir, objdump, exe, built['object'],
+                                  dict(fn, rva=rva), tdir / 'symbols.json')
+            alignment = attempt_progress.read_json(fdir / 'align.json')
+        current[f'0x{rva:x}'] = attempt_progress.measure(report, alignment)
         if objdump:
             import disasm
             disasm.write_side_by_side(fdir / 'side-by-side.txt', objdump, exe, built['object'], fn['symbol'],
                                       rva, fn['size'])
     first = json.loads((out / f'0x{parse_rva(task["functions"][0]["rva"]):x}' / 'report.json').read_text())
-    summary = {'task': task['task_id'], 'run': number, 'unit': task['compiled'], 'source_revision': built['digest'],
+    prof = contrib_profile(ctx, task.get('contrib', {}).get('profile'))
+    history = [attempt_progress.read_json(path / 'summary.json') for path in sorted(runs.glob('[0-9][0-9][0-9]')) if path != out]
+    progress = attempt_progress.update(current, history)
+    summary = {'model': model, 'progress': progress, 'task': task['task_id'], 'run': number, 'unit': task['compiled'], 'source_revision': built['digest'],
                'recipe': task['recipe'], 'recipe_sha256': built['recipe_sha256'],
                'compiler': 'pinned' if built['compiler'] in ('wine', 'native') else 'override',
                'image_sha256_pinned': True, 'comparator': first.get('comparator'),
                'contract_version': first.get('contract_version'), 'functions': results,
                'bind': [line.strip() for line in bind_lines], 'practice': task.get('contrib', {}).get('practice', False),
                'private_dir': str(out)}
-    (tdir / 'last-compare.json').write_text(json.dumps(summary, indent=2) + '\n')
     passed = sum(r['result'] == 'pass' for r in results)
     ctx.say(f'run {number}: {passed}/{len(results)} pass ({summary["compiler"]} compiler)')
     for r in results:
@@ -1906,18 +1933,23 @@ def run_compare(ctx, ident=None, root=None):
     if objdump:
         for r in results:
             ctx.say(f'private side-by-side: {out / r["rva"] / "side-by-side.txt"} (read locally; never paste it anywhere)')
-    nxt = f'{ctx.cli} submit' if passed == len(results) else f'revise the source, then {ctx.cli} compare'
-    prof = contrib_profile(ctx, task.get('contrib', {}).get('profile'))
+    nxt = f'{ctx.cli} submit --dry-run' if passed == len(results) else f'revise the source, then {ctx.cli} compare'
     summary['profile'], summary['max_tries'] = prof['name'], prof['contrib_max_tries']
-    if passed < len(results) and number >= prof['contrib_max_tries'] and not summary['practice']:
+    for rva, metric in progress.items():
+        ctx.say(attempt_progress.describe(rva, metric, prof['stuck_after']))
+    ctx.say(attempt_progress.guidance(prof['stuck_after']))
+    stalled = bool(progress) and all(m and m['no_improvement'] >= prof['stuck_after'] for m in progress.values())
+    if passed < len(results) and (stalled or number >= prof['contrib_max_tries']) and not summary['practice']:
         # Advice only: a contributor may go on, but a weak model rarely recovers past this point.
         first_rva = task['functions'][0]['rva']
-        nxt = (f'stop: {number} compare runs under profile {prof["name"]} without a full pass; tell the person, then '
+        nxt = (f'stop: {prof["stuck_after"]} attempts with no improvement or hard cap {prof["contrib_max_tries"]} reached under profile {prof["name"]}; tell the person, then '
                f'{ctx.cli} release {first_rva} --reason "<one line>"'
                + (f', or continue with a stronger model ({ctx.cli} start {first_rva} --profile full)'
                   if prof['name'] == 'cheap' else ''))
     if summary['practice'] and passed == len(results):
         nxt = f'{ctx.cli} next'
+    (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
+    (tdir / 'last-compare.json').write_text(json.dumps(summary, indent=2) + '\n')
     return (OK if passed == len(results) else FAILED), summary, nxt
 
 
@@ -2004,16 +2036,20 @@ def cmd_intake(ctx, args):
 def upstream_remote(ctx):
     """(upstream remote name or None, push remote name or None)."""
     up, push = None, None
-    slug = (ctx.env.get('SR_UPSTREAM') or UPSTREAM).lower()
+    slugs = {UPSTREAM.lower(), 'awarebayes/skyrim-research',
+             (ctx.env.get('SR_UPSTREAM') or UPSTREAM).lower()}
+    remotes = []
     for line in git(ctx, 'remote', '-v', check=False).splitlines():
         parts = line.split()
         if len(parts) < 3 or parts[2] != '(push)':
             continue
-        name, url = parts[0], parts[1].lower().removesuffix('.git')
-        if url.endswith(slug):
-            up = up or name
-        else:
-            push = push or name
+        name, url = parts[0], parts[1].lower().rstrip('/').removesuffix('.git')
+        remotes.append((name, url.rstrip('/')))
+    # A remote with multiple push URLs is unsafe if any URL targets upstream.
+    upstreams = {name for name, url in remotes
+                 if any(url.endswith('/' + slug) or url.endswith(':' + slug) for slug in slugs)}
+    up = next((name for name, _ in remotes if name in upstreams), None)
+    push = next((name for name, _ in remotes if name not in upstreams), None)
     return up, push
 
 
@@ -2029,7 +2065,7 @@ def submit_preflight(ctx, push):
             blockers.append('fork push remote must name a GitHub repository')
     else:
         blockers.append('no fork remote to push to')
-        actions.append('fork the repository on GitHub; git remote add fork https://github.com/<you>/skyrim-research.git')
+        actions.append(f'fork the repository on GitHub; git remote add fork https://github.com/<you>/{UPSTREAM.split("/")[-1]}.git')
     for field in ('name', 'email'):
         if not git(ctx, 'config', '--get', 'user.' + field, check=False):
             blockers.append('git author ' + field + ' is not configured')
@@ -2137,7 +2173,7 @@ def cmd_submit(ctx, args):
     drafted = args.drafted_by or load_config(ctx).get('drafted_by') or 'not stated'
     data = {'title': title, 'body_file': str(tdir / 'pr-body.md'), 'files': unit, 'blockers': blockers,
             'warnings': warnings, 'dry_run': bool(args.dry_run), 'base': base, 'preflight': preflight,
-            'ci_hash': {'advisory': True, 'advice': 'New units need // CI hash: <RVA> <COFF-symbol> in the first 8192 bytes of the .cpp header. Without a resolved binding CI reports no-target; green CI is not acceptance.'},
+            'ci_hash': {'advisory': True, 'advice': 'For optional public hash CI, add // CI hash: <RVA> <COFF-symbol> in the first 8192 bytes of the .cpp header. Without a resolved binding CI reports no-target; green CI is not acceptance.'},
             'commit_message': f'{title}\n\nDrafted by {drafted}. Local comparator pass with the pinned recipe; '
                               'not yet confirmed by the project.'}
     ctx.say(data['ci_hash']['advice'])
@@ -2177,7 +2213,7 @@ def cmd_submit(ctx, args):
     git(ctx, 'commit', '-m', data['commit_message'], '--', *unit)
     if not push:
         raise Stop(USAGE, 'no fork remote to push to', 'fork the repository on GitHub, then '
-                   'git remote add fork https://github.com/<you>/skyrim-research.git and run submit again', **data)
+                   f'git remote add fork https://github.com/<you>/{UPSTREAM.split("/")[-1]}.git and run submit again', **data)
     branch = git(ctx, 'rev-parse', '--abbrev-ref', 'HEAD')
     git(ctx, 'push', '-u', push, branch)
     task['contrib']['submitted'] = branch
@@ -2229,7 +2265,13 @@ def cmd_go(ctx, args):
         if not data['candidates']:
             raise Stop(OK, 'no startable function found')
         rva = data['candidates'][0]['rva']
-    cmd_claim(ctx, argparse.Namespace(rva=rva, take_over=False, offline_ok=args.offline_ok))
+    code, claim, claim_next = cmd_claim(ctx, argparse.Namespace(rva=rva, take_over=False, offline_ok=args.offline_ok,
+                                      model=getattr(args, 'model', None), drafted_by=args.drafted_by))
+    if code != OK or claim.get('claim') == 'link-only':
+        links = ' '.join(claim.get('links', []))
+        return (CONSENT if claim.get('claim') == 'link-only' else code), claim, (
+            f'file {links}, then run {ctx.cli} claim {rva} --github-user <your-login>'
+            if claim.get('claim') == 'link-only' else claim_next)
     return start(ctx, argparse.Namespace(rva=[rva], practice=False, drafted_by=args.drafted_by, area=None,
                                          no_branch=args.no_branch, recipe=None, force=False, profile=args.profile))
 
@@ -2237,7 +2279,7 @@ def cmd_go(ctx, args):
 # ------------------------------------------------------------------ main
 
 def parser():
-    p = argparse.ArgumentParser(prog='contrib.py', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = agent_advice.ArgumentParser(prog='contrib.py', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('--json', action='store_true', help='one JSON object on stdout; never prompts')
     p.add_argument('--yes', action='store_true', help='agree to package installs (never to a licence)')
     p.add_argument('--redact', action='store_true',
@@ -2267,10 +2309,13 @@ def parser():
     s.add_argument('--take-over', action='store_true')
     s.add_argument('--offline-ok', action='store_true')
     s.add_argument('--github-user', help='your GitHub login, when gh is not signed in')
+    s.add_argument('--model', '--agent', help='actual model id or agent/tool name, recorded before claiming')
+    s.add_argument('--drafted-by', help='human/agent attribution, including model if AI-assisted')
     s = sub.add_parser('release')
     s.add_argument('rva')
     s.add_argument('--reason')
     s = sub.add_parser('start')
+    s.add_argument('--model', '--agent', help='actual model id or agent/tool name')
     s.add_argument('rva', nargs='+')
     s.add_argument('--drafted-by')
     s.add_argument('--area')
@@ -2292,6 +2337,7 @@ def parser():
     s.add_argument('--base', required=True)
     s.add_argument('--head', default='HEAD')
     s = sub.add_parser('go')
+    s.add_argument('--model', '--agent', help='actual model id or agent/tool name, recorded before claiming')
     s.add_argument('rva', nargs='?')
     s.add_argument('--exe')
     s.add_argument('--drafted-by')
@@ -2333,6 +2379,10 @@ def main(argv=None, ctx=None):
                 print(ctx.scrub(f'  {line}'), file=sys.stderr)
             for line in data.get('errors') or []:
                 print(ctx.scrub(f'  {line}'), file=sys.stderr)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        code, data, nxt, message = USAGE, {}, agent_advice.next_action(exc, 'contrib'), str(exc)
+        if not ctx.as_json:
+            print(ctx.scrub(f'error: {message}'), file=sys.stderr)
     if ctx.as_json:
         out = {'command': args.command, 'ok': code == OK, 'exit_code': code, 'error': message, 'next': nxt}
         out.update({k: v for k, v in (data or {}).items() if k not in out})

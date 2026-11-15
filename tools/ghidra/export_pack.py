@@ -1879,7 +1879,10 @@ def render_brief(task, packs):
     total = sum(f['size'] or 0 for f in compared)
     lines = [f'# Brief: {task["task_id"]}', '',
              f'Unit `{task["compiled"]}` (+ `.h`), recipe `{task["recipe"].rsplit("/", 1)[-1][:-5]}`, '
-             f'budget {task["max_attempts"]} attempts for {len(compared)} functions ({total} B).',
+             f'hard budget {task["max_attempts"]} attempts for {len(compared)} functions ({total} B).',
+             'Keep going while matching bytes rise, even if the first mismatch stays put; stop after the brief/profile N '
+             'counted attempts with no improvement over the best score, or the hard budget.',
+             'Name the actual model at claim time; standalone attempt needs --model, --agent or a project --profile.',
              f'Class material first: `.local/packs/{task["build_id"]}/class/{cls}/README.md`; per-function packs '
              f'`.local/packs/{task["build_id"]}/<rva>/`.', '',
              'Order (smallest first): RVA, size, community name, references, notes']

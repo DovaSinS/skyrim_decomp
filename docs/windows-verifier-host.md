@@ -8,7 +8,7 @@ here.
 
 ## Measured result
 
-On a Windows 11 Pro x64 PC (AMD Ryzen 7 7800X3D, 8 cores, 32 GB), compiling natively with the
+On Windows x64, compiling natively with the
 pinned toolset (cl 19.16.27054; the four binaries in `tools/verifier/pinned.sha256` byte-identical
 to the pins) and the pinned recipes, every accepted unit with a two-host match record at the time (83 units,
 247 functions, both `msvc-19.16.27054-o2` and `o2-fpfast`) gave, for every function, a comparator
@@ -56,7 +56,7 @@ community sources and the Steam lookup of the image were not exercised there.
   `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`: `python` on PATH may be the Microsoft Store
   alias, which does not run Python.
 - The pinned toolset and SDK, unpacked natively by msvc-wine's `vsdownload.py` at the commit and
-  with the manifest and options of `tools/verifier/setup_boat_machine.sh` (`--major 15 --host-arch
+  with the manifest and options of `tools/verifier/setup_toolchain.sh` (`--major 15 --host-arch
   x64 --architecture x64 --with-default no --with-msvc yes --with-sdk yes --sdk-version 10.0.19041
   --accept-license --dest <toolchain>`). On Windows it unpacks the SDK with `msiexec /a` (an
   administrative extract: no installation, no registry entries), which works from an SSH session.

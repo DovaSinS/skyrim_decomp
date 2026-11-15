@@ -1,5 +1,8 @@
 # Reviewer runbook (any model, any harness)
 
+Never kill a lane process you didn't start. Only the lane service or a run's recorded owner
+may stop or retire it; a worker's time box or missing own output grants no ownership.
+
 Follow `docs/anti-eu-bureaucracy.md`: ship in bulk, decide rather than stop, and add no ceremony beyond named rules.
 
 Paste into a fresh session started in this repository:

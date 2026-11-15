@@ -12,7 +12,12 @@ attempt budget) and the symbol map. Work in the checkout you are given; do not c
 **The loop.** Write or edit `reconstruction/<area>/<Class>.h` and `.cpp`, then run
 `tools/verifier/attempt .local/tasks/<task-id>` from the repository root (about 5 to 10 s when
 warm). It compiles, binds names, compares, and prints one line per function: PASS/FAIL, reason
-code, first mismatch offset, candidate/target size. Read locally
+code, first mismatch offset, candidate/target size and matching-byte progress versus the previous attempt.
+Name your actual model at claim time; `attempt` and `done` inherit it. For a standalone task use
+`attempt --model <model-id>` (or `--agent <tool-name>`); project agents may use `--profile <profile>`.
+Keep going while matching bytes rise, even if the first mismatch stays put. Stop after the brief's
+N counted attempts with no improvement over the best score (default 3, full profile 4), or the existing
+hard attempt cap. Missing progress is unknown, not zero; the score never proves a match. Read locally
 `attempts/<NNN>/0x<rva>/side-by-side.txt` (target vs candidate disassembly; `*` marks rows that
 differ outside relocated fields) and `compile.log`, revise, repeat. Never stop the machine; it
 stops itself at its deadline. One unit per shell command: never chain several `attempt` runs in one

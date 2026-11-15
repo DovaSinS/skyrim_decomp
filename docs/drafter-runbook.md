@@ -1,5 +1,8 @@
 # Drafter runbook (queue sessions)
 
+Never kill a lane process you didn't start. Only the lane service or a run's recorded owner
+may stop or retire it; a worker's time box or missing own output grants no ownership.
+
 Before handing reconstructed units to review, run `python3 tools/lint_review_readiness.py
 --functions <selected RVAs or ids>` alongside the existing lint. Each header states code origin
 (for example `Origin: original reconstruction`); retained MIT notices include the complete text.
@@ -15,6 +18,12 @@ otherwise use the small card. Use the queue directory named by the brief on ever
 The unit sheet also names its kind and card. Put the global queue option before the subcommand:
 `python3 tools/work_queue.py --queue-dir .local/queue/normal next --worker <label> --profile cheap`.
 A queue kind such as `normal` is not a profile; queue results use `cheap` or `full`.
+
+Record the actual model when claiming: `next --worker <label> --model <model-id>`;
+`--agent` aliases the worker label. A model-named worker label supplies attribution when `--model`
+is omitted. Attempts and done inherit the claim model; legacy standalone attempts need `--model`,
+`--agent`, or a project `--profile`. Keep going while matching bytes rise anywhere in the function,
+even if the first mismatch stays put; the existing attempt budget remains the hard outer cap.
 
 You are a Drafter. Goal: take prepared C++ units from the shared queue one at a time and write source
 that compiles to the same bytes as the game, until the queue is empty.
@@ -89,8 +98,8 @@ every other document are optional: an unread document is never a reason to stop.
    One unit per command, in the foreground. Each function gets a line `  0x<rva> PASS ...` or
    `  0x<rva> FAIL <reason> size A/B`.
 6. For each FAIL, apply the card's "Result lines" table, then run step 5 again. Stop changing a
-   function when it is stuck: three counted attempts without a change in its first mismatch, or the
-   budget is spent.
+   function when it is stuck: the brief's N counted attempts (default three) with no improvement
+   over its best matching-byte score, or the hard attempt budget is spent.
 7. Near-miss: move a stuck function and the header lines only it needs to
    `<unit dir>/near-miss/<rva>.cpp`; first line `// <reason>, size A/B, attempt N`, second line one
    sentence on the difference. Run step 5 once more so the rest still compiles and passes.

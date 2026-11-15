@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Prepare lane requests through the ordinary acceptance gates; apply and index once."""
-import argparse
 import json
+import sys
 import time
 from pathlib import Path
 import accept_function as af
+import agent_advice
 from check_source_digest import source_digest_cache
 
 
@@ -71,14 +72,14 @@ def _accept(root, requests, when=None, *, prepare_only=False, timings=None):
             add(request, timed(request['kind'], prepare_request, request))
         except errors as error:
             if request['kind'] == 'family':
-                dropped.append(dict(request=request, reason=str(error)))
+                dropped.append(dict(request=request, reason=str(error), next=agent_advice.next_action(error)))
                 return
             for function in request['functions']:
                 member = dict(request, functions=[function])
                 try:
                     add(member, timed(member['kind'], prepare_request, member))
                 except errors as member_error:
-                    dropped.append(dict(request=member, reason=str(member_error)))
+                    dropped.append(dict(request=member, reason=str(member_error), next=agent_advice.next_action(member_error)))
 
     try:
         reviews = [r for r in requests if r['kind'] == 'review']
@@ -129,16 +130,21 @@ def _accept(root, requests, when=None, *, prepare_only=False, timings=None):
 
 
 def main():
-    p = argparse.ArgumentParser(description=__doc__)
+    p = agent_advice.ArgumentParser(description=__doc__)
     p.add_argument('--root', type=Path, required=True)
     p.add_argument('--requests', type=Path, required=True)
     p.add_argument('--result', type=Path, required=True)
     p.add_argument('--prepare-only', action='store_true')
     args = p.parse_args()
-    inputs = json.loads(args.requests.read_text())
-    result = accept(args.root, inputs, prepare_only=args.prepare_only)
-    args.result.write_text(json.dumps(result, indent=2) + '\n')
+    try:
+        inputs = json.loads(args.requests.read_text())
+        result = accept(args.root, inputs, prepare_only=args.prepare_only)
+        args.result.write_text(json.dumps(result, indent=2) + '\n')
+    except (af.Refused, OSError, ValueError, KeyError, TypeError) as error:
+        print('lane acceptance: ' + agent_advice.explain(error), file=sys.stderr)
+        return 1
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

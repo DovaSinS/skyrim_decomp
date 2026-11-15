@@ -3,7 +3,6 @@ import copy
 import json
 import os
 from pathlib import Path
-import plistlib
 import subprocess
 import sys
 import tempfile
@@ -118,6 +117,7 @@ class Selection(unittest.TestCase):
 
 class FakeRuntime:
     def __init__(self):
+        self.root = Path(tempfile.gettempdir()) / 'synthetic-contributor-standing-unused'
         self.calls, self.messages = [], []
         self.crash = None
         self.unsafe, self.reject, self.scope = False, False, False
@@ -334,24 +334,29 @@ class PublicationAndScheduling(unittest.TestCase):
             self.assertIn('withheld', ap.safe_reason(value))
         self.assertEqual(ap.safe_reason('0x1234: comparison failed'), '0x1234: comparison failed')
 
-    def test_launchd_is_private_and_not_loaded(self):
-        with tempfile.TemporaryDirectory() as tmp, patch.object(ap.subprocess, 'run', side_effect=AssertionError('no install')):
-            path, command = ap.write_launchd(ROOT, Path(tmp), sys.executable)
-            data = plistlib.loads(path.read_bytes())
-            self.assertEqual(data['StartInterval'], 600)
-            self.assertFalse(data['RunAtLoad'])
-            self.assertEqual(data['ProgramArguments'][-1], 'run-once')
-            self.assertIn(str(path), command)
-            self.assertTrue(command.startswith('launchctl bootstrap'))
+    def test_unavailable_hosts_wake_only_with_private_configuration(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        runtime.config = dict(ap.DEFAULTS)
+        runtime.command = Mock(return_value=Mock(returncode=1))
+        runners = dict(confirm=['a', 'b'], attempt='a',
+                       hosts=dict(a=dict(backend='local'), b=dict(backend='ssh')))
+        with patch.object(ap, 'read_json', return_value=runners), patch.object(ap, 'wake_windows') as wake:
+            with self.assertRaisesRegex(ap.Stop, 'restore the host'):
+                runtime.ensure_hosts(ROOT)
+            wake.assert_not_called()
+            runtime.config.update(wol_mac='00:00:5E:00:53:01', wol_broadcast='192.0.2.255', wol_wait=0)
+            with self.assertRaisesRegex(ap.Stop, 'unavailable after'):
+                runtime.ensure_hosts(ROOT)
+            wake.assert_called_once_with('00:00:5E:00:53:01', '192.0.2.255')
 
     def test_wake_packet_both_ports(self):
         sock = Mock()
         with patch.object(ap.socket, 'socket') as factory:
             factory.return_value.__enter__.return_value = sock
-            ap.wake_windows('E8:47:3A:E7:8F:EC', '192.168.1.255')
+            ap.wake_windows('00:00:5E:00:53:01', '192.0.2.255')
         calls = sock.sendto.call_args_list
         self.assertEqual([c.args[1][1] for c in calls], [9, 7])
-        self.assertEqual(calls[0].args[0], b'\xff' * 6 + bytes.fromhex('E8473AE78FEC') * 16)
+        self.assertEqual(calls[0].args[0], b'\xff' * 6 + bytes.fromhex('00005E005301') * 16)
 
     def test_compiler_timeout_kills_child_and_does_not_leave_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:

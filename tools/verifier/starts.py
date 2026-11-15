@@ -2,7 +2,7 @@
 """Machine-start accounting for every verifier tool that can start a Boat machine.
 
 Boat limits STARTS per rolling minute, hour and day; create, fork and resume each count as one
-(docs.boat.dev/limits; measurements in docs/boat-agent-guidelines.md). A tool calls `take()`
+(historical provider limits). A tool calls `take()`
 right before the CLI call that may start a machine. It reads `boat limits --json`, refuses when
 the start would leave fewer than the reserve for the rest of the day or when the hour or minute
 window is full, and appends the start with its reason to `<state>/starts.jsonl`.
