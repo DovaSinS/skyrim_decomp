@@ -1,0 +1,3199 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "headers": {
+    "reconstruction/fields/NiRefObjectLayout.h": "380d5a2c51e66d97756c15e6130a1120814108e9c04f8fbffc5857c5de4bea71",
+    "reconstruction/fields/BSFixedStringLayout.h": "ed0fac1d3cc5d24a21f49cf9627b83633cb847cf7f8124a01a275d0a8d348898",
+    "reconstruction/fields/NativeFunctionLayout.h": "962c98646dc5a2e5b8dd449c6bf16b1719f991374fb18947bb834a4bcf364c22",
+    "reconstruction/fields/CombatObjectLayout.h": "a5c89ecb99fa38a44b4148d09ff051c860fd139825eec40d017f688703b96775",
+    "reconstruction/fields/CombatInventoryItemMagicLayout.h": "c5131233b8d41f80478acda7fd3112caa4df44d1c4e9b5ff21de42ad41b34f95",
+    "reconstruction/fields/ExtraPoisonLayout.h": "14954276ff309fe9c2bda8728c4d2f3ade3ff8e3431f3cd5cc34b850991a227e",
+    "reconstruction/fields/CombatInventoryItemLayout.h": "0327723677bfe44ce03a8705b6773d7f6b32af4afc2f4f173d6c93593d58922b",
+    "reconstruction/fields/BSExtraDataLayout.h": "3e4182f9f056dbaf7037f6d979dd620f0d3c9f5fdddd04085bebf19556d3acb5",
+    "reconstruction/fields/NiExtraDataLayout.h": "35ca5b408b47e0b2719bcb10935b4a9869b5c90d45c4263f878885524e1380e0",
+    "reconstruction/fields/NiObjectLayout.h": "7e63641aead2097b36025122584048635a62ff787f175889acb228d9561716db"
+  },
+  "members": [
+    {
+      "rva": 1592192,
+      "size": 5,
+      "header": "reconstruction/fields/ExtraPoisonLayout.h",
+      "type": "ResearchLayouts::ExtraPoisonLayout",
+      "field": "poison",
+      "operation": "pointer",
+      "offset": 16,
+      "declaration-source": "reconstruction/bsengine/ExtraPoisonLayout.h"
+    },
+    {
+      "rva": 8572656,
+      "size": 9,
+      "header": "reconstruction/fields/CombatInventoryItemLayout.h",
+      "type": "ResearchLayouts::CombatInventoryItemLayout",
+      "field": "item",
+      "operation": "present",
+      "offset": 16,
+      "declaration-source": "reconstruction/actors/CombatInventoryItemLayout.h"
+    },
+    {
+      "rva": 8580208,
+      "size": 5,
+      "header": "reconstruction/fields/CombatInventoryItemMagicLayout.h",
+      "type": "ResearchLayouts::CombatInventoryItemMagicLayout",
+      "field": "item",
+      "operation": "pointer",
+      "offset": 16,
+      "declaration-source": "reconstruction/actors/CombatInventoryItemMagicLayout.h"
+    },
+    {
+      "rva": 10477776,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477792,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477808,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477824,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477840,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477856,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477872,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10477888,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543568,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543584,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543600,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543616,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543632,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543648,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543664,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543680,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543696,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543712,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543728,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543744,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543760,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543776,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543792,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543808,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543824,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543840,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543856,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543872,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543888,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543904,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543920,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543936,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543952,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543968,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10543984,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544000,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544016,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544032,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544048,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544064,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544080,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544096,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544112,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544128,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544144,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544160,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544176,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544192,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544208,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544224,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544240,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544256,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544272,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544288,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544304,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544320,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544336,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544352,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544368,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544384,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544400,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544416,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544432,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544448,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544464,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544480,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544496,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544512,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10544528,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10565360,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573376,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573392,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573408,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573424,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573440,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10573456,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10577600,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10577616,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10581008,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10581024,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10581040,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586816,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586832,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586848,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586864,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586880,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586896,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586912,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10586928,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10594112,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10594128,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10594144,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10597392,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10601008,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10601024,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10601040,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10601056,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10604032,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10604048,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10607456,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10607472,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10607488,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10607504,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10609600,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10611616,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10611632,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623136,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623152,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623168,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623184,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623200,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623216,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623232,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623248,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10623264,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10628128,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10628880,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661872,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661888,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661904,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661920,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661936,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661952,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661968,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10661984,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662000,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662016,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662032,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662048,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662064,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662080,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662096,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662112,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662128,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662144,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662160,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662176,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662192,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662208,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662224,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662240,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662256,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662272,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662288,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662304,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662320,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662336,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662352,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10662368,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10678448,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10678464,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10678480,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10678496,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682640,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682656,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682672,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682688,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682704,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10682720,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10688160,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10688176,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10688192,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10691536,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10697344,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10697360,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10697376,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10697392,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10699936,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10699952,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708768,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708784,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708800,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708816,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708832,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708848,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708864,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708880,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708896,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708912,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708928,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10708944,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10719936,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10719952,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10719968,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10719984,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10720000,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10720016,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10720032,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10720048,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10720064,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10723968,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10723984,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10726320,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10726336,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10726352,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10728768,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10728784,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10730976,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10730992,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10733264,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10733280,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740304,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740320,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740336,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740352,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740368,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740384,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10740400,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10742672,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748064,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748080,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748096,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748112,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748128,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748144,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748160,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748176,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748192,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10748208,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10753056,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842464,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842480,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842496,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842512,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842528,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842544,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842560,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842576,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842592,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842608,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842624,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842640,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842656,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842672,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842688,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842704,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842720,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842736,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842752,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842768,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842784,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842800,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842816,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842832,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842848,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842864,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842880,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842896,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842912,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842928,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842944,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842960,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842976,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10842992,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843008,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843024,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843040,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843056,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843072,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843088,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843104,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843120,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843136,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843152,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843168,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843184,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843200,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843216,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843232,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843248,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843264,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843280,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843296,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843312,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843328,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843344,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843360,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843376,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843392,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843408,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843424,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843440,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843456,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10843472,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10872544,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10875472,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10875488,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885104,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885120,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885136,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885152,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885168,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885184,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885200,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885216,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10885232,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10891280,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10891296,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10891312,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10893024,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10894352,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897840,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897856,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897872,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897888,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897904,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10897920,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10904560,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10904576,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 10904592,
+      "size": 9,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionLayout",
+      "field": "callback",
+      "operation": "present",
+      "offset": 80,
+      "declaration-source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 15702848,
+      "size": 5,
+      "header": "reconstruction/fields/NiExtraDataLayout.h",
+      "type": "ResearchLayouts::NiExtraDataLayout",
+      "field": "name",
+      "operation": "address",
+      "offset": 16,
+      "declaration_source": "reconstruction/netimmerse/NiExtraDataLayout.h"
+    },
+    {
+      "rva": 21666224,
+      "size": 5,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionBaseLayout",
+      "field": "name",
+      "operation": "address",
+      "offset": 16,
+      "declaration_source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 21666240,
+      "size": 5,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionBaseLayout",
+      "field": "objectName",
+      "operation": "address",
+      "offset": 24,
+      "declaration_source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 21666256,
+      "size": 5,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionBaseLayout",
+      "field": "stateName",
+      "operation": "address",
+      "offset": 32,
+      "declaration_source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    },
+    {
+      "rva": 21666512,
+      "size": 5,
+      "header": "reconstruction/fields/NativeFunctionLayout.h",
+      "type": "ResearchLayouts::NativeFunctionBaseLayout",
+      "field": "docString",
+      "operation": "address",
+      "offset": 72,
+      "declaration_source": "reconstruction/bsengine/NativeFunctionLayout.h"
+    }
+  ],
+  "limitations": "Existing represented declarations; field expression is original trivial source. Original class/template identity remains unverified. Unresolved population members are not silently enrolled."
+}

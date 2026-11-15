@@ -143,7 +143,8 @@ class StaleSiblingTests(unittest.TestCase):
                 check.validate(fr.read(tree, af.PROGRESS), self.fixture.target, tree)
                 return 'PASS'
             return real_run(cmd, tree, step, env=env)
-        with patch.object(lane.resource_admission, 'admit'), patch.object(flow, 'run', side_effect=run), \
+        with patch.object(lane.resource_admission, 'admit'), patch.object(lane, 'require_base_tools'), \
+                patch.object(flow, 'run', side_effect=run), \
                 patch.object(lane, 'accept', side_effect=lambda tree, requests, python:
                              lane_accept.accept(tree, requests, self.case.when)):
             lane.build(self.root, self.fixture.fdir, receipt, sys.executable, 'main')
