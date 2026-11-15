@@ -1,0 +1,810 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "headers": {
+    "reconstruction/bsengine/HandleExtraDeleteLayout.h": "a37a6ebd0168f175b94e7b9ba648146d81424be39b5b4e325352767bedc80f42",
+    "reconstruction/bsengine/QueueDeleteLayout.h": "2e45ca24fb470611811f3299d99e9d04560a71d1db7317226cdb77a613c49a37"
+  },
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "members": [
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17c280::~HandleOwner17c280() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraAshPileRef",
+      "owner_rtti": ".?AVExtraAshPileRef@@",
+      "owner_slot": 0,
+      "owner_table": 25075256,
+      "rva": 1557120,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17c280@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075256,
+          "symbol": "??_7HandleOwner17c280@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17c280"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17c2b0::~HandleOwner17c2b0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraAttachRef",
+      "owner_rtti": ".?AVExtraAttachRef@@",
+      "owner_slot": 0,
+      "owner_table": 25075160,
+      "rva": 1557168,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17c2b0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075160,
+          "symbol": "??_7HandleOwner17c2b0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17c2b0"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17c830::~HandleOwner17c830() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraEnableStateParent",
+      "owner_rtti": ".?AVExtraEnableStateParent@@",
+      "owner_slot": 0,
+      "owner_table": 25075096,
+      "rva": 1558576,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17c830@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075096,
+          "symbol": "??_7HandleOwner17c830@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17c830"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17ca20::~HandleOwner17ca20() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraForcedLandingMarker",
+      "owner_rtti": ".?AVExtraForcedLandingMarker@@",
+      "owner_slot": 0,
+      "owner_table": 25077464,
+      "rva": 1559072,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17ca20@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25077464,
+          "symbol": "??_7HandleOwner17ca20@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17ca20"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17ca50::~HandleOwner17ca50() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraForcedTarget",
+      "owner_rtti": ".?AVExtraForcedTarget@@",
+      "owner_slot": 0,
+      "owner_table": 25077432,
+      "rva": 1559120,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17ca50@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25077432,
+          "symbol": "??_7HandleOwner17ca50@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17ca50"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17cca0::~HandleOwner17cca0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraHeadingTarget",
+      "owner_rtti": ".?AVExtraHeadingTarget@@",
+      "owner_slot": 0,
+      "owner_table": 25076056,
+      "rva": 1559712,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17cca0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25076056,
+          "symbol": "??_7HandleOwner17cca0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17cca0"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17cd30::~HandleOwner17cd30() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraHorse",
+      "owner_rtti": ".?AVExtraHorse@@",
+      "owner_slot": 0,
+      "owner_table": 25077400,
+      "rva": 1559856,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17cd30@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25077400,
+          "symbol": "??_7HandleOwner17cd30@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17cd30"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17cdc0::~HandleOwner17cdc0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraItemDropper",
+      "owner_rtti": ".?AVExtraItemDropper@@",
+      "owner_slot": 0,
+      "owner_table": 25075896,
+      "rva": 1560000,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17cdc0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075896,
+          "symbol": "??_7HandleOwner17cdc0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17cdc0"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17d420::~HandleOwner17d420() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraOpenCloseActivateRef",
+      "owner_rtti": ".?AVExtraOpenCloseActivateRef@@",
+      "owner_slot": 0,
+      "owner_table": 25074232,
+      "rva": 1561632,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17d420@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074232,
+          "symbol": "??_7HandleOwner17d420@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17d420"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17d450::~HandleOwner17d450() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraOriginalReference",
+      "owner_rtti": ".?AVExtraOriginalReference@@",
+      "owner_slot": 0,
+      "owner_table": 25074360,
+      "rva": 1561680,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17d450@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074360,
+          "symbol": "??_7HandleOwner17d450@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17d450"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17d7c0::~HandleOwner17d7c0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraReferenceHandle",
+      "owner_rtti": ".?AVExtraReferenceHandle@@",
+      "owner_slot": 0,
+      "owner_table": 25074872,
+      "rva": 1562560,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17d7c0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074872,
+          "symbol": "??_7HandleOwner17d7c0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17d7c0"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner17dbc0::~HandleOwner17dbc0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "ExtraSpawnContainer",
+      "owner_rtti": ".?AVExtraSpawnContainer@@",
+      "owner_slot": 0,
+      "owner_table": 25075736,
+      "rva": 1563584,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner17dbc0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075736,
+          "symbol": "??_7HandleOwner17dbc0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner17dbc0"
+    },
+    {
+      "definitions": [
+        "inline HandleExtraDeleteLayout::~HandleExtraDeleteLayout() {}",
+        "inline HandleOwner18f610::~HandleOwner18f610() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 40,
+      "owner": "ExtraPackage",
+      "owner_rtti": ".?AVExtraPackage@@",
+      "owner_slot": 0,
+      "owner_table": 25088976,
+      "rva": 1635856,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GHandleOwner18f610@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7HandleExtraDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25088976,
+          "symbol": "??_7HandleOwner18f610@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner18f610"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout::~QueueDeleteLayout() {}",
+        "inline QueueCommonDelete0::~QueueCommonDelete0() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<V?$BSTSmartPointer@VRequest@saveload@bgs@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@V?$BSTSmartPointer@VRequest@saveload@bgs@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 26258568,
+      "rva": 6479008,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSTSmartPointer<bgs::saveload::Request, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 26258520,
+      "symbol": "??_GQueueCommonDelete0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26258520,
+          "symbol": "??_7QueueDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26258568,
+          "symbol": "??_7QueueCommonDelete0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete0"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout::~QueueDeleteLayout() {}",
+        "inline QueueCommonDelete0::~QueueCommonDelete0() {}",
+        "inline QueueStaticDelete62dcd0::~QueueStaticDelete62dcd0() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 96,
+      "owner": "BSTCommonStaticMessageQueue<V?$BSTSmartPointer@VRequest@saveload@bgs@@UBSTSmartPointerIntrusiveRefCount@@@@$07>",
+      "owner_rtti": ".?AV?$BSTCommonStaticMessageQueue@V?$BSTSmartPointer@VRequest@saveload@bgs@@UBSTSmartPointerIntrusiveRefCount@@@@$07@@",
+      "owner_slot": 0,
+      "owner_table": 26258632,
+      "rva": 6479056,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSTSmartPointer<bgs::saveload::Request, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 26258520,
+      "symbol": "??_GQueueStaticDelete62dcd0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26258520,
+          "symbol": "??_7QueueDeleteLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26258568,
+          "symbol": "??_7QueueCommonDelete0@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26258632,
+          "symbol": "??_7QueueStaticDelete62dcd0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueStaticDelete62dcd0"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout1::~QueueDeleteLayout1() {}",
+        "inline QueueCommonDelete1::~QueueCommonDelete1() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<UBSPackedTask@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@UBSPackedTask@@@@",
+      "owner_slot": 0,
+      "owner_table": 26296536,
+      "rva": 6691488,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSPackedTask>",
+      "stored_table": 26296488,
+      "symbol": "??_GQueueCommonDelete1@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26296488,
+          "symbol": "??_7QueueDeleteLayout1@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26296536,
+          "symbol": "??_7QueueCommonDelete1@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete1"
+    },
+    {
+      "definitions": [
+        "inline HandleSyncRoot::~HandleSyncRoot() {}",
+        "inline HandleOwner78d9e0::~HandleOwner78d9e0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 32,
+      "owner": "RefrInteraction",
+      "owner_rtti": ".?AVRefrInteraction@@",
+      "owner_slot": 0,
+      "owner_table": 26400912,
+      "rva": 7920096,
+      "size": 43,
+      "stored_rtti": "SyncQueueObj",
+      "stored_table": 26400888,
+      "symbol": "??_GHandleOwner78d9e0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26400888,
+          "symbol": "??_7HandleSyncRoot@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26400912,
+          "symbol": "??_7HandleOwner78d9e0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner78d9e0"
+    },
+    {
+      "definitions": [
+        "inline HandleOwner904d50::~HandleOwner904d50() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 24,
+      "owner": "StandardItemData",
+      "owner_rtti": ".?AVStandardItemData@@",
+      "owner_slot": 0,
+      "owner_table": 26670024,
+      "rva": 9456976,
+      "size": 43,
+      "stored_rtti": "StandardItemData",
+      "stored_table": 26670024,
+      "symbol": "??_GHandleOwner904d50@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26670024,
+          "symbol": "??_7HandleOwner904d50@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner904d50"
+    },
+    {
+      "definitions": [
+        "inline HandleUIRoot::~HandleUIRoot() {}",
+        "inline HandleOwner98d8a0::~HandleOwner98d8a0() {}"
+      ],
+      "header": "reconstruction/bsengine/HandleExtraDeleteLayout.h",
+      "object_size": 32,
+      "owner": "InventoryUpdateData",
+      "owner_rtti": ".?AVInventoryUpdateData@@",
+      "owner_slot": 0,
+      "owner_table": 26757496,
+      "rva": 10016928,
+      "size": 43,
+      "stored_rtti": "IUIMessageData",
+      "stored_table": 26143768,
+      "symbol": "??_GHandleOwner98d8a0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26143768,
+          "symbol": "??_7HandleUIRoot@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26757496,
+          "symbol": "??_7HandleOwner98d8a0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::HandleOwner98d8a0"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout2::~QueueDeleteLayout2() {}",
+        "inline QueueCommonDelete2::~QueueCommonDelete2() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<V?$BSTSmartPointer@VDelayFunctor@SkyrimScript@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@V?$BSTSmartPointer@VDelayFunctor@SkyrimScript@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 26809632,
+      "rva": 10418720,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSTSmartPointer<SkyrimScript::DelayFunctor, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 26809584,
+      "symbol": "??_GQueueCommonDelete2@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26809584,
+          "symbol": "??_7QueueDeleteLayout2@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26809632,
+          "symbol": "??_7QueueCommonDelete2@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete2"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout3::~QueueDeleteLayout3() {}",
+        "inline QueueCommonDelete3::~QueueCommonDelete3() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<V?$BSTSmartPointer@VBSAnimationGraphManager@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@V?$BSTSmartPointer@VBSAnimationGraphManager@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 27285472,
+      "rva": 12336032,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSTSmartPointer<BSAnimationGraphManager, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 27285424,
+      "symbol": "??_GQueueCommonDelete3@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27285424,
+          "symbol": "??_7QueueDeleteLayout3@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27285472,
+          "symbol": "??_7QueueCommonDelete3@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete3"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout3::~QueueDeleteLayout3() {}",
+        "inline QueueCommonDelete3::~QueueCommonDelete3() {}",
+        "inline QueueStaticDeletebc3bd0::~QueueStaticDeletebc3bd0() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 1056,
+      "owner": "BSTCommonStaticMessageQueue<V?$BSTSmartPointer@VBSAnimationGraphManager@@UBSTSmartPointerIntrusiveRefCount@@@@$0IA@>",
+      "owner_rtti": ".?AV?$BSTCommonStaticMessageQueue@V?$BSTSmartPointer@VBSAnimationGraphManager@@UBSTSmartPointerIntrusiveRefCount@@@@$0IA@@@",
+      "owner_slot": 0,
+      "owner_table": 27285536,
+      "rva": 12336080,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSTSmartPointer<BSAnimationGraphManager, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 27285424,
+      "symbol": "??_GQueueStaticDeletebc3bd0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27285424,
+          "symbol": "??_7QueueDeleteLayout3@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27285472,
+          "symbol": "??_7QueueCommonDelete3@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27285536,
+          "symbol": "??_7QueueStaticDeletebc3bd0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueStaticDeletebc3bd0"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout4::~QueueDeleteLayout4() {}",
+        "inline QueueCommonDelete4::~QueueCommonDelete4() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<PEAVUIMessage@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@PEAVUIMessage@@@@",
+      "owner_slot": 0,
+      "owner_table": 27893576,
+      "rva": 18270976,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<UIMessage*>",
+      "stored_table": 27893528,
+      "symbol": "??_GQueueCommonDelete4@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27893528,
+          "symbol": "??_7QueueDeleteLayout4@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27893576,
+          "symbol": "??_7QueueCommonDelete4@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete4"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout4::~QueueDeleteLayout4() {}",
+        "inline QueueCommonDelete4::~QueueCommonDelete4() {}",
+        "inline QueueStaticDelete116cb30::~QueueStaticDelete116cb30() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 832,
+      "owner": "BSTCommonStaticMessageQueue<PEAVUIMessage@@$0GE@>",
+      "owner_rtti": ".?AV?$BSTCommonStaticMessageQueue@PEAVUIMessage@@$0GE@@@",
+      "owner_slot": 0,
+      "owner_table": 27893640,
+      "rva": 18271024,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<UIMessage*>",
+      "stored_table": 27893528,
+      "symbol": "??_GQueueStaticDelete116cb30@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27893528,
+          "symbol": "??_7QueueDeleteLayout4@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27893576,
+          "symbol": "??_7QueueCommonDelete4@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 27893640,
+          "symbol": "??_7QueueStaticDelete116cb30@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueStaticDelete116cb30"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout5::~QueueDeleteLayout5() {}",
+        "inline QueueCommonDelete5::~QueueCommonDelete5() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<V?$NiPointer@VNiAVObject@@@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@V?$NiPointer@VNiAVObject@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 28053856,
+      "rva": 18839744,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<NiPointer<NiAVObject>>",
+      "stored_table": 28053808,
+      "symbol": "??_GQueueCommonDelete5@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28053808,
+          "symbol": "??_7QueueDeleteLayout5@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28053856,
+          "symbol": "??_7QueueCommonDelete5@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete5"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout5::~QueueDeleteLayout5() {}",
+        "inline QueueCommonDelete5::~QueueCommonDelete5() {}",
+        "inline QueueStaticDelete11f78f0::~QueueStaticDelete11f78f0() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 2080,
+      "owner": "BSTCommonStaticMessageQueue<V?$NiPointer@VNiAVObject@@@@$0BAA@>",
+      "owner_rtti": ".?AV?$BSTCommonStaticMessageQueue@V?$NiPointer@VNiAVObject@@@@$0BAA@@@",
+      "owner_slot": 0,
+      "owner_table": 28053920,
+      "rva": 18839792,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<NiPointer<NiAVObject>>",
+      "stored_table": 28053808,
+      "symbol": "??_GQueueStaticDelete11f78f0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28053808,
+          "symbol": "??_7QueueDeleteLayout5@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28053856,
+          "symbol": "??_7QueueCommonDelete5@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28053920,
+          "symbol": "??_7QueueStaticDelete11f78f0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueStaticDelete11f78f0"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout6::~QueueDeleteLayout6() {}",
+        "inline QueueCommonDelete6::~QueueCommonDelete6() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<UFunctionMessage@Internal@BSScript@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@UFunctionMessage@Internal@BSScript@@@@",
+      "owner_slot": 0,
+      "owner_table": 28481720,
+      "rva": 21792720,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSScript::Internal::FunctionMessage>",
+      "stored_table": 28481672,
+      "symbol": "??_GQueueCommonDelete6@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481672,
+          "symbol": "??_7QueueDeleteLayout6@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28481720,
+          "symbol": "??_7QueueCommonDelete6@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete6"
+    },
+    {
+      "definitions": [
+        "inline QueueDeleteLayout7::~QueueDeleteLayout7() {}",
+        "inline QueueCommonDelete7::~QueueCommonDelete7() {}"
+      ],
+      "header": "reconstruction/bsengine/QueueDeleteLayout.h",
+      "object_size": 16,
+      "owner": "BSTCommonMessageQueue<USuspendedStack@Internal@BSScript@@>",
+      "owner_rtti": ".?AV?$BSTCommonMessageQueue@USuspendedStack@Internal@BSScript@@@@",
+      "owner_slot": 0,
+      "owner_table": 28481896,
+      "rva": 21792768,
+      "size": 43,
+      "stored_rtti": "BSTMessageQueue<BSScript::Internal::SuspendedStack>",
+      "stored_table": 28481848,
+      "symbol": "??_GQueueCommonDelete7@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481848,
+          "symbol": "??_7QueueDeleteLayout7@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28481896,
+          "symbol": "??_7QueueCommonDelete7@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::QueueCommonDelete7"
+    }
+  ],
+  "schema": 1
+}
