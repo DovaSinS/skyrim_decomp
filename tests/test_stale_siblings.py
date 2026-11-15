@@ -131,6 +131,10 @@ class StaleSiblingTests(unittest.TestCase):
                        tooling=[], state='running', integrated=None)
         real_run = flow.run
         def run(cmd, tree, step, env=None):
+            if step == 'build_site.py':
+                # The synthetic acceptance fixture has no site templates or builder.
+                check.validate(fr.read(tree, af.PROGRESS), self.fixture.target, tree)
+                return 'Original synthetic site fixture'
             if step in ('build_progress_svg.py', 'build_model_trend.py'):
                 paths = ('docs/progress.svg', 'docs/progress-map.svg') if step == 'build_progress_svg.py' else (
                     'README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg')

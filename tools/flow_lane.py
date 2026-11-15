@@ -932,7 +932,8 @@ def refreshed_records(root, request, by_rva):
 
 def carry_request(source, tree, request, by_rva):
     companions = refreshed_records(source, request, by_rva)
-    files = f.carry_into_tree(source, tree, request['functions'], by_rva, request.get('harvests'))
+    files = f.carry_into_tree(source, tree, request['functions'], by_rva, request.get('harvests'),
+                              request.get('enrollments'))
     for name in companions:
         destination = tree / name
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -1029,7 +1030,8 @@ def stale_sibling_members(tree, baseline, requests):
 def merge_metadata(tree, source, revision):
     # integration_base validated the metadata-only history before this transport step.
     f.git(tree, 'fetch', '--quiet', str(source), revision)
-    f.git(tree, 'merge', '--quiet', '--no-edit', revision)
+    import flow_derived
+    flow_derived.merge(tree, revision, no_ff=False)
 
 
 def contributor_history(tree, source, contribution):
@@ -1133,7 +1135,11 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     import flow_tooling
     active_tools, tool_dropped = flow_tooling.merge(tree, receipt.get('tooling', []))
     receipt['tooling_accepted'], receipt['tooling_dropped'] = active_tools, tool_dropped
+    if active_tools:
+        import flow_derived
+        flow_derived.regenerate(tree, python)
     baseline = f.inventory(tree) if receipt['items'] else dict(functions=[])
+    public_ids = {fn['id'] for fn in json.loads(f.git(tree, 'show', base + ':data/progress.json'))['functions']}
     carry_base = f.git(tree, 'rev-parse', 'HEAD')
     frozen = tree / '.local/flow'
     snapshot(fdir, frozen)
@@ -1180,8 +1186,13 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                 request_pins = dict(evidence)
                 input_pins.update(evidence)
                 by_rva, paths, headers = _source_files(source, request)
+                request['enrollments'] = [dict({k: v for k, v in by_rva[r].items() if k != 'named'}, status='mapped')
+                                          for r in request['functions'] if by_rva[r]['id'] not in public_ids]
+                for enrollment in request['enrollments']:
+                    f.validate_enrollment(enrollment)
                 f._integration_origin_unchanged(source, f.git(source, 'rev-parse', 'HEAD'), base,
-                                               sorted(paths), request['build_id'], request['functions'], headers=headers)
+                                               sorted(paths), request['build_id'], request['functions'], headers=headers,
+                                               enrollments=request['enrollments'])
                 origins.append(dict(root=str(source), base=base, paths=sorted(paths),
                                     build_id=request['build_id'], functions=request['functions'],
                                     entries={r: by_rva[r] for r in request['functions']}))
@@ -1279,6 +1290,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                    gate_dependencies=gate_dependencies,
                    origins=origins, input_pins=input_pins, tree=str(tree))
     if not result['accepted']:
+        f.run([python, 'tools/build_site.py'], tree, 'build_site.py')
         receipt['integrated'] = dict(commit=carry_base, accepted=0, files=[], checks=None, pushed=None, ci=None,
                                     wall_seconds={'build': time.monotonic()-started}, base_revision=base)
         if carry_base == base and active_tools and not receipt.get('baseline_check'):
@@ -1298,6 +1310,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     f.run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')
     commit_acceptance(tree, result['accepted'], receipt['items'],
                       f'Accept queued work in push lane {receipt["id"]}', commit_date)
+    f.run([python, 'tools/build_site.py'], tree, 'build_site.py')
     integ = dict(commit=f.git(tree, 'rev-parse', 'HEAD'), accepted=sum(len(r['functions']) for r in result['accepted']),
                  files=sorted(set(files) | set(trend)), checks=None, pushed=None, ci=None,
                  wall_seconds={'build': time.monotonic() - started}, base_revision=base)

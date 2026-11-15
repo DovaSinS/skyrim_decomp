@@ -1903,17 +1903,28 @@ def remove_tree(root, tree, *, prune=False):
         git(root, 'worktree', 'prune', check=False)
 
 
-def carry_into_tree(root, tree, approved, by_rva, harvests=None):
+def validate_enrollment(fn):
+    """An enrollment describes a mapped function, never an acceptance or tier-2 claim."""
+    fields = {'id', 'build_id', 'rva', 'size', 'status', 'name', 'name_origin', 'name_source',
+              'owner', 'evidence', 'report', 'drafter_model'}
+    refuse(fn.get('status') == 'mapped' and set(fn) <= fields,
+           'new inventory enrollment must be mapped-only with no acceptance flags')
+
+
+def carry_into_tree(root, tree, approved, by_rva, harvests=None, enrollments=None):
     """Copy, from the shared checkout into the integration tree, only what the approved functions
     need: their inventory entries, match records and translation-unit files. Other units, which a
     Drafter may still be editing, stay out of the commit and cannot block it."""
     files = set()
     snapshots = {}
+    enrollment_rows = enrollments or []
+    enrollments = {fn['id']: fn for fn in enrollment_rows}
+    refuse(len(enrollments) == len(enrollment_rows), 'duplicate inventory enrollment')
     for rva in approved:
         fn = by_rva[rva]
         refuse(fn.get('report'), f'{fn["id"]} names no match record in data/progress.json')
         files.add(fn['report'])
-        if fn.get('status') == 'matched':
+        if fn.get('status') == 'matched' and fn['id'] not in enrollments:
             review = Path(fn['report']).with_suffix('.review.json').as_posix()
             if (root / review).is_file():
                 files.add(review)
@@ -1946,8 +1957,23 @@ def carry_into_tree(root, tree, approved, by_rva, harvests=None):
     index = {fn['id']: i for i, fn in enumerate(data['functions'])}
     for rva in approved:
         fn = by_rva[rva]
-        refuse(fn['id'] in index, f'{fn["id"]} is not an inventory entry on origin; land its inventory row first')
-        data['functions'][index[fn['id']]] = fn
+        enrollment = enrollments.get(fn['id'])
+        if fn['id'] not in index or enrollment is not None:
+            refuse(enrollment is not None, f'{fn["id"]} is not an inventory entry on origin; supply its mapped enrollment')
+            validate_enrollment(enrollment)
+            expected = {k: v for k, v in fn.items() if k not in ('status', 'named')}
+            refuse(expected == {k: v for k, v in enrollment.items() if k != 'status'},
+                   'enrollment differs from selected inventory entry')
+            # New members always enter mapped. Only the ordinary acceptor may set matched.
+            if fn['id'] in index:
+                refuse(data['functions'][index[fn['id']]] == enrollment,
+                       'conflicting new inventory enrollment')
+                data['functions'][index[fn['id']]] = enrollment
+            else:
+                index[fn['id']] = len(data['functions'])
+                data['functions'].append(enrollment)
+        else:
+            data['functions'][index[fn['id']]] = fn
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
     return sorted(files)
 
@@ -1973,10 +1999,18 @@ def integration_base(root, branch, with_metadata=False, *, remote=None):
         parent = parents[1] if len(parents) == 2 else public[-1]
         names = git(root, 'diff-tree', '--no-commit-id', '--name-only', '-r', '--no-renames', parent, commit).splitlines()
         deleted = git(root, 'diff-tree', '--no-commit-id', '--name-only', '-r', '--diff-filter=D', parent, commit)
-        refuse(names and not deleted and all(re.fullmatch(
+        import flow_derived
+        metadata = [p for p in names if re.fullmatch(
             r'reports/[a-z0-9][a-z0-9-]*/(?:families/[0-9a-f]{64}|family-batches/[a-z0-9][a-z0-9-]*)\.json', p)
-            for p in names), 'unpublished commits contain changes other than family metadata')
-        for path in names:
+            ]
+        inventory_paths = {flow_derived.PROGRESS} | flow_derived.DERIVED_FILES
+        refuse(names and not deleted and set(names) <= set(metadata) | inventory_paths,
+               'unpublished commits contain changes other than family metadata or mapped enrollment')
+        if flow_derived.PROGRESS in names:
+            before, after = [json.loads(git(root, 'show', rev + ':' + flow_derived.PROGRESS))
+                             for rev in (parent, commit)]
+            enrollment_delta(before, after)
+        for path in metadata:
             if path not in snapshots:
                 tip = subprocess.check_output(['git', 'show', f'HEAD:{path}'], cwd=root)
                 snapshots[path] = [tip]
@@ -1987,11 +2021,26 @@ def integration_base(root, branch, with_metadata=False, *, remote=None):
             historical = subprocess.check_output(['git', 'show', f'{commit}:{path}'], cwd=root)
             refuse(historical in snapshots[path],
                    'unpublished metadata history differs from the reviewed tip or canonical planned batch')
-        paths.update(names)
+        paths.update(metadata)
     fr.validate_metadata(root)
     for path in paths:
         fr.committed(root, path, fr.read(root, path))
     return git(root, 'rev-parse', 'HEAD')
+
+
+def enrollment_delta(before, after):
+    """Admit only additive mapped rows in unpublished inventory history, never status edits."""
+    old = {fn['id']: fn for fn in before['functions']}
+    new = {fn['id']: fn for fn in after['functions']}
+    refuse(len(old) == len(before['functions']) and len(new) == len(after['functions']),
+           'duplicate inventory identity in enrollment history')
+    refuse(old.keys() <= new.keys() and all(new[fid] == row for fid, row in old.items()),
+           'inventory enrollment history changes existing entries')
+    refuse({k: v for k, v in before.items() if k not in ('functions', 'updated_at')}
+           == {k: v for k, v in after.items() if k not in ('functions', 'updated_at')},
+           'inventory enrollment history changes other source data')
+    for fid in new.keys() - old.keys():
+        validate_enrollment(new[fid])
 
 
 def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, python=sys.executable, approved_only=False,
@@ -2155,7 +2204,7 @@ def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, p
 
 
 
-def _integration_origin_unchanged(root, base, destination, carried, build_id, rvas, *, headers=()):
+def _integration_origin_unchanged(root, base, destination, carried, build_id, rvas, *, headers=(), enrollments=()):
     # A confirmed input may contain unpublished headers, including additions supplied by
     # this lane's pinned tooling. Only the origin side of that history can stale them.
     # Keep the existing comparison for records, compiled sources, maps and inventory.
@@ -2170,7 +2219,12 @@ def _integration_origin_unchanged(root, base, destination, carried, build_id, rv
     new = json.loads(git(root, 'show', destination + ':data/progress.json'))
     old_entries = {(fn['build_id'], hexrva(fn['rva'])): fn for fn in old['functions']}
     new_entries = {(fn['build_id'], hexrva(fn['rva'])): fn for fn in new['functions']}
-    refuse(all(old_entries.get((build_id, rva)) == new_entries.get((build_id, rva)) for rva in rvas),
+    additions = {(fn['build_id'], hexrva(fn['rva'])): fn for fn in enrollments}
+    for fn in enrollments:
+        validate_enrollment(fn)
+    refuse(all(old_entries.get((build_id, rva)) == new_entries.get((build_id, rva))
+               or ((build_id, rva) in additions and (build_id, rva) not in new_entries
+                   and old_entries.get((build_id, rva)) == additions[(build_id, rva)]) for rva in rvas),
            'origin changed selected inventory entries; reconcile before retry')
 
 

@@ -128,6 +128,23 @@ integration command enqueues and runs the lane; `--no-push` also runs it, stoppi
 Resume a failed check or pending CI with `lane-run`; it retains the candidate and checkpoint.
 A red CI stops the lane before any later push.
 
+The lane regenerates these fully derived tracked files on the merged tree instead of textually
+merging them: `reconstruction/INDEX.md`, `docs/progress.svg`, `docs/progress-map.svg`,
+`docs/model-trend.svg`, and `docs/progress-trend.svg`. It uses that tree's `build_index.py`,
+`build_progress_svg.py` and `build_model_trend.py`; `build_site.py` rebuilds the ignored `dist/`
+site. Only the totals between README's `model-trend-totals` markers are derived; prose still
+merges normally. `data/progress.json` is source data: function rows merge atomically by ID,
+disjoint additions/edits survive, competing edits to one row or other source data refuse, and
+`updated_at` takes the latest input timestamp. No match record or symbol map is derived away.
+
+A lane selection may carry its own new inventory rows, so mapped enrollment and acceptance
+need no separate pushes. The lane carries only selected new rows, initially `mapped` with no
+acceptance or `named` flags, then runs the unchanged individual/family acceptance checks.
+Local shadow approvals for new rows are not copied as acceptance; the acceptor must write them.
+Failed members are removed during the ordinary re-carry. Committed mapped-only enrollment can
+travel with `--with-metadata`; every historical inventory delta must be additive, with existing
+rows and other source data unchanged. Source/tooling commits still need `tooling-push`.
+
 An individual acceptance failure is recorded with its reason and excluded; successful members
 still ship. Family binding/sampling failures hold the entire family batch, never shrink its
 committed population. A whole-tree check failure stops the run without pushing unless tooling
@@ -279,8 +296,9 @@ member had already been accepted at that exact origin and row in that history. N
 shrink a population or change a seed after seeing the sample.
 
 An Engineer may combine the committed family metadata and sampled acceptance in one push with
-`flow.py integrate <sample-group> --with-metadata`. Unpublished commits may change only family
-manifests or batch JSON, without deletions. The tip must descend from current origin; a merge may
+`flow.py integrate <sample-group> --with-metadata`. Unpublished commits may change family
+manifests, batch JSON or additive mapped-only inventory enrollment and its fully derived views,
+without deletions. The tip must descend from current origin; a merge may
 preserve moving main only through a parent already on origin, with only metadata added to that base.
 The metadata must validate and match its committed content. The seed/population and draw commits
 may contain only the exact tip snapshots or the canonical pre-draw batch (null commitment/sample),

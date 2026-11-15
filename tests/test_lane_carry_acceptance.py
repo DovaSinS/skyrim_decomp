@@ -190,6 +190,10 @@ class CarryAcceptanceTests(unittest.TestCase):
                        tooling=[], state='running', integrated=None)
         real_run = flow.run
         def run(cmd, tree, step, env=None):
+            if step == 'build_site.py':
+                # This fixture has real acceptance data but no site templates/tooling.
+                check.validate(fr.read(tree, af.PROGRESS), self.fx.target, tree)
+                return 'Original synthetic site fixture'
             if step in ('build_progress_svg.py', 'build_model_trend.py'):
                 paths = ('docs/progress.svg', 'docs/progress-map.svg') if step == 'build_progress_svg.py' else (
                     'README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg')
