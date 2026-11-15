@@ -1,6 +1,6 @@
 {
   "batch_schema": 1,
-  "commitment": null,
+  "commitment": "b62d7e5a39083b966fcb9c89cb01c3ba9340a35d",
   "family_path": "reports/sse-steam-1-7-104/families/3b3c9c9bbe48aacdbd7782a83339e004d448941f2835dd83ee687e6efcb5197c.json",
   "family_sha256": "230d447e23272e465749eb6ed59a7a675234b2971eaefd8b76b0bb8029c23caa",
   "members": {
@@ -33,6 +33,20 @@
     "sse-steam-1-7-104-0xfc80c0",
     "sse-steam-1-7-104-0xff1b50"
   ],
-  "sample": null,
+  "sample": [
+    "sse-steam-1-7-104-0x2f93c0",
+    "sse-steam-1-7-104-0x6398b0",
+    "sse-steam-1-7-104-0x7dfcf0",
+    "sse-steam-1-7-104-0x80d9c0",
+    "sse-steam-1-7-104-0x82f1a0",
+    "sse-steam-1-7-104-0x82fa90",
+    "sse-steam-1-7-104-0x83bc10",
+    "sse-steam-1-7-104-0x83bc50",
+    "sse-steam-1-7-104-0x83bd60",
+    "sse-steam-1-7-104-0x83be00",
+    "sse-steam-1-7-104-0xf0f0b0",
+    "sse-steam-1-7-104-0xfc80c0",
+    "sse-steam-1-7-104-0xff1b50"
+  ],
   "seed": "p171-remainder-v2-last13-20261116"
 }
