@@ -390605,7 +390605,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15070a8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15070c0",
@@ -390617,7 +390618,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15070c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15070d8",
@@ -390629,7 +390631,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15070d8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15070f0",
@@ -390641,7 +390644,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15070f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507108",
@@ -390653,7 +390657,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507108.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507120",
@@ -390665,7 +390670,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507120.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507138",
@@ -390677,7 +390683,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507138.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507150",
@@ -390689,7 +390696,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507150.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507168",
@@ -390701,7 +390709,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507168.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507180",
@@ -390713,7 +390722,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507180.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507198",
@@ -390725,7 +390735,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507198.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15071b0",
@@ -390737,7 +390748,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15071b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15071c8",
@@ -390749,7 +390761,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15071c8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15071e0",
@@ -390761,7 +390774,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15071e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15071f8",
@@ -390773,7 +390787,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15071f8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507210",
@@ -390785,7 +390800,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507210.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507228",
@@ -390797,7 +390813,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507228.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507240",
@@ -390809,7 +390826,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507240.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507258",
@@ -390821,7 +390839,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507258.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507270",
@@ -390833,7 +390852,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507270.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507288",
@@ -390845,7 +390865,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507288.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15072a0",
@@ -390857,7 +390878,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15072a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15072b8",
@@ -390869,7 +390891,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15072b8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15072d0",
@@ -390881,7 +390904,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15072d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15072e8",
@@ -390893,7 +390917,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15072e8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507300",
@@ -390905,7 +390930,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507300.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507318",
@@ -390917,7 +390943,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507318.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507330",
@@ -390929,7 +390956,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507330.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507348",
@@ -390941,7 +390969,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507348.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507360",
@@ -390953,7 +390982,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507360.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507378",
@@ -390965,7 +390995,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507378.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507390",
@@ -390977,7 +391008,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15073a8",
@@ -390989,7 +391021,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15073a8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15073c0",
@@ -391001,7 +391034,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15073c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15073d8",
@@ -391013,7 +391047,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15073d8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15073f0",
@@ -391025,7 +391060,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15073f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507408",
@@ -391037,7 +391073,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507408.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507420",
@@ -391049,7 +391086,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507420.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507438",
@@ -391061,7 +391099,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507438.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507450",
@@ -391073,7 +391112,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507450.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507468",
@@ -391085,7 +391125,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507468.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507480",
@@ -391097,7 +391138,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507480.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507498",
@@ -391109,7 +391151,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507498.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15074b0",
@@ -391121,7 +391164,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15074b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15074c8",
@@ -391133,7 +391177,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15074c8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15074e0",
@@ -391145,7 +391190,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15074e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15074f8",
@@ -391157,7 +391203,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15074f8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507510",
@@ -391169,7 +391216,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507510.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507528",
@@ -391181,7 +391229,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507528.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507540",
@@ -391193,7 +391242,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507540.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507558",
@@ -391205,7 +391255,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507558.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507570",
@@ -391217,7 +391268,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507570.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507588",
@@ -391229,7 +391281,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507588.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15075a0",
@@ -391241,7 +391294,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15075a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15075b8",
@@ -391253,7 +391307,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15075b8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15075d0",
@@ -391265,7 +391320,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15075d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15075e8",
@@ -391277,7 +391333,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15075e8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507600",
@@ -391289,7 +391346,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507600.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507618",
@@ -391301,7 +391359,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507618.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507630",
@@ -391313,7 +391372,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507648",
@@ -391325,7 +391385,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507648.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507660",
@@ -391337,7 +391398,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507660.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507678",
@@ -391349,7 +391411,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507678.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507690",
@@ -391361,7 +391424,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507690.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15076a8",
@@ -391373,7 +391437,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15076a8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15076c0",
@@ -391385,7 +391450,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15076c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15076d8",
@@ -391397,7 +391463,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15076d8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15076f0",
@@ -391409,7 +391476,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15076f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507708",
@@ -391421,7 +391489,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507708.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507720",
@@ -391433,7 +391502,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507720.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507738",
@@ -391445,7 +391515,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507738.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507750",
@@ -391457,7 +391528,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507750.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507768",
@@ -391469,7 +391541,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507768.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507780",
@@ -391481,7 +391554,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507780.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507798",
@@ -391493,7 +391567,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507798.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15077b0",
@@ -391505,7 +391580,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15077b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15077c8",
@@ -391517,7 +391593,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15077c8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15077e0",
@@ -391529,7 +391606,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15077e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15077f8",
@@ -391541,7 +391619,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15077f8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507810",
@@ -391553,7 +391632,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507828",
@@ -391565,7 +391645,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507828.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507840",
@@ -391577,7 +391658,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507840.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507858",
@@ -391589,7 +391671,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507858.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507870",
@@ -391601,7 +391684,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507870.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507888",
@@ -391613,7 +391697,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507888.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15078a0",
@@ -391625,7 +391710,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15078a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15078b8",
@@ -391637,7 +391723,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15078b8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15078d0",
@@ -391649,7 +391736,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15078d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15078e8",
@@ -391661,7 +391749,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15078e8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507900",
@@ -391673,7 +391762,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507900.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507918",
@@ -391685,7 +391775,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507918.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507930",
@@ -391697,7 +391788,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507930.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507948",
@@ -391709,7 +391801,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507948.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507960",
@@ -391721,7 +391814,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507960.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507978",
@@ -391733,7 +391827,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507978.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507990",
@@ -391745,7 +391840,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507990.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15079a8",
@@ -391757,7 +391853,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15079a8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15079c0",
@@ -391769,7 +391866,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15079c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15079d8",
@@ -391781,7 +391879,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15079d8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15079f0",
@@ -391793,7 +391892,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x15079f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a08",
@@ -391805,7 +391905,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a08.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a20",
@@ -391817,7 +391918,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a38",
@@ -391829,7 +391931,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a38.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a50",
@@ -391841,7 +391944,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a68",
@@ -391853,7 +391957,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a68.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a80",
@@ -391865,7 +391970,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507a98",
@@ -391877,7 +391983,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507a98.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507ab0",
@@ -391889,7 +391996,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507ab0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507ac8",
@@ -391901,7 +392009,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507ac8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507ae0",
@@ -391913,7 +392022,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507ae0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507af8",
@@ -391925,7 +392035,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507af8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b10",
@@ -391937,7 +392048,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b28",
@@ -391949,7 +392061,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b28.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b40",
@@ -391961,7 +392074,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b58",
@@ -391973,7 +392087,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b58.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b70",
@@ -391985,7 +392100,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507b88",
@@ -391997,7 +392113,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507b88.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507ba0",
@@ -392009,7 +392126,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507ba0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507bb8",
@@ -392021,7 +392139,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507bb8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507bd0",
@@ -392033,7 +392152,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507bd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507be8",
@@ -392045,7 +392165,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507be8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507c00",
@@ -392057,7 +392178,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1507c00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1523584",
@@ -392069,7 +392191,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1523584.json"
     },
     {
       "id": "sse-steam-1-7-104-0x152e538",
@@ -392081,7 +392204,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x152e538.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1530774",
@@ -392093,7 +392217,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1530774.json"
     },
     {
       "id": "sse-steam-1-7-104-0x153078c",
@@ -392105,7 +392230,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x153078c.json"
     },
     {
       "id": "sse-steam-1-7-104-0x154cf08",
@@ -392117,7 +392243,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x154cf08.json"
     },
     {
       "id": "sse-steam-1-7-104-0x154f9b8",
@@ -392129,7 +392256,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x154f9b8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1552ed8",
@@ -392141,7 +392269,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1552ed8.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1558844",
@@ -392153,7 +392282,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1558844.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1559698",
@@ -392165,7 +392295,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1559698.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1568e18",
@@ -392177,7 +392308,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1568e18.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157a858",
@@ -392189,7 +392321,8 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): direct RTTI owner over represented shader interfaces; only compiler-emitted adjustor compared.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x157a858.json"
     }
   ],
   "milestones": [
