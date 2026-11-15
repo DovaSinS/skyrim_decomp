@@ -661,8 +661,8 @@
     "path": "tools/rootless_wrapper_generate_v1.py",
     "sha256": "04e9390b38f33b9e460bbca7bb53ac21dd550dc850f4dcdfad43507669d4189b"
   },
-  "pause_reason": "",
-  "paused": false,
+  "pause_reason": "Publication requires explicitly LF source and fresh digest-bound evidence; this version is held.",
+  "paused": true,
   "review": {
     "profile": "claude-low",
     "review_sha256": "0dcc00e1159f2b29e6820acdb0f68d1562dcda9669cc5381f1711cf7512aeb53",

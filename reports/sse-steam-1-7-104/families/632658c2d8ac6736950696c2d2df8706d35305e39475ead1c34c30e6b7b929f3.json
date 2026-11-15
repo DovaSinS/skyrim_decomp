@@ -1,0 +1,677 @@
+{
+  "binding": {
+    "build_id": "sse-steam-1-7-104",
+    "comparator": {
+      "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+      "version": "0.6.1-runtime"
+    },
+    "compiler": {
+      "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+      "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/MD",
+        "/GS-",
+        "/EHsc",
+        "/GR",
+        "/fp:precise",
+        "/Gy"
+      ],
+      "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
+    },
+    "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+    "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "toolchain_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf"
+  },
+  "family_schema": 1,
+  "first_members": {
+    "sse-steam-1-7-104-0x83c760": "8a29b18e307870779a2816a937d6263b6a91a5a530a81219647c48495d7bd7ff",
+    "sse-steam-1-7-104-0x83c970": "fefa95a6c5294ad49bfa715d58efc2277eaf337da16026804201a1e4b9579964",
+    "sse-steam-1-7-104-0x83cc50": "34de470f3486b73937f331b4fa8729cd887e56d919d402a1a84445014d62281b",
+    "sse-steam-1-7-104-0x83cec0": "d5c613252b8ab94f5c0e212edb96e27e66937617d717c4e64715061447029361",
+    "sse-steam-1-7-104-0x83d1d0": "db38c1780f7512c8c047a334b97e0c7a833318a2e804d1e256be66815828b123",
+    "sse-steam-1-7-104-0x83d510": "f83c7936546f57274d542556517ad1bd6d73a5f2a93536476508271531424b02",
+    "sse-steam-1-7-104-0x83d780": "6118118d0d70b55e9896bfdf6eb05e3d5c703da34ff4ee4eb631be4b8d1c1d9a",
+    "sse-steam-1-7-104-0x83da90": "e68ed09e45962ee6a59fcd909901a3479416db6f5134a54e43aa6c948ef1756b",
+    "sse-steam-1-7-104-0x83dd30": "8e836464e5867d429a89ace5a54fc4bee960f68dd2d05793b276c8318572dee1",
+    "sse-steam-1-7-104-0x83e0b0": "5208f3844430f45f59f24f9215ff56aa88545b9b7d5bc3b07c2b52b9e3e5e290",
+    "sse-steam-1-7-104-0x83e3c0": "55d2b2300524f1345118f99805863d7f5eb663ca59daf871e9fd6e52c04f0080",
+    "sse-steam-1-7-104-0x83e6d0": "197ecd2c48c820bf512e8d3a6ad51f3dd06603d2b9920e7f60239e4c0dfb4ff3",
+    "sse-steam-1-7-104-0x83e9b0": "a9f97597dda47247527204fc9d0c0da7abbd6f982ad0e23aafc113c841eed0c7",
+    "sse-steam-1-7-104-0x83ec70": "a76e3cbdb8d4da27dca8ef95b67043185727196142df3ec84ca712b135ce31b7",
+    "sse-steam-1-7-104-0x83eef0": "453fde8156a0665d5e587bbcbfb645ab6c9363bed4ac43c77815eb8b049bea93",
+    "sse-steam-1-7-104-0x83f2b0": "87cd3211ecce370e684c570697fc569eb138a2dbb1362c6d5a0854362ae07960",
+    "sse-steam-1-7-104-0x83f640": "fc0828a6dcee052e85b4416013878cc8d8cf3d447a7f8e3237ad9aa18dd24648",
+    "sse-steam-1-7-104-0x83f930": "be8ff2926f514ed28e6dddd9d57a03daa3cb72e884e75ff4da267a9fd4687266",
+    "sse-steam-1-7-104-0x83fcc0": "b263dc769c70fd7d7fe44c0a2490bc5f968e585a5319c6c1f72bb9789808e411",
+    "sse-steam-1-7-104-0x83ffe0": "d26131f49ae0c45158893723b9cb2f1600aec272183793600e5259696f33ed3d"
+  },
+  "origin": {
+    "family": "represented-rootless-deleting-wrapper",
+    "template_digest": "3e13200d864140c9f5432646a97957e329844e85f8bef3ee7943e9c83ef36400",
+    "version": "2"
+  },
+  "parameter_ranges": {
+    "rows": [
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8636256,
+        "object-size": 80,
+        "owner-table": 26518528,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8636784,
+        "object-size": 80,
+        "owner-table": 26518720,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8637520,
+        "object-size": 80,
+        "owner-table": 26518944,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8638144,
+        "object-size": 80,
+        "owner-table": 26519200,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8638928,
+        "object-size": 80,
+        "owner-table": 26519456,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8639760,
+        "object-size": 80,
+        "owner-table": 26519744,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8640384,
+        "object-size": 80,
+        "owner-table": 26520000,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8641168,
+        "object-size": 80,
+        "owner-table": 26520256,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8641840,
+        "object-size": 80,
+        "owner-table": 26520544,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8642736,
+        "object-size": 80,
+        "owner-table": 26520888,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8643520,
+        "object-size": 80,
+        "owner-table": 26521328,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8644304,
+        "object-size": 80,
+        "owner-table": 26521584,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8645040,
+        "object-size": 80,
+        "owner-table": 26521960,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8645744,
+        "object-size": 80,
+        "owner-table": 26522464,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8646384,
+        "object-size": 80,
+        "owner-table": 26522776,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8647344,
+        "object-size": 80,
+        "owner-table": 26523184,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8648256,
+        "object-size": 80,
+        "owner-table": 26523528,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8649008,
+        "object-size": 80,
+        "owner-table": 26523936,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8649920,
+        "object-size": 80,
+        "owner-table": 26524312,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8650720,
+        "object-size": 80,
+        "owner-table": 26524720,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8651616,
+        "object-size": 80,
+        "owner-table": 26525096,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8652512,
+        "object-size": 80,
+        "owner-table": 26525472,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8653136,
+        "object-size": 80,
+        "owner-table": 26525728,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8653920,
+        "object-size": 80,
+        "owner-table": 26525984,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8654704,
+        "object-size": 80,
+        "owner-table": 26526392,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8655456,
+        "object-size": 80,
+        "owner-table": 26526928,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8655984,
+        "object-size": 80,
+        "owner-table": 26527120,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8656720,
+        "object-size": 80,
+        "owner-table": 26527344,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8657392,
+        "object-size": 80,
+        "owner-table": 26527632,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8658176,
+        "object-size": 80,
+        "owner-table": 26527888,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8658960,
+        "object-size": 80,
+        "owner-table": 26528144,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8659632,
+        "object-size": 80,
+        "owner-table": 26528432,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8660416,
+        "object-size": 80,
+        "owner-table": 26528688,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8661040,
+        "object-size": 80,
+        "owner-table": 26529048,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8661824,
+        "object-size": 80,
+        "owner-table": 26529304,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8662480,
+        "object-size": 80,
+        "owner-table": 26529592,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8663248,
+        "object-size": 80,
+        "owner-table": 26529848,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8663856,
+        "object-size": 80,
+        "owner-table": 26530200,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8664432,
+        "object-size": 80,
+        "owner-table": 26530488,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8665104,
+        "object-size": 80,
+        "owner-table": 26530680,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8665776,
+        "object-size": 80,
+        "owner-table": 26530968,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8666560,
+        "object-size": 80,
+        "owner-table": 26531224,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8667232,
+        "object-size": 80,
+        "owner-table": 26531512,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8667968,
+        "object-size": 80,
+        "owner-table": 26531736,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8668640,
+        "object-size": 80,
+        "owner-table": 26532024,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8669456,
+        "object-size": 80,
+        "owner-table": 26532312,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8670176,
+        "object-size": 80,
+        "owner-table": 26532536,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8670832,
+        "object-size": 80,
+        "owner-table": 26532824,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8671600,
+        "object-size": 80,
+        "owner-table": 26533080,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8672208,
+        "object-size": 80,
+        "owner-table": 26533336,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8672816,
+        "object-size": 80,
+        "owner-table": 26533752,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8673312,
+        "object-size": 80,
+        "owner-table": 26533944,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8674064,
+        "object-size": 80,
+        "owner-table": 26534200,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8674784,
+        "object-size": 80,
+        "owner-table": 26534456,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8675408,
+        "object-size": 80,
+        "owner-table": 26534712,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8676240,
+        "object-size": 80,
+        "owner-table": 26535000,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8676864,
+        "object-size": 80,
+        "owner-table": 26535256,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8677648,
+        "object-size": 80,
+        "owner-table": 26535512,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8678320,
+        "object-size": 80,
+        "owner-table": 26535800,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8679104,
+        "object-size": 80,
+        "owner-table": 26536024,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8679936,
+        "object-size": 80,
+        "owner-table": 26536312,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8680656,
+        "object-size": 80,
+        "owner-table": 26536600,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8681344,
+        "object-size": 80,
+        "owner-table": 26537016,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8681920,
+        "object-size": 80,
+        "owner-table": 26537208,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8682656,
+        "object-size": 80,
+        "owner-table": 26537400,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8683376,
+        "object-size": 80,
+        "owner-table": 26537720,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8684160,
+        "object-size": 80,
+        "owner-table": 26537944,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8684784,
+        "object-size": 80,
+        "owner-table": 26538232,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8685568,
+        "object-size": 80,
+        "owner-table": 26538488,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8686352,
+        "object-size": 80,
+        "owner-table": 26538744,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8686976,
+        "object-size": 80,
+        "owner-table": 26539032,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8687712,
+        "object-size": 80,
+        "owner-table": 26539288,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8688288,
+        "object-size": 80,
+        "owner-table": 26539576,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8689024,
+        "object-size": 80,
+        "owner-table": 26539800,
+        "size": 52
+      },
+      {
+        "deallocator-rva": 22705212,
+        "destructor-rva": 8572208,
+        "entry-rva": 8689648,
+        "object-size": 80,
+        "owner-table": 26540088,
+        "size": 52
+      }
+    ]
+  },
+  "parameter_source": {
+    "path": "tools/rootless_wrapper_catalog_v1.json",
+    "sha256": "4ce548865fc1d9db9aed9d8ef597b243f3c9bbc51e3f76290ccda41717e3c287"
+  },
+  "pause_reason": "",
+  "paused": false,
+  "review": {
+    "profile": "claude-low",
+    "review_sha256": "51cb77841072124a515bfbfce2f2c9e80e408196f90f33e57b2367607d6c02f9",
+    "review_task_id": "review-family-632658c2d8ac67369506-opus",
+    "reviewer_model": "claude-opus-5-5",
+    "spec_sha256": "3137316a22e7758f3218956c0838f432ae1000aad9b7d5b701132ab39ed1cfc1"
+  },
+  "template_source": {
+    "path": "tools/rootless_wrapper_generate_v2.py",
+    "sha256": "3e13200d864140c9f5432646a97957e329844e85f8bef3ee7943e9c83ef36400"
+  }
+}
