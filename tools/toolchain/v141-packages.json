@@ -1,0 +1,326 @@
+{
+  "schema": 1,
+  "payloads": [
+    {
+      "sha256": "5aa335488aca59ed221acea56f47f1457711d44081fee3d7a97acfda9904a116",
+      "size": 3050363,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/3711d8f0-a82d-4a7e-a28d-aacdd736535a/425eafe779e747c4dc78821729b8073a/microsoft.visualcpp.crt.headers.vsix",
+      "package": "Microsoft.VisualCpp.CRT.Headers",
+      "kind": "vsix",
+      "name": "Microsoft.VisualCpp.CRT.Headers.vsix"
+    },
+    {
+      "sha256": "35ed93f09b96422ff85b9b6010600508f8cc828c4ec518f5dae1fa2b8e5dc20a",
+      "size": 35247029,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/4e446e9a-f8d6-4ea5-a1bf-47f564be516f/35ed93f09b96422ff85b9b6010600508f8cc828c4ec518f5dae1fa2b8e5dc20a/Microsoft.VisualCpp.CRT.Redist.X64.vsix",
+      "package": "Microsoft.VisualCpp.CRT.Redist.X64",
+      "kind": "vsix",
+      "name": "Microsoft.VisualCpp.CRT.Redist.X64.vsix"
+    },
+    {
+      "sha256": "13de82b70972a1b72e9d7137b830b175a7e0056cd710c02c372b06be5a3f8b31",
+      "size": 41728387,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/540afcb9-22c7-4e2a-a139-405d1b7047fb/c71a55b328b47e044fc767dfbd4421aa/microsoft.visualcpp.crt.x64.desktop.vsix",
+      "package": "Microsoft.VisualCpp.CRT.x64.Desktop",
+      "kind": "vsix",
+      "name": "Microsoft.VisualCpp.CRT.x64.Desktop.vsix"
+    },
+    {
+      "sha256": "0aa9bb0f5696e3376575d6fa68fdeabe18e57f86c6ab68b23ec1e8668d8d0fe1",
+      "size": 16033720,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/4ec86bdf-e72c-4d25-97c1-ec39b9811b0d/0aa9bb0f5696e3376575d6fa68fdeabe18e57f86c6ab68b23ec1e8668d8d0fe1/Microsoft.VisualCpp.Tools.HostX64.TargetX64.vsix",
+      "package": "Microsoft.VisualCpp.Tools.HostX64.TargetX64",
+      "kind": "vsix",
+      "name": "Microsoft.VisualCpp.Tools.HostX64.TargetX64.vsix"
+    },
+    {
+      "sha256": "819e75f154d5c2fb1e688425e39591340447c50eabfc56a49fdcfa401bb89b99",
+      "size": 204948,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/4ec86bdf-e72c-4d25-97c1-ec39b9811b0d/819e75f154d5c2fb1e688425e39591340447c50eabfc56a49fdcfa401bb89b99/Microsoft.VisualCpp.Tools.HostX64.TargetX64.Resources.enu.vsix",
+      "package": "Microsoft.VisualCpp.Tools.HostX64.TargetX64.Resources",
+      "kind": "vsix",
+      "name": "Microsoft.VisualCpp.Tools.HostX64.TargetX64.Resources.enu.vsix"
+    },
+    {
+      "sha256": "E0B08A8A4B11AC500D1B0666493BA850B054C5724BB059782019CFF71ECAA74D",
+      "size": 577536,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/cc8be1de831ae967a8718d3380915cf2/universal%20crt%20headers%20libraries%20and%20sources-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Universal CRT Headers Libraries and Sources-x86_en-us.msi"
+    },
+    {
+      "sha256": "6D2968F293E5E266D5C162CA9C824BF66F76F8BEC36443D498135D8D7B56E621",
+      "size": 450560,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/dce5026c5efad9cf092ced19c3b600c7/windows%20sdk%20desktop%20headers%20x64-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Windows SDK Desktop Headers x64-x86_en-us.msi"
+    },
+    {
+      "sha256": "65B84CE9E17EC2129043828E25706FF70DDC251BBB7CF10B2643827B1D671048",
+      "size": 827392,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/6f44e3b177cba291c02a8273d57c4df6/windows%20sdk%20desktop%20headers%20x86-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Windows SDK Desktop Headers x86-x86_en-us.msi"
+    },
+    {
+      "sha256": "092280F9396BC48AFC79EEC7C85EFC5AC55D0AA5B56A6ECBD75CA82F7817E315",
+      "size": 528384,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/ed092e4783f594ac5370686e7b9a3a6f/windows%20sdk%20desktop%20libs%20x64-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Windows SDK Desktop Libs x64-x86_en-us.msi"
+    },
+    {
+      "sha256": "E3F21AABECC253C258931ADAEC249376A3D9E423490D529A0C8AF19F26336AFA",
+      "size": 1044480,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/529c82421e5108be8e791a1f0e8cd9e8/windows%20sdk%20for%20windows%20store%20apps%20headers-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Windows SDK for Windows Store Apps Headers-x86_en-us.msi"
+    },
+    {
+      "sha256": "985171B72CF3A94E8DBDEA20397ECCB180E32BFA8732E2E8F4CDE9D89C57B619",
+      "size": 548864,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/22b1e2335c81467eba74de50b0a4d290/windows%20sdk%20for%20windows%20store%20apps%20libs-x86_en-us.msi",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "msi",
+      "name": "Windows SDK for Windows Store Apps Libs-x86_en-us.msi"
+    },
+    {
+      "sha256": "2792FEBD29E820BC3181C76D66D499486C8B2D23D3D8E6EB5361A9CAF61FB4E3",
+      "size": 246381,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/7dd472be7f4425320a57adab26ee41d5/05047a45609f311645eebcac2739fc4c.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "05047a45609f311645eebcac2739fc4c.cab"
+    },
+    {
+      "sha256": "548B3117C91F27802C65F65F83FD6A3C6B10F2E24284D04413824EAD85B7093E",
+      "size": 100699,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/a58e931f25c48e7e7bdc253ba6f776c6/07a57cdb41ba28cced14005f087267be.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "07a57cdb41ba28cced14005f087267be.cab"
+    },
+    {
+      "sha256": "63CFAAC2AEFF22056DF8E8AE9FFF75DFC2D361C81611799EFC5C54A37188D0F2",
+      "size": 231881,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/bdcddc6d696aecd55975a960cbcc8b18/0b2a4987421d95d0cb37640889aa9e9b.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "0b2a4987421d95d0cb37640889aa9e9b.cab"
+    },
+    {
+      "sha256": "1DD91D30E06A06D7B89FDFE7DD810B85442B60C390DB4E748F3F54950A015000",
+      "size": 232549,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/2ad3fd7727fb312a5ca4b5f4b2e2df63/13d68b8a7b6678a368e2d13ff4027521.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "13d68b8a7b6678a368e2d13ff4027521.cab"
+    },
+    {
+      "sha256": "60CC76B2C3CB0A154311B609FA36DBC87481A95F4907C0933890BC93A12DAC37",
+      "size": 601962,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/2ff1b37871dead7e739e9b466debd7c4/16ab2ea2187acffa6435e334796c8c89.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "16ab2ea2187acffa6435e334796c8c89.cab"
+    },
+    {
+      "sha256": "42548221FED9E6CFFABDFEAA8BD1B0F12FDC9BCD3AADA5FB41D51D619494339F",
+      "size": 514232,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/46db65f5cf1b712411dfebe2afb7adc2/2868a02217691d527e42fe0520627bfa.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "2868a02217691d527e42fe0520627bfa.cab"
+    },
+    {
+      "sha256": "07AB2E44D4030AF7F8EA5BACF83475DDC43137CEB88FD1499F53DD8EF7822375",
+      "size": 8887594,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/88801bb590bd478a18ffcd9d18476f35/2e876dd22fa5e6785f137e3422dd50ec.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "2e876dd22fa5e6785f137e3422dd50ec.cab"
+    },
+    {
+      "sha256": "60CDF3945DB67A65D971C6BDF17C8C83CFCB8FD6D9348F5179FA078C6371B335",
+      "size": 232615,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/f6092ddf9c1406416c14fd5ad1b6a92b/463ad1b0783ebda908fd6c16a4abfe93.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "463ad1b0783ebda908fd6c16a4abfe93.cab"
+    },
+    {
+      "sha256": "26F81CD05F69A8FF866487A9D7597404505BA7B0B094A5D952F9789191B5FF99",
+      "size": 1133016,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/3e0149332a18c17eebe6ed0813c0a507/4fe4c8b88812f5339018c0eef95acdb9.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "4fe4c8b88812f5339018c0eef95acdb9.cab"
+    },
+    {
+      "sha256": "6E5B88C4DEA33EA85B55C9A36F65F43FB7C89256E20A76B40CB9044F63FF8172",
+      "size": 18717359,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/587b20fd3976b677e4701dfbe3b1eaaa/58314d0646d7e1a25e97c902166c3155.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "58314d0646d7e1a25e97c902166c3155.cab"
+    },
+    {
+      "sha256": "E1A73A5C74D1C6F108D45110ECC08A9B19C6EB7E1935DEA41A963401DB629169",
+      "size": 9637217,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/455cb1620737d615018f3e49adbd1d08/5a22e5cde814b041749fb271547f4dd5.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "5a22e5cde814b041749fb271547f4dd5.cab"
+    },
+    {
+      "sha256": "F8B32B05944974695509293B3560E30ED89B7FA4DE3BCB9CC6B9A9A97EF1C235",
+      "size": 22167896,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/d1a94a0aae3b6dc09b393bfc9c687187/6ee7bbee8435130a869cf971694fd9e2.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "6ee7bbee8435130a869cf971694fd9e2.cab"
+    },
+    {
+      "sha256": "FAB172CBFD44FF531894F5412E52503DF6A5E232735D1790F7C7A56F6A8224B8",
+      "size": 7605668,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/57f60894249b01429baf9be25c6335ab/766c0ffd568bbb31bf7fb6793383e24a.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "766c0ffd568bbb31bf7fb6793383e24a.cab"
+    },
+    {
+      "sha256": "5CAD58CD9F25EFE831C93DBBA0A310A43385F7A2927BB300EC9417A59C3E3E65",
+      "size": 22036228,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/90a93bc0c86285b0ba859d0ca1ac2b9a/78fa3c824c2c48bd4a49ab5969adaaf7.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "78fa3c824c2c48bd4a49ab5969adaaf7.cab"
+    },
+    {
+      "sha256": "8296B9648FBF31F7B35109234035B0361F7765F2D5707F089F6F714C7DA77795",
+      "size": 520594,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/9c378e26b2640bf5d74e2cd55243b4a8/7afc7b670accd8e3cc94cfffd516f5cb.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "7afc7b670accd8e3cc94cfffd516f5cb.cab"
+    },
+    {
+      "sha256": "6380AB66690B2559BC645C2E33DCAE01090D40BF3DE583D74AEA7EB0F3CD3E75",
+      "size": 22465275,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/5476838d64abb868713ebc1176d7e76a/80dcdb79b8a5960a384abe5a217a7e3a.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "80dcdb79b8a5960a384abe5a217a7e3a.cab"
+    },
+    {
+      "sha256": "12E89825C83EB47CE12A87351F6AD3642BA4D8889DA0008861AC0FB3242CDC47",
+      "size": 5421866,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/ad54318ee7be973c23614985de52423b/8125ee239710f33ea485965f76fae646.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "8125ee239710f33ea485965f76fae646.cab"
+    },
+    {
+      "sha256": "99194A5AA68221C4FEC593855095D9FDE61B31A8596EE9CE1423C844E63C2748",
+      "size": 645968,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/5dce2fc0f0d4ef6916a08094124b29a0/96076045170fe5db6d5dcf14b6f6688e.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "96076045170fe5db6d5dcf14b6f6688e.cab"
+    },
+    {
+      "sha256": "CFF93356A35BED9ABB264386CC1C6A184FC64BD64CA8ABF81A3BDAEE190D09A8",
+      "size": 22889919,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/6d0ed35bb27b7b2979dc9a11a2fb985c/a1e2a83aa8a71c48c742eeaff6e71928.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "a1e2a83aa8a71c48c742eeaff6e71928.cab"
+    },
+    {
+      "sha256": "B7E034B9DDBBA8B2E3A956435862CBBF46A0AD80F1E1C84D3F275F62A774C1C7",
+      "size": 149717,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/8b525cebd9f2419400957f525364efd4/b2f03f34ff83ec013b9e45c7cd8e8a73.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "b2f03f34ff83ec013b9e45c7cd8e8a73.cab"
+    },
+    {
+      "sha256": "3141067881973CF99D41AFA07E49171E1C6228E26D8AFBFD68851665890DAC1D",
+      "size": 9599125,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/a58aa9f075f917797fe38205b19facdc/ba60f891debd633ae9c26e1372703e3c.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "ba60f891debd633ae9c26e1372703e3c.cab"
+    },
+    {
+      "sha256": "98D37BF6C960172BEAA44888FB5F34B664AEA33B536FC03AE428E1A99E857F55",
+      "size": 562884,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/3105739a43863a2a021adf3174f765d6/beb5360d2daaa3167dea7ad16c28f996.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "beb5360d2daaa3167dea7ad16c28f996.cab"
+    },
+    {
+      "sha256": "FB17C28F5AAEAF267E8EF0006FC3BB5F6F5A64769FCB7D94C3A3BA58093EA31E",
+      "size": 3883501,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/7e0011a3e3815d8ec675c412ecc00549/c0aa6d435b0851bf34365aadabd0c20f.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "c0aa6d435b0851bf34365aadabd0c20f.cab"
+    },
+    {
+      "sha256": "E1D791A066329881ED7E2CAF78920FC1D37F4F851C63A93263AB731994A853A0",
+      "size": 869228,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/a9550430c5c912e11f1532ef409860ad/c1c7e442409c0adbf81ae43aa0e4351f.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "c1c7e442409c0adbf81ae43aa0e4351f.cab"
+    },
+    {
+      "sha256": "39F2A658C0A7F98EC587E84423073A048159B8D9BCA294728AC2D1387D1E19DB",
+      "size": 9541335,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/c6d08ce9b23d785fec47d856de82cca3/e10768bb6e9d0ea730280336b697da66.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "e10768bb6e9d0ea730280336b697da66.cab"
+    },
+    {
+      "sha256": "BA4266155A348D0034BF85992C257CB7532C9256C667F5B0890C0FD306FA9281",
+      "size": 30702,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/ff3bfba55bed517965bfc4097b926827/e5950ce9ba509b3370ebf328742a5f45.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "e5950ce9ba509b3370ebf328742a5f45.cab"
+    },
+    {
+      "sha256": "68EABD8145CE743617AC1DDBFA754712983A04677B3D3CC873506BDFB871D14D",
+      "size": 40362,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/72665d89a7b34802303944b0c11fba78/eca0aa33de85194cd50ed6e0aae0156f.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "eca0aa33de85194cd50ed6e0aae0156f.cab"
+    },
+    {
+      "sha256": "668031809C1584A3A23AC0924A02F3851678961E60A48ACE39D3205ED2BBEF8E",
+      "size": 9508533,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/d4d959d49fd38316ba0813b7c390d0b7/f9b24c8280986c0683fbceca5326d806.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "f9b24c8280986c0683fbceca5326d806.cab"
+    },
+    {
+      "sha256": "5662694A176DEFCCF46F692B91B130AD9E6D7609577CE21FFD6FDEBC1AB9FB8A",
+      "size": 17194,
+      "url": "https://download.visualstudio.microsoft.com/download/pr/f73df163-e044-4f0e-a289-d5f96314c45d/c070fb25f689ebfe24daa2468e3febfd/f9ff50431335056fb4fbac05b8268204.cab",
+      "package": "Win10SDK_10.0.19041",
+      "kind": "cab",
+      "name": "f9ff50431335056fb4fbac05b8268204.cab"
+    }
+  ],
+  "catalog_sha256": "3f11dac605c9241ddb6b0ec8a374de97f778a75df93788e7e7ec417d1ea8ee17"
+}

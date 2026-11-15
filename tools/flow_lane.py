@@ -262,16 +262,21 @@ def wait_for_owner(root, fdir, directory, resume, wait):
 
 
 def require_green(root, commit, python, ci_wait):
-    result = subprocess.run([python, 'tools/ci_status.py', '--commit', commit, '--wait', str(ci_wait)],
+    result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', commit, '--wait', str(ci_wait)],
                             cwd=root, capture_output=True, text=True)
     f.refuse(result.returncode == 0, 'origin CI is not green: ' + result.stdout.strip())
 
 
 def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executable, resume=None, wait_lane=False,
-                    soft_free_gb=None, allow_low_disk=False):
+                    soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Register new tooling requests before taking the shared batching lane."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
     python = lane_python(python)
+    if repair_red:
+        import flow_repair
+        flow_repair.validate_sha(repair_red)
+        return _publish_legacy_tooling(root, fdir, branch, ci_wait, python, resume, wait_lane,
+                                       soft_free_gb, allow_low_disk, repair_red)
     if not resume:
         import flow_tooling
         return flow_tooling.publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, wait_lane)
@@ -286,7 +291,7 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
 
 
 def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executable, resume=None, wait_lane=False,
-                    soft_free_gb=None, allow_low_disk=False):
+                    soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Check and publish committed tooling under the same lane lock as acceptance work."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
     python = lane_python(python)
@@ -296,7 +301,17 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
         if (previous.get('integrated') or {}).get('pushed'):
             f.refuse(previous['root'] == str(root) and previous['branch'] == branch,
                      'resume tooling publication with its original root and branch')
+            if previous.get('repair_red') and not previous.get('repair_dispatched'):
+                with lane_lock(fdir, wait=wait_lane, purpose='tooling-repair-dispatch'):
+                    f.git(root, 'fetch', '--quiet', 'origin', branch)
+                    f.refuse(f.git(root, 'rev-parse', 'origin/' + branch) == previous['integrated']['commit'],
+                             'repair head moved before workflow dispatch; inspect before resuming')
+                    import flow_repair
+                    previous['repair_dispatched'] = flow_repair.dispatch(root, branch, previous['repair'])
+                    save_tooling(fdir, previous)
             return finish_tooling(root, fdir, previous, python, ci_wait)
+    if repair_red:
+        wait_for_owner(root, fdir, 'runs', None, wait_lane)
     wait_for_owner(root, fdir, 'tooling', resume, wait_lane)
     with lane_lock(fdir, wait=wait_lane, purpose='tooling') as lease:
         recover_stale(fdir)
@@ -320,6 +335,11 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
             guard_cleanup(fdir, root)
             if receipt.get('tree'):
                 guard_cleanup(fdir, receipt['tree'])
+            if repair_red and receipt.get('repair_red'):
+                f.refuse(repair_red == receipt['repair_red'], 'repair SHA differs from saved receipt')
+            repair_red = repair_red or receipt.get('repair_red')
+            if repair_red:
+                receipt['repair_red'] = repair_red
             receipt['owner'] = process_owner()
             receipt.update(state='running', python=python)
             path = fdir / 'lane/tooling' / (receipt['id'] + '.json')
@@ -349,6 +369,10 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                     if f.git(root, 'merge-base', base, 'HEAD') != base:
                         f.git(root, 'rebase', f'origin/{branch}')
                     commit = f.git(root, 'rev-parse', 'HEAD')
+                    if repair_red:
+                        import flow_repair
+                        receipt['repair'] = flow_repair.approve(root, base, commit, repair_red, python, ci_wait)
+                        save()
                     checked = receipt.get('integrated') or {}
                     if not (checked.get('checks') and checked.get('commit') == commit):
                         resource_admission.admit(root, 'tooling validation', soft_gb=soft_free_gb, allow_low_disk=allow_low_disk)
@@ -365,9 +389,11 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                         integ = checked
                         integ['base_revision'] = base
                     # A red main must be resolved before unrelated publication.
-                    result = subprocess.run([python, 'tools/ci_status.py', '--commit', base, '--wait', str(ci_wait)],
-                                            cwd=root, capture_output=True, text=True)
-                    f.refuse(result.returncode == 0, 'origin CI is not green: ' + result.stdout.strip())
+                    if repair_red:
+                        receipt['repair'] = flow_repair.approve(root, base, commit, repair_red, python, ci_wait)
+                        save()
+                    else:
+                        require_green(root, base, python, ci_wait)
                     f.git(root, 'fetch', '--quiet', 'origin', branch)
                     if f.git(root, 'rev-parse', f'origin/{branch}') != base:
                         continue
@@ -384,6 +410,10 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                     save()
                     break
                 f.refuse(integ.get('pushed'), 'origin kept moving; resume tooling-push after coordinating publishers')
+            if repair_red and not receipt.get('repair_dispatched'):
+                import flow_repair
+                receipt['repair_dispatched'] = flow_repair.dispatch(root, branch, receipt['repair'])
+                save()
             lease.release()
             receipt['lane_hold_seconds'] = lease.seconds
             save()
@@ -437,7 +467,13 @@ def finish_tooling(root, fdir, receipt, python, ci_wait):
     integ = receipt['integrated']
     receipt['owner'] = process_owner()
     save_tooling(fdir, receipt)
-    result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+    args = [python, 'tools/ci_status.py']
+    if receipt.get('repair'):
+        for workflow in ('Infrastructure checks', 'Publish research report', *receipt['repair']['workflows']):
+            args += ['--require-workflow', workflow]
+    else:
+        args += ['--without-advisory']
+    result = subprocess.run(args + ['--commit', integ['commit'], '--wait', str(ci_wait)],
                             cwd=root, capture_output=True, text=True)
     integ['ci'] = {0: 'green', 1: 'red', 2: 'pending'}.get(result.returncode, 'unavailable')
     ci_log = fdir / 'lane/tooling' / receipt['id'] / 'ci.log'
@@ -1242,7 +1278,7 @@ def finish_run(root, fdir, receipt, python, ci_wait):
     save_run(fdir, receipt)
     if integ['ci'] != 'green':
         started = time.monotonic()
-        result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                                 cwd=tree, capture_output=True, text=True)
         log = fdir / 'lane/logs' / receipt['id'] / 'ci.log'
         with state_lock(fdir):

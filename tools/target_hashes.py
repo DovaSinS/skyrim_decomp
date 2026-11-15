@@ -18,6 +18,7 @@ from pecoff import CoffObject, PeImage, Reject, Reloc, Section
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = 'relocation-masked-sha256-v1'
 MANIFEST = 'data/target-hashes/sse-steam-1-7-104.json'
+OFFERED = 'data/target-hashes/contributor-targets.json'
 
 
 def digest(blob):
@@ -94,6 +95,7 @@ def load_manifest(root):
             or manifest['image_sha256'] != target['image_sha256']
             or manifest['comparator_sha256'] != compare.comparator_source_sha256()
             or manifest['normalizer_sha256'] != digest((root / 'tools/target_hashes.py').read_bytes())
+            or manifest['offered_inventory_sha256'] != digest((root / OFFERED).read_bytes())
             or manifest['compiler_pins_sha256'] != digest((root / 'tools/verifier/pinned.sha256').read_bytes())
             or any(digest((root / name).read_bytes()) != value
                    for name, value in manifest['recipe_sha256'].items())):
@@ -149,9 +151,17 @@ def generate(root, image_path, overrides=None):
     image = PeImage(image_bytes)
     inventory_bytes = (root / 'data/progress.json').read_bytes()
     inventory = json.loads(inventory_bytes)
+    offered_bytes = (root / OFFERED).read_bytes()
+    offered = json.loads(offered_bytes)
+    if offered['build_id'] != target['build_id'] or offered['unresolved_rvas']:
+        raise ValueError('offered target identity or boundary unresolved')
+    functions = {f['rva']: f for f in inventory['functions']}
+    for entry in offered['functions']:
+        if entry['rva'] not in functions:
+            functions[entry['rva']] = dict(entry, build_id=target['build_id'])
     rows, unsupported = [], []
     overrides = overrides or {}
-    for fn in sorted(inventory['functions'], key=lambda f: f['rva']):
+    for fn in sorted(functions.values(), key=lambda f: f['rva']):
         if fn['build_id'] != target['build_id'] or fn['size'] <= 0:
             raise ValueError('inventory identity invalid')
         data = image.read(fn['rva'], fn['size'], 'target hash')[1]
@@ -174,6 +184,7 @@ def generate(root, image_path, overrides=None):
                 comparator_sha256=compare.comparator_source_sha256(),
                 normalizer_sha256=digest((root / 'tools/target_hashes.py').read_bytes()),
                 inventory_sha256=digest(inventory_bytes),
+                offered_inventory_sha256=digest(offered_bytes),
                 compiler_pins_sha256=digest((root / 'tools/verifier/pinned.sha256').read_bytes()),
                 recipe_sha256={p.relative_to(root).as_posix(): digest(p.read_bytes())
                                for p in sorted((root / 'reconstruction/recipes').glob('*.json'))},

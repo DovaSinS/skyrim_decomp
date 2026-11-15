@@ -42,13 +42,10 @@ paths. It does not simply zero relocation fields. Phase 1 reproduces this existi
 it does not pretend it is the future masked-target hash below. Neither comparison runs the
 game comparator against a target image on CI.
 
-Compiler packages, objects and raw compiler diagnostics stay in runner scratch and are never
-uploaded as artifacts. No `actions/cache` toolset cache is enabled: `LEGAL.md` prohibits
-distributing compiler packages through this project, and GitHub caches can be restored by fork
-pull requests. An installation also has installer state outside the toolset directory, so
-restoring that directory alone would not prove a valid installed component. Report the uncached
-installation time from logs; cached time is **not measured**, not an invented speedup. Revisit
-caching only with a distribution basis and a reproducible installation strategy.
+Phase 1 used the official VS installer and no Actions cache. That historical decision is
+superseded by the verified package/cache procedure below; the compatibility manual workflow
+now calls the same package-only workflow as Phase 2. Compiler objects and raw diagnostics
+still remain in scratch and are never cached or uploaded.
 
 ## Phase 2: published target hashes (p128)
 
@@ -59,10 +56,16 @@ statement is in `docs/authorizations.md`. This is a publication decision, not a 
 
 `tools/target_hashes.py` runs only locally against the owner's SHA-256-checked pinned image.
 It processes every `(build id, RVA, size)` in the current `data/progress.json` inventory, including
-unmatched functions; this inventory is smaller than the full executable census. Install the
+unmatched functions, plus `contributor-targets.json`: the offered `contrib.py next` candidates and
+all functions in the current open claim snapshot. Claim addresses outside progress are resolved
+against local function/pdata boundaries; unresolved identities stop generation. The checked-in
+offered inventory records public claim URLs/scopes and hashes of its input snapshots. This
+coverage is smaller than the full executable census. Install the
 local extraction dependency `iced-x86==1.21.0` in an ignored environment. For example:
 
 ```sh
+python3.13 tools/target_hash_offers.py --image <private-image> \
+    --function-table .local/analysis/functions.jsonl
 python3.13 tools/target_hashes.py --image <private-image> \
     --out data/target-hashes/sse-steam-1-7-104.json
 ```
@@ -115,7 +118,8 @@ private inputs or object execution. The trusted checkout is the event's immutabl
 Only its tools, recipes, inventory and target commitments run. The head SHA is fetched as git
 objects; `prepare` reads bounded regular UTF-8 reconstruction blobs from the PR diff and overlays
 them on a separate trusted source tree. It enforces the contributor path/deletion/file-size rules
-and the same source lint; PR symlinks, tools, recipes, response files and build commands are refused.
+and the same source lint; PR symlinks, recipes, response files and build commands are refused; CI tooling blobs are ignored,
+never materialized or executed.
 It never checks out PR tools or imports PR Python. Header edits trigger affected units too.
 
 Known RVA/symbol/recipe bindings come from base records. A new unit can request a public target
@@ -145,14 +149,67 @@ on **two independent local hosts**, independent
 Reviewer approval and integrated-source checks remain mandatory for `matched`. GitHub CI is
 neither an acceptance host nor a substitute for any acceptance rule.
 
-## Compiler cache decision
+## Fast, fully verified toolchain setup and cache
 
-p124 assessed the official-install path and left Actions toolset caching disabled: `LEGAL.md`
-prohibits compiler-package distribution, and GitHub caches are accessible to fork PRs. That
-assessment supplies no licence basis for sharing a cached install. p128 therefore leaves the
-cache **off**. A toolset-directory restore also omits installer state. The measured p124 installer
-invocation took **325.85 seconds without an Actions cache**; cached time is **not measured**.
-No speedup is claimed. See the p128 handoff for its own uncached installation measurement.
+The maintainer approved package-only extraction and a verified CI cache, superseding p124's
+no-cache decision. awarebayes's statement, verbatim:
+
+> legal.md is made up by me and can be rewritten, there is no particular reason it is what it is, i am open to it if 2 does not hold
+
+The maintainer's condition 2, cache reliability, is met by full-manifest verification. Fork PRs
+can restore this cache; that visibility is explicitly accepted. See `LEGAL.md` for this scoped
+project-policy authorization. Game data, candidate objects and compiler diagnostics never enter it.
+
+`tools/ci_toolchain.py` fetches the VSMAN at `recipe_pins.VSMAN_URL`, verifies
+`VSMAN_SHA256`, and checks every selected URL/hash/size against that catalog before downloading.
+The 40-payload plan contains only the x64 v141 compiler/CRT and the SDK headers and libraries the
+recipe needs. Each payload's SHA-256 is checked before VSIX extraction or SDK MSI administrative
+extraction into runner scratch. No Visual Studio installer or machine-wide registration runs.
+The original selection/extraction approach is
+[msvc-wine at the pinned revision](https://github.com/mstorsjo/msvc-wine/blob/d8a499efde3e1bd1862e2bebac976640c5f4c1fe/vsdownload.py);
+this implementation is original infrastructure using Python ZIP extraction and native `msiexec /a`.
+
+The tracked full-file manifest binds **every one of 4,199 files** in the curated toolset and SDK
+tree, plus all four compiler pins. Its index SHA-256 is the exact Actions cache key, with no
+prefix fallback. Shards remain below the existing publication size limit. The trusted manifest
+comes from the base checkout, never from the cache. After every restore, the exact full file set,
+each size/SHA-256, and all four pins are checked again. Missing, extra, changed or linked files
+invalidate the restore. The restored tree is discarded and official payloads fetched fresh;
+fresh extraction must pass the same complete manifest before any compilation or cache save.
+Tests mutate SDK headers while preserving compiler pins, add/remove files, inject a cached
+manifest and replace a root with a symlink; none is accepted.
+
+The compiler is invoked by explicit `cl.exe` path with fixed `INCLUDE` and `LIB` roots under the
+verified tree. There is no reliance on a developer command prompt or a globally installed SDK.
+Run `ci-target-hash.yml` manually with `cold=true` to skip restoration and measure cold fetch,
+then with `cold=false` to measure restoration plus full verification. `setup_seconds` starts
+before the cache step and includes its restore time. The successful installer baseline was
+**340.33 seconds**; observed cold/cache timings and run SHAs are in the p128 handoff, not assumed.
+
+## Scheduling and the publication lane
+
+The advisory job runs for contributor reconstruction/CI-input PRs, nightly on main, and by
+`workflow_dispatch`. It does not run on lane pushes. PR tooling blobs are never executed: a
+CI-input-only PR checks the trusted base's 50 references instead. C++ changes retain source intake.
+
+The lane invokes `ci_status.py --without-advisory`. This omits only the two explicitly named
+MSVC advisory workflows, requires Infrastructure and Pages to be present, and retains every
+required or unknown workflow failure. The default CI-status command still reports advisory reds.
+A pending or missing required workflow is not green. Hash checking itself is unchanged.
+
+`flow.py tooling-push --repair-red <full-red-SHA> --wait-lane` is an isolated tooling repair
+path, not a general CI override. It requires that exact SHA still be origin head, reproduces
+completed RED CI, and admits only explicitly mapped advisory failures. Required/unknown reds,
+unavailable/pending results, unrelated paths and function acceptance changes are refused. Every
+failed workflow must have an actual input changed; supporting docs/tests alone do not qualify.
+The red SHA, workflow/run identities, candidate SHA and changed paths are saved in the receipt.
+All normal full checks and FF-only push remain required. Acceptance requests stay queued.
+
+After a repair push the lane dispatches the repaired advisory workflow while retaining the push
+lease, then waits for that workflow and required CI on the exact new SHA. A saved receipt resumes
+this observation without another push; `--require-workflow` prevents an absent advisory run from
+being reported green. Additional repairable workflows need an explicit input mapping; this path
+cannot waive comparator, validator, Reviewer or two-host evidence.
 
 ## Sources and limits
 

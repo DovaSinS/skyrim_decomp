@@ -27,6 +27,9 @@ DEFAULT_RECIPE = 'reconstruction/recipes/msvc-19.16.27054-o2.json'
 # claim about which public target to try, never evidence of identity or acceptance.
 REQUEST = re.compile(r'^// CI hash: (0x[0-9a-fA-F]+) (\S+)\s*$', re.M)
 SHA = re.compile(r'[0-9a-f]{40}')
+CI_INPUTS = ('data/target-hashes/', 'tools/toolchain/', 'tools/ci_',
+             'tools/target_hashes.py', 'tools/contrib.py', '.gitattributes',
+             '.github/workflows/ci-target-hash.yml')
 
 
 def git(root, *args):
@@ -51,7 +54,11 @@ def prepare(root, base, head, work):
     rows = []
     for i in range(0, len(diff) - 1, 2):
         status, name = diff[i].decode('ascii'), diff[i + 1].decode('utf-8')
-        if status not in ('A', 'M') or not contrib.UNIT_PATH.fullmatch(name):
+        if not contrib.UNIT_PATH.fullmatch(name):
+            if name.startswith(CI_INPUTS):
+                continue  # Never read or execute PR tooling; test trusted base references instead.
+            raise ValueError('outside contributor intake scope')
+        if status not in ('A', 'M'):
             raise ValueError('outside contributor intake scope')
         # Read only bounded, regular source blobs. Never follow a PR symlink or check out head.
         meta = git(root, 'ls-tree', head, '--', name).decode().split()
@@ -65,6 +72,8 @@ def prepare(root, base, head, work):
             raise ValueError('source is not text')
         blob.decode('utf-8-sig')
         rows.append((name, blob))
+    if not rows:
+        return root, []
     tree = work / 'source'
     tree.mkdir(parents=True)
     for name in ('reconstruction', 'builds', 'findings', 'reports'):
@@ -189,6 +198,9 @@ def main(argv=None):
             (a.work / 'requests.json').write_text(json.dumps(refs))
             report['intake'] = 'pass'
             report['requested_functions'] = len(refs)
+            if os.environ.get('GITHUB_OUTPUT'):
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+                    out.write('mode=' + ('check' if changed else 'sample') + '\n')
         else:
             if not a.bin or public.probe(ROOT, a.bin)['toolset'] != 'MATCH':
                 raise ValueError('compiler pin mismatch')

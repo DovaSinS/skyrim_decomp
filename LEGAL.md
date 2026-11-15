@@ -119,3 +119,17 @@ restrict or remove disputed material. This does not promise a legal outcome or r
 
 The original infrastructure is provided without warranty under its scoped MIT license. No
 warranty is made that research is accurate, complete, safe for saves, or suitable for gameplay.
+
+## Verified CI toolchain cache: maintainer authorization
+
+awarebayes authorized a CI cache of the pinned MSVC v141 and Windows SDK tree on 2026-11-14,
+superseding the earlier no-cache decision. Maintainer statement, verbatim:
+
+> legal.md is made up by me and can be rewritten, there is no particular reason it is what it is, i am open to it if 2 does not hold
+
+The maintainer's condition 2, cache reliability, is met by full-manifest verification: every
+restored file, the complete file set, and all four compiler pins must match the trusted tracked
+SHA-256 manifest before use. A mismatch discards the restored tree and fetches hash-verified
+payloads from Microsoft's pinned catalog. Fork PRs can restore this cache; that visibility is
+explicitly accepted. This is the maintainer's project-policy authorization. It does not authorize
+compiler packages in Git history, releases or ordinary artifacts, or any game bytes in CI/cache.

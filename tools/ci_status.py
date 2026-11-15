@@ -20,6 +20,7 @@ GREEN, RED, PENDING, UNAVAILABLE = 0, 1, 2, 3
 OK_CONCLUSIONS = {'success', 'skipped', 'neutral'}
 PAGES = 'Publish research report'
 CHECKS = 'Infrastructure checks'
+ADVISORY = {'Advisory target hashes', 'Public MSVC hash self-test'}
 POLL_SECONDS = 15
 REPO = Path(__file__).resolve().parents[1]
 FULL_SHA = re.compile(r'[0-9a-f]{40}')
@@ -93,11 +94,12 @@ def superseding_pages(commit):
     return None
 
 
-def status(commit):
+def status(commit, without_advisory=False, required_workflows=()):
     """(exit code, run summaries) for the workflow runs of one commit."""
     runs = gh('run', 'list', '--commit', commit, '--limit', '50',
               '--json', 'databaseId,workflowName,status,conclusion,headSha')
-    runs = [r for r in runs if r.get('headSha') == commit]
+    runs = [r for r in runs if r.get('headSha') == commit
+            and not (without_advisory and r.get('workflowName') in ADVISORY)]
     summaries = []
     cancelled_pages = []
     for run in sorted(runs, key=lambda r: (r['workflowName'], r['databaseId'])):
@@ -113,6 +115,11 @@ def status(commit):
     if any(s['status'] == 'completed' and s['conclusion'] not in OK_CONCLUSIONS
            and s not in cancelled_pages for s in summaries):
         return RED, summaries
+    required = set(required_workflows) | ({CHECKS, PAGES} if without_advisory else set())
+    if not required <= {s['workflow'] for s in summaries}:
+        return PENDING, summaries
+    if without_advisory and not any(s['workflow'] == CHECKS and s['conclusion'] == 'success' for s in summaries):
+        return PENDING, summaries
     if not summaries or any(s['status'] != 'completed' for s in summaries):
         return PENDING, summaries
     if cancelled_pages:
@@ -143,15 +150,25 @@ def main(argv=None):
     parser.add_argument('--commit', help='commit SHA, short SHA or ref (default: HEAD)')
     parser.add_argument('--wait', type=float, default=0, metavar='SECONDS',
                         help='poll until no run is pending or this many seconds pass')
+    parser.add_argument('--require-workflow', action='append', default=[],
+                        help='remain pending until this exact workflow is present for the SHA (repeatable)')
+    parser.add_argument('--without-advisory', action='store_true',
+                        help='lane mode: ignore only the named advisory MSVC workflows; report all other failures')
     parser.add_argument('--json', action='store_true', help='print a JSON record instead of text')
     args = parser.parse_args(argv)
+    if args.without_advisory and set(args.require_workflow) & ADVISORY:
+        parser.error('cannot both omit and require an advisory workflow')
+    def inspect(commit):
+        if args.without_advisory or args.require_workflow:
+            return status(commit, without_advisory=args.without_advisory, required_workflows=args.require_workflow)
+        return status(commit)
     try:
         commit = resolve_commit(args.commit.strip() if args.commit else 'HEAD')
         deadline = time.monotonic() + args.wait
-        code, summaries = status(commit)
+        code, summaries = inspect(commit)
         while code == PENDING and time.monotonic() < deadline:
             time.sleep(min(POLL_SECONDS, max(0.0, deadline - time.monotonic())))
-            code, summaries = status(commit)
+            code, summaries = inspect(commit)
     except (GhError, subprocess.CalledProcessError) as error:
         print(f'UNAVAILABLE: {error}', file=sys.stderr)
         return UNAVAILABLE
