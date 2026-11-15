@@ -1,0 +1,891 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "headers": {
+    "reconstruction/bsengine/CodeTaskletFieldLayout.h": "47049526d33423e52708683da5280e67afbad8990d262ef3dbfd66f4819a3daa",
+    "reconstruction/bsengine/CommunityLeafStorageLayout.h": "53e9c151bf540e5d55eb9ff60bd9aec5d018634ba82a51a19d2e837c493a5e3d",
+    "reconstruction/bsengine/ExtraValueStorageLayout.h": "35bd7e1ad776327788fd10d4d5ed4d1b29ec8277df08188d51310ca08867b408",
+    "reconstruction/forms/AIWorldInteriorCellLayout.h": "d9531e9841811e9a6e974d19f0d9dca6a9121de3f25d5c13ae81a9db796a0467",
+    "reconstruction/forms/AIWorldLocationLayout.h": "e4d1e01c734e4539530bd41a0ece5277300ef5ae570847a0f630c5000a75d135",
+    "reconstruction/forms/AIWorldPointRadiusLayout.h": "3968658f0882394c8a0db443727dcb480f6fddc1024fb7936fb0ec7fa42cb7e0",
+    "reconstruction/forms/AIWorldRefRadiusLayout.h": "5f1306e7a1c9cbe3a8570fadbfcab90a7e852944433097227c48ba382808c5cf",
+    "reconstruction/forms/TESRegionGrassObjectLayout.h": "9916d74783493df9753687c26489e5a1d2cd64844e7a5353027af5def8d1f99b",
+    "reconstruction/forms/TESRegionObjectBaseLayout.h": "4b8af119415aeda20c77f80d531321bb62afa1cbd6c8ccfe65438f1425e71ad3",
+    "reconstruction/netimmerse/NiIntersectorFieldLayout.h": "7c41f75a6e9f6fb85b5167108240c6a91ed82e5ac0f7c24c457c80032ad284e2"
+  },
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "members": [
+    {
+      "definitions": [
+        "inline CommunityLeafStorageLayout::~CommunityLeafStorageLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 280,
+      "owner": "SettingCollection<VSetting@@>",
+      "owner_rtti": ".?AV?$SettingCollection@VSetting@@@@",
+      "owner_slot": 0,
+      "owner_table": 25035528,
+      "rva": 1340864,
+      "size": 43,
+      "stored_rtti": "SettingCollection<Setting>",
+      "stored_table": 25035528,
+      "symbol": "??_GCommunityLeafStorageLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25035528,
+          "symbol": "??_7CommunityLeafStorageLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityLeafStorageLayout"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17cef0::~CommunityExtra17cef0() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 24,
+      "owner": "ExtraLeveledItem",
+      "owner_rtti": ".?AVExtraLeveledItem@@",
+      "owner_slot": 0,
+      "owner_table": 25074968,
+      "rva": 1560304,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17cef0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074968,
+          "symbol": "??_7CommunityExtra17cef0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17cef0"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17cf50::~CommunityExtra17cf50() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 40,
+      "owner": "ExtraLightData",
+      "owner_rtti": ".?AVExtraLightData@@",
+      "owner_slot": 0,
+      "owner_table": 25077080,
+      "rva": 1560400,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17cf50@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25077080,
+          "symbol": "??_7CommunityExtra17cf50@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17cf50"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17d350::~CommunityExtra17d350() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 32,
+      "owner": "ExtraNavMeshPortal",
+      "owner_rtti": ".?AVExtraNavMeshPortal@@",
+      "owner_slot": 0,
+      "owner_table": 25076472,
+      "rva": 1561424,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17d350@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25076472,
+          "symbol": "??_7CommunityExtra17d350@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17d350"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17d480::~CommunityExtra17d480() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 24,
+      "owner": "ExtraOutfitItem",
+      "owner_rtti": ".?AVExtraOutfitItem@@",
+      "owner_slot": 0,
+      "owner_table": 25075000,
+      "rva": 1561728,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17d480@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25075000,
+          "symbol": "??_7CommunityExtra17d480@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17d480"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17d520::~CommunityExtra17d520() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 40,
+      "owner": "ExtraPackageStartLocation",
+      "owner_rtti": ".?AVExtraPackageStartLocation@@",
+      "owner_slot": 0,
+      "owner_table": 25074840,
+      "rva": 1561888,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17d520@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074840,
+          "symbol": "??_7CommunityExtra17d520@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17d520"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17dbf0::~CommunityExtra17dbf0() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 48,
+      "owner": "ExtraStartingPosition",
+      "owner_rtti": ".?AVExtraStartingPosition@@",
+      "owner_slot": 0,
+      "owner_table": 25074328,
+      "rva": 1563632,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17dbf0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25074328,
+          "symbol": "??_7CommunityExtra17dbf0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17dbf0"
+    },
+    {
+      "definitions": [
+        "inline ExtraValueStorageLayout::~ExtraValueStorageLayout() {}",
+        "inline CommunityExtra17ddb0::~CommunityExtra17ddb0() {}"
+      ],
+      "header": "reconstruction/bsengine/ExtraValueStorageLayout.h",
+      "object_size": 24,
+      "owner": "ExtraUniqueID",
+      "owner_rtti": ".?AVExtraUniqueID@@",
+      "owner_slot": 0,
+      "owner_table": 25077496,
+      "rva": 1564080,
+      "size": 43,
+      "stored_rtti": "BSExtraData",
+      "stored_table": 25059104,
+      "symbol": "??_GCommunityExtra17ddb0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25059104,
+          "symbol": "??_7ExtraValueStorageLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25077496,
+          "symbol": "??_7CommunityExtra17ddb0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityExtra17ddb0"
+    },
+    {
+      "definitions": [
+        "inline TESRegionObjectBaseLayout::~TESRegionObjectBaseLayout() {}",
+        "inline TESRegionGrassObjectLayout::~TESRegionGrassObjectLayout() {}"
+      ],
+      "header": "reconstruction/forms/TESRegionGrassObjectLayout.h",
+      "object_size": 24,
+      "owner": "TESRegionGrassObject",
+      "owner_rtti": ".?AVTESRegionGrassObject@@",
+      "owner_slot": 0,
+      "owner_table": 25206624,
+      "rva": 2442512,
+      "size": 43,
+      "stored_rtti": "TESRegionObjectBase",
+      "stored_table": 25206592,
+      "symbol": "??_GTESRegionGrassObjectLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25206592,
+          "symbol": "??_7TESRegionObjectBaseLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25206624,
+          "symbol": "??_7TESRegionGrassObjectLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::TESRegionGrassObjectLayout"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef2857c0::~CommunityRef2857c0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "IFadeDoneCallback",
+      "owner_rtti": ".?AVIFadeDoneCallback@@",
+      "owner_slot": 0,
+      "owner_table": 25265616,
+      "rva": 2643904,
+      "size": 43,
+      "stored_rtti": "IFadeDoneCallback",
+      "stored_table": 25265616,
+      "symbol": "??_GCommunityRef2857c0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25265616,
+          "symbol": "??_7CommunityRef2857c0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef2857c0"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef2feba0::~CommunityRef2feba0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "REFREventCallbacks::IEventCallback",
+      "owner_rtti": ".?AVIEventCallback@REFREventCallbacks@@",
+      "owner_slot": 0,
+      "owner_table": 25336384,
+      "rva": 3140512,
+      "size": 43,
+      "stored_rtti": "REFREventCallbacks::IEventCallback",
+      "stored_table": 25336384,
+      "symbol": "??_GCommunityRef2feba0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25336384,
+          "symbol": "??_7CommunityRef2feba0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef2feba0"
+    },
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldInteriorCellLayout::~AIWorldInteriorCellLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldInteriorCellLayout.h",
+      "object_size": 32,
+      "owner": "BGSAIWorldLocationInteriorCell",
+      "owner_rtti": ".?AVBGSAIWorldLocationInteriorCell@@",
+      "owner_slot": 0,
+      "owner_table": 25968648,
+      "rva": 4495088,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldInteriorCellLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25968648,
+          "symbol": "??_7AIWorldInteriorCellLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldInteriorCellLayout"
+    },
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldPointRadiusLayout::~AIWorldPointRadiusLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldPointRadiusLayout.h",
+      "object_size": 56,
+      "owner": "BGSAIWorldLocationPointRadius",
+      "owner_rtti": ".?AVBGSAIWorldLocationPointRadius@@",
+      "owner_slot": 0,
+      "owner_table": 25968264,
+      "rva": 4495136,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldPointRadiusLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25968264,
+          "symbol": "??_7AIWorldPointRadiusLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldPointRadiusLayout"
+    },
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldRefRadiusLayout::~AIWorldRefRadiusLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldRefRadiusLayout.h",
+      "object_size": 32,
+      "owner": "BGSAIWorldLocationRefRadius",
+      "owner_rtti": ".?AVBGSAIWorldLocationRefRadius@@",
+      "owner_slot": 0,
+      "owner_table": 25967880,
+      "rva": 4495184,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldRefRadiusLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25967880,
+          "symbol": "??_7AIWorldRefRadiusLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldRefRadiusLayout"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef4726a0::~CommunityRef4726a0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "IMovementParameters",
+      "owner_rtti": ".?AVIMovementParameters@@",
+      "owner_slot": 0,
+      "owner_table": 26002648,
+      "rva": 4662944,
+      "size": 43,
+      "stored_rtti": "IMovementParameters",
+      "stored_table": 26002648,
+      "symbol": "??_GCommunityRef4726a0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26002648,
+          "symbol": "??_7CommunityRef4726a0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef4726a0"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef4e2000::~CommunityRef4e2000() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSPathingDoor",
+      "owner_rtti": ".?AVBSPathingDoor@@",
+      "owner_slot": 0,
+      "owner_table": 26072216,
+      "rva": 5120000,
+      "size": 43,
+      "stored_rtti": "BSPathingDoor",
+      "stored_table": 26072216,
+      "symbol": "??_GCommunityRef4e2000@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26072216,
+          "symbol": "??_7CommunityRef4e2000@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef4e2000"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef4e2ce0::~CommunityRef4e2ce0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSPathingLockData",
+      "owner_rtti": ".?AVBSPathingLockData@@",
+      "owner_slot": 0,
+      "owner_table": 26073056,
+      "rva": 5123296,
+      "size": 43,
+      "stored_rtti": "BSPathingLockData",
+      "stored_table": 26073056,
+      "symbol": "??_GCommunityRef4e2ce0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26073056,
+          "symbol": "??_7CommunityRef4e2ce0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef4e2ce0"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef4e3a50::~CommunityRef4e3a50() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSPathingSpace",
+      "owner_rtti": ".?AVBSPathingSpace@@",
+      "owner_slot": 3,
+      "owner_table": 26073640,
+      "rva": 5126736,
+      "size": 43,
+      "stored_rtti": "BSPathingSpace",
+      "stored_table": 26073640,
+      "symbol": "??_GCommunityRef4e3a50@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26073640,
+          "symbol": "??_7CommunityRef4e3a50@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef4e3a50"
+    },
+    {
+      "definitions": [
+        "inline CommunityHitVisitor::~CommunityHitVisitor() {}",
+        "inline CommunityHitOwner::~CommunityHitOwner() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 32,
+      "owner": "(anonymous)::AttachLightHitEffectVisitor",
+      "owner_rtti": ".?AVAttachLightHitEffectVisitor@?A0x03af8c4c@@",
+      "owner_slot": 0,
+      "owner_table": 26182160,
+      "rva": 6069264,
+      "size": 43,
+      "stored_rtti": "ActiveEffect::ForEachHitEffectVisitor",
+      "stored_table": 26172288,
+      "symbol": "??_GCommunityHitOwner@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26172288,
+          "symbol": "??_7CommunityHitVisitor@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26182160,
+          "symbol": "??_7CommunityHitOwner@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityHitOwner"
+    },
+    {
+      "definitions": [
+        "inline CommunityActorFilter::~CommunityActorFilter() {}",
+        "inline CommunityActorTarget::~CommunityActorTarget() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 32,
+      "owner": "(anonymous)::ActorTargetCheck",
+      "owner_rtti": ".?AVActorTargetCheck@?A0x2cc1437d@@",
+      "owner_slot": 0,
+      "owner_table": 26274016,
+      "rva": 6604560,
+      "size": 43,
+      "stored_rtti": "ProcessLists::GetActorsFilter",
+      "stored_table": 26183792,
+      "symbol": "??_GCommunityActorTarget@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26183792,
+          "symbol": "??_7CommunityActorFilter@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26274016,
+          "symbol": "??_7CommunityActorTarget@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityActorTarget"
+    },
+    {
+      "definitions": [
+        "inline CommunityFree6bc1a0::~CommunityFree6bc1a0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 24,
+      "owner": "BSTFreeList<VRawMessageHandlerWrapperType@?$ActorMovementMessageMap@$0BA@@@>",
+      "owner_rtti": ".?AV?$BSTFreeList@VRawMessageHandlerWrapperType@?$ActorMovementMessageMap@$0BA@@@@@",
+      "owner_slot": 0,
+      "owner_table": 26330552,
+      "rva": 7061920,
+      "size": 43,
+      "stored_rtti": "BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType>",
+      "stored_table": 26330552,
+      "symbol": "??_GCommunityFree6bc1a0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26330552,
+          "symbol": "??_7CommunityFree6bc1a0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityFree6bc1a0"
+    },
+    {
+      "definitions": [
+        "inline CommunityMessageCallback::~CommunityMessageCallback() {}",
+        "inline CommunityFastTravel::~CommunityFastTravel() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 32,
+      "owner": "(anonymous)::FastTravelConfirmCallback",
+      "owner_rtti": ".?AVFastTravelConfirmCallback@?A0xf5b877cc@@",
+      "owner_slot": 0,
+      "owner_table": 26768400,
+      "rva": 10090688,
+      "size": 43,
+      "stored_rtti": "IMessageBoxCallback",
+      "stored_table": 26143784,
+      "symbol": "??_GCommunityFastTravel@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26143784,
+          "symbol": "??_7CommunityMessageCallback@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26768400,
+          "symbol": "??_7CommunityFastTravel@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityFastTravel"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef2857c0::~CommunityRef2857c0() {}",
+        "inline CommunityRefOwner9a7f60::~CommunityRefOwner9a7f60() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "(anonymous)::FadeThenMainMenuCallback",
+      "owner_rtti": ".?AVFadeThenMainMenuCallback@?A0x2f998b1b@@",
+      "owner_slot": 0,
+      "owner_table": 26774664,
+      "rva": 10125152,
+      "size": 43,
+      "stored_rtti": "IFadeDoneCallback",
+      "stored_table": 25265616,
+      "symbol": "??_GCommunityRefOwner9a7f60@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25265616,
+          "symbol": "??_7CommunityRef2857c0@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26774664,
+          "symbol": "??_7CommunityRefOwner9a7f60@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRefOwner9a7f60"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef9b2a20::~CommunityRef9b2a20() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "SkyrimScript::DelayFunctor",
+      "owner_rtti": ".?AVDelayFunctor@SkyrimScript@@",
+      "owner_slot": 0,
+      "owner_table": 26781144,
+      "rva": 10168864,
+      "size": 43,
+      "stored_rtti": "SkyrimScript::DelayFunctor",
+      "stored_table": 26781144,
+      "symbol": "??_GCommunityRef9b2a20@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26781144,
+          "symbol": "??_7CommunityRef9b2a20@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef9b2a20"
+    },
+    {
+      "definitions": [
+        "inline CommunityFree9f0290::~CommunityFree9f0290() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 24,
+      "owner": "BSTFreeList<V?$BSTSmartPointer@VDelayFunctor@SkyrimScript@@UBSTSmartPointerIntrusiveRefCount@@@@>",
+      "owner_rtti": ".?AV?$BSTFreeList@V?$BSTSmartPointer@VDelayFunctor@SkyrimScript@@UBSTSmartPointerIntrusiveRefCount@@@@@@",
+      "owner_slot": 0,
+      "owner_table": 26809552,
+      "rva": 10420880,
+      "size": 43,
+      "stored_rtti": "BSTFreeList<BSTSmartPointer<SkyrimScript::DelayFunctor, BSTSmartPointerIntrusiveRefCount>>",
+      "stored_table": 26809552,
+      "symbol": "??_GCommunityFree9f0290@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 26809552,
+          "symbol": "??_7CommunityFree9f0290@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityFree9f0290"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef2857c0::~CommunityRef2857c0() {}",
+        "inline CommunityRefOwnera2acb0::~CommunityRefOwnera2acb0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "SkyrimScript::(anonymous)::FadeThenMainMenuCallback",
+      "owner_rtti": ".?AVFadeThenMainMenuCallback@?A0xbdd43bcc@SkyrimScript@@",
+      "owner_slot": 0,
+      "owner_table": 26867784,
+      "rva": 10661040,
+      "size": 43,
+      "stored_rtti": "IFadeDoneCallback",
+      "stored_table": 25265616,
+      "symbol": "??_GCommunityRefOwnera2acb0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25265616,
+          "symbol": "??_7CommunityRef2857c0@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 26867784,
+          "symbol": "??_7CommunityRefOwnera2acb0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRefOwnera2acb0"
+    },
+    {
+      "definitions": [
+        "inline CommunityReff22f30::~CommunityReff22f30() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "NiCollisionTraversals::IFindIntersections",
+      "owner_rtti": ".?AVIFindIntersections@NiCollisionTraversals@@",
+      "owner_slot": 0,
+      "owner_table": 27593328,
+      "rva": 15871792,
+      "size": 43,
+      "stored_rtti": "NiCollisionTraversals::IFindIntersections",
+      "stored_table": 27593328,
+      "symbol": "??_GCommunityReff22f30@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27593328,
+          "symbol": "??_7CommunityReff22f30@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityReff22f30"
+    },
+    {
+      "definitions": [
+        "inline NiIntersectorFieldLayout::~NiIntersectorFieldLayout() {}"
+      ],
+      "header": "reconstruction/netimmerse/NiIntersectorFieldLayout.h",
+      "object_size": 64,
+      "owner": "NiIntersector",
+      "owner_rtti": ".?AVNiIntersector@@",
+      "owner_slot": 0,
+      "owner_table": 27595920,
+      "rva": 16005504,
+      "size": 43,
+      "stored_rtti": "NiIntersector",
+      "stored_table": 27595920,
+      "symbol": "??_GNiIntersectorFieldLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27595920,
+          "symbol": "??_7NiIntersectorFieldLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::NiIntersectorFieldLayout"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef1497090::~CommunityRef1497090() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSScript::IVirtualMachine",
+      "owner_rtti": ".?AVIVirtualMachine@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28456216,
+      "rva": 21590160,
+      "size": 43,
+      "stored_rtti": "BSScript::IVirtualMachine",
+      "stored_table": 28456216,
+      "symbol": "??_GCommunityRef1497090@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28456216,
+          "symbol": "??_7CommunityRef1497090@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef1497090"
+    },
+    {
+      "definitions": [
+        "inline CommunityPagePolicy::~CommunityPagePolicy() {}",
+        "inline CommunitySimplePage::~CommunitySimplePage() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 40,
+      "owner": "BSScript::SimpleAllocMemoryPagePolicy",
+      "owner_rtti": ".?AVSimpleAllocMemoryPagePolicy@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28465104,
+      "rva": 21643136,
+      "size": 43,
+      "stored_rtti": "BSScript::IMemoryPagePolicy",
+      "stored_table": 28465056,
+      "symbol": "??_GCommunitySimplePage@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28465056,
+          "symbol": "??_7CommunityPagePolicy@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28465104,
+          "symbol": "??_7CommunitySimplePage@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunitySimplePage"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef14aa3a0::~CommunityRef14aa3a0() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSScript::IFunction",
+      "owner_rtti": ".?AVIFunction@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28470280,
+      "rva": 21668768,
+      "size": 43,
+      "stored_rtti": "BSScript::IFunction",
+      "stored_table": 28470280,
+      "symbol": "??_GCommunityRef14aa3a0@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28470280,
+          "symbol": "??_7CommunityRef14aa3a0@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef14aa3a0"
+    },
+    {
+      "definitions": [
+        "inline CommunityFree14c8860::~CommunityFree14c8860() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 24,
+      "owner": "BSTFreeList<UFunctionMessage@Internal@BSScript@@>",
+      "owner_rtti": ".?AV?$BSTFreeList@UFunctionMessage@Internal@BSScript@@@@",
+      "owner_slot": 0,
+      "owner_table": 28481640,
+      "rva": 21792864,
+      "size": 43,
+      "stored_rtti": "BSTFreeList<BSScript::Internal::FunctionMessage>",
+      "stored_table": 28481640,
+      "symbol": "??_GCommunityFree14c8860@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481640,
+          "symbol": "??_7CommunityFree14c8860@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityFree14c8860"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef14c8960::~CommunityRef14c8960() {}"
+      ],
+      "header": "reconstruction/bsengine/CommunityLeafStorageLayout.h",
+      "object_size": 16,
+      "owner": "BSScript::Internal::IFuncCallQuery",
+      "owner_rtti": ".?AVIFuncCallQuery@Internal@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28481552,
+      "rva": 21793120,
+      "size": 43,
+      "stored_rtti": "BSScript::Internal::IFuncCallQuery",
+      "stored_table": 28481552,
+      "symbol": "??_GCommunityRef14c8960@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481552,
+          "symbol": "??_7CommunityRef14c8960@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CommunityRef14c8960"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef14c8960::~CommunityRef14c8960() {}",
+        "inline CodeTaskletFieldLayout::~CodeTaskletFieldLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/CodeTaskletFieldLayout.h",
+      "object_size": 80,
+      "owner": "BSScript::Internal::CodeTasklet",
+      "owner_rtti": ".?AVCodeTasklet@Internal@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28491144,
+      "rva": 21849216,
+      "size": 43,
+      "stored_rtti": "BSScript::Internal::IFuncCallQuery",
+      "stored_table": 28481552,
+      "symbol": "??_GCodeTaskletFieldLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481552,
+          "symbol": "??_7CommunityRef14c8960@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28491144,
+          "symbol": "??_7CodeTaskletFieldLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CodeTaskletFieldLayout"
+    }
+  ],
+  "schema": 1
+}
