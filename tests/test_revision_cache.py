@@ -1,5 +1,6 @@
 """Snapshot invalidation, trusted head lint context and affected-unit lookup; synthetic sources."""
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -17,6 +18,12 @@ import check
 
 class RevisionTests(unittest.TestCase):
     def setUp(self):
+        # Each synthetic repository owns its policies; publisher settings belong to its parent.
+        environment = patch.dict(os.environ)
+        environment.start()
+        self.addCleanup(environment.stop)
+        for name in ('SR_ANONYMITY_CONFIG', 'SR_PUBLICATION_FORBIDDEN_CONFIG', 'SR_LOCAL_DIR'):
+            os.environ.pop(name, None)
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
@@ -94,6 +101,14 @@ class RevisionTests(unittest.TestCase):
         self.write('.local/anonymity.json', json.dumps({'forbidden_strings': ['synthetic header']}))
         with self.assertRaisesRegex(ValueError, 'Anonymous sibling guard'):
             check.check_git(self.root, staged=True)
+
+    def test_explicit_policy_still_invalidates_a_cached_scan(self):
+        self.assertEqual(check.check_git(self.root, staged=True), 6)
+        policy = self.root / '.local/caller-policy.json'
+        self.write('.local/caller-policy.json', json.dumps({'forbidden_strings': ['synthetic header']}))
+        with patch.dict(os.environ, SR_ANONYMITY_CONFIG=str(policy)):
+            with self.assertRaisesRegex(ValueError, 'Anonymous sibling guard'):
+                check.check_git(self.root, staged=True)
 
     def test_immutable_head_metadata_and_blobs_ignore_working_edits(self):
         first, entries = git_context.tree_entries(self.root, 'HEAD')
