@@ -968,6 +968,14 @@ class OutsiderRegressionTests(Base):
         self.assertIn('<exe>', text)
         self.assertIn('<toolchain>', text)
 
+    def test_json_escaped_unicode_and_quoted_external_paths_are_redacted(self):
+        ctx = self.ctx(env={'HOME': str(self.tmp / 'home')})
+        ctx.redact = True
+        external = '/outside-home/\u00e9"quoted/SkyrimSE.exe'
+        ctx.redact_paths[external] = '<exe>'
+        result = json.loads(ctx.scrub(json.dumps({'path': external, 'log': 'opened ' + external})))
+        self.assertEqual(result, {'path': '<exe>', 'log': 'opened <exe>'})
+
     def test_setup_emits_one_json_object_even_when_installer_prints(self):
         ctx = self.ctx(env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
         def setup(ctx, args):

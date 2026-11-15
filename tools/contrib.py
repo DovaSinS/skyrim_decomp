@@ -204,7 +204,8 @@ class Ctx:
             paths[0:0] = [(str(shared.resolve()), '<local>'), (str(shared), '<local>')]
         for path, mark in sorted(paths, key=lambda item: len(item[0]), reverse=True):
             if path and len(path) > 1:
-                for variant in {path, path.replace('\\', '\\\\'), path.replace('\\', '/')}:
+                for variant in sorted({path, path.replace('\\', '\\\\'), path.replace('\\', '/'),
+                                       json.dumps(path)[1:-1]}, key=len, reverse=True):
                     text = re.sub(re.escape(variant), lambda _m: mark, text,
                                   flags=re.I if self.windows or self.platform == 'darwin' else 0)
         return text
