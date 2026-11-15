@@ -903,3 +903,35 @@ class EnqueueIntentRegression(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class WaitingFeedbackTests(unittest.TestCase):
+    def test_waiting_feedback_is_fixed_sanitized_and_uses_existing_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            state = ap.State(root, ap.DEFAULTS)
+            with patch.object(ap, 'shared_root', return_value=root):
+                runtime = ap.Runtime(root, root, ap.DEFAULTS, state, dry_run=True)
+            revision = state.revision(pr(), True)
+            runtime.waiting(revision, 'timeout')
+            body = revision['would_post']['waiting-timeout']['body']
+            self.assertIn('timed out', body)
+            self.assertIn('<!-- contrib-autopilot:', body)
+            self.assertIsNone(revision['would_post']['waiting-timeout']['label'])
+            self.assertNotIn(str(root), body)
+            runtime.waiting(revision, 'daily-budget')
+            self.assertIn('next UTC day', revision['would_post']['waiting-daily-budget']['body'])
+
+    def test_failed_feedback_preserves_retry_state_without_losing_the_pr(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            state = ap.State(root, ap.DEFAULTS)
+            with patch.object(ap, 'shared_root', return_value=root):
+                runtime = ap.Runtime(root, root, ap.DEFAULTS, state)
+            revision = state.revision(pr())
+            with patch.object(runtime, 'feedback', side_effect=ap.Stop('private transport detail')):
+                runtime.waiting(revision, 'service-retry')
+            saved = ap.State(root, ap.DEFAULTS).data['prs']['1']
+            self.assertTrue(saved['waiting_feedback_pending'])
+            self.assertEqual(saved['waiting_reason'], 'service-retry')
+            self.assertFalse(saved.get('done'))
