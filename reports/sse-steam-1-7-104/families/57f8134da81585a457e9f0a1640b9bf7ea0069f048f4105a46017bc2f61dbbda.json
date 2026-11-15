@@ -1659,7 +1659,13 @@
   },
   "pause_reason": "",
   "paused": false,
-  "review": null,
+  "review": {
+    "profile": "claude-low",
+    "review_sha256": "2ebb5fb9c690c93407c17c47960ece2db9e07db0d4eb1d8526360f57578b9f56",
+    "review_task_id": "review-family-57f8134da81585a457e9",
+    "reviewer_model": "gpt-6.1-terra",
+    "spec_sha256": "d231d8efb7dd3a0731c4bcbafd0895d36f25b4b62c3e741908e6762bdfb37e77"
+  },
   "template_source": {
     "path": "tools/shader_adjustor_template_v1.py",
     "sha256": "4ab2e536874974a73312bf220196c9e7ff540a0daa29fb509df98017f624db5d"
