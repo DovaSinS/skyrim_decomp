@@ -276,22 +276,24 @@ def parse_show_includes(text):
     return opened, rest
 
 
-def _norm(path):
-    """A wrapper-printed path as a POSIX absolute path; the wrapper strips `z:` and flips slashes."""
+def _norm(path, cwd):
+    """Resolve a Wine include against the compiler cwd, including filesystem links."""
     path = path.replace('\\', '/')
-    if re.match(r'^[A-Za-z]:/', path):
-        if path[0].lower() != 'z':
+    if re.match(r'^[A-Za-z]:', path):
+        # Only Wine's absolute Z: mapping is known; drive-relative paths need per-drive state.
+        if path[0].lower() != 'z' or not path[2:].startswith('/'):
             return None
         path = path[2:]
-    return os.path.normpath(path) if path.startswith('/') else None
+    return os.path.realpath(os.path.join(cwd, path))
 
 
 def classify_includes(opened, repo, toolchain):
     """Split opened files into repository-relative paths, a toolchain count and anything else."""
-    repo, toolchain = os.path.normpath(str(repo)), os.path.normpath(str(toolchain))
+    # compile_bounded runs cl with cwd=repo. Resolve links before checking either root.
+    repo, toolchain = os.path.realpath(repo), os.path.realpath(toolchain)
     repo_files, outside, tool_count = set(), [], 0
     for raw in opened:
-        path = _norm(raw)
+        path = _norm(raw, repo)
         if path is None:
             outside.append(raw)
         elif path.startswith(toolchain + '/'):
@@ -307,12 +309,25 @@ def classify_includes_windows(opened, repo, toolchain):
     """classify_includes for a native Windows compile: drive-letter paths, case-insensitive roots,
     repository paths kept in the spelling the compiler printed."""
     def norm(p):
-        return ntpath.normpath(str(p).replace('/', '\\'))
+        drive, tail = ntpath.splitdrive(str(p).replace('/', '\\'))
+        path = drive + '\\'
+        # ntpath.realpath normalizes '..' first. Resolve each preceding component so a
+        # symlink/junction followed by '..' cannot hide an escape from the allowed roots.
+        for part in tail.split('\\'):
+            if part:
+                path = ntpath.realpath(ntpath.join(path, part))
+        return path
     repo_n = norm(repo).rstrip('\\')
     tool_n = norm(toolchain).rstrip('\\').lower() + '\\'
     repo_files, outside, tool_count = set(), [], 0
     for raw in opened:
-        p = norm(raw)
+        path = raw.replace('/', '\\')
+        drive, tail = ntpath.splitdrive(path)
+        if drive and not tail.startswith('\\'):
+            # Do not consult ambient per-drive working directories (e.g. C:header.h).
+            outside.append(raw)
+            continue
+        p = norm(ntpath.join(repo_n, path))
         low = p.lower()
         if low.startswith(tool_n):
             tool_count += 1
@@ -331,11 +346,11 @@ def fold_case_includes(outside, repo, closure, repo_files):
     case-insensitive match to a file of the derived closure is accepted; anything else stays
     outside and still fails the build.
     """
-    prefix = os.path.normpath(str(repo)).lower() + '/'
+    prefix = os.path.realpath(repo).lower() + '/'
     by_lower = {c.lower(): c for c in closure}
     files, rest = set(repo_files), []
     for raw in outside:
-        path = _norm(raw)
+        path = _norm(raw, repo)
         hit = None
         if path is not None and path.lower().startswith(prefix):
             hit = by_lower.get(path.lower()[len(prefix):])

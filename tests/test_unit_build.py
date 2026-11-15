@@ -13,6 +13,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tests'))
@@ -32,6 +33,10 @@ here=$(pwd -P)
 echo "$(basename "$src")"
 case "${FAKE_MODE:-ok}" in
   ok)       echo "Note: including file: $here/reconstruction/synth/Synth.h";;
+  relative) echo 'Note: including file: reconstruction\synth\Synth.h';;
+  escape)   echo 'Note: including file: ../escape.h';;
+  relative_extra) echo 'Note: including file: reconstruction/synth/Synth.h'
+            echo 'Note: including file: reconstruction/synth/Other.h';;
   extra)    echo "Note: including file: $here/reconstruction/synth/Synth.h"
             echo "Note: including file:  $here/reconstruction/synth/Other.h";;
   outside)  echo "Note: including file: $here/reconstruction/synth/Synth.h"
@@ -71,9 +76,62 @@ class Pure(unittest.TestCase):
         repo, tool, out = ub.classify_includes(
             ['/w/repo/reconstruction/a/B.h', 'z:\\m\\include\\cstdint', '/m/include/x', '/w/repo/../evil.h',
              'c:\\windows\\x.h', 'relative.h', '/w/repository/x.h'], '/w/repo', '/m')
-        self.assertEqual(repo, ['reconstruction/a/B.h'])
+        self.assertEqual(repo, ['reconstruction/a/B.h', 'relative.h'])
         self.assertEqual(tool, 2)
-        self.assertEqual(out, ['/w/repo/../evil.h', 'c:\\windows\\x.h', 'relative.h', '/w/repository/x.h'])
+        self.assertEqual(out, ['/w/repo/../evil.h', 'c:\\windows\\x.h', '/w/repository/x.h'])
+
+    def test_relative_includes_have_the_same_closure_on_both_loaders(self):
+        paths = ['reconstruction/a/B.h', r'.\reconstruction\a\B.h', 'reconstruction/a/../C.h']
+        expected = (['reconstruction/C.h', 'reconstruction/a/B.h'], 0, [])
+        self.assertEqual(ub.classify_includes(paths, '/w/repo', '/m'), expected)
+        self.assertEqual(ub.classify_includes_windows(paths, 'C:/repo', 'C:/msvc'), expected)
+        closure = expected[0] + ['reconstruction/a/B.cpp']
+        self.assertIsNone(ub.closure_difference(expected[0], 'reconstruction/a/B.cpp', closure))
+        # Input ordering and duplicates do not affect the repository closure.
+        self.assertEqual(ub.classify_includes(paths[::-1] + paths, '/w/repo', '/m'), expected)
+
+    def test_relative_escapes_and_ambiguous_drive_forms_are_refused(self):
+        escapes = ['../escape.h', r'..\escape.h', 'reconstruction/../../escape.h']
+        self.assertEqual(ub.classify_includes(escapes, '/w/repo', '/m'), ([], 0, escapes))
+        self.assertEqual(ub.classify_includes_windows(escapes, 'C:/repo', 'C:/msvc'), ([], 0, escapes))
+        wine_drives = [r'Z:relative.h', r'C:\repo\a.h', r'C:relative.h']
+        self.assertEqual(ub.classify_includes(wine_drives, '/w/repo', '/m'), ([], 0, wine_drives))
+        native_drives = [r'C:relative.h', r'D:relative.h', r'D:\repo\a.h']
+        self.assertEqual(ub.classify_includes_windows(native_drives, 'C:/repo', 'C:/msvc'),
+                         ([], 0, native_drives))
+        self.assertEqual(ub.classify_includes_windows(
+            [r'\repo\a.h', r'c:\repo\a.h', 'C:/repo/a.h'], 'C:/repo', 'C:/msvc'),
+            (['a.h'], 0, []))
+        self.assertEqual(ub.classify_includes_windows(
+            [r'\\host\share\repo\a.h', r'\\host\share\other\x.h'],
+            r'\\host\share\repo', r'\\host\share\msvc'),
+            (['a.h'], 0, [r'\\host\share\other\x.h']))
+
+    def test_links_and_link_dotdot_escapes_are_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp).resolve()
+            repo, tool, outside = (base / name for name in ('repo', 'msvc', 'outside'))
+            for root in (repo, tool, outside / 'child'):
+                root.mkdir(parents=True)
+            (repo / 'link').symlink_to(outside / 'child', target_is_directory=True)
+            (tool / 'link').symlink_to(outside, target_is_directory=True)
+            paths = ['link/a.h', 'link/../a.h', str(repo / 'link/a.h'), str(tool / 'link/a.h')]
+            self.assertEqual(ub.classify_includes(paths, repo, tool), ([], 0, paths))
+            self.assertEqual(ub.fold_case_includes(paths, repo, ['link/a.h'], []), ([], paths))
+            # Exercise native path joining against the same real filesystem on a POSIX test host.
+            # Native Windows uses ntpath.realpath's symlink/junction resolution directly.
+            def windows_realpath(path):
+                posix = path.removeprefix('C:').replace('\\', '/')
+                return 'C:' + os.path.realpath(posix).replace('/', '\\')
+            win_paths = [p if not p.startswith('/') else 'C:' + p for p in paths]
+            with mock.patch.object(ub.ntpath, 'realpath', side_effect=windows_realpath):
+                self.assertEqual(ub.classify_includes_windows(win_paths, 'C:' + str(repo), 'C:' + str(tool)),
+                                 ([], 0, win_paths))
+
+    def test_relative_case_fold_only_accepts_the_closure(self):
+        paths = [r'reconstruction\a\b.h', r'reconstruction\a\c.h', r'..\repo2\b.h']
+        self.assertEqual(ub.fold_case_includes(paths, '/w/repo', ['reconstruction/a/B.h'], []),
+                         (['reconstruction/a/B.h'], paths[1:]))
 
     def test_closure_difference_both_directions(self):
         closure = ['reconstruction/a/B.cpp', 'reconstruction/a/B.h']
@@ -181,6 +239,25 @@ class HostRun(unittest.TestCase):
         self.assertEqual(code, 4)
         self.assertEqual(self.error(), 'include-closure-mismatch')
         self.assertIn('Other.h', out)
+
+    def test_relative_show_includes_reaches_the_comparator(self):
+        code, out = self.run_build('relative')
+        self.assertEqual(code, 0, out)
+        fdir = self.work / f'0x{self.task["rva"]:x}'
+        record = json.loads((fdir / 'build-record.json').read_text())
+        self.assertEqual(record['environment']['show_includes']['repository_files'],
+                         ['reconstruction/synth/Synth.cpp', 'reconstruction/synth/Synth.h'])
+
+    def test_relative_show_includes_still_requires_exact_closure(self):
+        (self.repo / 'reconstruction/synth/Other.h').write_text('#pragma once\n')
+        code, out = self.run_build('relative_extra')
+        self.assertEqual(code, 4, out)
+        self.assertEqual(self.error(), 'include-closure-mismatch')
+
+    def test_relative_show_includes_escape_fails(self):
+        code, out = self.run_build('escape')
+        self.assertEqual(code, 4, out)
+        self.assertEqual(self.error(), 'include-outside')
 
     def test_closure_include_the_compiler_never_opened_fails(self):
         (self.repo / 'reconstruction/synth/Other.h').write_text('#pragma once\n')
