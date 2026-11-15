@@ -349534,7 +349534,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1473f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x152030",
@@ -349547,7 +349548,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x152030.json"
     },
     {
       "id": "sse-steam-1-7-104-0x19ae90",
@@ -349560,7 +349562,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x19ae90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x19aef0",
@@ -349573,7 +349576,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x19aef0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1b2940",
@@ -349586,7 +349590,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1b2940.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1b2970",
@@ -349599,7 +349604,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1b2970.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1b29a0",
@@ -349612,7 +349618,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1b29a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1b29d0",
@@ -349625,7 +349632,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1b29d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1c6810",
@@ -349638,7 +349646,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1c6810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1d1d90",
@@ -349651,7 +349660,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1d1d90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1f7950",
@@ -349664,7 +349674,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1f7950.json"
     },
     {
       "id": "sse-steam-1-7-104-0x202320",
@@ -349677,7 +349688,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x202320.json"
     },
     {
       "id": "sse-steam-1-7-104-0x202350",
@@ -349690,7 +349702,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x202350.json"
     },
     {
       "id": "sse-steam-1-7-104-0x202380",
@@ -349703,7 +349716,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x202380.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2023b0",
@@ -349716,7 +349730,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2023b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2023e0",
@@ -349729,7 +349744,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2023e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x202410",
@@ -349742,7 +349758,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x202410.json"
     },
     {
       "id": "sse-steam-1-7-104-0x20b030",
@@ -349755,7 +349772,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x20b030.json"
     },
     {
       "id": "sse-steam-1-7-104-0x20b060",
@@ -349768,7 +349786,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x20b060.json"
     },
     {
       "id": "sse-steam-1-7-104-0x213910",
@@ -349781,7 +349800,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x213910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x21ec20",
@@ -349794,7 +349814,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x21ec20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x21ec50",
@@ -349807,7 +349828,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x21ec50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x21ec80",
@@ -349820,7 +349842,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x21ec80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x21ecb0",
@@ -349833,7 +349856,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x21ecb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x220e30",
@@ -349846,7 +349870,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x220e30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x220e60",
@@ -349859,7 +349884,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x220e60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x226970",
@@ -349872,7 +349898,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x226970.json"
     },
     {
       "id": "sse-steam-1-7-104-0x24da90",
@@ -349885,7 +349912,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x24da90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x28e380",
@@ -349898,7 +349926,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x28e380.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2a8b40",
@@ -349911,7 +349940,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2a8b40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2a8b70",
@@ -349924,7 +349954,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2a8b70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2b5f90",
@@ -349937,7 +349968,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2b5f90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2b5fc0",
@@ -349950,7 +349982,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2b5fc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2b5ff0",
@@ -349963,7 +349996,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2b5ff0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2d13d0",
@@ -349976,7 +350010,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2d13d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2d1400",
@@ -349989,7 +350024,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2d1400.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2d1430",
@@ -350002,7 +350038,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2d1430.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2f8040",
@@ -350015,7 +350052,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2f8040.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2f8070",
@@ -350028,7 +350066,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2f8070.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2f84d0",
@@ -350041,7 +350080,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x2f84d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x321bb0",
@@ -350054,7 +350094,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x321bb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x383be0",
@@ -350067,7 +350108,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x383be0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3eb630",
@@ -350080,7 +350122,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x3eb630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3eb660",
@@ -350093,7 +350136,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x3eb660.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3f9150",
@@ -350106,7 +350150,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x3f9150.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3fb390",
@@ -350119,7 +350164,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x3fb390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3ffbb0",
@@ -350132,7 +350178,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x3ffbb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x403190",
@@ -350145,7 +350192,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x403190.json"
     },
     {
       "id": "sse-steam-1-7-104-0x40bc20",
@@ -350158,7 +350206,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x40bc20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x40d230",
@@ -350171,7 +350220,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x40d230.json"
     },
     {
       "id": "sse-steam-1-7-104-0x40e9c0",
@@ -350184,7 +350234,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x40e9c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x419770",
@@ -350197,7 +350248,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x419770.json"
     },
     {
       "id": "sse-steam-1-7-104-0x41cc00",
@@ -350210,7 +350262,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x41cc00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x41cc30",
@@ -350223,7 +350276,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x41cc30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x42b0d0",
@@ -350236,7 +350290,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x42b0d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x435c20",
@@ -350249,7 +350304,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x435c20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x436b60",
@@ -350262,7 +350318,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x436b60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4411b0",
@@ -350275,7 +350332,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4411b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4b6490",
@@ -350288,7 +350346,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4b6490.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4b85d0",
@@ -350301,7 +350360,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4b85d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4b8610",
@@ -350314,7 +350374,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4b8610.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4c0150",
@@ -350327,7 +350388,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4c0150.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4d30b0",
@@ -350340,7 +350402,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4d30b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4d30e0",
@@ -350353,7 +350416,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x4d30e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x50d8a0",
@@ -350366,7 +350430,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x50d8a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x512d70",
@@ -350379,7 +350444,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x512d70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x52ec20",
@@ -350392,7 +350458,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x52ec20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x52ec50",
@@ -350405,7 +350472,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x52ec50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x52ec80",
@@ -350418,7 +350486,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x52ec80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x52ecb0",
@@ -350431,7 +350500,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x52ecb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x52ece0",
@@ -350444,7 +350514,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x52ece0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x55ec20",
@@ -350457,7 +350528,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x55ec20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5648b0",
@@ -350470,7 +350542,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x5648b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5c6430",
@@ -350483,7 +350556,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x5c6430.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5e1c20",
@@ -350496,7 +350570,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x5e1c20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x6babf0",
@@ -350509,7 +350584,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x6babf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x6bac20",
@@ -350522,7 +350598,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x6bac20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x71c360",
@@ -350535,7 +350612,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x71c360.json"
     },
     {
       "id": "sse-steam-1-7-104-0x71c390",
@@ -350548,7 +350626,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x71c390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x71c3c0",
@@ -350561,7 +350640,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x71c3c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x768680",
@@ -350574,7 +350654,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x768680.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7686b0",
@@ -350587,7 +350668,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x7686b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7c4970",
@@ -350600,7 +350682,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x7c4970.json"
     },
     {
       "id": "sse-steam-1-7-104-0x816bc0",
@@ -350613,7 +350696,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x816bc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x816bf0",
@@ -350626,7 +350710,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x816bf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x816c20",
@@ -350639,7 +350724,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x816c20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x816c50",
@@ -350652,7 +350738,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x816c50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x822980",
@@ -350665,7 +350752,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x822980.json"
     },
     {
       "id": "sse-steam-1-7-104-0x82b730",
@@ -350678,7 +350766,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x82b730.json"
     },
     {
       "id": "sse-steam-1-7-104-0x84d8d0",
@@ -350691,7 +350780,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x84d8d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x855420",
@@ -350704,7 +350794,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x855420.json"
     },
     {
       "id": "sse-steam-1-7-104-0x860910",
@@ -350717,7 +350808,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x860910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x865cb0",
@@ -350730,7 +350822,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x865cb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8727e0",
@@ -350743,7 +350836,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8727e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8788f0",
@@ -350756,7 +350850,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8788f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x89c8c0",
@@ -350769,7 +350864,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x89c8c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x89c8f0",
@@ -350782,7 +350878,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x89c8f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8a6740",
@@ -350795,7 +350892,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8a6740.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8b6780",
@@ -350808,7 +350906,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8b6780.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8ba2a0",
@@ -350821,7 +350920,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8ba2a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bb060",
@@ -350834,7 +350934,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bb060.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bb4d0",
@@ -350847,7 +350948,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bb4d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bb800",
@@ -350860,7 +350962,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bb800.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bbb00",
@@ -350873,7 +350976,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bbb00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bc1d0",
@@ -350886,7 +350990,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bc1d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8bc7b0",
@@ -350899,7 +351004,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8bc7b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8c18b0",
@@ -350912,7 +351018,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8c18b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8c18e0",
@@ -350925,7 +351032,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8c18e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8c3d50",
@@ -350938,7 +351046,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8c3d50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8d6770",
@@ -350951,7 +351060,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8d6770.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8dd740",
@@ -350964,7 +351074,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8dd740.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8e74f0",
@@ -350977,7 +351088,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x8e74f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x966b90",
@@ -350990,7 +351102,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x966b90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xee1220",
@@ -351003,7 +351116,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xee1220.json"
     },
     {
       "id": "sse-steam-1-7-104-0xeeba70",
@@ -351016,7 +351130,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xeeba70.json"
     },
     {
       "id": "sse-steam-1-7-104-0xefbe30",
@@ -351029,7 +351144,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xefbe30.json"
     },
     {
       "id": "sse-steam-1-7-104-0xefce10",
@@ -351042,7 +351158,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xefce10.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf05860",
@@ -351055,7 +351172,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf05860.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf0a6f0",
@@ -351068,7 +351186,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf0a6f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf131d0",
@@ -351081,7 +351200,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf131d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5afa0",
@@ -351094,7 +351214,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5afa0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5afd0",
@@ -351107,7 +351228,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5afd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5b000",
@@ -351120,7 +351242,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5b000.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5b030",
@@ -351133,7 +351256,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5b030.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5b060",
@@ -351146,7 +351270,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5b060.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5b090",
@@ -351159,7 +351284,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5b090.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5d460",
@@ -351172,7 +351298,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf5d460.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf61170",
@@ -351185,7 +351312,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf61170.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf622b0",
@@ -351198,7 +351326,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf622b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf64440",
@@ -351211,7 +351340,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf64440.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf67020",
@@ -351224,7 +351354,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf67020.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf72890",
@@ -351237,7 +351368,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf72890.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf75550",
@@ -351250,7 +351382,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf75550.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf7dd40",
@@ -351263,7 +351396,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf7dd40.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf85e80",
@@ -351276,7 +351410,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf85e80.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf9a080",
@@ -351289,7 +351424,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf9a080.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf9c070",
@@ -351302,7 +351438,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xf9c070.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb46f0",
@@ -351315,7 +351452,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xfb46f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfcda20",
@@ -351328,7 +351466,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xfcda20.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfd2940",
@@ -351341,7 +351480,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xfd2940.json"
     },
     {
       "id": "sse-steam-1-7-104-0xffe200",
@@ -351354,7 +351494,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xffe200.json"
     },
     {
       "id": "sse-steam-1-7-104-0xffe230",
@@ -351367,7 +351508,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0xffe230.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1054e00",
@@ -351380,7 +351522,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1054e00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1068f10",
@@ -351393,7 +351536,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1068f10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x10690f0",
@@ -351406,7 +351550,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x10690f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x107a9e0",
@@ -351419,7 +351564,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x107a9e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x107aa10",
@@ -351432,7 +351578,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x107aa10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x10870c0",
@@ -351445,7 +351592,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x10870c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1099370",
@@ -351458,7 +351606,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1099370.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12114f0",
@@ -351471,7 +351620,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x12114f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14ed280",
@@ -351484,7 +351634,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x14ed280.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1534b20",
@@ -351497,7 +351648,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x1534b20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x153b090",
@@ -351510,7 +351662,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x153b090.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15754d0",
@@ -351523,7 +351676,8 @@
       "name_source": "GUESS(low) STANDIN: minimal owning-pointer destructor; original owner and source signature unknown.",
       "owner": "awarebayes",
       "evidence": "findings/p145-shared-inline.md",
-      "drafter_model": "gpt-6.1-sol"
+      "drafter_model": "gpt-6.1-sol",
+      "report": "reports/sse-steam-1-7-104/0x15754d0.json"
     }
   ],
   "target_build_id": "sse-steam-1-7-104",
@@ -351587,7 +351741,7 @@
   ],
   "phase": "First matches",
   "schema_version": 1,
-  "updated_at": "2026-11-15T05:23:22.791202+00:00",
+  "updated_at": "2026-11-15T05:54:36.660222+00:00",
   "scope": {
     "functions": null,
     "bytes": null,
