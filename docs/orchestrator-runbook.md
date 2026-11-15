@@ -400,6 +400,14 @@ receipt with an owner resume command. A dead local unpublished owner becomes `st
 lease, retaining every input and candidate; `--resume <id>` recovers that checkpoint explicitly.
 Live owners are waited on, not treated as foreign resume requests.
 
+A maintainer-authorized advisory hash repair can finish an already pushed dead-owner receipt:
+`python3.13 tools/flow.py lane-finish-superseded <run-id> --superseding-commit <full-SHA> --reason '<authorization and repair>'`.
+The command verifies published ancestry and exact-SHA CI: the original failure must be confined
+to the advisory target-hash compile step, Infrastructure and Pages must pass, and every
+superseding workflow must pass. It preserves the pushed commit and accepted count, records
+`ci: red-advisory-superseded` with both CI observations and the superseding SHA, then finishes
+queue bookkeeping. It never changes progress or reports green for the original commit.
+
 `SKYRIM_LANE_PYTHON` may select the interpreter, but it must be Python 3.13 with working pyexpat.
 The complete standard unittest discovery inventory runs via `tools/test_suite.py` in isolated
 module processes, preserving module/class fixtures and reporting every test. Existing unittest
