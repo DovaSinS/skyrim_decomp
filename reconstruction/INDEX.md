@@ -10351,6 +10351,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf3b2e30` | `Leaf3b2e30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3b2e30` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b2e30.json` | matched | family | open |
 | `leaves/Leaf3b2e40` | `Leaf3b2e40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3b2e40` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b2e40.json` | matched | family | open |
 | `forms/TESEyes` | `TESEyes::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x3b2fb0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b2fb0.json` | matched | full | open |
+| - | `TESEyes::Load` (COMMUNITY) | `sse-steam-1-7-104` / `0x3b2fc0` / 429 | - | - | mapped | - | - |
 | - | `TESEyes::~TESEyes` (COMMUNITY) | `sse-steam-1-7-104` / `0x3b32b0` / 126 | - | - | mapped | - | - |
 | `fields/FieldLeaf3b34c0` | `FieldLeaf3b34c0::Read` (GUESS) | `sse-steam-1-7-104` / `0x3b34c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b34c0.json` | matched | family | open |
 | `leaves/Leaf3b34d0` | `Leaf3b34d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3b34d0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b34d0.json` | matched | family | open |

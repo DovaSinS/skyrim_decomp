@@ -398182,6 +398182,18 @@
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
       "report": "reports/sse-steam-1-7-104/0x157a858.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3b2fc0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3878848,
+      "size": 429,
+      "status": "mapped",
+      "name": "TESEyes::Load",
+      "name_origin": "COMMUNITY",
+      "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot 6 joined through the pinned image RTTI. RVA 0x3b2fc0; extent from the local function census. Mapped-only historical review context; no comparator pass, source signature or behavior is asserted.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md"
     }
   ],
   "milestones": [
