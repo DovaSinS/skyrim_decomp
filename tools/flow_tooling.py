@@ -70,6 +70,7 @@ def save_items(fdir, receipt, finished=False):
 def merge(tree, items):
     """Merge immutable tips, retaining successful inputs and explaining each conflicting input."""
     accepted, dropped = [], []
+    import flow_derived
     for item in items:
         if item.get('state') == 'dropped':
             dropped.append(dict(item=item['id'], revision=item['revision'],
@@ -78,7 +79,7 @@ def merge(tree, items):
         before = f.git(tree, 'rev-parse', 'HEAD')
         try:
             f.git(tree, 'fetch', '--quiet', item['root'], item['revision'])
-            f.git(tree, 'merge', '--quiet', '--no-edit', '--no-ff', item['revision'])
+            flow_derived.merge(tree, item['revision'])
             accepted.append(item)
         except f.FlowError as error:
             f.git(tree, 'merge', '--abort', check=False)
