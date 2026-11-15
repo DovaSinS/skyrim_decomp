@@ -38,6 +38,7 @@ from source_digest import include_closure, recipe_flag_problem  # noqa: E402
 import boatctl  # noqa: E402
 import disasm  # noqa: E402
 import vsession  # noqa: E402
+import sparse_checkouts as sparse  # noqa: E402
 try:
     import cost_hooks  # noqa: E402  (optional: the cost ledger may not be installed)
 except ImportError:
@@ -147,6 +148,8 @@ def load_task(task_dir, repo=REPO):
     if not isinstance(symbols, str):
         raise PipelineError('task.json: symbols must be a path')
     public_symbols = symbols.startswith('reports/')
+    if public_symbols:
+        sparse.ensure(repo, [symbols])
     symbols_path = (Path(repo) / symbols) if public_symbols else (task_dir / symbols)
     if not symbols_path.is_file():
         raise PipelineError(f'symbol map not found: {symbols_path}')
@@ -204,6 +207,7 @@ def unit_manifest(task, repo=REPO):
         closure = include_closure(repo, task['compiled'])
     except (ValueError, OSError) as exc:
         raise PipelineError(f'translation unit of {task["compiled"]}: {exc}') from None
+    sparse.source_evidence(repo, closure)
     recipe = repo / task['recipe']
     if not recipe.is_file():
         raise PipelineError(f'recipe not found: {task["recipe"]}')

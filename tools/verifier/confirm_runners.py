@@ -156,7 +156,7 @@ def finish_unit(base, task, closure, hosts, outcome, out, tree_state):
 
 
 # Files whose content can change what a runner confirm writes, beyond the unit's own inputs.
-RUNNER_TOOLS = ('tools/verifier/confirm', 'tools/verifier/pipeline.py', 'tools/verifier/match_record.py',
+RUNNER_TOOLS = ('tools/sparse_checkouts.py', 'tools/verifier/confirm', 'tools/verifier/pipeline.py', 'tools/verifier/match_record.py',
                 'tools/check.py', 'tools/verifier/confirm_runners.py', 'tools/verifier/confirm_session.py',
                 'tools/verifier/runners.py', 'tools/verifier/host_agent.py')
 

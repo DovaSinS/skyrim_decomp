@@ -492,6 +492,10 @@ class Throughput(unittest.TestCase):
         self.assertEqual(bisect['max_rounds'], 3)
         self.assertEqual(max(trial['round'] for trial in bisect['trials']), 3)
         self.assertEqual(len(checked), 8)  # full batch, baseline, two probes per split level
+        import sparse_checkouts
+        for trial in bisect['trials']:
+            self.assertTrue(sparse_checkouts.active(Path(trial['tree'])))
+            self.assertFalse((Path(trial['tree']) / 'site').exists())
         self.assertEqual(checked[-1], result['integrated']['commit'])
         self.assertEqual(result['tooling_dropped'][0]['revision'], items[2]['revision'])
         tree = Path(result['tree'])

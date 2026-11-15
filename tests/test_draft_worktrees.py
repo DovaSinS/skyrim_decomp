@@ -85,6 +85,9 @@ class DraftWorktrees(unittest.TestCase):
         self.assertEqual((tree / self.unit['sources'][-1]).read_text(), 'int a;\n')
         self.assertEqual((tree / '.local/tasks').resolve(), (self.root / '.local/tasks').resolve())
         self.assertEqual(drafts.read(tree / '.local/worktree-owner.json')['task'], 'g-foo')
+        self.assertTrue(drafts.sparse.active(tree))
+        self.assertFalse((tree / 'site').exists())
+        self.assertFalse((tree / f'reports/{BUILD}/0x2000.json').exists())
         self.assertEqual(self.claim()['draft'], unit['draft'])
         with self.assertRaisesRegex(ValueError, 'claimed draft checkout'):
             drafts.route_attempt(self.directory, self.root)
@@ -829,6 +832,8 @@ class DraftWorktrees(unittest.TestCase):
 
         def run(command, cwd=None, **kwargs):
             if len(command) > 1 and ('verifier/bind.py' in str(command[1]) or 'verifier/confirm' in str(command[1])):
+                # This fixture's old binder and final check need their original full view.
+                self.assertFalse(drafts.sparse.active(cwd))
                 seen.append((Path(cwd) / self.unit['sources'][-1]).read_text())
                 self.assertIn(later_enrollment, drafts.read(Path(cwd) / 'data/progress.json')['functions'])
                 return subprocess.CompletedProcess(command, 0)
@@ -837,6 +842,26 @@ class DraftWorktrees(unittest.TestCase):
         with patch('draft_worktrees.subprocess.run', side_effect=run):
             self.assertEqual(drafts.confirm_one(self.root, self.directory, ['--out', str(self.tmp / 'out')]), 0)
         self.assertEqual(seen, ['int harvested;\n', 'int harvested;\n'])
+
+    def test_confirm_with_sparse_aware_harvest_keeps_only_selected_reports(self):
+        (self.root / 'tools/sparse_checkouts.py').write_text('# synthetic sparse-aware tools\n')
+        git(self.root, 'add', 'tools/sparse_checkouts.py')
+        git(self.root, 'commit', '-m', 'synthetic sparse-aware transport')
+        git(self.root, 'push', 'origin', 'main')
+        self.claim()
+        self.finish()
+        original_run = subprocess.run
+        seen = []
+        def run(command, cwd=None, **kwargs):
+            if len(command) > 1 and ('verifier/bind.py' in str(command[1]) or 'verifier/confirm' in str(command[1])):
+                seen.append(command[1])
+                self.assertTrue(drafts.sparse.active(cwd))
+                self.assertFalse((Path(cwd) / f'reports/{BUILD}/0x2000.json').exists())
+                return subprocess.CompletedProcess(command, 0)
+            return original_run(command, cwd=cwd, **kwargs)
+        with patch('draft_worktrees.subprocess.run', side_effect=run):
+            self.assertEqual(drafts.confirm_one(self.root, self.directory, ['--out', str(self.tmp / 'out')]), 0)
+        self.assertEqual(len(seen), 2)
 
     def test_private_diagnostics_keep_shared_host_slots(self):
         shared = self.root / '.local/verifier'

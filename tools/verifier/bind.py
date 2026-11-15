@@ -873,6 +873,8 @@ def unit_map(task_dir, repo=REPO):
                                'note': 'Unit reference namespace from the task and candidate object'}}
     digest = hashlib.sha256(symbol_maps.serialize(payload)).hexdigest()
     map_name = f"reports/{task['build_id']}/unit-symbols/{digest}.json"
+    from sparse_checkouts import ensure
+    ensure(repo, [map_name])
     symbol_maps.create(repo, map_name, payload)
     task['symbols'] = map_name
     path.write_text(json.dumps(task, indent=2) + '\n')

@@ -6,6 +6,7 @@ from pathlib import Path
 import time
 
 import flow as f
+import sparse_checkouts as sparse
 from flow_state import state_lock
 
 
@@ -160,6 +161,7 @@ def isolate_failure(root, fdir, receipt, python, branch, error, soft_free_gb=Non
                      state='running', error=None)
         row = dict(round=depth, revisions=[i['revision'] for i in items])
         trials.append(row)
+        existing_candidates = set(trial.get('candidates', []))
         try:
             lane.build(root, private, trial, python, branch, soft_free_gb, allow_low_disk, hard_free_gb)
             f.refuse(not trial.get('tooling_dropped'), 'tooling inputs failed to apply during bisection: '
@@ -173,6 +175,10 @@ def isolate_failure(root, fdir, receipt, python, branch, error, soft_free_gb=Non
         except f.FlowError as failure:
             row.update(result='failed', reason=str(failure))
             return str(failure)
+        finally:
+            for created in set(trial.get('candidates', [])) - existing_candidates:
+                if Path(created).is_dir():
+                    sparse.set_patterns(Path(created))
         row['result'] = 'passed'
         integ['checks'] = f.utc()
         best = trial

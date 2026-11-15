@@ -17,6 +17,7 @@ from check_source_digest import include_closure, source_digest_cache
 from lint_reconstruction import lint_tree
 import cost_ledger
 import symbol_map as symbol_maps
+import sparse_checkouts as sparse
 import compare_internal
 import compare_runtime
 import compare as legacy_comparator
@@ -937,9 +938,10 @@ def main():
     args = parser.parse_args()
     try:
         # Check anonymity before metadata/lint diagnostics could quote offending content.
-        count = check_git(staged=args.staged)
-        with source_digest_cache():
-            load(staged=args.staged)
+        with sparse.full(ROOT):
+            count = check_git(staged=args.staged)
+            with source_digest_cache():
+                load(staged=args.staged)
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         print(f'FAIL: {exc}', file=sys.stderr)
         return 1
