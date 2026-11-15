@@ -203,3 +203,11 @@ logs) and the project under `.local/analysis/`. No bytes, disassembly or decompi
 ## Reviewer and outcome
 
 Pending maintainer review.
+
+### 2026-11-15 — F063 source-approval revocation
+
+For build sse-steam-1-7-104, acceptance was revoked for 0x1ef250, 0x241b90, 0x280cc0, 0x285f10, 0x29d390, 0x2fba00, 0x2fe580, 0x31c170, 0x398910, 0x39c430, 0x3ccde0, 0x3e0040, 0x485650, 0x4b8a50, 0x5b9680, 0x5b9800, 0x5eb300, 0x5eb480, 0x60b0a0, 0x62f900. Independent formal review and strong confirmation found a shared noinline helper justified only by preserving a comparison boundary. Source-plausibility approval is invalidated; these entries return to mapped. Historical comparator results and prior reviews remain in git history. Correction, required independent reviews and comparison evidence are needed before reacceptance.
+
+### 2026-11-15 — F068 source-approval revocation
+
+For build sse-steam-1-7-104, acceptance was revoked for 0x1ef430, 0x2420e0, 0x280f10, 0x2861e0, 0x29e1f0, 0x2fbf50, 0x31c350, 0x398b50, 0x39c610, 0x3cd9e0, 0x3e0cc0, 0x485830, 0x4b8c50, 0x5b9a40, 0x5b9bd0, 0x5eba40, 0x5ebbd0, 0x60b2e0, 0x6309a0, 0x63e1e0. Fresh independent strong review directly confirmed the same unsupported noinline append helper on the active removal path in every family member. This invalidates source-plausibility approval, not the historical comparator results. These entries return to mapped. Historical reports and approvals remain in git history. Corrected source, fresh required reviews and comparisons are needed before reacceptance.

@@ -1296,8 +1296,8 @@
     "path": "tools/locked_array_population.py",
     "sha256": "be49f203f0d97ca6e413d7baa840615057e8a5594f2398da9e6ba6b46d9aeeb7"
   },
-  "pause_reason": "",
-  "paused": false,
+  "pause_reason": "Strong review invalidated source-plausibility approval for the shared append helper; affected acceptances explicitly revoked.",
+  "paused": true,
   "review": null,
   "template_source": {
     "path": "tools/locked_array_template_v1.py",
