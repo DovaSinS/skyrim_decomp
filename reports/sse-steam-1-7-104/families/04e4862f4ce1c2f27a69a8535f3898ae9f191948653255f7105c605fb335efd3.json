@@ -738,8 +738,8 @@
     "path": "tools/represented_wrapper_catalog_v4.json",
     "sha256": "b0c74fb82088adc49e31e7eb9a286c1b27c9068e9f7b35cc0e051524eae109b4"
   },
-  "pause_reason": "",
-  "paused": false,
+  "pause_reason": "Publication requires explicitly LF source and fresh digest-bound evidence; this version is held.",
+  "paused": true,
   "review": {
     "profile": "claude-low",
     "review_sha256": "d24f933edc0eb0fef34529da10aac79a48165d4a6733cb6b8e2d1b7f1c235da9",
