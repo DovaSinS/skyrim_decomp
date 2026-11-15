@@ -202,6 +202,22 @@ class Retention(unittest.TestCase):
         self.assertEqual(len(removals), 1)
         self.assertNotIn('--force', removals[0])
 
+    def test_automatic_dirty_worktree_does_not_repeat_failed_evidence_archives(self):
+        tree = self.fdir / 'reconfirm/dirty/tree'
+        tree.parent.mkdir(parents=True)
+        self.git(self.root, 'worktree', 'add', '--quiet', '--detach', str(tree), 'HEAD')
+        (tree / 'tracked').write_text('original uncommitted fixture\n')
+        (tree / 'untracked').write_text('original untracked fixture\n')
+        lane.write(tree.parent / 'state.json', dict(phase='queued', view=str(tree)))
+        lane.write(self.fdir / 'lane/queue/selection.json', dict(root=str(tree), state='done'))
+        for _ in range(2):
+            rows = retention.cleanup(self.root, self.fdir)
+            self.assertFalse(rows[0]['removed'])
+            self.assertIn('dirty checkout', rows[0]['reason'])
+        self.assertEqual((tree / 'tracked').read_text(), 'original uncommitted fixture\n')
+        self.assertEqual((tree / 'untracked').read_text(), 'original untracked fixture\n')
+        self.assertFalse((self.root / '.local/archive/cleanup').exists())
+
     def test_copied_view_removal_preserves_original_worktree_and_index(self):
         original = self.base / 'original'
         self.git(self.root, 'worktree', 'add', '--quiet', '--detach', str(original), 'HEAD')

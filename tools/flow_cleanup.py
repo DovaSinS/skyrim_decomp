@@ -216,6 +216,11 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
                         except BlockingIOError:
                             raise f.FlowError('reconfirmation has a live owner') from None
                     f.refuse(Path(f.git(tree, 'rev-parse', '--show-toplevel')).resolve() == tree, 'not a checkout root')
+                    if owner[0] != 'input' and (tree / '.git').is_file():
+                        # Plain worktree removal refuses these changes. Check before copying
+                        # evidence, or every automatic retry archives the same dirty tree again.
+                        status = f.git(tree, 'status', '--porcelain', '--untracked-files=all')
+                        f.refuse(not status, 'dirty checkout: ' + status[:500])
                     if not lane_copy:
                         status = f.git(tree, 'status', '--porcelain', '--untracked-files=all', '--', '.', ':(exclude).local')
                         f.refuse(not status, 'dirty checkout: ' + status[:500])
