@@ -3,6 +3,7 @@
 This is queue transport, not match evidence. Confirmation and acceptance keep their existing gates.
 """
 import json
+from contextlib import nullcontext
 import hashlib
 from pathlib import Path
 import re
@@ -13,6 +14,7 @@ import tempfile
 import uuid
 
 from source_digest import include_closure, tu_digest
+import sparse_checkouts as sparse
 
 
 def git(root, *args):
@@ -98,6 +100,8 @@ def carry_map_dependencies(root, tree, task):
     from symbol_map import history_name
     paths = {task['symbols']} if task.get('symbols', '').startswith('reports/') else set()
     members = {int(str(fn['rva']), 0) for fn in task['functions']}
+    sparse.ensure(tree, paths | {fn['report'] for fn in read(tree / 'data/progress.json')['functions']
+                                if fn['rva'] in members and fn.get('report')})
     for fn in read(tree / 'data/progress.json')['functions']:
         if fn['rva'] not in members or not fn.get('report'):
             continue
@@ -269,7 +273,7 @@ def _create(root, unit, tier, owner):
     tree = root / '.local/worktrees/draft' / f'{unit["key"]}-{tier}'
     branch = f'draft/{unit["key"]}-{tier}'
     if old and old.get('ready') and old.get('tree') == str(tree) and old.get('branch') == branch and not tree.exists():
-        git(root, 'worktree', 'add', '--quiet', str(tree), branch)
+        sparse.add_worktree(root, tree, branch, branch=branch)
         link_private(root, tree)
         label(tree, owner, unit['key'], 'draft', branch)
         old['owner'] = owner
@@ -293,7 +297,7 @@ def _create(root, unit, tier, owner):
               for name in ('task.json', 'symbols.json', 'bind-hints.json')}
     save(state_path, state)
     try:
-        git(root, 'worktree', 'add', '--quiet', '-b', branch, str(tree), 'origin/main')
+        sparse.add_worktree(root, tree, 'origin/main', branch=branch, new_branch=True)
         link_private(root, tree)
         label(tree, owner, unit['key'], 'draft', branch)
         carry_map_dependencies(root, tree, read(directory / 'task.json'))
@@ -382,10 +386,8 @@ def target_symbols(tree, directory, task, final, data):
     for name, value in hints.items():
         if not str(value).startswith('tls:') and int(str(value), 0) in targets:
             symbols.add(name)
-    for fn in inventory:
-        if not fn.get('report'):
-            continue
-        record = read(tree / fn['report'], {})
+    for _, record in sparse.reports(tree, [fn['report'] for fn in inventory if fn.get('report')]):
+        record = record or {}
         for run in record.get('runs', []):
             symbol = run.get('report', {}).get('function', {}).get('symbol')
             if symbol:
@@ -528,11 +530,12 @@ def accepted_emitted_regressions(tree, task, data, symbols):
     """
     own = {int(str(fn['rva']), 0) for fn in task['functions']}
     found = {}
-    for fn in data.get('functions', []):
-        if (fn.get('status') != 'matched' or fn['build_id'] != task['build_id']
-                or fn['rva'] in own or not fn.get('report')):
-            continue
-        record = read(tree / fn['report'], {})
+    members = [fn for fn in data.get('functions', [])
+               if fn.get('status') == 'matched' and fn['build_id'] == task['build_id']
+               and fn['rva'] not in own and fn.get('report')]
+    records = sparse.reports(tree, [fn['report'] for fn in members])
+    for fn, (_, record) in zip(members, records):
+        record = record or {}
         functions = [run.get('report', {}).get('function', {}) for run in record.get('runs', [])]
         if not functions:
             continue
@@ -632,6 +635,7 @@ def harvest(qdir, unit, claim, records, _accepted_emissions=()):
     # Only the task names identify source candidates; unrelated inventory overloads do not
     # establish a source binding by name alone. Emitted inventory bindings were checked above.
     audit_source(tree, unit['sources'], allowed | baseline, candidates, bind)
+    sparse.source_evidence(tree, closure)
     import lint_reconstruction
     findings = lint_reconstruction.lint_tree(tree, closure)
     if findings:
@@ -731,13 +735,16 @@ def confirm_one(root, directory, args, env=None):
     if digest_at(root, h['commit'], h['sources']) != h['digest']:
         raise ValueError('harvest commit does not bind recorded digest')
     tree = Path(root) / '.local/worktrees/confirm' / uuid.uuid4().hex
-    git(root, 'worktree', 'add', '--quiet', '--detach', str(tree), h['commit'])
+    sparse.add_worktree(root, tree, h['commit'])
     try:
         link_private(root, tree)
         label(tree, 'confirm', Path(directory).name, 'confirm')
         # Enrollment can land after the source harvest. Carry only the selected identities;
         # their source still comes exclusively from the immutable harvest commit.
         task = read(Path(h['task']) / 'task.json')
+        sparse.ensure(tree, [f'reports/{task["build_id"]}/0x{int(str(fn["rva"]), 0):x}.json'
+                             for fn in task['functions']] +
+                      ([task['symbols']] if task.get('symbols', '').startswith('reports/') else []))
         data = read(tree / 'data/progress.json')
         known = {f['id']: f for f in data['functions']}
         enrolled = {f['id']: f for f in read(Path(root) / 'data/progress.json')['functions']}
@@ -757,7 +764,9 @@ def confirm_one(root, directory, args, env=None):
         binding_list = tree / '.local/harvest-bind.txt'
         binding_list.write_text(h['task'] + '\n')
         command = [sys.executable, str(tree / 'tools/verifier/bind.py'), '--list', str(binding_list), '--unit-maps']
-        proc = subprocess.run(command, cwd=tree, **({'env': env} if env is not None else {}))
+        sparse_aware = (tree / 'tools/sparse_checkouts.py').is_file()
+        with nullcontext() if sparse_aware else sparse.full(tree):
+            proc = subprocess.run(command, cwd=tree, **({'env': env} if env is not None else {}))
         if proc.returncode:
             return proc.returncode
         command = [sys.executable, str(tree / 'tools/verifier/confirm'), h['task'], *args]
@@ -765,7 +774,8 @@ def confirm_one(root, directory, args, env=None):
         paths = [f'reports/{task["build_id"]}/0x{int(str(fn["rva"]), 0):x}.json'
                  for fn in task['functions']]
         before = {rel: (tree / rel).stat().st_mtime_ns if (tree / rel).exists() else None for rel in paths}
-        proc = subprocess.run(command, cwd=tree, **({'env': env} if env is not None else {}))
+        with nullcontext() if sparse_aware else sparse.full(tree):
+            proc = subprocess.run(command, cwd=tree, **({'env': env} if env is not None else {}))
         # As in the in-place path, validated records survive a later whole-tree check refusal
         # (for example a regression whose acceptance now needs re-review). Preserve the exit code.
         if '--out' not in args:

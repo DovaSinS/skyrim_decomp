@@ -1102,7 +1102,7 @@ Role: Engineer (or the routine orchestrator with a shell). Task: the sampling sa
 from-scratch comparator re-run for group {g['name']} ({len(g['sampled'])} functions), on a clean
 checkout (docs/verification.md, Sampling safeguard). Gates: as recorded for confirm runs.
 
-1. `git worktree add --detach .local/flow/rerun/{g['name']}/tree {g['source_revision']}`, then copy
+1. `python3 tools/sparse_checkouts.py .local/flow/rerun/{g['name']}/tree {g['source_revision']}`, then copy
    the unit files of these units from `{g.get('review_root', root)}`:
    {', '.join(f'`{u}`' for u in units)}. Copy their entire include closures, match records and pinned
    maps with histories from that same frozen checkout. Link `.local` into it as earlier re-runs did.

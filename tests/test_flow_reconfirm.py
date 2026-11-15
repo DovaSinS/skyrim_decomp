@@ -131,6 +131,8 @@ class CompanionRecords(GateFixture,unittest.TestCase):
         task=lane.read(Path(unit['task'])/'task.json')
         self.assertEqual(task['functions'][0]['rva'],self.fn['rva'])
         view=Path(state['view'])
+        self.assertTrue(recovery.sparse.active(view))
+        self.assertFalse((view/'site').exists())
         self.assertEqual((view/RECORD).read_bytes(),(self.root/RECORD).read_bytes())
         self.assertEqual(lane.read(view/'data/progress.json')['functions'][0]['status'],'mapped')
         git('worktree','remove','--force',str(view))

@@ -39,6 +39,10 @@ def unique_fields(pairs):
 
 
 def read(root, name):
+    name = Path(name).as_posix()
+    if name.startswith('reports/') and not (Path(root) / name).is_file():
+        from sparse_checkouts import ensure
+        ensure(root, [name])
     return json.loads((Path(root) / name).read_text(), object_pairs_hook=unique_fields)
 
 

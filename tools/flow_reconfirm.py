@@ -19,6 +19,7 @@ import check
 import flow as f
 import flow_lane as lane
 import resource_admission
+import sparse_checkouts as sparse
 
 TERMINAL = {'done', 'failed', 'conflict', 'retired', 'stale'}
 
@@ -119,6 +120,17 @@ def link_inputs(root, view):
 
 
 def prepare(root, fdir, state):
+    try:
+        return _prepare(root, fdir, state)
+    finally:
+        view = Path(fdir) / 'reconfirm' / state['id'] / 'tree'
+        if (view / '.git').exists():
+            sparse.set_patterns(view)
+            sparse.ensure(view, [f'reports/{state["build_id"]}/0x{fn["rva"]:x}.json'
+                                 for unit in state.get('units', {}).values() for fn in unit['functions']])
+
+
+def _prepare(root, fdir, state):
     run = Path(fdir) / 'reconfirm' / state['id']
     view = run / 'tree'
     f.git(root, 'fetch', '--quiet', 'origin', state['branch'])
@@ -523,13 +535,14 @@ def execute(root,fdir,*,resume=None,dry_run=False,wake_mac=None,allow_low_disk=F
         try:fcntl.flock(handle,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:raise f.FlowError('this re-confirmation run already has an owner') from None
         if state['phase']=='new':prepare(root,fdir,state)
-        if state['phase'] in ('prepared','confirming'):
-            confirm(state,run,wake_mac)
-            reviews(state,run)
-            clean_reruns(state,run)
-        if state['phase']=='review_pending':
-            clean_reruns(state,run)
-            enqueue(state,run,fdir)
+        with sparse.full(Path(state['view'])):
+            if state['phase'] in ('prepared','confirming'):
+                confirm(state,run,wake_mac)
+                reviews(state,run)
+                clean_reruns(state,run)
+            if state['phase']=='review_pending':
+                clean_reruns(state,run)
+                enqueue(state,run,fdir)
         return dict(run=state['id'],phase=state['phase'],view=state['view'],
                     reconfirmed=len(state.get('reconfirmed_members',[])),requeued=len(state.get('requeued_members',[])),
                     held=state.get('held',[]),unavailable_inputs=state.get('unavailable_inputs',[]),groups=state.get('groups',[]),

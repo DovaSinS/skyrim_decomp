@@ -235,7 +235,8 @@ class Throughput(unittest.TestCase):
         self.assertEqual(result['state'], 'done')
 
     def test_python_314_frontend_selects_313_and_refuses_broken_override(self):
-        with patch.object(lane.sys, 'version_info', (3, 14)), patch.object(lane.shutil, 'which', return_value='/synthetic/python3.13'), \
+        with patch.dict(lane.os.environ, {}, clear=True), \
+                patch.object(lane.sys, 'version_info', (3, 14)), patch.object(lane.shutil, 'which', return_value='/synthetic/python3.13'), \
                 patch.object(lane.subprocess, 'run', return_value=SimpleNamespace(returncode=0)) as call:
             self.assertEqual(lane.lane_python('/synthetic/python3.14'), '/synthetic/python3.13')
             self.assertIn('pyexpat', call.call_args.args[0][-1])
@@ -492,6 +493,10 @@ class Throughput(unittest.TestCase):
         self.assertEqual(bisect['max_rounds'], 3)
         self.assertEqual(max(trial['round'] for trial in bisect['trials']), 3)
         self.assertEqual(len(checked), 8)  # full batch, baseline, two probes per split level
+        import sparse_checkouts
+        for trial in bisect['trials']:
+            self.assertTrue(sparse_checkouts.active(Path(trial['tree'])))
+            self.assertFalse((Path(trial['tree']) / 'site').exists())
         self.assertEqual(checked[-1], result['integrated']['commit'])
         self.assertEqual(result['tooling_dropped'][0]['revision'], items[2]['revision'])
         tree = Path(result['tree'])
