@@ -147,7 +147,10 @@ def regenerate(tree, python):
     """Regenerate tracked views from the merged data using that tree's own generators."""
     for tool in ('build_index.py', 'build_progress_svg.py', 'build_model_trend.py'):
         f.run([python, 'tools/' + tool], tree, tool)
-    paths = f.changed(tree, DERIVED_FILES | {'README.md'})
+    # New presentation generators may arrive in the tooling input before this runner is upgraded.
+    if (Path(tree) / 'tools/build_leaderboard.py').is_file():
+        f.run([python, 'tools/build_leaderboard.py'], tree, 'build_leaderboard.py')
+    paths = f.changed(tree, DERIVED_FILES | {'README.md', 'LEADERBOARD.md', 'data/contributors.json'})
     if paths:
         f.git(tree, 'add', '--', *paths)
         f.run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')

@@ -1298,8 +1298,11 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         save_run(fdir, receipt)
         return tree
     f.run([python, 'tools/build_progress_svg.py'], tree, 'build_progress_svg.py')
+    if (tree / 'tools/build_leaderboard.py').is_file():
+        f.run([python, 'tools/build_leaderboard.py'], tree, 'build_leaderboard.py')
     paths = carried | set(result['changed']) | {'data/progress.json', 'reconstruction/INDEX.md',
-                                              'docs/progress.svg', 'docs/progress-map.svg'}
+                                              'docs/progress.svg', 'docs/progress-map.svg',
+                                              'LEADERBOARD.md', 'data/contributors.json'}
     files = f.changed(tree, paths)
     f.refuse(files, 'nothing changed to commit')
     f.git(tree, 'add', '--', *files)
