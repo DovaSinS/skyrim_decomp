@@ -1,0 +1,4971 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "classes": {
+    "BGSAIWorldLocationInteriorCell": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::AIWorldInteriorCellLayout",
+      "evidence": {
+        "owner_table": 25968648,
+        "size_rva": 4495088
+      },
+      "field_members": [
+        4495280,
+        4495312
+      ],
+      "fields": [
+        {
+          "name": "cell08",
+          "offset": 8,
+          "type": "void*"
+        },
+        {
+          "name": "point",
+          "offset": 16,
+          "type": "AIWorldPointLayout"
+        }
+      ],
+      "header": "reconstruction/forms/AIWorldInteriorCellLayout.h",
+      "size": 32,
+      "storage_members": [
+        4495088
+      ]
+    },
+    "BGSAIWorldLocationPointRadius": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::AIWorldPointRadiusLayout",
+      "evidence": {
+        "owner_table": 25968264,
+        "size_rva": 4495136
+      },
+      "field_members": [
+        4492832,
+        4492864
+      ],
+      "fields": [
+        {
+          "name": "point",
+          "offset": 8,
+          "type": "AIWorldPointLayout"
+        },
+        {
+          "name": "space18",
+          "offset": 24,
+          "type": "void*"
+        },
+        {
+          "name": "cell20",
+          "offset": 32,
+          "type": "void*"
+        },
+        {
+          "name": "radius28",
+          "offset": 40,
+          "type": "float"
+        },
+        {
+          "name": "value2c",
+          "offset": 44,
+          "type": "float"
+        },
+        {
+          "name": "flag30",
+          "offset": 48,
+          "type": "std::uint8_t"
+        },
+        {
+          "name": "flag31",
+          "offset": 49,
+          "type": "std::uint8_t"
+        }
+      ],
+      "header": "reconstruction/forms/AIWorldPointRadiusLayout.h",
+      "size": 56,
+      "storage_members": [
+        4495136
+      ]
+    },
+    "BGSAIWorldLocationRefRadius": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::AIWorldRefRadiusLayout",
+      "evidence": {
+        "owner_table": 25967880,
+        "size_rva": 4495184
+      },
+      "field_members": [],
+      "fields": [
+        {
+          "name": "handle08",
+          "offset": 8,
+          "type": "std::uint32_t"
+        },
+        {
+          "name": "radius0c",
+          "offset": 12,
+          "type": "float"
+        },
+        {
+          "name": "value10",
+          "offset": 16,
+          "type": "float"
+        },
+        {
+          "name": "value14",
+          "offset": 20,
+          "type": "float"
+        },
+        {
+          "name": "flag18",
+          "offset": 24,
+          "type": "std::uint8_t"
+        }
+      ],
+      "header": "reconstruction/forms/AIWorldRefRadiusLayout.h",
+      "size": 32,
+      "storage_members": [
+        4495184
+      ]
+    },
+    "BSScript::Internal::AutoPropGetFunction": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::AutoPropertyFunctionLayout",
+      "evidence": {
+        "owner_table": 28493896,
+        "size_rva": 21852560
+      },
+      "field_members": [
+        21850688,
+        21850704
+      ],
+      "fields": [
+        {
+          "name": "objectName",
+          "offset": 16,
+          "type": "ScriptStringLayout"
+        },
+        {
+          "name": "functionName",
+          "offset": 24,
+          "type": "ScriptStringLayout"
+        },
+        {
+          "name": "propertyType",
+          "offset": 32,
+          "type": "ScriptTypeLayout"
+        },
+        {
+          "name": "propertyIndex",
+          "offset": 40,
+          "type": "std::uint32_t"
+        }
+      ],
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "size": 48,
+      "storage_members": []
+    },
+    "BSScript::Internal::AutoPropSetFunction": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::AutoPropertyFunctionLayout",
+      "evidence": {
+        "owner_table": 28494072,
+        "size_rva": 21852640
+      },
+      "field_members": [
+        21851568,
+        21851584
+      ],
+      "fields": [
+        {
+          "name": "objectName",
+          "offset": 16,
+          "type": "ScriptStringLayout"
+        },
+        {
+          "name": "functionName",
+          "offset": 24,
+          "type": "ScriptStringLayout"
+        },
+        {
+          "name": "propertyType",
+          "offset": 32,
+          "type": "ScriptTypeLayout"
+        },
+        {
+          "name": "propertyIndex",
+          "offset": 40,
+          "type": "std::uint32_t"
+        }
+      ],
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "size": 48,
+      "storage_members": []
+    },
+    "BSScript::Internal::CodeTasklet": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::CodeTaskletFieldLayout",
+      "evidence": {
+        "owner_table": 28491144,
+        "size_rva": 21849216
+      },
+      "field_members": [],
+      "fields": [
+        {
+          "name": "stack",
+          "offset": 16,
+          "type": "void*"
+        },
+        {
+          "name": "vm",
+          "offset": 24,
+          "type": "void*"
+        },
+        {
+          "name": "errorLogger",
+          "offset": 32,
+          "type": "void*"
+        },
+        {
+          "name": "resumeReason",
+          "offset": 40,
+          "type": "std::uint32_t"
+        },
+        {
+          "name": "topFrame",
+          "offset": 48,
+          "type": "void*"
+        },
+        {
+          "name": "frameMemoryPage",
+          "offset": 56,
+          "type": "std::uint32_t"
+        },
+        {
+          "name": "jumpBitCount",
+          "offset": 60,
+          "type": "std::int8_t"
+        },
+        {
+          "name": "localVarBitCount",
+          "offset": 61,
+          "type": "std::int8_t"
+        },
+        {
+          "name": "memberVarBitCount",
+          "offset": 62,
+          "type": "std::int8_t"
+        },
+        {
+          "name": "instructionDataBitCount",
+          "offset": 64,
+          "type": "std::uint32_t"
+        },
+        {
+          "name": "instructionDataStart",
+          "offset": 72,
+          "type": "const void*"
+        }
+      ],
+      "header": "reconstruction/bsengine/CodeTaskletFieldLayout.h",
+      "size": 80,
+      "storage_members": [
+        21849216
+      ]
+    },
+    "NiIntersector": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::NiIntersectorFieldLayout",
+      "evidence": {
+        "owner_table": 27595920,
+        "size_rva": 16005504
+      },
+      "field_members": [
+        16005472,
+        16005488
+      ],
+      "fields": [
+        {
+          "name": "value08",
+          "offset": 8,
+          "type": "float"
+        },
+        {
+          "name": "value0c",
+          "offset": 12,
+          "type": "float"
+        },
+        {
+          "name": "value10",
+          "offset": 16,
+          "type": "float"
+        },
+        {
+          "name": "value14",
+          "offset": 20,
+          "type": "float"
+        },
+        {
+          "name": "iterations18",
+          "offset": 24,
+          "type": "std::int32_t"
+        },
+        {
+          "name": "state1c",
+          "offset": 28,
+          "type": "std::int32_t"
+        },
+        {
+          "name": "time20",
+          "offset": 32,
+          "type": "float"
+        },
+        {
+          "name": "point24",
+          "offset": 36,
+          "type": "IntersectorPointLayout"
+        },
+        {
+          "name": "point30",
+          "offset": 48,
+          "type": "IntersectorPointLayout"
+        }
+      ],
+      "header": "reconstruction/netimmerse/NiIntersectorFieldLayout.h",
+      "size": 64,
+      "storage_members": [
+        16005504
+      ]
+    },
+    "_Func_impl_no_alloc<P6AXAEBV?$BSTArray@VBSContentId@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXAEBV1@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6294144,
+        "owner_table": 26216336,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6294224,
+        "size_slot": 4
+      },
+      "field_members": [
+        6294400
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXPEAXW4BNetResult@BSPlatform@@@ZXPEAXW412@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5726496,
+        "owner_table": 26144568,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5726560,
+        "size_slot": 4
+      },
+      "field_members": [
+        5726704
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXPEAX_NPEBDAEAVGFxValue@@@ZXPEAX_NPEBDAEAV1@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5726528,
+        "owner_table": 26144624,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5726576,
+        "size_slot": 4
+      },
+      "field_members": [
+        5726720
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXPEBD_N@ZXPEBD_N@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 9825232,
+        "owner_table": 26721192,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 9825296,
+        "size_slot": 4
+      },
+      "field_members": [
+        9825424
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@@ZXW412@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5996944,
+        "owner_table": 26168408,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5996976,
+        "size_slot": 4
+      },
+      "field_members": [
+        5997024
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@I@ZXW412@I@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6320928,
+        "owner_table": 26235320,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6321072,
+        "size_slot": 4
+      },
+      "field_members": [
+        6321392
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_K$$QEAVBundlePreviewInfo@Vccs@2@@ZXW412@_K$$QEAV342@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280448,
+        "owner_table": 26214784,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280864,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283232
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_K@ZXW412@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5760864,
+        "owner_table": 26147528,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5760960,
+        "size_slot": 4
+      },
+      "field_members": [
+        5761152
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@IVBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280480,
+        "owner_table": 26214392,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280880,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283248
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@V?$BSStringT@D$0PPPPPPPP@VDynamicMemoryManagementPol@@@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280512,
+        "owner_table": 26214448,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280896,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283264
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSEntitlement@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280544,
+        "owner_table": 26214504,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280912,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283280
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSFixedString@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280576,
+        "owner_table": 26214952,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280928,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283296
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSLegalDocument@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5760896,
+        "owner_table": 26147472,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5760976,
+        "size_slot": 4
+      },
+      "field_members": [
+        5761168
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280608,
+        "owner_table": 26214616,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280944,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283312
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContentCollection@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280640,
+        "owner_table": 26214672,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280960,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283328
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBVBSUserContent@2@@ZXW412@_KAEBV32@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280672,
+        "owner_table": 26214560,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280976,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283344
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBVBSUserContentCollection@2@@ZXW412@_KAEBV32@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280704,
+        "owner_table": 26214728,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6280992,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283360
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KH@ZXW412@_KH@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5760928,
+        "owner_table": 26147416,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5760992,
+        "size_slot": 4
+      },
+      "field_members": [
+        5761184
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD$$QEAV?$vector@VBNetEntitlementMapping@BSPlatform@@V?$allocator@VBNetEntitlementMapping@BSPlatform@@@std@@@std@@@ZXW412@_KPEBD$$QEAV34@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280736,
+        "owner_table": 26214840,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6281008,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283376
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD2@ZXW412@_KPEBDPEBD@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280768,
+        "owner_table": 26214336,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6281024,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283392
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD@ZXW412@_KPEBD@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280800,
+        "owner_table": 26214280,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6281040,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283408
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KV?$shared_ptr@X@std@@1@ZXW412@_KV34@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6280832,
+        "owner_table": 26214896,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6281056,
+        "size_slot": 4
+      },
+      "field_members": [
+        6283424
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KW4BNetStreamStatus@2@PEAE1@ZXW412@_KW432@PEAE_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6289312,
+        "owner_table": 26215688,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6289344,
+        "size_slot": 4
+      },
+      "field_members": [
+        6289568
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4BNetUGCServicesStatus@BSPlatform@@@ZXW412@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6294176,
+        "owner_table": 26216392,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6294240,
+        "size_slot": 4
+      },
+      "field_members": [
+        6294416
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4DownloadAllResult@DownloadAll@@W4BNetResult@BSPlatform@@I@ZXW412@W434@I@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6320960,
+        "owner_table": 26235264,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6321088,
+        "size_slot": 4
+      },
+      "field_members": [
+        6321408
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4DownloadableContentResult@DownloadableContent@@PEBD@ZXW412@PEBD@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6320992,
+        "owner_table": 26235208,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6321104,
+        "size_slot": 4
+      },
+      "field_members": [
+        6321424
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4DownloadableContentResult@DownloadableContent@@W4BNetResult@BSPlatform@@@ZXW412@W434@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 6321024,
+        "owner_table": 26235152,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6321120,
+        "size_slot": 4
+      },
+      "field_members": [
+        6321440
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@std@@W4MARKETPLACE_REQUEST_RESULT@2@@ZXW412@AEAV34@W452@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 1124016,
+        "owner_table": 28672120,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1123936,
+        "size_slot": 4
+      },
+      "field_members": [
+        1123952
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6AXW4UpsellResult@Upsell@@_N@ZXW412@_N@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 9825264,
+        "owner_table": 26721248,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 9825312,
+        "size_slot": 4
+      },
+      "field_members": [
+        9825440
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<P6A_NPEAUcreateTask@TextureCreator@@@Z_NPEAU12@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::FunctionPointerCallableLayout",
+      "evidence": {
+        "copy_rva": 5896000,
+        "owner_table": 26160560,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 5896032,
+        "size_slot": 4
+      },
+      "field_members": [
+        5896080
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_036154eed72d9c42e5223ffe217c5027>@@XW4BNetResult@BSPlatform@@_KAEBVBSUserContent@3@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 6598304,
+        "owner_table": 26271240,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6598352,
+        "size_slot": 4
+      },
+      "field_members": [
+        6598544
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_04bc9a1c79420d36ffe38d26cfb5a23d>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19510048,
+        "owner_table": 28133792,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19510112,
+        "size_slot": 4
+      },
+      "field_members": [
+        19510240
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_04f36db2968287a0c0d9e7d195a436aa>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19670704,
+        "owner_table": 28175216,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19671824,
+        "size_slot": 4
+      },
+      "field_members": [
+        19674400
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_06ccc8604b61f2cd09364280ed33d423>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19708896,
+        "owner_table": 28180576,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709152,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709808
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_0953dfb8f7118e3584490d219265f7c4>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19419712,
+        "owner_table": 28121624,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19419840,
+        "size_slot": 4
+      },
+      "field_members": [
+        19420752
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_0d571499518f8715e82f53b46306a92d>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19510080,
+        "owner_table": 28133848,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19510128,
+        "size_slot": 4
+      },
+      "field_members": [
+        19510256
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_251388fb3230f29c41fffc8873556525>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19708960,
+        "owner_table": 28180240,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709184,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709840
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_283e5167131aef4ee36236d8f1638693>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600144,
+        "owner_table": 28149176,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600704,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601440
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_2fb3c22ae0ee0fad541140d4c38cbdaa>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19670864,
+        "owner_table": 28174936,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19672096,
+        "size_slot": 4
+      },
+      "field_members": [
+        19674448
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_3422424728f1eecb457ac27802457a3c>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19419744,
+        "owner_table": 28121680,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19419856,
+        "size_slot": 4
+      },
+      "field_members": [
+        19420768
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_356e13d31b5385eb982268ef318f9b2c>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19708992,
+        "owner_table": 28180184,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709200,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709856
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_4b7cf2aed8fefcef307916bb669dedaf>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 10929728,
+        "owner_table": 26949280,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 10929952,
+        "size_slot": 4
+      },
+      "field_members": [
+        10930528
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_58d13940c48784d3b1554372249df947>@@XW4BNetResult@BSPlatform@@_KH@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600208,
+        "owner_table": 28149456,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600736,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601472
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_5bf28152be4cdf3664be1ebf94acd6a9>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19721440,
+        "owner_table": 28183896,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19721472,
+        "size_slot": 4
+      },
+      "field_members": [
+        19721552
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_656b621cf6ae8cbbc1a7618a10febb60>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 6337648,
+        "owner_table": 26236792,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6337680,
+        "size_slot": 4
+      },
+      "field_members": [
+        6337712
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_65f0a42787bcc48f5885a0f534c1f490>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600240,
+        "owner_table": 28149232,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600752,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601488
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_6a0c3a393c69013088aad0e7095ccab0>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@UContentIdResolution@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 6346176,
+        "owner_table": 26237624,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6346208,
+        "size_slot": 4
+      },
+      "field_members": [
+        6346272
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_74d989c5e6c5291c3c2a6d515570cb1b>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19709024,
+        "owner_table": 28180520,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709216,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709872
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_7addd3036b14267912edb4ab0ea8095f>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600336,
+        "owner_table": 28148840,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600800,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601536
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_815893ffb8f0db46286add1b3bf1dd3e>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600368,
+        "owner_table": 28148952,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600816,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601552
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_85b754086fa1198379c27d253847d508>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19671088,
+        "owner_table": 28174600,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19672496,
+        "size_slot": 4
+      },
+      "field_members": [
+        19674512
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_898c6c168e279f373b2c8ce5205111b5>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19709056,
+        "owner_table": 28180464,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709232,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709888
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_983460786c90069a37842147b2ff4c60>@@XW4BNetResult@BSPlatform@@_KPEBD@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19490432,
+        "owner_table": 28131080,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19490496,
+        "size_slot": 4
+      },
+      "field_members": [
+        19490592
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_a32478ff7700186eaafd9232bb13353c>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600432,
+        "owner_table": 28149288,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600848,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601584
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_a7f72a51e724fbe431bed4fb483d2746>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19419808,
+        "owner_table": 28121736,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19419888,
+        "size_slot": 4
+      },
+      "field_members": [
+        19420800
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_b2ed23b10d46bbc149572a2e7226f03f>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19709088,
+        "owner_table": 28180296,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709248,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709904
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_b348a33bd2dd1f4c2011fd2884e0447a>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600496,
+        "owner_table": 28149008,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600880,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601616
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_b64ea9afd7628eb1d55a13b60b73111d>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19600528,
+        "owner_table": 28149120,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19600896,
+        "size_slot": 4
+      },
+      "field_members": [
+        19601632
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_b7cf2f509a861ae9a1eab3a20d084b1b>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSEntitlement@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 6361472,
+        "owner_table": 26241440,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 6361504,
+        "size_slot": 4
+      },
+      "field_members": [
+        6361744
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V<lambda_bfb1ab4e1b67fe4917494ce948904dda>@@XW4BNetResult@BSPlatform@@_K@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::ScalarCaptureCallableLayout",
+      "evidence": {
+        "copy_rva": 19709120,
+        "owner_table": 28180352,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 19709264,
+        "size_slot": 4
+      },
+      "field_members": [
+        19709920
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "size": 16,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8DescriptionBox@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1237696,
+        "owner_table": 28678952,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1237616,
+        "size_slot": 4
+      },
+      "field_members": [
+        1237632
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8DownloadProgressBar@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1160208,
+        "owner_table": 28672520,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1160096,
+        "size_slot": 4
+      },
+      "field_members": [
+        1160112
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8FilterSideBar@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1326336,
+        "owner_table": 28685976,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1326256,
+        "size_slot": 4
+      },
+      "field_members": [
+        1326272
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrder@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1258608,
+        "owner_table": 28680448,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1258496,
+        "size_slot": 4
+      },
+      "field_members": [
+        1258512
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrder@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1258464,
+        "owner_table": 28680392,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1258384,
+        "size_slot": 4
+      },
+      "field_members": [
+        1258400
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderArchive@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1319264,
+        "owner_table": 28685624,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1319152,
+        "size_slot": 4
+      },
+      "field_members": [
+        1319168
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderArchive@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1319120,
+        "owner_table": 28685568,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1319040,
+        "size_slot": 4
+      },
+      "field_members": [
+        1319056
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderBox@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1275376,
+        "owner_table": 28682136,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1275296,
+        "size_slot": 4
+      },
+      "field_members": [
+        1275312
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8MissingContent@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1329888,
+        "owner_table": 28686864,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1329776,
+        "size_slot": 4
+      },
+      "field_members": [
+        1329792
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8OfflineLoadOrder@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1190096,
+        "owner_table": 28675632,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1189984,
+        "size_slot": 4
+      },
+      "field_members": [
+        1190000
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Options@@EAAXXZAEAPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1189728,
+        "owner_table": 28675920,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1189648,
+        "size_slot": 4
+      },
+      "field_members": [
+        1189664
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Options@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1278928,
+        "owner_table": 28682192,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1278848,
+        "size_slot": 4
+      },
+      "field_members": [
+        1278864
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchPage@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1311296,
+        "owner_table": 28684216,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1311216,
+        "size_slot": 4
+      },
+      "field_members": [
+        1311232
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchPage@@EAA_NXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1311408,
+        "owner_table": 28684448,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1311328,
+        "size_slot": 4
+      },
+      "field_members": [
+        1311344
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchResultsPage@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1315408,
+        "owner_table": 28684592,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1315328,
+        "size_slot": 4
+      },
+      "field_members": [
+        1315344
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SideBar@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1266848,
+        "owner_table": 28681528,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1266768,
+        "size_slot": 4
+      },
+      "field_members": [
+        1266784
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8StorageSpaceBar@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1255600,
+        "owner_table": 28679992,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1255488,
+        "size_slot": 4
+      },
+      "field_members": [
+        1255504
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogDownloadCC@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1307360,
+        "owner_table": 28684104,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1307248,
+        "size_slot": 4
+      },
+      "field_members": [
+        1307264
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogDownloadCC@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1307504,
+        "owner_table": 28684160,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1307424,
+        "size_slot": 4
+      },
+      "field_members": [
+        1307440
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogMessage@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1260800,
+        "owner_table": 28680808,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1260720,
+        "size_slot": 4
+      },
+      "field_members": [
+        1260736
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogYesNo@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1235056,
+        "owner_table": 28678400,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1234976,
+        "size_slot": 4
+      },
+      "field_members": [
+        1234992
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_Manager@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1247280,
+        "owner_table": 28679192,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1247168,
+        "size_slot": 4
+      },
+      "field_members": [
+        1247184
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_ScrollingList@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1323328,
+        "owner_table": 28685920,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1323248,
+        "size_slot": 4
+      },
+      "field_members": [
+        1323264
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_bottomBar@@EAAXXZAEAPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1189952,
+        "owner_table": 28675688,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1189872,
+        "size_slot": 4
+      },
+      "field_members": [
+        1189888
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_detailsPage@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1160384,
+        "owner_table": 28672872,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1160272,
+        "size_slot": 4
+      },
+      "field_members": [
+        1160288
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_detailsPage@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1160528,
+        "owner_table": 28673048,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1160448,
+        "size_slot": 4
+      },
+      "field_members": [
+        1160464
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_homePage@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1272496,
+        "owner_table": 28681584,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1272416,
+        "size_slot": 4
+      },
+      "field_members": [
+        1272432
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_topBar@@EAAXXZPEAV3@@std@@X$$V@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundPairCallableLayout",
+      "evidence": {
+        "copy_rva": 1327600,
+        "owner_table": 28686304,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1327520,
+        "size_slot": 4
+      },
+      "field_members": [
+        1327536
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "size": 24,
+      "storage_members": []
+    },
+    "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Warning@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAU3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>": {
+      "confidence": "medium",
+      "declaration": "ResearchLayouts::BoundArgumentCallableLayout",
+      "evidence": {
+        "copy_rva": 1247104,
+        "owner_table": 28679248,
+        "size_method": "conditional sized delete, separate from copy/getter",
+        "size_rva": 1246992,
+        "size_slot": 4
+      },
+      "field_members": [
+        1247008
+      ],
+      "fields": [
+        {
+          "offset": 8,
+          "width": 8
+        },
+        {
+          "offset": 16,
+          "width": 1
+        },
+        {
+          "offset": 17,
+          "width": 1
+        },
+        {
+          "offset": 18,
+          "width": 1
+        },
+        {
+          "offset": 24,
+          "width": 8
+        }
+      ],
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "size": 32,
+      "storage_members": []
+    }
+  },
+  "evidence": "findings/represented-layout-preparation-2.md",
+  "exposure": "mixed",
+  "extends": {
+    "catalog": "tools/represented_layout_catalog_v1.json",
+    "sha256": "f2561476988d089e348db59b4ff6bf219c62f0764993fc090360a61d83b06382"
+  },
+  "field_members": [
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@std@@W4MARKETPLACE_REQUEST_RESULT@2@@ZXW412@AEAV34@W452@@std>",
+      "owner_slot": 5,
+      "owner_table": 28672120,
+      "result_type": "void*",
+      "rva": 1123952,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXPEAXW4BNetResult@BSPlatform@@@ZXPEAXW412@@std>",
+      "owner_slot": 5,
+      "owner_table": 26144568,
+      "result_type": "void*",
+      "rva": 5726704,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXPEAX_NPEBDAEAVGFxValue@@@ZXPEAX_NPEBDAEAV1@@std>",
+      "owner_slot": 5,
+      "owner_table": 26144624,
+      "result_type": "void*",
+      "rva": 5726720,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_K@ZXW412@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 26147528,
+      "result_type": "void*",
+      "rva": 5761152,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSLegalDocument@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26147472,
+      "result_type": "void*",
+      "rva": 5761168,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KH@ZXW412@_KH@std>",
+      "owner_slot": 5,
+      "owner_table": 26147416,
+      "result_type": "void*",
+      "rva": 5761184,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6A_NPEAUcreateTask@TextureCreator@@@Z_NPEAU12@@std>",
+      "owner_slot": 5,
+      "owner_table": 26160560,
+      "result_type": "void*",
+      "rva": 5896080,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@@ZXW412@@std>",
+      "owner_slot": 5,
+      "owner_table": 26168408,
+      "result_type": "void*",
+      "rva": 5997024,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_K$$QEAVBundlePreviewInfo@Vccs@2@@ZXW412@_K$$QEAV342@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214784,
+      "result_type": "void*",
+      "rva": 6283232,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@IVBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214392,
+      "result_type": "void*",
+      "rva": 6283248,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@V?$BSStringT@D$0PPPPPPPP@VDynamicMemoryManagementPol@@@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214448,
+      "result_type": "void*",
+      "rva": 6283264,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSEntitlement@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214504,
+      "result_type": "void*",
+      "rva": 6283280,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSFixedString@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214952,
+      "result_type": "void*",
+      "rva": 6283296,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214616,
+      "result_type": "void*",
+      "rva": 6283312,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContentCollection@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXW412@_KAEBV3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214672,
+      "result_type": "void*",
+      "rva": 6283328,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBVBSUserContent@2@@ZXW412@_KAEBV32@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214560,
+      "result_type": "void*",
+      "rva": 6283344,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KAEBVBSUserContentCollection@2@@ZXW412@_KAEBV32@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214728,
+      "result_type": "void*",
+      "rva": 6283360,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD$$QEAV?$vector@VBNetEntitlementMapping@BSPlatform@@V?$allocator@VBNetEntitlementMapping@BSPlatform@@@std@@@std@@@ZXW412@_KPEBD$$QEAV34@@std>",
+      "owner_slot": 5,
+      "owner_table": 26214840,
+      "result_type": "void*",
+      "rva": 6283376,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD2@ZXW412@_KPEBDPEBD@std>",
+      "owner_slot": 5,
+      "owner_table": 26214336,
+      "result_type": "void*",
+      "rva": 6283392,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KPEBD@ZXW412@_KPEBD@std>",
+      "owner_slot": 5,
+      "owner_table": 26214280,
+      "result_type": "void*",
+      "rva": 6283408,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KV?$shared_ptr@X@std@@1@ZXW412@_KV34@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 26214896,
+      "result_type": "void*",
+      "rva": 6283424,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@_KW4BNetStreamStatus@2@PEAE1@ZXW412@_KW432@PEAE_K@std>",
+      "owner_slot": 5,
+      "owner_table": 26215688,
+      "result_type": "void*",
+      "rva": 6289568,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXAEBV?$BSTArray@VBSContentId@BSPlatform@@VBSTArrayHeapAllocator@@@@@ZXAEBV1@@std>",
+      "owner_slot": 5,
+      "owner_table": 26216336,
+      "result_type": "void*",
+      "rva": 6294400,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetUGCServicesStatus@BSPlatform@@@ZXW412@@std>",
+      "owner_slot": 5,
+      "owner_table": 26216392,
+      "result_type": "void*",
+      "rva": 6294416,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4BNetResult@BSPlatform@@I@ZXW412@I@std>",
+      "owner_slot": 5,
+      "owner_table": 26235320,
+      "result_type": "void*",
+      "rva": 6321392,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4DownloadAllResult@DownloadAll@@W4BNetResult@BSPlatform@@I@ZXW412@W434@I@std>",
+      "owner_slot": 5,
+      "owner_table": 26235264,
+      "result_type": "void*",
+      "rva": 6321408,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4DownloadableContentResult@DownloadableContent@@PEBD@ZXW412@PEBD@std>",
+      "owner_slot": 5,
+      "owner_table": 26235208,
+      "result_type": "void*",
+      "rva": 6321424,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4DownloadableContentResult@DownloadableContent@@W4BNetResult@BSPlatform@@@ZXW412@W434@@std>",
+      "owner_slot": 5,
+      "owner_table": 26235152,
+      "result_type": "void*",
+      "rva": 6321440,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXPEBD_N@ZXPEBD_N@std>",
+      "owner_slot": 5,
+      "owner_table": 26721192,
+      "result_type": "void*",
+      "rva": 9825424,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/FunctionPointerCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<P6AXW4UpsellResult@Upsell@@_N@ZXW412@_N@std>",
+      "owner_slot": 5,
+      "owner_table": 26721248,
+      "result_type": "void*",
+      "rva": 9825440,
+      "size": 5,
+      "type": "ResearchLayouts::FunctionPointerCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_656b621cf6ae8cbbc1a7618a10febb60>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 26236792,
+      "result_type": "void*",
+      "rva": 6337712,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_6a0c3a393c69013088aad0e7095ccab0>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@UContentIdResolution@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 26237624,
+      "result_type": "void*",
+      "rva": 6346272,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_b7cf2f509a861ae9a1eab3a20d084b1b>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSEntitlement@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 26241440,
+      "result_type": "void*",
+      "rva": 6361744,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_036154eed72d9c42e5223ffe217c5027>@@XW4BNetResult@BSPlatform@@_KAEBVBSUserContent@3@@std>",
+      "owner_slot": 5,
+      "owner_table": 26271240,
+      "result_type": "void*",
+      "rva": 6598544,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_4b7cf2aed8fefcef307916bb669dedaf>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 26949280,
+      "result_type": "void*",
+      "rva": 10930528,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_0953dfb8f7118e3584490d219265f7c4>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28121624,
+      "result_type": "void*",
+      "rva": 19420752,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_3422424728f1eecb457ac27802457a3c>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28121680,
+      "result_type": "void*",
+      "rva": 19420768,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_a7f72a51e724fbe431bed4fb483d2746>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28121736,
+      "result_type": "void*",
+      "rva": 19420800,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_983460786c90069a37842147b2ff4c60>@@XW4BNetResult@BSPlatform@@_KPEBD@std>",
+      "owner_slot": 5,
+      "owner_table": 28131080,
+      "result_type": "void*",
+      "rva": 19490592,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_04bc9a1c79420d36ffe38d26cfb5a23d>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28133792,
+      "result_type": "void*",
+      "rva": 19510240,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_0d571499518f8715e82f53b46306a92d>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28133848,
+      "result_type": "void*",
+      "rva": 19510256,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_283e5167131aef4ee36236d8f1638693>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28149176,
+      "result_type": "void*",
+      "rva": 19601440,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_58d13940c48784d3b1554372249df947>@@XW4BNetResult@BSPlatform@@_KH@std>",
+      "owner_slot": 5,
+      "owner_table": 28149456,
+      "result_type": "void*",
+      "rva": 19601472,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_65f0a42787bcc48f5885a0f534c1f490>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28149232,
+      "result_type": "void*",
+      "rva": 19601488,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_7addd3036b14267912edb4ab0ea8095f>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28148840,
+      "result_type": "void*",
+      "rva": 19601536,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_815893ffb8f0db46286add1b3bf1dd3e>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28148952,
+      "result_type": "void*",
+      "rva": 19601552,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_a32478ff7700186eaafd9232bb13353c>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28149288,
+      "result_type": "void*",
+      "rva": 19601584,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_b348a33bd2dd1f4c2011fd2884e0447a>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28149008,
+      "result_type": "void*",
+      "rva": 19601616,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_b64ea9afd7628eb1d55a13b60b73111d>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28149120,
+      "result_type": "void*",
+      "rva": 19601632,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_04f36db2968287a0c0d9e7d195a436aa>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28175216,
+      "result_type": "void*",
+      "rva": 19674400,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_2fb3c22ae0ee0fad541140d4c38cbdaa>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28174936,
+      "result_type": "void*",
+      "rva": 19674448,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_85b754086fa1198379c27d253847d508>@@XW4BNetResult@BSPlatform@@_KAEBV?$BSTArray@VBSUserContent@BSPlatform@@VBSTArrayHeapAllocator@@@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28174600,
+      "result_type": "void*",
+      "rva": 19674512,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_06ccc8604b61f2cd09364280ed33d423>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180576,
+      "result_type": "void*",
+      "rva": 19709808,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_251388fb3230f29c41fffc8873556525>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180240,
+      "result_type": "void*",
+      "rva": 19709840,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_356e13d31b5385eb982268ef318f9b2c>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180184,
+      "result_type": "void*",
+      "rva": 19709856,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_74d989c5e6c5291c3c2a6d515570cb1b>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180520,
+      "result_type": "void*",
+      "rva": 19709872,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_898c6c168e279f373b2c8ce5205111b5>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180464,
+      "result_type": "void*",
+      "rva": 19709888,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_b2ed23b10d46bbc149572a2e7226f03f>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180296,
+      "result_type": "void*",
+      "rva": 19709904,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_bfb1ab4e1b67fe4917494ce948904dda>@@XW4BNetResult@BSPlatform@@_K@std>",
+      "owner_slot": 5,
+      "owner_table": 28180352,
+      "result_type": "void*",
+      "rva": 19709920,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/ScalarCaptureCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V<lambda_5bf28152be4cdf3664be1ebf94acd6a9>@@XW4BNetResult@BSPlatform@@V?$shared_ptr@E@std@@@std>",
+      "owner_slot": 5,
+      "owner_table": 28183896,
+      "result_type": "void*",
+      "rva": 19721552,
+      "size": 5,
+      "type": "ResearchLayouts::ScalarCaptureCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_detailsPage@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28673048,
+      "result_type": "void*",
+      "rva": 1160464,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Options@@EAAXXZAEAPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28675920,
+      "result_type": "void*",
+      "rva": 1189664,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_bottomBar@@EAAXXZAEAPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28675688,
+      "result_type": "void*",
+      "rva": 1189888,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogYesNo@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28678400,
+      "result_type": "void*",
+      "rva": 1234992,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8DescriptionBox@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28678952,
+      "result_type": "void*",
+      "rva": 1237632,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrder@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28680392,
+      "result_type": "void*",
+      "rva": 1258400,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogMessage@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28680808,
+      "result_type": "void*",
+      "rva": 1260736,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SideBar@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28681528,
+      "result_type": "void*",
+      "rva": 1266784,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_homePage@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28681584,
+      "result_type": "void*",
+      "rva": 1272432,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderBox@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28682136,
+      "result_type": "void*",
+      "rva": 1275312,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Options@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28682192,
+      "result_type": "void*",
+      "rva": 1278864,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogDownloadCC@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28684160,
+      "result_type": "void*",
+      "rva": 1307440,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchPage@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28684216,
+      "result_type": "void*",
+      "rva": 1311232,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchPage@@EAA_NXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28684448,
+      "result_type": "void*",
+      "rva": 1311344,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8SearchResultsPage@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28684592,
+      "result_type": "void*",
+      "rva": 1315344,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderArchive@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28685568,
+      "result_type": "void*",
+      "rva": 1319056,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_ScrollingList@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28685920,
+      "result_type": "void*",
+      "rva": 1323264,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8FilterSideBar@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28685976,
+      "result_type": "void*",
+      "rva": 1326272,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundPairCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_topBar@@EAAXXZPEAV3@@std@@X$$V@std>",
+      "owner_slot": 5,
+      "owner_table": 28686304,
+      "result_type": "void*",
+      "rva": 1327536,
+      "size": 5,
+      "type": "ResearchLayouts::BoundPairCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8DownloadProgressBar@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28672520,
+      "result_type": "void*",
+      "rva": 1160112,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_detailsPage@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28672872,
+      "result_type": "void*",
+      "rva": 1160288,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8OfflineLoadOrder@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28675632,
+      "result_type": "void*",
+      "rva": 1190000,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8Warning@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAU3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28679248,
+      "result_type": "void*",
+      "rva": 1247008,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_Manager@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28679192,
+      "result_type": "void*",
+      "rva": 1247184,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8StorageSpaceBar@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28679992,
+      "result_type": "void*",
+      "rva": 1255504,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrder@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28680448,
+      "result_type": "void*",
+      "rva": 1258512,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8UI_DialogDownloadCC@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28684104,
+      "result_type": "void*",
+      "rva": 1307264,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8LoadOrderArchive@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28685624,
+      "result_type": "void*",
+      "rva": 1319168,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "callable",
+      "header": "reconstruction/bsengine/BoundArgumentCallableLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "_Func_impl_no_alloc<V?$_Binder@U_Unforced@std@@P8MissingContent@@EAAXW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@5@@ZPEAV3@AEBU?$_Ph@$00@2@AEBU?$_Ph@$01@2@AEBU?$_Ph@$02@2@@std@@XW4MARKETPLACE_EVENT_TYPE@MarketplaceEvent@@AEAV?$vector@TMarketplaceEventDetail@MarketplaceEvent@@V?$allocator@TMarketplaceEventDetail@MarketplaceEvent@@@std@@@2@W4MARKETPLACE_REQUEST_RESULT@4@@std>",
+      "owner_slot": 5,
+      "owner_table": 28686864,
+      "result_type": "void*",
+      "rva": 1329792,
+      "size": 5,
+      "type": "ResearchLayouts::BoundArgumentCallableLayout"
+    },
+    {
+      "field": "point",
+      "header": "reconstruction/forms/AIWorldPointRadiusLayout.h",
+      "offset": 8,
+      "operation": "address",
+      "owner": "BGSAIWorldLocationPointRadius",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 7,
+      "owner_table": 25968264,
+      "result_type": "void*",
+      "rva": 4492832,
+      "size": 5,
+      "type": "ResearchLayouts::AIWorldPointRadiusLayout"
+    },
+    {
+      "field": "cell20",
+      "header": "reconstruction/forms/AIWorldPointRadiusLayout.h",
+      "offset": 32,
+      "operation": "pointer",
+      "owner": "BGSAIWorldLocationPointRadius",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 9,
+      "owner_table": 25968264,
+      "result_type": "void*",
+      "rva": 4492864,
+      "size": 5,
+      "type": "ResearchLayouts::AIWorldPointRadiusLayout"
+    },
+    {
+      "field": "point",
+      "header": "reconstruction/forms/AIWorldInteriorCellLayout.h",
+      "offset": 16,
+      "operation": "address",
+      "owner": "BGSAIWorldLocationInteriorCell",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 7,
+      "owner_table": 25968648,
+      "result_type": "void*",
+      "rva": 4495280,
+      "size": 5,
+      "type": "ResearchLayouts::AIWorldInteriorCellLayout"
+    },
+    {
+      "field": "cell08",
+      "header": "reconstruction/forms/AIWorldInteriorCellLayout.h",
+      "offset": 8,
+      "operation": "pointer",
+      "owner": "BGSAIWorldLocationInteriorCell",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 8,
+      "owner_table": 25968648,
+      "result_type": "void*",
+      "rva": 4495312,
+      "size": 5,
+      "type": "ResearchLayouts::AIWorldInteriorCellLayout"
+    },
+    {
+      "field": "point24",
+      "header": "reconstruction/netimmerse/NiIntersectorFieldLayout.h",
+      "offset": 36,
+      "operation": "address",
+      "owner": "NiIntersector",
+      "owner_origin": "GUESS(low)",
+      "owner_slot": null,
+      "owner_table": 27595920,
+      "result_type": "void*",
+      "rva": 16005472,
+      "size": 5,
+      "type": "ResearchLayouts::NiIntersectorFieldLayout"
+    },
+    {
+      "field": "point30",
+      "header": "reconstruction/netimmerse/NiIntersectorFieldLayout.h",
+      "offset": 48,
+      "operation": "address",
+      "owner": "NiIntersector",
+      "owner_origin": "GUESS(low)",
+      "owner_slot": null,
+      "owner_table": 27595920,
+      "result_type": "void*",
+      "rva": 16005488,
+      "size": 5,
+      "type": "ResearchLayouts::NiIntersectorFieldLayout"
+    },
+    {
+      "field": "functionName",
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "offset": 24,
+      "operation": "address",
+      "owner": "BSScript::Internal::AutoPropGetFunction",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 1,
+      "owner_table": 28493896,
+      "result_type": "void*",
+      "rva": 21850688,
+      "size": 5,
+      "type": "ResearchLayouts::AutoPropertyFunctionLayout"
+    },
+    {
+      "field": "objectName",
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "offset": 16,
+      "operation": "address",
+      "owner": "BSScript::Internal::AutoPropGetFunction",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 2,
+      "owner_table": 28493896,
+      "result_type": "void*",
+      "rva": 21850704,
+      "size": 5,
+      "type": "ResearchLayouts::AutoPropertyFunctionLayout"
+    },
+    {
+      "field": "functionName",
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "offset": 24,
+      "operation": "address",
+      "owner": "BSScript::Internal::AutoPropSetFunction",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 1,
+      "owner_table": 28494072,
+      "result_type": "void*",
+      "rva": 21851568,
+      "size": 5,
+      "type": "ResearchLayouts::AutoPropertyFunctionLayout"
+    },
+    {
+      "field": "objectName",
+      "header": "reconstruction/bsengine/AutoPropertyFunctionLayout.h",
+      "offset": 16,
+      "operation": "address",
+      "owner": "BSScript::Internal::AutoPropSetFunction",
+      "owner_origin": "EXE_RTTI",
+      "owner_slot": 2,
+      "owner_table": 28494072,
+      "result_type": "void*",
+      "rva": 21851584,
+      "size": 5,
+      "type": "ResearchLayouts::AutoPropertyFunctionLayout"
+    }
+  ],
+  "headers": {
+    "reconstruction/bsengine/AutoPropertyFunctionLayout.h": "fefb5906d8a8e35aabb650d353c7179f8cf2d15343768efcebad315cdb034944",
+    "reconstruction/bsengine/BoundArgumentCallableLayout.h": "248027eae4b4d70469a6b577c7eb2f951678af52f11175173c25d9b62a6be5a5",
+    "reconstruction/bsengine/BoundPairCallableLayout.h": "bf401a6ff3e4763ea9c0e7654d2c70938009965bd2ae583b556dd2b28aff32f9",
+    "reconstruction/bsengine/CodeTaskletFieldLayout.h": "47049526d33423e52708683da5280e67afbad8990d262ef3dbfd66f4819a3daa",
+    "reconstruction/bsengine/CommunityLeafStorageLayout.h": "53e9c151bf540e5d55eb9ff60bd9aec5d018634ba82a51a19d2e837c493a5e3d",
+    "reconstruction/bsengine/FunctionPointerCallableLayout.h": "1994dfd847660c373d65a6edc99177077519e163f78d32825a375483a3b6a7ae",
+    "reconstruction/bsengine/NativeFunctionLayout.h": "9cef0fc37882f62fd3f9b75a6d53f3d31f9a1220eb5da657fbaaf9093547f208",
+    "reconstruction/bsengine/ScalarCaptureCallableLayout.h": "6334987a81c19742f006cb56dddaa1a761399b58857b7d43a6d9424b32fd5159",
+    "reconstruction/forms/AIWorldInteriorCellLayout.h": "d9531e9841811e9a6e974d19f0d9dca6a9121de3f25d5c13ae81a9db796a0467",
+    "reconstruction/forms/AIWorldLocationLayout.h": "e4d1e01c734e4539530bd41a0ece5277300ef5ae570847a0f630c5000a75d135",
+    "reconstruction/forms/AIWorldPointRadiusLayout.h": "3968658f0882394c8a0db443727dcb480f6fddc1024fb7936fb0ec7fa42cb7e0",
+    "reconstruction/forms/AIWorldRefRadiusLayout.h": "5f1306e7a1c9cbe3a8570fadbfcab90a7e852944433097227c48ba382808c5cf",
+    "reconstruction/netimmerse/NiIntersectorFieldLayout.h": "7c41f75a6e9f6fb85b5167108240c6a91ed82e5ac0f7c24c457c80032ad284e2"
+  },
+  "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+  "limitations": [
+    "No function is accepted or marked matched by this layout index.",
+    "Mac-only prototype comparisons; Windows reproduction and independent function/family reviews remain required.",
+    "RTTI binds owners and primary bases; field interpretations and aliases retain the header labels.",
+    "A getter validates its own accessed offset and width, not every other field or runtime behavior.",
+    "Private proof source and objects are retained locally; report hashes are audit references, not public match records."
+  ],
+  "owner": "awarebayes",
+  "prepared_by": "gpt-6.1-sol",
+  "prepared_date": "2026-11-15",
+  "proof": {
+    "acceptance": "not-evaluated",
+    "comparator_source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+    "field_leaf_count": 99,
+    "function_count": 104,
+    "p104b_count": 5,
+    "status": "mac-only-preparation",
+    "units": [
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "31abb385e964e25820713269b0c7d556ee0e5d62dffdc6987804d65e9e7bae70",
+            "report_sha256": "6c18ba34b86ababdb7d90dd6758b07420f5c640169afd944b83bb7e5e6175fe3",
+            "rva": 21850688,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "efe1fa2332fabc2dcd93e297df2b1c32bdf0a99cf824a7044dbf662febe297ad",
+            "report_sha256": "17482f49a0a6ca4be439ef8e1a6f1512c72885ffe1139d231efa05fc916ce86f",
+            "rva": 21850704,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "31abb385e964e25820713269b0c7d556ee0e5d62dffdc6987804d65e9e7bae70",
+            "report_sha256": "8f9d57cb5221fa272453a228319786749a9a9fc532a89cf990bbb447cd7c168f",
+            "rva": 21851568,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "efe1fa2332fabc2dcd93e297df2b1c32bdf0a99cf824a7044dbf662febe297ad",
+            "report_sha256": "01724a8e6dfff041bf789f72ce4bdd1d6e827684c5f58c81e15071943ad74e7c",
+            "rva": 21851584,
+            "size": 5
+          }
+        ],
+        "object_sha256": "d36ff78d8a44da59d5283479090b84f3f4951518e32585a7c761fa2f31baeeb6",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "6569b8a94c90f0c6f1f33d1f637a5bc43b1b62ee698fa6c5cb54775d04411915",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "8dc7203f299dc9afe9beee0b5ab5b0b7c33233050c0aae50ce134dc524bf0614"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "26aa0c17d9c8fe67707c22fc0bed9fb67335fdea9f58917c8120e2bd80f7e753",
+            "rva": 1160112,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "f6116208a76fd82d6b1aab290eb2e6637a571f3b84c43f4dd381fb26d99a49a6",
+            "rva": 1160288,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "e73f97e31802f8e9325ef952d051d7681d6a46eceb1d6db750b8b60038b3bc18",
+            "rva": 1190000,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "29669cde1577c505d65cb413186e5238164c1c88a5998347a0df381a7f3a0888",
+            "rva": 1247008,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "069311c0b41078c952ff4459299b22d31c24a66b52452b5eaf9d808519417247",
+            "rva": 1247184,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "bc88933f5c60f4257d845e57d617d7cd2ae47e688269f6e3eafae6084b235fe4",
+            "rva": 1255504,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "bcae27a02b9804b87069fe9483d611b20375ff6c53be74bddeedde065e736313",
+            "rva": 1258512,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "c8a33ed3b0b7e88dc57d55bad422bd0171f0ae2213b5f06d45410c03df594ed6",
+            "rva": 1307264,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "4e3eab0b3b4df602fb1e8e251c352ba1470919a9f9ca064164f0007729acac2f",
+            "rva": 1319168,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "eae91cf05ab08fcee887a7b374bcaac805af96028f0156d44fdbca424adc4b96",
+            "rva": 1329792,
+            "size": 5
+          }
+        ],
+        "object_sha256": "51d0fb8c35af9385e715ff21e52d8d5a84be57821685599534337be6b6c5ef60",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "274780332559ac0b4ad592feeb7051b54f79fdefc57676362c8582bd78b5540d",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "56187e9123aae3c6ccde66f9271e5c3d0f468ceac63d3f89d0ccc5bae96551a2"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "b0ab9ba7ed5d4a86e065f1eb02da98b24678c7be2c47a775efd2ff9a9ac1b9f4",
+            "rva": 1160464,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "b62c85d3e4f316e19f3dc3475859d3e7e8941884b3e2ffa9f0c3116ac331f361",
+            "rva": 1189664,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "a8e0b2feaad090d8d3d453c2be8f4f83e0dc9ed87d4586f55e043885c49fe292",
+            "rva": 1189888,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "da40ed7c7fd6b7cec92a633f41489faac6bd582b30f868c314a06c005b6d693f",
+            "rva": 1234992,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "cae7efc06e15949c8a41bef1ab7618f52ea37979ffac2c24f28e437a4f660699",
+            "rva": 1237632,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "7c6d445b4cc504d26b301e32cbedbc8531930ffc74d7735b20f8cf86fbb76f58",
+            "rva": 1258400,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "7a8900ec65435153e652362c0b12daee501c684348d45e9dd3198b429336ccc8",
+            "rva": 1260736,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "6395e1d8a212edbe64aadb1a69cb86d9b83ee9c23870772715fea18eb9d003f9",
+            "rva": 1266784,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "81ab16269828b951eaab3db154dbc2c99473f51006422ca8a4c9eed8c2ffc44d",
+            "rva": 1272432,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "184b32d5a541cbac7abcfe35d30f5be689d14f4334f801bcb09d0f3826d02b62",
+            "rva": 1275312,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "18bcb0207d0e08658dd59943b113b69dad322fc9b0345baf3f08dbe2adf1b698",
+            "rva": 1278864,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "b807c31bb813c91440de7a4e7c2fbeea55f4a59d30ec4e2880005b6907854989",
+            "rva": 1307440,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "909c25715a403cbef967481ab6773a1fd1c97596d52049421ea2a7c3ee4c36d9",
+            "rva": 1311232,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "be898fedfa470a9738c315caf9f3e618af4dcfd88a0b2876feb9f180b2d478a1",
+            "rva": 1311344,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "06b9c0bdbfade8fa417d31e36a2ca0a4e56a60ea3228307149f3437a10577dad",
+            "rva": 1315344,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "ff1e65284e48896f094d749bab367da80c020ff3f85f2d2125b43941c20be755",
+            "rva": 1319056,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "23b1ca508369b3920ff864fe5bc1b25eb17cf497f81ec27984d91e0e97cfef6b",
+            "rva": 1323264,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "cad109741e3b5d25eebaf2cfa060aeb0d5d763cb3c51cc9500e084da00cf55cf",
+            "rva": 1326272,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "731580a4a044d4431737dc9fc205c9151a51c9a78e57410ba1d882297b20049c",
+            "rva": 1327536,
+            "size": 5
+          }
+        ],
+        "object_sha256": "630330689f0b70c4dae588f0829551a04a55694f533ab1ba5a3d078f978b96bd",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "b97b2baf15d930ba72dc5954940780082c2596a8b77333c041dd424fd58cd157",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "f581f0158d078f6c86ff3b775e8b2f883fd3858a932ad0bfa92cb38b6ea3e81f"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "0bddbd650f7673bfd18a038fd7d1670ca8b314d321312f76371f189be0d394fd",
+            "rva": 1123952,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "37febf4348b2b6ea4dfb042476fb6d7fc4ea76b83c9a60f8c81c3d6e0eea8314",
+            "rva": 5726704,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "bdbf6880886d211c8698b887ff36429ba02bdbd95a8580a477b1b5bd354ef4df",
+            "rva": 5726720,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "fbb841e56b8860a12db1ec656e2bd28d2e98549c6a69f75ba6ecee9f6e0578f1",
+            "rva": 5761152,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "00e35f646652924b71178ab0c566abf91fb2d130e8dd7497d9c743ba42e94866",
+            "rva": 5761168,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "3f0c37b3ef03c9e6bad2414b71c4f2c133c3ec566336a64f73f5c65a745adf10",
+            "rva": 5761184,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "64ba8e6c034e06cad4f0abdb26f07a1f5cd4a77109ab3ca79f456e16471cc70e",
+            "rva": 5896080,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "35bb4b442413878cdc5a78504637d554e21f84ae2fd6ccce5cec81b5c37880e4",
+            "rva": 5997024,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "ea49450b0d91778e83b8665991bf6e3755a3ce39eab98ceae2a6265f57a7d4f0",
+            "rva": 6283232,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "8200cec0682e73f895914a1e8dc0d06e6446a515afea0c4326507a3b614dcc53",
+            "rva": 6283248,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "fb1591000e398efc437c9a387aa5415cef839c6258ef6d54f782aeaf5a921b51",
+            "rva": 6283264,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "056b80fd7a26be3a1632a67e610b205bd9ac32493c1e660b68106e5cc0b1f4f0",
+            "rva": 6283280,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "e0eeb0760c39085dbd16c92762e3fd64592f0392c4acbbca4a7412f935ac1b25",
+            "rva": 6283296,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "dffffd2897c629113b2637458c946dd3418dac9482256f574d404df02e6ffb17",
+            "rva": 6283312,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "936416f58641afa7c35745c17fb7a921302c3738695b7ed518340189a41a8b88",
+            "rva": 6283328,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "f3dba737dd9dd1b1c24250adcd8823d0f5a690ea46a46487c1890a6ceeb3e573",
+            "rva": 6283344,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "18e5bc6cdf3f9582477a235248d01a44bc3f777e57a1719f57f261d97992002b",
+            "rva": 6283360,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "dd7f6890ec27b373f1a22588fbeb016b3eeefacf8702423cb59e2e279deb4dbf",
+            "rva": 6283376,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "2f85bbec337efcd31fbc64bd8b5a5fd1e8001a62cf7244e440584a4d7547c743",
+            "rva": 6283392,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "eb91ec8dca399fe919f7a82a9cbd04d6f4518bc8ac84ba5b4d3031f72281aa2c",
+            "rva": 6283408,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "5e2e3b90fddbe3d9a526db98b786024c63d164c75bb758c5cd53947d01943fbe",
+            "rva": 6283424,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "85e7758960c5075d24f9e74fd5c820063327ccc44282062313452f43e3368039",
+            "rva": 6289568,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "9081bbcb7446b782993e3cdd50f7c5bf54f862a9eac8eeab82ee7b34ad1d9277",
+            "rva": 6294400,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "b165f4f0929b03be405842680351f8f18917e0bc7feb2704566d78957bdc6d4d",
+            "rva": 6294416,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "b315ebf2fd422b198b5666736dda544e6a662a7f708cf11c0588371dbdac1cde",
+            "rva": 6321392,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "fc911738303a34f937fb53d5f4efece6e24a9251945bacaec8f9242d12fb6128",
+            "rva": 6321408,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "0a5631a91c909dcd059c2e4d8c82a71df92e5d254c37c967c87eea92c4240f63",
+            "rva": 6321424,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "c14164be1233f59385d95dbc5a821e6ab4ae18b8b404711daf0535ae1e1d300a",
+            "rva": 6321440,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "815a7ad6c11dc0c73f6cf5b90f699c61328290a115cf0fa54ece42449d78c4d8",
+            "rva": 9825424,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "32b1c7f9b7ced27859bfd1f9e74c8a5dceffb393bcbfa5a2d761ff03876276f0",
+            "rva": 9825440,
+            "size": 5
+          }
+        ],
+        "object_sha256": "8a0e6d32e298010858f5683c4f94c6a459df927443b9e3ad64026c305a5afb44",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "e2d99a28d8e9ec62cdfa4550d27b847ea4503cccf95ea439bc56fc1aeb17a30e",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "163a2ebb8133042af34d497636817b594c72e1df5d98060ffb1f25ac2305bca8"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "e6be640518936c6a9fb376118350e5307e3b19fab9916e6ad3c0f975c837b2f8",
+            "rva": 6337712,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "0b84b6e06b5cb8076780667aea9d4ab71456bd74a08bcf889b7931f205463cd6",
+            "rva": 6346272,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "5d6b9d19b3f2d8ec6deca6154c9b69ab4dc97d6cf79885af8de2c06bced3acda",
+            "rva": 6361744,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "6d6b98cdf755702a1c403993eccaf456724cb4c11a06d0361b58ff857fc41b03",
+            "rva": 6598544,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "70eab2c52470f0b5a0085e8fd69e89b692fb23945c791a5ca680532e75321b53",
+            "rva": 10930528,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "8b4c1bfa613726d20ac4e06b3e144379e95c8b8f2e164914b02a43a64003ab29",
+            "rva": 19420752,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "81c35e0f50d6120d2f00e68c0ebeb038e34bc29ec332ff0d87a6d54f08d59611",
+            "rva": 19420768,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "eda360a647424eb860fc349aa3d3c751305033cff48ee7c2e1b97c67e0e330d8",
+            "rva": 19420800,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "35c3cc401fb4ac37e7fd639886fbbc96eeaddd2bcc87bc7ba7c17030d7440b96",
+            "rva": 19490592,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "aedf0d5386f7a4f67216295ab3bacbd236e9cabf05fa4714e90d2db997e84d3d",
+            "rva": 19510240,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "aa00b4e92fefeea3969b736914035311a95ea19eb5367f01b9c0c4f79139a8b9",
+            "rva": 19510256,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "f06bf97ecf165f8520da8d5579438395782bebd5f2bce25a4749d02adb9036c6",
+            "rva": 19601440,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "559ccedeaf5639468d3b18a7d21f16e6098502619e4d1fb32efd28f2b1c3ac47",
+            "rva": 19601472,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "82d4946f71ff6c4ec5b48374f321aad889974c8054f564cc2a67a452019b0d14",
+            "rva": 19601488,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "80912a2edf533c775c361ee0db0e0c2d93e81de186010efce4df3d5713feb678",
+            "rva": 19601536,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "1415f20362397046bea3926144c80498234b3f5d311806f8276da2a6913851a3",
+            "rva": 19601552,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "66382945b28be17dc04e110ca7bd59f90dd45a7d39c6b96f2c5bf237751ac9a2",
+            "rva": 19601584,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "7815cfc0337a973ec4c9dcc179dc0d7f1ee977a39b0952568d71b7b3291d7b45",
+            "rva": 19601616,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "5c6c91c6237cb99d650f3a0c6d2b123c3de180077c14af9a822c330d9e91c38e",
+            "rva": 19601632,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "7ebf8eba7c12bbdafd8dceb87752efcb6cdceb398787aaafef7702b027d158a2",
+            "rva": 19674400,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "5fb2a14e91e63d12beb61d80ba75f00fe44e7e447e875c0544b7c964239f1f93",
+            "rva": 19674448,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "12f152557ad37c103cbf9c2a332a2c287b122fd9547312f090c5968a2ab1bc5b",
+            "rva": 19674512,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "39870707a5f8e7f77de67ca64a54e1841f4ea1cadd41324c69183ac96d240f87",
+            "rva": 19709808,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "4bf3105d346e14dafecaa7793640f2cf147c23f5a4e3b366bcf92165f05e860a",
+            "rva": 19709840,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "3099e2b4fb5ac7510fd4a72dadea85866e4abcd324af89bf9e7b35a691167397",
+            "rva": 19709856,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "94e0f0cb71fc8e47f38c6be1e0846fe1083131d5d1448cc9462e5ac3de663574",
+            "rva": 19709872,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "495d58e1db33483b9a144fc9dc0805f72424f495af117eff40de9ffe5e35d491",
+            "rva": 19709888,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "ece1d480f4d9239889bdd6de4868defd443cbc940d3d66902e8a1a5d9bd09c03",
+            "rva": 19709904,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "15ad277100fbd2596f0d9dbc020e20ee32a5d289e9ba7aec945bd4835e00ce97",
+            "rva": 19709920,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "0ba66314e71e9c2a8e4eff6ab98813eaa3e1a5723caf57db429f1f3795b8dfe4",
+            "rva": 19721552,
+            "size": 5
+          }
+        ],
+        "object_sha256": "bfb3b6176c0fd2c95e4f405a7ce5c4e40bb60df8ab9b40a1c6c1cfe81f2843ce",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "ccb338e809ca92159e7c20830a920ac06e442a17dafb0441c6575cac29832547",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "b4cf711448c5f1e17ff5d274c6bced2305ad5c0db759e22ff50580e752ad7c4e"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "efe1fa2332fabc2dcd93e297df2b1c32bdf0a99cf824a7044dbf662febe297ad",
+            "report_sha256": "107d11d1bdf036df26b6b04246bb69c6758a536d71f425feff424f90054f51fe",
+            "rva": 4495280,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "2ee13abec8fc0cff38afdffa097812db9e5d4b9b55c197ef5ff6eb99db8d8516",
+            "report_sha256": "eae5b1c99e32346f288f31f0a1a9a8b456887aa686c23b9de425a082d8587e35",
+            "rva": 4495312,
+            "size": 5
+          }
+        ],
+        "object_sha256": "6685ae4a425f7ed9157cb1c847a1b7ddade0df911025f4d8fe5a3d9639b40bdc",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "ee6c8d0ad3c3fdf6074abf6771a0625d709e0ed51edcd58c6a4b16337c78a3a3",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "ea56937cb05a465ad2b87aa1b37ecfafc53effe908e94d130a64ddc2103537d3"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "0085d9b370f784de18048bf5f80c4ac029ff8019c178a7d45c5f2d65129699a7",
+            "report_sha256": "623e9ee92d78d88b4c188a5333a9bda0880a9158e3e0b7813cca53821d127706",
+            "rva": 4492832,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "16ba99e45c620dfeeb4580cc8b32dcc88b94b3c1f6806272ee23e7901e1e48ae",
+            "report_sha256": "fc64cdcc90e4b38c11d1d101138d725f5da1560a6e13ca2ddbc2fd5c4c831cb0",
+            "rva": 4492864,
+            "size": 5
+          }
+        ],
+        "object_sha256": "9d8a059543e2e5d6e2b8b769a1063858645cb4bd6aa1d1bb88900830de4c75e7",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "e9611316fb102419b4ac6e1ba77e6f3f7cf078eb9903b30ff91600fbbf3080ce",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "98dbc10164e10e9bd26f2fd4241ac9a1a547f0c44f9dd7f7c74adfd7c563cece"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "7c2d5e0b2b4a493aff8692e9c3458c7a2cc448eb5887831068881b484b14fc7e",
+            "report_sha256": "41ccc386e9a23e3dae2b1234cd94fe68ae7abd7163ed093d9f7adfa2f01cb533",
+            "rva": 16005472,
+            "size": 5
+          },
+          {
+            "code_section_sha256": "573a4b53b9c59b168ed39479e774ee373df5e86eeef4ebb4cdf449e30dd004f5",
+            "report_sha256": "e83b4c328a0f7719413015bc5ae8beaccff54ca4873cb9d10bd7bd6cbbbc5ccd",
+            "rva": 16005488,
+            "size": 5
+          }
+        ],
+        "object_sha256": "cff73b31656c267168842df58553f8c61aec75d7fc4527f08c0c5532b66f75eb",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "6ebd455033f4a30c4f5b7b860a1c6b215765bc1398afb2b5d929ebc573e534f9",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "f867836db7d3dfd5d89363fb1615860b5a27b1c9b9d702cbb5ee462a37cc7750"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "8cee9306429db91b04b79b10c27260ed2a07d3485c934266d7c82e7a11de79c1",
+            "report_sha256": "b78f22026a40f264515b052ded6e7690d0e35f9d3bc7ff6e6b205250daf7c86b",
+            "rva": 21849216,
+            "size": 43
+          }
+        ],
+        "object_sha256": "80833a14032581fe7663c07eae28bf4a7a01619ed81be98b7c876d752dfcf5b9",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "710bdbf7f29719c08bbc1b7c7a84414f952af6fa9231e3c0e3fb91f0572e97f9",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "95905d9428f40b72c477e13100da08c5bb450a3ed2c37a2cf3c30623fc8d7b20"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "fa208df4911690e7b760b5643cb606a8be2a149eddef96fc7733a5f5ee85daf6",
+            "report_sha256": "3bd8522e582e6b646c6792790cab4e6b1742b25de3d795fe5be3aaeabc4d12e4",
+            "rva": 4495088,
+            "size": 43
+          }
+        ],
+        "object_sha256": "d49fa1c23f8820563ae30e3d137fae371679bb40e2ae6b27e0cf72809b9e0e29",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "9bad9f7a35b874693913f4474e37a20dd14419f02f9f5aec2454ef8e80be4e88",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "0597bdf2f1070127d403d28e3b79cacca29402576e242d8dd4aa00ade4d344d5"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "a0b4bf66d9715a6421b4ec07bc7e9900486304c6260ecd7150a355554295e00a",
+            "report_sha256": "3351ecfbacca93fa407f6dd3c74f6057caf091a5a9d6a78efdf2271f9c580323",
+            "rva": 4495136,
+            "size": 43
+          }
+        ],
+        "object_sha256": "f6dd3cbac566473b1932417e8a638ba08536401178e45c93e17de3a12dd19a52",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "ecd961024d20a41293596c710de271b971e3189ea6bdcb838fca047eb593e235",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "a62cb6781bf0d0ebef21a2f7d8f19fb89b9176db60ba5bb2e37cad0a2245669f"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "fa208df4911690e7b760b5643cb606a8be2a149eddef96fc7733a5f5ee85daf6",
+            "report_sha256": "bb266797016135a6ae263feb5382b11eaaf741e1f83a0b212e4974d3aca6814f",
+            "rva": 4495184,
+            "size": 43
+          }
+        ],
+        "object_sha256": "af8d5815d8ce46bcdccf932242be37bb6956d23b88bd11dee5e80507fdb0334a",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "df96a00251bc517ae239eb9c4b5f6ff42222fdfc51b41e529d7e022f5d035fbc",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "ad249d5c3ad66343d34c8d9a7ef9ce4bd89d9ae038d9118488d68110ac128228"
+      },
+      {
+        "compiler_sha256": {
+          "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+          "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+          "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+        },
+        "host": "mac-wine",
+        "loader": "wine",
+        "members": [
+          {
+            "code_section_sha256": "d03a3d20a2b59956023578bffd1a6822cca1830a583b546db648a1cdbcdc46b1",
+            "report_sha256": "df8db6cd88f55178aab87dd92e4e32c26097f7e50cec9f129f33cc4fac5c749f",
+            "rva": 16005504,
+            "size": 43
+          }
+        ],
+        "object_sha256": "50d927b00d5bed46bd40bdb87afcdf3ccaafb6f8dacaee30f50eb0199833eece",
+        "os": "macos",
+        "recipe": "reconstruction/recipes/msvc-19.16.27054-o2.json",
+        "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+        "source_digest": "73fca11d73666bbd98fdac9194109f0dace3e08c920b6fb1b3c29fc81c6d77b5",
+        "source_digest_method": "tu-sha256-v1",
+        "symbol_map_sha256": "f03c391d7b70f770ecb3b3b13bd67e2612fb5cfd0c19e6d8089fd7ea958245af"
+      }
+    ]
+  },
+  "schema": 1,
+  "storage_members": [
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldPointRadiusLayout::~AIWorldPointRadiusLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldPointRadiusLayout.h",
+      "object_size": 56,
+      "owner": "BGSAIWorldLocationPointRadius",
+      "owner_rtti": ".?AVBGSAIWorldLocationPointRadius@@",
+      "owner_slot": 0,
+      "owner_table": 25968264,
+      "rva": 4495136,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldPointRadiusLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25968264,
+          "symbol": "??_7AIWorldPointRadiusLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldPointRadiusLayout"
+    },
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldInteriorCellLayout::~AIWorldInteriorCellLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldInteriorCellLayout.h",
+      "object_size": 32,
+      "owner": "BGSAIWorldLocationInteriorCell",
+      "owner_rtti": ".?AVBGSAIWorldLocationInteriorCell@@",
+      "owner_slot": 0,
+      "owner_table": 25968648,
+      "rva": 4495088,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldInteriorCellLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25968648,
+          "symbol": "??_7AIWorldInteriorCellLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldInteriorCellLayout"
+    },
+    {
+      "definitions": [
+        "inline AIWorldLocationLayout::~AIWorldLocationLayout() {}",
+        "inline AIWorldRefRadiusLayout::~AIWorldRefRadiusLayout() {}"
+      ],
+      "header": "reconstruction/forms/AIWorldRefRadiusLayout.h",
+      "object_size": 32,
+      "owner": "BGSAIWorldLocationRefRadius",
+      "owner_rtti": ".?AVBGSAIWorldLocationRefRadius@@",
+      "owner_slot": 0,
+      "owner_table": 25967880,
+      "rva": 4495184,
+      "size": 43,
+      "stored_rtti": "IAIWorldLocation",
+      "stored_table": 25967304,
+      "symbol": "??_GAIWorldRefRadiusLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 25967304,
+          "symbol": "??_7AIWorldLocationLayout@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 25967880,
+          "symbol": "??_7AIWorldRefRadiusLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::AIWorldRefRadiusLayout"
+    },
+    {
+      "definitions": [
+        "inline NiIntersectorFieldLayout::~NiIntersectorFieldLayout() {}"
+      ],
+      "header": "reconstruction/netimmerse/NiIntersectorFieldLayout.h",
+      "object_size": 64,
+      "owner": "NiIntersector",
+      "owner_rtti": ".?AVNiIntersector@@",
+      "owner_slot": 0,
+      "owner_table": 27595920,
+      "rva": 16005504,
+      "size": 43,
+      "stored_rtti": "NiIntersector",
+      "stored_table": 27595920,
+      "symbol": "??_GNiIntersectorFieldLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 27595920,
+          "symbol": "??_7NiIntersectorFieldLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::NiIntersectorFieldLayout"
+    },
+    {
+      "definitions": [
+        "inline CommunityRef14c8960::~CommunityRef14c8960() {}",
+        "inline CodeTaskletFieldLayout::~CodeTaskletFieldLayout() {}"
+      ],
+      "header": "reconstruction/bsengine/CodeTaskletFieldLayout.h",
+      "object_size": 80,
+      "owner": "BSScript::Internal::CodeTasklet",
+      "owner_rtti": ".?AVCodeTasklet@Internal@BSScript@@",
+      "owner_slot": 0,
+      "owner_table": 28491144,
+      "rva": 21849216,
+      "size": 43,
+      "stored_rtti": "BSScript::Internal::IFuncCallQuery",
+      "stored_table": 28481552,
+      "symbol": "??_GCodeTaskletFieldLayout@ResearchLayouts@@UEAAPEAXI@Z",
+      "tables": [
+        {
+          "rva": 28481552,
+          "symbol": "??_7CommunityRef14c8960@ResearchLayouts@@6B@"
+        },
+        {
+          "rva": 28491144,
+          "symbol": "??_7CodeTaskletFieldLayout@ResearchLayouts@@6B@"
+        }
+      ],
+      "type": "ResearchLayouts::CodeTaskletFieldLayout"
+    }
+  ]
+}
