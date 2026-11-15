@@ -29,3 +29,15 @@ BSOcclusionPlane::BSOcclusionPlane()
 BSOcclusionPlane::~BSOcclusionPlane()
 {
 }
+
+// BSOcclusionPlane::IsOcclusionPlane: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+bool BSOcclusionPlane::IsOcclusionPlane() const
+{
+    return true;
+}
+
+// BSOcclusionPlane::GetRTTI: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+const NiRTTI* BSOcclusionPlane::GetRTTI() const
+{
+    return &NiRTTI_BSOcclusionPlane;
+}

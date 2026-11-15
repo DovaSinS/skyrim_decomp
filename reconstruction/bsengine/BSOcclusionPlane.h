@@ -121,10 +121,18 @@ public:
 };
 static_assert(sizeof(BSOcclusionShape) == 0x48, "BSOcclusionShape size");
 
+class NiRTTI;
+
+// NiRTTI_BSOcclusionPlane: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); NG's RTTI offset table name; declared here as a data object
+extern NiRTTI NiRTTI_BSOcclusionPlane;
+
 class BSOcclusionPlane : public BSOcclusionShape
 {
 public:
     BSOcclusionPlane();
+    // IsOcclusionPlane, GetRTTI: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+    bool IsOcclusionPlane() const;
+    const NiRTTI* GetRTTI() const;
     virtual ~BSOcclusionPlane();  // compared: 0xfe9bd0 (scalar deleting destructor)
 
     // TODO members: replace part of the padding with the members the bodies read,
