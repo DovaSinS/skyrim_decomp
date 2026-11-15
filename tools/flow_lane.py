@@ -864,7 +864,7 @@ def save_run(fdir, receipt):
 def _source_files(root, request):
     by_rva = {f.hexrva(fn['rva']): fn for fn in f.inventory(root)['functions']
               if fn['build_id'] == request['build_id']}
-    paths = set()
+    paths, headers, compiled = set(), set(), set()
     for rva in request['functions']:
         fn = by_rva[rva]
         paths.add(fn['report'])
@@ -874,13 +874,15 @@ def _source_files(root, request):
                 paths.add(review)
         record = f.fr.read(root, fn['report'])
         paths.update(record['source']['translation_unit'])
+        headers.update(record['source']['translation_unit'])
+        compiled.add(record['source']['compiled'])
         if record.get('symbol_map', {}).get('path'):
             name = record['symbol_map']['path']
             paths.add(name)
             if (root / f.history_name(name)).exists():
                 paths.add(f.history_name(name))
     paths.update(refreshed_records(root, request, by_rva))
-    return by_rva, paths
+    return by_rva, paths, headers - compiled
 
 
 def refreshed_records(root, request, by_rva):
@@ -1149,9 +1151,9 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                 bound = dependencies
                 request_pins = dict(evidence)
                 input_pins.update(evidence)
-                by_rva, paths = _source_files(source, request)
+                by_rva, paths, headers = _source_files(source, request)
                 f._integration_origin_unchanged(source, f.git(source, 'rev-parse', 'HEAD'), base,
-                                               sorted(paths), request['build_id'], request['functions'])
+                                               sorted(paths), request['build_id'], request['functions'], headers=headers)
                 origins.append(dict(root=str(source), base=base, paths=sorted(paths),
                                     build_id=request['build_id'], functions=request['functions'],
                                     entries={r: by_rva[r] for r in request['functions']}))
@@ -1206,7 +1208,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                 (tree / rel).unlink(missing_ok=True)
         for request in selected:
             source = Path(next(i['root'] for i in receipt['items'] if i['id'] == request['item']))
-            by_rva, _ = _source_files(source, request)
+            by_rva, _, _ = _source_files(source, request)
             carry_request(source, tree, request, by_rva)
 
     # Remove any partial carry of a request that failed before acceptance.
