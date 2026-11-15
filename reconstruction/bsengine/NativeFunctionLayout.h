@@ -1,4 +1,5 @@
 // Build: sse-steam-1-7-104
+// Code origin: declarations adapted from the pinned community headers identified below.
 // Source exposure: mixed (pinned community declarations and local target analysis).
 // Drafted by GPT-6.1 Sol; p106 shared represented-layout recovery.
 // Labels: v2
