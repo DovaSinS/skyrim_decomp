@@ -982,7 +982,7 @@ def main():
             content_revision = []
             count = check_git(staged=args.staged, content_revision=content_revision)
             with source_digest_cache():
-                load(staged=args.staged, publication_revision=content_revision[0])
+                load(staged=args.staged, publication_revision=content_revision[0] if content_revision else None)
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         print(f'FAIL: {exc}', file=sys.stderr)
         return 1

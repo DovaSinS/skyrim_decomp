@@ -2037,7 +2037,7 @@ def submit_preflight(ctx, push):
     if not authenticated:
         actions.append('gh auth login (recommended for claims, API quota and automatic PR creation); '
                        'or configure Git push credentials and use the browser PR link')
-    return dict(fork_remote=push, fork_owner=owner, authenticated=authenticated,
+    return dict(fork_remote=push, fork_owner=owner, authenticated=authenticated, git_push_auth='not-checked',
                 blockers=blockers, actions=actions)
 
 
@@ -2143,7 +2143,7 @@ def cmd_submit(ctx, args):
     ctx.say('A local pass is not acceptance: the project re-runs the comparison on two of its own hosts and a '
             'Reviewer checks the source before the function is recorded as matched.')
     if args.dry_run:
-        plan = [f'git add {" ".join(unit)}', 'python3 tools/check.py --staged',
+        plan = [f'git push --dry-run {push or "<your fork remote>"} HEAD', f'git add {" ".join(unit)}', 'python3 tools/check.py --staged',
                 f'git commit -m "{title}" -- {" ".join(unit)}',f'git push {push or "<your fork remote>"} HEAD',
                 f'gh pr create --repo {ctx.github().repo} --title "{title}" --body-file {tdir / "pr-body.md"}']
         for p in plan:
@@ -2156,6 +2156,18 @@ def cmd_submit(ctx, args):
     if other:
         raise Stop(USAGE, 'other files are staged: ' + ', '.join(other[:5]) + '; submit commits only the unit',
                    'git restore --staged <those files>, then submit again', **data)
+    # gh authentication is optional: SSH/credential helpers and browser PR creation also work.
+    # Probe actual fork push credentials without changing any remote ref, before a local commit.
+    try:
+        probe = ctx.run(['git', 'push', '--dry-run', push, 'HEAD'], cwd=ctx.repo,
+                        env=dict(ctx.env, GIT_TERMINAL_PROMPT='0'), capture_output=True, text=True, timeout=60)
+    except (OSError, subprocess.TimeoutExpired):
+        raise Stop(NETWORK, 'fork push preflight did not complete; nothing committed',
+                   'configure Git push credentials for your fork, then rerun submit', **data)
+    if probe.returncode:
+        raise Stop(NETWORK, 'fork push authentication/permission preflight failed; nothing committed',
+                   'configure Git push credentials for your fork, then rerun submit', **data)
+    preflight['git_push_auth'] = 'passed'
     git(ctx, 'add', '--', *unit)
     staged = ctx.run([sys.executable, str(ctx.repo / 'tools/check.py'), '--staged'], cwd=ctx.repo,
                      capture_output=True, text=True)

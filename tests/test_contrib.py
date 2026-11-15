@@ -995,6 +995,19 @@ class OutsiderRegressionTests(Base):
 
 
 class SubmitPreflightTests(SubmitTests):
+    def test_fork_push_auth_failure_precedes_staging_and_commit(self):
+        before = self.state()
+        def runner(cmd, **kw):
+            if cmd[:3] == ['git', 'push', '--dry-run']:
+                return subprocess.CompletedProcess(cmd, 128, '', 'synthetic auth refusal')
+            return self.runner(cmd, **kw)
+        ctx = self.ctx(repo=self.repo, github=FakeGitHub(can_create=False), runner=runner,
+                       env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
+        with contextlib.redirect_stdout(io.StringIO()):
+            code = contrib.main(['--json', 'submit', '--base', 'HEAD'], ctx=ctx)
+        self.assertEqual(code, contrib.NETWORK)
+        self.assertEqual(self.state(), before)
+
     def test_missing_fork_and_author_are_reported_without_a_commit(self):
         self.git('remote', 'remove', 'fork')
         self.git('config', '--unset', 'user.name')
