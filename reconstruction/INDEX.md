@@ -22145,6 +22145,128 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf14ecc70` | `Leaf14ecc70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14ecc70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ecc70.json` | matched | family | open |
 | `bsengine/BSInlineHost14ed280` | `BSInlineHost14ed280::~BSInlineHost14ed280` (GUESS) | `sse-steam-1-7-104` / `0x14ed280` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ed280.json` | matched | full | open |
 | `leaves/Leaf14ed360` | `Leaf14ed360::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14ed360` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ed360.json` | matched | family | open |
+| - | `BSImagespaceShaderAlphaBlendThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15070a8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderApplyReflectionsThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15070c0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur11ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15070d8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur13ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15070f0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur15ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507108` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur3ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507120` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur5ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507138` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur7ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507150` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBlur9ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507168` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur11ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507180` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur13ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507198` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur15ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15071b0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur3ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15071c8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur5ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15071e0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur7ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15071f8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderBrightPassBlur9ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507210` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderCopyThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507228` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderCopyCustomViewportThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507240` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderCopyDynamicFetchDisabledThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507258` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderCopyScaleBiasThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507270` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDepthOfFieldThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507288` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDepthOfFieldFoggedThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15072a0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDepthOfFieldMaskedFoggedThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15072b8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDistantBlurThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15072d0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDistantBlurFoggedThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15072e8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDistantBlurMaskedFoggedThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507300` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderDoubleVisionThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507318` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderFXAAThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507330` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderGreyScaleThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507348` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample16ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507360` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample16LightAdaptThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507378` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample16LumThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507390` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample16LumClampThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15073a8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample4ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15073c0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample4LightAdaptThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15073d8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample4LumClampThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15073f0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRDownSample4RGB2LumThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507408` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRTonemapBlendCinematicThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507420` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderHDRTonemapBlendCinematicFadeThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507438` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISApplyVolumetricLightingThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507450` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISBasicCopyThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507468` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISBlurThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507480` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISCompositeLensFlareThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507498` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISCompositeLensFlareVolumetricLightingThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15074b0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISCompositeVolumetricLightingThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15074c8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISCopySubRegionCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15074e0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDebugSnowThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15074f8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDepthOfFieldBlurHCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507510` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDepthOfFieldBlurVCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507528` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDisplayDepthThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507540` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDownsampleThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507558` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDownsampleCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507570` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDownsampleIgnoreBrightestThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507588` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISDownsampleIgnoreBrightestCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15075a0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISExpThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15075b8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISIBLensFlaresThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15075d0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISLightingCompositeThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15075e8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISLightingCompositeMenuThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507600` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISLightingCompositeNoDirectionalLightThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507618` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISMinifyThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507630` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISMinifyContrastThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507648` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISParallaxMaskBlurHCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507660` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISParallaxMaskBlurVCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507678` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISPerlinNoise2DCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507690` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISPerlinNoiseCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15076a8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOBlurHThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15076c0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOBlurHCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15076d8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOBlurVThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15076f0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOBlurVCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507708` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOCameraZThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507720` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOCameraZAndMipsCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507738` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOCompositeFogThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507750` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOCompositeSAOThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507768` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAOCompositeSAOFogThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507780` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAORawAOThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507798` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAORawAOCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15077b0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSAORawAONoTemporalThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15077c8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSILCompositeThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15077e0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSILRawIndThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15077f8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSimpleColorThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507810` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISSnowSSSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507828` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISTemporalAAThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507840` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISTemporalAA_UIThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507858` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISTemporalAA_WaterThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507870` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISUnderwaterMaskThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507888` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISUpsampleDynamicResolutionThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15078a0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISVolumetricLightingBlurHCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15078b8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISVolumetricLightingBlurVCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15078d0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderISWaterBlendThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15078e8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderLocalMapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507900` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderMapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507918` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNoiseNormalmapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507930` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNoiseScrollAndBlendThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507948` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur11ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507960` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur13ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507978` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur15ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507990` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur3ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15079a8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur5ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15079c0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur7ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15079d8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderNonHDRBlur9ThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x15079f0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderRadialBlurThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a08` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderRadialBlurHighThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a20` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderRadialBlurMediumThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a38` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderReflectionBlurHCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a50` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderReflectionBlurVCSThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a68` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderReflectionsDebugSpecMaskThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a80` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderReflectionsRayTracingThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507a98` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderRefractionThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507ab0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderTextureMaskThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507ac8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderVolumetricLightingThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507ae0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterBlendHeightmapsThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507af8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterDisplacementClearSimulationThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b10` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterDisplacementNormalsThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b28` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterDisplacementRainRippleThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b40` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterDisplacementTexOffsetThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b58` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterDisplacementWadingRippleThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b70` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterFlowThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507b88` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterRainHeightmapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507ba0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterSmoothHeightmapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507bb8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWaterWadingHeightmapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507bd0` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWorldMapThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507be8` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderWorldMapNoSkyBlurThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1507c00` / 9 | - | - | mapped | - | - |
 | `bsengine/BSImagespaceShaderBlur3` | `BSImagespaceShaderBlur3::~BSImagespaceShaderBlur3` (COMMUNITY) | `sse-steam-1-7-104` / `0x1507e00` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1507e00.json` | matched | full | open |
 | `leaves/Leaf1509bc0` | `Leaf1509bc0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1509bc0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1509bc0.json` | matched | family | open |
 | `bsengine/BSImagespaceShaderBlur3` | `BSImagespaceShaderBlur3::Unk_0D` (COMMUNITY) | `sse-steam-1-7-104` / `0x1509cb0` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1509cb0.json` | matched | full | open |
@@ -22189,6 +22311,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForward15224e0` | `LeafForward15224e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15224e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15224e0.json` | matched | family | open |
 | `leaves/Leaf1522860` | `Leaf1522860::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1522860` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1522860.json` | matched | family | open |
 | `leaves/Leaf1523080` | `Leaf1523080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1523080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1523080.json` | matched | family | open |
+| - | `BSGrassShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1523584` / 9 | - | - | mapped | - | - |
 | - | `BSLightingShaderMaterialBase::CopyMembers` (COMMUNITY) | `sse-steam-1-7-104` / `0x15237e0` / 384 | - | - | mapped | - | - |
 | `bsengine/BSLightingShaderMaterialBase` | `BSLightingShaderMaterialBase::GetDefault` (COMMUNITY) | `sse-steam-1-7-104` / `0x1523d10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1523d10.json` | matched | delta | open |
 | - | `BSLightingShaderMaterialBase::OnLoadTextureSet` (COMMUNITY) | `sse-steam-1-7-104` / `0x1523d20` / 286 | - | - | mapped | - | - |
@@ -22288,6 +22411,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/BSBloodSplatterShaderProperty` | `BSBloodSplatterShaderProperty::GetBaseTexture` (COMMUNITY) | `sse-steam-1-7-104` / `0x152db70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152db70.json` | matched | delta | open |
 | `leaves/LeafAddress152db80` | `BSBloodSplatterShaderProperty::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x152db80` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152db80.json` | matched | family | open |
 | `leaves/Leaf152e1b0` | `Leaf152e1b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x152e1b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152e1b0.json` | matched | family | open |
+| - | `BSBloodSplatterShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x152e538` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderLensFlareThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1530774` / 9 | - | - | mapped | - | - |
+| - | `BSImagespaceShaderLensFlareVisibilityThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x153078c` / 9 | - | - | mapped | - | - |
 | `leaves/Leaf1530e50` | `Leaf1530e50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1530e50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1530e50.json` | matched | family | open |
 | `leaves/Leaf15317b0` | `Leaf15317b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15317b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15317b0.json` | matched | family | open |
 | `bsengine/BSParticleShaderProperty` | `BSParticleShaderProperty::QShader` (COMMUNITY) | `sse-steam-1-7-104` / `0x1532c90` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1532c90.json` | matched | delta | open |
@@ -22322,9 +22448,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `ReturnLeaf153dcf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x153dcf0` / 3 | - | - | mapped | - | - |
 | `bsengine/BSImagespaceShader` | `BSImagespaceShader::DispatchCopySubRegion` (COMMUNITY) | `sse-steam-1-7-104` / `0x1540db0` / 259 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1540db0.json` | matched | delta | open |
 | `leaves/Leaf1549540` | `Leaf1549540::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1549540` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1549540.json` | matched | family | open |
+| - | `BSLightingShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x154cf08` / 9 | - | - | mapped | - | - |
 | `leaves/Leaf154ddc0` | `Leaf154ddc0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x154ddc0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154ddc0.json` | matched | family | open |
+| - | `BSWaterShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x154f9b8` / 9 | - | - | mapped | - | - |
 | - | `ReturnLeaf1550000::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1550000` / 3 | - | - | mapped | - | - |
 | `leaves/Leaf15504b0` | `Leaf15504b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15504b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15504b0.json` | matched | family | open |
+| - | `BSSkyShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1552ed8` / 9 | - | - | mapped | - | - |
 | `leaves/LeafForward15531c0` | `LeafForward15531c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15531c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15531c0.json` | matched | full | open |
 | `leaves/LeafForward15531d0` | `LeafForward15531d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15531d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15531d0.json` | matched | family | open |
 | `leaves/LeafForward1553250` | `LeafForward1553250::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1553250` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553250.json` | matched | family | open |
@@ -22336,12 +22465,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf1556670` | `Leaf1556670::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1556670` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1556670.json` | matched | family | open |
 | `bsengine/BSShaderMaterial` | `BSShaderMaterial::GetFeature` (COMMUNITY) | `sse-steam-1-7-104` / `0x1556680` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1556680.json` | matched | full | open |
 | `leaves/Leaf1557080` | `Leaf1557080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1557080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1557080.json` | matched | family | open |
+| - | `BSEffectShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1558844` / 9 | - | - | mapped | - | - |
 | `leaves/Leaf1558ca0` | `Leaf1558ca0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1558ca0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1558ca0.json` | matched | family | open |
 | - | `BSDistantTreeShaderProperty::SetupGeometry` (COMMUNITY) | `sse-steam-1-7-104` / `0x1558cb0` / 3 | - | - | mapped | - | - |
 | `bsengine/BSDistantTreeShaderProperty` | `BSDistantTreeShaderProperty::GetBaseTexture` (COMMUNITY) | `sse-steam-1-7-104` / `0x1558eb0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1558eb0.json` | matched | delta | open |
 | `leaves/LeafAddress1558ec0` | `BSDistantTreeShaderProperty::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x1558ec0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1558ec0.json` | matched | family | open |
 | `leaves/LeafForward1558f90` | `LeafForward1558f90::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1558f90` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1558f90.json` | matched | family | open |
 | `leaves/Leaf1559610` | `Leaf1559610::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1559610` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1559610.json` | matched | family | open |
+| - | `BSDistantTreeShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1559698` / 9 | - | - | mapped | - | - |
 | - | `BSCubeMapCamera::RenderCubemap` (COMMUNITY) | `sse-steam-1-7-104` / `0x1559a60` / 14 | - | - | mapped | - | - |
 | `leaves/LeafAddress155a390` | `BSCubeMapCamera::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x155a390` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155a390.json` | matched | family | open |
 | `bsengine/BSWaterShaderMaterial` | `BSWaterShaderMaterial::GetDefault` (COMMUNITY) | `sse-steam-1-7-104` / `0x155ae20` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155ae20.json` | matched | full | open |
@@ -22373,6 +22504,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/BSImagespaceShader` | `BSImagespaceShader::Unk_0C` (COMMUNITY) | `sse-steam-1-7-104` / `0x1565170` / 100 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1565170.json` | matched | delta | open |
 | `bsengine/BSImagespaceShader` | `BSImagespaceShader::Unk_0D` (COMMUNITY) | `sse-steam-1-7-104` / `0x15651e0` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15651e0.json` | matched | delta | open |
 | `bsengine/BSUtilityShader` | `Leaf15673e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15673e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15673e0.json` | matched | full | open |
+| - | `BSUtilityShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1568e18` / 9 | - | - | mapped | - | - |
 | `leaves/TableStoreLeaf156a710` | `TableStoreLeaf156a710::~TableStoreLeaf156a710` (GUESS) | `sse-steam-1-7-104` / `0x156a710` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156a710.json` | matched | family | open |
 | - | `ReturnLeaf156a730::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x156a730` / 3 | - | - | mapped | - | - |
 | `leaves/DeletingLeaf156a740` | `DeletingLeaf156a740::~DeletingLeaf156a740` (GUESS) | `sse-steam-1-7-104` / `0x156a740` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156a740.json` | matched | full | checked |
@@ -22431,6 +22563,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `netimmerse/NiBoneMatrixSetterI` | `NiBoneMatrixSetterI::~NiBoneMatrixSetterI` (COMMUNITY) | `sse-steam-1-7-104` / `0x15797a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15797a0.json` | matched | full | open |
 | `leaves/Leaf15797d0` | `Leaf15797d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15797d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15797d0.json` | matched | family | open |
 | `leaves/Leaf15797e0` | `Leaf15797e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15797e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15797e0.json` | matched | family | open |
+| - | `BSParticleShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x157a858` / 9 | - | - | mapped | - | - |
 | `leaves/LeafForward157aac0` | `LeafForward157aac0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x157aac0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157aac0.json` | matched | family | open |
 | `leaves/LeafForward157ab30` | `LeafForward157ab30::Forward` (GUESS) | `sse-steam-1-7-104` / `0x157ab30` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157ab30.json` | matched | family | open |
 | `leaves/LeafAddress157b080` | `LeafAddress157b080::Address` (GUESS) | `sse-steam-1-7-104` / `0x157b080` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157b080.json` | matched | family | open |
