@@ -1,0 +1,2111 @@
+{
+  "binding": {
+    "build_id": "sse-steam-1-7-104",
+    "comparator": {
+      "source_sha256": "cf7e68c444f92558792952b6032ed3f9aeb48a6264d881ef2946a025bd1ca643",
+      "version": "0.7.1-internal"
+    },
+    "compiler": {
+      "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+      "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/MD",
+        "/GS-",
+        "/EHsc",
+        "/GR",
+        "/fp:precise",
+        "/Gy"
+      ],
+      "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
+    },
+    "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+    "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "toolchain_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf"
+  },
+  "family_schema": 1,
+  "first_members": {
+    "sse-steam-1-7-104-0x17b7ea0": "16ee8e9e8b9dba7b59ee69c9f92a7ddb2426983577968f03eaf40ef71329ea18",
+    "sse-steam-1-7-104-0x17b7ef0": "1892bf36c22188bd788cfb905c20481ed86ad760a7ac2787223fca8915348e10",
+    "sse-steam-1-7-104-0x17b7fc0": "205ec12103d725c365e36e41c2e4dedec8d532b022f551e4c11b1e2bbbc39d28",
+    "sse-steam-1-7-104-0x17b8010": "75529b6c2eedd06047ed822776884753f81a71dbc320af5ae1196f99883dce05",
+    "sse-steam-1-7-104-0x17b8060": "a2f15b2d566a1d7bd0834d64aa4349b8502eab669764e3b7114d8a06b0522b23",
+    "sse-steam-1-7-104-0x17b80b0": "c484fd5a7c08456990b78be439f1c5d713d0b66da10a91adc79d38dbe04beddd",
+    "sse-steam-1-7-104-0x17b83f0": "67a654b89ff01a6ba827cdb537bc24312d8817246a14d50e0a506649a889092a",
+    "sse-steam-1-7-104-0x17b8440": "6113d21725f7360971138188dffaf2b1214392f4cba6a8e8ee8dd89f6965729a",
+    "sse-steam-1-7-104-0x17b8500": "c8ee21221b4e664e81c4f21196e873b3558500e00a023cdad47ed93e3682ea93",
+    "sse-steam-1-7-104-0x17b8550": "7eb1c8bf4d07ce21e179322735be158758715713e6e68a74691bdc9a957ac7a6",
+    "sse-steam-1-7-104-0x17b85a0": "691e7125250b0a4ac8dac5284bb643b77dd2c7855da110c09fc399534cca0b5a",
+    "sse-steam-1-7-104-0x17b85f0": "b92a530151a840e6eda75397d62ac2ff6269e780155f9d948956302f9525c965",
+    "sse-steam-1-7-104-0x17b8640": "82e5cb9e39deca84b954ac0b3ccefc76dc60b5dd6365751eb30666d1f927d415",
+    "sse-steam-1-7-104-0x17b8690": "66fe552e105026cf6f5497b26a0d78200ea0895d47125e4a4f3c41ebec78a23c",
+    "sse-steam-1-7-104-0x17b86e0": "22a9d263a3880beba92ba70be9c389ec3d4c40d66fe67696666163a73d729ede",
+    "sse-steam-1-7-104-0x17b8730": "273078dcf7f8db646ceb6f6deeff7306811230c3c714f81e71b120a07381b959",
+    "sse-steam-1-7-104-0x17b87e0": "3dcfbb021479239018399680b3d49ee9b540ec2949c32f29547b846e54354527",
+    "sse-steam-1-7-104-0x17b8830": "ac2b5d3370b3af6bd2ac979665d1320ce58bb9f3dee9b08889a8f62dbb12d62f",
+    "sse-steam-1-7-104-0x17b88c0": "a9ce7e81e65332fbf12e23ac1e1d8c05d0cae44607e491d3a4dbf8e72ec8a1b6",
+    "sse-steam-1-7-104-0x17b8910": "e26236416b1adbe61d5e4e27e3228050c50dc6cc5cd51cdb0525df7f4d676154"
+  },
+  "origin": {
+    "family": "standard-shared-owner-teardown",
+    "template_digest": "1a6941c366ce206bac7775adcb5dd3ff0615db596d3a58f1262f098ecf9765fe",
+    "version": "1"
+  },
+  "parameter_ranges": {
+    "rows": [
+      {
+        "object-rva": 53810008,
+        "rva": 24870640,
+        "size": 78
+      },
+      {
+        "object-rva": 53810024,
+        "rva": 24870560,
+        "size": 78
+      },
+      {
+        "object-rva": 53810320,
+        "rva": 24870928,
+        "size": 78
+      },
+      {
+        "object-rva": 53810336,
+        "rva": 24870848,
+        "size": 78
+      },
+      {
+        "object-rva": 53810496,
+        "rva": 24871088,
+        "size": 78
+      },
+      {
+        "object-rva": 53810512,
+        "rva": 24871008,
+        "size": 78
+      },
+      {
+        "object-rva": 53830528,
+        "rva": 24872000,
+        "size": 78
+      },
+      {
+        "object-rva": 53830544,
+        "rva": 24871920,
+        "size": 78
+      },
+      {
+        "object-rva": 53831040,
+        "rva": 24872272,
+        "size": 78
+      },
+      {
+        "object-rva": 53831056,
+        "rva": 24872192,
+        "size": 78
+      },
+      {
+        "object-rva": 53831072,
+        "rva": 24872432,
+        "size": 78
+      },
+      {
+        "object-rva": 53831088,
+        "rva": 24872352,
+        "size": 78
+      },
+      {
+        "object-rva": 53831104,
+        "rva": 24872592,
+        "size": 78
+      },
+      {
+        "object-rva": 53831120,
+        "rva": 24872512,
+        "size": 78
+      },
+      {
+        "object-rva": 53831136,
+        "rva": 24872752,
+        "size": 78
+      },
+      {
+        "object-rva": 53831152,
+        "rva": 24872672,
+        "size": 78
+      },
+      {
+        "object-rva": 53831192,
+        "rva": 24873008,
+        "size": 78
+      },
+      {
+        "object-rva": 53831208,
+        "rva": 24872928,
+        "size": 78
+      },
+      {
+        "object-rva": 53837720,
+        "rva": 24873232,
+        "size": 78
+      },
+      {
+        "object-rva": 53837736,
+        "rva": 24873152,
+        "size": 78
+      },
+      {
+        "object-rva": 53837752,
+        "rva": 24873584,
+        "size": 78
+      },
+      {
+        "object-rva": 53837768,
+        "rva": 24873504,
+        "size": 78
+      },
+      {
+        "object-rva": 53837792,
+        "rva": 24873744,
+        "size": 78
+      },
+      {
+        "object-rva": 53837808,
+        "rva": 24873664,
+        "size": 78
+      },
+      {
+        "object-rva": 53837824,
+        "rva": 24873904,
+        "size": 78
+      },
+      {
+        "object-rva": 53837840,
+        "rva": 24873824,
+        "size": 78
+      },
+      {
+        "object-rva": 53837856,
+        "rva": 24874064,
+        "size": 78
+      },
+      {
+        "object-rva": 53837872,
+        "rva": 24873984,
+        "size": 78
+      },
+      {
+        "object-rva": 53841704,
+        "rva": 24874240,
+        "size": 78
+      },
+      {
+        "object-rva": 53841720,
+        "rva": 24874160,
+        "size": 78
+      },
+      {
+        "object-rva": 53841736,
+        "rva": 24874400,
+        "size": 78
+      },
+      {
+        "object-rva": 53841752,
+        "rva": 24874320,
+        "size": 78
+      },
+      {
+        "object-rva": 53841768,
+        "rva": 24874560,
+        "size": 78
+      },
+      {
+        "object-rva": 53841784,
+        "rva": 24874480,
+        "size": 78
+      },
+      {
+        "object-rva": 53841800,
+        "rva": 24874720,
+        "size": 78
+      },
+      {
+        "object-rva": 53841816,
+        "rva": 24874640,
+        "size": 78
+      },
+      {
+        "object-rva": 53841832,
+        "rva": 24874880,
+        "size": 78
+      },
+      {
+        "object-rva": 53841848,
+        "rva": 24874800,
+        "size": 78
+      },
+      {
+        "object-rva": 53841864,
+        "rva": 24875040,
+        "size": 78
+      },
+      {
+        "object-rva": 53841880,
+        "rva": 24874960,
+        "size": 78
+      },
+      {
+        "object-rva": 53841896,
+        "rva": 24875200,
+        "size": 78
+      },
+      {
+        "object-rva": 53841912,
+        "rva": 24875120,
+        "size": 78
+      },
+      {
+        "object-rva": 53841928,
+        "rva": 24875360,
+        "size": 78
+      },
+      {
+        "object-rva": 53841944,
+        "rva": 24875280,
+        "size": 78
+      },
+      {
+        "object-rva": 53841960,
+        "rva": 24875520,
+        "size": 78
+      },
+      {
+        "object-rva": 53841976,
+        "rva": 24875440,
+        "size": 78
+      },
+      {
+        "object-rva": 53841992,
+        "rva": 24875680,
+        "size": 78
+      },
+      {
+        "object-rva": 53842008,
+        "rva": 24875600,
+        "size": 78
+      },
+      {
+        "object-rva": 53842024,
+        "rva": 24875840,
+        "size": 78
+      },
+      {
+        "object-rva": 53842040,
+        "rva": 24875760,
+        "size": 78
+      },
+      {
+        "object-rva": 53842056,
+        "rva": 24876000,
+        "size": 78
+      },
+      {
+        "object-rva": 53842072,
+        "rva": 24875920,
+        "size": 78
+      },
+      {
+        "object-rva": 53842088,
+        "rva": 24876160,
+        "size": 78
+      },
+      {
+        "object-rva": 53842104,
+        "rva": 24876080,
+        "size": 78
+      },
+      {
+        "object-rva": 53842120,
+        "rva": 24876320,
+        "size": 78
+      },
+      {
+        "object-rva": 53842136,
+        "rva": 24876240,
+        "size": 78
+      },
+      {
+        "object-rva": 53842152,
+        "rva": 24876480,
+        "size": 78
+      },
+      {
+        "object-rva": 53842168,
+        "rva": 24876400,
+        "size": 78
+      },
+      {
+        "object-rva": 53842184,
+        "rva": 24876640,
+        "size": 78
+      },
+      {
+        "object-rva": 53842200,
+        "rva": 24876560,
+        "size": 78
+      },
+      {
+        "object-rva": 53842216,
+        "rva": 24876800,
+        "size": 78
+      },
+      {
+        "object-rva": 53842232,
+        "rva": 24876720,
+        "size": 78
+      },
+      {
+        "object-rva": 53842248,
+        "rva": 24876960,
+        "size": 78
+      },
+      {
+        "object-rva": 53842264,
+        "rva": 24876880,
+        "size": 78
+      },
+      {
+        "object-rva": 53842280,
+        "rva": 24877120,
+        "size": 78
+      },
+      {
+        "object-rva": 53842296,
+        "rva": 24877040,
+        "size": 78
+      },
+      {
+        "object-rva": 53842312,
+        "rva": 24877280,
+        "size": 78
+      },
+      {
+        "object-rva": 53842328,
+        "rva": 24877200,
+        "size": 78
+      },
+      {
+        "object-rva": 53842344,
+        "rva": 24877440,
+        "size": 78
+      },
+      {
+        "object-rva": 53842360,
+        "rva": 24877360,
+        "size": 78
+      },
+      {
+        "object-rva": 53842376,
+        "rva": 24877600,
+        "size": 78
+      },
+      {
+        "object-rva": 53842392,
+        "rva": 24877520,
+        "size": 78
+      },
+      {
+        "object-rva": 53842408,
+        "rva": 24877760,
+        "size": 78
+      },
+      {
+        "object-rva": 53842424,
+        "rva": 24877680,
+        "size": 78
+      },
+      {
+        "object-rva": 53842440,
+        "rva": 24877920,
+        "size": 78
+      },
+      {
+        "object-rva": 53842456,
+        "rva": 24877840,
+        "size": 78
+      },
+      {
+        "object-rva": 53842472,
+        "rva": 24878080,
+        "size": 78
+      },
+      {
+        "object-rva": 53842488,
+        "rva": 24878000,
+        "size": 78
+      },
+      {
+        "object-rva": 53842504,
+        "rva": 24878240,
+        "size": 78
+      },
+      {
+        "object-rva": 53842520,
+        "rva": 24878160,
+        "size": 78
+      },
+      {
+        "object-rva": 53842536,
+        "rva": 24878400,
+        "size": 78
+      },
+      {
+        "object-rva": 53842552,
+        "rva": 24878320,
+        "size": 78
+      },
+      {
+        "object-rva": 53842568,
+        "rva": 24878560,
+        "size": 78
+      },
+      {
+        "object-rva": 53842584,
+        "rva": 24878480,
+        "size": 78
+      },
+      {
+        "object-rva": 53842600,
+        "rva": 24878720,
+        "size": 78
+      },
+      {
+        "object-rva": 53842616,
+        "rva": 24878640,
+        "size": 78
+      },
+      {
+        "object-rva": 53842632,
+        "rva": 24878880,
+        "size": 78
+      },
+      {
+        "object-rva": 53842648,
+        "rva": 24878800,
+        "size": 78
+      },
+      {
+        "object-rva": 53842664,
+        "rva": 24879040,
+        "size": 78
+      },
+      {
+        "object-rva": 53842680,
+        "rva": 24878960,
+        "size": 78
+      },
+      {
+        "object-rva": 53842696,
+        "rva": 24879200,
+        "size": 78
+      },
+      {
+        "object-rva": 53842712,
+        "rva": 24879120,
+        "size": 78
+      },
+      {
+        "object-rva": 53842728,
+        "rva": 24879360,
+        "size": 78
+      },
+      {
+        "object-rva": 53842744,
+        "rva": 24879280,
+        "size": 78
+      },
+      {
+        "object-rva": 53842760,
+        "rva": 24879520,
+        "size": 78
+      },
+      {
+        "object-rva": 53842776,
+        "rva": 24879440,
+        "size": 78
+      },
+      {
+        "object-rva": 53842792,
+        "rva": 24879680,
+        "size": 78
+      },
+      {
+        "object-rva": 53842808,
+        "rva": 24879600,
+        "size": 78
+      },
+      {
+        "object-rva": 53842824,
+        "rva": 24879840,
+        "size": 78
+      },
+      {
+        "object-rva": 53842840,
+        "rva": 24879760,
+        "size": 78
+      },
+      {
+        "object-rva": 53842856,
+        "rva": 24880000,
+        "size": 78
+      },
+      {
+        "object-rva": 53842872,
+        "rva": 24879920,
+        "size": 78
+      },
+      {
+        "object-rva": 53842888,
+        "rva": 24880160,
+        "size": 78
+      },
+      {
+        "object-rva": 53842904,
+        "rva": 24880080,
+        "size": 78
+      },
+      {
+        "object-rva": 53842920,
+        "rva": 24880320,
+        "size": 78
+      },
+      {
+        "object-rva": 53842936,
+        "rva": 24880240,
+        "size": 78
+      },
+      {
+        "object-rva": 53842952,
+        "rva": 24880480,
+        "size": 78
+      },
+      {
+        "object-rva": 53842968,
+        "rva": 24880400,
+        "size": 78
+      },
+      {
+        "object-rva": 53842984,
+        "rva": 24880640,
+        "size": 78
+      },
+      {
+        "object-rva": 53843000,
+        "rva": 24880560,
+        "size": 78
+      },
+      {
+        "object-rva": 53843016,
+        "rva": 24880800,
+        "size": 78
+      },
+      {
+        "object-rva": 53843032,
+        "rva": 24880720,
+        "size": 78
+      },
+      {
+        "object-rva": 53843048,
+        "rva": 24880960,
+        "size": 78
+      },
+      {
+        "object-rva": 53843064,
+        "rva": 24880880,
+        "size": 78
+      },
+      {
+        "object-rva": 53843080,
+        "rva": 24881120,
+        "size": 78
+      },
+      {
+        "object-rva": 53843096,
+        "rva": 24881040,
+        "size": 78
+      },
+      {
+        "object-rva": 53843112,
+        "rva": 24881280,
+        "size": 78
+      },
+      {
+        "object-rva": 53843128,
+        "rva": 24881200,
+        "size": 78
+      },
+      {
+        "object-rva": 53843144,
+        "rva": 24881440,
+        "size": 78
+      },
+      {
+        "object-rva": 53843160,
+        "rva": 24881360,
+        "size": 78
+      },
+      {
+        "object-rva": 53843176,
+        "rva": 24881600,
+        "size": 78
+      },
+      {
+        "object-rva": 53843192,
+        "rva": 24881520,
+        "size": 78
+      },
+      {
+        "object-rva": 53843208,
+        "rva": 24881760,
+        "size": 78
+      },
+      {
+        "object-rva": 53843224,
+        "rva": 24881680,
+        "size": 78
+      },
+      {
+        "object-rva": 53843240,
+        "rva": 24881920,
+        "size": 78
+      },
+      {
+        "object-rva": 53843256,
+        "rva": 24881840,
+        "size": 78
+      },
+      {
+        "object-rva": 53843272,
+        "rva": 24882080,
+        "size": 78
+      },
+      {
+        "object-rva": 53843288,
+        "rva": 24882000,
+        "size": 78
+      },
+      {
+        "object-rva": 53843304,
+        "rva": 24882240,
+        "size": 78
+      },
+      {
+        "object-rva": 53843320,
+        "rva": 24882160,
+        "size": 78
+      },
+      {
+        "object-rva": 53843336,
+        "rva": 24882400,
+        "size": 78
+      },
+      {
+        "object-rva": 53843352,
+        "rva": 24882320,
+        "size": 78
+      },
+      {
+        "object-rva": 53843368,
+        "rva": 24882560,
+        "size": 78
+      },
+      {
+        "object-rva": 53843384,
+        "rva": 24882480,
+        "size": 78
+      },
+      {
+        "object-rva": 53843400,
+        "rva": 24882720,
+        "size": 78
+      },
+      {
+        "object-rva": 53843416,
+        "rva": 24882640,
+        "size": 78
+      },
+      {
+        "object-rva": 53843432,
+        "rva": 24882880,
+        "size": 78
+      },
+      {
+        "object-rva": 53843448,
+        "rva": 24882800,
+        "size": 78
+      },
+      {
+        "object-rva": 53843464,
+        "rva": 24883040,
+        "size": 78
+      },
+      {
+        "object-rva": 53843480,
+        "rva": 24882960,
+        "size": 78
+      },
+      {
+        "object-rva": 53843496,
+        "rva": 24883200,
+        "size": 78
+      },
+      {
+        "object-rva": 53843512,
+        "rva": 24883120,
+        "size": 78
+      },
+      {
+        "object-rva": 53843528,
+        "rva": 24883360,
+        "size": 78
+      },
+      {
+        "object-rva": 53843544,
+        "rva": 24883280,
+        "size": 78
+      },
+      {
+        "object-rva": 53843560,
+        "rva": 24883520,
+        "size": 78
+      },
+      {
+        "object-rva": 53843576,
+        "rva": 24883440,
+        "size": 78
+      },
+      {
+        "object-rva": 53843592,
+        "rva": 24883680,
+        "size": 78
+      },
+      {
+        "object-rva": 53843608,
+        "rva": 24883600,
+        "size": 78
+      },
+      {
+        "object-rva": 53843624,
+        "rva": 24883840,
+        "size": 78
+      },
+      {
+        "object-rva": 53843640,
+        "rva": 24883760,
+        "size": 78
+      },
+      {
+        "object-rva": 53843656,
+        "rva": 24884000,
+        "size": 78
+      },
+      {
+        "object-rva": 53843672,
+        "rva": 24883920,
+        "size": 78
+      },
+      {
+        "object-rva": 53843688,
+        "rva": 24884160,
+        "size": 78
+      },
+      {
+        "object-rva": 53843704,
+        "rva": 24884080,
+        "size": 78
+      },
+      {
+        "object-rva": 53843720,
+        "rva": 24884320,
+        "size": 78
+      },
+      {
+        "object-rva": 53843736,
+        "rva": 24884240,
+        "size": 78
+      },
+      {
+        "object-rva": 53843752,
+        "rva": 24884480,
+        "size": 78
+      },
+      {
+        "object-rva": 53843768,
+        "rva": 24884400,
+        "size": 78
+      },
+      {
+        "object-rva": 53843784,
+        "rva": 24884640,
+        "size": 78
+      },
+      {
+        "object-rva": 53843800,
+        "rva": 24884560,
+        "size": 78
+      },
+      {
+        "object-rva": 53843816,
+        "rva": 24884800,
+        "size": 78
+      },
+      {
+        "object-rva": 53843832,
+        "rva": 24884720,
+        "size": 78
+      },
+      {
+        "object-rva": 53843848,
+        "rva": 24884960,
+        "size": 78
+      },
+      {
+        "object-rva": 53843864,
+        "rva": 24884880,
+        "size": 78
+      },
+      {
+        "object-rva": 53843880,
+        "rva": 24885120,
+        "size": 78
+      },
+      {
+        "object-rva": 53843896,
+        "rva": 24885040,
+        "size": 78
+      },
+      {
+        "object-rva": 53843912,
+        "rva": 24885280,
+        "size": 78
+      },
+      {
+        "object-rva": 53843928,
+        "rva": 24885200,
+        "size": 78
+      },
+      {
+        "object-rva": 53843944,
+        "rva": 24885440,
+        "size": 78
+      },
+      {
+        "object-rva": 53843960,
+        "rva": 24885360,
+        "size": 78
+      },
+      {
+        "object-rva": 53843976,
+        "rva": 24885600,
+        "size": 78
+      },
+      {
+        "object-rva": 53843992,
+        "rva": 24885520,
+        "size": 78
+      },
+      {
+        "object-rva": 53844008,
+        "rva": 24885760,
+        "size": 78
+      },
+      {
+        "object-rva": 53844024,
+        "rva": 24885680,
+        "size": 78
+      },
+      {
+        "object-rva": 53844040,
+        "rva": 24885920,
+        "size": 78
+      },
+      {
+        "object-rva": 53844056,
+        "rva": 24885840,
+        "size": 78
+      },
+      {
+        "object-rva": 53844072,
+        "rva": 24886080,
+        "size": 78
+      },
+      {
+        "object-rva": 53844088,
+        "rva": 24886000,
+        "size": 78
+      },
+      {
+        "object-rva": 53844104,
+        "rva": 24886240,
+        "size": 78
+      },
+      {
+        "object-rva": 53844120,
+        "rva": 24886160,
+        "size": 78
+      },
+      {
+        "object-rva": 53844136,
+        "rva": 24886400,
+        "size": 78
+      },
+      {
+        "object-rva": 53844152,
+        "rva": 24886320,
+        "size": 78
+      },
+      {
+        "object-rva": 53844176,
+        "rva": 24886560,
+        "size": 78
+      },
+      {
+        "object-rva": 53844192,
+        "rva": 24886480,
+        "size": 78
+      },
+      {
+        "object-rva": 53844208,
+        "rva": 24886720,
+        "size": 78
+      },
+      {
+        "object-rva": 53844224,
+        "rva": 24886640,
+        "size": 78
+      },
+      {
+        "object-rva": 53844240,
+        "rva": 24886880,
+        "size": 78
+      },
+      {
+        "object-rva": 53844256,
+        "rva": 24886800,
+        "size": 78
+      },
+      {
+        "object-rva": 53844272,
+        "rva": 24887040,
+        "size": 78
+      },
+      {
+        "object-rva": 53844288,
+        "rva": 24886960,
+        "size": 78
+      },
+      {
+        "object-rva": 53844304,
+        "rva": 24887200,
+        "size": 78
+      },
+      {
+        "object-rva": 53844320,
+        "rva": 24887120,
+        "size": 78
+      },
+      {
+        "object-rva": 53844336,
+        "rva": 24887360,
+        "size": 78
+      },
+      {
+        "object-rva": 53844352,
+        "rva": 24887280,
+        "size": 78
+      },
+      {
+        "object-rva": 53844368,
+        "rva": 24887520,
+        "size": 78
+      },
+      {
+        "object-rva": 53844384,
+        "rva": 24887440,
+        "size": 78
+      },
+      {
+        "object-rva": 53844400,
+        "rva": 24887680,
+        "size": 78
+      },
+      {
+        "object-rva": 53844416,
+        "rva": 24887600,
+        "size": 78
+      },
+      {
+        "object-rva": 53844432,
+        "rva": 24887840,
+        "size": 78
+      },
+      {
+        "object-rva": 53844448,
+        "rva": 24887760,
+        "size": 78
+      },
+      {
+        "object-rva": 53844464,
+        "rva": 24888000,
+        "size": 78
+      },
+      {
+        "object-rva": 53844480,
+        "rva": 24887920,
+        "size": 78
+      },
+      {
+        "object-rva": 53844496,
+        "rva": 24888160,
+        "size": 78
+      },
+      {
+        "object-rva": 53844512,
+        "rva": 24888080,
+        "size": 78
+      },
+      {
+        "object-rva": 53844528,
+        "rva": 24888320,
+        "size": 78
+      },
+      {
+        "object-rva": 53844544,
+        "rva": 24888240,
+        "size": 78
+      },
+      {
+        "object-rva": 53844560,
+        "rva": 24888480,
+        "size": 78
+      },
+      {
+        "object-rva": 53844576,
+        "rva": 24888400,
+        "size": 78
+      },
+      {
+        "object-rva": 53844592,
+        "rva": 24888640,
+        "size": 78
+      },
+      {
+        "object-rva": 53844608,
+        "rva": 24888560,
+        "size": 78
+      },
+      {
+        "object-rva": 53844624,
+        "rva": 24888800,
+        "size": 78
+      },
+      {
+        "object-rva": 53844640,
+        "rva": 24888720,
+        "size": 78
+      },
+      {
+        "object-rva": 53844656,
+        "rva": 24888960,
+        "size": 78
+      },
+      {
+        "object-rva": 53844672,
+        "rva": 24888880,
+        "size": 78
+      },
+      {
+        "object-rva": 53844688,
+        "rva": 24889120,
+        "size": 78
+      },
+      {
+        "object-rva": 53844704,
+        "rva": 24889040,
+        "size": 78
+      },
+      {
+        "object-rva": 53844720,
+        "rva": 24889280,
+        "size": 78
+      },
+      {
+        "object-rva": 53844736,
+        "rva": 24889200,
+        "size": 78
+      },
+      {
+        "object-rva": 53844752,
+        "rva": 24889440,
+        "size": 78
+      },
+      {
+        "object-rva": 53844768,
+        "rva": 24889360,
+        "size": 78
+      },
+      {
+        "object-rva": 53844784,
+        "rva": 24889600,
+        "size": 78
+      },
+      {
+        "object-rva": 53844800,
+        "rva": 24889520,
+        "size": 78
+      },
+      {
+        "object-rva": 53844816,
+        "rva": 24889760,
+        "size": 78
+      },
+      {
+        "object-rva": 53844832,
+        "rva": 24889680,
+        "size": 78
+      },
+      {
+        "object-rva": 53844848,
+        "rva": 24889920,
+        "size": 78
+      },
+      {
+        "object-rva": 53844864,
+        "rva": 24889840,
+        "size": 78
+      },
+      {
+        "object-rva": 53844880,
+        "rva": 24890080,
+        "size": 78
+      },
+      {
+        "object-rva": 53844896,
+        "rva": 24890000,
+        "size": 78
+      },
+      {
+        "object-rva": 53844912,
+        "rva": 24890240,
+        "size": 78
+      },
+      {
+        "object-rva": 53844928,
+        "rva": 24890160,
+        "size": 78
+      },
+      {
+        "object-rva": 53844944,
+        "rva": 24890400,
+        "size": 78
+      },
+      {
+        "object-rva": 53844960,
+        "rva": 24890320,
+        "size": 78
+      },
+      {
+        "object-rva": 53844976,
+        "rva": 24890560,
+        "size": 78
+      },
+      {
+        "object-rva": 53844992,
+        "rva": 24890480,
+        "size": 78
+      },
+      {
+        "object-rva": 53845008,
+        "rva": 24890720,
+        "size": 78
+      },
+      {
+        "object-rva": 53845024,
+        "rva": 24890640,
+        "size": 78
+      },
+      {
+        "object-rva": 53845040,
+        "rva": 24890880,
+        "size": 78
+      },
+      {
+        "object-rva": 53845056,
+        "rva": 24890800,
+        "size": 78
+      },
+      {
+        "object-rva": 53845072,
+        "rva": 24891040,
+        "size": 78
+      },
+      {
+        "object-rva": 53845088,
+        "rva": 24890960,
+        "size": 78
+      },
+      {
+        "object-rva": 53845104,
+        "rva": 24891200,
+        "size": 78
+      },
+      {
+        "object-rva": 53845120,
+        "rva": 24891120,
+        "size": 78
+      },
+      {
+        "object-rva": 53845136,
+        "rva": 24891360,
+        "size": 78
+      },
+      {
+        "object-rva": 53845152,
+        "rva": 24891280,
+        "size": 78
+      },
+      {
+        "object-rva": 53845168,
+        "rva": 24891520,
+        "size": 78
+      },
+      {
+        "object-rva": 53845184,
+        "rva": 24891440,
+        "size": 78
+      },
+      {
+        "object-rva": 53845200,
+        "rva": 24891680,
+        "size": 78
+      },
+      {
+        "object-rva": 53845216,
+        "rva": 24891600,
+        "size": 78
+      },
+      {
+        "object-rva": 53845232,
+        "rva": 24891840,
+        "size": 78
+      },
+      {
+        "object-rva": 53845248,
+        "rva": 24891760,
+        "size": 78
+      },
+      {
+        "object-rva": 53845264,
+        "rva": 24892000,
+        "size": 78
+      },
+      {
+        "object-rva": 53845280,
+        "rva": 24891920,
+        "size": 78
+      },
+      {
+        "object-rva": 53845296,
+        "rva": 24892160,
+        "size": 78
+      },
+      {
+        "object-rva": 53845312,
+        "rva": 24892080,
+        "size": 78
+      },
+      {
+        "object-rva": 53845328,
+        "rva": 24892320,
+        "size": 78
+      },
+      {
+        "object-rva": 53845344,
+        "rva": 24892240,
+        "size": 78
+      },
+      {
+        "object-rva": 53845360,
+        "rva": 24892480,
+        "size": 78
+      },
+      {
+        "object-rva": 53845376,
+        "rva": 24892400,
+        "size": 78
+      },
+      {
+        "object-rva": 53845392,
+        "rva": 24892640,
+        "size": 78
+      },
+      {
+        "object-rva": 53845408,
+        "rva": 24892560,
+        "size": 78
+      },
+      {
+        "object-rva": 53845424,
+        "rva": 24892800,
+        "size": 78
+      },
+      {
+        "object-rva": 53845440,
+        "rva": 24892720,
+        "size": 78
+      },
+      {
+        "object-rva": 53845456,
+        "rva": 24892960,
+        "size": 78
+      },
+      {
+        "object-rva": 53845472,
+        "rva": 24892880,
+        "size": 78
+      },
+      {
+        "object-rva": 53845488,
+        "rva": 24893120,
+        "size": 78
+      },
+      {
+        "object-rva": 53845504,
+        "rva": 24893040,
+        "size": 78
+      },
+      {
+        "object-rva": 53845520,
+        "rva": 24893280,
+        "size": 78
+      },
+      {
+        "object-rva": 53845536,
+        "rva": 24893200,
+        "size": 78
+      },
+      {
+        "object-rva": 53845552,
+        "rva": 24893440,
+        "size": 78
+      },
+      {
+        "object-rva": 53845568,
+        "rva": 24893360,
+        "size": 78
+      },
+      {
+        "object-rva": 53845584,
+        "rva": 24893600,
+        "size": 78
+      },
+      {
+        "object-rva": 53845600,
+        "rva": 24893520,
+        "size": 78
+      },
+      {
+        "object-rva": 53845616,
+        "rva": 24893760,
+        "size": 78
+      },
+      {
+        "object-rva": 53845632,
+        "rva": 24893680,
+        "size": 78
+      },
+      {
+        "object-rva": 53845648,
+        "rva": 24893920,
+        "size": 78
+      },
+      {
+        "object-rva": 53845664,
+        "rva": 24893840,
+        "size": 78
+      },
+      {
+        "object-rva": 53845680,
+        "rva": 24894080,
+        "size": 78
+      },
+      {
+        "object-rva": 53845696,
+        "rva": 24894000,
+        "size": 78
+      },
+      {
+        "object-rva": 53845712,
+        "rva": 24894240,
+        "size": 78
+      },
+      {
+        "object-rva": 53845728,
+        "rva": 24894160,
+        "size": 78
+      },
+      {
+        "object-rva": 53845744,
+        "rva": 24894400,
+        "size": 78
+      },
+      {
+        "object-rva": 53845760,
+        "rva": 24894320,
+        "size": 78
+      },
+      {
+        "object-rva": 53845776,
+        "rva": 24894560,
+        "size": 78
+      },
+      {
+        "object-rva": 53845792,
+        "rva": 24894480,
+        "size": 78
+      },
+      {
+        "object-rva": 53845808,
+        "rva": 24894720,
+        "size": 78
+      },
+      {
+        "object-rva": 53845824,
+        "rva": 24894640,
+        "size": 78
+      },
+      {
+        "object-rva": 53845840,
+        "rva": 24894880,
+        "size": 78
+      },
+      {
+        "object-rva": 53845856,
+        "rva": 24894800,
+        "size": 78
+      },
+      {
+        "object-rva": 53845872,
+        "rva": 24895040,
+        "size": 78
+      },
+      {
+        "object-rva": 53845888,
+        "rva": 24894960,
+        "size": 78
+      },
+      {
+        "object-rva": 53845904,
+        "rva": 24895200,
+        "size": 78
+      },
+      {
+        "object-rva": 53845920,
+        "rva": 24895120,
+        "size": 78
+      },
+      {
+        "object-rva": 53845936,
+        "rva": 24895360,
+        "size": 78
+      },
+      {
+        "object-rva": 53845952,
+        "rva": 24895280,
+        "size": 78
+      },
+      {
+        "object-rva": 53845968,
+        "rva": 24895520,
+        "size": 78
+      },
+      {
+        "object-rva": 53845984,
+        "rva": 24895440,
+        "size": 78
+      },
+      {
+        "object-rva": 53846000,
+        "rva": 24895680,
+        "size": 78
+      },
+      {
+        "object-rva": 53846016,
+        "rva": 24895600,
+        "size": 78
+      },
+      {
+        "object-rva": 53846032,
+        "rva": 24895840,
+        "size": 78
+      },
+      {
+        "object-rva": 53846048,
+        "rva": 24895760,
+        "size": 78
+      },
+      {
+        "object-rva": 53846064,
+        "rva": 24896000,
+        "size": 78
+      },
+      {
+        "object-rva": 53846080,
+        "rva": 24895920,
+        "size": 78
+      },
+      {
+        "object-rva": 53846096,
+        "rva": 24896160,
+        "size": 78
+      },
+      {
+        "object-rva": 53846112,
+        "rva": 24896080,
+        "size": 78
+      },
+      {
+        "object-rva": 53846128,
+        "rva": 24896320,
+        "size": 78
+      },
+      {
+        "object-rva": 53846144,
+        "rva": 24896240,
+        "size": 78
+      },
+      {
+        "object-rva": 53846160,
+        "rva": 24896480,
+        "size": 78
+      },
+      {
+        "object-rva": 53846176,
+        "rva": 24896400,
+        "size": 78
+      },
+      {
+        "object-rva": 53846192,
+        "rva": 24896640,
+        "size": 78
+      },
+      {
+        "object-rva": 53846208,
+        "rva": 24896560,
+        "size": 78
+      },
+      {
+        "object-rva": 53846224,
+        "rva": 24896800,
+        "size": 78
+      },
+      {
+        "object-rva": 53846240,
+        "rva": 24896720,
+        "size": 78
+      },
+      {
+        "object-rva": 53846256,
+        "rva": 24896960,
+        "size": 78
+      },
+      {
+        "object-rva": 53846272,
+        "rva": 24896880,
+        "size": 78
+      },
+      {
+        "object-rva": 53846288,
+        "rva": 24897120,
+        "size": 78
+      },
+      {
+        "object-rva": 53846304,
+        "rva": 24897040,
+        "size": 78
+      },
+      {
+        "object-rva": 53846320,
+        "rva": 24897280,
+        "size": 78
+      },
+      {
+        "object-rva": 53846336,
+        "rva": 24897200,
+        "size": 78
+      },
+      {
+        "object-rva": 53846352,
+        "rva": 24897440,
+        "size": 78
+      },
+      {
+        "object-rva": 53846368,
+        "rva": 24897360,
+        "size": 78
+      },
+      {
+        "object-rva": 53846384,
+        "rva": 24897600,
+        "size": 78
+      },
+      {
+        "object-rva": 53846400,
+        "rva": 24897520,
+        "size": 78
+      },
+      {
+        "object-rva": 53846416,
+        "rva": 24897760,
+        "size": 78
+      },
+      {
+        "object-rva": 53846432,
+        "rva": 24897680,
+        "size": 78
+      },
+      {
+        "object-rva": 53846448,
+        "rva": 24897920,
+        "size": 78
+      },
+      {
+        "object-rva": 53846464,
+        "rva": 24897840,
+        "size": 78
+      },
+      {
+        "object-rva": 53846480,
+        "rva": 24898080,
+        "size": 78
+      },
+      {
+        "object-rva": 53846496,
+        "rva": 24898000,
+        "size": 78
+      },
+      {
+        "object-rva": 53846512,
+        "rva": 24898240,
+        "size": 78
+      },
+      {
+        "object-rva": 53846528,
+        "rva": 24898160,
+        "size": 78
+      },
+      {
+        "object-rva": 53846544,
+        "rva": 24898400,
+        "size": 78
+      },
+      {
+        "object-rva": 53846560,
+        "rva": 24898320,
+        "size": 78
+      },
+      {
+        "object-rva": 53846576,
+        "rva": 24898560,
+        "size": 78
+      },
+      {
+        "object-rva": 53846592,
+        "rva": 24898480,
+        "size": 78
+      },
+      {
+        "object-rva": 53846608,
+        "rva": 24898720,
+        "size": 78
+      },
+      {
+        "object-rva": 53846624,
+        "rva": 24898640,
+        "size": 78
+      },
+      {
+        "object-rva": 53846640,
+        "rva": 24898880,
+        "size": 78
+      },
+      {
+        "object-rva": 53846656,
+        "rva": 24898800,
+        "size": 78
+      },
+      {
+        "object-rva": 53846672,
+        "rva": 24899040,
+        "size": 78
+      },
+      {
+        "object-rva": 53846688,
+        "rva": 24898960,
+        "size": 78
+      },
+      {
+        "object-rva": 53846704,
+        "rva": 24899200,
+        "size": 78
+      },
+      {
+        "object-rva": 53846720,
+        "rva": 24899120,
+        "size": 78
+      },
+      {
+        "object-rva": 53846736,
+        "rva": 24899360,
+        "size": 78
+      },
+      {
+        "object-rva": 53846752,
+        "rva": 24899280,
+        "size": 78
+      },
+      {
+        "object-rva": 53846768,
+        "rva": 24899520,
+        "size": 78
+      },
+      {
+        "object-rva": 53846784,
+        "rva": 24899440,
+        "size": 78
+      },
+      {
+        "object-rva": 53846800,
+        "rva": 24899680,
+        "size": 78
+      },
+      {
+        "object-rva": 53846816,
+        "rva": 24899600,
+        "size": 78
+      },
+      {
+        "object-rva": 53846832,
+        "rva": 24899840,
+        "size": 78
+      },
+      {
+        "object-rva": 53846848,
+        "rva": 24899760,
+        "size": 78
+      },
+      {
+        "object-rva": 53846864,
+        "rva": 24900000,
+        "size": 78
+      },
+      {
+        "object-rva": 53846880,
+        "rva": 24899920,
+        "size": 78
+      },
+      {
+        "object-rva": 53846896,
+        "rva": 24900160,
+        "size": 78
+      },
+      {
+        "object-rva": 53846912,
+        "rva": 24900080,
+        "size": 78
+      },
+      {
+        "object-rva": 53846928,
+        "rva": 24900320,
+        "size": 78
+      },
+      {
+        "object-rva": 53846944,
+        "rva": 24900240,
+        "size": 78
+      },
+      {
+        "object-rva": 53846960,
+        "rva": 24900480,
+        "size": 78
+      },
+      {
+        "object-rva": 53846976,
+        "rva": 24900400,
+        "size": 78
+      },
+      {
+        "object-rva": 53846992,
+        "rva": 24900640,
+        "size": 78
+      },
+      {
+        "object-rva": 53847008,
+        "rva": 24900560,
+        "size": 78
+      },
+      {
+        "object-rva": 53847024,
+        "rva": 24900800,
+        "size": 78
+      },
+      {
+        "object-rva": 53847040,
+        "rva": 24900720,
+        "size": 78
+      },
+      {
+        "object-rva": 53847056,
+        "rva": 24900960,
+        "size": 78
+      },
+      {
+        "object-rva": 53847072,
+        "rva": 24900880,
+        "size": 78
+      },
+      {
+        "object-rva": 53847088,
+        "rva": 24901120,
+        "size": 78
+      },
+      {
+        "object-rva": 53847104,
+        "rva": 24901040,
+        "size": 78
+      },
+      {
+        "object-rva": 53847120,
+        "rva": 24901280,
+        "size": 78
+      },
+      {
+        "object-rva": 53847136,
+        "rva": 24901200,
+        "size": 78
+      },
+      {
+        "object-rva": 53847152,
+        "rva": 24901440,
+        "size": 78
+      },
+      {
+        "object-rva": 53847168,
+        "rva": 24901360,
+        "size": 78
+      },
+      {
+        "object-rva": 53847184,
+        "rva": 24901600,
+        "size": 78
+      },
+      {
+        "object-rva": 53847200,
+        "rva": 24901520,
+        "size": 78
+      },
+      {
+        "object-rva": 53847224,
+        "rva": 24901760,
+        "size": 78
+      },
+      {
+        "object-rva": 53847240,
+        "rva": 24901680,
+        "size": 78
+      },
+      {
+        "object-rva": 53847256,
+        "rva": 24901920,
+        "size": 78
+      },
+      {
+        "object-rva": 53847272,
+        "rva": 24901840,
+        "size": 78
+      },
+      {
+        "object-rva": 53847288,
+        "rva": 24902080,
+        "size": 78
+      },
+      {
+        "object-rva": 53847304,
+        "rva": 24902000,
+        "size": 78
+      },
+      {
+        "object-rva": 53847320,
+        "rva": 24902240,
+        "size": 78
+      },
+      {
+        "object-rva": 53847336,
+        "rva": 24902160,
+        "size": 78
+      },
+      {
+        "object-rva": 53847352,
+        "rva": 24902400,
+        "size": 78
+      },
+      {
+        "object-rva": 53847368,
+        "rva": 24902320,
+        "size": 78
+      },
+      {
+        "object-rva": 53847384,
+        "rva": 24902560,
+        "size": 78
+      },
+      {
+        "object-rva": 53847400,
+        "rva": 24902480,
+        "size": 78
+      },
+      {
+        "object-rva": 53847416,
+        "rva": 24902720,
+        "size": 78
+      },
+      {
+        "object-rva": 53847432,
+        "rva": 24902640,
+        "size": 78
+      },
+      {
+        "object-rva": 53847448,
+        "rva": 24902880,
+        "size": 78
+      },
+      {
+        "object-rva": 53847464,
+        "rva": 24902800,
+        "size": 78
+      },
+      {
+        "object-rva": 53851584,
+        "rva": 24903040,
+        "size": 78
+      },
+      {
+        "object-rva": 53851600,
+        "rva": 24902960,
+        "size": 78
+      },
+      {
+        "object-rva": 53851616,
+        "rva": 24903200,
+        "size": 78
+      },
+      {
+        "object-rva": 53851632,
+        "rva": 24903120,
+        "size": 78
+      },
+      {
+        "object-rva": 53851648,
+        "rva": 24903360,
+        "size": 78
+      },
+      {
+        "object-rva": 53851664,
+        "rva": 24903280,
+        "size": 78
+      },
+      {
+        "object-rva": 53851680,
+        "rva": 24903520,
+        "size": 78
+      },
+      {
+        "object-rva": 53851696,
+        "rva": 24903440,
+        "size": 78
+      },
+      {
+        "object-rva": 53851712,
+        "rva": 24903680,
+        "size": 78
+      },
+      {
+        "object-rva": 53851728,
+        "rva": 24903600,
+        "size": 78
+      },
+      {
+        "object-rva": 54343320,
+        "rva": 24903856,
+        "size": 78
+      },
+      {
+        "object-rva": 54343336,
+        "rva": 24903776,
+        "size": 78
+      },
+      {
+        "object-rva": 54343352,
+        "rva": 24904016,
+        "size": 78
+      },
+      {
+        "object-rva": 54343368,
+        "rva": 24903936,
+        "size": 78
+      },
+      {
+        "object-rva": 54343384,
+        "rva": 24904176,
+        "size": 78
+      },
+      {
+        "object-rva": 54343400,
+        "rva": 24904096,
+        "size": 78
+      },
+      {
+        "object-rva": 54343416,
+        "rva": 24904336,
+        "size": 78
+      },
+      {
+        "object-rva": 54343432,
+        "rva": 24904256,
+        "size": 78
+      },
+      {
+        "object-rva": 54343448,
+        "rva": 24904496,
+        "size": 78
+      },
+      {
+        "object-rva": 54343464,
+        "rva": 24904416,
+        "size": 78
+      }
+    ]
+  },
+  "parameter_source": {
+    "path": "tools/shared_teardown_generate.py",
+    "sha256": "a22f9856bf0f4765da831be0cf2c76d71e7c4ef598e183936754340e01b38a6f"
+  },
+  "pause_reason": "",
+  "paused": false,
+  "review": null,
+  "template_source": {
+    "path": "tools/shared_teardown_template_v1.py",
+    "sha256": "1a6941c366ce206bac7775adcb5dd3ff0615db596d3a58f1262f098ecf9765fe"
+  }
+}
