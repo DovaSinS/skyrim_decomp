@@ -154,6 +154,33 @@ only their working files are removed. Registered worktrees use plain `git worktr
 without force, pruning or branch/stash deletion. Afterwards `flow.py sync` fast-forwards the shared checkout, replacing
 only local copies byte-identical to origin; differing files refuse and stay intact.
 
+`lane-run` and `tooling-push` refuse a runtime whose Python sources or JSON configuration under
+`tools/` differ from the fetched integration base (`origin/<branch>`, normally `origin/main`).
+This covers all local imports, not just the entry scripts. Both the sources at process start
+and the current files must agree; editing a live runner's files cannot refresh its loaded code.
+The guard repeats after waiting for the lane lease, at each new build and before publication.
+A changed origin dependency requires restarting with that base's tools. Running lanes are
+never reset or upgraded in place. A pre-existing runner from before this guard still needs a
+normal restart after it finishes; it cannot acquire this protection retroactively.
+
+When publishing a change to these tools, run the **base's** entry point with the committed
+candidate as `--root`. For example, from the repository root (use unique local paths):
+
+```sh
+git clone --shared --no-checkout . .local/p151-base-tools
+git -C .local/p151-base-tools remote set-url origin "$(git remote get-url origin)"
+git -C .local/p151-base-tools fetch origin main
+git -C .local/p151-base-tools checkout --detach origin/main
+/opt/homebrew/bin/python3.13 .local/p151-base-tools/tools/flow.py \
+  --root "$PWD" --flow-dir <shared-flow> tooling-push --wait-lane
+```
+
+The retained clone supplies the running implementation and imports. The candidate's changes
+are merged into the separate integration tree and run through its own full checks as usual;
+the guard does not require those intentionally changed candidate tools to equal the base.
+If origin advances its tools while waiting, refresh the base-tools clone to the new origin
+revision and restart the command. Keep `--root` pointed at the original committed input.
+
 Tooling publications also use the lane: `flow.py --root <committed-tooling-checkout> --flow-dir
 <shared-flow> tooling-push`. For Git worktrees its default flow directory comes from the common
 Git directory; independent clones must name the shared flow explicitly. It registers the committed

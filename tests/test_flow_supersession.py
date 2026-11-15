@@ -31,6 +31,10 @@ def evidence(commit, red=False):
 
 class Supersession(unittest.TestCase):
     def setUp(self):
+        # This fixture has CI receipts only, with no lane tools in its synthetic history.
+        freshness = patch.object(lane, 'require_base_tools')
+        freshness.start()
+        self.addCleanup(freshness.stop)
         private = ROOT / '.local'
         private.mkdir(exist_ok=True)
         self.tmp = tempfile.TemporaryDirectory(dir=private, prefix='test-supersession-')

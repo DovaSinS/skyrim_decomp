@@ -56,6 +56,19 @@ if __name__ == '__main__':
     sys.modules['flow'] = sys.modules[__name__]
 
 TOOLS = Path(__file__).resolve().parent
+
+
+def lane_tool_sources():
+    """Fingerprint all Python imports and tool configuration, including untracked shadows."""
+    return {p.relative_to(TOOLS.parent).as_posix():
+            hashlib.sha1(b'blob %d\0' % len(data) + data).hexdigest()
+            for p in TOOLS.rglob('*')
+            if p.suffix in ('.py', '.json') and '__pycache__' not in p.parts and p.is_file()
+            for data in [p.read_bytes()]}
+
+
+# Pin before importing dependencies: editing files cannot refresh an already loaded module.
+LANE_TOOL_SOURCES = lane_tool_sources()
 sys.path.insert(0, str(TOOLS))
 import accept_function as af  # noqa: E402
 import family_review as fr  # noqa: E402
