@@ -2103,7 +2103,13 @@
   },
   "pause_reason": "",
   "paused": false,
-  "review": null,
+  "review": {
+    "profile": "claude-low",
+    "review_sha256": "8035d836badc9c3b370d606c5dcc731ccddb5787ba98ceb0d34e81f602d974dd",
+    "review_task_id": "review-family-502117adc4b1bf03230a",
+    "reviewer_model": "gpt-6.1-terra",
+    "spec_sha256": "26a365f6465955825ecc7be3fbc2714a5195981edab913469a1d707bb71a886b"
+  },
   "template_source": {
     "path": "tools/shared_teardown_template_v1.py",
     "sha256": "1a6941c366ce206bac7775adcb5dd3ff0615db596d3a58f1262f098ecf9765fe"
