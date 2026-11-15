@@ -414,7 +414,7 @@ def boot_id():
     except OSError:
         pass
     if sys.platform == 'darwin':
-        out = subprocess.run(['sysctl', '-n', 'kern.boottime'], capture_output=True, text=True)
+        out = subprocess.run(['/usr/sbin/sysctl', '-n', 'kern.boottime'], capture_output=True, text=True)
         if out.returncode == 0 and out.stdout.strip():
             return 'darwin ' + out.stdout.strip()
     return None

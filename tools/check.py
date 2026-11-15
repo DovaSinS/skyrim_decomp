@@ -693,7 +693,6 @@ def validate(data, target, root=None, stale_ok=False):
         require(fn['status'] in {'mapped', 'analyzed', 'reconstructed', 'matched'}, 'Invalid function state')
         require(integer(fn['rva']) and integer(fn['size']) and fn['size'] > 0, 'Invalid function range')
         start, end = fn['rva'], fn['rva'] + fn['size']
-        require(not any(start < b and a < end for a, b in ranges), 'Overlapping function ranges')
         ranges.append((start, end))
         require(text(fn['name']) and text(fn['owner']), 'Function needs name and owner')
         require(fn['name_origin'] in {'EXE_RTTI', 'COMMUNITY', 'OBSERVED', 'GUESS'}, 'Missing name provenance')
@@ -717,6 +716,9 @@ def validate(data, target, root=None, stale_ok=False):
         elif fn.get('report') is not None:
             # A record awaiting review must still be consistent with the integrated tree.
             validate_match(fn, target, root)
+    ordered_ranges = sorted(ranges)
+    require(all(a[1] <= b[0] for a, b in zip(ordered_ranges, ordered_ranges[1:])),
+            'Overlapping function ranges')
     matched = {review_record_path(fn) for fn in data['functions'] if fn['status'] == 'matched'}
     reports = (ROOT if root is None else root) / 'reports'
     for path in sorted(reports.glob('*/*.review.json')) if reports.is_dir() else []:
@@ -793,7 +795,25 @@ def check_costs(root, data):
         raise ValueError(f'Cost ledger {COST_LEDGER}: {exc}') from None
 
 
-def load(staged=False):
+def load(staged=False, publication_revision=None):
+    # Only the CLI's complete publication scan can supply a content revision. Other callers
+    # (including site generation) keep the uncached authoritative path.
+    if publication_revision is None:
+        return _load_uncached(staged)
+    import revision_cache
+    snapshot = revision_cache.snapshot(ROOT, staged)
+    key = hashlib.sha256((snapshot + publication_revision).encode()).hexdigest()
+    saved = revision_cache.read(ROOT, 'metadata', key)
+    if saved is not None:
+        return saved
+    data = _load_uncached(staged)
+    # Never associate a pass with files that changed while the check was running.
+    if revision_cache.snapshot(ROOT, staged) == snapshot:
+        revision_cache.save(ROOT, 'metadata', key, data)
+    return data
+
+
+def _load_uncached(staged=False):
     if not staged:
         data = validate(json.loads((ROOT / 'data/progress.json').read_text()),
                         json.loads((ROOT / 'builds/target.json').read_text()))
@@ -905,10 +925,23 @@ def check_anonymity(name, payload, terms):
             'Anonymous sibling guard: forbidden private identity in publication tree (details withheld)')
 
 
-def check_git(root=ROOT, staged=False):
+def check_git(root=ROOT, staged=False, content_revision=None):
     records = subprocess.check_output(['git', 'ls-files', '--stage', '-z'], cwd=root).split(b'\0')
     terms = anonymity_terms(root)
+    publication_key = None
+    if staged:
+        import revision_cache
+        # An identical immutable index was already scanned under these exact tools and denylist.
+        # Working files never use this shortcut; the current private denylist is read above.
+        publication_key = hashlib.sha256((revision_cache.snapshot(root, staged=True) + repr(terms)).encode()
+                                         + b'\0'.join(records)).hexdigest()
+        saved = revision_cache.read(root, 'publication-index', publication_key)
+        if saved is not None:
+            if content_revision is not None:
+                content_revision.append(saved['content_revision'])
+            return saved['count']
     count = 0
+    content = hashlib.sha256()
     with subprocess.Popen(['git', 'cat-file', '--batch'], cwd=root,
                           stdin=subprocess.PIPE, stdout=subprocess.PIPE) as objects:
         for record in filter(None, records):
@@ -926,9 +959,16 @@ def check_git(root=ROOT, staged=False):
                 payload = path.read_bytes()
                 check_anonymity(name, payload, terms)
                 inspect_payload(name, payload, mode)
+            content.update(name.encode() + b'\0' + mode.encode() + b'\0')
+            content.update(hashlib.sha256(payload).digest())
             count += 1
         objects.stdin.close()
         require(objects.wait() == 0, 'git cat-file failed')
+    if content_revision is not None:
+        content_revision.append(content.hexdigest())
+    if publication_key is not None:
+        revision_cache.save(root, 'publication-index', publication_key,
+                            dict(count=count, content_revision=content.hexdigest()))
     return count
 
 
@@ -939,9 +979,10 @@ def main():
     try:
         # Check anonymity before metadata/lint diagnostics could quote offending content.
         with sparse.full(ROOT):
-            count = check_git(staged=args.staged)
+            content_revision = []
+            count = check_git(staged=args.staged, content_revision=content_revision)
             with source_digest_cache():
-                load(staged=args.staged)
+                load(staged=args.staged, publication_revision=content_revision[0])
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         print(f'FAIL: {exc}', file=sys.stderr)
         return 1

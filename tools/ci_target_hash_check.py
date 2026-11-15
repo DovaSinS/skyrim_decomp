@@ -109,11 +109,26 @@ def bindings(root):
 
 
 def requests(tree, changed, known):
+    from check_source_digest import include_closure as cached_closure, source_digest_cache
+    import revision_cache
+    tree = Path(tree)
+    key = None
+    # Scratch CI trees have no git metadata; scoped resolution still avoids repeated directory scans.
+    if (tree / '.git').exists():
+        key = revision_cache.snapshot(tree)
+    index = revision_cache.read(tree, 'include-index', key) if key else None
+    if index is None:
+        index = {}
+        with source_digest_cache():
+            for path in sorted((tree / 'reconstruction').rglob('*.cpp')):
+                unit = path.relative_to(tree).as_posix()
+                for name in cached_closure(tree, unit):
+                    index.setdefault(name, []).append(unit)
+        if key and revision_cache.snapshot(tree) == key:
+            revision_cache.save(tree, 'include-index', key, index)
     units = {name for name in changed if name.endswith('.cpp')}
-    for path in sorted((tree / 'reconstruction').rglob('*.cpp')):
-        unit = path.relative_to(tree).as_posix()
-        if set(include_closure(tree, unit)) & set(changed):
-            units.add(unit)
+    for name in changed:
+        units.update(index.get(name, []))
     result = []
     for unit in sorted(units):
         entries = {r['rva']: dict(r) for r in known.get(unit, [])}

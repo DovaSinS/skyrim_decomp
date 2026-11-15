@@ -523,6 +523,9 @@ class SubmitTests(Base):
             (self.repo / rel).parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(ROOT / rel, self.repo / rel)
         self.git('init', '-q')
+        self.git('config', 'user.name', 'Synthetic Contributor')
+        self.git('config', 'user.email', 'contributor@example.invalid')
+        self.git('remote', 'add', 'fork', 'https://github.com/contributor/skyrim-research.git')
         self.git('add', '.')
         self.git('-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'base')
         fn = next(f for f in contrib.inventory(ROOT)['functions'] if f['rva'] == self.RVA)
@@ -935,3 +938,92 @@ class CompareProfileTests(CompareTests):
     def test_summary_names_profile_and_limit(self):
         code, data, nxt = contrib.run_compare(self.ctx_, 'contrib-synthetic')
         self.assertEqual((data['profile'], data['max_tries']), ('cheap', 6))
+
+
+class OutsiderRegressionTests(Base):
+    def test_claim_needs_no_label_or_assignment_permissions(self):
+        commands = []
+        def runner(cmd, **kw):
+            commands.append(cmd)
+            if cmd[1:3] == ['auth', 'status']:
+                return subprocess.CompletedProcess(cmd, 0, '', '')
+            if cmd[1:3] == ['issue', 'create']:
+                return subprocess.CompletedProcess(cmd, 0, 'https://github.com/x/y/issues/1\n', '')
+            self.fail('unexpected privileged operation: ' + repr(cmd))
+        ctx = self.ctx(runner=runner)
+        with unittest.mock.patch.object(ctx, 'which', return_value='gh'):
+            self.assertTrue(contrib.GitHub(ctx).create_issue('claim', 'public scope'))
+        self.assertFalse(any('--label' in c or '--assignee' in c for c in commands))
+
+    def test_external_paths_are_redacted_in_json_and_subprocess_logs(self):
+        exe = '/outside-home/game/SkyrimSE.exe'
+        tool = '/external-toolchain/msvc'
+        ctx = self.ctx(env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp / 'home'), 'SR_MSVC': tool})
+        ctx.redact = True
+        ctx.redact_paths[exe] = '<exe>'
+        ctx.run([sys.executable, '-c', 'print(' + repr(exe + ' ' + tool) + ')'])
+        text = Path(ctx.process_logs[0]).read_text()
+        self.assertNotIn(exe, text)
+        self.assertNotIn(tool, text)
+        self.assertIn('<exe>', text)
+        self.assertIn('<toolchain>', text)
+
+    def test_setup_emits_one_json_object_even_when_installer_prints(self):
+        ctx = self.ctx(env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
+        def setup(ctx, args):
+            ctx.run([sys.executable, '-c', 'print("installer progress")'])
+            return contrib.OK, {'phase': 'complete'}, None
+        out = io.StringIO()
+        with unittest.mock.patch.dict(contrib.COMMANDS, setup=setup), contextlib.redirect_stdout(out):
+            self.assertEqual(contrib.main(['--json', 'setup'], ctx=ctx), 0)
+        result = json.loads(out.getvalue())
+        self.assertEqual(result['phase'], 'complete')
+        self.assertIn('installer progress', Path(result['logs'][0]).read_text())
+
+    def test_rate_limit_is_distinct_from_offline(self):
+        import urllib.error
+        ctx = self.ctx(env={'PATH': ''})
+        gh = contrib.GitHub(ctx)
+        error = urllib.error.HTTPError('https://api.github.com/', 403, 'forbidden',
+                                       {'X-RateLimit-Remaining': '0'}, None)
+        with unittest.mock.patch('urllib.request.urlopen', side_effect=error):
+            with self.assertRaisesRegex(contrib.Offline, 'rate-limit.*gh auth login'):
+                gh.api('repos/x/y/issues')
+        with unittest.mock.patch('urllib.request.urlopen', side_effect=urllib.error.URLError('offline')):
+            with self.assertRaisesRegex(contrib.Offline, 'offline or transport'):
+                gh.api('repos/x/y/issues')
+
+
+class SubmitPreflightTests(SubmitTests):
+    def test_missing_fork_and_author_are_reported_without_a_commit(self):
+        self.git('remote', 'remove', 'fork')
+        self.git('config', '--unset', 'user.name')
+        self.git('config', '--unset', 'user.email')
+        before = self.state()
+        code, out = self.submit()
+        self.assertEqual(code, contrib.FAILED)
+        self.assertIn('no fork remote', ' '.join(out['blockers']))
+        self.assertIn('git author name', ' '.join(out['blockers']))
+        self.assertEqual(self.state(), before)
+        ctx = self.ctx(repo=self.repo, github=FakeGitHub(), runner=self.runner,
+                       env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(contrib.main(['--json', 'submit', '--base', 'HEAD'], ctx=ctx), contrib.FAILED)
+        self.assertEqual(self.state(), before)
+
+    def test_manual_browser_link_names_fork_owner_and_encoded_branch(self):
+        self.git('switch', '-q', '-c', 'contrib/test')
+        def runner(cmd, **kw):
+            if cmd[:2] == ['git', 'push'] or cmd[:2] == ['git', 'commit']:
+                return subprocess.CompletedProcess(cmd, 0, '', '')
+            return self.runner(cmd, **kw)
+        ctx = self.ctx(repo=self.repo, github=FakeGitHub(can_create=False), runner=runner,
+                       env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            self.assertEqual(contrib.main(['--json', 'submit', '--base', 'HEAD'], ctx=ctx), 0)
+        result = json.loads(out.getvalue())
+        self.assertIn('/compare/main...contributor:contrib%2Ftest?', result['link'])
+        self.assertFalse(result['preflight']['authenticated'])
+        self.assertIn('no-target', result['ci_hash']['advice'])
+        self.assertNotIn('fo4-private', ' '.join(result['warnings']))

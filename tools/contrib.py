@@ -44,6 +44,7 @@ import shutil
 import struct
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -124,6 +125,8 @@ class Ctx:
         self._github = github
         self.log = []
         self.redact = False
+        self.redact_paths = {}
+        self.process_logs = []
 
     @property
     def local(self):
@@ -154,6 +157,18 @@ class Ctx:
 
     def run(self, cmd, **kw):
         kw.setdefault('env', self.env)
+        if (self.as_json or self.redact) and not any(k in kw for k in ('capture_output', 'stdout', 'stderr')):
+            import tempfile
+            directory = self.private / 'logs'
+            directory.mkdir(parents=True, exist_ok=True)
+            with tempfile.NamedTemporaryFile(dir=directory, suffix='.log', delete=False) as log:
+                kw.update(stdout=log, stderr=subprocess.STDOUT)
+                proc = self.runner(cmd, **kw)
+            path = Path(log.name)
+            if self.redact:
+                path.write_text(self.scrub(path.read_text(errors='replace')))
+            self.process_logs.append(str(path))
+            return proc
         return self.runner(cmd, **kw)
 
     def scrub(self, text):
@@ -162,16 +177,36 @@ class Ctx:
             return text
         home = self.env.get('USERPROFILE' if self.windows else 'HOME') or str(Path.home())
         paths = [(str(self.repo), '<repo>'), (home, '~')]
+        try:
+            cfg = load_config(self)
+        except Stop:
+            cfg = {}
+        for key in ('exe', 'msvc', 'wine'):
+            if cfg.get(key):
+                paths.append((str(cfg[key]), '<' + key + '>'))
+        for key in ('SR_MSVC', 'SR_MSVC_ROOT', 'SR_WINE_BIN', 'SR_SKYRIM_EXE'):
+            if self.env.get(key):
+                paths.append((self.env[key], '<toolchain>'))
+        paths.extend(self.redact_paths.items())
+        try:
+            for rel, _rev, _lic in COMMUNITY_SOURCES.values():
+                paths.append((str(local_path(self.repo, rel, self.env)), '<source>'))
+            verifier = json.loads((self.local / 'verifier/config.json').read_text())
+            for field in ('community_checkouts', 'sibling_checkouts'):
+                for source in (verifier.get(field) or {}).values():
+                    paths.append((str(source), '<source>'))
+        except (Stop, OSError, ValueError):
+            pass
         if self.env.get('SR_LOCAL_DIR'):
             shared = Path(self.env['SR_LOCAL_DIR']).expanduser()
             if not shared.is_absolute():
                 shared = self.repo / shared
             paths[0:0] = [(str(shared.resolve()), '<local>'), (str(shared), '<local>')]
-        for path, mark in paths:
+        for path, mark in sorted(paths, key=lambda item: len(item[0]), reverse=True):
             if path and len(path) > 1:
-                text = text.replace(path, mark).replace(path.replace('\\', '\\\\'), mark)
-                if self.windows or self.platform == 'darwin':
-                    text = re.sub(re.escape(path), mark, text, flags=re.I)
+                for variant in {path, path.replace('\\', '\\\\'), path.replace('\\', '/')}:
+                    text = re.sub(re.escape(variant), lambda _m: mark, text,
+                                  flags=re.I if self.windows or self.platform == 'darwin' else 0)
         return text
 
     def say(self, line):
@@ -565,7 +600,7 @@ def compile_unit(ctx, root, compiled, recipe_rel, out_dir, tool):
     except OSError as exc:
         raise Stop(MISSING, f'cannot run the compiler: {exc}', f'{ctx.cli} doctor')
     opened, rest = unit_build.parse_show_includes(proc.stdout)
-    (out_dir / 'compile.log').write_text('\n'.join(rest) + '\n' + (proc.stderr or ''))
+    (out_dir / 'compile.log').write_text(ctx.scrub('\n'.join(rest) + '\n' + (proc.stderr or '')))
     if proc.returncode != 0 or not obj.is_file():
         errors = [line.strip() for line in rest if re.search(r'\berror [A-Z]+\d+', line)][:8]
         raise Stop(COMPILE, 'compile failed', 'fix the errors and run compare again',
@@ -748,6 +783,8 @@ class GitHub:
             exe = self.ctx.which('gh')
             ok = bool(exe) and self.ctx.run([exe, 'auth', 'status'], capture_output=True, text=True).returncode == 0
             self._gh = exe if ok else False
+            if not ok:
+                self.ctx.say('GitHub: run gh auth login for automatic claims and higher API quota; browser/manual submission remains available.')
         return self._gh or None
 
     def api(self, path):
@@ -757,15 +794,22 @@ class GitHub:
         if gh:
             proc = self.ctx.run([gh, 'api', path], capture_output=True, text=True)
             if proc.returncode != 0:
-                raise Offline(proc.stderr.strip()[:200])
+                detail = proc.stderr.strip()[:200]
+                if 'rate limit' in detail.lower():
+                    raise Offline('GitHub rate-limit exhausted; run gh auth login or retry after the quota resets')
+                raise Offline(detail)
             return json.loads(proc.stdout)
         req = urllib.request.Request(f'https://api.github.com/{path}', headers={
             'Accept': 'application/vnd.github+json', 'User-Agent': 'skyrim-research-contrib'})
         try:
             with urllib.request.urlopen(req, timeout=20) as resp:
                 return json.loads(resp.read())
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 or (exc.code == 403 and exc.headers.get('X-RateLimit-Remaining') == '0'):
+                raise Offline('GitHub rate-limit exhausted; run gh auth login or retry after the quota resets') from None
+            raise Offline(f'GitHub HTTP {exc.code}; check gh auth login and repository access') from None
         except (urllib.error.URLError, OSError, ValueError) as exc:
-            raise Offline(str(exc)) from None
+            raise Offline(f'GitHub offline or transport unavailable: {exc}') from None
 
     # Enough pages for any plausible number of open items; past it the list is reported incomplete
     # rather than silently treated as complete.
@@ -775,6 +819,15 @@ class GitHub:
         """Open issues and pull requests whose title names an RVA: {rva: [item]}."""
         if getattr(self, '_items', None) is not None and not refresh:
             return self._items
+        cache = self.ctx.private / 'claims-cache.json'
+        if not refresh and not self.ctx.env.get('SR_CONTRIB_OFFLINE'):
+            try:
+                saved = json.loads(cache.read_text())
+                if saved['repo'] == self.repo and 0 <= time.time() - saved['fetched'] < batch_claims.TTL:
+                    self._items = batch_claims.ClaimIndex(saved['items'])
+                    return self._items
+            except (OSError, ValueError, KeyError, TypeError):
+                pass
         items = []
         for page in range(1, self.MAX_PAGES + 1):
             batch = self.api(f'repos/{self.repo}/issues?state=open&per_page=100&page={page}')
@@ -789,6 +842,11 @@ class GitHub:
                 break
         out = batch_claims.ClaimIndex(items)
         self._items = out
+        try:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps(dict(repo=self.repo, fetched=time.time(), items=items)))
+        except OSError:
+            pass
         return out
 
     def user(self):
@@ -808,16 +866,8 @@ class GitHub:
             return None
         if len(body) >= batch_claims.BODY_LIMIT:
             raise Stop(USAGE, 'refusing issue body at or above 60,000 characters')
-        label = self.ctx.run([gh, 'label', 'create', 'claim', '--repo', self.repo, '--color', '1d76db',
-                              '--description', 'Function work claims', '--force'], capture_output=True, text=True)
-        if label.returncode:
-            raise Stop(NETWORK, 'cannot create or verify the claim label')
-        me = self.user()
-        if not me:
-            raise Stop(USAGE, 'GitHub login is unknown')
         proc = self.ctx.run([gh, 'issue', 'create', '--repo', self.repo, '--title', title,
-                             '--body-file', '-', '--label', 'claim', '--assignee', me],
-                            input=body, capture_output=True, text=True)
+                             '--body-file', '-'], input=body, capture_output=True, text=True)
         if proc.returncode == 0:
             return proc.stdout.strip().splitlines()[-1]
         raise Stop(NETWORK, 'gh issue create failed')
@@ -1463,8 +1513,9 @@ def cmd_next(ctx, args):
                    if batch_claims.claimed(index, f['rva'], me) and
                    any(it.get('build_id') in (None, f['build_id']) for it in
                        batch_claims.claimed(index, f['rva'], me))}
-    except Offline:
+    except Offline as exc:
         online = False
+        ctx.say(f'claims unavailable: {exc}')
     claimed |= {parse_rva(k) for k in local_claims(ctx)}
     rows = [c for c in candidates(ctx.repo, data, claimed, args.max_size) if c['startable']][:args.count]
     for c in rows:
@@ -1898,6 +1949,13 @@ def intake_problems(ctx, base, head='HEAD', files=None):
     problems = []
     rows = files if files is not None else changed_files(ctx, base, head)
     target = target_manifest(ctx.repo)['build_id']
+    names = [n for status, n in rows if UNIT_PATH.fullmatch(n) and status != 'D']
+    from git_context import tree_entries, blobs, lint_dependencies
+    if head and names:
+        _revision, entries = tree_entries(ctx.repo, head)
+        sources = blobs(ctx.repo, entries, names)
+    else:
+        sources = {n: (ctx.repo / n).read_bytes() for n in names if (ctx.repo / n).is_file()}
     for status, name in rows:
         if not UNIT_PATH.fullmatch(name):
             problems.append(f'{name}: outside contributor scope (reconstruction/<area>/<Class>.h or .cpp only)')
@@ -1905,7 +1963,7 @@ def intake_problems(ctx, base, head='HEAD', files=None):
         if status == 'D':
             problems.append(f'{name}: deleting a unit file is for maintainers')
             continue
-        blob = git_blob(ctx, head, name) if head else (ctx.repo / name).read_bytes()
+        blob = sources.get(name)
         if blob is None:
             problems.append(f'{name}: not readable at {head}')
             continue
@@ -1913,21 +1971,16 @@ def intake_problems(ctx, base, head='HEAD', files=None):
             problems.append(f'{name}: {len(blob)} bytes, over the {MAX_UNIT_FILE_BYTES}-byte contributor cap')
     # Lint the files as they would be integrated, in a temporary tree holding the head versions of
     # what the lint reads (sources, recipes, evidence files), so the working tree is never trusted.
-    names = [n for s, n in rows if UNIT_PATH.fullmatch(n) and s != 'D']
     if names:
         import tempfile
-        dirs = ('builds', 'reconstruction', 'findings', 'reports')
         if head:
-            listed = git(ctx, 'ls-tree', '-r', '--name-only', head, *dirs).splitlines()
+            context = blobs(ctx.repo, entries, lint_dependencies(sources))
         else:
-            listed = git(ctx, 'ls-files', *dirs).splitlines() + names
+            context = {n: (ctx.repo / n).read_bytes() for n in lint_dependencies(sources)
+                       if (ctx.repo / n).is_file()}
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for rel in dict.fromkeys(listed):
-                blob = git_blob(ctx, head, rel) if head else \
-                    ((ctx.repo / rel).read_bytes() if (ctx.repo / rel).is_file() else None)
-                if blob is None:
-                    continue
+            for rel, blob in context.items():
                 (root / rel).parent.mkdir(parents=True, exist_ok=True)
                 (root / rel).write_bytes(blob)
             for n in names:
@@ -1937,7 +1990,10 @@ def intake_problems(ctx, base, head='HEAD', files=None):
 
 def cmd_intake(ctx, args):
     base = args.base
-    problems = intake_problems(ctx, base, args.head)
+    try:
+        problems = intake_problems(ctx, base, args.head)
+    except (ValueError, OSError) as exc:
+        problems = [f'intake context rejected: {exc}']
     for p in problems:
         ctx.say(f'problem: {p}')
     ctx.say('intake: ' + ('PASS' if not problems else f'FAIL ({len(problems)} problem(s))'))
@@ -1958,6 +2014,31 @@ def upstream_remote(ctx):
         else:
             push = push or name
     return up, push
+
+
+def submit_preflight(ctx, push):
+    blockers, actions = [], []
+    owner = None
+    if push:
+        url = git(ctx, 'remote', 'get-url', '--push', push, check=False)
+        match = re.fullmatch(r'(?:https://github.com/|git@github.com:)([A-Za-z0-9-]+)/([A-Za-z0-9_.-]+?)(?:\.git)?/?', url)
+        if match:
+            owner = match.group(1)
+        else:
+            blockers.append('fork push remote must name a GitHub repository')
+    else:
+        blockers.append('no fork remote to push to')
+        actions.append('fork the repository on GitHub; git remote add fork https://github.com/<you>/skyrim-research.git')
+    for field in ('name', 'email'):
+        if not git(ctx, 'config', '--get', 'user.' + field, check=False):
+            blockers.append('git author ' + field + ' is not configured')
+            actions.append('git config user.' + field + ' <your-' + field + '>')
+    authenticated = bool(ctx.github().gh())
+    if not authenticated:
+        actions.append('gh auth login (recommended for claims, API quota and automatic PR creation); '
+                       'or configure Git push credentials and use the browser PR link')
+    return dict(fork_remote=push, fork_owner=owner, authenticated=authenticated,
+                blockers=blockers, actions=actions)
 
 
 def pr_body(ctx, task, summary, args, labels, origin):
@@ -2001,6 +2082,9 @@ def cmd_submit(ctx, args):
         blockers.append('practice tasks re-do accepted functions and are not submitted')
     unit = [n for n in task['contrib']['unit'] if (ctx.repo / n).is_file()]
     up, push = upstream_remote(ctx)
+    preflight = submit_preflight(ctx, push)
+    blockers += preflight['blockers']
+    warnings += preflight['actions']
     base = args.base or (f'{up}/main' if up else 'origin/main')
     if ctx.run(['git', 'rev-parse', '--verify', '--quiet', base], cwd=ctx.repo, capture_output=True).returncode != 0:
         base = 'HEAD'
@@ -2020,6 +2104,7 @@ def cmd_submit(ctx, args):
     if any(not h['trivial'] and not h['fork_of'] and not h['declared'] for h in hits):
         blockers.append('a body close to a community body is not declared in the unit header '
                         '(docs/drafter-card.md, "Declare adapted bodies")')
+    missing = [r for r in missing if r != 'fo4-private']
     if missing:
         warnings.append('origin check ran without: ' + ', '.join(
             'a sibling checkout' if no_sibling_names(ctx.env) and r in check_origin.SIBLINGS else r
@@ -2028,7 +2113,7 @@ def cmd_submit(ctx, args):
     if full.returncode != 0:
         blockers.append('tools/check.py: ' + (full.stderr or full.stdout).strip()[-300:])
     try:
-        open_items = ctx.github().open_items()
+        open_items = ctx.github().open_items(refresh=True)
         me = ctx.github().user()
         own_urls = {c.get('url') for c in local_claims(ctx).values()}
         for fn in task['functions']:
@@ -2038,8 +2123,8 @@ def cmd_submit(ctx, args):
                 blockers.append(f'another open claim or pull request names {fn["rva"]}: '
                                 + ', '.join(i['url'] for i in fresh) + ' (talk to them, or pass --ack-collision)'
                                 + ('' if me else '; if it is yours, give claim --github-user <your-login>'))
-    except Offline:
-        warnings.append('GitHub not reachable: claims not checked')
+    except Offline as exc:
+        warnings.append(f'GitHub claims not checked: {exc}')
     body = pr_body(ctx, task, summary, args, labels, origin)
     names = ', '.join(r['name'] for r in summary['functions'])
     title = f'Reconstruct {names} ({", ".join(r["rva"] for r in summary["functions"])})'
@@ -2050,9 +2135,11 @@ def cmd_submit(ctx, args):
         ctx.say(f'BLOCKED: {b}')
     drafted = args.drafted_by or load_config(ctx).get('drafted_by') or 'not stated'
     data = {'title': title, 'body_file': str(tdir / 'pr-body.md'), 'files': unit, 'blockers': blockers,
-            'warnings': warnings, 'dry_run': bool(args.dry_run), 'base': base,
+            'warnings': warnings, 'dry_run': bool(args.dry_run), 'base': base, 'preflight': preflight,
+            'ci_hash': {'advisory': True, 'advice': 'New units need // CI hash: <RVA> <COFF-symbol> in the first 8192 bytes of the .cpp header. Without a resolved binding CI reports no-target; green CI is not acceptance.'},
             'commit_message': f'{title}\n\nDrafted by {drafted}. Local comparator pass with the pinned recipe; '
                               'not yet confirmed by the project.'}
+    ctx.say(data['ci_hash']['advice'])
     ctx.say('A local pass is not acceptance: the project re-runs the comparison on two of its own hosts and a '
             'Reviewer checks the source before the function is recorded as matched.')
     if args.dry_run:
@@ -2084,14 +2171,15 @@ def cmd_submit(ctx, args):
     (tdir / 'task.json').write_text(json.dumps(task, indent=2) + '\n')
     gh = ctx.github().gh()
     if gh:
-        owner = git(ctx, 'remote', 'get-url', push).rstrip('/').removesuffix('.git').replace(':', '/').split('/')[-2]
+        owner = preflight['fork_owner']
         proc = ctx.run([gh, 'pr', 'create', '--repo', ctx.github().repo, '--head', f'{owner}:{branch}',
                         '--title', title, '--body-file', str(tdir / 'pr-body.md')], capture_output=True, text=True)
         if proc.returncode == 0:
             url = proc.stdout.strip().splitlines()[-1]
             ctx.say(f'pull request: {url}')
             return OK, dict(data, pull_request=url), 'wait for the project to confirm; watch the pull request'
-    link = f'https://github.com/{ctx.github().repo}/compare/main...{branch}?expand=1'
+    head = urllib.parse.quote(f"{preflight['fork_owner']}:{branch}", safe=':')
+    link = f'https://github.com/{ctx.github().repo}/compare/main...{head}?expand=1'
     ctx.say(f'open this link and paste {tdir / "pr-body.md"} as the description: {link}')
     return OK, dict(data, link=link), 'open the link and create the pull request'
 
@@ -2217,6 +2305,8 @@ def main(argv=None, ctx=None):
     ctx.interactive = ctx.interactive and not ctx.as_json
     ctx.assume_yes = ctx.assume_yes or args.yes
     ctx.redact = ctx.redact or args.redact
+    if getattr(args, 'exe', None):
+        ctx.redact_paths[str(args.exe)] = '<exe>'
     try:
         ctx.local  # Validate an explicit override before any command writes private files.
         apply_wine_env(ctx)
@@ -2234,6 +2324,8 @@ def main(argv=None, ctx=None):
         out = {'command': args.command, 'ok': code == OK, 'exit_code': code, 'error': message, 'next': nxt}
         out.update({k: v for k, v in (data or {}).items() if k not in out})
         out['messages'] = ctx.log
+        if ctx.process_logs:
+            out['logs'] = ctx.process_logs
         print(ctx.scrub(json.dumps(out, indent=2, default=str)))
     elif nxt:
         print(ctx.scrub(f'next: {nxt}'))
