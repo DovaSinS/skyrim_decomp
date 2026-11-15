@@ -34,8 +34,8 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "actors/CombatObjectLayout.h"
-#include "bsengine/BSFixedStringLayout.h"
+#include "CombatObjectLayout.h"
+#include "../bsengine/BSFixedStringLayout.h"
 
 namespace ResearchLayouts {
 class TESForm;

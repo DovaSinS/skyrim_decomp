@@ -34,7 +34,7 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "actors/CombatInventoryItemLayout.h"
+#include "CombatInventoryItemLayout.h"
 
 namespace ResearchLayouts {
 class Effect;

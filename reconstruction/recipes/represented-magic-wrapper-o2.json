@@ -12,9 +12,7 @@
     "/EHsc",
     "/GR",
     "/fp:precise",
-    "/Gy",
-    "/I",
-    "reconstruction"
+    "/Gy"
   ],
   "sdk": "10.0.19041.0",
   "host": "wine-9.0 (Ubuntu 9.0~repack-4build3), Ubuntu 24.04 x86-64"

@@ -34,7 +34,7 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "netimmerse/NiRefObjectLayout.h"
+#include "../netimmerse/NiRefObjectLayout.h"
 
 namespace ResearchLayouts {
 class CombatObjectLayout : public NiRefObjectLayout {
