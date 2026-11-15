@@ -71,6 +71,29 @@ class CiStatusTests(unittest.TestCase):
         self.assertEqual(code, ci_status.GREEN)
         self.assertTrue(out.startswith('GREEN'))
 
+    def test_lane_omits_only_named_advisory_runs_and_never_a_required_red(self):
+        self.runs(run(1, 'Infrastructure checks'), run(2, 'Publish research report'),
+                  run(3, 'Advisory target hashes', conclusion='failure'))
+        self.jobs(3, {'name':'target-hashes','conclusion':'failure','steps':[]})
+        self.assertEqual(self.main()[0], ci_status.RED)
+        self.assertEqual(self.main('--without-advisory')[0], ci_status.GREEN)
+        self.runs(run(1, 'Infrastructure checks', conclusion='failure'),
+                  run(2, 'Publish research report'),run(3,'Advisory target hashes'))
+        self.jobs(1, {'name':'check','conclusion':'failure','steps':[]})
+        self.assertEqual(self.main('--without-advisory')[0], ci_status.RED)
+        self.runs(run(2, 'Publish research report'),run(3,'Advisory target hashes'))
+        self.assertEqual(self.main('--without-advisory')[0], ci_status.PENDING)
+        self.runs(run(1,'Infrastructure checks'),run(2,'Publish research report'),
+                  run(4,'Other required job',conclusion='failure'))
+        self.jobs(4, {'name':'required','conclusion':'failure','steps':[]})
+        self.assertEqual(self.main('--without-advisory')[0],ci_status.RED)
+
+    def test_repair_requires_exact_advisory_workflow_presence(self):
+        self.runs(run(1,'Infrastructure checks'),run(2,'Publish research report'))
+        self.assertEqual(self.main('--require-workflow','Advisory target hashes')[0],ci_status.PENDING)
+        self.runs(run(1,'Infrastructure checks'),run(2,'Publish research report'),run(3,'Advisory target hashes'))
+        self.assertEqual(self.main('--require-workflow','Advisory target hashes')[0],ci_status.GREEN)
+
     def test_red_names_the_failed_step(self):
         self.runs(run(1, 'Infrastructure checks', conclusion='failure'), run(2, 'Publish research report'))
         self.jobs(1, {'name': 'check', 'conclusion': 'failure', 'steps': [

@@ -79,9 +79,10 @@ also lints other Drafters' unfinished files; a Reviewer rejects the rest):
   `// <names>: <LABEL> [<LABEL>...][; note]`, LABEL one of
   `COMMUNITY(<owner>/<repo>@<rev>, <licence>)` (e.g. `COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)`),
   `SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence)` (a name or declaration taken from the
-  Fallout: New Vegas decompilation, below), `GUESS` or `GUESS(low|medium|high)`, `EXE_RTTI`,
+  Fallout: New Vegas decompilation, below),
+  `SIBLING(fo4-private@1b765c70, author-permission)` (anonymous permitted game-code sibling), `GUESS` or `GUESS(low|medium|high)`, `EXE_RTTI`,
   `OBSERVED`, and `STANDIN` together with the name's origin (`// TESObjectARMO: STANDIN COMMUNITY(...)`).
-  A community name is `COMMUNITY` and an FNV name `SIBLING`, never `GUESS`; `GUESS` is only for
+  A community name is `COMMUNITY` and a sibling name `SIBLING`, never `GUESS`; `GUESS` is only for
   names you made up. Do not write the label words anywhere else.
 - **Sibling source (FNV).** `.local/sources/fnv_decomp` (momusdigital/fnv_decomp at `91e1b6e8`)
   may be read and reused by maintainer decision (`docs/authorizations.md`); its LICENSE grants
@@ -93,6 +94,20 @@ also lints other Drafters' unfinished files; a Reviewer rejects the rest):
   substantial part of one, add `// Sibling source: momusdigital/fnv_decomp@91e1b6e8 <path>:<line>`
   to the header comment (one line per body). `check_labels.py` verifies `SIBLING` names and the
   path; the Reviewer rejects undeclared reuse.
+- **Sibling source (`fo4-private`).** Game-code folders only at `1b765c70`, with author
+  permission conditional on anonymity (`docs/authorizations.md`, `LEGAL.md`). Use
+  `SIBLING(fo4-private@1b765c70, author-permission)` on names/declarations and
+  `// Sibling source: fo4-private@1b765c70 <allowed path>:<line>` per reused body in the
+  unit header. No upstream repository/owner/author identity, URL or product nickname may enter
+  tracked files, commit messages, CI or any file under `reconstruction/`; the mapping is private.
+  Excluded: Havok, HavokLib, Scaleform, SDK, Gamebryo and mixed generated aggregates; no
+  vendor-derived material elsewhere. The private `.local/sources/fo4-private-index` attaches
+  exact qualified-name sibling hints to the existing sibling sheet variant (`.fnv.md`, enabled
+  by `--sibling`); plain sheets omit all sibling bodies. Different game, VS2012 build: check
+  signature/overload, layout, vtable slot, offset and form ID against Skyrim evidence. None
+  transfers without proof. Hints never replace two-host comparison, review or integration.
+  Later non-name anchor pairs can be added with `build_fo4_private_index.py --anchors` using
+  a private JSON list of target/source pairs and their evidence; they are labelled separately.
 - **Search before you label.** The pinned community checkouts are local clones:
   `.local/sources/CommonLibSSE-NG` (CharmedBaryon/CommonLibSSE-NG at `b93280e`, MIT) and
   `.local/sources/CommonLibSSE-po3` (powerof3/CommonLibSSE at `654e55f`, GPL-3.0; a file using
@@ -112,13 +127,13 @@ also lints other Drafters' unfinished files; a Reviewer rejects the rest):
 - Before you finish, run `python3 tools/check_labels.py reconstruction/<area>/<Class>.h
   reconstruction/<area>/<Class>.cpp` (also printed by `attempt` as `label warning:` lines). It
   checks every `COMMUNITY` name and enumerator value against the pinned checkout and every
-  `SIBLING` name against the FNV clone, flags `GUESS` names either declares in that class, and
+  `SIBLING` name against its permitted sibling clone, flags `GUESS` names either declares in that class, and
   checks that each `Evidence:` file exists, is tracked, and names the unit (its class, a
   `// Task: <task-id>` header line, or every compared RVA). Fix each warning or explain it in
   your result line.
   Labels are still expected on every name; they no longer block acceptance (a Reviewer lists
   label problems as naming findings, `docs/verification.md`, "Tier 2"), but they decide `named`.
-  A missing `Sibling source:` line for a reused FNV body is not a label problem: it blocks.
+  A missing `Sibling source:` line for a reused sibling body is not a label problem: it blocks.
 - **Declare adapted bodies when you write them.** If a body, or a substantial part of one, comes
   from a community checkout or the FNV clone, say so in the unit's header comment at the time:
   the method, the upstream file and revision, and the licence (NG: MIT, and copy NG's licence
@@ -130,15 +145,15 @@ also lints other Drafters' unfinished files; a Reviewer rejects the rest):
   running it. `python3 tools/check_origin.py reconstruction/<area>/<Class>.h
   reconstruction/<area>/<Class>.cpp` (also printed by `attempt` as `origin:` lines, with an
   `origin advice:` line while one is undeclared) lists every body close to a same-named community
-  or FNV body; each `adapted` line it marks as not declared needs a header statement. `trivial`
+  or sibling body; each `adapted` line it marks as not declared needs a header statement. `trivial`
   lines (an empty body or one `return` of a constant, a member or `this`) need nothing per body. It cannot see a body renamed or moved to another class,
   so declare those yourself.
 - Before you draft, read `docs/matching-cookbook.md` once. A flag bit the target tests as a load,
   `shr`, `test al,1` goes through a by-value bit-index helper (rule 16) from the first draft.
   `static_assert` always takes a message (rule 17). A 3-byte copy is rule 24; a `??_E...W...`
   adjustor thunk is rule 25. Funclet extent and IP-to-state counts are rule 26.
-- No decompiler output pasted as source, no code from unlicensed projects other than the FNV
-  decompilation (labelled as above), nothing leaked. Unknowns stay unknown (`unk28`), not
+- No decompiler output pasted as source, no code from unlicensed projects other than the permitted sibling
+  decompilations (labelled as above), nothing leaked. Unknowns stay unknown (`unk28`), not
   invented names.
 
 **Budget.** The budget is what `attempt` prints (`counted N/M`); it refuses past it (exit 5).

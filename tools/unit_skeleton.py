@@ -864,6 +864,15 @@ def function_sheet(unit, fn, sibling=False, repo=None):
         snippet = sibling_snippet(unit['brief'], rva, repo) if sibling else ''
         if snippet:
             out += ['', '```cpp', snippet, '```']
+    from fo4_private import INDEX as FO4_INDEX, hint_section
+    from local_paths import local_dir
+    if sibling and (local_dir(repo) / FO4_INDEX).is_dir():
+        build_id = (unit.get('task') or {}).get('build_id')
+        if not build_id:
+            build_id = json.loads((repo / 'builds/target.json').read_text())['build_id']
+        hint = hint_section(repo, build_id, rva)
+        if hint:
+            out += ['', hint]
     # Column padding is trailing blanks; dropping it keeps more of the listing on one page.
     listing = '\n'.join(line.rstrip() for line in _text(pack / 'listing.txt').splitlines()).strip() if pack else ''
     out += ['', '## Target listing', '```', listing or '(no listing in the pack)', '```']

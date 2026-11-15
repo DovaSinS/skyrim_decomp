@@ -4,6 +4,7 @@ from datetime import datetime
 import functools
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -864,8 +865,48 @@ def index_blob(objects, sha, name):
     return payload
 
 
+def anonymity_terms(root=ROOT):
+    """Optional private denylist; CI has no upstream identities. Never echo its contents.
+
+    .local/anonymity.json: {"forbidden_strings": [<private identity>, ...]}.
+    Optional forbidden_tokens checks short nicknames as identifiers, avoiding accidental
+    substrings inside opaque generated symbol keys. Owner/repository strings stay literal.
+    SR_ANONYMITY_CONFIG carries that ignored config into isolated publication lane clones.
+    """
+    from local_paths import local_dir
+    explicit = os.environ.get('SR_ANONYMITY_CONFIG')
+    path = Path(explicit) if explicit else local_dir(root) / 'anonymity.json'
+    if not explicit and not path.is_file():
+        # Linked worktrees share the private policy without copying identities into each tree.
+        common = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
+                                cwd=root, capture_output=True, text=True)
+        if common.returncode == 0:
+            path = Path(common.stdout.strip()).parent / '.local/anonymity.json'
+    if not path.is_file() and not explicit:
+        return ()
+    try:
+        data = json.loads(path.read_text())
+        terms = data['forbidden_strings']
+        require(isinstance(terms, list) and terms and all(text(t) for t in terms), '')
+        tokens = data.get('forbidden_tokens', [])
+        require(isinstance(tokens, list) and all(text(t) for t in tokens), '')
+        return (tuple(t.casefold() for t in terms)
+                + tuple(re.compile(r'(?<![a-z0-9_])' + re.escape(t.casefold()) + r'(?![a-z0-9_])')
+                        for t in tokens))
+    except (OSError, ValueError, KeyError, TypeError):
+        raise ValueError('Anonymous sibling guard: private config missing or invalid') from None
+
+
+def check_anonymity(name, payload, terms):
+    """Case-insensitive path/content check with a diagnostic that cannot expose an identity."""
+    content = name.casefold() + '\n' + payload.decode('utf-8', 'replace').casefold()
+    require(not any(term in content if isinstance(term, str) else term.search(content) for term in terms),
+            'Anonymous sibling guard: forbidden private identity in publication tree (details withheld)')
+
+
 def check_git(root=ROOT, staged=False):
     records = subprocess.check_output(['git', 'ls-files', '--stage', '-z'], cwd=root).split(b'\0')
+    terms = anonymity_terms(root)
     count = 0
     with subprocess.Popen(['git', 'cat-file', '--batch'], cwd=root,
                           stdin=subprocess.PIPE, stdout=subprocess.PIPE) as objects:
@@ -875,11 +916,15 @@ def check_git(root=ROOT, staged=False):
             name = rawname.decode('utf-8')
             require(stage == '0', f'{name}: unresolved conflict')
             # Index blobs matter: a staged binary may have been replaced by harmless text on disk.
-            inspect_payload(name, index_blob(objects, sha, name), mode)
+            payload = index_blob(objects, sha, name)
+            check_anonymity(name, payload, terms)
+            inspect_payload(name, payload, mode)
             if not staged:
                 path = root / name
                 require(path.is_file() and not path.is_symlink(), f'{name}: missing file/symlink')
-                inspect_payload(name, path.read_bytes(), mode)
+                payload = path.read_bytes()
+                check_anonymity(name, payload, terms)
+                inspect_payload(name, payload, mode)
             count += 1
         objects.stdin.close()
         require(objects.wait() == 0, 'git cat-file failed')
@@ -891,9 +936,10 @@ def main():
     parser.add_argument('--staged', action='store_true', help='Check index blobs and staged metadata')
     args = parser.parse_args()
     try:
+        # Check anonymity before metadata/lint diagnostics could quote offending content.
+        count = check_git(staged=args.staged)
         with source_digest_cache():
             load(staged=args.staged)
-        count = check_git(staged=args.staged)
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:
         print(f'FAIL: {exc}', file=sys.stderr)
         return 1

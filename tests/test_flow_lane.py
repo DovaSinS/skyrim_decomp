@@ -35,6 +35,10 @@ class PushLane(unittest.TestCase):
     # Reuse the synthetic fixture; the old integration remains the equality reference.
     def setUp(self):
         _setup_reference(self)
+        # These fixtures inspect retained candidates; retention has dedicated deletion tests.
+        self.retention_patch = patch('flow_cleanup.automatic_retention')
+        self.retention_patch.start()
+        self.addCleanup(self.retention_patch.stop)
         # These tiny queue fixtures do not depend on the host volume's free space.
         # The disk-preflight tests below exercise the real threshold separately.
         self.disk_patch = patch.object(lane.shutil, 'disk_usage',
@@ -136,7 +140,7 @@ class PushLane(unittest.TestCase):
         candidate = Path(result['candidates'][0])
         self.assertFalse((candidate / flow.REVIEWS / 'escape.md').exists())
 
-    def test_changed_sampling_state_after_checks_never_pushes(self):
+    def test_changed_sampling_state_requeues_affected_group_and_commits_rest(self):
         self.enqueue()
         before = git(self.repo.origin, 'rev-parse', 'main')
         original = flow.pre_push_checks
@@ -146,9 +150,110 @@ class PushLane(unittest.TestCase):
             group['rerun']['not_agree'] = list(group['sampled'])
             flow.save_group(self.fdir, group)
         with patch.object(flow, 'pre_push_checks', side_effect=change):
-            with self.assertRaisesRegex(flow.FlowError, 'gate state changed'):
-                self.lane()
-        self.assertEqual(before, git(self.repo.origin, 'rev-parse', 'main'))
+            result = self.lane()
+        self.assertNotEqual(before, git(self.repo.origin, 'rev-parse', 'main'))
+        self.assertEqual(result['integrated']['accepted'], len(flow.load_group(self.fdir, self.names[1])['functions']))
+        self.assertEqual(result['dropped'][0]['reason'], 'gate-changed: requeue')
+        retry = lane.read(self.fdir / 'lane/queue' / (result['dropped'][0]['requeued'] + '.json'))
+        self.assertEqual(retry['state'], 'queued')
+        self.assertEqual(retry['selection'], [self.names[0]])
+        # A later run must still refuse this group's current failed sampling gate.
+        again = self.lane()
+        self.assertIsNone(again['integrated'])
+        self.assertIn('sampling gate', again['dropped'][0]['reason'])
+
+    def test_changed_carried_review_requeues_only_its_group(self):
+        self.enqueue()
+        original = flow.pre_push_checks
+        def change(root, commit, python, **kwargs):
+            original(root, commit, python, **kwargs)
+            group = flow.load_group(self.fdir, self.names[0])
+            flow.review_path(self.root, group).write_text('changed carried review\n')
+        with patch.object(flow, 'pre_push_checks', side_effect=change):
+            result = self.lane()
+        self.assertEqual(result['integrated']['accepted'], len(flow.load_group(self.fdir, self.names[1])['functions']))
+        self.assertEqual(result['dropped'][0]['reason'], 'gate-changed: requeue')
+        self.assertEqual(result['dropped'][0]['request']['group'], self.names[0])
+
+    def test_split_acceptance_retains_all_members_gate_dependencies(self):
+        self.enqueue()
+        def split(tree, requests, python):
+            members = [dict(r, functions=[rva]) for r in requests for rva in r['functions']]
+            return stub_accept(tree, members, python)
+        with patch.object(lane, 'accept', side_effect=split):
+            result = self.lane()
+        for dependency in result['gate_dependencies']:
+            request = dependency['request']
+            self.assertEqual(set(request['functions']), set(flow.load_group(self.fdir, request['group'])['functions']))
+
+    def family_lane(self, change):
+        # Reuse the stub acceptance fixture; the carry, dependency pins and final guard are real.
+        group = flow.load_group(self.fdir, self.names[0])
+        family_path = 'reports/synthetic-build/families/leaf.json'
+        batch_path = 'reports/synthetic-build/family-batches/leaf.json'
+        functions = [fn for fn in flow.inventory(self.root)['functions']
+                     if flow.hexrva(fn['rva']) in group['functions']]
+        family = dict(origin={'family': 'synthetic-leaf'}, binding={}, first_members=[],
+                      review={'review_task_id': 'synthetic-family'},
+                      template_source={'path': 'reconstruction/x/Foo.cpp'},
+                      parameter_source={'path': 'reconstruction/x/Foo.cpp'})
+        batch = dict(family_path=family_path, population=[fn['id'] for fn in functions], sample=[])
+        for path, doc in ((family_path, family), (batch_path, batch)):
+            (self.root / path).parent.mkdir(parents=True, exist_ok=True)
+            lane.write(self.root / path, doc)
+        approval = self.root / '.local/reviews/synthetic-family.family.json'
+        lane.write(approval, {'verdict': 'approve'})
+        git(self.root, 'add', family_path, batch_path)
+        git(self.root, 'commit', '--quiet', '-m', 'synthetic family metadata')
+        git(self.root, 'push', '--quiet', 'origin', 'main')
+        lane.enqueue(self.root, self.fdir, 'family', [batch_path])
+        request = dict(kind='family', path=batch_path, functions=group['functions'],
+                       build_id=group['build_id'], review=str(flow.review_path(self.root, group)), profile='cheap')
+        original = flow.pre_push_checks
+        def during(root, commit, python, **kwargs):
+            original(root, commit, python, **kwargs)
+            change(batch_path, approval)
+        with patch.object(lane, 'prepare', return_value=([request], {})), \
+                patch.object(flow, 'pre_push_checks', side_effect=during):
+            return self.lane()
+
+    def test_family_unrelated_group_and_review_change_does_not_abort(self):
+        unrelated = flow.load_group(self.fdir, self.names[-1])
+        def change(batch, approval):
+            unrelated['rerun']['not_agree'] = list(unrelated['sampled'])
+            flow.save_group(self.fdir, unrelated)
+            flow.review_path(self.root, unrelated).write_text('unrelated worker saved a new review\n')
+        result = self.family_lane(change)
+        self.assertEqual(result['state'], 'done')
+        self.assertEqual(result['integrated']['accepted'], len(flow.load_group(self.fdir, self.names[0])['functions']))
+        self.assertNotIn(unrelated['name'], result['bindings'])
+        self.assertNotIn(str(flow.review_path(self.root, unrelated)), result['input_pins'])
+
+    def assert_gate_requeued(self, result):
+        self.assertEqual(result['state'], 'done')
+        self.assertIsNone(result['integrated'])
+        self.assertEqual(result['dropped'][0]['reason'], 'gate-changed: requeue')
+        retry = lane.read(self.fdir / 'lane/queue' / (result['dropped'][0]['requeued'] + '.json'))
+        self.assertEqual(retry['state'], 'queued')
+        self.assertEqual(retry['kind'], 'family')
+
+    def test_family_carried_sampling_group_change_requeues(self):
+        group = flow.load_group(self.fdir, self.names[0])
+        def change(batch, approval):
+            paired = flow.load_group(self.fdir, group['pair'])
+            paired['reviewer_model'] = 'changed'
+            flow.save_group(self.fdir, paired)
+        self.assert_gate_requeued(self.family_lane(change))
+
+    def test_family_carried_sample_draw_change_requeues(self):
+        def change(batch_path, approval):
+            batch = lane.read(self.root / batch_path)
+            batch['sample'] = batch['population'][:1]
+            lane.write(self.root / batch_path, batch)
+        self.assert_gate_requeued(self.family_lane(change))
+
+    def test_family_carried_approval_change_requeues(self):
+        self.assert_gate_requeued(self.family_lane(lambda batch, approval: lane.write(approval, {'verdict': 'reject'})))
 
     def test_public_frontends_enqueue_without_running_checks(self):
         with patch.object(flow, 'pre_push_checks', side_effect=AssertionError('must only enqueue')):

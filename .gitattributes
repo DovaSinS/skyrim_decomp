@@ -10,3 +10,5 @@
 *.h text eol=lf
 # cmd.exe can mis-handle labels and goto in batch files with bare LF line endings.
 *.cmd text eol=crlf
+# Target-hash manifests bind the raw pin-file digest on every compile host.
+*.sha256 text eol=lf

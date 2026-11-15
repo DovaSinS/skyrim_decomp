@@ -34,6 +34,8 @@ class NiNode;
 class NiObject;
 class NiObjectGroup;
 class NiParticles;
+class NiBound;
+class NiCamera;
 class NiRTTI;
 class NiStream;
 class NiSwitchNode;
@@ -118,6 +120,10 @@ class NiAccumulator : public NiObject
 public:
     NiAccumulator();
     virtual void FinishAccumulating();  // compared: 0xf1ede0
+    // StartGroupingAlphas, StopGroupingAlphas, StartAccumulating: COMMUNITY(powerof3/CommonLibSSE@654e55f, GPL-3.0); the group type is a plain pointer here
+    virtual void* StartGroupingAlphas(NiBound* a_bound);  // compared: 0xf0f4f0
+    virtual void StopGroupingAlphas(void* a_group);  // compared: 0xf0f500
+    virtual void StartAccumulating(NiCamera* a_camera);  // compared: 0xf1edd0
     virtual ~NiAccumulator();  // compared: 0xf1ee00 (scalar deleting destructor)
 
     // TODO members: replace part of the padding with the members the bodies read,

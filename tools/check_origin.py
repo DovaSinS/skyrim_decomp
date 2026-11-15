@@ -36,10 +36,12 @@ import argparse
 import difflib
 import hashlib
 import json
+from local_paths import local_dir, local_path
 from pathlib import Path
 import re
 import subprocess
 import sys
+from fo4_private import GAME_DIRS
 
 ROOT = Path(__file__).resolve().parents[1]
 PARSER_VERSION = 2
@@ -48,8 +50,9 @@ DEFAULT_SOURCES = {
     'CharmedBaryon/CommonLibSSE-NG': ('.local/sources/CommonLibSSE-NG', 'MIT', ('include', 'src')),
     'powerof3/CommonLibSSE': ('.local/sources/CommonLibSSE-po3', 'GPL-3.0', ('include', 'src')),
     'momusdigital/fnv_decomp': ('.local/sources/fnv_decomp', 'no-licence', ('include', 'src')),
+    'fo4-private': ('.local/sources/fo4-private', 'author-permission', GAME_DIRS),
 }
-SIBLINGS = {'momusdigital/fnv_decomp'}
+SIBLINGS = {'momusdigital/fnv_decomp', 'fo4-private'}
 FORKS = {'powerof3/CommonLibSSE': 'CharmedBaryon/CommonLibSSE-NG'}
 SUFFIXES = ('.h', '.hpp', '.inl', '.cpp', '.cxx', '.cc', '.c')
 
@@ -266,6 +269,10 @@ class Clone:
     def __init__(self, repo, path, licence, dirs, cache_dir):
         self.repo, self.path, self.licence, self.dirs = repo, Path(path), licence, dirs
         self.head = head_of(self.path)
+        if repo == 'fo4-private':
+            from fo4_private import REVISION
+            if self.head != REVISION:
+                raise ValueError('fo4-private source revision differs from the approved pin; not read')
         self.index = self._load(cache_dir)
         self._texts = {}
 
@@ -281,25 +288,38 @@ class Clone:
         for path in sorted(p for d in self.dirs for p in (self.path / d).rglob('*')
                            if p.suffix.lower() in SUFFIXES and p.is_file()):
             rel = path.relative_to(self.path).as_posix()
-            for n, f in enumerate(functions(clean(path.read_text(errors='replace')))):
+            if self.repo == 'fo4-private' and path.resolve() != self.path.resolve() / rel:
+                continue
+            for n, f in enumerate(self.functions(clean(path.read_text(errors='replace')))):
                 index.setdefault((f['class'] or '', f['name']), []).append([rel, n, f['line']])
         if cache is not None and self.head:
             cache.parent.mkdir(parents=True, exist_ok=True)
             cache.write_text(json.dumps({' '.join(k): v for k, v in index.items()}))
         return index
 
+    def functions(self, text):
+        if self.repo == 'fo4-private':
+            from sibling_cpp import functions as qualified_functions
+            return qualified_functions(text)
+        return functions(text)
+
     def bodies(self, cls, name):
         for rel, n, line in self.index.get((cls or '', name), []):
+            if self.repo == 'fo4-private':
+                from fo4_private import allowed_path
+                if not allowed_path(rel) or (self.path / rel).resolve() != self.path.resolve() / rel:
+                    continue
             if rel not in self._texts:
-                self._texts[rel] = functions(clean((self.path / rel).read_text(errors='replace')))
+                self._texts[rel] = self.functions(clean((self.path / rel).read_text(errors='replace')))
             fns = self._texts[rel]
             if n < len(fns) and fns[n]['name'] == name:
                 yield rel, line, normalise(fns[n]['body'], fns[n]['params'])
 
 
-def configured_sources(root=ROOT):
+def configured_sources(root=ROOT, env=None):
+    config_path = local_dir(root, env) / 'verifier/config.json'
     try:
-        config = json.loads((Path(root) / '.local/verifier/config.json').read_text())
+        config = json.loads(config_path.read_text())
     except (OSError, ValueError):
         config = {}
     sources = dict(DEFAULT_SOURCES)
@@ -312,15 +332,15 @@ def configured_sources(root=ROOT):
     return sources
 
 
-def open_clones(root=ROOT, sources=None, cache=True):
+def open_clones(root=ROOT, sources=None, cache=True, env=None):
     root = Path(root)
     clones, missing = [], []
-    for repo, (path, licence, dirs) in (sources or configured_sources(root)).items():
-        path = Path(path) if Path(path).is_absolute() else root / path
+    for repo, (path, licence, dirs) in (sources or configured_sources(root, env)).items():
+        path = local_path(root, path, env)
         if not path.is_dir():
             missing.append(repo)
             continue
-        clones.append(Clone(repo, path, licence, dirs, root / '.local/analysis/origin-index' if cache else None))
+        clones.append(Clone(repo, path, licence, dirs, local_dir(root, env) / 'analysis/origin-index' if cache else None))
     return clones, missing
 
 
@@ -399,7 +419,9 @@ def check_unit(files, clones, threshold=DEFAULT_THRESHOLD, root=ROOT):
     return hits
 
 
-def describe(hit):
+def describe(hit, no_sibling_names=False):
+    if no_sibling_names and hit['repo'] in SIBLINGS:
+        return 'a sibling body similarity finding exists (details omitted)'
     kind = 'trivial, same as community' if hit['trivial'] else 'adapted'
     if hit.get('fork_of'):
         kind += f'; same body as {hit["fork_of"]}, which the fork carries'

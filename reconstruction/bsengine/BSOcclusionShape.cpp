@@ -23,6 +23,17 @@ BSOcclusionShape::BSOcclusionShape()
 {
 }
 
+// CreateClone, GetRTTI: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+NiObject* BSOcclusionShape::CreateClone(NiCloningProcess& a_cloning)
+{
+    return nullptr;
+}
+
+const NiRTTI* BSOcclusionShape::GetRTTI() const
+{
+    return &NiRTTI_BSOcclusionShape;
+}
+
 // Body done: RVA 0xfdc610, 50 bytes, BSOcclusionShape::~BSOcclusionShape; compared as the scalar
 // deleting destructor. The target does the NiRefObject cleanup itself, so keep this empty
 // definition and the constructor: the inline base destructors in the header make the compiler

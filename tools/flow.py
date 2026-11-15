@@ -609,6 +609,8 @@ Allowed inputs: pinned template and parameter source, the manifest and its first
 public match records and reconstructed units. FNV index: `{(root / ".local/analysis/fnv_index.jsonl").resolve()}`;
 function packs: `{(root / ".local/packs").resolve()}`; source checkouts: `{(root / ".local/sources").resolve()}`.
 Read no other review or handoff.
+Before dispatch, the orchestrator must run `python3 tools/lint_review_readiness.py --functions {' '.join(family['first_members'])}`
+and fix mechanical plausible_source, provenance, publication_hygiene and claim_scope failures.
 Review source plausibility, provenance, extraction, target bindings, labels and all first 20.
 Output: `.local/reviews/{task}.family.json`, exactly the JSON schema in the family-review runbook.
 {members}
@@ -840,6 +842,7 @@ def family_actions(root, fdir):
                 if not af.reviewer_admitted(root, entry['model'], profile):
                     entry = {'model': 'opus', 'harness': 'claude-code'}
                 prompt = f'Read docs/reviewer-runbook.md and follow it. Your brief is {brief}.'
+                acts.append(readiness_action(dict(functions=family['first_members']), root))
                 acts.append(('dispatch', f'family review needed: {start_worker(entry, prompt, "reviewer")}. '
                              f'Then: python3 tools/flow.py family-dispatched {path}'))
     by_id = {fn['id']: fn for fn in inventory(root)['functions']}
@@ -1043,7 +1046,9 @@ source files it identifies, under the maintainer's recorded FNV reuse and model-
 
 ## Steps
 
-1. Run `python3 tools/lint_review_readiness.py --functions {' '.join(g['functions'])}` before reviewing.
+1. The orchestrator must run `python3 tools/lint_review_readiness.py --functions {' '.join(g['functions'])}`
+   and fix failures before dispatching this Reviewer. It checks mechanical plausible_source,
+   provenance, publication_hygiene and claim_scope grounds; repeat it before reviewing.
    Validate individual bindings as the runbook requires; explicitly listed pending review-behind
    entries are expected during review. The full `python3 tools/check.py` must pass at integration.
    Unexpected failures outside the group's units, except explicitly listed pending entries,
@@ -1321,10 +1326,10 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
               + ('; Agent tool subagent_type engineer)' if s_entry['harness'] == 'claude-code' else '; a Codex session)'))
     for name, g in gs.items():
         integrated = g.get('integrated') or {}
-        fully_integrated = integrated.get('ci') == 'green' and integrated.get('accepted', 0) >= len(g['functions'])
+        fully_integrated = integrated.get('ci') in ('green', 'red-advisory-superseded') and integrated.get('accepted', 0) >= len(g['functions'])
         if g.get('superseded_by') or g['kind'] == 'family' or fully_integrated:
             continue
-        if g['kind'] == 'sampling' and (gs.get(g.get('pair'), {}).get('integrated') or {}).get('ci') == 'green':
+        if g['kind'] == 'sampling' and (gs.get(g.get('pair'), {}).get('integrated') or {}).get('ci') in ('green', 'red-advisory-superseded'):
             continue
         status, blocks = read_review(root, g, data['functions'])
         if status.startswith('malformed'):
@@ -1332,6 +1337,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             continue
         if g['kind'] == 'sampling':
             if status == 'missing' and not g.get('dispatched'):
+                acts.append(readiness_action(g, root))
                 acts.append(dispatch_line(g, root))
             elif status == 'missing':
                 waits.append(('wait', f'Reviewer for {name} ({g["task_id"]}) is running; its file appears at {REVIEWS}/{g["task_id"]}.md'))
@@ -1343,6 +1349,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             if g.get('family_review_path'):
                 waits.append(('wait', f'first-20 review {g["task_id"]} is handled by its family brief'))
             elif not g.get('dispatched'):
+                acts.append(readiness_action(g, root))
                 acts.append(dispatch_line(g, root))
             else:
                 waits.append(('wait', f'Reviewer for {name} ({g["task_id"]}) is running; its file appears at {REVIEWS}/{g["task_id"]}.md'))
@@ -1364,7 +1371,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             continue
         integ = g.get('integrated') or {}
         approved = [r for r, b in blocks.items() if b.get('verdict') == 'approve']
-        if approved and integ.get('ci') != 'green':
+        if approved and integ.get('ci') not in ('green', 'red-advisory-superseded'):
             ok, problem = sampling_gate(root, fdir, g, data)
             if ok:
                 if integ.get('batch'):
@@ -1480,7 +1487,8 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
     import flow_lane
     stale_runs = [flow_lane.run_status(root, fdir, json.loads(p.read_text()))
                   for directory in ('lane/runs', 'lane/tooling')
-                  for p in (Path(fdir) / directory).glob('*.json')]
+                  for p in (Path(fdir) / directory).glob('*.json')
+                  if json.loads(p.read_text()).get('kind') != 'tooling-request']
     for run in stale_runs:
         if run.get('status') in ('stale', 'paused'):
             command = run['resume_command']
@@ -1496,14 +1504,18 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
     return out or [('done', 'nothing to do')]
 
 
+def readiness_action(g, root):
+    command = ('python3 ' + shlex.quote(str(TOOLS / 'lint_review_readiness.py')) + ' --root '
+               + shlex.quote(str(g.get('review_root') or root))
+               + ' --functions ' + ' '.join(g['functions']))
+    return ('run', command + '    # plausible_source, provenance, publication_hygiene, claim_scope; fix failures before dispatch')
+
+
 def dispatch_line(g, root=None):
     entry = {'model': g['reviewer_model'], 'harness': g.get('reviewer_harness', 'claude-code'), 'effort': 'high'}
     prompt = (f'Read docs/reviewer-runbook.md and follow it. Your brief is {g["brief"]}.' if entry['harness'] == 'codex'
               else f'Read {g["brief"]} and follow it.')
-    preflight = (f'python3 {shlex.quote(str(TOOLS / "lint_review_readiness.py"))} --root '
-                 + shlex.quote(str(g.get('review_root') or root or ROOT))
-                 + ' --functions ' + ' '.join(g['functions']))
-    return ('dispatch', f'Run `{preflight}` first; only after it passes: '
+    return ('dispatch', f'Only after the preceding readiness lint passes: '
             f'Reviewer for {g["name"]}: [{len(g["functions"])} functions] {start_worker(entry, prompt, "reviewer")}. '
             f'Then: python3 tools/flow.py dispatched {g["name"]}')
 
@@ -2116,7 +2128,7 @@ def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, p
         # Draft/worktree pruning is explicit opt-in via flow.py worktrees prune.
     if integ.get('ci') != 'green':
         started = time.monotonic()
-        r = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        r = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                            cwd=root, capture_output=True, text=True)
         wall = integ.setdefault('wall_seconds', {})
         wall['ci'] = wall.get('ci', 0) + time.monotonic() - started
@@ -2304,7 +2316,7 @@ def _legacy_integrate_groups(root, fdir, names, batch_name, branch='main', push=
         # Draft/worktree pruning is explicit opt-in via flow.py worktrees prune.
     if integ.get('ci') != 'green':
         started = time.monotonic()
-        result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                                 cwd=root, capture_output=True, text=True)
         wall = integ['wall_seconds']
         wall['ci'] = wall.get('ci', 0) + time.monotonic() - started
@@ -2474,6 +2486,11 @@ def parser():
     s = sub.add_parser('session-start')
     s.add_argument('--profile', default=profiles.DEFAULT, choices=sorted(profiles.PROFILES))
     sub.add_parser('next-actions')
+    s = sub.add_parser('reconfirm-dropped')
+    s.add_argument('--resume')
+    s.add_argument('--dry-run', action='store_true')
+    s.add_argument('--wake-mac')
+    s.add_argument('--allow-low-disk', action='store_true')
     s = sub.add_parser('status')
     s.add_argument('--functions', action='store_true')
     s = sub.add_parser('review-group')
@@ -2551,16 +2568,23 @@ def parser():
     s = sub.add_parser('lane-retire')
     s.add_argument('run_id')
     s.add_argument('--reason', required=True)
+    s = sub.add_parser('lane-finish-superseded')
+    s.add_argument('run_id')
+    s.add_argument('--superseding-commit', required=True)
+    s.add_argument('--reason', required=True)
     s = sub.add_parser('tooling-push')
+    s.add_argument('--repair-red', help='exact red SHA; isolated, recorded repair of related advisory inputs only')
     s.add_argument('--branch', default='main')
     s.add_argument('--ci-wait', type=int, default=600)
     s.add_argument('--resume')
     s.add_argument('--wait-lane', action=argparse.BooleanOptionalAction, default=True,
-                   help='wait for other live publications (default)')
+                   help='queue the committed tip and wait for its batch outcome (default)')
     s.add_argument('--soft-free-gb', type=float)
     s.add_argument('--allow-low-disk', action='store_true')
     s = sub.add_parser('cleanup')
     s.add_argument('--dry-run', action='store_true')
+    s.add_argument('--prune-claims', action='store_true', help='also prune clean completed harvest checkouts; preserve refs')
+    s.add_argument('--keep-task-prefix', action='append', default=[], help='retain draft tasks with this prefix')
     s = sub.add_parser('sync')
     s.add_argument('--branch', default='main')
     s = sub.add_parser('brief')
@@ -2611,7 +2635,7 @@ def main(argv=None):
             print(f'flow: {exc}', file=sys.stderr)
             return 1
     if a.cmd in ('integrate', 'integrate-groups', 'integrate-family', 'integrate-labels', 'lane-run', 'lane-status',
-                 'lane-retire', 'tooling-push', 'cleanup', 'sync'):
+                 'lane-retire', 'lane-finish-superseded', 'tooling-push', 'cleanup', 'sync', 'reconfirm-dropped'):
         return execute(a, root, fdir)
     # Readers take the same short scheduling lock as state mutations.
     with state_lock(fdir):
@@ -2630,6 +2654,11 @@ def execute(a, root, fdir):
             log_event(fdir, 'session-start', profile=a.profile)
             print(f'session started with profile {a.profile}; next: python3 tools/flow.py next-actions')
             print('\n'.join(profiles.show(a.profile)))
+        elif a.cmd == 'reconfirm-dropped':
+            import flow_reconfirm
+            result = flow_reconfirm.execute(root, fdir, resume=a.resume, dry_run=a.dry_run,
+                                            wake_mac=a.wake_mac, allow_low_disk=a.allow_low_disk)
+            print(json.dumps(result, indent=2, sort_keys=True))
         elif a.cmd == 'next-actions':
             for i, (kind, text) in enumerate(next_actions(root, fdir, online=not a.offline), 1):
                 print(f'{i}. [{kind}] {text}')
@@ -2715,24 +2744,29 @@ def execute(a, root, fdir):
                              wait_lane=a.wait_lane), indent=2))
         elif a.cmd == 'lane-status':
             import flow_lane
-            with state_lock(fdir):
-                items = [flow_lane.read(p) for p in sorted((fdir / 'lane/queue').glob('*.json'))]
-                runs = [flow_lane.read(p) for p in sorted((fdir / 'lane/runs').glob('*.json'))]
-                tooling = [flow_lane.read(p) for p in sorted((fdir / 'lane/tooling').glob('*.json'))]
-                inputs = [flow_lane.read(p) for p in sorted((fdir / 'lane/tooling-queue').glob('*.json'))]
-            active = flow_lane.running(fdir)
+            # Atomic writers give a recent per-file observation; status never waits on a publisher.
+            items = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/queue').glob('*.json'))]
+            runs = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/runs').glob('*.json'))]
+            tooling = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/tooling').glob('*.json'))]
+            inputs = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/tooling-queue').glob('*.json'))]
+            owner_path = fdir / 'lane/owner.json'
+            owner = flow_lane.read(owner_path) if owner_path.is_file() else {}
+            active = bool(owner.get('active') and flow_lane.owner_alive(owner))
             print(json.dumps(dict(queue=items, tooling_inputs=inputs, runs=[flow_lane.run_status(root, fdir, r, active) for r in runs],
                                   tooling=[flow_lane.run_status(root, fdir, r, active) for r in tooling]), indent=2))
         elif a.cmd == 'lane-retire':
             import flow_lane
             print(json.dumps(flow_lane.retire(root, fdir, a.run_id, a.reason), indent=2))
+        elif a.cmd == 'lane-finish-superseded':
+            import flow_lane
+            print(json.dumps(flow_lane.finish_superseded(root, fdir, a.run_id, a.superseding_commit, a.reason), indent=2))
         elif a.cmd == 'tooling-push':
             import flow_lane
             print(json.dumps(flow_lane.publish_tooling(root, fdir, a.branch, a.ci_wait, resume=a.resume, wait_lane=a.wait_lane,
-                             soft_free_gb=a.soft_free_gb, allow_low_disk=a.allow_low_disk), indent=2))
+                             soft_free_gb=a.soft_free_gb, allow_low_disk=a.allow_low_disk, repair_red=a.repair_red), indent=2))
         elif a.cmd == 'cleanup':
             import flow_cleanup
-            print(json.dumps(flow_cleanup.cleanup(root, fdir, a.dry_run), indent=2))
+            print(json.dumps(flow_cleanup.cleanup(root, fdir, a.dry_run, a.prune_claims, a.keep_task_prefix), indent=2))
         elif a.cmd == 'sync':
             dropped = sync(root, a.branch)
             print(f'checkout at origin/{a.branch}; {len(dropped)} identical local cop(ies) replaced by the integrated files')

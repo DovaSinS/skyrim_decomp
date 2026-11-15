@@ -26,12 +26,82 @@ from check_source_digest import source_digest_cache
 from flow_state import state_lock, atomic_write, require_complete
 
 
-def read(path):
-    return json.loads(path.read_text())
+def read(path, *, details=True):
+    value = json.loads(path.read_text())
+    if details and isinstance(value, dict) and value.get('details_sidecar'):
+        ref = value['details_sidecar']
+        # Immutable content-addressed sidecars survive receipt replacement and snapshot copies.
+        name = ref['sha256']
+        f.refuse(len(name) == 64 and all(c in '0123456789abcdef' for c in name), 'invalid receipt sidecar digest')
+        blob = (path.parent / 'details' / (name + '.json')).read_bytes()
+        f.refuse(hashlib.sha256(blob).hexdigest() == name, 'receipt sidecar digest differs')
+        detail = json.loads(blob)
+        files = detail.pop('integrated_files', None)
+        value.update(detail)
+        if files is not None:
+            value['integrated']['files'] = files
+            value['integrated'].pop('files_count', None)
+        for key in ('tooling', 'tooling_accepted'):
+            for item in value.get(key, []):
+                if item.pop('integrated_files_from_run', False):
+                    item['integrated']['files'] = files
+        value.pop('details_sidecar')
+    return value
+
+
+def compact_receipt(path, receipt):
+    """Serialize large immutable member detail outside the scheduling lock; keep readers compatible."""
+    detail = {key: receipt[key] for key in ('origins', 'bindings', 'input_pins', 'gate_dependencies') if key in receipt}
+    if (receipt.get('integrated') or {}).get('files'):
+        detail['integrated_files'] = receipt['integrated']['files']
+    blob = json.dumps(detail, separators=(',', ':'), sort_keys=True).encode()
+    if len(blob) < 65536:
+        return receipt
+    digest = hashlib.sha256(blob).hexdigest()
+    sidecar = path.parent / 'details' / (digest + '.json')
+    if not sidecar.is_file():
+        atomic_write(sidecar, blob)
+    compact = {key: value for key, value in receipt.items() if key not in detail}
+    if 'integrated_files' in detail:
+        compact['integrated'] = dict(receipt['integrated'], files_count=len(detail['integrated_files']))
+        compact['integrated'].pop('files')
+    compact['details_sidecar'] = dict(sha256=digest, bytes=len(blob), fields=sorted(detail))
+    compact_tooling(compact, receipt)
+    return compact
+
+
+def compact_tooling(compact, receipt):
+    """Keep current mutable request state, referencing the run's shared file list only."""
+    if compact is receipt or not compact.get('details_sidecar'):
+        return
+    files = (receipt.get('integrated') or {}).get('files')
+    if not files:
+        return
+    for key in ('tooling', 'tooling_accepted'):
+        if key not in receipt:
+            continue
+        items = []
+        for original in receipt[key]:
+            item = dict(original)
+            integrated = item.get('integrated') or {}
+            listed = integrated.get('files')
+            if listed is files or listed == files:
+                item['integrated'] = {k: v for k, v in integrated.items() if k != 'files'}
+                item['integrated_files_from_run'] = True
+            items.append(item)
+        compact[key] = items
 
 
 def write(path, value):
     atomic_write(path, (json.dumps(value, indent=2, sort_keys=True) + '\n').encode())
+
+
+def guard_cleanup(fdir, root):
+    # Called under the state lock by every enqueue/resume path.
+    for reservation in (Path(fdir) / 'cleanup/claims').glob('*.json'):
+        claim = read(reservation)
+        f.refuse(not claim.get('active') or not Path(root).resolve().is_relative_to(Path(claim['tree'])),
+                 'input checkout is being cleaned; retry after cleanup with a retained input')
 
 
 def enqueue(root, fdir, kind, selection, branch='main', approved_only=False, with_metadata=False, name=None):
@@ -42,10 +112,7 @@ def enqueue(root, fdir, kind, selection, branch='main', approved_only=False, wit
     path = fdir / 'lane/queue' / (key + '.json')
     with state_lock(fdir):
         require_complete(fdir)
-        for reservation in (fdir / 'cleanup/claims').glob('*.json'):
-            claim = read(reservation)
-            f.refuse(not claim.get('active') or not root.is_relative_to(Path(claim['tree'])),
-                     'input checkout is being cleaned; retry after cleanup with a retained input')
+        guard_cleanup(fdir, root)
         if path.exists():
             previous = read(path)
             if previous['state'] in ('queued', 'running'):
@@ -156,9 +223,10 @@ def run_status(root, fdir, receipt, active=None):
         value['status'] = 'stale' if stale else 'running' if active else 'paused'
         value['lane_busy'] = active
         command = 'tooling-push' if receipt.get('kind') == 'tooling' else 'lane-run'
-        value['resume_command'] = prefix + ' ' + command + ' --resume ' + shlex.quote(receipt['id']) + ' --branch ' + shlex.quote(receipt['branch'])
+        resume_id = receipt.get('run') if receipt.get('kind') == 'tooling-request' else receipt['id']
+        value['resume_command'] = prefix + ' ' + command + ' --resume ' + shlex.quote(resume_id) + ' --branch ' + shlex.quote(receipt['branch'])
         if not (receipt.get('integrated') or {}).get('pushed'):
-            value['retire_command'] = prefix + ' lane-retire ' + receipt['id'] + " --reason 'owner stopped; selection superseded'"
+            value['retire_command'] = prefix + ' lane-retire ' + resume_id + " --reason 'owner stopped; selection superseded'"
     return value
 
 
@@ -172,6 +240,9 @@ def receipt_path(fdir, run_id):
 
 
 def retire(root, fdir, run_id, reason):
+    requested = read(receipt_path(fdir, run_id))
+    if requested.get('kind') == 'tooling-request':
+        run_id = requested['run']
     with lane_lock(fdir), state_lock(fdir):
         path = receipt_path(fdir, run_id)
         receipt = read(path)
@@ -187,6 +258,103 @@ def retire(root, fdir, run_id, reason):
         f.log_event(Path(fdir), 'lane-retired', lane=run_id, kind=receipt.get('kind', 'integration'), reason=reason)
         return receipt
 
+
+
+SUPERSEDED_ADVISORY = 'red-advisory-superseded'
+ADVISORY_WORKFLOW = 'Advisory target hashes'
+ADVISORY_STEP = 'target-hashes / Compile 50 accepted references twice against published target hashes'
+
+
+def ci_evidence(root, commit, python):
+    """Read exact-SHA CI evidence without interpreting an advisory failure as success."""
+    result = subprocess.run([python, str(f.TOOLS / 'ci_status.py'), '--commit', commit, '--json'],
+                            cwd=root, capture_output=True, text=True)
+    f.refuse(result.returncode in (0, 1), 'CI evidence unavailable or pending for ' + commit)
+    try:
+        evidence = json.loads(result.stdout)
+    except ValueError:
+        raise f.FlowError('invalid CI evidence for ' + commit) from None
+    f.refuse(evidence.get('commit') == commit, 'CI evidence names another commit')
+    f.refuse(evidence.get('result') == {0: 'green', 1: 'red'}[result.returncode], 'CI evidence result mismatch')
+    return evidence
+
+
+def validate_supersession_ci(original, replacement):
+    required = {'Infrastructure checks', 'Publish research report', ADVISORY_WORKFLOW}
+    for evidence in (original, replacement):
+        runs = evidence.get('runs', [])
+        f.refuse(required <= {r.get('workflow') for r in runs}, 'missing required CI workflow')
+        f.refuse(all(r.get('status') == 'completed' for r in runs), 'CI still pending')
+    f.refuse(original.get('result') == 'red', 'original CI must remain red')
+    failures = [r for r in original['runs'] if r.get('conclusion') != 'success']
+    f.refuse(failures and all(r.get('workflow') == ADVISORY_WORKFLOW
+                             and r.get('conclusion') == 'failure'
+                             and r.get('failed_steps') == [ADVISORY_STEP] for r in failures),
+             'CI failure is not exclusively the supported advisory hash step')
+    f.refuse(replacement.get('result') == 'green'
+             and all(r.get('conclusion') == 'success' for r in replacement['runs']),
+             'superseding CI must pass every workflow')
+
+
+def finish_superseded(root, fdir, run_id, superseding_commit, reason, python=sys.executable):
+    """Finish a dead pushed checkpoint after an explicitly authorized advisory repair."""
+    root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    f.refuse(reason.strip(), 'a supersession reason is required')
+    import ci_status
+    f.refuse(ci_status.FULL_SHA.fullmatch(superseding_commit), 'superseding commit must be a full SHA')
+    lock = fdir / 'lane/ci-locks' / (run_id + '.lock')
+    # Resolve before constructing the observer lock so run ids cannot escape its directory.
+    path = receipt_path(fdir, run_id)
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    with lock.open('a') as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise f.FlowError('CI observer is active; cannot supersede receipt') from None
+        with state_lock(fdir):
+            require_complete(fdir)
+            receipt = read(path)
+            integ = receipt.get('integrated') or {}
+            f.refuse(not owner_alive(receipt.get('owner')), 'receipt owner is still live')
+            f.refuse(receipt.get('state') in ('running', 'stale', 'failed', 'conflict', 'done'),
+                     'receipt cannot be finished by supersession')
+            f.refuse(integ.get('pushed'), 'only an already pushed receipt can be superseded')
+            if receipt.get('state') == 'done':
+                f.refuse(integ.get('ci') == SUPERSEDED_ADVISORY
+                         and integ.get('superseded_by') == superseding_commit,
+                         'terminal receipt has another outcome')
+                return dict(id=run_id, state='done', commit=integ['commit'], ci=integ['ci'],
+                            superseded_by=superseding_commit)
+            commit, branch = integ['commit'], receipt['branch']
+        f.refuse(commit != superseding_commit, 'superseding commit must be a descendant')
+        f.git(root, 'fetch', '--quiet', 'origin', branch)
+        f.refuse(f.git(root, 'merge-base', commit, superseding_commit, check=False) == commit,
+                 'pushed commit is not an ancestor of superseding commit')
+        f.refuse(f.git(root, 'merge-base', superseding_commit, 'origin/' + branch, check=False) == superseding_commit,
+                 'superseding commit is not published on the receipt branch')
+        original = ci_evidence(root, commit, python)
+        replacement = ci_evidence(root, superseding_commit, python)
+        validate_supersession_ci(original, replacement)
+        with state_lock(fdir):
+            # The per-run observer lease excludes concurrent pushed-receipt writers.
+            integ.update(ci=SUPERSEDED_ADVISORY, superseded_by=superseding_commit,
+                         ci_supersession=dict(reason=reason, recorded_at=f.utc(),
+                                              original=original, superseding=replacement))
+            receipt.update(state='done', finished_owner=receipt.get('owner'), owner=None)
+            receipt.pop('error', None)
+            accepted_items = {r['item'] for r in receipt.get('accepted', [])}
+            for item in receipt.get('items', []):
+                item['state'] = 'done' if item['id'] in accepted_items else 'dropped'
+            if path.parent.name == 'runs':
+                save_run(fdir, receipt)
+            else:
+                save_tooling(fdir, receipt)
+            f.log_event(fdir, 'ci-superseded', lane=run_id, commit=commit,
+                        result=SUPERSEDED_ADVISORY, superseded_by=superseding_commit, reason=reason)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
+    return dict(id=run_id, state='done', commit=commit, ci=SUPERSEDED_ADVISORY,
+                superseded_by=superseding_commit, accepted=integ.get('accepted'))
 
 def lane_python(requested):
     """The worker interpreter is a transport/build prerequisite, never a match predicate."""
@@ -213,7 +381,7 @@ def recover_stale(fdir):
             for path in (Path(fdir) / 'lane' / directory).glob('*.json'):
                 receipt = read(path)
                 owner = receipt.get('owner') or {}
-                if (receipt.get('state') != 'running' or not owner or owner.get('host') != socket.gethostname()
+                if (receipt.get('kind') == 'tooling-request' or receipt.get('state') != 'running' or not owner or owner.get('host') != socket.gethostname()
                         or owner_alive(owner) or (receipt.get('integrated') or {}).get('pushed')):
                     continue
                 receipt.update(state=('conflict' if 'git rebase' in receipt.get('error', '') else 'stale'), stale_at=f.utc(),
@@ -232,7 +400,7 @@ def wait_for_owner(root, fdir, directory, resume, wait):
     while True:
         with state_lock(fdir):
             unfinished = [read(p) for p in (Path(fdir) / 'lane' / directory).glob('*.json')
-                          if read(p)['state'] == 'running'
+                          if read(p)['state'] == 'running' and read(p).get('kind') != 'tooling-request'
                           and not (read(p).get('integrated') or {}).get('pushed')]
         blockers = [r for r in unfinished if r['id'] != resume]
         blockers = [r for r in blockers if not (r.get('root') == str(root)
@@ -253,34 +421,65 @@ def wait_for_owner(root, fdir, directory, resume, wait):
 
 
 def require_green(root, commit, python, ci_wait):
-    result = subprocess.run([python, 'tools/ci_status.py', '--commit', commit, '--wait', str(ci_wait)],
+    result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', commit, '--wait', str(ci_wait)],
                             cwd=root, capture_output=True, text=True)
     f.refuse(result.returncode == 0, 'origin CI is not green: ' + result.stdout.strip())
 
 
 def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executable, resume=None, wait_lane=False,
-                    soft_free_gb=None, allow_low_disk=False):
+                    soft_free_gb=None, allow_low_disk=False, repair_red=None):
+    """Register new tooling requests before taking the shared batching lane."""
+    root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    import flow_cleanup
+    if fdir.is_dir():
+        flow_cleanup.automatic_retention(root, fdir)
+    python = lane_python(python)
+    if repair_red:
+        import flow_repair
+        flow_repair.validate_sha(repair_red)
+        return _publish_legacy_tooling(root, fdir, branch, ci_wait, python, resume, wait_lane,
+                                       soft_free_gb, allow_low_disk, repair_red)
+    if not resume:
+        import flow_tooling
+        return flow_tooling.publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk, wait_lane)
+    requested = read(receipt_path(fdir, resume))
+    if requested.get('kind') == 'tooling-request':
+        resume = requested['run']
+    if receipt_path(fdir, resume).parent.name == 'runs':
+        return run_lane(root, fdir, branch, True, ci_wait, python, soft_free_gb=soft_free_gb,
+                        allow_low_disk=allow_low_disk, resume=resume, wait_lane=wait_lane)
+    return _publish_legacy_tooling(root, fdir, branch, ci_wait, python, resume, wait_lane,
+                                  soft_free_gb, allow_low_disk)
+
+
+def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executable, resume=None, wait_lane=False,
+                    soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Check and publish committed tooling under the same lane lock as acceptance work."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
     python = lane_python(python)
-    if resume and receipt_path(fdir, resume).parent.name == 'runs':
-        return run_lane(root, fdir, branch, True, ci_wait, python, soft_free_gb=soft_free_gb,
-                        allow_low_disk=allow_low_disk, resume=resume, wait_lane=wait_lane)
-    if wait_lane and not resume:
-        import flow_tooling
-        return flow_tooling.publish(root, fdir, branch, ci_wait, python, soft_free_gb, allow_low_disk)
     if resume:
         with state_lock(fdir):
             previous = read(receipt_path(fdir, resume))
         if (previous.get('integrated') or {}).get('pushed'):
             f.refuse(previous['root'] == str(root) and previous['branch'] == branch,
                      'resume tooling publication with its original root and branch')
+            if previous.get('repair_red') and not previous.get('repair_dispatched'):
+                with lane_lock(fdir, wait=wait_lane, purpose='tooling-repair-dispatch'):
+                    f.git(root, 'fetch', '--quiet', 'origin', branch)
+                    f.refuse(f.git(root, 'rev-parse', 'origin/' + branch) == previous['integrated']['commit'],
+                             'repair head moved before workflow dispatch; inspect before resuming')
+                    import flow_repair
+                    previous['repair_dispatched'] = flow_repair.dispatch(root, branch, previous['repair'])
+                    save_tooling(fdir, previous)
             return finish_tooling(root, fdir, previous, python, ci_wait)
+    if repair_red:
+        wait_for_owner(root, fdir, 'runs', None, wait_lane)
     wait_for_owner(root, fdir, 'tooling', resume, wait_lane)
     with lane_lock(fdir, wait=wait_lane, purpose='tooling') as lease:
         recover_stale(fdir)
         with state_lock(fdir):
-            pending = [read(p) for p in (fdir / 'lane/tooling').glob('*.json') if read(p)['state'] == 'running' and not (read(p).get('integrated') or {}).get('pushed')]
+            pending = [read(p) for p in (fdir / 'lane/tooling').glob('*.json') if read(p)['state'] == 'running' and read(p).get('kind') != 'tooling-request'
+                       and not (read(p).get('integrated') or {}).get('pushed')]
             if resume:
                 selected = read(receipt_path(fdir, resume))
                 f.refuse(selected['state'] in ('running', 'failed', 'conflict', 'stale'), 'receipt cannot be resumed')
@@ -295,6 +494,14 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                 f.refuse(not resume, 'no unfinished tooling publication with that id')
                 receipt = dict(id=uuid.uuid4().hex[:16], kind='tooling', root=str(root), branch=branch,
                                state='running', integrated=None)
+            guard_cleanup(fdir, root)
+            if receipt.get('tree'):
+                guard_cleanup(fdir, receipt['tree'])
+            if repair_red and receipt.get('repair_red'):
+                f.refuse(repair_red == receipt['repair_red'], 'repair SHA differs from saved receipt')
+            repair_red = repair_red or receipt.get('repair_red')
+            if repair_red:
+                receipt['repair_red'] = repair_red
             receipt['owner'] = process_owner()
             receipt.update(state='running', python=python)
             path = fdir / 'lane/tooling' / (receipt['id'] + '.json')
@@ -324,6 +531,10 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                     if f.git(root, 'merge-base', base, 'HEAD') != base:
                         f.git(root, 'rebase', f'origin/{branch}')
                     commit = f.git(root, 'rev-parse', 'HEAD')
+                    if repair_red:
+                        import flow_repair
+                        receipt['repair'] = flow_repair.approve(root, base, commit, repair_red, python, ci_wait)
+                        save()
                     checked = receipt.get('integrated') or {}
                     if not (checked.get('checks') and checked.get('commit') == commit):
                         resource_admission.admit(root, 'tooling validation', soft_gb=soft_free_gb, allow_low_disk=allow_low_disk)
@@ -340,9 +551,11 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                         integ = checked
                         integ['base_revision'] = base
                     # A red main must be resolved before unrelated publication.
-                    result = subprocess.run([python, 'tools/ci_status.py', '--commit', base, '--wait', str(ci_wait)],
-                                            cwd=root, capture_output=True, text=True)
-                    f.refuse(result.returncode == 0, 'origin CI is not green: ' + result.stdout.strip())
+                    if repair_red:
+                        receipt['repair'] = flow_repair.approve(root, base, commit, repair_red, python, ci_wait)
+                        save()
+                    else:
+                        require_green(root, base, python, ci_wait)
                     f.git(root, 'fetch', '--quiet', 'origin', branch)
                     if f.git(root, 'rev-parse', f'origin/{branch}') != base:
                         continue
@@ -359,6 +572,10 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                     save()
                     break
                 f.refuse(integ.get('pushed'), 'origin kept moving; resume tooling-push after coordinating publishers')
+            if repair_red and not receipt.get('repair_dispatched'):
+                import flow_repair
+                receipt['repair_dispatched'] = flow_repair.dispatch(root, branch, receipt['repair'])
+                save()
             lease.release()
             receipt['lane_hold_seconds'] = lease.seconds
             save()
@@ -387,7 +604,11 @@ def ci_serialized(directory):
                 fcntl.flock(handle, fcntl.LOCK_EX)
                 with state_lock(fdir):
                     current = read(path)
-                if current.get('state') == 'done' and (current.get('integrated') or {}).get('ci') == 'green':
+                integrated = current.get('integrated') or {}
+                terminal_ci = (integrated.get('ci') == 'green'
+                               or (integrated.get('ci') == SUPERSEDED_ADVISORY
+                                   and integrated.get('superseded_by') and integrated.get('ci_supersession')))
+                if current.get('state') == 'done' and terminal_ci:
                     return current
                 try:
                     return function(root, fdir, current, python, ci_wait)
@@ -412,7 +633,13 @@ def finish_tooling(root, fdir, receipt, python, ci_wait):
     integ = receipt['integrated']
     receipt['owner'] = process_owner()
     save_tooling(fdir, receipt)
-    result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+    args = [python, 'tools/ci_status.py']
+    if receipt.get('repair'):
+        for workflow in ('Infrastructure checks', 'Publish research report', *receipt['repair']['workflows']):
+            args += ['--require-workflow', workflow]
+    else:
+        args += ['--without-advisory']
+    result = subprocess.run(args + ['--commit', integ['commit'], '--wait', str(ci_wait)],
                             cwd=root, capture_output=True, text=True)
     integ['ci'] = {0: 'green', 1: 'red', 2: 'pending'}.get(result.returncode, 'unavailable')
     ci_log = fdir / 'lane/tooling' / receipt['id'] / 'ci.log'
@@ -421,9 +648,11 @@ def finish_tooling(root, fdir, receipt, python, ci_wait):
     receipt['ci_log'] = str(ci_log)
     save_tooling(fdir, receipt)
     f.refuse(integ['ci'] == 'green', 'tooling CI ' + integ['ci'] + ': ' + result.stdout.strip())
-    receipt.update(state='done')
+    receipt.update(state='done', finished_owner=receipt.get('owner'), owner=None)
     receipt.pop('error', None)
     save_tooling(fdir, receipt)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
     return receipt
 
 
@@ -433,6 +662,114 @@ def signature(fdir, group):
     value = dict(f.load_group(fdir, group))
     value.pop('integrated', None)
     return value
+
+
+def gate_inputs(root, frozen, requests):
+    """Pin the complete evidence consulted for these members, not other workers' gates."""
+    data = f.inventory(root)
+    by_id = {fn['id']: fn for fn in data['functions']}
+    selected = {(r['build_id'], rva) for r in requests for rva in r['functions']}
+    members = {fid for fid, fn in by_id.items() if (fn['build_id'], f.hexrva(fn['rva'])) in selected}
+    records = {}
+
+    def record(fid):
+        if fid not in records:
+            records[fid] = f.fr.read(root, by_id[fid]['report'])
+        return records[fid]
+
+    families, batches = f.family_manifests(root), f.family_batches(root)
+    paths, relevant_families = set(), set()
+    for request in requests:
+        if request['kind'] == 'family':
+            paths.add(request['path'])
+            batch = batches[request['path']]
+            members.update(batch['population'])
+            relevant_families.add(batch['family_path'])
+    # Individual reviews also consult family holds and the samples of bound batches.
+    for path, family in families.items():
+        if any(record(fid).get('origin') == family['origin']
+               and f.fr.binding(by_id[fid], record(fid)) == family['binding'] for fid in members):
+            relevant_families.add(path)
+    sample_members = set()
+    for path, batch in batches.items():
+        if path in paths or any(fid in batch['population']
+                                and f.fr.member_digest(by_id[fid], record(fid)) == batch['members'][fid]
+                                for fid in members):
+            paths.add(path)
+            relevant_families.add(batch['family_path'])
+            sample_members.update(batch['sample'] or [])
+    members.update(sample_members)
+    for path in relevant_families:
+        family = families[path]
+        paths.add(path)
+        members.update(family['first_members'])
+        if family.get('review'):
+            paths.add(f.REVIEWS + '/' + family['review']['review_task_id'] + '.family.json')
+        for field in ('template_source', 'parameter_source'):
+            paths.add(family[field]['path'])
+    referenced = {(by_id[fid]['build_id'], f.hexrva(by_id[fid]['rva'])) for fid in members}
+    all_groups = f.groups(frozen)
+    names = {r['group'] for r in requests if r.get('group')}
+    names.update(name for name, group in all_groups.items()
+                 if group.get('family_review_path') in relevant_families
+                 or any((group['build_id'], rva) in referenced for rva in group['functions']))
+    names.update(all_groups[name]['pair'] for name in list(names) if all_groups[name].get('pair'))
+    bindings = {name: signature(frozen, name) for name in names}
+    for group in bindings.values():
+        paths.add(str(f.review_path(root, group).resolve()))
+        if group.get('family_review_path') in relevant_families:
+            paths.add(f.REVIEWS + '/' + group['task_id'] + '.family.json')
+    for fid in members:
+        paths.add(by_id[fid]['report'])
+        paths.add(str(Path(by_id[fid]['report']).with_suffix('.review.json')))
+    pins = {}
+    for rel in paths:
+        path = root / rel
+        pins[str(path)] = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+    return bindings, pins
+
+
+def request_key(request):
+    return (request['item'], request['kind'], request.get('group'), request.get('path'))
+
+
+def requeue_changed_gates(root, fdir, receipt):
+    """Retain changed selections for a fresh gate pass; rebuild the rest normally."""
+    if 'gate_dependencies' not in receipt:
+        # Old receipts lack scoped dependencies. Reproduce acceptance from live gates
+        # instead of publishing their old candidate without its original guard.
+        receipt['attempts'].append(receipt['integrated'])
+        receipt['integrated'] = None
+        save_run(fdir, receipt)
+        return True
+    affected = []
+    for dependency in receipt.get('gate_dependencies', []):
+        try:
+            groups_changed = any(signature(fdir, name) != pinned
+                                 for name, pinned in dependency['bindings'].items())
+            files_changed = any((hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                                 if Path(path).is_file() else None) != digest
+                                for path, digest in dependency['pins'].items())
+        except (f.FlowError, OSError, ValueError, KeyError, TypeError):
+            groups_changed, files_changed = True, True
+        if groups_changed or files_changed:
+            affected.append(dependency['request'])
+    if not affected:
+        return False
+    with state_lock(fdir):
+        for request in affected:
+            item = next(i for i in receipt['items'] if i['id'] == request['item'])
+            selection = [request['group']] if request.get('group') else item['selection']
+            retry = enqueue(Path(item['root']), fdir, item['kind'], selection, item['branch'],
+                            item['approved_only'], item['with_metadata'],
+                            name='gate-changed-' + receipt['id'] + '-' + hashlib.sha256(
+                                json.dumps(selection).encode()).hexdigest()[:12])
+            receipt.setdefault('gate_dropped', []).append(dict(request=request, reason='gate-changed: requeue',
+                                                               requeued=retry['id']))
+        receipt['attempts'].append(receipt['integrated'])
+        receipt.update(integrated=None, accepted=[])
+    save_run(fdir, receipt)
+    return True
 
 
 def prepare(item, frozen):
@@ -487,7 +824,9 @@ def prepare(item, frozen):
                 bindings[group['pair']] = signature(frozen, group['pair'])
             requests.append(dict(kind='review', group=name, review=str(f.review_path(root, group).resolve()),
                                  functions=approved, build_id=group['build_id'],
-                                 profile=group.get('profile', f.profiles.DEFAULT), harvests=group.get('harvests')))
+                                 profile=group.get('profile', f.profiles.DEFAULT), harvests=group.get('harvests'),
+                                 record_refresh=group.get('record_refresh', []),
+                                 **({'contributor': group['contributor']} if group.get('contributor') else {})))
     return requests, bindings
 
 
@@ -501,12 +840,15 @@ def accept(tree, requests, python):
 
 
 def save_run(fdir, receipt):
+    path = fdir / 'lane/runs' / (receipt['id'] + '.json')
+    compact = compact_receipt(path, receipt)
     with state_lock(fdir):
-        write(fdir / 'lane/runs' / (receipt['id'] + '.json'), receipt)
         for item in receipt['items']:
             write(fdir / 'lane/queue' / (item['id'] + '.json'), item)
         import flow_tooling
         flow_tooling.save_items(fdir, receipt, receipt.get('state') == 'done')
+        compact_tooling(compact, receipt)
+        write(path, compact)
         integ = receipt.get('integrated')
         if integ:
             group_members = {}
@@ -537,7 +879,36 @@ def _source_files(root, request):
             paths.add(name)
             if (root / f.history_name(name)).exists():
                 paths.add(f.history_name(name))
+    paths.update(refreshed_records(root, request, by_rva))
     return by_rva, paths
+
+
+def refreshed_records(root, request, by_rva):
+    if not request.get('record_refresh'):
+        return []
+    allowed = {f.fr.read(root, by_rva[rv]['report'])['source']['compiled'] for rv in request['functions']}
+    selected = {fn['id']: fn for fn in by_rva.values()}
+    _, target = f.af.load(root)
+    records = []
+    for fid in request['record_refresh']:
+        fn = selected[fid]
+        record = f.fr.read(root, fn['report'])
+        if record['source']['compiled'] not in allowed:
+            continue
+        f.refuse(fn['status'] != 'matched', 'matched companion needs its own review selection')
+        f.af.validate_match(dict(fn, status='matched'), target, root)
+        records.append(fn['report'])
+    return records
+
+
+def carry_request(source, tree, request, by_rva):
+    companions = refreshed_records(source, request, by_rva)
+    files = f.carry_into_tree(source, tree, request['functions'], by_rva, request.get('harvests'))
+    for name in companions:
+        destination = tree / name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source / name, destination)
+    return sorted(set(files) | set(companions))
 
 
 def copy_private_review(source, tree, review, name=None):
@@ -632,6 +1003,76 @@ def merge_metadata(tree, source, revision):
     f.git(tree, 'merge', '--quiet', '--no-edit', revision)
 
 
+def contributor_history(tree, source, contribution):
+    """Validate the ancestry that a contributor merge will retain, without checking it out.
+
+    Only accepted requests reach this path. The Engineer's AI screen and fresh reviews are
+    recorded in the pinned group; this repeats the mechanical scope/resource checks for the
+    exact parent being published. The acceptance tree still contains only carried inputs.
+    """
+    import re
+    from contrib_autopilot import SHA, UNIT
+    from contrib_screen import MAX_BYTES, screen
+    f.refuse(isinstance(contribution, dict) and set(contribution) == {'head', 'base', 'authors', 'paths'},
+             'invalid contributor ancestry metadata')
+    head, base = contribution['head'], contribution['base']
+    f.refuse(isinstance(head, str) and SHA.fullmatch(head) and isinstance(base, str) and SHA.fullmatch(base),
+             'invalid contributor ancestry revisions')
+    f.git(tree, 'fetch', '--quiet', str(source), head)
+    paths = f.git(tree, 'diff', '--name-only', '--no-renames', f'{base}...{head}').splitlines()
+    f.refuse(paths and sorted(paths) == sorted(contribution['paths']) and all(UNIT.fullmatch(p) for p in paths),
+             'contributor ancestry changes files outside its screened scope')
+    commits = f.git(tree, 'rev-list', '--reverse', f'{base}..{head}').splitlines()
+    f.refuse(0 < len(commits) <= 100, 'contributor history resource cap')
+    for commit in commits:
+        parents = f.git(tree, 'rev-list', '--parents', '-n', '1', commit).split()
+        f.refuse(len(parents) == 2, 'unreviewed contributor merge history')
+        names = f.git(tree, 'diff-tree', '--no-commit-id', '--name-only', '--no-renames', '-r', commit).splitlines()
+        f.refuse(all(UNIT.fullmatch(p) for p in names), 'contributor history leaves source scope')
+        for name in names:
+            mode = f.git(tree, 'ls-tree', commit, '--', name).split()
+            f.refuse(mode and mode[0] == '100644', 'contributor history has a non-regular source or deletion')
+            f.refuse(int(f.git(tree, 'cat-file', '-s', f'{commit}:{name}')) <= MAX_BYTES,
+                     'contributor history file-size cap')
+            blob = f.drafts.git(tree, 'show', f'{commit}:{name}')
+            f.refuse(not screen(blob, name), 'contributor history failed the deterministic screen')
+    authors = sorted(set(f.git(tree, 'log', '--format=%an <%ae>', f'{base}..{head}').splitlines()))
+    f.refuse(authors and authors == contribution['authors'] and all(
+        re.fullmatch(r'[^<>\r\n]{1,100} <[^<>\s]+@[^<>\s]+>', a) for a in authors),
+        'contributor attribution differs from original commits')
+    return head, authors
+
+
+def commit_acceptance(tree, requests, items, message, commit_date):
+    """An ordinary acceptance commit, or a merge with the original contributor parent(s).
+
+    commit-tree retains those exact commits and authors without ever checking out their trees,
+    running their hooks, or pulling rejected files into the accepted tree. This also supports a
+    partially accepted PR. Source acceptance and the staged guard have already passed unchanged.
+    """
+    contributions = {}
+    for request in requests:
+        if request.get('contributor'):
+            value = request['contributor']
+            source = Path(next(i['root'] for i in items if i['id'] == request['item']))
+            head, authors = contributor_history(tree, source, value)
+            contributions[head] = authors
+    env = dict(os.environ, GIT_COMMITTER_DATE=commit_date)
+    if not contributions:
+        f.run(['git', 'commit', '--quiet', '-m', message], tree, 'git commit', env=env)
+        return
+    previous = f.git(tree, 'rev-parse', 'HEAD')
+    parents = [previous] + [h for h in sorted(contributions) if h != previous]
+    trailers = sorted({a for names in contributions.values() for a in names})
+    message += '\n\n' + '\n'.join('Co-authored-by: ' + author for author in trailers) + '\n'
+    command = ['git', 'commit-tree', f.git(tree, 'write-tree')]
+    for parent in parents:
+        command += ['-p', parent]
+    result = subprocess.run(command, cwd=tree, env=env, input=message, capture_output=True, text=True)
+    f.refuse(result.returncode == 0, 'contributor merge commit failed')
+    f.git(tree, 'update-ref', 'HEAD', result.stdout.strip(), previous)
+
+
 def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk=False, hard_free_gb=None):
     try:
         resource_admission.admit(fdir, 'lane build', hard_gb=hard_free_gb,
@@ -667,29 +1108,31 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     frozen = tree / '.local/flow'
     snapshot(fdir, frozen)
     requests, bindings, origins, carried, pins = [], {}, [], set(), {}
-    input_pins, review_copies = {}, {}
-    dropped = []
+    input_pins, review_copies, gate_dependencies = {}, {}, []
+    dropped = list(receipt.get('gate_dropped', []))
+    excluded = {request_key(d['request']) for d in dropped}
     parts = [dict(item, selection=[name]) if item['kind'] == 'groups' else item
              for item in receipt['items'] for name in (item['selection'] if item['kind'] == 'groups' else [None])]
     for item in parts:
         source = Path(item['root'])
         before_item = f.git(tree, 'rev-parse', 'HEAD')
         try:
-            selected, bound = prepare(item, frozen)
+            if item['kind'] in ('family', 'label'):
+                key = (item['id'], item['kind'], None, item['selection'][0] if item['kind'] == 'family' else None)
+                if key in excluded:
+                    continue
+            elif all((item['id'], 'review', name, None) in excluded for name in item['selection']):
+                continue
+            selected, _ = prepare(item, frozen)
+            selected = [r for r in selected if request_key(dict(r, item=item['id'])) not in excluded]
+            if not selected:
+                continue
             for review in sorted((source / f.REVIEWS).rglob('*')):
                 if not review.is_file():
                     continue
                 f.review_path(source, dict(saved_review=str(review)))
                 dest = copy_private_review(source, tree, review)
-                input_pins[str(review.resolve())] = hashlib.sha256(review.read_bytes()).hexdigest()
                 review_copies[str(review.resolve())] = dest.relative_to(tree).as_posix()
-            for request in selected:
-                if request['kind'] == 'family':
-                    batch = f.fr.read(source, request['path'])
-                    for rel in (request['path'], batch['family_path']):
-                        input_pins[str(source / rel)] = hashlib.sha256((source / rel).read_bytes()).hexdigest()
-                    # Family sampling checks may consult any individually reviewed population member.
-                    bound.update({n: signature(frozen, n) for n in f.groups(frozen)})
 
             f.git(source, 'fetch', '--quiet', 'origin', branch)
             metadata_origin = f.git(source, 'merge-base', 'HEAD', f'origin/{branch}') if item['with_metadata'] else None
@@ -702,6 +1145,10 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
             if item['with_metadata'] and metadata_base != f'origin/{branch}':
                 merge_metadata(tree, source, metadata_base)
             for request in selected:
+                dependencies, evidence = gate_inputs(source, frozen, [request])
+                bound = dependencies
+                request_pins = dict(evidence)
+                input_pins.update(evidence)
                 by_rva, paths = _source_files(source, request)
                 f._integration_origin_unchanged(source, f.git(source, 'rev-parse', 'HEAD'), base,
                                                sorted(paths), request['build_id'], request['functions'])
@@ -714,19 +1161,19 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                     f.refuse(rel not in pins or pins[rel] == digest, 'incompatible queued inputs: ' + rel)
                     pins[rel] = digest
                     input_pins[str(source / rel)] = digest
-                carried.update(f.carry_into_tree(source, tree, request['functions'], by_rva, request.get('harvests')))
+                    request_pins[str(source / rel)] = digest
+                carried.update(carry_request(source, tree, request, by_rva))
                 request['item'] = item['id']
                 if request.get('review'):
                     src = Path(request['review'])
                     dest = copy_private_review(source, tree, src, item['id'] + '-' + src.name)
                     input_pins[str(src)] = hashlib.sha256(src.read_bytes()).hexdigest()
+                    request_pins[str(src)] = input_pins[str(src)]
                     request['review'] = str(dest)
                 # The validated recursive copy above already preserves family approval filenames.
                 requests.append(request)
-            bindings.update(bound)
-            for group in bound.values():
-                path = f.review_path(source, group).resolve()
-                input_pins[str(path)] = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+                bindings.update(bound)
+                gate_dependencies.append(dict(request=request, bindings=bound, pins=request_pins))
 
         except (f.FlowError, f.af.Refused, ValueError, KeyError, TypeError, OSError) as error:
             if (tree / '.git/MERGE_HEAD').exists():
@@ -760,7 +1207,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         for request in selected:
             source = Path(next(i['root'] for i in receipt['items'] if i['id'] == request['item']))
             by_rva, _ = _source_files(source, request)
-            f.carry_into_tree(source, tree, request['functions'], by_rva, request.get('harvests'))
+            carry_request(source, tree, request, by_rva)
 
     # Remove any partial carry of a request that failed before acceptance.
     if dropped:
@@ -773,6 +1220,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         requests = remaining
         recarry(requests)
     result = accept(tree, requests, python) if requests else dict(accepted=[], dropped=[], changed=[])
+    receipt['accept_wall_seconds'] = result.get('wall_seconds', {})
     if not result['accepted'] and not active_tools and not receipt.get('baseline_check'):
         receipt.update(dropped=dropped + result['dropped'], state='done')
         for item in receipt['items']:
@@ -783,10 +1231,22 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         recarry(result['accepted'])
         failures = result['dropped']
         result = accept(tree, result['accepted'], python)
+        receipt['accept_recarry_wall_seconds'] = result.get('wall_seconds', {})
         f.refuse(not result['dropped'], 'accepted member changed during re-carry')
         result['dropped'] = failures
     f.refuse(result['accepted'] or active_tools or receipt.get('baseline_check'), 'no member passed acceptance')
+    accepted_by_key = {}
+    for request in result['accepted']:
+        key = request_key(request)
+        if key not in accepted_by_key:
+            accepted_by_key[key] = dict(request, functions=[])
+        accepted_by_key[key]['functions'].extend(request['functions'])
+    gate_dependencies = [dict(d, request=accepted_by_key[request_key(d['request'])]) for d in gate_dependencies
+                         if request_key(d['request']) in accepted_by_key]
+    bindings = {name: value for d in gate_dependencies for name, value in d['bindings'].items()}
+    input_pins = {path: value for d in gate_dependencies for path, value in d['pins'].items()}
     receipt.update(accepted=result['accepted'], dropped=dropped + result['dropped'], bindings=bindings,
+                   gate_dependencies=gate_dependencies,
                    origins=origins, input_pins=input_pins, tree=str(tree))
     if not result['accepted']:
         receipt['integrated'] = dict(commit=carry_base, accepted=0, files=[], checks=None, pushed=None, ci=None,
@@ -806,8 +1266,8 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     trend = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg']
     f.git(tree, 'add', '--', *trend)
     f.run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')
-    f.run(['git', 'commit', '--quiet', '-m', f'Accept queued work in push lane {receipt["id"]}'], tree, 'git commit',
-          env=dict(os.environ, GIT_COMMITTER_DATE=commit_date))
+    commit_acceptance(tree, result['accepted'], receipt['items'],
+                      f'Accept queued work in push lane {receipt["id"]}', commit_date)
     integ = dict(commit=f.git(tree, 'rev-parse', 'HEAD'), accepted=sum(len(r['functions']) for r in result['accepted']),
                  files=sorted(set(files) | set(trend)), checks=None, pushed=None, ci=None,
                  wall_seconds={'build': time.monotonic() - started}, base_revision=base)
@@ -837,6 +1297,9 @@ def disk_preflight(fdir, min_free_gb=None):
 def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.executable, min_free_gb=None,
              soft_free_gb=None, allow_low_disk=False, resume=None, wait_lane=False):
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    import flow_cleanup
+    if fdir.is_dir():
+        flow_cleanup.automatic_retention(root, fdir)
     python = lane_python(python)
     if resume and receipt_path(fdir, resume).parent.name == 'tooling':
         f.refuse(push, 'tooling resume requires push/CI mode; use tooling-push --resume ' + resume)
@@ -854,7 +1317,8 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
         recover_stale(fdir)
         with state_lock(fdir):
             require_complete(fdir)
-            unfinished = [read(p) for p in sorted((fdir / 'lane/runs').glob('*.json')) if read(p)['state'] == 'running' and not (read(p).get('integrated') or {}).get('pushed')]
+            unfinished = [read(p) for p in sorted((fdir / 'lane/runs').glob('*.json')) if read(p)['state'] == 'running' and read(p).get('kind') != 'tooling-request'
+                       and not (read(p).get('integrated') or {}).get('pushed')]
             unfinished = [r for r in unfinished if r.get('root') == str(root)]
             if resume:
                 selected = read(receipt_path(fdir, resume))
@@ -872,8 +1336,6 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                 tooling = [read(p) for p in sorted((fdir / 'lane/tooling-queue').glob('*.json'))
                            if read(p)['state'] == 'queued' and read(p)['branch'] == branch]
                 tooling.sort(key=lambda i: (i['queued_at'], i['id']))
-                if tooling and not flow_tooling.mixed_safe(tooling):
-                    items = []  # Gate-changing tooling publishes before function acceptances.
                 if not items and not tooling:
                     return dict(state='empty')
                 f.refuse(all(i['branch'] == branch for i in items), 'queued requests name different branches')
@@ -881,13 +1343,26 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                 for item in items:
                     item['state'], item['run'] = 'running', receipt['id']
                 save_run(fdir, receipt)
+            guard_cleanup(fdir, root)
+            if receipt.get('tree'):
+                guard_cleanup(fdir, receipt['tree'])
             receipt['owner'] = process_owner()
             receipt.update(state='running', python=python)
+            receipt.pop('error', None)
             save_run(fdir, receipt)
         try:
             while True:
                 if not receipt.get('integrated'):
-                    if build(root, fdir, receipt, python, branch, soft_free_gb, allow_low_disk, min_free_gb) is None:
+                    try:
+                        tree = build(root, fdir, receipt, python, branch, soft_free_gb, allow_low_disk, min_free_gb)
+                    except f.FlowError as error:
+                        if not receipt.get('tooling_accepted'):
+                            raise
+                        import flow_tooling
+                        flow_tooling.isolate_failure(root, fdir, receipt, python, branch, error,
+                                                    soft_free_gb, allow_low_disk, min_free_gb)
+                        tree = receipt.get('tree')
+                    if tree is None or receipt['state'] == 'done':
                         return receipt
                 tree, integ = Path(receipt['tree']), receipt['integrated']
                 # Avoid checking an obsolete candidate when resuming after a failed check.
@@ -914,7 +1389,8 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                         if not receipt.get('tooling_accepted'):
                             raise
                         import flow_tooling
-                        flow_tooling.isolate_failure(root, fdir, receipt, python, branch, error)
+                        flow_tooling.isolate_failure(root, fdir, receipt, python, branch, error,
+                                                    soft_free_gb, allow_low_disk, min_free_gb)
                         if receipt['state'] == 'done':
                             return receipt
                         tree, integ = Path(receipt['tree']), receipt['integrated']
@@ -925,19 +1401,15 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                     return receipt
                 if not integ['pushed']:
                     require_green(tree, integ['base_revision'], python, ci_wait)
-                    # Re-read the live scheduling gates just before publishing the frozen tree.
-                    with state_lock(fdir):
-                        for name, pinned in receipt['bindings'].items():
-                            f.refuse(signature(fdir, name) == pinned, 'gate state changed during lane run: ' + name)
+                    # Changed evidence drops/requeues only its dependants. The fresh build
+                    # revalidates every retained member through the unchanged current gates.
+                    if requeue_changed_gates(root, fdir, receipt):
+                        continue
                     for origin in receipt['origins']:
                         current = {f.hexrva(fn['rva']): fn for fn in f.inventory(Path(origin['root']))['functions']
                                    if fn['build_id'] == origin['build_id']}
                         f.refuse(all(current.get(r) == row for r, row in origin['entries'].items()),
                                  'selected inventory changed during lane run')
-                    for path, digest in receipt['input_pins'].items():
-                        actual = hashlib.sha256(Path(path).read_bytes()).hexdigest() if Path(path).is_file() else None
-                        f.refuse(actual == digest,
-                                 'queued input changed during lane run: ' + path)
                     f.git(tree, 'fetch', '--quiet', 'origin', branch)
                     destination = f.git(tree, 'rev-parse', f'origin/{branch}')
                     if destination != integ['base_revision']:
@@ -982,7 +1454,7 @@ def finish_run(root, fdir, receipt, python, ci_wait):
     save_run(fdir, receipt)
     if integ['ci'] != 'green':
         started = time.monotonic()
-        result = subprocess.run([python, 'tools/ci_status.py', '--commit', integ['commit'], '--wait', str(ci_wait)],
+        result = subprocess.run([python, 'tools/ci_status.py', '--without-advisory', '--commit', integ['commit'], '--wait', str(ci_wait)],
                                 cwd=tree, capture_output=True, text=True)
         log = fdir / 'lane/logs' / receipt['id'] / 'ci.log'
         with state_lock(fdir):
@@ -1005,4 +1477,8 @@ def finish_run(root, fdir, receipt, python, ci_wait):
     if receipt.get('accepted'):
         import claims
         claims.sync_safe(tree)
+    receipt.update(finished_owner=receipt.get('owner'), owner=None)
+    save_run(fdir, receipt)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
     return receipt

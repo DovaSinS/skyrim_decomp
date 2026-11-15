@@ -130,8 +130,8 @@ A red CI stops the lane before any later push.
 
 An individual acceptance failure is recorded with its reason and excluded; successful members
 still ship. Family binding/sampling failures hold the entire family batch, never shrink its
-committed population. A whole-tree check failure stops the run without pushing. Inspect dropped
-items in `lane-status`, fix their evidence and enqueue them again. Missing inputs or conflicting
+committed population. A whole-tree check failure stops the run without pushing unless tooling
+inputs can be isolated as described below. Inspect dropped items in `lane-status`, fix their evidence and enqueue them again. Missing inputs or conflicting
 source closures are refusals, not permission to overwrite them. If origin moves, the lane checks
 for overlapping inventory/source changes, replays the combined selection on the winner and
 reruns all required checks. It never pushes an unchecked rebased tree.
@@ -140,9 +140,15 @@ reruns all required checks. It never pushes an unchecked rebased tree.
 acceptance, checks, push and CI; a separate nonblocking `.lane.lock` admits one runner. Record-only
 commands and review saves can proceed during a lane run. Candidate clones and failed attempts
 are retained. No lane operation prunes worktrees, branches or stashes; cleanup is opt-in through
-`flow.py cleanup` (preview with `--dry-run`). It considers only DONE+green lane trees, harvested
-drafts without claims, and AGREE reruns. Dirty/locked trees and queued inputs stay intact.
-JSON, text logs and worktree-registration logs are archived under `.local/flow/cleanup/`.
+`flow.py cleanup` (preview with `--dry-run`). It checks each DONE, RETIRED, STALE or FAILED receipt independently, including retry trees;
+running/queued receipts, pending CI and live inputs are retained. Cleanup uses its own lock, so
+an unrelated lane run can continue. Add `--prune-claims` to include completed harvested
+drafts without claims. AGREE reruns are also eligible. Dirty claim/rerun trees, locked
+worktrees and queued inputs stay intact. Finished lane working copies archive any local diff.
+Private JSON, text logs, handoffs, reviews and worktree registrations are archived under
+`.local/archive/cleanup/`; Git object stores, refs and stashes stay intact. Claim pruning requires
+a done marker, a harvest commit present in the object store, no open claim in any tier, and no
+changes outside `.local`. Use repeatable `--keep-task-prefix` to protect named workers.
 Independent lane clones keep `.git` in place so borrowed objects, refs and stashes stay usable;
 only their working files are removed. Registered worktrees use plain `git worktree remove`,
 without force, pruning or branch/stash deletion. Afterwards `flow.py sync` fast-forwards the shared checkout, replacing
@@ -150,9 +156,25 @@ only local copies byte-identical to origin; differing files refuse and stay inta
 
 Tooling publications also use the lane: `flow.py --root <committed-tooling-checkout> --flow-dir
 <shared-flow> tooling-push`. For Git worktrees its default flow directory comes from the common
-Git directory; independent clones must name the shared flow explicitly. It refuses a busy lane
-(or waits with `--wait-lane`),
-runs the full checks once per final tree, rebases/rechecks a lost race, pushes and watches CI.
+Git directory; independent clones must name the shared flow explicitly. It registers the committed
+tip before taking the lane (`--wait-lane` waits for a busy lane). The next runner takes every waiting
+tooling request in queue order together with all queued function selections. This includes lane tooling; the
+running acceptance implementation still enforces the existing gates, and the candidate runs
+all full checks. Waiters do no full checks in their own checkout. Conflicting inputs are bounced
+with their revision and reason while the rest continue. One combined tree gets one check run,
+one push and one exact-SHA CI watch. Arrivals after the snapshot join the next batch.
+
+If combined checks fail, the lane first checks the function/base tree without tooling. A failing
+baseline stops publication without blaming tooling. Otherwise it bisects tooling inputs in
+halves, with at most `ceil(log2(n))` split levels (one bad input needs O(log n) probes; several
+bad inputs may require more probes at a level). Each probe checks the entire surviving combination,
+so its final pass can be published without repeating those checks. Bounced revisions and reasons,
+probe rounds and retained logs are recorded in the batch receipt. Every waiter returns its own
+request outcome and the common pushed SHA, or exits nonzero with its bounce/failure reason.
+Request receipts under `lane/tooling/` refer to their owning `lane/runs/` receipt; the original
+`lane/tooling-queue/` entries and `events.jsonl` remain available. Legacy tooling receipt resume
+commands retain their existing behavior. With `--no-wait-lane`, a busy lane returns nonzero while
+leaving the registered request queued for the next runner.
 `lane-status` reports dead owners using PID, host and process birth, including legacy runs after
 their lock is free; its resume/retire commands preserve the receipt and candidates. A pushed run
 can resume CI but cannot be retired. No run is automatically retired.
@@ -378,6 +400,14 @@ receipt with an owner resume command. A dead local unpublished owner becomes `st
 lease, retaining every input and candidate; `--resume <id>` recovers that checkpoint explicitly.
 Live owners are waited on, not treated as foreign resume requests.
 
+A maintainer-authorized advisory hash repair can finish an already pushed dead-owner receipt:
+`python3.13 tools/flow.py lane-finish-superseded <run-id> --superseding-commit <full-SHA> --reason '<authorization and repair>'`.
+The command verifies published ancestry and exact-SHA CI: the original failure must be confined
+to the advisory target-hash compile step, Infrastructure and Pages must pass, and every
+superseding workflow must pass. It preserves the pushed commit and accepted count, records
+`ci: red-advisory-superseded` with both CI observations and the superseding SHA, then finishes
+queue bookkeeping. It never changes progress or reports green for the original commit.
+
 `SKYRIM_LANE_PYTHON` may select the interpreter, but it must be Python 3.13 with working pyexpat.
 The complete standard unittest discovery inventory runs via `tools/test_suite.py` in isolated
 module processes, preserving module/class fixtures and reporting every test. Existing unittest
@@ -402,3 +432,23 @@ The final transaction validates everything, writes progress once and rebuilds th
 restore all provisional public files; no sampled or unsampled member gains an exemption.
 
 Function-only lane runs rely on the lane acceptance checks, check.py and CI. The lane compares its exact candidate with its pinned origin base: only `reconstruction/`, `reports/`, `data/progress.json` and the generated progress/model SVGs qualify (README changes qualify only inside the generated model totals markers). Those runs skip the local full unit suite and site build; exact-SHA CI still runs both before a successor may push. Any tooling, test, workflow, prose documentation or other path change keeps all local checks. Acceptance records, bindings, digests, harvest equality and Reviewer admission are unchanged.
+
+
+### Re-confirm dropped shared units
+
+`python3 tools/flow.py --flow-dir <shared-flow> reconfirm-dropped --dry-run` lists distinct
+stale-sibling and changed-carried-file targets from finished receipts. Without `--dry-run`, it
+creates a retained worktree on current origin/main, merges each dropped unit, and confirms every
+reported function sharing a changed unit on the configured independent runners. No live receipt
+or chunk controller is changed. Conflicting inputs and failed comparisons stay held with logs;
+failed comparisons are never retried into a pass. `--wake-mac <MAC>` sends Wake-on-LAN only if the
+native runner is unreachable; it changes no host settings. Disk admission keeps the normal floors.
+
+The result names private review briefs, full/delta review modes and a single
+`reconfirm-dropped --resume <id>` command. Dispatch the fresh admitted Reviewers named in those
+briefs; unchanged approvals are reused only when their bindings still validate. Required second
+reviews and clean comparator sampling reruns still apply. Resume checks the saved reviews through
+the existing parser and gates, accepts through `accept_function`, then enqueues approved groups
+for the next normal lane chunk. Other re-confirmed, still-unmatched records from the same units
+travel as validated report refreshes, without marking those companion functions matched. All
+inputs, approvals, reports and logs remain under the retained re-confirm receipt.

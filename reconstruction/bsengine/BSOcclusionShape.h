@@ -113,11 +113,17 @@ public:
 };
 static_assert(sizeof(NiObject) == 0x10, "NiObject size");
 
+// NiRTTI_BSOcclusionShape: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); the RTTI object at RVA 0x332de50 that GetRTTI addresses, bound by hint
+extern const NiRTTI NiRTTI_BSOcclusionShape;
+
 class BSOcclusionShape : public NiObject
 {
 public:
     BSOcclusionShape();
     virtual ~BSOcclusionShape();  // compared: 0xfdc610 (scalar deleting destructor)
+    // CreateClone, GetRTTI: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); declared on NiObject there and inherited, not declared on this class
+    virtual NiObject* CreateClone(NiCloningProcess& a_cloning);  // compared: 0xfdb600
+    virtual const NiRTTI* GetRTTI() const;  // compared: 0xfdc650
 
     // TODO members: replace part of the padding with the members the bodies read,
     // keeping every offset and the size check true.

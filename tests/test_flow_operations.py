@@ -1,4 +1,4 @@
-"""Operational lane rules, using only tiny synthetic repositories."""
+"""Operational lane rules and legacy receipt recovery, using tiny synthetic repositories."""
 import contextlib
 import io
 import json
@@ -40,7 +40,7 @@ class Operations(unittest.TestCase):
     def test_tooling_push_takes_lane_and_leaves_state_free_during_checks(self):
         self.tooling_commit()
         with lane.lane_lock(self.fdir), self.assertRaisesRegex(flow.FlowError, 'already running'):
-            lane.publish_tooling(self.root, self.fdir)
+            lane._publish_legacy_tooling(self.root, self.fdir)
         original = flow.pre_push_checks
         def checks(root, commit, python, **kwargs):
             self.assertTrue(lane.running(self.fdir))
@@ -54,7 +54,7 @@ class Operations(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             original(root, commit, python, **kwargs)
         with patch.object(flow, 'pre_push_checks', side_effect=checks) as checked:
-            result = lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            result = lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         self.assertEqual(checked.call_count, 1)
         self.assertEqual(result['state'], 'done')
         self.assertEqual(git(self.repo.origin, 'rev-parse', 'main'), result['integrated']['commit'])
@@ -71,11 +71,11 @@ class Operations(unittest.TestCase):
         base = git(self.root, 'rev-parse', 'HEAD')
         self.tooling_commit("from pathlib import Path\nimport sys\nsha=sys.argv[sys.argv.index('--commit')+1]\nsys.exit(0 if sha==" + repr(base) + " or Path('.local/ci-ok').exists() else 2)\n")
         with self.assertRaisesRegex(flow.FlowError, 'tooling CI pending'):
-            lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         receipt = lane.read(next((self.fdir / 'lane/tooling').glob('*.json')))
         (self.root / '.local/ci-ok').write_text('ready')
         with patch.object(flow, 'pre_push_checks', side_effect=AssertionError('duplicate checks')):
-            result = lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
+            result = lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
         self.assertEqual(result['integrated']['commit'], receipt['integrated']['commit'])
         self.assertEqual(result['integrated']['pushed'], receipt['integrated']['pushed'])
 
@@ -107,25 +107,25 @@ class Operations(unittest.TestCase):
         self.tooling_commit("from pathlib import Path\nimport sys\nsys.exit(0 if Path('.local/ci-ok').exists() else 2)\n")
         before = git(self.repo.origin, 'rev-parse', 'main')
         with self.assertRaisesRegex(flow.FlowError, 'origin CI is not green'):
-            lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         self.assertEqual(git(self.repo.origin, 'rev-parse', 'main'), before)
         receipt = lane.read(next((self.fdir / 'lane/tooling').glob('*.json')))
         (self.root / '.local/ci-ok').write_text('green')
         with patch.object(flow, 'pre_push_checks', side_effect=AssertionError('duplicate checks')):
-            result = lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
+            result = lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
         self.assertEqual(result['integrated']['commit'], receipt['integrated']['commit'])
 
     def test_tooling_recovers_server_push_before_checkpoint_without_repushing(self):
         self.tooling_commit("from pathlib import Path\nimport sys\nsys.exit(0 if Path('.local/ci-ok').exists() else 2)\n")
         with self.assertRaisesRegex(flow.FlowError, 'origin CI is not green'):
-            lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         receipt = lane.read(next((self.fdir / 'lane/tooling').glob('*.json')))
         git(self.root, 'push', '--quiet', 'origin', 'HEAD:main')
         (self.root / '.local/ci-ok').write_text('green')
         original = lane.subprocess.run
         with patch.object(flow, 'pre_push_checks', side_effect=AssertionError('duplicate checks')), \
                 patch.object(lane.subprocess, 'run', wraps=original) as commands:
-            result = lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
+            result = lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable, resume=receipt['id'])
         self.assertEqual(result['state'], 'done')
         self.assertFalse(any(call.args[0][:2] == ['git', 'push'] for call in commands.call_args_list))
 
@@ -166,7 +166,7 @@ class Operations(unittest.TestCase):
                 return SimpleNamespace(returncode=0 if len(seen) == 1 else 2, stdout='pending', stderr='')
             return original(argv, *args, **kwargs)
         with patch.object(lane.subprocess, 'run', side_effect=command), self.assertRaises(flow.FlowError):
-            lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         receipt = lane.read(next((self.fdir / 'lane/tooling').glob('*.json')))
         with patch.object(flow, 'pre_push_checks', side_effect=AssertionError('must not repeat checks')):
             result = lane.run_lane(self.root, self.fdir, ci_wait=1, python=sys.executable, resume=receipt['id'])
@@ -202,7 +202,7 @@ class Operations(unittest.TestCase):
                 git(other, 'commit', '--quiet', '-m', 'incoming')
                 git(other, 'push', '--quiet', 'origin', 'main')
         with patch.object(flow, 'pre_push_checks', side_effect=advance):
-            result = lane.publish_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
+            result = lane._publish_legacy_tooling(self.root, self.fdir, ci_wait=0, python=sys.executable)
         self.assertEqual(len(checked), 2)
         self.assertEqual(result['integrated']['commit'], checked[-1])
         self.assertEqual(git(self.repo.origin, 'rev-parse', 'main'), checked[-1])
@@ -285,13 +285,107 @@ class Operations(unittest.TestCase):
         claim = queue / 'claims/unit-a.lock'
         lane.write(claim, dict(worker='synthetic'))
         self.assertEqual(flow_cleanup.cleanup(self.root, self.fdir), [])
+        self.assertIn('open or drafting', flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)[0]['reason'])
         claim.unlink()
-        result = flow_cleanup.cleanup(self.root, self.fdir)
+        lane.write(queue / 'done/unit-a.json', {'worker': 'synthetic'})
+        result = flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)
         self.assertTrue(result[0]['removed'], result)
         self.assertFalse(tree.exists())
         self.assertEqual(git(self.root, 'rev-parse', 'draft/unit-a-first'), head)
         self.assertEqual(harvest.read_bytes(), before)
 
+
+    def cleanup_copy(self, run='finished', number='0', state='done', integrated=None):
+        tree = self.fdir / 'lane/trees' / run / number
+        tree.parent.mkdir(parents=True, exist_ok=True)
+        git(self.root, 'clone', '--quiet', '--shared', str(self.root), str(tree))
+        path = self.fdir / 'lane/runs' / (run + '.json')
+        lane.write(path, dict(id=run, state=state, root=str(self.root), tree=str(tree), integrated=integrated))
+        return tree, path
+
+    def test_cleanup_finished_retries_while_lane_is_busy_and_preserves_dirty_patch(self):
+        old, receipt = self.cleanup_copy(number='0', state='failed')
+        latest, _ = self.cleanup_copy(number='1', state='failed')
+        live, _ = self.cleanup_copy('active', state='running')
+        (old / 'reconstruction/x/Foo.cpp').write_text('int retained_change;\n')
+        log = self.fdir / 'lane/logs/finished/checks.log'
+        lane.write(log, {'evidence': True})
+        original_receipt = receipt.read_bytes()
+        with lane.lane_lock(self.fdir):
+            result = flow_cleanup.cleanup(self.root, self.fdir)
+        removed = {r['tree']: r for r in result if r['removed']}
+        self.assertEqual(set(removed), {str(old), str(latest)})
+        self.assertTrue((live / 'data').exists())
+        self.assertTrue(log.is_file())
+        self.assertEqual(receipt.read_bytes(), original_receipt)
+        self.assertIn('retained_change', (Path(removed[str(old)]['archive']) / 'working-changes.patch').read_text())
+        self.assertTrue((old / '.git').is_dir())
+        self.assertEqual([r for r in flow_cleanup.cleanup(self.root, self.fdir) if r['removed']], [])
+
+    def test_cleanup_terminal_receipts_and_ci_wait(self):
+        for state in ('done', 'retired', 'stale', 'failed'):
+            self.cleanup_copy(state, state=state)
+        pending, _ = self.cleanup_copy('pending', state='failed', integrated={'pushed': 'now', 'ci': 'pending'})
+        unknown_ci, _ = self.cleanup_copy('unknown-ci', state='retired', integrated={'pushed': 'now'})
+        queued, _ = self.cleanup_copy('queued', state='queued')
+        result = flow_cleanup.cleanup(self.root, self.fdir)
+        self.assertEqual(sum(r['removed'] for r in result), 4)
+        for tree in (pending, unknown_ci, queued):
+            self.assertTrue((tree / 'data').exists())
+
+    def test_cleanup_retains_tooling_queue_inputs_and_rechecks_after_archive(self):
+        tree, receipt = self.cleanup_copy()
+        lane.write(self.fdir / 'lane/tooling-queue/input.json', dict(root=str(tree), state='queued'))
+        result = flow_cleanup.cleanup(self.root, self.fdir)
+        self.assertIn('queued/running input', result[0]['reason'])
+        (self.fdir / 'lane/tooling-queue/input.json').unlink()
+        original = flow_cleanup.archive_evidence
+        def race(tree, archive, lane_copy):
+            original(tree, archive, lane_copy)
+            value = lane.read(receipt)
+            value['state'] = 'running'
+            lane.write(receipt, value)
+        with patch.object(flow_cleanup, 'archive_evidence', side_effect=race):
+            result = flow_cleanup.cleanup(self.root, self.fdir)
+        self.assertIn('running', result[0]['reason'])
+        self.assertTrue((tree / 'data').exists())
+
+    def test_cleanup_reservation_blocks_resume_guard_and_enqueue(self):
+        tree, _ = self.cleanup_copy()
+        lane.write(self.fdir / 'cleanup/claims/test.json', dict(tree=str(tree), active=True))
+        with self.assertRaisesRegex(flow.FlowError, 'being cleaned'):
+            lane.guard_cleanup(self.fdir, tree)
+        with self.assertRaisesRegex(flow.FlowError, 'being cleaned'):
+            lane.enqueue(tree, self.fdir, 'groups', ['test'])
+
+    def test_claim_prune_requires_done_harvest_and_preserves_local_diagnostics(self):
+        queue = self.root / '.local/queue/small'
+        queue.mkdir(parents=True, exist_ok=True)
+        directory = self.root / '.local/tasks/g/unit-clean'
+        directory.mkdir(parents=True)
+        (queue / 'queue.tsv').write_text('.local/tasks/g/unit-clean\treconstruction/x/Foo.cpp\t0x1000\t3\n')
+        tree = self.root / '.local/worktrees/draft/unit-clean-first'
+        tree.parent.mkdir(parents=True)
+        git(self.root, 'worktree', 'add', '--quiet', '-b', 'draft/unit-clean-first', str(tree), 'HEAD')
+        flow.drafts.label(tree, 'synthetic', 'unit-clean', 'draft')
+        commit = git(tree, 'rev-parse', 'HEAD')
+        lane.write(queue / 'done/unit-clean.json', {'worker': 'synthetic'})
+        self.assertIn('no completed unit harvest', flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)[0]['reason'])
+        lane.write(directory / 'harvest-first.json', dict(tier='first', tree=str(tree), commit='a' * 40))
+        self.assertIn('missing from object store', flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)[0]['reason'])
+        lane.write(directory / 'harvest-first.json', dict(tier='first', tree=str(tree), commit=commit))
+        result = flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True, keep_task_prefixes=['unit-'])
+        self.assertIn('protected worker', result[0]['reason'])
+        (tree / 'keep').write_text('uncommitted')
+        self.assertIn('dirty checkout', flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)[0]['reason'])
+        (tree / 'keep').unlink()
+        lane.write(tree / '.local/diagnostics/evidence.json', {'original': True})
+        result = flow_cleanup.cleanup(self.root, self.fdir, prune_claims=True)
+        self.assertTrue(result[0]['removed'], result)
+        self.assertFalse(tree.exists())
+        self.assertTrue((Path(result[0]['archive']) / 'files/.local/diagnostics/evidence.json').exists())
+        self.assertEqual(git(self.root, 'rev-parse', 'draft/unit-clean-first'), commit)
+        self.assertEqual(git(self.root, 'rev-parse', 'refs/cleanup/harvests/' + commit), commit)
 
 class AdmissionAndReadiness(unittest.TestCase):
     def test_soft_floor_requires_explicit_override_and_hard_floor_never_does(self):

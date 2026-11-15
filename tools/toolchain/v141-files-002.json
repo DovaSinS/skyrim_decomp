@@ -1,0 +1,999 @@
+{
+  "files": [
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/opmxbox.lib",
+      "size": 2232,
+      "sha256": "de76698f5bca5685dde15dc2f50f086897ea3cbb568423b6f0e30f6ae475d696"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/osptk.lib",
+      "size": 44106,
+      "sha256": "bdc893812af7a3a4a2801ca1dee9bd18f129fe0a302f1bbb121833504032794c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/p2p.lib",
+      "size": 27628,
+      "sha256": "0ac67d6a12e15349b3860166d675878c4a0646088089d51c8cddd652027d38ce"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/p2pgraph.lib",
+      "size": 10978,
+      "sha256": "2c9d6f1a3addb734fd630a8a71d7fbd753166e13ff9e70aa5137afe7bc2a64e9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/pathcch.lib",
+      "size": 7152,
+      "sha256": "15b195e9774e69d63571135b8392ffc6f379835addf7c6bd7eac8738cd75168e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/pdh.lib",
+      "size": 25780,
+      "sha256": "f31eca90ab1267d2d6d70a5390622e26f3bd5a76a5cc680e6ab57b9cf48088af"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/peerdist.lib",
+      "size": 9342,
+      "sha256": "3f474f60339ccc3b2ec0ae9fecb7a934c37e12fb346708f01f617f334410a0ea"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/photoacquireuid.lib",
+      "size": 148712,
+      "sha256": "7dcbd2ba88dd71f9401f4862f1a11209f229399d8413c697c5d57d82d066b616"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/portabledeviceguids.lib",
+      "size": 546244,
+      "sha256": "9d5aa38a0f82ff601833a39f5bc06cec9684afd01373d19c5fd91880416987b9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/powrprof.lib",
+      "size": 28726,
+      "sha256": "f40fe667f6d27931021fa568484e92707611da3731f49cf47617fe05b1e6a79f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/prntvpt.lib",
+      "size": 8868,
+      "sha256": "cf0f68c0cef4aacce1a278ac7ec73fb6df2977d957c6d2ff7f467d0d35601991"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/projectedfslib.lib",
+      "size": 10274,
+      "sha256": "2a74598c727a0341c4d2f6fd9ceb35b63c66e8c84b2e8497138951dfd04f3837"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/propsys.lib",
+      "size": 55712,
+      "sha256": "b16c1485efade51c630bafe6c0881eeab52ab5ebe4001701cf0e4c88b140265c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/psapi.lib",
+      "size": 7406,
+      "sha256": "33e9570a90cfc27e3a6d15a482d041976e2b08880903d9e42a422825e5e66865"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/quartz.lib",
+      "size": 2306,
+      "sha256": "5a71d34338760882a5aab824413683662b13695c8d1a9b62a987883c48ef63a5"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/query.lib",
+      "size": 3020,
+      "sha256": "d88ffd8881a7dfc64fdfe1722f1cc56442d0abdb5f0bd1a58ef1e65f9e6446fc"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/qwave.lib",
+      "size": 4376,
+      "sha256": "4480590e94fd8cf5b081200872417e4cb695ad79b697695d4799633d8635b2d9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rasapi32.lib",
+      "size": 36842,
+      "sha256": "689eac036098e35c2693333a80d3fec2f2d0bcd9c8f08dfec05e3dd329abe7f7"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rasdlg.lib",
+      "size": 7156,
+      "sha256": "517f924cb0e42ff48bd3d92f4d801522d576007edd44539e9bf4fd06b5d62ee8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rasuser.lib",
+      "size": 3988,
+      "sha256": "8d5dc342d8a016dc7ac9c75558dff18d052b2dee12163b339c46cb8354231eb8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rdcentraldb.tlb",
+      "size": 64500,
+      "sha256": "eaba723ff0e32e349b4e262100db79ab26ddb407bc492ada63b9db1e3b5397f0"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rdpencomapi.tlb",
+      "size": 29604,
+      "sha256": "41bc3677fcc143ea780cd975d4caefb0548b93d84b591c81c347fcb4e9ee5d55"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rendezvoussession.tlb",
+      "size": 4484,
+      "sha256": "9f295dc8fdb081e7ea32230c3e09f6dbfa17f28ad1bea3d315ee2293d0b54b27"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/resutils.lib",
+      "size": 34346,
+      "sha256": "6da9ad98a1bcff6627891963bbfd1d263de9c5d445b609e018913020a03ee380"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rometadata.lib",
+      "size": 1798,
+      "sha256": "1b626fb3b5cd8461c440db4eb5caf5ee2cabdfddae09ab2f9700ca8544a358bd"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rpcexts.lib",
+      "size": 11298,
+      "sha256": "8d4e61e54a011b8a8e395321c26d3a3931b849f49b6d79910b54668d6cbbae55"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rpcns4.lib",
+      "size": 15852,
+      "sha256": "4bec0eb4e560d25968f1f44e0d198c056117cb2b5612abe6277d1a599f74b381"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rpcproxy.lib",
+      "size": 2876,
+      "sha256": "260038fb22e765a9e23377172be8e9f9ec267267b4d64995437fd8cddb198f1b"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rpcrt4.lib",
+      "size": 133054,
+      "sha256": "27dae773be2b8941ebe1429da17a38acd895552405bca853e8dffc47a0a58586"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rpcutil.lib",
+      "size": 161048,
+      "sha256": "70a495738d7e0546b1e5fe9c3663e4efb82766363f560426b7f7a0132f3eb00a"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rstrtmgr.lib",
+      "size": 3858,
+      "sha256": "e15cc89cd2a80abee398088c6ac284c93e2628d526f4e9b0a64748687e6623e0"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rtm.lib",
+      "size": 26984,
+      "sha256": "f772039dbf3a8875daf8023c4b173bd1b8b5fa90d54b5fa33d2cb0389a27cc07"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rtutils.lib",
+      "size": 9974,
+      "sha256": "117b63682de149fa0a5b497174aeaf602b29ed83454361661b1b7d08844d8cde"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/rtworkq.lib",
+      "size": 9630,
+      "sha256": "a9c033d674235a764b482404763e063035c6f004ee3db1cf8de6ec0992c575d1"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/runtimeobject.lib",
+      "size": 32130,
+      "sha256": "b53777f7426c9118e3c2b7b87d8bfe9117e448886bd3b8b835b48a8d277a7864"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/samlib.lib",
+      "size": 18330,
+      "sha256": "df02d9c56555e6d353a4c12ebddd0f9d7865d09d46b6ebc20ebedc018ccbb356"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/samsrv.lib",
+      "size": 84238,
+      "sha256": "71822e36ab8f05db82c8e1aafd627782d0d719f2b34b1c7189879c3b937d68de"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sapi.lib",
+      "size": 128588,
+      "sha256": "6fcc46e6a39ec9f56d263bcaee8d57065671d30e964bcbb1eaffabd01be92b2e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sas.lib",
+      "size": 1648,
+      "sha256": "d88f7e40f57b1648f5ea6eb9af0a62a286cded6fb282f91e2b5796aff1909e2b"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sbtsv.lib",
+      "size": 424342,
+      "sha256": "56488290434e03531cf30afd04c614c9e4af7e112c43c57d4512d13c4b1adab3"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/scarddlg.lib",
+      "size": 2656,
+      "sha256": "9043376f4e6de1b32055f4ddedd2612b264ac5787f87b969fe567b23beb5ebe0"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/scecli.lib",
+      "size": 20590,
+      "sha256": "88034963433e815e1c0f3c06c75a251f767e71335ecfa7494f98aeacf7daf364"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/scesrv.lib",
+      "size": 1990,
+      "sha256": "fe7447ad6c6266a51fb3370649d67dcf5fdaea75e8c8cad7a8616d182619783e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/schannel.lib",
+      "size": 9954,
+      "sha256": "ef745cf44330366fd711754a4a606a4255a8060d33b068c20a44a6c801bde11a"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/scrnsave.lib",
+      "size": 109122,
+      "sha256": "3278b1e2bfd246355fe84b2ce6a03fbbb2bc0c93ea0e4e61989d6d5b2ea57a2e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/scrnsavw.lib",
+      "size": 109998,
+      "sha256": "a038d513ea668dbc28dcbf8d69cc8fc6a8864bdcbaba62b7896f2283a40096c2"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/searchapi.tlb",
+      "size": 66404,
+      "sha256": "5cb7234cce50ebf5bcbef6c5ca4a5bd787348b4b1e0c798289b9d42fe696c6bf"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/searchsdk.lib",
+      "size": 54806,
+      "sha256": "6ecfb1b6ef53a746bad94cbc04acfd0cb2604bb082f2e53a49ba8d05706dc201"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/secur32.lib",
+      "size": 24328,
+      "sha256": "ef244e152d81785a07913dd93ac4789c79aeae4495f3871ff7bf936808de0f7b"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/security.lib",
+      "size": 9912,
+      "sha256": "6c526eb973765e95817ed27b6002793ac5401fce6d4d176e8368015cea10d203"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sens.lib",
+      "size": 2182,
+      "sha256": "d55d616fa3916e3792df4ce046c03bb800a0fd07a45a4c1cd71ebd3ce6cb9aaa"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sensapi.lib",
+      "size": 2212,
+      "sha256": "36e0aa6f32e9d3f5dc73f1bd92c907d4ef38f49e478692732b995e4ec7484f58"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sensevts.tlb",
+      "size": 4280,
+      "sha256": "2c57fa3c48141722ba2cbb480fd20fbad56145f95fa92213fd7e6c9aa772f928"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sensorsapi.lib",
+      "size": 269612,
+      "sha256": "041fd01f27f76f1828fa192cd033ed22804c6740a21c915b5f4cc332ac52480d"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sensorsutils.lib",
+      "size": 18846,
+      "sha256": "12f41ed78b16c266022853901e4c7e45ad2c571c6364c67b4d09512c32c88c59"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/setupapi.lib",
+      "size": 141068,
+      "sha256": "c49bbe4954326f9b246c77307358e273702f3f2a72bf3a5a77701c0ed8cf937e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sfc.lib",
+      "size": 4806,
+      "sha256": "2f3de110b0b0ee9ffa2d77a4110ce7b3b8c8680d92abd6631002575e9f43d648"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/shcore.lib",
+      "size": 16772,
+      "sha256": "ac184006754749e3c709c1d8d42d61877d7192a5cf492d0a09ded201f62bfaca"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/shdocvw.lib",
+      "size": 5500,
+      "sha256": "d60a0b37e9d8c002e38a6b9df5548506cc5129e3197a555837a8e3656942f156"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/shell32.lib",
+      "size": 265606,
+      "sha256": "c26e7b3e8caa9365c1b25f42d3dfa2190e565325d843d56903e4106d3a4ac7ba"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/shfolder.lib",
+      "size": 1960,
+      "sha256": "f46f420a2b078d6645c8ea1800a6510d78afd33ae621146821284c93acf8fd50"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/shlwapi.lib",
+      "size": 74178,
+      "sha256": "bd6ec4cc0ff6c85c553313058b6e51a87904ba581fa378225499167ae97e68b7"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/simpdata.tlb",
+      "size": 5912,
+      "sha256": "fa2eedc29b2c49069971ea8a471a33e744cfbd344d40487414e4f2073ebf3337"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/slc.lib",
+      "size": 11026,
+      "sha256": "7cfae0b30c5733e3cc546502ad8f797d2cb07ccc04ceb90463a9d882db2678bc"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/slcext.lib",
+      "size": 3520,
+      "sha256": "921c1bd56aeb31a19a7cbcd77318e79f8895b8892cf363349bdb4c8f74197241"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/slwga.lib",
+      "size": 1718,
+      "sha256": "5d2cc0fbebaf56ff915b4da53567269c725965af03322947243976f3c308742f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/snmpapi.lib",
+      "size": 9600,
+      "sha256": "2abf3c947f2fcb0f327bf26eb388b1df686bde7f1e460efee77f07e2182aa490"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/spoolss.lib",
+      "size": 51768,
+      "sha256": "cc03a719f44933451aa3db1a64b23c2f06ddfa098471270694560ab49a367faa"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sporder.lib",
+      "size": 2002,
+      "sha256": "a76d09584f21971abe65e659c0298f23866368574e765f09c3429059b928d287"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/srclient.lib",
+      "size": 103268,
+      "sha256": "266df1ba4ba11ed3b5b8124674e61428153fb992fe785715b017ca44552e2792"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/srpapi.lib",
+      "size": 6730,
+      "sha256": "aa06a85e9e563c8816b8006dd7f2e613e9ec950370303d2b6b8e77316f805dc3"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/ssdpapi.lib",
+      "size": 7920,
+      "sha256": "0b55c27c326e5e033d6e48ed241b8d89240ac5cb8c987669286dcf0d15583047"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/stdole2.tlb",
+      "size": 14912,
+      "sha256": "58c3b3a2c798ec42eaef8155dd22e2c2f49f53d91b1f1f115a6fc5164b8078f9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/sti.lib",
+      "size": 5488,
+      "sha256": "772205d6b73baf5137362b9e8dc13e74b1addfdc3c2551805755c99636f1ac7e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/strmbase.lib",
+      "size": 4897082,
+      "sha256": "6457c8f3926d54ecd9cb9cbec8c4801ad1c37d94287b65facb820387528bcf8e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/strmiids.lib",
+      "size": 385972,
+      "sha256": "a5a379172c0a6d9382781e1dc569b220f89f99788daacbfc7af3f9187a56ccd1"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/strsafe.lib",
+      "size": 43078,
+      "sha256": "e3493643479d1f3c4809caaa1f98ab6d56dde51716e147fbeb0a59a827c5d719"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/structuredquery.lib",
+      "size": 23644,
+      "sha256": "6f03b28ac00fbb70e49b0e3d0bd18d95570db4c13e8c5482716a16de9430cfaa"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/svcguid.lib",
+      "size": 174522,
+      "sha256": "0d8037810da04d7cc82702b84dd9b00f8a7f7ab982f7501da65783adba6583fb"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/swdevice.lib",
+      "size": 3544,
+      "sha256": "ca4abadde397e27d794dc7b244f1253b6484ba8310871e5474a0f4308ef7cdfc"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/synchronization.lib",
+      "size": 2642,
+      "sha256": "31d7ad2d661e6c1017a5607ee692800f1e729836ac79339f7151f444d228f50a"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/t2embed.lib",
+      "size": 4660,
+      "sha256": "e9686112d46c4c4dd19519c2ff12c25d61e38ab807605afab42e07a56ef75843"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tapi32.lib",
+      "size": 59426,
+      "sha256": "9d044b5b2a9cb2cf5cd1db246a757877489a1e0ae5b537635a4eddcf8fcf93ef"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tapi32l.lib",
+      "size": 685272,
+      "sha256": "936bd21bba82b2dce368fc8a598490f11b4104184946b9092901ccf814794a33"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/taskschd.lib",
+      "size": 50064,
+      "sha256": "13dfc8b805577ac09decaa756f951ab1ec120cf7d963d18256c9aa646008073c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tbs.lib",
+      "size": 6450,
+      "sha256": "d2289f3efff7e810da738889affd915baf23041d88e13a55ca586ba02420a6a8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tdh.lib",
+      "size": 7726,
+      "sha256": "0fec04de7820bf07de2b662a52568f0494572c3cbedc68731f0beaf816060cd3"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tokenbinding.lib",
+      "size": 4372,
+      "sha256": "33d0a90699b6bb3dfde2e1fb215e5dda255b2b1121114e64f087cdc44c5cb829"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/traffic.lib",
+      "size": 5864,
+      "sha256": "c69de0ace1f79f60c9cbb03603b49e99b39cdcb13837f0441809f5a21c4788ee"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/transcodeimageuid.lib",
+      "size": 5216,
+      "sha256": "2dbc4a2d772eda997bee3f3e2b6fbd0c1cbe1bac9f552a227d7ad2968f18ca54"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tsec.lib",
+      "size": 8274,
+      "sha256": "8559c0bbe595d2f7d3f76024f0c0e6740b20bd0e58734c22070cb5cc4b86ec6e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tspubplugincom.lib",
+      "size": 275788,
+      "sha256": "2fe42f7659a34fa00844ea76a47116f7b8967aea6f07be05477df2dfe5da73a2"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/tsuserex.tlb",
+      "size": 3760,
+      "sha256": "9aa0afead69decbfd97d1fd01e2cdc374ae714b17ce3434a2e555410c7df4384"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/twinapi.lib",
+      "size": 1536,
+      "sha256": "e16f525968ee34c688bc3fe505027e2b3803287ccd800cb041aa398ab6b3862e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/txfw32.lib",
+      "size": 3786,
+      "sha256": "6cea4eb6ac201008268295e2cfc169dce139c45ed65bc441e83fb2ba75c81dde"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/ualapi.lib",
+      "size": 4036,
+      "sha256": "d8fd5ba310fc30a9ee5bc76c7431ab81a78454b9a19db2c4448693171990dad7"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/uiautomationcore.lib",
+      "size": 27322,
+      "sha256": "accb29facc6daa5c3a44e36f275106341d9b71b2cdc27797c923780a1160d220"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/umpdddi.lib",
+      "size": 20310,
+      "sha256": "347e6d5076c694eec5b9bf1cfd6a4d45955db1eb0d3c814c443125db1f8b84d0"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/urlmon.lib",
+      "size": 23412,
+      "sha256": "7d9da5c7f21bb0f826c4baf38d6e71031eac8dbed5fead7d486944c7bda32f93"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/user32.lib",
+      "size": 164334,
+      "sha256": "b44c0246135462a839e279fdfb73172bbf7dd4ff05d21212ac1867c029080f28"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/userenv.lib",
+      "size": 19480,
+      "sha256": "7f2dac3c9a98684c6fc62828903f80fd99ad7a12c255e19bb063494fa3b09d2c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/usp10.lib",
+      "size": 10246,
+      "sha256": "5a2899088d1641680ba0148301770eeb82c0021cf7ca2a53cd0780c056dfd472"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/uuid.lib",
+      "size": 8389936,
+      "sha256": "b3fb6bdb67799dbead259c56633a4e7626ac5d2887e91143e5a8cd69ec342897"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/uxtheme.lib",
+      "size": 18960,
+      "sha256": "c82d638357b376b5cf71c70f27d572b58c92e551468f7683051f1ad9d4f71574"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vccomsup.lib",
+      "size": 233246,
+      "sha256": "2bb6b66b8daaf655e774d84cc001ffac79d110882d5fbb8ff893f5e711991977"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vds_uuid.lib",
+      "size": 48654,
+      "sha256": "20d018ff76294121d5472a6895df92e296d783588a9f42d2845e09aa481dd7ae"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/version.lib",
+      "size": 4100,
+      "sha256": "9c6d1cec7dbcaac00dd2e38210b81bd97242c5e067dc75e327600a7b51c5e464"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vertdll.lib",
+      "size": 100324,
+      "sha256": "fd03495d7c9d86d020e55918ed4f6a20733d66c990b79424819bc96f0e42f6fd"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vfw32.lib",
+      "size": 29954,
+      "sha256": "f183c0132e90f4f4d52597823e270f72cce4a7d04bf7aa76cadc540381e45a7f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/virtdisk.lib",
+      "size": 8288,
+      "sha256": "fb184b66c6cdedab628d7d6bf1bde8e2138055cc8ddeb06b4b42243e33808380"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vmdevicehost.lib",
+      "size": 5686,
+      "sha256": "47037ab5494ed76873fcb9f97718d91a0c490bb5a2d922b8bfe78ce0f82ed433"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vmsavedstatedumpprovider.lib",
+      "size": 7642,
+      "sha256": "ee0478e9a8d769cef08b0b245e470652123a18a17d1ebd8a1663e943238ef6be"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vscmgr.lib",
+      "size": 32292,
+      "sha256": "fcf103ea1e5f340f77cfb99e585eaf4432447e2c47169e8f33cfcae1e087fbef"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vss_uuid.lib",
+      "size": 140516,
+      "sha256": "ad87dfe1570d7d6c39fba248074ea59e60d9bb45310a86f03c57ec3c30ef2112"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vssapi.lib",
+      "size": 17780,
+      "sha256": "b30f1707091bf4a2b09d07772360e11581223429c76d8deefefd87d15a7e3bff"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/vstorinterface.lib",
+      "size": 8566,
+      "sha256": "bea28c64df694b95f03fc9645ce744bcdec2525fdca5bcbf5ad16d6d7be5d0c5"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wbemuuid.lib",
+      "size": 147680,
+      "sha256": "7e3e4bc226a78222bb22e3bb060416bf061c7e7dafc1e537730efe66300401ff"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wcmapi.lib",
+      "size": 10668,
+      "sha256": "2a02c90198a83ac6a5ccbafd080ba8c225c8236e78952040f3042f624b8d41c2"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wcmguid.lib",
+      "size": 53534,
+      "sha256": "05b9e8c90d4c5fba2cf928b94c905fd6c136183295ef8671e344f7e51d77ace4"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdsbp.lib",
+      "size": 2996,
+      "sha256": "573614d9b80a2cfdc5c1518070dc7e79ac4ce513c27f30bbb8dd966280c221b6"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdsclientapi.lib",
+      "size": 16078,
+      "sha256": "1278017842ba6ca25b7d83ac499ce5f8e7b757c8cd26e45e7f0464319faba883"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdsmc.lib",
+      "size": 5462,
+      "sha256": "6c5e0dea926ef0572f6fa8844dd286ec24e61a6a6227aa3c99be2a2b5ae8b647"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdspxe.lib",
+      "size": 8624,
+      "sha256": "9aa68746b27a84f2a7f74944271b6735840305b2f8ae46742126bceb9cac1ff4"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdstptc.lib",
+      "size": 7736,
+      "sha256": "7ab07883c7960999316eee137a4329e9e069d31df802f13363266719ac864268"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wdstptmgmt.tlb",
+      "size": 31064,
+      "sha256": "249291638fe63e91a3172a40e0235e05471321628a6b8a7d1a89c75feaf49307"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/webauthn.lib",
+      "size": 4360,
+      "sha256": "4f548d4a6ae6368270a65b0b34d0dd125f0aa3862b924bb4b7355bbc4fcee29a"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/webservices.lib",
+      "size": 43276,
+      "sha256": "83fef2d0734470b4ad4c8f42d0556c485ee8b2efbb6da0182494310df7ed6229"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/websocket.lib",
+      "size": 4728,
+      "sha256": "ed1144dba1923902a708d159e4400c9b4cb6c6c76a57f317c2f0441689c68efb"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wecapi.lib",
+      "size": 5524,
+      "sha256": "b3223bdd6133e86f4e9ef6e57797e84b23f584f3eab539acea3eca6bfc9d65b9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wer.lib",
+      "size": 47128,
+      "sha256": "e9b7c8811e3ffb7b661e5b7a156b70bc4b921ad2689195bb86198f3eff3a4345"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wevtapi.lib",
+      "size": 11614,
+      "sha256": "18cfae0f83307e8cb982ac8f676f1cc7b5ff16265b3acb93b5ebb3897a3a3e83"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wiaguid.lib",
+      "size": 395082,
+      "sha256": "a8ca48039411b062ff995eea5aeceb6b06aecd00c2bb39c1d72fd781542ec65e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wiaservc.lib",
+      "size": 13800,
+      "sha256": "f9c14b392ee8188ba11b5793fd6e54f5dd47e2adb4bb0633177c50b748431e58"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wiautil.lib",
+      "size": 690518,
+      "sha256": "e8fcfdc7c01ab70ae0ec48648776afed2642cf67cdede85e88157542bff66ca8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winbio.lib",
+      "size": 15600,
+      "sha256": "f9546d131bc88f014b84d14c9dfe2f4043aa8dd49b7efae69d6eb0beb2ccccdf"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windows.ai.machinelearning.lib",
+      "size": 2102,
+      "sha256": "9f581b124ef096ebe0e99f8a614fb48449be79b494b850f41f564e62fc973c5b"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windows.data.pdf.lib",
+      "size": 1938,
+      "sha256": "80848a266d826befc9d443b8628db199d8b696ea04250b2933ec11fd39c57ebe"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windows.media.mediacontrol.lib",
+      "size": 4744,
+      "sha256": "05723ca081aa17e7f8e9c0c799eed383a2184ec2fc712cf232715bde52992994"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windows.networking.lib",
+      "size": 2014,
+      "sha256": "e89721cfb43c1bbf566b0611f13e7dee9489838b2a035a70d7877e2c2eff85be"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windows.ui.lib",
+      "size": 2016,
+      "sha256": "783203eb6a4c6ac7f4843b457739c58c1f1a50757f21872f12aa216f9c565773"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowsapp.lib",
+      "size": 1601642,
+      "sha256": "f792c2d2a3de3423f5e5d305238ca34245331bd8010143f3c910513793efb556"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowsapp_downlevel.lib",
+      "size": 1291710,
+      "sha256": "8da409fff4fa6b17eee70f1ff4c187c43d1fd2dcf9b2ba9c718c15a605ed8f4c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowscodecs.lib",
+      "size": 368322,
+      "sha256": "f53e643e4fdf52485d9b4fe9d06b387802b828012d3536fdc9d1f739a46fbdba"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowscoreheadless.lib",
+      "size": 2482296,
+      "sha256": "912160688370e7c46c42120fcdd29e54a4503292f7e0d3af497b149fd43860a3"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowscoreheadless_apiset.lib",
+      "size": 2301400,
+      "sha256": "524086e7e5d4786730ffd7e3bccf96ca2f0967b1b148b68135de59c01d9f9cc8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/windowssideshowguids.lib",
+      "size": 171378,
+      "sha256": "ca062437d810445de082d3f463b0f9b15cc3435f85293ea28db33db69eac68fb"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winfax.lib",
+      "size": 13606,
+      "sha256": "07183cd6e0eee8dd4abcfa4405658bc6630cd7e1c1e70642eb9ee0066883d3da"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winhttp.lib",
+      "size": 18280,
+      "sha256": "de39116027b2853f553f3d7915cad8b94382eb0d65979d2f32b65935a4eb1c24"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winhvemulation.lib",
+      "size": 2740,
+      "sha256": "0c931e3524b2e42257eb36ff40fad7ecef08e3d13bf631757d717ab008547f33"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winhvplatform.lib",
+      "size": 9412,
+      "sha256": "1eaf8058973284f168ab3dba33bfa2192228072ef545de6e4c87206d91cc8254"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wininet.lib",
+      "size": 76238,
+      "sha256": "04814bdb46b7b5964c6e6b1ba838d3c28964bc315b3a98e71236bd00ec37e97f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winml.lib",
+      "size": 1728,
+      "sha256": "3e2a2a7ee6ffd1caa29b02c4a909217b4378c63c6906537fb6c970809a987d03"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winmm.lib",
+      "size": 36976,
+      "sha256": "d3af6e9c497561a7e4244b3e521a1ecb46cfcc8dc1adacfa661a35fca3ac2a47"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winsatapi.lib",
+      "size": 1558,
+      "sha256": "408ae97cc0d139de1c54bc21ae4b5053370bda44da34e4e865914a666b78d6d8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winscard.lib",
+      "size": 18294,
+      "sha256": "4e8c9680eaa84f641127ff8dceb6eb33f75cbb2cc03f813f5b275f58a77e670e"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winspool.lib",
+      "size": 55892,
+      "sha256": "06a1f851ada73c266e4c9b026ae176e82d4b09a5152e8041fbd4aa13dd24911c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winsqlite3.lib",
+      "size": 68558,
+      "sha256": "e5108f3212a03837ec2a06b9db2f2f38e1bbf1bef293c80f4b2eb39e9e0e0d63"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winsta.lib",
+      "size": 47822,
+      "sha256": "b7de3bdcc5d8103438b1d1f5408616e57f251ae65e4153dfedef1128ee361e33"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winstrm.lib",
+      "size": 329904,
+      "sha256": "51a3ff50d0b2931a80490c9ad9a4deda2715a5f47775a4ddff6783c02a605e01"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wintrust.lib",
+      "size": 39690,
+      "sha256": "a1c77a852a5b587265baf51c67faf05397bce8db3a32e4a9bc44b97b5c8337c3"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/winusb.lib",
+      "size": 10522,
+      "sha256": "4263a20798aa60682149466b07e24711dd2a175021b935aa34dde76c7e24b65a"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wkspbkax.tlb",
+      "size": 4904,
+      "sha256": "74b34007551f25e044735a56402c0a5ecc0ab200e9829a698194f998857d372c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wlanapi.lib",
+      "size": 17800,
+      "sha256": "f6db981399af209d170a5276117bc793af35b49a180938f4f59f46b8e7336004"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wlanui.lib",
+      "size": 3744,
+      "sha256": "c4e3827f30fb08334406f226c3a6087480aa2e3cb5badad52ac780dda50fe857"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wldap32.lib",
+      "size": 52016,
+      "sha256": "79f2f33cd316855b7563be441d2cc036fc411e554f4db2a9820339b99128342c"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wldp.lib",
+      "size": 7750,
+      "sha256": "495d9b652d8318e9f9730137e06590477b370c62d051beae74b78947db182333"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wmcodecdspuuid.lib",
+      "size": 377522,
+      "sha256": "60852a463f676caac079c7b1d1fbc57bdba3d1c0b0cad1b6fed569e4e1c260f8"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wmip.lib",
+      "size": 10998,
+      "sha256": "aa0036d6acaf910b7ca1c9abb34b2f9cc221beb7814ac9380446796ff6409466"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wmiutils.lib",
+      "size": 1548,
+      "sha256": "2410002d4b62e38483e68caba2954e0e378a146326b0e35b69f3da717817f428"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wmvcore.lib",
+      "size": 6936,
+      "sha256": "6a54b85fecac581eb67b90accd628b7e04a026698cb946f8ca9ecb6bb76d1344"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wnvapi.lib",
+      "size": 1920,
+      "sha256": "b9126eddb19825aef38b3ae782f46ea8569512dc0ae57d72859629d3b7bccc03"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wofutil.lib",
+      "size": 3886,
+      "sha256": "808e379e19a7e7944d21c132586a2291ee0df6f48e8a411a15c613e1fdf82eb9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/workspace.tlb",
+      "size": 16484,
+      "sha256": "38b713023faec1750992a4d88af0cb4a266f2251e5ae4f52ea86322e64d0df7f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/workspaceax.lib",
+      "size": 704628,
+      "sha256": "cc24a929508fc94a021a260c97e9cd8ab54d98ce309eb08927c771f08ae6599d"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/workspaceruntime.tlb",
+      "size": 9152,
+      "sha256": "b1a399607cc9bdc3f60864ddcc82c65a492065ab72bd66f97979effb55fc2c0d"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/ws2_32.lib",
+      "size": 149164,
+      "sha256": "bba03147f31d31493d8c236a376801a779a75e97d7cc9cf03269572f71ffaec4"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsbapp_uuid.lib",
+      "size": 15106,
+      "sha256": "7524c76bcc3078ec0cf90ce2f5724f1891cad85878fd0522ba5dacde0d842790"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsbonline.lib",
+      "size": 2996,
+      "sha256": "3700349dcbe110041bdf2651afa7a027420a8835c61c08359deb0dbfda864f76"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wscapi.lib",
+      "size": 10932,
+      "sha256": "e0a8bf2e067f3e606287d67ddbe02b0475a6ddd0d71d32208e3db29afb5c5f84"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsclient.lib",
+      "size": 9086,
+      "sha256": "c60a5d78a9f25d0070eebd9f11bbfc73a478a7862334458edeb98ed6d81d0bf2"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsdapi.lib",
+      "size": 12658,
+      "sha256": "ba67f4d2da621afac42656eebab420314a5ecc6c5fabe86a7d24126ddcc6c9f9"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsmandisp.tlb",
+      "size": 13768,
+      "sha256": "b3180bc40469aaf9529ea54eb991fdf9306f6a736bb0349a97da48d9744d8ce1"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsmsvc.lib",
+      "size": 2057282,
+      "sha256": "b67747a9dde07ba7be79b5ed832709f0e1b63b4fe51b6513fb6fea8319f8ac18"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsnmp32.lib",
+      "size": 11456,
+      "sha256": "85dcda5efd47a72c503a082c8ccdd4fea7bf391473c6adb37fe8167cf06f4022"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wsock32.lib",
+      "size": 15532,
+      "sha256": "7fc1be38d990255f53b30bd63f201e983fb3e485cda2cee5c3a3c8fa2099ef12"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wtsapi32.lib",
+      "size": 16710,
+      "sha256": "9d286f60e16f2b8843cfcf81d151a3245234464cc96b9b3cabb09d58434c3ce4"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/wuguid.lib",
+      "size": 117184,
+      "sha256": "4037e17d0fe52aac91ed88f41427b55b4304071189ca783244cbdc7669cd0bfc"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xapobase.lib",
+      "size": 1730578,
+      "sha256": "3021267ada637cd710d014d51b727541d777ecefeb3dcd19870ec14cb028201b"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xapobase2_8.lib",
+      "size": 1730550,
+      "sha256": "ecc37a6dd633d8313291fcaa6759f1d087a12c3f98c2f0c6e98bb033ba08473f"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xaswitch.lib",
+      "size": 99002,
+      "sha256": "99882450a2b76918c7aad3d1cc70f65c93824dfdb0c3ba1b5d77110507432bf2"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xaudio2.lib",
+      "size": 3792,
+      "sha256": "9c0d2833da6ec3d91c2b36506586315738ddcf8079137d9478180b1103b78934"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xaudio2_8.lib",
+      "size": 3066,
+      "sha256": "c4fe6b1654eb5a976f4ad4c61492a6031e03976eaf6d9c04c12ce5d7aa75dea1"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xinput.lib",
+      "size": 3258,
+      "sha256": "33e5ad8e7b13f911e3056744f4c86701d764b07e0321ab83e768c4018a340fe4"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xinput9_1_0.lib",
+      "size": 2662,
+      "sha256": "5b044cf4a8a68bb3d5e68b0770d995b74e5d3977f1855927c79d58303f50f033"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xinputuap.lib",
+      "size": 3258,
+      "sha256": "505955bfcff37f93bd7b0304a9b4804356c535bc406709615722491a3f7a59be"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xmllite.lib",
+      "size": 3208,
+      "sha256": "5ce8202fb7af642013d60522c1936ab16595bfc4df237395a492a5234489e4e5"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xolehlp.lib",
+      "size": 3816,
+      "sha256": "ccdc93bd13fb2ca09d8e657634eb8f3c676ee06db17f4871f877ad80de83c3bf"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xpsdocumenttargetprint.lib",
+      "size": 3296,
+      "sha256": "809e6195cfc4c7428c4716e073449ab5271d836085fdfa2006bae727c1c2c3c7"
+    },
+    {
+      "path": "windows kits/10/lib/10.0.19041.0/um/x64/xpsprint.lib",
+      "size": 3608,
+      "sha256": "5ea0db583a1a4f1c730ae6c1a2a511692760535bf5e90b2dde28e9f0e4bc4645"
+    }
+  ]
+}

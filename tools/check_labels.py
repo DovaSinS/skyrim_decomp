@@ -31,6 +31,7 @@ proof: a name can exist in a class for another reason, and macro-built members a
 far as their tokens appear in the class body.
 
     python3 tools/check_labels.py [--checkout owner/repo=PATH ...] [files...]
+    # --no-sibling-names (or SR_NO_SIBLING_NAMES=1): generic sibling findings, identical checks
     # default files: every reconstruction/**/*.h and *.cpp with "Labels: v2"
     # default checkouts: .local/verifier/config.json "community_checkouts", else .local/sources/
 """
@@ -39,11 +40,12 @@ import json
 from pathlib import Path
 import re
 import subprocess
+from local_paths import local_dir, local_path, no_sibling_names as hide_sibling_names
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lint_reconstruction import LABEL_LINE, LABELS_VERSION, SIBLING_HEADER, SIBLING_SOURCES  # noqa: E402
+from lint_reconstruction import LABEL_LINE, LABELS_VERSION, SIBLING_HEADER, SIBLING_SOURCES, SIBLING_ID  # noqa: E402
 from build_fnv_index import split_symbol  # noqa: E402
 
 DEFAULT_CHECKOUTS = {
@@ -52,15 +54,16 @@ DEFAULT_CHECKOUTS = {
     'meh321/AddressLibraryDatabase': '.local/sources/AddressLibraryDatabase',
 }
 # Sibling decompilations (other games of the engine family) usable by maintainer decision,
-# docs/authorizations.md. Only their headers and build list are indexed: their source trees are
-# large and every name a unit can cite is in one of the two.
-DEFAULT_SIBLINGS = {'momusdigital/fnv_decomp': '.local/sources/fnv_decomp'}
+# docs/authorizations.md. FNV uses headers and its build list; the anonymous sibling uses
+# only its allowed game-code folders and never mixed generated aggregates.
+DEFAULT_SIBLINGS = {'momusdigital/fnv_decomp': '.local/sources/fnv_decomp',
+                    'fo4-private': '.local/sources/fo4-private'}
 SIBLING_DIRS = ('include',)
 # Name lists at a checkout's root, read as declarations (meh321's has no headers).
 NAME_LISTS = ('skyrimae.rename',)
 UNITS_LIST = 'build/units.json'
 COMMUNITY = re.compile(r'COMMUNITY\(([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40}), [^)]*\)')
-SIBLING = re.compile(r'SIBLING\(([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)@([0-9a-f]{7,40}), [^)]*\)')
+SIBLING = re.compile(rf'SIBLING\(({SIBLING_ID})@([0-9a-f]{{7,40}}), [^)]*\)')
 NAME = re.compile(r'~?[A-Za-z_]\w*(?:::~?[A-Za-z_]\w*)*')
 IDENT = re.compile(r'[A-Za-z_]\w*')
 COMMENTS = re.compile(r'//[^\n]*|/\*.*?\*/|"(?:[^"\\\n]|\\.)*"|\'(?:[^\'\\\n]|\\.)*\'', re.S)
@@ -154,7 +157,7 @@ def enumerators(body):
 class Index:
     """Scopes, declared identifiers and enum values of one community checkout."""
 
-    def __init__(self, root, dirs=('include', 'src')):
+    def __init__(self, root, dirs=('include', 'src'), function_names=False):
         self.root = Path(root)
         self.scopes = {}     # simple name -> {'declared': set, 'bases': set}
         self.enums = {}      # enum simple name -> {enumerator: set of values (None when unknown)}
@@ -164,10 +167,19 @@ class Index:
         self.lines = {}      # relative path -> original lines
         for path in sorted(p for d in dirs for p in (self.root / d).rglob('*')
                            if p.suffix in SOURCE_SUFFIXES and p.is_file()):
-            raw = path.read_text(errors='replace')
             rel = path.relative_to(self.root).as_posix()
+            if function_names and path.resolve() != self.root.resolve() / rel:
+                continue  # anonymous sibling: never follow a game-folder link into excluded source
+            raw = path.read_text(errors='replace')
             self.lines[rel] = raw.splitlines()
             self.add(strip(raw), rel)
+            if function_names:
+                from sibling_cpp import functions
+                for fn in functions(strip(raw)):
+                    self.declared.add(fn['name'])
+                    self.tokens.update(fn['qualified'].split('::'))
+                    entry = self.scopes.setdefault(fn['class'].split('::')[-1], {'declared': set(), 'bases': set()})
+                    entry['declared'].add(fn['name'])
         for name in NAME_LISTS:
             if (self.root / name).is_file():
                 self.add_name_list(self.root / name)
@@ -342,11 +354,12 @@ def checkout_head(path):
 
 
 class Checker:
-    def __init__(self, checkouts, root=ROOT, siblings=None):
+    def __init__(self, checkouts, root=ROOT, siblings=None, no_sibling_names=None, env=None):
         self.root = Path(root)
+        self.no_sibling_names = hide_sibling_names(env) if no_sibling_names is None else no_sibling_names
 
         def resolve(path):
-            return self.root / path if not Path(path).is_absolute() else Path(path)
+            return local_path(self.root, path, env)
         self.checkouts = {repo: resolve(path) for repo, path in checkouts.items()}
         self.siblings = {repo: resolve(path)
                          for repo, path in (DEFAULT_SIBLINGS if siblings is None else siblings).items()}
@@ -357,9 +370,17 @@ class Checker:
         path = self.siblings.get(repo)
         if path is None or not path.is_dir():
             return None
+        if repo == 'fo4-private':
+            from fo4_private import REVISION
+            if checkout_head(path) != REVISION:
+                return None  # no source reads outside the author-permitted revision
         key = ('sibling', repo)
         if key not in self.indexes:
-            self.indexes[key] = Index(path, dirs=SIBLING_DIRS)
+            if repo == 'fo4-private':
+                from fo4_private import GAME_DIRS
+                self.indexes[key] = Index(path, dirs=GAME_DIRS, function_names=True)
+            else:
+                self.indexes[key] = Index(path, dirs=SIBLING_DIRS)
         return self.indexes[key]
 
     def index(self, repo, rev, where, findings, sibling=False):
@@ -369,7 +390,9 @@ class Checker:
             if key not in self.reported:
                 self.reported.add(key)
                 kind, config = ('SIBLING', 'sibling') if sibling else ('COMMUNITY', 'community')
-                findings.append(f'{where}: no local checkout of {repo}; its {kind} labels were not verified '
+                findings.append(f'{where}: no local sibling checkout; its SIBLING labels were not verified'
+                                if sibling and self.no_sibling_names else
+                                f'{where}: no local checkout of {repo}; its {kind} labels were not verified '
                                 f'(set .local/verifier/config.json "{config}_checkouts")')
             return None
         head = checkout_head(path)
@@ -377,7 +400,11 @@ class Checker:
             key = ('rev', repo, rev)
             if key not in self.reported:
                 self.reported.add(key)
-                findings.append(f'{where}: checkout of {repo} is at {head or "an unknown revision"}, the label pins '
+                findings.append(f'{where}: fo4-private checkout revision differs from the label; source not read'
+                                if repo == 'fo4-private' else
+                                f'{where}: sibling checkout revision differs from the label; names were checked as is'
+                                if sibling and self.no_sibling_names else
+                                f'{where}: checkout of {repo} is at {head or "an unknown revision"}, the label pins '
                                 f'{rev}; names were checked against the checkout as it is')
         if sibling:
             return self.sibling_index(repo)
@@ -412,7 +439,9 @@ class Checker:
                         community_names.setdefault(name.split('::')[-1], (repo, index))
                     if all(index.has(name, hint) is None for hint in hints):
                         where_in = name.rsplit('::', 1)[0] if '::' in name else ' or '.join(h for h in hints if h)
-                        findings.append(f'{where}: {name} is labelled {kind}({repo}) but {repo} at {rev} '
+                        findings.append(f'{where}: a SIBLING-labelled name has no declaration in the sibling checkout'
+                                        if sibling and self.no_sibling_names else
+                                        f'{where}: {name} is labelled {kind}({repo}) but {repo} at {rev} '
                                         f'declares no such name{" in " + where_in if where_in else ""}')
             if 'GUESS' in labels and not pins and not sibling_pins:
                 for name in names:
@@ -442,7 +471,10 @@ class Checker:
                                 break
                         if found:
                             scope = name.rsplit('::', 1)[0] if '::' in name else hint
-                            findings.append(f'{where}: {name} is labelled GUESS but sibling {found} declares it in '
+                            findings.append(f'{where}: a sibling declaration exists for this name; '
+                                            'if you took it from there, label it SIBLING'
+                                            if self.no_sibling_names else
+                                            f'{where}: {name} is labelled GUESS but sibling {found} declares it in '
                                             f'{scope}; if you took it from there, label it SIBLING')
                             break
         findings += self.check_enums(rel, text, scopes, community_names)
@@ -457,6 +489,11 @@ class Checker:
             repo, rev, path, line = m.group(1), m.group(2), m.group(3), m.group(4)
             if repo not in SIBLING_SOURCES:
                 continue  # the lint refuses it
+            if repo == 'fo4-private':
+                from fo4_private import allowed_path
+                if not allowed_path(path):
+                    out.append(f'{rel}: fo4-private citation is outside the allowed game-code folders; not read')
+                    continue
             root = self.siblings.get(repo)
             if root is None or not root.is_dir():
                 if ('missing', repo) not in self.reported:
@@ -464,6 +501,11 @@ class Checker:
                     out.append(f'{rel}: no local checkout of {repo}; its Sibling source lines were not verified')
                 continue
             head = checkout_head(root)
+            if repo == 'fo4-private':
+                from fo4_private import REVISION
+                if head != REVISION:
+                    out.append(f'{rel}: fo4-private checkout revision differs from the approved pin; not read')
+                    continue
             if head is None or not head.startswith(rev):
                 key = ('rev', repo, rev)
                 if key not in self.reported:
@@ -475,10 +517,15 @@ class Checker:
             if '..' in Path(path).parts or not target.is_relative_to(root.resolve()):
                 out.append(f'{rel}: Sibling source {path} leads outside the {repo} clone; not read')
                 continue
+            if repo == 'fo4-private' and target != root.resolve() / path:
+                out.append(f'{rel}: fo4-private source citation follows a link; not read')
+                continue
             if not target.is_file():
                 out.append(f'{rel}: Sibling source {path} does not exist in {repo}')
             elif line and int(line) > len(target.read_text(errors='replace').splitlines()):
                 out.append(f'{rel}: Sibling source {path}:{line} is past the end of the file')
+        if self.no_sibling_names:
+            return [f'{rel}: sibling source citation could not be verified (details omitted)' for _ in out]
         return out
 
     def check_enums(self, rel, text, scopes, community_names):
@@ -598,9 +645,10 @@ def community_excerpts(files, checkouts=None, root=ROOT):
     return out
 
 
-def configured_checkouts(root=ROOT):
+def configured_checkouts(root=ROOT, env=None):
+    config_path = local_dir(root, env) / 'verifier/config.json'
     try:
-        config = json.loads((root / '.local/verifier/config.json').read_text())
+        config = json.loads(config_path.read_text())
     except (OSError, ValueError):
         config = {}
     return config.get('community_checkouts') or DEFAULT_CHECKOUTS
@@ -610,17 +658,18 @@ def default_files(root=ROOT):
     return sorted(p for p in (root / 'reconstruction').rglob('*') if p.suffix in ('.h', '.cpp'))
 
 
-def configured_siblings(root=ROOT):
+def configured_siblings(root=ROOT, env=None):
+    config_path = local_dir(root, env) / 'verifier/config.json'
     try:
-        config = json.loads((root / '.local/verifier/config.json').read_text())
+        config = json.loads(config_path.read_text())
     except (OSError, ValueError):
         config = {}
-    return config.get('sibling_checkouts') or DEFAULT_SIBLINGS
+    return {**DEFAULT_SIBLINGS, **(config.get('sibling_checkouts') or {})}
 
 
-def check(files, checkouts=None, root=ROOT, siblings=None):
-    checker = Checker(checkouts or configured_checkouts(root), root,
-                      configured_siblings(root) if siblings is None else siblings)
+def check(files, checkouts=None, root=ROOT, siblings=None, no_sibling_names=None, env=None):
+    checker = Checker(checkouts or configured_checkouts(root, env), root,
+                      configured_siblings(root, env) if siblings is None else siblings, no_sibling_names, env)
     findings = []
     for path in files:
         findings += checker.check_file(Path(path) if Path(path).is_absolute() else root / path)
@@ -631,13 +680,16 @@ def main(argv):
     p = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     p.add_argument('files', nargs='*')
     p.add_argument('--checkout', action='append', default=[], metavar='OWNER/REPO=PATH')
+    p.add_argument('--no-sibling-names', action='store_true', default=hide_sibling_names(),
+                   help='omit sibling identifiers from findings (or set SR_NO_SIBLING_NAMES=1); checks are unchanged')
     p.add_argument('--sibling', action='append', default=[], metavar='OWNER/REPO=PATH')
     args = p.parse_args(argv)
     checkouts = dict(configured_checkouts())
     checkouts.update(dict(c.split('=', 1) for c in args.checkout))
     siblings = dict(configured_siblings())
     siblings.update(dict(c.split('=', 1) for c in args.sibling))
-    findings = check(args.files or default_files(), checkouts, siblings=siblings)
+    findings = check(args.files or default_files(), checkouts, siblings=siblings,
+                     no_sibling_names=args.no_sibling_names)
     for f in findings:
         print(f'check_labels: {f}')
     print(f'check_labels: {"PASS" if not findings else "WARN"} ({len(findings)} finding(s))')

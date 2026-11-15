@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Additional pre-review hygiene, separate from validator/acceptance predicates."""
+"""Mechanical pre-review checks; never a substitute for the Reviewer's four blocking grounds.
+
+Runs existing reconstruction lint plus explicit origin, complete notices, recognizable decompiler
+identifiers and overbroad match claims. Semantic plausibility and provenance still need review.
+This tool does not change any validator or acceptance predicate.
+"""
 import argparse
 import hashlib
 import json
@@ -38,6 +43,19 @@ def truncated_mit_problems(name, text):
     return problems
 
 
+def plausible_source_problems(name, text):
+    markers = re.findall(r'\b(?:undefined(?:1|2|4|8)|param_\d+|local_[0-9a-f]+|(?:FUN|DAT)_[0-9a-fA-F]+)\b', text)
+    return [f'{name}: check plausible_source: decompiler identifier {marker}' for marker in sorted(set(markers))]
+
+
+def claim_scope_problems(name, text):
+    # Only explicit claims, not ordinary descriptions of the reconstructed operation.
+    claims = re.findall(r'\b(?:(?:proves|guarantees|establishes)\s+(?:(?:full|complete)\s+)?'
+                        r'(?:semantic equivalence|behavio(?:u)?ral equivalence|gameplay parity|name correctness)'
+                        r'|semantically equivalent to (?:Skyrim|the target|the game))\b', text, re.I)
+    return [f'{name}: check claim_scope: claim exceeds the checked byte match: {claim}' for claim in claims]
+
+
 def lint_files(root, names):
     root = Path(root).resolve()
     problems = []
@@ -49,8 +67,10 @@ def lint_files(root, names):
             problems.append(f'{name}: source path missing or outside repository')
             continue
         text = path.read_text()
-        problems += origin_statement_problems(name, text)
-        problems += truncated_mit_problems(name, text)
+        problems += [f'check provenance: {p}' for p in origin_statement_problems(name, text)]
+        problems += [f'check publication_hygiene: {p}' for p in truncated_mit_problems(name, text)]
+        problems += plausible_source_problems(name, text)
+        problems += claim_scope_problems(name, text)
     return problems
 
 
@@ -66,8 +86,12 @@ def main(argv=None):
             data = json.loads((args.root / 'data/progress.json').read_text())
             wanted = set(args.functions)
             selected = []
+            by_name = {}
+            for fn in data['functions']:
+                for name in {fn['id'], hex(fn['rva'])}:
+                    by_name.setdefault(name, []).append(fn)
             for value in sorted(wanted):
-                matches = [fn for fn in data['functions'] if value in (fn['id'], hex(fn['rva']))]
+                matches = by_name.get(value, [])
                 if len(matches) != 1:
                     raise ValueError(f'{value}: expected exactly one function identity; found {len(matches)}')
                 selected += matches
@@ -76,7 +100,7 @@ def main(argv=None):
                 names += record['source']['translation_unit']
         if not names:
             parser.error('supply files or --functions')
-        problems = lint_files(args.root, names)
+        problems = existing.lint_tree(args.root, sorted(set(names))) + lint_files(args.root, names)
     except (ValueError, OSError, KeyError) as error:
         problems = [str(error)]
     for problem in problems:
