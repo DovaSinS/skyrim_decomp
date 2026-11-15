@@ -100,8 +100,10 @@ def merge(tree, revision, *, no_ff=True):
     partial = {}
     progress = [blob(tree, rev, PROGRESS) for rev in (base, ours, revision)]
     if all(value is not None for value in progress):
-        partial[PROGRESS] = (json.dumps(merge_progress(*(json.loads(v) for v in progress)),
-                                       indent=2, ensure_ascii=False) + '\n').encode()
+        inputs = [json.loads(v) for v in progress]
+        merged = merge_progress(*inputs)
+        partial[PROGRESS] = (progress[1] if merged == inputs[1] else
+                             (json.dumps(merged, indent=2, ensure_ascii=False) + '\n').encode())
     readmes = [blob(tree, rev, 'README.md') for rev in (base, ours, revision)]
     if all(value is not None for value in readmes):
         sources = [readme_source(v.decode()) for v in readmes]
@@ -113,7 +115,9 @@ def merge(tree, revision, *, no_ff=True):
                 result = subprocess.run(['git', 'merge-file', '-p', str(paths[1]), str(paths[0]), str(paths[2])],
                                         capture_output=True)
             f.refuse(result.returncode == 0, 'conflicting source prose: README.md')
-            partial['README.md'] = result.stdout
+            totals = readmes[1].decode().split(START)[1].split(END)[0]
+            partial['README.md'] = result.stdout.decode().replace(START + '\n' + END,
+                                                                 START + totals + END, 1).encode()
     with derived_driver(tree, DERIVED_FILES | partial.keys()):
         try:
             f.git(tree, '-c', 'merge.lane-derived.driver=true', 'merge', '--quiet', '--no-edit',

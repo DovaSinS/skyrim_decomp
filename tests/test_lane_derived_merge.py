@@ -75,9 +75,19 @@ class DerivedMerge(unittest.TestCase):
         for path in derived.DERIVED_FILES:
             self.assertEqual((self.root / path).read_text(), 'current\n')
         self.assertEqual((self.root / 'README.md').read_text(),
-                         'Updated prose\n' + derived.START + '\n' + derived.END + '\n')
+                         'Updated prose\n' + derived.START + '\ncurrent\n' + derived.END + '\n')
         self.assertEqual(attributes.read_text(), '# original candidate attributes\n')
         self.assertEqual(git(self.root, 'rev-list', '--parents', '-1', 'HEAD').split()[1:], [before, incoming])
+
+    def test_unchanged_source_bytes_and_current_totals_are_preserved_until_regeneration(self):
+        progress = (self.root / derived.PROGRESS).read_bytes()
+        readme = (self.root / 'README.md').read_bytes()
+        self.write('README.md', readme.decode().replace('base totals', 'stale incoming totals'))
+        incoming = self.commit()
+        git(self.root, 'checkout', '--quiet', '--detach', self.base)
+        derived.merge(self.root, incoming)
+        self.assertEqual((self.root / derived.PROGRESS).read_bytes(), progress)
+        self.assertEqual((self.root / 'README.md').read_bytes(), readme)
 
     def test_source_conflict_bounces_and_does_not_poison_next_input(self):
         self.write('source.txt', 'incoming source\n')
