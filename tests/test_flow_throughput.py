@@ -247,8 +247,12 @@ class Throughput(unittest.TestCase):
     def test_cli_waits_for_busy_lane_then_completes(self):
         import subprocess
         import time
+        # As in the in-process fixture, these repositories intentionally have stub tools.
+        entry = ('import sys\nsys.path.insert(0, sys.argv.pop(1))\nimport flow\n'
+                 'from unittest.mock import patch\nwith patch("flow_lane.require_base_tools"):\n'
+                 '    raise SystemExit(flow.main())\n')
         with lane.lane_lock(self.fdir):
-            proc = subprocess.Popen([sys.executable, str(flow.TOOLS / 'flow.py'), '--root', str(self.root),
+            proc = subprocess.Popen([sys.executable, '-c', entry, str(flow.TOOLS), '--root', str(self.root),
                                      '--flow-dir', str(self.fdir), 'lane-run', '--wait-lane', '--min-free-gb', '0'],
                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             time.sleep(0.15)

@@ -205,6 +205,7 @@ class CarryAcceptanceTests(unittest.TestCase):
         def accept(tree, requests, python):
             return lane_accept.accept(tree, requests, self.when)
         with patch.object(flow_lane.resource_admission, 'admit'), \
+                patch.object(flow_lane, 'require_base_tools'), \
                 patch.object(flow, 'run', side_effect=run), \
                 patch.object(flow_lane, 'accept', side_effect=accept) as accept_calls:
             flow_lane.build(self.root, self.fx.fdir, receipt, sys.executable, 'main')
