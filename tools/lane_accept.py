@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Prepare lane requests through the ordinary acceptance gates; apply and index once."""
 import argparse
-import copy
 import json
+import time
 from pathlib import Path
 import accept_function as af
 from check_source_digest import source_digest_cache
@@ -10,14 +10,26 @@ from check_source_digest import source_digest_cache
 
 @source_digest_cache()
 def accept(root, requests, when=None, *, prepare_only=False):
-    with af.acceptance_batch(root):
-        return _accept(root, requests, when, prepare_only=prepare_only)
+    timings = {}
+    started = time.monotonic()
+    with af.acceptance_batch(root, compact_plans=True):
+        result = _accept(root, requests, when, prepare_only=prepare_only, timings=timings)
+    result['wall_seconds'] = dict(timings, total=time.monotonic() - started)
+    return result
 
 
-def _accept(root, requests, when=None, *, prepare_only=False):
+def _accept(root, requests, when=None, *, prepare_only=False, timings=None):
+    def timed(phase, function, *args, **kwargs):
+        started = time.monotonic()
+        try:
+            return function(*args, **kwargs)
+        finally:
+            timings[phase] = timings.get(phase, 0) + time.monotonic() - started
+
     root = Path(root)
     when = when or af.now_utc()
-    data, target = af.load(root)
+    data, target = timed('load', af.load, root)
+    timed('index', af.inventory_index, data)
     plans, dropped, selected = [], [], set()
     def prepare_request(member):
         if member['kind'] == 'family':
@@ -37,7 +49,7 @@ def _accept(root, requests, when=None, *, prepare_only=False):
 
     errors = (af.Refused, ValueError, KeyError, TypeError, OSError)
     saved, committed, provisional = {}, False, False
-    stale_before = af.stale_ids(root, data)
+    stale_before = timed('staleness', af.stale_ids, root, data)
 
     def remember(prepared):
         names = [af.PROGRESS, af.INDEX] + [af.review_record_path(fn) for _, fn, _, rv in prepared if rv is not None]
@@ -47,7 +59,7 @@ def _accept(root, requests, when=None, *, prepare_only=False):
                 saved[name] = path.read_bytes() if path.is_file() else None
 
     def combine():
-        new, prepared = copy.deepcopy(data), []
+        new, prepared = dict(data, functions=list(data['functions'])), []
         for _, plan in plans:
             for index, fn, record, review in plan[3]:
                 new['functions'][index] = plan[1]['functions'][index]
@@ -56,7 +68,7 @@ def _accept(root, requests, when=None, *, prepare_only=False):
 
     def prepare_individually(request):
         try:
-            add(request, prepare_request(request))
+            add(request, timed(request['kind'], prepare_request, request))
         except errors as error:
             if request['kind'] == 'family':
                 dropped.append(dict(request=request, reason=str(error)))
@@ -64,7 +76,7 @@ def _accept(root, requests, when=None, *, prepare_only=False):
             for function in request['functions']:
                 member = dict(request, functions=[function])
                 try:
-                    add(member, prepare_request(member))
+                    add(member, timed(member['kind'], prepare_request, member))
                 except errors as member_error:
                     dropped.append(dict(request=member, reason=str(member_error)))
 
@@ -73,7 +85,7 @@ def _accept(root, requests, when=None, *, prepare_only=False):
         try:
             # p101's single preparation across individually reviewed requests remains the fast path.
             if reviews:
-                plan = af.accept_reviews(root, reviews, when, prepare_only=True, carry_accepted=True)
+                plan = timed('review', af.accept_reviews, root, reviews, when, prepare_only=True, carry_accepted=True)
                 selected.update(fn['id'] for _, fn, _, _ in plan[3])
                 plans.append((reviews, plan))
         except errors:
@@ -84,25 +96,25 @@ def _accept(root, requests, when=None, *, prepare_only=False):
                 prepare_individually(request)
         families = [r for r in requests if r['kind'] == 'family']
         if families and plans:
-            new, prepared = combine()
+            new, prepared = timed('combine', combine)
             remember(prepared)
             # Use the ordinary transactional writer and every validator check. Only the derived
             # index waits until the final combined apply. The family gate then sees staged sample
             # approvals, including their private parser and second-pass/rerun safeguards.
             provisional = True
-            af.apply(root, data, new, target, prepared, stale_before - selected, when,
+            timed('stage_samples', af.apply, root, data, new, target, prepared, stale_before - selected, when,
                      rebuild_index=False, stage_only=True)
         for request in families:
             prepare_individually(request)
         if not plans:
             return dict(changed=[], accepted=[], dropped=dropped)
-        new, prepared = combine()
+        new, prepared = timed('combine', combine)
         remember(prepared)
         accepted = [member for members, _ in plans for member in (members if isinstance(members, list) else [members])]
         result = dict(changed=[], accepted=accepted, dropped=dropped)
         # Failed members are re-carried by the runner; planning never leaves provisional matches.
         if not prepare_only and not dropped:
-            result['changed'] = af.apply(root, data, new, target, prepared, stale_before - selected, when)
+            result['changed'] = timed('apply', af.apply, root, data, new, target, prepared, stale_before - selected, when)
             committed = True
         return result
     finally:
