@@ -1,6 +1,6 @@
 {
   "batch_schema": 1,
-  "commitment": null,
+  "commitment": "3bfee9885b66eeb8f51728d2420b6b1e199728be",
   "family_path": "reports/sse-steam-1-7-104/families/fa55f21cdbca678d0de9224f40f25f20ff5263fbc32868b1c0795def3f327865.json",
   "family_sha256": "4fe7a0011163b93e047943258358337c46773159917c9ad90e1cad50a0da8ce0",
   "members": {
@@ -165,6 +165,27 @@
     "sse-steam-1-7-104-0xf43960",
     "sse-steam-1-7-104-0xf43970"
   ],
-  "sample": null,
+  "sample": [
+    "sse-steam-1-7-104-0x129b3f0",
+    "sse-steam-1-7-104-0x12b1840",
+    "sse-steam-1-7-104-0x12c3520",
+    "sse-steam-1-7-104-0x12c3550",
+    "sse-steam-1-7-104-0x13f330",
+    "sse-steam-1-7-104-0x141210",
+    "sse-steam-1-7-104-0x143100",
+    "sse-steam-1-7-104-0x14d6a50",
+    "sse-steam-1-7-104-0x5761f0",
+    "sse-steam-1-7-104-0x576200",
+    "sse-steam-1-7-104-0x57e880",
+    "sse-steam-1-7-104-0x5fe0a0",
+    "sse-steam-1-7-104-0x600b90",
+    "sse-steam-1-7-104-0x6074f0",
+    "sse-steam-1-7-104-0x607500",
+    "sse-steam-1-7-104-0x60b4b0",
+    "sse-steam-1-7-104-0x64af90",
+    "sse-steam-1-7-104-0x95ec90",
+    "sse-steam-1-7-104-0xa6c960",
+    "sse-steam-1-7-104-0xf43960"
+  ],
   "seed": "p143-fields-99-20261115-remaining"
 }
