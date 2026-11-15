@@ -1,6 +1,6 @@
 {
   "batch_schema": 1,
-  "commitment": null,
+  "commitment": "e9773b777700e667cc9e60a405f225e704266d6f",
   "family_path": "reports/sse-steam-1-7-104/families/2b49df608b610eb1bc60d0bdc3c61d3bb311bec2f5cd995a84f911156069c598.json",
   "family_sha256": "6e38ac702140a26cb015c96f69bd2d3c3e205776dc5e969388eae8f5901f3565",
   "members": {
@@ -117,6 +117,27 @@
     "sse-steam-1-7-104-0x849580",
     "sse-steam-1-7-104-0x8497f0"
   ],
-  "sample": null,
+  "sample": [
+    "sse-steam-1-7-104-0x840360",
+    "sse-steam-1-7-104-0x8406e0",
+    "sse-steam-1-7-104-0x840950",
+    "sse-steam-1-7-104-0x841750",
+    "sse-steam-1-7-104-0x841d00",
+    "sse-steam-1-7-104-0x842010",
+    "sse-steam-1-7-104-0x8425c0",
+    "sse-steam-1-7-104-0x842830",
+    "sse-steam-1-7-104-0x844060",
+    "sse-steam-1-7-104-0x844340",
+    "sse-steam-1-7-104-0x8445e0",
+    "sse-steam-1-7-104-0x8453d0",
+    "sse-steam-1-7-104-0x845b10",
+    "sse-steam-1-7-104-0x846600",
+    "sse-steam-1-7-104-0x846910",
+    "sse-steam-1-7-104-0x8474d0",
+    "sse-steam-1-7-104-0x8479c0",
+    "sse-steam-1-7-104-0x8484f0",
+    "sse-steam-1-7-104-0x8492a0",
+    "sse-steam-1-7-104-0x849580"
+  ],
   "seed": "p171-rootless75-remaining55-20261115"
 }
