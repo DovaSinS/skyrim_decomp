@@ -125,6 +125,38 @@ class DerivedMerge(unittest.TestCase):
         derived.merge(self.root, incoming)
         self.assertFalse((self.root / 'docs/progress.svg').exists())
 
+    def test_optional_contributor_views_are_staged_before_the_guard_and_commit(self):
+        scripts = {name: "# original synthetic no-op generator\n" for name in
+                   ('build_index.py', 'build_progress_svg.py', 'build_model_trend.py')}
+        scripts['build_leaderboard.py'] = (
+            "from pathlib import Path\n"
+            "Path('LEADERBOARD.md').write_text('fresh synthetic credit\\n')\n"
+            "Path('data/contributors.json').write_text('{}\\n')\n")
+        scripts['check.py'] = (
+            "from pathlib import Path\nimport subprocess\n"
+            "for name in ('LEADERBOARD.md', 'data/contributors.json'):\n"
+            "    assert subprocess.check_output(['git','show',':'+name]) == Path(name).read_bytes()\n")
+        for name, text in scripts.items():
+            self.write('tools/' + name, text)
+        git(self.root, 'add', '--', *('tools/' + name for name in scripts))
+        git(self.root, 'commit', '--quiet', '-m', 'original synthetic presentation tools')
+        before = git(self.root, 'rev-parse', 'HEAD')
+        derived.regenerate(self.root, sys.executable)
+        self.assertNotEqual(git(self.root, 'rev-parse', 'HEAD'), before)
+        self.assertEqual((self.root / 'LEADERBOARD.md').read_text(), 'fresh synthetic credit\n')
+        self.assertEqual((self.root / 'data/contributors.json').read_text(), '{}\n')
+        self.assertFalse(git(self.root, 'status', '--porcelain'))
+        self.assertEqual(set(git(self.root, 'diff', '--name-only', before, 'HEAD').splitlines()),
+                         {'LEADERBOARD.md', 'data/contributors.json'})
+
+    def test_regeneration_supports_a_base_without_the_optional_generator(self):
+        before = git(self.root, 'rev-parse', 'HEAD')
+        with patch.object(flow, 'run') as run:
+            derived.regenerate(self.root, sys.executable)
+        self.assertNotIn('build_leaderboard.py', [call.args[2] for call in run.call_args_list])
+        self.assertEqual(git(self.root, 'rev-parse', 'HEAD'), before)
+        self.assertFalse(git(self.root, 'status', '--porcelain'))
+
     def test_duplicate_rows_and_other_source_data_conflicts_refuse(self):
         for key in ('functions', 'phase'):
             ours, theirs = copy.deepcopy(self.data), copy.deepcopy(self.data)
@@ -138,6 +170,26 @@ class DerivedMerge(unittest.TestCase):
 
 class LaneDerivedIntegration(unittest.TestCase):
     setUp, enqueue, lane = lane_setup, enqueue, run_lane
+
+    def test_incoming_contributor_generator_runs_again_before_acceptance_commit(self):
+        path = self.root / 'tools/build_leaderboard.py'
+        path.write_text("from pathlib import Path\n"
+                        "data = Path('data/progress.json').read_bytes()\n"
+                        "Path('LEADERBOARD.md').write_bytes(data)\n"
+                        "Path('data/contributors.json').write_bytes(data)\n")
+        git(self.root, 'add', '--', 'tools/build_leaderboard.py')
+        git(self.root, 'commit', '--quiet', '-m', 'original synthetic contributor generator')
+        flow_tooling.enqueue(self.root, self.fdir, 'main')
+        self.enqueue()
+        result = self.lane()
+        self.assertEqual(result['state'], 'done')
+        self.assertEqual(result['integrated']['accepted'], 3)
+        tree = Path(result['tree'])
+        current = (tree / derived.PROGRESS).read_bytes()
+        for name in ('LEADERBOARD.md', 'data/contributors.json'):
+            self.assertEqual((tree / name).read_bytes(), current)
+            self.assertEqual(subprocess.check_output(['git', 'show', 'HEAD:' + name], cwd=tree), current)
+        self.assertFalse(git(tree, 'status', '--porcelain', '--untracked-files=no'))
 
     def test_tooling_push_regenerates_all_views_on_the_merged_inventory(self):
         # Concurrent origin and tooling change different rows and all generated files.
