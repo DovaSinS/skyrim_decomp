@@ -412,6 +412,130 @@ import lane_accept
 import accept_function as af
 
 
+class HeaderStaleness(unittest.TestCase):
+    # Real queue, Git history, carry and conflict guards; synthetic acceptance stub.
+    setUp = PushLane.setUp
+    enqueue = PushLane.enqueue
+    lane = PushLane.lane
+
+    def upstream(self, path, content):
+        other = self.tmp / 'upstream'
+        git(self.root, 'clone', '--quiet', '--branch', 'main', str(self.repo.origin), str(other))
+        git(other, 'config', 'user.name', 'Synthetic')
+        git(other, 'config', 'user.email', 'synthetic@example.invalid')
+        if content is None:
+            (other / path).unlink()
+        else:
+            (other / path).write_text(content)
+        git(other, 'add', '--', path)
+        git(other, 'commit', '--quiet', '-m', 'synthetic upstream change')
+        git(other, 'push', '--quiet', 'origin', 'main')
+
+    def local_header(self):
+        import flow_tooling
+        from source_digest import tu_digest
+        header = 'reconstruction/x/LocalLayout.h'
+        (self.root / header).write_text('struct LocalLayout { int value; };\n')
+        (self.root / 'reconstruction/x/Foo.h').write_text('#pragma once\n#include "LocalLayout.h"\n')
+        git(self.root, 'add', '--', header, 'reconstruction/x/Foo.h')
+        git(self.root, 'commit', '--quiet', '-m', 'synthetic local header additions')
+        flow_tooling.enqueue(self.root, self.fdir, 'main')
+        # Confirmed working-tree records and reviews bind these exact local headers.
+        for rva in ('0x1000', '0x1010'):
+            path = self.root / f'reports/synthetic-build/{rva}.json'
+            record = json.loads(path.read_text())
+            old = record['source']['digest']
+            record['source']['translation_unit'].append(header)
+            new = tu_digest(self.root, record['source']['translation_unit'])
+            record['source']['digest'] = new
+            path.write_text(json.dumps(record))
+            for review in (self.root / '.local/reviews').glob('*.md'):
+                review.write_text(review.read_text().replace(old, new))
+        for name in self.names:
+            group = flow.load_group(self.fdir, name)
+            compare = self.tmp / (name + '-headers.txt')
+            compare.write_text(''.join(r + ' AGREE\n' for r in group['sampled']))
+            flow.record_rerun(self.root, self.fdir, name, compare)
+        return header
+
+    def test_pinned_local_header_additions_are_carried_without_a_drop(self):
+        header = self.local_header()
+        self.enqueue()
+        before = {r: self.repo.digest(int(r, 16)) for r in ('0x1000', '0x1010')}
+        receipt = self.lane(push=False)
+        self.assertFalse(receipt['dropped'])
+        self.assertEqual(receipt['integrated']['accepted'], 3)
+        tree = Path(receipt['tree'])
+        self.assertEqual((tree / header).read_bytes(), (self.root / header).read_bytes())
+        self.assertNotEqual(subprocess.run(['git', 'cat-file', '-e', 'origin/main:' + header],
+                                          cwd=self.root, capture_output=True).returncode, 0)
+        for rva, digest in before.items():
+            self.assertEqual(json.loads((tree / f'reports/synthetic-build/{rva}.json').read_text())[
+                'source']['digest'], digest)
+
+    def test_real_upstream_header_edit_drops_its_members(self):
+        self.upstream('reconstruction/x/Foo.h', '#pragma once\nstruct Upstream { int value; };\n')
+        self.enqueue()
+        result = self.lane(push=False)
+        self.assertEqual(result['integrated']['accepted'], 1)
+        self.assertEqual(len(result['dropped']), 1)
+        self.assertIn('origin changed carried files', result['dropped'][0]['reason'])
+        self.assertIn('reconstruction/x/Foo.h', result['dropped'][0]['reason'])
+
+    def test_conflicting_queued_header_bytes_are_still_refused(self):
+        import shutil
+        other = self.tmp / 'conflicting-input'
+        git(self.root, 'clone', '--quiet', '--branch', 'main', str(self.repo.origin), str(other))
+        shutil.copytree(self.root / '.local/reviews', other / '.local/reviews')
+        # The disjoint Bar selection also compiles against Foo.h, with different bytes.
+        path = other / 'reports/synthetic-build/0x2000.json'
+        record = json.loads(path.read_text())
+        record['source']['translation_unit'].append('reconstruction/x/Foo.h')
+        path.write_text(json.dumps(record))
+        (other / 'reconstruction/x/Foo.h').write_text('struct ConflictingLayout {};\n')
+        foo = next(n for n in self.names if '0x1000' in flow.load_group(self.fdir, n)['functions'])
+        bar = next(n for n in self.names if '0x2000' in flow.load_group(self.fdir, n)['functions'])
+        first = lane.enqueue(self.root, self.fdir, 'review', [foo], name='first')
+        second = lane.enqueue(other, self.fdir, 'review', [bar], name='second')
+        # The lane consumes queue files sorted by their hashed IDs, not enqueue time.
+        winner = min((first, second), key=lambda item: item['id'])['selection'][0]
+        result = self.lane(push=False)
+        self.assertEqual(len(result['accepted']), 1)
+        self.assertEqual(result['accepted'][0]['group'], winner)
+        self.assertEqual(result['integrated']['accepted'], 2 if winner == foo else 1)
+        self.assertEqual(len(result['dropped']), 1)
+        self.assertEqual(result['dropped'][0]['selection'], [bar if winner == foo else foo])
+        self.assertIn('incompatible queued inputs: reconstruction/x/Foo.h', result['dropped'][0]['reason'])
+        source = self.root if winner == foo else other
+        self.assertEqual((Path(result['tree']) / 'reconstruction/x/Foo.h').read_bytes(),
+                         (source / 'reconstruction/x/Foo.h').read_bytes())
+
+    def test_upstream_header_deletion_drops_its_members(self):
+        self.upstream('reconstruction/x/Foo.h', None)
+        self.enqueue()
+        result = self.lane(push=False)
+        self.assertEqual(result['integrated']['accepted'], 1)
+        self.assertIn('reconstruction/x/Foo.h', result['dropped'][0]['reason'])
+
+    def test_upstream_header_outside_the_confirmed_closure_does_not_drop(self):
+        self.upstream('reconstruction/x/Unrelated.h', 'struct Unrelated {};\n')
+        self.enqueue()
+        result = self.lane(push=False)
+        self.assertFalse(result['dropped'])
+        self.assertEqual(result['integrated']['accepted'], 3)
+
+    def test_local_committed_compiled_source_change_is_still_refused(self):
+        path = 'reconstruction/x/Foo.cpp'
+        (self.root / path).write_text('int local_change;\n')
+        git(self.root, 'add', '--', path)
+        git(self.root, 'commit', '--quiet', '-m', 'synthetic local compiled source change')
+        # Exercise the origin guard directly: unpublished-code admission is a separate guard.
+        with self.assertRaisesRegex(flow.FlowError, 'origin changed carried files'):
+            flow._integration_origin_unchanged(self.root, 'HEAD', 'origin/main',
+                [path, 'reconstruction/x/Foo.h'], 'synthetic-build', ['0x1000'],
+                headers=['reconstruction/x/Foo.h'])
+
+
 class LaneAcceptance(FlowFixture, unittest.TestCase):
     def test_real_gates_and_one_index_have_byte_identical_result(self):
         review = self.review_file('review-lane', [self.block()])
