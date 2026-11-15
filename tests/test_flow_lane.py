@@ -35,6 +35,10 @@ class PushLane(unittest.TestCase):
     # Reuse the synthetic fixture; the old integration remains the equality reference.
     def setUp(self):
         _setup_reference(self)
+        # These fixtures inspect retained candidates; retention has dedicated deletion tests.
+        self.retention_patch = patch('flow_cleanup.automatic_retention')
+        self.retention_patch.start()
+        self.addCleanup(self.retention_patch.stop)
         # These tiny queue fixtures do not depend on the host volume's free space.
         # The disk-preflight tests below exercise the real threshold separately.
         self.disk_patch = patch.object(lane.shutil, 'disk_usage',

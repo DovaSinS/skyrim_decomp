@@ -197,6 +197,103 @@ def retire(root, fdir, run_id, reason):
         return receipt
 
 
+
+SUPERSEDED_ADVISORY = 'red-advisory-superseded'
+ADVISORY_WORKFLOW = 'Advisory target hashes'
+ADVISORY_STEP = 'target-hashes / Compile 50 accepted references twice against published target hashes'
+
+
+def ci_evidence(root, commit, python):
+    """Read exact-SHA CI evidence without interpreting an advisory failure as success."""
+    result = subprocess.run([python, str(f.TOOLS / 'ci_status.py'), '--commit', commit, '--json'],
+                            cwd=root, capture_output=True, text=True)
+    f.refuse(result.returncode in (0, 1), 'CI evidence unavailable or pending for ' + commit)
+    try:
+        evidence = json.loads(result.stdout)
+    except ValueError:
+        raise f.FlowError('invalid CI evidence for ' + commit) from None
+    f.refuse(evidence.get('commit') == commit, 'CI evidence names another commit')
+    f.refuse(evidence.get('result') == {0: 'green', 1: 'red'}[result.returncode], 'CI evidence result mismatch')
+    return evidence
+
+
+def validate_supersession_ci(original, replacement):
+    required = {'Infrastructure checks', 'Publish research report', ADVISORY_WORKFLOW}
+    for evidence in (original, replacement):
+        runs = evidence.get('runs', [])
+        f.refuse(required <= {r.get('workflow') for r in runs}, 'missing required CI workflow')
+        f.refuse(all(r.get('status') == 'completed' for r in runs), 'CI still pending')
+    f.refuse(original.get('result') == 'red', 'original CI must remain red')
+    failures = [r for r in original['runs'] if r.get('conclusion') != 'success']
+    f.refuse(failures and all(r.get('workflow') == ADVISORY_WORKFLOW
+                             and r.get('conclusion') == 'failure'
+                             and r.get('failed_steps') == [ADVISORY_STEP] for r in failures),
+             'CI failure is not exclusively the supported advisory hash step')
+    f.refuse(replacement.get('result') == 'green'
+             and all(r.get('conclusion') == 'success' for r in replacement['runs']),
+             'superseding CI must pass every workflow')
+
+
+def finish_superseded(root, fdir, run_id, superseding_commit, reason, python=sys.executable):
+    """Finish a dead pushed checkpoint after an explicitly authorized advisory repair."""
+    root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    f.refuse(reason.strip(), 'a supersession reason is required')
+    import ci_status
+    f.refuse(ci_status.FULL_SHA.fullmatch(superseding_commit), 'superseding commit must be a full SHA')
+    lock = fdir / 'lane/ci-locks' / (run_id + '.lock')
+    # Resolve before constructing the observer lock so run ids cannot escape its directory.
+    path = receipt_path(fdir, run_id)
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    with lock.open('a') as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise f.FlowError('CI observer is active; cannot supersede receipt') from None
+        with state_lock(fdir):
+            require_complete(fdir)
+            receipt = read(path)
+            integ = receipt.get('integrated') or {}
+            f.refuse(not owner_alive(receipt.get('owner')), 'receipt owner is still live')
+            f.refuse(receipt.get('state') in ('running', 'stale', 'failed', 'conflict', 'done'),
+                     'receipt cannot be finished by supersession')
+            f.refuse(integ.get('pushed'), 'only an already pushed receipt can be superseded')
+            if receipt.get('state') == 'done':
+                f.refuse(integ.get('ci') == SUPERSEDED_ADVISORY
+                         and integ.get('superseded_by') == superseding_commit,
+                         'terminal receipt has another outcome')
+                return dict(id=run_id, state='done', commit=integ['commit'], ci=integ['ci'],
+                            superseded_by=superseding_commit)
+            commit, branch = integ['commit'], receipt['branch']
+        f.refuse(commit != superseding_commit, 'superseding commit must be a descendant')
+        f.git(root, 'fetch', '--quiet', 'origin', branch)
+        f.refuse(f.git(root, 'merge-base', commit, superseding_commit, check=False) == commit,
+                 'pushed commit is not an ancestor of superseding commit')
+        f.refuse(f.git(root, 'merge-base', superseding_commit, 'origin/' + branch, check=False) == superseding_commit,
+                 'superseding commit is not published on the receipt branch')
+        original = ci_evidence(root, commit, python)
+        replacement = ci_evidence(root, superseding_commit, python)
+        validate_supersession_ci(original, replacement)
+        with state_lock(fdir):
+            # The per-run observer lease excludes concurrent pushed-receipt writers.
+            integ.update(ci=SUPERSEDED_ADVISORY, superseded_by=superseding_commit,
+                         ci_supersession=dict(reason=reason, recorded_at=f.utc(),
+                                              original=original, superseding=replacement))
+            receipt.update(state='done', finished_owner=receipt.get('owner'), owner=None)
+            receipt.pop('error', None)
+            accepted_items = {r['item'] for r in receipt.get('accepted', [])}
+            for item in receipt.get('items', []):
+                item['state'] = 'done' if item['id'] in accepted_items else 'dropped'
+            if path.parent.name == 'runs':
+                save_run(fdir, receipt)
+            else:
+                save_tooling(fdir, receipt)
+            f.log_event(fdir, 'ci-superseded', lane=run_id, commit=commit,
+                        result=SUPERSEDED_ADVISORY, superseded_by=superseding_commit, reason=reason)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
+    return dict(id=run_id, state='done', commit=commit, ci=SUPERSEDED_ADVISORY,
+                superseded_by=superseding_commit, accepted=integ.get('accepted'))
+
 def lane_python(requested):
     """The worker interpreter is a transport/build prerequisite, never a match predicate."""
     configured = os.environ.get('SKYRIM_LANE_PYTHON')
@@ -271,6 +368,9 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                     soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Register new tooling requests before taking the shared batching lane."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    import flow_cleanup
+    if fdir.is_dir():
+        flow_cleanup.automatic_retention(root, fdir)
     python = lane_python(python)
     if repair_red:
         import flow_repair
@@ -442,7 +542,11 @@ def ci_serialized(directory):
                 fcntl.flock(handle, fcntl.LOCK_EX)
                 with state_lock(fdir):
                     current = read(path)
-                if current.get('state') == 'done' and (current.get('integrated') or {}).get('ci') == 'green':
+                integrated = current.get('integrated') or {}
+                terminal_ci = (integrated.get('ci') == 'green'
+                               or (integrated.get('ci') == SUPERSEDED_ADVISORY
+                                   and integrated.get('superseded_by') and integrated.get('ci_supersession')))
+                if current.get('state') == 'done' and terminal_ci:
                     return current
                 try:
                     return function(root, fdir, current, python, ci_wait)
@@ -482,9 +586,11 @@ def finish_tooling(root, fdir, receipt, python, ci_wait):
     receipt['ci_log'] = str(ci_log)
     save_tooling(fdir, receipt)
     f.refuse(integ['ci'] == 'green', 'tooling CI ' + integ['ci'] + ': ' + result.stdout.strip())
-    receipt.update(state='done')
+    receipt.update(state='done', finished_owner=receipt.get('owner'), owner=None)
     receipt.pop('error', None)
     save_tooling(fdir, receipt)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
     return receipt
 
 
@@ -1124,6 +1230,9 @@ def disk_preflight(fdir, min_free_gb=None):
 def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.executable, min_free_gb=None,
              soft_free_gb=None, allow_low_disk=False, resume=None, wait_lane=False):
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    import flow_cleanup
+    if fdir.is_dir():
+        flow_cleanup.automatic_retention(root, fdir)
     python = lane_python(python)
     if resume and receipt_path(fdir, resume).parent.name == 'tooling':
         f.refuse(push, 'tooling resume requires push/CI mode; use tooling-push --resume ' + resume)
@@ -1301,4 +1410,8 @@ def finish_run(root, fdir, receipt, python, ci_wait):
     if receipt.get('accepted'):
         import claims
         claims.sync_safe(tree)
+    receipt.update(finished_owner=receipt.get('owner'), owner=None)
+    save_run(fdir, receipt)
+    import flow_cleanup
+    flow_cleanup.automatic_retention(root, fdir)
     return receipt

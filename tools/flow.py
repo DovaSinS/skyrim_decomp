@@ -1321,10 +1321,10 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
               + ('; Agent tool subagent_type engineer)' if s_entry['harness'] == 'claude-code' else '; a Codex session)'))
     for name, g in gs.items():
         integrated = g.get('integrated') or {}
-        fully_integrated = integrated.get('ci') == 'green' and integrated.get('accepted', 0) >= len(g['functions'])
+        fully_integrated = integrated.get('ci') in ('green', 'red-advisory-superseded') and integrated.get('accepted', 0) >= len(g['functions'])
         if g.get('superseded_by') or g['kind'] == 'family' or fully_integrated:
             continue
-        if g['kind'] == 'sampling' and (gs.get(g.get('pair'), {}).get('integrated') or {}).get('ci') == 'green':
+        if g['kind'] == 'sampling' and (gs.get(g.get('pair'), {}).get('integrated') or {}).get('ci') in ('green', 'red-advisory-superseded'):
             continue
         status, blocks = read_review(root, g, data['functions'])
         if status.startswith('malformed'):
@@ -1364,7 +1364,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             continue
         integ = g.get('integrated') or {}
         approved = [r for r, b in blocks.items() if b.get('verdict') == 'approve']
-        if approved and integ.get('ci') != 'green':
+        if approved and integ.get('ci') not in ('green', 'red-advisory-superseded'):
             ok, problem = sampling_gate(root, fdir, g, data)
             if ok:
                 if integ.get('batch'):
@@ -2557,6 +2557,10 @@ def parser():
     s = sub.add_parser('lane-retire')
     s.add_argument('run_id')
     s.add_argument('--reason', required=True)
+    s = sub.add_parser('lane-finish-superseded')
+    s.add_argument('run_id')
+    s.add_argument('--superseding-commit', required=True)
+    s.add_argument('--reason', required=True)
     s = sub.add_parser('tooling-push')
     s.add_argument('--repair-red', help='exact red SHA; isolated, recorded repair of related advisory inputs only')
     s.add_argument('--branch', default='main')
@@ -2620,7 +2624,7 @@ def main(argv=None):
             print(f'flow: {exc}', file=sys.stderr)
             return 1
     if a.cmd in ('integrate', 'integrate-groups', 'integrate-family', 'integrate-labels', 'lane-run', 'lane-status',
-                 'lane-retire', 'tooling-push', 'cleanup', 'sync', 'reconfirm-dropped'):
+                 'lane-retire', 'lane-finish-superseded', 'tooling-push', 'cleanup', 'sync', 'reconfirm-dropped'):
         return execute(a, root, fdir)
     # Readers take the same short scheduling lock as state mutations.
     with state_lock(fdir):
@@ -2740,6 +2744,9 @@ def execute(a, root, fdir):
         elif a.cmd == 'lane-retire':
             import flow_lane
             print(json.dumps(flow_lane.retire(root, fdir, a.run_id, a.reason), indent=2))
+        elif a.cmd == 'lane-finish-superseded':
+            import flow_lane
+            print(json.dumps(flow_lane.finish_superseded(root, fdir, a.run_id, a.superseding_commit, a.reason), indent=2))
         elif a.cmd == 'tooling-push':
             import flow_lane
             print(json.dumps(flow_lane.publish_tooling(root, fdir, a.branch, a.ci_wait, resume=a.resume, wait_lane=a.wait_lane,
