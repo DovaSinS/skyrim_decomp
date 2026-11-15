@@ -26,6 +26,28 @@ from check_source_digest import source_digest_cache
 from flow_state import state_lock, atomic_write, require_complete
 
 
+def require_base_tools(root, branch='main', base=None):
+    """Refuse stale running code, independently of the checkout supplying candidate inputs."""
+    if base is None:
+        f.git(root, 'fetch', '--quiet', 'origin', branch)
+        base = f.git(root, 'rev-parse', f'origin/{branch}')
+    expected = {}
+    for row in f.git(root, 'ls-tree', '-r', base, '--', 'tools').splitlines():
+        metadata, path = row.split('\t', 1)
+        if Path(path).suffix in ('.py', '.json'):
+            expected[path] = metadata.split()[2]
+    live = f.lane_tool_sources()
+    paths = set(expected) | set(live) | set(f.LANE_TOOL_SOURCES)
+    different = sorted(p for p in paths if expected.get(p) != live.get(p)
+                       or expected.get(p) != f.LANE_TOOL_SOURCES.get(p))
+    f.refuse(not different,
+             f'lane tooling differs from integration base {base}: ' + ', '.join(different[:8])
+             + '. Run tools/flow.py from a clean checkout of this origin base, with --root '
+             'pointing to the input checkout and --flow-dir to the shared flow directory '
+             '(including tooling-push of changes to these tools). See docs/orchestrator-runbook.md.')
+    return base
+
+
 def read(path, *, details=True):
     value = json.loads(path.read_text())
     if details and isinstance(value, dict) and value.get('details_sidecar'):
@@ -430,6 +452,7 @@ def publish_tooling(root, fdir, branch='main', ci_wait=600, python=sys.executabl
                     soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Register new tooling requests before taking the shared batching lane."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    require_base_tools(root, branch)
     import flow_cleanup
     if fdir.is_dir():
         flow_cleanup.automatic_retention(root, fdir)
@@ -456,6 +479,7 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                     soft_free_gb=None, allow_low_disk=False, repair_red=None):
     """Check and publish committed tooling under the same lane lock as acceptance work."""
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    require_base_tools(root, branch)
     python = lane_python(python)
     if resume:
         with state_lock(fdir):
@@ -476,6 +500,7 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
         wait_for_owner(root, fdir, 'runs', None, wait_lane)
     wait_for_owner(root, fdir, 'tooling', resume, wait_lane)
     with lane_lock(fdir, wait=wait_lane, purpose='tooling') as lease:
+        require_base_tools(root, branch)
         recover_stale(fdir)
         with state_lock(fdir):
             pending = [read(p) for p in (fdir / 'lane/tooling').glob('*.json') if read(p)['state'] == 'running' and read(p).get('kind') != 'tooling-request'
@@ -519,6 +544,7 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                 for attempt in range(3):
                     f.git(root, 'fetch', '--quiet', 'origin', branch)
                     base = f.git(root, 'rev-parse', f'origin/{branch}')
+                    require_base_tools(root, branch, base)
                     checked = receipt.get('integrated') or {}
                     if (checked.get('checks') and checked.get('commit') == f.git(root, 'rev-parse', 'HEAD')
                             and f.git(root, 'merge-base', checked['commit'], base) == checked['commit']):
@@ -559,6 +585,7 @@ def _publish_legacy_tooling(root, fdir, branch='main', ci_wait=600, python=sys.e
                     f.git(root, 'fetch', '--quiet', 'origin', branch)
                     if f.git(root, 'rev-parse', f'origin/{branch}') != base:
                         continue
+                    require_base_tools(root, branch, base)
                     f.refuse(f.git(root, 'rev-parse', 'HEAD') == commit and
                              not f.git(root, 'status', '--porcelain', '--untracked-files=all'), 'checked tooling tree changed')
                     pushed = subprocess.run(['git', 'push', 'origin', f'{commit}:refs/heads/{branch}'],
@@ -1097,6 +1124,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     f.git(tree, 'remote', 'set-url', 'origin', f.git(root, 'remote', 'get-url', 'origin'))
     f.git(tree, 'fetch', '--quiet', 'origin', branch)
     base = f.git(tree, 'rev-parse', f'origin/{branch}')
+    require_base_tools(tree, branch, base)
     f.git(tree, 'checkout', '--quiet', '--detach', base)
     for key in ('user.name', 'user.email'):
         value = f.git(root, 'config', key, check=False)
@@ -1299,6 +1327,7 @@ def disk_preflight(fdir, min_free_gb=None):
 def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.executable, min_free_gb=None,
              soft_free_gb=None, allow_low_disk=False, resume=None, wait_lane=False):
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
+    require_base_tools(root, branch)
     import flow_cleanup
     if fdir.is_dir():
         flow_cleanup.automatic_retention(root, fdir)
@@ -1316,6 +1345,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
     wait_for_owner(root, fdir, 'runs', resume, wait_lane)
     wait_for_owner(root, fdir, 'tooling', None, wait_lane)
     with lane_lock(fdir, wait=wait_lane, purpose='integration') as lease:
+        require_base_tools(root, branch)
         recover_stale(fdir)
         with state_lock(fdir):
             require_complete(fdir)
@@ -1371,6 +1401,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                 if not integ['pushed']:
                     f.git(tree, 'fetch', '--quiet', 'origin', branch)
                     destination = f.git(tree, 'rev-parse', f'origin/{branch}')
+                    require_base_tools(tree, branch, destination)
                     if destination != integ['base_revision']:
                         for origin in receipt['origins']:
                             f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],
@@ -1414,6 +1445,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                                  'selected inventory changed during lane run')
                     f.git(tree, 'fetch', '--quiet', 'origin', branch)
                     destination = f.git(tree, 'rev-parse', f'origin/{branch}')
+                    require_base_tools(tree, branch, destination)
                     if destination != integ['base_revision']:
                         for origin in receipt['origins']:
                             f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],

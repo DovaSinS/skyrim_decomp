@@ -1,0 +1,6359 @@
+{
+  "binding": {
+    "build_id": "sse-steam-1-7-104",
+    "comparator": {
+      "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+      "version": "0.6.1-runtime"
+    },
+    "compiler": {
+      "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+      "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/MD",
+        "/GS-",
+        "/EHsc",
+        "/GR",
+        "/fp:precise",
+        "/Gy"
+      ],
+      "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
+    },
+    "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+    "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "toolchain_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf"
+  },
+  "family_schema": 1,
+  "first_members": {
+    "sse-steam-1-7-104-0x10cdc0": "7aaee4224999d4d1c368abe9127bf93382f7b265f3a74b86bf48f6a498035f0b",
+    "sse-steam-1-7-104-0x120de0": "2249c3679ab61732e3842de191ab5bb86556965e8aa3f312a5543634645e0212",
+    "sse-steam-1-7-104-0x120df0": "ddda7d725d46c5aa0f08868f25fb246f4219579d72ff2f1f0a1b332c52d35697",
+    "sse-steam-1-7-104-0x120e00": "610ec3caf611f093a3c255836a59748a09b4ee637ea6fbd31ac5dbe151ea3a8a",
+    "sse-steam-1-7-104-0x120e60": "c18e5de3c36f373a29757efceabe334ec5b1adc3c6a77714fd3582bc629c0578",
+    "sse-steam-1-7-104-0x120e70": "0961146b57e294afb831a0ef9f448367f34309b7b24a682bf2fca30abdea2eca",
+    "sse-steam-1-7-104-0x129d40": "672c753e0a25779139f8905582d1d297034fc685283481d5112c3b2839f2020e",
+    "sse-steam-1-7-104-0x145360": "10923434181f2471df28ecfa8d70ababf7844cd959490a4ecdec6fa4052315d3",
+    "sse-steam-1-7-104-0x145780": "175d553e80f131b3b6107e8854ff6e43e10f49ce68558f2db820b1731b436861",
+    "sse-steam-1-7-104-0x146860": "dde621807f83589101978ebf86935ed7688ec5062323ab4a6659d1ed7c69b61e",
+    "sse-steam-1-7-104-0x146890": "ad9b7e5a1659832e18052cc344f9d4492d2d2902103a5af462587fb9d5a7af99",
+    "sse-steam-1-7-104-0x146930": "2a4445b828907e33c9209d4543fd56096920b2140aac663fcb6b6054eea84746",
+    "sse-steam-1-7-104-0x146960": "aa74402093a9b32e5d0d70e8de66a168271e341b1c90a85ffa5accdaded8a442",
+    "sse-steam-1-7-104-0x146970": "127f9c159676e401759286063ed2ede466d51e1c47e40b26d49709b4f65bf0b0",
+    "sse-steam-1-7-104-0x146980": "3a9da34a3658f62c87ffa6797d1b675c2d4a96b59cfab42a9a403a059f68e753",
+    "sse-steam-1-7-104-0x146990": "469127fe8ca535e18a8ff76ba5aa920879b360d94ac2da4c75c504510ce17842",
+    "sse-steam-1-7-104-0x59c470": "458e3327d6b850cdefc4fc45f0f237481f115952587a73462ed52fe18cd4432b",
+    "sse-steam-1-7-104-0x7a2ba0": "420c50c7b4058f0242559c62be60583dbbe96710193e1f524cd448170bbf14e4",
+    "sse-steam-1-7-104-0xaa36c0": "a7a4f41b53d66b26ca9f3e5efaf04bf93e927fdf1272814e209bfac6a2009f79",
+    "sse-steam-1-7-104-0xb50060": "e043df3cb2a7b66a38c66618f6caed4a478756532861684ceccc51a36976dbcd"
+  },
+  "origin": {
+    "family": "storage-free-return",
+    "template_digest": "a8a90867b70ae0309b00917f220b3f99a6deba78c20f494c38604218b6292263",
+    "version": "1"
+  },
+  "parameter_ranges": {
+    "rows": [
+      {
+        "result": "argument-pointer",
+        "rva": 11737632,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "argument-pointer",
+        "rva": 11993168,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "argument-pointer",
+        "rva": 12805040,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "argument-pointer",
+        "rva": 16533888,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "argument-pointer",
+        "rva": 22914304,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "argument-pointer",
+        "rva": 5882992,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10424704,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10523104,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10523552,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10652976,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10690880,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10696208,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10706624,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10811920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10812384,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10812848,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10813312,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10813760,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10815168,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10816064,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10816528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10816992,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10817440,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10817904,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10818368,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10819888,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10820560,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 10906176,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11270848,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11270864,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11322752,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11346272,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11346304,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11386304,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11432528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11482928,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11534864,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11548688,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11550768,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11759568,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11761328,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1183216,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 11862112,
+        "size": 3,
+        "value": 255
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12262176,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12262192,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12277792,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12339632,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12857888,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12857904,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12857920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12857936,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 12857952,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1337648,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1337776,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1337856,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1337952,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1340800,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 13462192,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 13549904,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 13557216,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1376704,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 14639024,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 16174416,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 16257104,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 16306608,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 16646768,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 16666624,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17323424,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17435056,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17438912,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17482976,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17483008,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17569456,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 17606064,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18312480,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18655488,
+        "size": 3,
+        "value": 10
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18665712,
+        "size": 3,
+        "value": 13
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1867408,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18691456,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18962576,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18987536,
+        "size": 3,
+        "value": 3
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18990848,
+        "size": 3,
+        "value": 18
+      },
+      {
+        "result": "constant-byte",
+        "rva": 18996512,
+        "size": 3,
+        "value": 11
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1900272,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19010272,
+        "size": 3,
+        "value": 9
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19014640,
+        "size": 3,
+        "value": 19
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19024544,
+        "size": 3,
+        "value": 2
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19035888,
+        "size": 3,
+        "value": 17
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19038352,
+        "size": 3,
+        "value": 12
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19046256,
+        "size": 3,
+        "value": 14
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19050464,
+        "size": 3,
+        "value": 2
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19052160,
+        "size": 3,
+        "value": 3
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19054448,
+        "size": 3,
+        "value": 7
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19055232,
+        "size": 3,
+        "value": 4
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19056112,
+        "size": 3,
+        "value": 5
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19057504,
+        "size": 3,
+        "value": 8
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19058672,
+        "size": 3,
+        "value": 6
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19060496,
+        "size": 3,
+        "value": 15
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19068704,
+        "size": 3,
+        "value": 16
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19074272,
+        "size": 3,
+        "value": 4
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19084048,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19141856,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 19141872,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 1988336,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2112288,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21610784,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21666432,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21679360,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21850864,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21851536,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21851792,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21852528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 21911264,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22142608,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22273264,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22347776,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22397312,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22570640,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22653360,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22653392,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22653456,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22714096,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2275120,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22781344,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22781348,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22781352,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22781356,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 22781360,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2363568,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2592320,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2598288,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 2630768,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3095008,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3121200,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3121872,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3122048,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3127296,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3127776,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3135600,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3140032,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3344160,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 3769808,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4359888,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4400448,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4514544,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4515776,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4516528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4517920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4519312,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4519920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4535136,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4536704,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4575024,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4575280,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4625968,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4665952,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4669440,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4671344,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4671360,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4672288,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4680016,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4684656,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4684672,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4685664,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4730416,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4732752,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4733248,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4741584,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4743152,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4743552,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4744800,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4752032,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4803056,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4890512,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 4890528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5262016,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5286048,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5310032,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5363056,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5587776,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5587792,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5587920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 5829184,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6020096,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6133984,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6143744,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6143872,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6144032,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6144080,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6144096,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6144480,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6145136,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6145168,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6147872,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6147888,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6147904,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6147920,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6148528,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 6189376,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7069568,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7070432,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7089456,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7581168,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7588512,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7920000,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7920064,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 7965984,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8006560,
+        "size": 3,
+        "value": 128
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8011696,
+        "size": 3,
+        "value": 129
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8017808,
+        "size": 3,
+        "value": 130
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8018880,
+        "size": 3,
+        "value": 131
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8021792,
+        "size": 3,
+        "value": 132
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8026480,
+        "size": 3,
+        "value": 133
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8028224,
+        "size": 3,
+        "value": 134
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8030000,
+        "size": 3,
+        "value": 135
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8033248,
+        "size": 3,
+        "value": 136
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8039840,
+        "size": 3,
+        "value": 137
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8042208,
+        "size": 3,
+        "value": 138
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8078448,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8184848,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8188560,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8430144,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8579200,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8863792,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 8869280,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 9326160,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 9326176,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 9458576,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 9580640,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "constant-byte",
+        "rva": 9838224,
+        "size": 3,
+        "value": 1
+      },
+      {
+        "result": "second-argument-word",
+        "rva": 11155136,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "second-argument-word",
+        "rva": 17698256,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 1101248,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 11159232,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 11171776,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 11201456,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 12340416,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 12865664,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 13252352,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 14898320,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15447088,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15562224,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15672880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15780848,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15825552,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15828272,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15831904,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15834768,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 15852848,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16071040,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16212048,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16295840,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16296816,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16572160,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16648368,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16666480,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16691248,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16715440,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16723360,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16728672,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16739264,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16773888,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16785296,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 16796672,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 17212032,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 17299936,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 17299952,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 17305136,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 17422672,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19347776,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19347792,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19347808,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19377152,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19420864,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19420880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19438560,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19438576,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19438592,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19438608,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19438624,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19542880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19632512,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19833520,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19833536,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19860848,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19875696,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19875712,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19875728,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19927664,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 19952256,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20024192,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20221072,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20221088,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20295392,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20440960,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20459120,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20558880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20558896,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20558912,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20558928,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20578880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20578896,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20627616,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20722704,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20776384,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20849664,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20860928,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20871120,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982720,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982736,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982752,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982784,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982800,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982816,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982832,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982848,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982864,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982896,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982912,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982928,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982944,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982960,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982976,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20982992,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983008,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983024,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983040,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983056,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983072,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 20983088,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21044800,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21044816,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21044832,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21044848,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21065792,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21105328,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21148176,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21148192,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21148208,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21213824,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21227792,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21284064,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21284080,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21284096,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322240,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322256,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322272,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322288,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322304,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322320,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322336,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322352,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21322368,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21338784,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21422016,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21439216,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21918352,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21924672,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 21929600,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 22482240,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 2544800,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 2774816,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3121888,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3121904,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3122000,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3122016,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3244784,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3438864,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 3982880,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 4871744,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "this-pointer",
+        "rva": 8368048,
+        "size": 4,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10167920,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10425008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10425376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10522640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10815616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10819088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 10906144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11241360,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11346288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11346320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11386592,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11386912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11504832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 11649824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1183200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 12269104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 12336560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 12336784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 12857872,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1337488,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1337728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1337888,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1340752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1340768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1340784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1340816,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 13536768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 13610368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1362016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1362144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1362160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1377088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1377104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1377120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1377136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1377152,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1380656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1383680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1394992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15390560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15430560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15522736,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15578928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15580352,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15580368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15713440,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15811904,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15876544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 15993408,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16144560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174208,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174224,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174240,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174256,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16174432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16349376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16524960,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16541280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16686016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16689952,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16690160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16699872,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16778496,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16787328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16787344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 16844944,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17299968,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17305168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17308816,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17308832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17310944,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 17435488,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18271424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18271536,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18294528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18295456,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18295632,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662896,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662944,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662960,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662976,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18662992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18663008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18663024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18663072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18663088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18687104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18706272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18706368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18706512,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18706544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18706560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789664,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789696,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18789744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18840928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 18841136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19007808,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19007824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19020000,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19039520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19039712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19039728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19047504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19047520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19047536,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19087712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 19353120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1988320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1993536,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 1993552,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2010576,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21612448,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21666464,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21679392,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21798080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21798096,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21798608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21798624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21850880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21850896,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21851808,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21851824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21910528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21923264,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 21923424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22067216,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22067424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22067776,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22404016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22404032,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22404064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22483328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22608784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22608800,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22647872,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22649104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22649168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22649280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22667136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22671728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 22672160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 23199616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2419632,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2520704,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2520752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2774784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 2904528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3051376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3077344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3103008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3119968,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3121216,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3128288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3129120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3130320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3152176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 3769488,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4394992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4400432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4485488,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4492880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4494272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4495344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4495424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4511056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4513120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4518064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4526400,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4537488,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4566016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4566384,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575312,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575568,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575600,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4575680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4608768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4663600,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4849520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4889328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4889344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4986608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4986624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 4987024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5587760,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5587824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776896,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5776912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 5829200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6011328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6015888,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6095824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6107120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143568,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143760,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143856,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143888,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143904,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6143984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6144000,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6144048,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6144064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6144144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6147312,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6147936,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6147952,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6147968,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6148512,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6182480,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6481984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6482192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6695056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6695184,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6945328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 6945344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7013168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7038336,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7069056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7069280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7069344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7069360,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7069616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7070336,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7070416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7128000,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7215952,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7722224,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7738416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7778032,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7811504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 7826560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8078464,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8139648,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8256336,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8360640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8360656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8360672,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8360688,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8368064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8368080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8368096,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8372528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8381808,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8381824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8403456,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8572560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8572608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8581504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 8598752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 9581376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 9665904,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-byte",
+        "rva": 9685376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10425616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10812864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10813200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10906288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10906304,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 10907520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11152432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11233072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11269104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11271104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11281504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11281520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11386576,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11564192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11646400,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11747840,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11747856,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11759520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11781552,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11790080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11818384,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11818432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1183232,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1183328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1183344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11838656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11839280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11847792,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11855040,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11873328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11873376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11874544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11914928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11914944,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11916992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 11951296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12027456,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12051056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12051072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12051088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12051104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12053808,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12111616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1219904,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12215744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12338544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12480784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12565264,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12565280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12615296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12854432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12957664,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12973680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12974016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12974192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12974480,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12974864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12975072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978400,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978432,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978448,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12978544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12979712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12979728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12980624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12991536,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12993152,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12993168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 12998256,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13078912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1332064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1333120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13369760,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1337440,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1337696,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1337712,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1337744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13462448,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13469632,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13507072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13507136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13536512,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13548960,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13552640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13552656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 13605008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1362128,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1391072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1391088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15439760,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15441664,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15442592,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15442608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15514080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15539344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15539584,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15584128,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15584176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15751504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15780832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15959360,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 15979248,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16118448,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16134096,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16134112,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16349840,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16632752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16633728,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16633744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16721664,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16724912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16740576,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16787280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16839536,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16839552,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16843968,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16843984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 16865168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17317664,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17327456,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1747056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17526848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17597120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629152,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629184,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629216,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629232,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629248,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629264,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629312,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629360,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629392,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629408,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17629424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630112,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630128,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630208,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630224,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630240,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630256,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630304,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630336,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630352,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630384,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630400,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630976,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17630992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631040,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631152,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631184,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631216,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631232,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631248,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631264,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17631280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17638320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17856144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 17856608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789040,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789152,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789184,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789216,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789232,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789248,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789264,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1789296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18294496,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18294544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18294560,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18294592,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18294640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18295328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18301248,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 1839168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18706096,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18706528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18790528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18790544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 18809984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19005680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19007680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19084080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19087744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19099008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 19415376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2000208,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2000224,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2046624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2046640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2046656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2145504,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2145520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2145984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2150064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21666480,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21679408,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2178144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21850768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21850848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21850928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21851856,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21871920,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21918368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21918384,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21920496,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21920512,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21920528,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923344,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923392,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923408,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 21923472,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2193440,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22238768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22404080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22456112,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22553776,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22648080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22653376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22667120,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22672544,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22711380,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22711484,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22714076,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22714088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22714092,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 22781364,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2459376,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2519136,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2560416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2579280,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2594048,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 2774800,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3120752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3120928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121744,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121824,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121840,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121952,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3121984,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3130304,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3706688,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3715232,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3758128,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3769520,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3769568,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3846352,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3846368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 3913328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4168656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4170256,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4170272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4184928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4184960,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4185168,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260800,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260816,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260896,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260912,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260928,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260944,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260960,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260976,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4260992,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261008,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261024,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261040,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261056,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4261104,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428032,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428048,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428064,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428080,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428096,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428112,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428128,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428144,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428160,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428192,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428208,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428224,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428240,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428256,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428272,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428288,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428304,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428320,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4428336,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4495408,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4511072,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4511088,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4514784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4566176,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4566368,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4572832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4575328,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4858640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890592,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890608,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890640,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890656,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890672,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890688,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890704,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890720,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890736,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890752,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890768,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890800,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890816,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890832,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890864,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890880,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 4890896,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 5128480,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 5359456,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 5406032,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 5587936,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 5976784,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6083632,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6095808,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6095840,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6144016,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6148496,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6543552,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 6671840,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7118672,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7216032,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7588496,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7728400,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7728416,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7941680,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 7941696,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8043424,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8572480,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8573616,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8574848,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8600720,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8686624,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8687200,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8687936,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8688672,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 8689296,
+        "size": 3,
+        "value": 0
+      },
+      {
+        "result": "zero-word",
+        "rva": 9326464,
+        "size": 3,
+        "value": 0
+      }
+    ]
+  },
+  "parameter_source": {
+    "path": "tools/storage_free_return_generate.py",
+    "sha256": "7207dc9fc1c491ce5635227bb2b5dba66ed2331cc1fa14ac00922732e30375fd"
+  },
+  "pause_reason": "",
+  "paused": false,
+  "review": {
+    "profile": "claude-low",
+    "review_sha256": "2abf66fa335df3accb6eb7006f7ed4212211cc378f8d37bdb9a8ba5afac3a6b1",
+    "review_task_id": "review-family-1e2c19737cd15e0f4abe-r2",
+    "reviewer_model": "gpt-6.1-terra",
+    "spec_sha256": "c609204ef3c157d85d0a2ec21ac9a4111c72142649e6ed130043e1b1a99c03c9"
+  },
+  "template_source": {
+    "path": "tools/storage_free_return_template_v1.py",
+    "sha256": "a8a90867b70ae0309b00917f220b3f99a6deba78c20f494c38604218b6292263"
+  }
+}

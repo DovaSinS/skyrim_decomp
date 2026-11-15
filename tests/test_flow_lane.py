@@ -35,6 +35,10 @@ class PushLane(unittest.TestCase):
     # Reuse the synthetic fixture; the old integration remains the equality reference.
     def setUp(self):
         _setup_reference(self)
+        # These tiny repositories deliberately use stub tools rather than the loaded tooling.
+        freshness = patch.object(lane, 'require_base_tools')
+        freshness.start()
+        self.addCleanup(freshness.stop)
         # These fixtures inspect retained candidates; retention has dedicated deletion tests.
         self.retention_patch = patch('flow_cleanup.automatic_retention')
         self.retention_patch.start()
@@ -334,8 +338,12 @@ class PushLane(unittest.TestCase):
         self.assertIsNone(result['integrated']['pushed'])
 
     def test_cli_busy_lane_returns_normal_refusal_without_traceback(self):
+        # Keep the synthetic stub runtime out of this CLI lock/refusal test as in setUp.
+        entry = ('import sys\nsys.path.insert(0, sys.argv.pop(1))\nimport flow\n'
+                 'from unittest.mock import patch\nwith patch("flow_lane.require_base_tools"):\n'
+                 '    raise SystemExit(flow.main())\n')
         with lane.lane_lock(self.fdir):
-            result = subprocess.run([sys.executable, str(flow.TOOLS / 'flow.py'), '--root', str(self.root),
+            result = subprocess.run([sys.executable, '-c', entry, str(flow.TOOLS), '--root', str(self.root),
                                      '--flow-dir', str(self.fdir), 'lane-run', '--no-wait-lane', '--min-free-gb', '0'],
                                     capture_output=True, text=True, timeout=10)
         self.assertEqual(result.returncode, 1)
@@ -602,6 +610,10 @@ class LaneLabels(TwoTierFixture, unittest.TestCase):
 
 class DiskPreflight(unittest.TestCase):
     def setUp(self):
+        # Disk admission has no repository; runtime identity is covered separately.
+        freshness = patch.object(lane, 'require_base_tools')
+        freshness.start()
+        self.addCleanup(freshness.stop)
         import tempfile
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
