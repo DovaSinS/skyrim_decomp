@@ -91,9 +91,10 @@ _BATCH = ContextVar('acceptance_batch', default=None)
 
 
 @contextmanager
-def acceptance_batch(root):
+def acceptance_batch(root, *, compact_plans=False):
     state = dict(root=Path(root).resolve(), loaded=None, validated=None, failure=None,
-                 stale=None, inventory=None, malformed={}, reviews={}, hashes={})
+                 stale=None, inventory=None, malformed={}, reviews={}, hashes={},
+                 compact_plans=compact_plans, selections={}, profiles=None, flow_dir=None, grammar_inventory=None)
     token = _BATCH.set(state)
     try:
         yield
@@ -109,7 +110,8 @@ def _batch(root):
 def invalidate_acceptance_batch(root):
     state = _batch(root)
     if state is not None:
-        state.update(loaded=None, validated=None, failure=None, stale=None, inventory=None, malformed={})
+        state.update(loaded=None, validated=None, failure=None, stale=None, inventory=None,
+                     malformed={}, profiles=None, selections={}, grammar_inventory=None)
 
 
 def validate_snapshot(root, data, target):
@@ -392,8 +394,15 @@ def refuse_malformed(header, blocks, functions):
     ones: a block the tool could not place might be a reject or escalate for a function it accepts.
     """
     refuse(not header['_problems'], 'review header breaks the reviewer.md format: ' + '; '.join(header['_problems']))
-    sizes = {(fn['build_id'], fn['rva']): fn['size'] for fn in functions}
-    builds = {folded(fn['build_id']) for fn in functions}
+    state = _BATCH.get()
+    cached = state['grammar_inventory'] if state is not None else None
+    if cached is None or cached[0] is not functions:
+        sizes = {(fn['build_id'], fn['rva']): fn['size'] for fn in functions}
+        builds = {folded(fn['build_id']) for fn in functions}
+        cached = (functions, sizes, builds)
+        if state is not None:
+            state['grammar_inventory'] = cached
+    _, sizes, builds = cached
     for parts, body in blocks:
         heading = body['_heading']
         if not (parts and folded(parts[0]) in builds) and not body['_verdict_line']:
@@ -480,12 +489,13 @@ def inventory_index(data):
         return None
     cached = state['inventory']
     if cached is None or cached[0] is not data:
-        addresses, names = {}, {}
+        addresses, names, positions = {}, {}, {}
         for i, fn in enumerate(data['functions']):
+            positions[fn['id']] = i
             addresses.setdefault((fn['build_id'], fn['rva']), []).append(i)
             for name in {fn['id'], f'0x{fn["rva"]:x}'}:
                 names.setdefault(name, []).append(fn['id'])
-        cached = state['inventory'] = (data, addresses, names)
+        cached = state['inventory'] = (data, addresses, names, positions)
     return cached
 
 
@@ -770,6 +780,9 @@ def active_flow_dir(root):
     import os
     import subprocess
     root = Path(root).resolve()
+    state = _batch(root)
+    if state is not None and state['flow_dir'] is not None:
+        return state['flow_dir']
     result = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
                             cwd=root, capture_output=True, text=True)
     shared = Path(result.stdout.strip()).parent if result.returncode == 0 else root
@@ -777,6 +790,8 @@ def active_flow_dir(root):
     override = os.environ.get('SKYRIM_FLOW_DIR')
     refuse(not override or Path(override).resolve() == expected,
            'SKYRIM_FLOW_DIR must resolve to the repository shared .local/flow')
+    if state is not None:
+        state['flow_dir'] = expected
     return expected
 
 
@@ -796,14 +811,25 @@ def active_profile(root, default=None):
 def review_profile(root, task_id, requested):
     """A saved group's profile takes precedence over a later session; overrides must agree."""
     import profiles
-    require_complete(active_flow_dir(root))
-    recorded = set()
-    for path in (active_flow_dir(root) / 'groups').glob('*.json'):
-        group = json.loads(path.read_text())
-        if group.get('task_id') == task_id:
-            recorded.add(group.get('profile') or profiles.DEFAULT)
+    state = _batch(root)
+    cached = state['profiles'] if state is not None else None
+    if cached is None:
+        directory = active_flow_dir(root)
+        require_complete(directory)
+        recorded = {}
+        for path in (directory / 'groups').glob('*.json'):
+            group = json.loads(path.read_text())
+            recorded.setdefault(group.get('task_id'), set()).add(group.get('profile') or profiles.DEFAULT)
+        cached = (recorded, None)
+        if state is not None:
+            state['profiles'] = cached
+    recorded = cached[0].get(task_id, set())
     refuse(len(recorded) <= 1, 'review groups record conflicting profiles for this task')
-    assigned = next(iter(recorded)) if recorded else active_profile(root, profiles.DEFAULT)
+    if not recorded and cached[1] is None:
+        cached = (cached[0], active_profile(root, profiles.DEFAULT))
+        if state is not None:
+            state['profiles'] = cached
+    assigned = next(iter(recorded)) if recorded else cached[1]
     refuse(not requested or not assigned or requested == assigned,
            '--profile does not match the recorded review group or active session profile')
     profile = assigned or requested or profiles.DEFAULT
@@ -835,7 +861,23 @@ def prepare_many(root, data, target, review_source, targets, verdict, when, sele
     skipped = []
     if targets is None:
         targets = []
-        for parts, body in blocks:
+        candidates = blocks
+        if state is not None and state['compact_plans'] and select is not None:
+            cache_key = (id(data), id(blocks))
+            if cache_key not in state['selections']:
+                lookup = inventory_index(data)
+                selected_blocks = {}
+                for order, (parts, body) in enumerate(blocks):
+                    if len(parts) < 2 or not re.fullmatch(r'0x[0-9a-fA-F]+', parts[1]):
+                        continue
+                    hits = lookup[1].get((parts[0], int(parts[1], 16)), [])
+                    if hits:
+                        fid = data['functions'][hits[0]]['id']
+                        selected_blocks.setdefault(fid, []).append((order, parts, body))
+                state['selections'][cache_key] = selected_blocks
+            candidates = [(parts, body) for _, parts, body in sorted(
+                row for fid in select for row in state['selections'][cache_key].get(fid, []))]
+        for parts, body in candidates:
             if body.get('verdict') != 'approve':
                 skipped.append(f'{" ".join(parts)}: verdict {body.get("verdict")}')
                 continue
@@ -855,10 +897,11 @@ def prepare_many(root, data, target, review_source, targets, verdict, when, sele
             missing = sorted(select - found)
             refuse(not missing, f'selected functions without an approve block in this review: {", ".join(missing)}')
         refuse(targets, 'review has no approve block')
-    prepared = []
+    prepared, seen = [], set()
     for build_id, rva in targets:
         index = entry_index(data, build_id, rva)
-        refuse(index not in [i for i, *_ in prepared], f'{build_id} 0x{rva:x} is named twice')
+        refuse(index not in seen, f'{build_id} 0x{rva:x} is named twice')
+        seen.add(index)
         matches = indexed.get((build_id, f'0x{rva:x}'), [])
         refuse(len(matches) == 1, f'review has {len(matches)} blocks for {build_id} 0x{rva:x}; expected exactly 1')
         rest, block = matches[0]
@@ -868,6 +911,19 @@ def prepare_many(root, data, target, review_source, targets, verdict, when, sele
         prepared.append((index, *prepare(root, data, target, index, title, header, block, blob, when,
                                         carry_accepted=carry_accepted)))
     return prepared, skipped
+
+
+def planned_inventory(root, data, indices, prepare_only):
+    """Copy only changed entries in private lane plans; final apply still validates a full tree."""
+    state = _batch(root)
+    if prepare_only and state is not None and state['compact_plans']:
+        return dict(data, functions={i: copy.deepcopy(data['functions'][i]) for i in indices})
+    if state is not None:
+        new = dict(data, functions=list(data['functions']))
+        for i in indices:
+            new['functions'][i] = copy.deepcopy(data['functions'][i])
+        return new
+    return copy.deepcopy(data)
 
 
 @source_digest_cache()
@@ -898,10 +954,8 @@ def accept_reviews(root, requests, when=None, *, prepare_only=False, carry_accep
         selected.update(ids)
         prepared.extend(rows)
         skipped.extend(omitted)
-    new = copy.deepcopy(data) if _batch(root) is None else dict(data, functions=list(data['functions']))
+    new = planned_inventory(root, data, (i for i, *_ in prepared), prepare_only)
     for index, _, record, review in prepared:
-        if _batch(root) is not None:
-            new['functions'][index] = copy.deepcopy(new['functions'][index])
         new['functions'][index]['status'] = 'matched'
         if review is not None:
             set_named(new['functions'], index, named_value(root, record, review['naming_findings']))
@@ -939,12 +993,13 @@ def accept_family_batch(root, batch_path, when=None, profile=None, fdir=None, *,
     fr.validate_batch(batch, family)
     fr.ordering(root, batch_path, batch)
     flow.family_group_hold(root, fdir or flow.flow_dir(root), batch['population'], data=data)
-    by_id = {fn['id']: fn for fn in data['functions']}
+    indexed = inventory_index(data)
+    positions = indexed[3] if indexed is not None else {fn['id']: i for i, fn in enumerate(data['functions'])}
     # Enrollment already checked the first 20 and their safeguards; their frozen row digests
     # are bound by the saved family review. Later batches review only their own required members.
     required = set(batch['sample'])
     for fid in batch['population']:
-        fn = by_id[fid]
+        fn = data['functions'][positions[fid]]
         rec = validate_match(fn, target, root)
         fr.check_member(family, fn, rec, ranges=False)
         fr.require(batch['members'][fid] == fr.member_digest(fn, rec), 'member differs from committed population')
@@ -952,8 +1007,8 @@ def accept_family_batch(root, batch_path, when=None, profile=None, fdir=None, *,
             required.add(fid)
     flow.family_reviewed_gate(root, fdir or flow.flow_dir(root), required, data, target)
     when = when or now_utc()
-    prepared, new = [], copy.deepcopy(data)
-    positions = {fn['id']: i for i, fn in enumerate(data['functions'])}
+    prepared = []
+    new = planned_inventory(root, data, (positions[fid] for fid in batch['population'] if fid not in required), prepare_only)
     batch_digest = fr.digest(batch)
     for fid in batch['population']:
         index = positions[fid]
@@ -1004,14 +1059,18 @@ def label_only(root, select=None, when=None, *, prepare_only=False):
     data, target = load(root)
     validate_snapshot(root, data, target)
     stale_before = stale_ids(root, data)
-    candidates = [i for i, fn in enumerate(data['functions'])
-                  if (select is None or fn['id'] in select)
-                  and (select is not None or acceptance_staleness(fn, root) == STALE_REVIEW)]
+    indexed = inventory_index(data)
+    if select is not None and indexed is not None:
+        candidates = sorted(indexed[3][fid] for fid in select if fid in indexed[3])
+    else:
+        candidates = [i for i, fn in enumerate(data['functions'])
+                      if (select is None or fn['id'] in select)
+                      and (select is not None or acceptance_staleness(fn, root) == STALE_REVIEW)]
     refuse(candidates, 'no matched entry has a re-confirmed record with its review behind' if select is None
            else 'nothing selected')
     when = when or now_utc()
     prepared = []
-    new = copy.deepcopy(data)
+    new = planned_inventory(root, data, candidates, prepare_only)
     for index in candidates:
         fn = data['functions'][index]
         refuse(fn['status'] == 'matched', f'{fn["id"]} is {fn["status"]}; label-only re-acceptance is for matched entries')

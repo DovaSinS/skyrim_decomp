@@ -26,8 +26,70 @@ from check_source_digest import source_digest_cache
 from flow_state import state_lock, atomic_write, require_complete
 
 
-def read(path):
-    return json.loads(path.read_text())
+def read(path, *, details=True):
+    value = json.loads(path.read_text())
+    if details and isinstance(value, dict) and value.get('details_sidecar'):
+        ref = value['details_sidecar']
+        # Immutable content-addressed sidecars survive receipt replacement and snapshot copies.
+        name = ref['sha256']
+        f.refuse(len(name) == 64 and all(c in '0123456789abcdef' for c in name), 'invalid receipt sidecar digest')
+        blob = (path.parent / 'details' / (name + '.json')).read_bytes()
+        f.refuse(hashlib.sha256(blob).hexdigest() == name, 'receipt sidecar digest differs')
+        detail = json.loads(blob)
+        files = detail.pop('integrated_files', None)
+        value.update(detail)
+        if files is not None:
+            value['integrated']['files'] = files
+            value['integrated'].pop('files_count', None)
+        for key in ('tooling', 'tooling_accepted'):
+            for item in value.get(key, []):
+                if item.pop('integrated_files_from_run', False):
+                    item['integrated']['files'] = files
+        value.pop('details_sidecar')
+    return value
+
+
+def compact_receipt(path, receipt):
+    """Serialize large immutable member detail outside the scheduling lock; keep readers compatible."""
+    detail = {key: receipt[key] for key in ('origins', 'bindings', 'input_pins', 'gate_dependencies') if key in receipt}
+    if (receipt.get('integrated') or {}).get('files'):
+        detail['integrated_files'] = receipt['integrated']['files']
+    blob = json.dumps(detail, separators=(',', ':'), sort_keys=True).encode()
+    if len(blob) < 65536:
+        return receipt
+    digest = hashlib.sha256(blob).hexdigest()
+    sidecar = path.parent / 'details' / (digest + '.json')
+    if not sidecar.is_file():
+        atomic_write(sidecar, blob)
+    compact = {key: value for key, value in receipt.items() if key not in detail}
+    if 'integrated_files' in detail:
+        compact['integrated'] = dict(receipt['integrated'], files_count=len(detail['integrated_files']))
+        compact['integrated'].pop('files')
+    compact['details_sidecar'] = dict(sha256=digest, bytes=len(blob), fields=sorted(detail))
+    compact_tooling(compact, receipt)
+    return compact
+
+
+def compact_tooling(compact, receipt):
+    """Keep current mutable request state, referencing the run's shared file list only."""
+    if compact is receipt or not compact.get('details_sidecar'):
+        return
+    files = (receipt.get('integrated') or {}).get('files')
+    if not files:
+        return
+    for key in ('tooling', 'tooling_accepted'):
+        if key not in receipt:
+            continue
+        items = []
+        for original in receipt[key]:
+            item = dict(original)
+            integrated = item.get('integrated') or {}
+            listed = integrated.get('files')
+            if listed is files or listed == files:
+                item['integrated'] = {k: v for k, v in integrated.items() if k != 'files'}
+                item['integrated_files_from_run'] = True
+            items.append(item)
+        compact[key] = items
 
 
 def write(path, value):
@@ -681,20 +743,20 @@ def requeue_changed_gates(root, fdir, receipt):
         save_run(fdir, receipt)
         return True
     affected = []
+    for dependency in receipt.get('gate_dependencies', []):
+        try:
+            groups_changed = any(signature(fdir, name) != pinned
+                                 for name, pinned in dependency['bindings'].items())
+            files_changed = any((hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                                 if Path(path).is_file() else None) != digest
+                                for path, digest in dependency['pins'].items())
+        except (f.FlowError, OSError, ValueError, KeyError, TypeError):
+            groups_changed, files_changed = True, True
+        if groups_changed or files_changed:
+            affected.append(dependency['request'])
+    if not affected:
+        return False
     with state_lock(fdir):
-        for dependency in receipt.get('gate_dependencies', []):
-            try:
-                groups_changed = any(signature(fdir, name) != pinned
-                                     for name, pinned in dependency['bindings'].items())
-                files_changed = any((hashlib.sha256(Path(path).read_bytes()).hexdigest()
-                                     if Path(path).is_file() else None) != digest
-                                    for path, digest in dependency['pins'].items())
-            except (f.FlowError, OSError, ValueError, KeyError, TypeError):
-                groups_changed, files_changed = True, True
-            if groups_changed or files_changed:
-                affected.append(dependency['request'])
-        if not affected:
-            return False
         for request in affected:
             item = next(i for i in receipt['items'] if i['id'] == request['item'])
             selection = [request['group']] if request.get('group') else item['selection']
@@ -706,7 +768,7 @@ def requeue_changed_gates(root, fdir, receipt):
                                                                requeued=retry['id']))
         receipt['attempts'].append(receipt['integrated'])
         receipt.update(integrated=None, accepted=[])
-        save_run(fdir, receipt)
+    save_run(fdir, receipt)
     return True
 
 
@@ -778,12 +840,15 @@ def accept(tree, requests, python):
 
 
 def save_run(fdir, receipt):
+    path = fdir / 'lane/runs' / (receipt['id'] + '.json')
+    compact = compact_receipt(path, receipt)
     with state_lock(fdir):
         for item in receipt['items']:
             write(fdir / 'lane/queue' / (item['id'] + '.json'), item)
         import flow_tooling
         flow_tooling.save_items(fdir, receipt, receipt.get('state') == 'done')
-        write(fdir / 'lane/runs' / (receipt['id'] + '.json'), receipt)
+        compact_tooling(compact, receipt)
+        write(path, compact)
         integ = receipt.get('integrated')
         if integ:
             group_members = {}
@@ -1155,6 +1220,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         requests = remaining
         recarry(requests)
     result = accept(tree, requests, python) if requests else dict(accepted=[], dropped=[], changed=[])
+    receipt['accept_wall_seconds'] = result.get('wall_seconds', {})
     if not result['accepted'] and not active_tools and not receipt.get('baseline_check'):
         receipt.update(dropped=dropped + result['dropped'], state='done')
         for item in receipt['items']:
@@ -1165,6 +1231,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
         recarry(result['accepted'])
         failures = result['dropped']
         result = accept(tree, result['accepted'], python)
+        receipt['accept_recarry_wall_seconds'] = result.get('wall_seconds', {})
         f.refuse(not result['dropped'], 'accepted member changed during re-carry')
         result['dropped'] = failures
     f.refuse(result['accepted'] or active_tools or receipt.get('baseline_check'), 'no member passed acceptance')

@@ -609,6 +609,8 @@ Allowed inputs: pinned template and parameter source, the manifest and its first
 public match records and reconstructed units. FNV index: `{(root / ".local/analysis/fnv_index.jsonl").resolve()}`;
 function packs: `{(root / ".local/packs").resolve()}`; source checkouts: `{(root / ".local/sources").resolve()}`.
 Read no other review or handoff.
+Before dispatch, the orchestrator must run `python3 tools/lint_review_readiness.py --functions {' '.join(family['first_members'])}`
+and fix mechanical plausible_source, provenance, publication_hygiene and claim_scope failures.
 Review source plausibility, provenance, extraction, target bindings, labels and all first 20.
 Output: `.local/reviews/{task}.family.json`, exactly the JSON schema in the family-review runbook.
 {members}
@@ -840,6 +842,7 @@ def family_actions(root, fdir):
                 if not af.reviewer_admitted(root, entry['model'], profile):
                     entry = {'model': 'opus', 'harness': 'claude-code'}
                 prompt = f'Read docs/reviewer-runbook.md and follow it. Your brief is {brief}.'
+                acts.append(readiness_action(dict(functions=family['first_members']), root))
                 acts.append(('dispatch', f'family review needed: {start_worker(entry, prompt, "reviewer")}. '
                              f'Then: python3 tools/flow.py family-dispatched {path}'))
     by_id = {fn['id']: fn for fn in inventory(root)['functions']}
@@ -1043,7 +1046,9 @@ source files it identifies, under the maintainer's recorded FNV reuse and model-
 
 ## Steps
 
-1. Run `python3 tools/lint_review_readiness.py --functions {' '.join(g['functions'])}` before reviewing.
+1. The orchestrator must run `python3 tools/lint_review_readiness.py --functions {' '.join(g['functions'])}`
+   and fix failures before dispatching this Reviewer. It checks mechanical plausible_source,
+   provenance, publication_hygiene and claim_scope grounds; repeat it before reviewing.
    Validate individual bindings as the runbook requires; explicitly listed pending review-behind
    entries are expected during review. The full `python3 tools/check.py` must pass at integration.
    Unexpected failures outside the group's units, except explicitly listed pending entries,
@@ -1332,6 +1337,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             continue
         if g['kind'] == 'sampling':
             if status == 'missing' and not g.get('dispatched'):
+                acts.append(readiness_action(g, root))
                 acts.append(dispatch_line(g, root))
             elif status == 'missing':
                 waits.append(('wait', f'Reviewer for {name} ({g["task_id"]}) is running; its file appears at {REVIEWS}/{g["task_id"]}.md'))
@@ -1343,6 +1349,7 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
             if g.get('family_review_path'):
                 waits.append(('wait', f'first-20 review {g["task_id"]} is handled by its family brief'))
             elif not g.get('dispatched'):
+                acts.append(readiness_action(g, root))
                 acts.append(dispatch_line(g, root))
             else:
                 waits.append(('wait', f'Reviewer for {name} ({g["task_id"]}) is running; its file appears at {REVIEWS}/{g["task_id"]}.md'))
@@ -1497,14 +1504,18 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
     return out or [('done', 'nothing to do')]
 
 
+def readiness_action(g, root):
+    command = ('python3 ' + shlex.quote(str(TOOLS / 'lint_review_readiness.py')) + ' --root '
+               + shlex.quote(str(g.get('review_root') or root))
+               + ' --functions ' + ' '.join(g['functions']))
+    return ('run', command + '    # plausible_source, provenance, publication_hygiene, claim_scope; fix failures before dispatch')
+
+
 def dispatch_line(g, root=None):
     entry = {'model': g['reviewer_model'], 'harness': g.get('reviewer_harness', 'claude-code'), 'effort': 'high'}
     prompt = (f'Read docs/reviewer-runbook.md and follow it. Your brief is {g["brief"]}.' if entry['harness'] == 'codex'
               else f'Read {g["brief"]} and follow it.')
-    preflight = (f'python3 {shlex.quote(str(TOOLS / "lint_review_readiness.py"))} --root '
-                 + shlex.quote(str(g.get('review_root') or root or ROOT))
-                 + ' --functions ' + ' '.join(g['functions']))
-    return ('dispatch', f'Run `{preflight}` first; only after it passes: '
+    return ('dispatch', f'Only after the preceding readiness lint passes: '
             f'Reviewer for {g["name"]}: [{len(g["functions"])} functions] {start_worker(entry, prompt, "reviewer")}. '
             f'Then: python3 tools/flow.py dispatched {g["name"]}')
 
@@ -2733,12 +2744,14 @@ def execute(a, root, fdir):
                              wait_lane=a.wait_lane), indent=2))
         elif a.cmd == 'lane-status':
             import flow_lane
-            with state_lock(fdir):
-                items = [flow_lane.read(p) for p in sorted((fdir / 'lane/queue').glob('*.json'))]
-                runs = [flow_lane.read(p) for p in sorted((fdir / 'lane/runs').glob('*.json'))]
-                tooling = [flow_lane.read(p) for p in sorted((fdir / 'lane/tooling').glob('*.json'))]
-                inputs = [flow_lane.read(p) for p in sorted((fdir / 'lane/tooling-queue').glob('*.json'))]
-            active = flow_lane.running(fdir)
+            # Atomic writers give a recent per-file observation; status never waits on a publisher.
+            items = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/queue').glob('*.json'))]
+            runs = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/runs').glob('*.json'))]
+            tooling = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/tooling').glob('*.json'))]
+            inputs = [flow_lane.read(p, details=False) for p in sorted((fdir / 'lane/tooling-queue').glob('*.json'))]
+            owner_path = fdir / 'lane/owner.json'
+            owner = flow_lane.read(owner_path) if owner_path.is_file() else {}
+            active = bool(owner.get('active') and flow_lane.owner_alive(owner))
             print(json.dumps(dict(queue=items, tooling_inputs=inputs, runs=[flow_lane.run_status(root, fdir, r, active) for r in runs],
                                   tooling=[flow_lane.run_status(root, fdir, r, active) for r in tooling]), indent=2))
         elif a.cmd == 'lane-retire':
