@@ -1,4 +1,5 @@
 // Build: sse-steam-1-7-104
+// Code origin: declarations adapted from the pinned community header identified below.
 // Source exposure: community-headers (layout reconciled with target allocation sizes separately).
 // Drafted by GPT-6.1 Sol; p106 represented-layout recovery.
 // Labels: v2
