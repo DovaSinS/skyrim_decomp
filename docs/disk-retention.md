@@ -44,3 +44,9 @@ Staged guards use owned, locked `.local/check-exports` slots. A later guard or t
 reaps only unlocked slots carrying the export marker; a live guard keeps its lock. This also
 recovers exports left by abrupt process exit without changing validation or staged contents.
 The service config can list `export_roots` glob patterns covering worker namespaces.
+
+For legacy publishers still running the pre-fix archiver, ignored config can explicitly enable
+`include_failed_archives`. A saved failed-copy receipt is written only after payload archival;
+its independent copy can be offloaded after the same age, live-reference, inventory and hash
+checks. The dirty original is never selected or modified. This backstop does not require
+stopping older publishers; the pre-archive dirty check prevents new copies in updated tools.
