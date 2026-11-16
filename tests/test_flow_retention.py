@@ -129,7 +129,8 @@ class Retention(unittest.TestCase):
         with (directory / '.cleanup.lock').open('a') as owner:
             fcntl.flock(owner, fcntl.LOCK_EX | fcntl.LOCK_NB)
             started = time.monotonic()
-            self.assertEqual(retention.automatic_retention(self.root, self.fdir), [])
+            with patch.object(retention, 'process_paths', side_effect=AssertionError('busy lock must precede process scan')):
+                self.assertEqual(retention.automatic_retention(self.root, self.fdir), [])
             self.assertLess(time.monotonic() - started, 1)
             self.assertFalse((directory / 'last-retention.json').exists())
         self.assertTrue(retention.automatic_retention(self.root, self.fdir)[0]['removed'])
