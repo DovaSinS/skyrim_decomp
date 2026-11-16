@@ -51,6 +51,6 @@ independent of Mudcrab; never apply another checkout's build/cache instructions 
 - Mark a function `matched` only under the implemented matching gate and acceptance rule in
   `docs/verification.md`: reproduced comparator pass, Reviewer
   approval, integration. Bootstrap CI checks only publication hygiene, metadata and site
-  generation; it does NOT compare against the game.
+  generation; it does NOT compare against the game. The separate CI-hash job (docs/verification.md, "CI hash check as the second host") does compare compiled functions against published target hashes and counts as the second verifier host.
 - Progress comes only from `data/progress.json`; totals are derived, not manually entered into HTML.
   Unknown scope means no completion percentage. No dummy success records or fake history.
