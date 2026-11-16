@@ -102,17 +102,24 @@ macOS needs Apple's Command Line Tools (`make` and `clang++`, normally present w
 Linux arm64 needs `make` and `g++`. The helper prints an install command when build tools are
 missing. Build objects and binaries remain in the private tool tree.
 
-Allow **690–711 MB download**, about **3 GB for archives and unpacked tools**, plus the analysis
-project. The helper prints the exact download size for the selected platform. The one-time local
-analysis uses an **8 GiB Java heap**, at most four analysis CPUs, and additional native memory;
-16 GiB free RAM is a planning recommendation, not a measured minimum. Allow roughly 10–30
-minutes as an initial estimate; completed end-to-end time/RAM measurements are pending.
+The pinned archives total **690–711 MB**, depending on platform (706.0 MB on macOS arm64).
+On the tested 24 GiB Apple-silicon Mac, reusing the verified install and launching setup took
+**0.36 seconds**; a fresh import and analysis took **526.5 seconds (8.8 minutes)**, with a sampled
+peak process-tree RSS of **4.62 GiB**. The configured Java heap cap is **16 GiB**, with at most
+four analysis CPUs and additional native memory. RSS is not a minimum RAM requirement: sampling,
+nonresident pages and other work on the machine affect it. The earlier 8 GiB-cap attempt reported
+a JVM out-of-memory error.
+A per-function `decomp` took **13.5 seconds**, with **0.44 GiB** sampled peak RSS. Installed tools
+occupied **1.16 GiB**, the completed project **0.64 GiB**, and the complete decompiler directory
+**1.82 GiB**, excluding archive cache and the executable. These are measured local observations,
+not cold-install timing or universal capacity guarantees; see [method and platform limits](contributor-platforms.md#optional-decompiler-status).
 It runs in the background: rerun `setup --decompiler` to see
 its phase, elapsed seconds and sampled process-tree RSS in the `decompiler` result. The private
 `state.json` and `analysis.log` paths are printed at launch. An interrupted run reuses the saved
 import and restarts the incomplete analysis pass; a completed analysis is reused. PDB acquisition
 is disabled. Public names already resolved by the helper are applied where functions still have
 default names; Ghidra recovers RTTI names locally. These remain naming/type hypotheses.
+The JVM exits on memory exhaustion, and a pass with an OOM diagnostic cannot become ready.
 
 All tools, caches, logs, projects and exports live under the ignored `.local/contrib/` tree
 (or the existing private `SR_LOCAL_DIR/contrib` override). Ghidra rejects dot-prefixed project

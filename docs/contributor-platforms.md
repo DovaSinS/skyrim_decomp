@@ -26,11 +26,37 @@ other platforms and tasks can require more. Private reproduction logs remain wit
 
 ## Optional decompiler status
 
-The optional `setup --decompiler` workflow has mocked offline coverage for archive hash checking,
-installation reuse, platform selection, native-build commands, background analysis checkpoints,
-private pack layout and publication rejection. The official runtime downloads and local macOS
-native source build were exercised. A complete analysis followed by a per-function export has
-**not yet been validated**; end-to-end validation and measured time/RAM costs are deferred to a
-native Windows x64 run. No optional-decompiler success is inferred from the contributor workflow
-results above. Package sizes come from the pins; free-RAM and duration guidance are planning
-estimates.
+**Native macOS arm64 end-to-end run passed on 2026-11-16:** macOS 26.2, Apple M4 Pro,
+24 GiB physical RAM, Python 3.13.12, the pinned Steam target, Ghidra 12.2 and Temurin 25.0.1+8.
+The verified install and its previously built native decompiler were reused. This was not a
+bare-machine installation or a new download measurement.
+
+Real `./sr --json --yes setup --decompiler --no-sources --no-sibling --no-self-test` took
+**0.36 seconds** to reuse the tools and launch the worker. A fresh project import and complete
+analysis took **526.5 seconds (8.8 minutes)** from that setup invocation, with **4.62 GiB** sampled
+peak process-tree resident memory. The heap cap was **16 GiB**, with four analysis CPUs.
+The earlier 8 GiB-cap attempt reported a JVM out-of-memory error; the helper now exits on OOM and refuses to
+mark a pass ready if its current log contains an OOM diagnostic, even with a success exit/checkpoint.
+
+Real `./sr --json decomp 0xef8900` on the already-matched public
+`NiTimeController::ProcessClone` took **13.5 seconds**, with **0.44 GiB** sampled peak RSS.
+`start 0xef8900 --practice --no-branch` then passed in **10.2 seconds**: private hint markers,
+a direct-callee signature, byte/listing/decompiler pack files and unchanged tracked reconstruction
+were checked locally. Only sanitized metrics and outcomes were returned; no raw export is published.
+This validates the local hint workflow, not pseudo-C correctness or another comparator match.
+
+Allocated disk measured with `du -sk`: **1,241,018,368 bytes (1.16 GiB)** for installed tools,
+**684,421,120 bytes (0.64 GiB)** for the project including exports, and **1,958,977,536 bytes
+(1.82 GiB)** for the complete decompiler directory, including runtime cache/settings. Archive cache
+and the owner's executable are excluded; the pinned macOS arm64 archives total **706,001,130 bytes**.
+The project was removed after measuring it; the verified tools were retained. Removing a project
+means the next setup must analyze again. Temporary extraction, swap and other contributor tools
+need additional space; this directory footprint is not a minimum free-disk guarantee.
+
+Wall times include polling (one second for analysis, half a second for export/pack checks).
+RSS was sampled across the worker's process tree every second, with the helper's own analysis
+sampler at two seconds; export RSS used half-second samples. Sampling can miss spikes, and RSS
+does not count nonresident memory or define how much free RAM another machine needs.
+Native Windows and Linux optional-decompiler runs remain **unverified**. Offline tests cover
+archive hashes, installation reuse, platform/native-build selection, checkpoints, OOM rejection,
+private pack layout and publication rejection; those tests do not establish another OS run.

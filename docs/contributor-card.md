@@ -24,9 +24,10 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
 ## Optional pseudo-C hint
 
 `./sr --json --yes setup --decompiler` or `go --decompiler` installs hash-pinned Ghidra and
-Temurin privately and starts a one-time background analysis. Budget about 0.7 GB download,
-3 GB tool/archive space plus the project, and an 8 GiB heap plus native memory. Allow 10–30
-minutes as an initial estimate; measured costs are pending. Rerun setup for progress.
+Temurin privately and starts a one-time background analysis. The macOS arm64 archives total
+706 MB; the measured install occupied 1.16 GiB and its project 0.64 GiB. Reused-install setup
+took 0.36 seconds; fresh import/analysis took 8.8 minutes, with 4.62 GiB sampled peak RSS under
+a 16 GiB heap cap. RSS is not a minimum RAM requirement. Rerun setup for progress.
 See [setup and platform status](contributing-agent.md#optional-local-decompiler).
 Once ready, `start` adds `decomp.c` beside the listing; `./sr --json decomp 0x<rva>` fills an
 existing pack. It includes direct callees' guessed signatures.

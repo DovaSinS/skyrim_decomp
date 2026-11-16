@@ -144,7 +144,8 @@ class DecompilerTests(unittest.TestCase):
         self.ctx.env.update(_JAVA_OPTIONS='-Xmx64G', JDK_JAVA_OPTIONS='-Xmx64G',
                             GHIDRA_HEADLESS_JAVA_OPTIONS='-Xmx64G')
         command, env = d.launch_command(self.ctx, self.project, '-noanalysis')
-        self.assertEqual(env['GHIDRA_HEADLESS_MAXMEM'], '8G')
+        self.assertEqual(env['GHIDRA_HEADLESS_MAXMEM'], '16G')
+        self.assertIn('-XX:+ExitOnOutOfMemoryError', env['JAVA_TOOL_OPTIONS'])
         self.assertNotIn('_JAVA_OPTIONS', env)
         self.assertNotIn('JDK_JAVA_OPTIONS', env)
         self.assertNotIn('GHIDRA_HEADLESS_JAVA_OPTIONS', env)
@@ -232,6 +233,26 @@ class DecompilerTests(unittest.TestCase):
                 d.run_analysis(self.ctx, self.project)
         self.assertEqual(d.status(self.project)['state'], 'failed')
 
+    def test_oom_cannot_publish_ready_even_with_zero_exit_and_checkpoint(self):
+        (self.project / 'imported').write_text('synthetic import')
+        (self.project / 'skyrim.gpr').write_text('synthetic project')
+        exhaust = [True, False]
+        def analyze(cmd, **kw):
+            (self.project / 'analyzed').write_text('synthetic checkpoint')
+            kw['stdout'].write(b'Picked up JAVA_TOOL_OPTIONS: -XX:+ExitOnOutOfMemoryError\n')
+            if exhaust.pop(0):
+                kw['stdout'].write(b'java.lang.OutOfMemoryError: synthetic failure\n')
+            return Mock(pid=1234, returncode=0, poll=lambda: 0)
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'launch_command', return_value=(['synthetic'], {})), \
+                patch.object(d.subprocess, 'Popen', side_effect=analyze):
+            with self.assertRaisesRegex(ValueError, 'headless analysis failed'):
+                d.run_analysis(self.ctx, self.project)
+            self.assertEqual(d.status(self.project)['state'], 'failed')
+            # A later successful pass must not inherit the earlier appended OOM diagnostic.
+            d.run_analysis(self.ctx, self.project)
+            self.assertEqual(d.status(self.project)['state'], 'ready')
+
     def test_private_pack_layout_and_per_function_export(self):
         d.write_json(self.project / 'state.json', dict(state='ready'))
         dest = self.ctx.private / 'packs/synthetic-build/0x1234'
@@ -241,7 +262,7 @@ class DecompilerTests(unittest.TestCase):
             (folder / 'decomp.c').write_text('// ' + d.WARNING + '\nvoid Synthetic();\n// END PRIVATE DECOMPILER HINT\n')
             self.assertIn('-noanalysis', cmd)
             self.assertIn('-readOnly', cmd)
-            self.assertEqual(kw['env']['GHIDRA_HEADLESS_MAXMEM'], '8G')
+            self.assertEqual(kw['env']['GHIDRA_HEADLESS_MAXMEM'], '16G')
             return subprocess.CompletedProcess(cmd, 0)
         self.ctx.runner = run
         with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)):

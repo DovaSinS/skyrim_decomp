@@ -805,8 +805,12 @@ class CompileSupervisorRegression(unittest.TestCase):
     def test_dead_outer_supervisor_does_not_cancel_the_child_deadline(self):
         with tempfile.TemporaryDirectory() as tmp:
             pidfile = Path(tmp) / 'child.pid'
+            # Existence signals readiness to kill the outer supervisor. Publish the
+            # complete PID atomically so the reader cannot observe an empty file.
             payload = ('import os,time;from pathlib import Path;'
-                       f'Path({str(pidfile)!r}).write_text(str(os.getpid()));time.sleep(30)')
+                       f'p=Path({str(pidfile)!r});'
+                       'p.with_suffix(".tmp").write_text(str(os.getpid()));'
+                       'p.with_suffix(".tmp").replace(p);time.sleep(30)')
             runner = ('import os,sys;sys.path.insert(0,' + repr(str(ROOT / 'tools/verifier')) + ');'
                       'import unit_build;unit_build.compile_bounded('
                       + repr([sys.executable, '-c', payload]) + ',' + repr(tmp) + ',dict(os.environ),timeout=0.5)')

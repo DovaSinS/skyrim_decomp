@@ -18,7 +18,7 @@ import urllib.error
 import urllib.request
 import zipfile
 
-HEAP = '8G'
+HEAP = '16G'
 WARNING = 'PRIVATE DECOMPILER HINT: never paste publicly; untrusted, not evidence'
 
 
@@ -341,7 +341,8 @@ def launch_command(ctx, project, *args):
                  'application.settingsdir': directory(ctx) / 'settings'}
     for path in locations.values():
         path.mkdir(exist_ok=True)
-    env['JAVA_TOOL_OPTIONS'] = ' '.join(f'-D{key}="{path}"' for key, path in locations.items())
+    env['JAVA_TOOL_OPTIONS'] = ' '.join(f'-D{key}="{path}"' for key, path in locations.items()) + \
+        ' -XX:+ExitOnOutOfMemoryError'
     cmd = [str(headless), str(project), 'skyrim', '-scriptPath', str(ctx.repo / 'tools/ghidra'),
            '-max-cpu', '4', *map(str, args)]
     if ctx.windows:
@@ -368,8 +369,9 @@ def setup_locked(ctx, exe, project, no_install):
     if state['state'] in ('ready', 'running', 'starting'):
         ctx.say(f'decompiler: {state["state"]}; elapsed {state.get("elapsed_seconds", 0)} s')
         return state
-    ctx.say(f'One-time private analysis: expect 10–30 minutes, 8 GiB Java heap plus native memory; '
-            '16 GiB free RAM recommended. Runs in background; rerun setup --decompiler for status. '
+    ctx.say(f'One-time private analysis: {HEAP} Java heap cap plus native memory; '
+            'see docs/contributor-platforms.md for measured costs. '
+            'Runs in background; rerun setup --decompiler for status. '
             'Interrupted runs resume from the saved import; the current analysis pass restarts.')
     names = c.public_names(ctx.repo, c.inventory(ctx.repo))
     (project / 'names.tsv').write_text(''.join(f'0x{r:x}\t{n[0]}\n' for r, n in sorted(names.items())),
@@ -406,6 +408,7 @@ def run_analysis(ctx, project):
         if expected != project:
             raise ValueError('project identity changed')
         with (project / 'analysis.log').open('ab') as log, project_alias(ctx, project) as alias:
+            log_start = log.tell()
             if not ((project / 'imported').is_file() and (project / 'skyrim.gpr').is_file()):
                 cmd, env = launch_command(ctx, alias, '-import', exe, '-overwrite', '-noanalysis')
                 try:
@@ -432,7 +435,11 @@ def run_analysis(ctx, project):
                 state.update(elapsed_seconds=round(time.time() - started, 1), peak_rss_bytes=peak)
                 write_json(project / 'state.json', state)
                 time.sleep(2)
-            if proc.returncode or not (project / 'analyzed').is_file():
+            log.flush()
+            with (project / 'analysis.log').open('rb') as diagnostics:
+                diagnostics.seek(log_start)
+                exhausted = b'java.lang.OutOfMemoryError' in diagnostics.read()
+            if proc.returncode or exhausted or not (project / 'analyzed').is_file():
                 raise ValueError('headless analysis failed; inspect private analysis.log')
         state.update(state='ready', phase='complete', elapsed_seconds=round(time.time() - started, 1))
     except Exception:
