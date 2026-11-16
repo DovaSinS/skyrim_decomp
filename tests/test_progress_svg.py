@@ -19,6 +19,16 @@ class ProgressSvgTests(unittest.TestCase):
         self.progress = json.loads((ROOT / 'data/progress.json').read_text())
         self.scope = json.loads((ROOT / 'data/scope.json').read_text())
 
+    def test_area_rows_are_bounded_and_not_batch_directories(self):
+        import re
+        progress, scope = gen.load(ROOT)
+        st = gen.stats(progress, ROOT)
+        rows = gen.accepted_area_rows(scope, st)
+        self.assertLessEqual(len(rows), gen.AREA_CAP + 1)
+        self.assertEqual(sum(row[1] for row in rows), st['matched'])
+        for label, _, _ in rows:
+            self.assertIsNone(re.search(r'^fo4|_[0-9a-f]{8}$', label, re.I))
+
     def test_deterministic_and_current(self):
         self.assertEqual(self.svg, gen.render(ROOT))
         self.assertEqual(self.svg, (ROOT / 'docs/progress.svg').read_text(), 'run tools/build_progress_svg.py')

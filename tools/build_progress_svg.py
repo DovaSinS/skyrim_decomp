@@ -87,9 +87,10 @@ def stats(progress, root):
     counts = Counter(fn['status'] for fn in fns)
     matched = [fn for fn in fns if fn['status'] == 'matched']
     units = [unit_of(fn, root) for fn in matched]
+    named_classes = Counter(fn['name'].rsplit('::', 1)[0] for fn in matched if '::' in fn.get('name', ''))
     return dict(counts=counts, matched=len(matched), matched_bytes=sum(fn['size'] for fn in matched),
                 named=sum(1 for fn in matched if fn.get('named') is True),
-                tracked=len(fns), areas=Counter(a for a, _ in units), classes=Counter(c for _, c in units if c))
+                tracked=len(fns), named_classes=named_classes, areas=Counter(a for a, _ in units), classes=Counter(c for _, c in units if c))
 
 
 def scope_groups(scope):
@@ -298,6 +299,25 @@ def style():
             f'.rl{{font-size:13px}}.fn{{font-size:12px;fill:{MUTED}}}.mu{{fill:{MUTED}}}</style>')
 
 
+AREA_CAP = 12
+
+
+def accepted_area_rows(scope, st):
+    """Group accepted classes by the map's scope classification, preserving every match."""
+    class_areas = {c['name']: b['label'] for b in scope['areas']['blocks']
+                   if b['treatment'] == 'in_scope' for c in b['classes']}
+    counts = Counter()
+    for name, count in st['named_classes'].items():
+        counts[class_areas.get(name, 'Unattributed')] += count
+    counts['Unattributed'] += st['matched'] - sum(st['named_classes'].values())
+    rows = sorted(((label, count, GREEN) for label, count in counts.items() if count),
+                  key=lambda row: (-row[1], row[0]))
+    if len(rows) > AREA_CAP:
+        rest = rows[AREA_CAP:]
+        rows = rows[:AREA_CAP] + [(f'Other ({len(rest)} areas)', sum(r[1] for r in rest), GREEN)]
+    return rows
+
+
 def render(root=ROOT):
     progress, scope = load(root)
     st = stats(progress, root)
@@ -325,10 +345,9 @@ def render(root=ROOT):
                    ('Mapped, no match yet', counts['mapped'], AMBER)]
     svg, b1 = bars(f'Functions by status ({st["tracked"]} tracked)', status_rows, PAD, sy, col_w, max(st['tracked'], 1))
     body.append(svg)
-    area_dirs = sorted(p.name for p in (root / 'reconstruction').iterdir() if p.is_dir() and any(p.glob('*.cpp')))
-    area_rows = sorted(((a, st['areas'].get(a, 0), GREEN) for a in area_dirs), key=lambda r: (-r[1], r[0]))
+    area_rows = accepted_area_rows(scope, st)
     svg, b2 = bars('Accepted functions by area', area_rows, PAD + col_w + 40, sy, col_w,
-                   max(max(st['areas'].values(), default=1), 1))
+                   max((r[1] for r in area_rows), default=1))
     body.append(svg)
 
     fy = max(b1, b2) + 40
