@@ -3,6 +3,9 @@
 // Labels: v2
 // Source exposure: binary-analysis (a local listing of the contributor's own copy of the pinned image).
 // Community names are unverified. Only the members the compared code needs are declared.
+// Code origin: original declarations written by v-macrev, assisted by claude-opus-5-5, from that
+// listing; only the class and method names come from CommonLibSSE-NG (labels below). No community
+// or sibling code is adapted.
 // BSFaceGenKeyframe: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // Unk_0C: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // Unk_0D: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
