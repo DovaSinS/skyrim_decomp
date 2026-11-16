@@ -152,6 +152,28 @@ def source_evidence(root, files):
     ensure(root, names)
 
 
+def worker_default(tree, config):
+    """Optional post-checkout hook for app-created workers; never alter active/dirty views."""
+    tree = Path(tree).resolve()
+    if not any(tree.is_relative_to(Path(base).resolve()) for base in config.get('worker_roots', [])):
+        return False
+    if any(tree == Path(path).resolve() or tree.is_relative_to(Path(path).resolve())
+           for path in config.get('keep', [])):
+        return False
+    if active(tree) or git(tree, 'status', '--porcelain', '--untracked-files=all').strip():
+        return False
+    set_patterns(tree)
+    # Existing kit links are retained. New workers share the canonical private inputs.
+    for name, source in config.get('shared', {}).items():
+        if name not in ('toolchains', 'wineprefix', 'sources', 'analysis'):
+            raise ValueError('unsupported shared private input')
+        target = tree / '.local' / name
+        target.parent.mkdir(exist_ok=True)
+        if not target.exists() and not target.is_symlink():
+            target.symlink_to(Path(source).resolve(), target_is_directory=True)
+    return True
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description=__doc__)

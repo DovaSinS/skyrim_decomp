@@ -47,6 +47,35 @@ class Retention(unittest.TestCase):
         lane.write(path, receipt)
         return tree, path
 
+    def test_terminal_isolation_metadata_moves_once_but_borrowed_git_survives(self):
+        tree, _ = self.candidate()
+        snapshot = self.fdir / 'lane/isolation/finished'
+        isolated = self.checkout(snapshot / 'lane/trees/finished/0')
+        lane.write(snapshot / 'groups/frozen.json', dict(synthetic=True))
+        rows = retention.automatic_retention(self.root, self.fdir)
+        moved = [r for r in rows if r['tree'] == str(snapshot)]
+        self.assertEqual(len(moved), 1)
+        self.assertTrue((isolated / '.git').is_dir())
+        self.assertFalse((snapshot / 'groups').exists())
+        self.assertEqual(lane.read(Path(moved[0]['archive']) / 'files/groups/frozen.json'), dict(synthetic=True))
+        self.assertEqual(retention.prune_isolation(self.root, self.fdir, ''), [])
+
+    def test_live_process_protects_finished_candidate_and_isolation(self):
+        tree, _ = self.candidate()
+        with patch.object(retention, 'process_paths', return_value='123 worker --root ' + str(tree) + '/nested'):
+            rows = retention.automatic_retention(self.root, self.fdir)
+        self.assertFalse(rows[0]['removed'])
+        self.assertIn('open process', rows[0]['reason'])
+        self.assertTrue((tree / 'tracked').is_file())
+
+    def test_broken_cold_config_preserves_successful_lane_outcome(self):
+        tree, _ = self.candidate()
+        with patch('cold_storage.automatic', side_effect=ValueError('synthetic bad config')):
+            rows = retention.automatic_retention(self.root, self.fdir)
+        self.assertFalse((tree / 'tracked').exists())
+        self.assertEqual(rows[-1]['cold_storage_error'], 'synthetic bad config')
+        self.assertFalse(rows[-1]['removed'])
+
     def test_automatic_removes_retries_and_isolation_keeps_evidence_and_git(self):
         old, receipt = self.candidate(attempt='0')
         new, _ = self.candidate(attempt='1')

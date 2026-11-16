@@ -9,7 +9,6 @@ from pathlib import Path
 import re
 import subprocess
 import sys
-import tempfile
 
 from compare import COMPARATOR_VERSION, CONTRACT_VERSION, REPORT_SCHEMA, comparator_source_sha256, sanitized
 from source_digest import DIGEST_METHOD, INCLUDE_ROOTS, recipe_flag_problem, tu_digest
@@ -836,7 +835,8 @@ def _load_uncached(staged=False):
         check_progress_svg(ROOT)
         return data
     # Match records, source and recipe are checked as staged too, so the index gets its own tree.
-    with tempfile.TemporaryDirectory() as tmp:
+    import staged_exports
+    with staged_exports.directory(ROOT) as tmp:
         subprocess.check_call(['git', 'checkout-index', '--all', f'--prefix={tmp}/'], cwd=ROOT)
         root = Path(tmp)
         data = validate(json.loads((root / 'data/progress.json').read_text()),
