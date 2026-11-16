@@ -21,6 +21,16 @@ class Attribution(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertEqual(trend.model_claim(claim)[0], family)
 
+    def test_only_supported_aliases_merge(self):
+        for claim in ('gpt-6.1 sol', 'GPT 6.1 Sol', 'gpt-6.1-sol'):
+            self.assertEqual(trend.model_claim(claim), ('GPT / Codex', 'gpt-6.1-sol'))
+        for claim in ('haiku-202611122314-1', 'haiku-202611131358-1', 'claude-haiku-5-5'):
+            self.assertEqual(trend.model_claim(claim), ('Claude', 'claude-haiku-5-5'))
+        self.assertEqual(trend.model_claim('claude-haiku-4-5')[1], 'claude-haiku-4-5')
+        self.assertEqual(trend.model_claim('haiku-202601010000-1')[1], 'haiku-202601010000-1')
+        self.assertEqual(trend.model_claim('gpt-6-sol')[1], 'gpt-6-sol')
+        self.assertEqual(trend.model_claim('gpt-6.1-sol and gpt-6.1-terra')[0], 'Not reported')
+
     def test_precedence_and_no_reviewer_guess(self):
         fn = {'id': 'b-0x1', 'drafter_model': 'gpt-6.1-terra'}
         source = b'// Drafted by claude-sonnet-5-5\n#include "a.h"'

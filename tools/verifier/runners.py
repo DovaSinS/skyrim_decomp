@@ -52,7 +52,7 @@ sys.path.insert(0, str(HERE))
 import starts  # noqa: E402
 
 SCHEMA = 1
-BACKENDS = ('boat', 'local', 'ssh')
+BACKENDS = ('boat', 'local', 'ssh', 'ci-hash')
 LOADERS = ('wine', 'native')
 HOST_ID = re.compile(r'[a-z0-9][a-z0-9-]{1,39}')
 # Everything on an ssh command line must survive PowerShell, cmd and POSIX shells unquoted.
@@ -118,6 +118,14 @@ def validate(raw, root=None):
                               'one machine share it, and confirm needs two different machines')
         if h.get('loader') not in LOADERS:
             raise RunnerError(f'{where}.loader must be one of {", ".join(LOADERS)}')
+        if backend == 'ci-hash':
+            if (hid != 'github-windows-native' or machine != 'github-hosted-windows'
+                    or h['loader'] != 'native'
+                    or h.get('repository') != 'awarebayes/skyrim_decomp'):
+                raise RunnerError(f'{where}: ci-hash requires the approved GitHub Windows host')
+            host.update(max_parallel=1, batch=4096)
+            out[name] = host
+            continue
         for key in ('msvc', 'work'):
             if not isinstance(h.get(key), str) or not h[key]:
                 raise RunnerError(f'{where}.{key} is required')
@@ -156,6 +164,8 @@ def validate(raw, root=None):
                                       'spaces or shell characters (forward slashes work on Windows)')
         out[name] = host
     attempt = raw.get('attempt', 'boat')
+    if attempt in out and out[attempt]['backend'] == 'ci-hash':
+        raise RunnerError('ci-hash is a confirmation host only')
     if attempt not in out:
         raise RunnerError(f'runners config: attempt names {attempt!r}, which is not a host')
     confirm = raw.get('confirm', [])
@@ -682,6 +692,9 @@ def unpack(archive, dest):
 
 def probe(host, transport=None, timeout=300):
     """{'toolchain', 'image', 'cpus', 'os', 'loader', 'python', 'running'} as the host reports it."""
+    if host['backend'] == 'ci-hash':
+        return {'toolchain': 'dispatch-required', 'image': 'published-hashes', 'cpus': None,
+                'os': 'windows', 'loader': 'native', 'python': '3.13', 'running': None}
     transport = transport or transport_for(host)
     name = f'probe-{uuid.uuid4().hex[:12]}'
     python = list(host['python']) if host['backend'] == 'ssh' else [sys.executable]
@@ -723,6 +736,8 @@ def for_attempt(config=None):
 
 
 def with_image(host):
+    if host['backend'] == 'ci-hash':
+        return host
     if host['backend'] == 'local' and not host.get('image'):
         image = legacy_image()
         if not image:

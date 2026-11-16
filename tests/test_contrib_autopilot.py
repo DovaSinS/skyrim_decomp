@@ -184,6 +184,9 @@ class FakeRuntime:
     def confirm(self, fetched, tasks, revision):
         return self.call('confirm', self.confirmed)
 
+    def credit_confirmation(self, fetched, confirmed, revision):
+        pass
+
     def make_groups(self, fetched, confirmed):
         return self.call('groups', ['g1'])
 
@@ -711,6 +714,92 @@ class RuntimeEffects(unittest.TestCase):
         self.assertFalse(any(call.args[:2] == ('pr', 'comment') for call in gh.call_args_list))
         self.assertTrue(any(call.args[:2] == ('pr', 'edit') for call in gh.call_args_list))
 
+    def test_final_feedback_updates_existing_comment_after_saved_checkpoint(self):
+        rev = self.state.revision(pr())
+        rev['completed']['post-published'] = True
+        marker = f'<!-- contrib-autopilot:1:{rev["head"]}:published -->'
+        result = subprocess.CompletedProcess([], 0, json.dumps([[dict(id=42, body=marker + '\nold totals',
+                    user=dict(login='awarebayes'))]]).encode(), b'')
+        with patch.object(self.runtime, 'command', return_value=result) as command, patch.object(self.runtime, 'gh') as gh:
+            self.runtime.feedback(rev, 'published', None, 'Submitted functions: 2.', replace=True)
+        self.assertEqual(command.call_count, 2)
+        self.assertIn('PATCH', command.call_args.args[0])
+        self.assertIn('repos/awarebayes/skyrim_decomp/issues/comments/42', command.call_args.args[0])
+        gh.assert_not_called()
+
+    def test_plural_rvas_discover_every_member(self):
+        cpp = 'reconstruction/synth/Synth.cpp'
+        unit = self.root / cpp
+        unit.parent.mkdir(parents=True)
+        unit.write_text('// RVAs 0x1000, 0x2000, and 0x3000, 3 bytes each.\n// RVA 0x1000\nint Synthetic() { return 0; }\n')
+        ap.save_json(self.root / 'data/progress.json', dict(target_build_id='synthetic', functions=[
+            dict(build_id='synthetic', rva=r, status='mapped') for r in (0x1000, 0x2000, 0x3000)]))
+        with patch.object(ap, 'screen_tree', return_value=[]):
+            self.assertEqual(self.runtime.functions(dict(tree=str(self.root), files=[dict(path=cpp)])),
+                             {cpp: [0x1000, 0x2000, 0x3000]})
+
+    def test_finish_accounts_for_preintegration_failures_and_missing_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000, 0x2000, 0x3000]}
+        rev['completed']['confirmation'] = dict(failed=[dict(rva='0x2000', reason='two-host confirmation failed')])
+        published = dict(accepted=['0x1000'], dropped=0, failures=[], commits=['c' * 40])
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')), \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, published)
+        message = feedback.call_args.args[3]
+        self.assertIn('Submitted functions: 3.', message)
+        self.assertIn('0x2000: two-host confirmation failed', message)
+        self.assertIn('0x3000: not accepted; intake processing incomplete.', message)
+        self.assertIn('Functions not accepted: 2.', message)
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_expands_group_only_review_failure_to_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        rev['completed']['reviews'] = dict(failed=[dict(group='held', reason='sampling disagreement; batch paused')])
+        ap.save_json(self.runtime.fdir / 'groups/held.json', dict(functions=['0x1000']))
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')):
+            self.runtime.finish(rev, dict(accepted=[], dropped=0, failures=[], commits=[]))
+        self.assertIn('0x1000: sampling disagreement; batch paused', feedback.call_args.args[3])
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_removes_stale_label_after_full_acceptance(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        result = subprocess.CompletedProcess([], 0, b'{"labels":[{"name":"needs-changes"}]}', b'')
+        with patch.object(self.runtime, 'feedback') as feedback, patch.object(self.runtime, 'gh', return_value=result) as gh, \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, dict(accepted=['0x1000'], dropped=0, failures=[], commits=[]))
+        self.assertIsNone(feedback.call_args.args[2])
+        self.assertTrue(any(c.args[-2:] == ('--remove-label', 'needs-changes') for c in gh.call_args_list))
+
+    def test_timeout_keeps_diagnostics_in_private_log(self):
+        with patch.object(ap.subprocess, 'run', side_effect=subprocess.TimeoutExpired(['synthetic'], 1, output=b'partial')):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                self.runtime.command(['synthetic'])
+        self.assertEqual(next(self.runtime.logs.glob('*.log')).read_bytes(), b'partial\n')
+        self.assertEqual(self.state.data['last_timeout']['command'], ['synthetic'])
+
+    def test_pending_publication_uses_fresh_trusted_main_tools(self):
+        tree = self.root / 'frozen'
+        revision = self.state.revision(pr())
+        revision['enqueued'] = True
+        ap.save_json(self.runtime.fdir / 'lane/queue/item.json',
+                     dict(root=str(tree), selection=['g1'], state='running'))
+        pending = dict(settled=False)
+        green = dict(settled=True, accepted=['0x1000'])
+        with patch.object(self.runtime, 'lane_result', side_effect=[pending, green]), \
+             patch.object(self.runtime, 'git', return_value='b' * 40), \
+             patch.object(self.runtime, 'prepare_main_tree') as prepare, \
+             patch.object(self.runtime, 'command') as command:
+            self.assertEqual(self.runtime.publish(dict(tree=str(tree)), dict(groups=['g1']), revision), green)
+        publisher = tree.parent / ('publisher-' + 'b' * 40)
+        prepare.assert_called_once_with(publisher, 'b' * 40)
+        self.assertEqual(command.call_args.kwargs['cwd'], publisher)
+        self.assertNotEqual(command.call_args.kwargs['cwd'], tree)
+
     def test_model_uses_fresh_exact_model_and_read_only_sandbox(self):
         output = self.root / 'review.md'
         def command(argv, **kwargs):
@@ -934,6 +1023,69 @@ reasons: original synthetic source and comparator reports
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(document)
         return document
+
+    def test_companion_credit_survives_shared_unit_digest_change(self):
+        info = pr(author='Later-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        revision = self.state.revision(info, True)
+        fetched = self.runtime.fetch(info)
+        fetched.update(number=1, head=self.head)
+        tree = Path(fetched['tree'])
+        path = tree / self.fixture.RECORD
+        previous = ap.read_json(path)
+        previous['submitter'] = 'earlier-contributor'
+        previous['matchers'] = [dict(handle='earlier-contributor', model='not-reported')]
+        ap.save_json(path, previous)
+        tasks = self.runtime.export(fetched, self.runtime.functions(fetched))
+        confirmed = self.runtime.confirm(fetched, tasks, revision)
+        self.assertEqual(confirmed['passed'], ['0x1010'])
+        current = ap.read_json(path)
+        self.assertNotEqual(current['source']['digest'], previous['source']['digest'])
+        self.assertEqual(current['submitter'], 'earlier-contributor')
+        self.assertEqual(current['matchers'], previous['matchers'])
+        self.assertNotEqual(current['source'], previous['source'])
+
+    def test_cached_confirmation_restores_credit_without_recomparison(self):
+        info = pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        result = ap.process(self.runtime, self.state, info, dry_run=True)
+        tree = Path(result['completed']['fetch']['tree'])
+        path = tree / self.fixture.RECORD
+        record = ap.read_json(path)
+        record.pop('submitter')
+        ap.save_json(path, record)
+        result['done'] = False
+        self.state.save()
+        comparisons = [c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm']
+        models = list(self.models)
+        ap.process(self.runtime, self.state, info, dry_run=True)
+        self.assertEqual(ap.read_json(path)['submitter'], 'outside-contributor')
+        self.assertEqual([c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm'], comparisons)
+        self.assertEqual(self.models, models)
+
+    def test_intake_acceptance_credits_pr_author_on_leaderboard(self):
+        import flow
+        import lane_accept
+        import build_leaderboard as board
+        result = ap.process(self.runtime, self.state,
+                            pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        fetched = result['completed']['fetch']
+        tree = Path(fetched['tree'])
+        groups = result['completed']['reviews']['groups']
+        requests = []
+        for name in groups:
+            group = flow.load_group(tree / '.local/flow', name)
+            requests.append(dict(kind='review', review=str(flow.review_path(tree, group)),
+                                 functions=group['functions'], profile='claude-low'))
+        accepted = lane_accept.accept(tree, requests)
+        self.assertFalse(accepted['dropped'])
+        self.assertTrue(accepted['accepted'])
+        record = ap.read_json(tree / self.fixture.RECORD)
+        self.assertEqual(record['submitter'], 'outside-contributor')
+        data = ap.read_json(tree / 'data/progress.json')
+        rows = board.write(tree, data)
+        self.assertEqual(rows[0]['contributor'], '@outside-contributor')
+        self.assertEqual(rows[0]['functions'], 1)
+        self.assertIn('@outside-contributor', (tree / 'LEADERBOARD.md').read_text())
+        self.assertEqual(ap.read_json(tree / 'data/contributors.json')['contributors']['outside-contributor']['verified_matches'], 1)
 
     def test_dry_run_completes_with_pc_unavailable_and_wine_ci_profile(self):
         result = ap.process(self.runtime, self.state,
@@ -1173,8 +1325,12 @@ class CompileSupervisorRegression(unittest.TestCase):
     def test_dead_outer_supervisor_does_not_cancel_the_child_deadline(self):
         with tempfile.TemporaryDirectory() as tmp:
             pidfile = Path(tmp) / 'child.pid'
+            # Existence signals readiness to kill the outer supervisor. Publish the
+            # complete PID atomically so the reader cannot observe an empty file.
             payload = ('import os,time;from pathlib import Path;'
-                       f'Path({str(pidfile)!r}).write_text(str(os.getpid()));time.sleep(30)')
+                       f'p=Path({str(pidfile)!r});'
+                       'p.with_suffix(".tmp").write_text(str(os.getpid()));'
+                       'p.with_suffix(".tmp").replace(p);time.sleep(30)')
             runner = ('import os,sys;sys.path.insert(0,' + repr(str(ROOT / 'tools/verifier')) + ');'
                       'import unit_build;unit_build.compile_bounded('
                       + repr([sys.executable, '-c', payload]) + ',' + repr(tmp) + ',dict(os.environ),timeout=0.5)')

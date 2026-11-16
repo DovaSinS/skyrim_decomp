@@ -49,6 +49,13 @@ def model_claim(claim):
     if len(unique) != 1:
         return 'Not reported', 'Not reported'
     model = unique[0]
+    # These public historical worker labels identify Haiku 5.5 runs, not model versions.
+    legacy = {'haiku-202611122314-1': 'claude-haiku-5-5',
+              'haiku-202611131358-1': 'claude-haiku-5-5'}
+    model = legacy.get(model, model)
+    named_gpt = re.fullmatch(r'gpt[- .]*(\d+(?:\.\d+)*)[- .]*(sol|terra|luna)', model)
+    if named_gpt:
+        model = f'gpt-{named_gpt[1]}-{named_gpt[2]}'
     family = 'Claude' if re.search(r'claude|haiku|sonnet|opus|fable', model) else 'GPT / Codex'
     return family, model
 

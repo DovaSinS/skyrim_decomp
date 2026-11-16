@@ -1,0 +1,70 @@
+name: CI second-host confirmation
+on:
+  workflow_dispatch:
+    inputs:
+      candidate:
+        description: 'Immutable candidate source commit on a batch branch'
+        required: true
+        type: string
+      request:
+        description: 'Sanitized batch request path'
+        required: true
+        type: string
+      request_sha:
+        description: 'SHA-256 of the batch request'
+        required: true
+        type: string
+permissions:
+  contents: read
+run-name: confirm-${{ inputs.request_sha }}
+jobs:
+  confirm:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - name: Fetch candidate as data only
+        shell: pwsh
+        env:
+          CANDIDATE: ${{ inputs.candidate }}
+        run: |
+          if ($env:CANDIDATE -notmatch '^[0-9a-f]{40}$') { exit 1 }
+          git fetch --no-tags origin $env:CANDIDATE
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Trusted toolchain cache key
+        id: key
+        run: python tools/ci_toolchain.py key --root "${{ runner.temp }}/msvc-v141"
+      - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ${{ runner.temp }}/msvc-v141
+          key: ${{ steps.key.outputs.cache_key }}
+      - name: Reject a corrupted restored cache
+        run: python -c "from pathlib import Path; import sys; sys.path.insert(0,'tools'); import ci_toolchain as c; p=Path(r'${{ runner.temp }}/msvc-v141'); sys.exit(int((p.exists() or p.is_symlink()) and not c.verify(Path('.'),p)))"
+      - name: Fetch if absent and verify complete toolchain
+        id: setup
+        run: python tools/ci_toolchain.py setup --root "${{ runner.temp }}/msvc-v141"
+      - uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        if: steps.setup.outputs.fetched == 'true'
+        with:
+          path: ${{ runner.temp }}/msvc-v141
+          key: ${{ steps.key.outputs.cache_key }}
+      - name: Compile twice and verify target commitments
+        env:
+          CANDIDATE: ${{ inputs.candidate }}
+          REQUEST: ${{ inputs.request }}
+          REQUEST_SHA: ${{ inputs.request_sha }}
+          MSVC_BIN: ${{ steps.setup.outputs.bin }}
+        run: python tools/ci_confirm_batch.py --candidate "$env:CANDIDATE" --request "$env:REQUEST" --request-sha "$env:REQUEST_SHA" --bin "$env:MSVC_BIN" --work "$env:RUNNER_TEMP/confirm" --out "$env:RUNNER_TEMP/result/result.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ci-confirm-result
+          path: ${{ runner.temp }}/result/result.json
+          if-no-files-found: error
+          retention-days: 14

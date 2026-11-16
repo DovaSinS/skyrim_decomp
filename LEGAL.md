@@ -133,3 +133,11 @@ SHA-256 manifest before use. A mismatch discards the restored tree and fetches h
 payloads from Microsoft's pinned catalog. Fork PRs can restore this cache; that visibility is
 explicitly accepted. This is the maintainer's project-policy authorization. It does not authorize
 compiler packages in Git history, releases or ordinary artifacts, or any game bytes in CI/cache.
+
+**CI candidate branches (awarebayes, 2026-11-15, p148).** The maintainer explicitly authorized
+source-only candidate batches on a ref or branch for the CI second-host fallback
+(`docs/authorizations.md`). Those guarded draft branches may precede acceptance and never count
+as accepted functions. This is a narrow exception to the acceptance-only publication timing
+above. Only reconstructed source and sanitized requests/results travel; no game bytes, objects,
+raw listings, private inputs or compiler diagnostics are published. Individual or family review,
+sampling and normal integration remain required for acceptance.
