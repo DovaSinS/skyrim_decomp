@@ -24,7 +24,9 @@ downloads, temporary extraction and comparisons. **8 GiB initially free is a pla
 not a measured minimum or guarantee.** A whole-game Steam installation needs separate space;
 other platforms and tasks can require more. Private reproduction logs remain with the operator.
 
-## Optional decompiler status
+<a id="optional-decompiler-status"></a>
+
+## Recommended decompiler status
 
 **Native macOS arm64 end-to-end run passed on 2026-11-16:** macOS 26.2, Apple M4 Pro,
 24 GiB physical RAM, Python 3.13.12, the pinned Steam target, Ghidra 12.2 and Temurin 25.0.1+8.
@@ -57,6 +59,6 @@ Wall times include polling (one second for analysis, half a second for export/pa
 RSS was sampled across the worker's process tree every second, with the helper's own analysis
 sampler at two seconds; export RSS used half-second samples. Sampling can miss spikes, and RSS
 does not count nonresident memory or define how much free RAM another machine needs.
-Native Windows and Linux optional-decompiler runs remain **unverified**. Offline tests cover
+Native Windows and Linux decompiler runs remain **unverified**. Offline tests cover
 archive hashes, installation reuse, platform/native-build selection, checkpoints, OOM rejection,
 private pack layout and publication rejection; those tests do not establish another OS run.

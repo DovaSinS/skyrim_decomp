@@ -28,14 +28,17 @@ For typed bases, virtual signatures, cleanup choices and header gaps, see the
 [declaration kit](declaration-kit.md). `start` leaves bodies and code origin
 unfilled; resolve every skeleton marker before submitting.
 
-## Optional pseudo-C hint
+## Recommended pseudo-C hint, installed by default
 
-`./sr --json --yes setup --decompiler` or `go --decompiler` installs hash-pinned Ghidra and
+`./sr --json --yes setup` or `go` installs hash-pinned Ghidra and
 Temurin privately and starts a one-time background analysis. The macOS arm64 archives total
 706 MB; the measured install occupied 1.16 GiB and its project 0.64 GiB. Reused-install setup
 took 0.36 seconds; fresh import/analysis took 8.8 minutes, with 4.62 GiB sampled peak RSS under
-a 16 GiB heap cap. RSS is not a minimum RAM requirement. Rerun setup for progress.
-See [setup and platform status](contributing-agent.md#optional-local-decompiler).
+a 16 GiB heap cap. The complete measured directory used about 1.8 GiB. RSS is not a minimum
+RAM requirement. `--no-decompiler` skips this step; setup also skips it with a clear retry hint
+below 18 GiB available RAM (including a 2 GiB margin), about 3 GiB free disk, or unknown resources.
+It runs in the background; start the first function while it works. Rerun setup for progress.
+See [setup and platform status](contributing-agent.md#recommended-local-decompiler).
 Once ready, `start` adds `decomp.c` beside the listing; `./sr --json decomp 0x<rva>` fills an
 existing pack. It includes direct callees' guessed signatures.
 

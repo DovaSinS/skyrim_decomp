@@ -4,11 +4,11 @@ compare locally and open a pull request. Python 3.11+ standard library only; Lin
 
     ./sr go [--profile cheap|full]   # one command: setup, pick, claim and start a function
     ./sr doctor             # what is present, what is missing, the one next step
-    ./sr setup [--yes] [--exe PATH] [--accept-microsoft-license] [--decompiler]
+    ./sr setup [--yes] [--exe PATH] [--accept-microsoft-license] [--no-decompiler]
     ./sr next               # unclaimed targets ranked by advisory draft readiness
     ./sr claim 0x<rva>      # GitHub issue as a claim (or a prefilled link)
     ./sr start 0x<rva>      # branch, unit skeleton, local pack from your exe
-    ./sr decomp 0x<rva>     # optional private Ghidra pseudo-C hint (after setup --decompiler)
+    ./sr decomp 0x<rva>     # private Ghidra pseudo-C hint (once background analysis is ready)
     ./sr compare            # compile with the pinned MSVC and run the comparator
     ./sr preflight          # shared deterministic intake checks, before or after compare
     ./sr submit [--dry-run] # checks, commit, push, pull request
@@ -1422,14 +1422,13 @@ def cmd_setup(ctx, args):
         step('game executable', 'needs-person', detail)
         raise Stop(MISSING, detail, f'{ctx.cli} setup --exe "<path to SkyrimSE.exe>"', steps=steps,
                    steamcmd_route=steamcmd_route(ctx), pinned={k: target[k] for k in ('version', 'store', 'image_sha256')})
-    if getattr(args, 'decompiler', False):
+    if getattr(args, 'decompiler', True):
         import contrib_decompiler
-        try:
-            decompiler = contrib_decompiler.setup(ctx, args.no_install)
-        except Stop as exc:
-            exc.data['component'] = 'decompiler'
-            raise
-        step('decompiler', decompiler['state'], 'private background analysis; rerun setup --decompiler for progress')
+        decompiler = contrib_decompiler.recommended_setup(ctx, args.no_install)
+        detail = (decompiler['reason'] + f'; run {ctx.cli} --yes setup later to retry'
+                  if decompiler['state'] == 'skipped' else
+                  f'private background analysis; rerun {ctx.cli} setup for progress')
+        step('decompiler', decompiler['state'], detail)
     # 3. Community sources for the label and origin checks.
     if not args.no_sources:
         try:
@@ -1474,7 +1473,7 @@ def cmd_setup(ctx, args):
             raise Stop(code, 'self-test failed: the local toolchain does not reproduce an accepted match',
                        f'{ctx.cli} doctor', steps=steps, self_test=data)
     result = {'steps': steps}
-    if getattr(args, 'decompiler', False):
+    if getattr(args, 'decompiler', True):
         result['decompiler'] = decompiler
     return OK, result, f'{ctx.cli} next'
 
@@ -2270,7 +2269,7 @@ def cmd_go(ctx, args):
     """setup -> next -> claim -> start, stopping at the first step that needs a person."""
     setup_args = argparse.Namespace(exe=args.exe, accept_microsoft_license=args.accept_microsoft_license,
                                     no_install=False, no_sources=False, no_self_test=args.no_self_test,
-                                    steamcmd=False, no_sibling=args.no_sibling, decompiler=getattr(args, 'decompiler', False),
+                                    steamcmd=False, no_sibling=args.no_sibling, decompiler=getattr(args, 'decompiler', True),
                                     accept_winget_source_agreements=args.accept_winget_source_agreements)
     try:
         cmd_setup(ctx, setup_args)
@@ -2322,7 +2321,8 @@ def parser():
     s = sub.add_parser('decomp')
     s.add_argument('rva')
     s = sub.add_parser('setup')
-    s.add_argument('--decompiler', action='store_true', help='optional private Ghidra pseudo-C view')
+    s.add_argument('--decompiler', action=argparse.BooleanOptionalAction, default=True,
+                   help='recommended private Ghidra view (default on; --no-decompiler skips it)')
     s.add_argument('--exe')
     s.add_argument('--accept-microsoft-license', action='store_true',
                    help='a person has read and accepted the VS 2017 Build Tools licence')
@@ -2380,7 +2380,8 @@ def parser():
     s.add_argument('--base', required=True)
     s.add_argument('--head', default='HEAD')
     s = sub.add_parser('go')
-    s.add_argument('--decompiler', action='store_true', help='also set up the optional private Ghidra view')
+    s.add_argument('--decompiler', action=argparse.BooleanOptionalAction, default=True,
+                   help='recommended private Ghidra view (default on; --no-decompiler skips it)')
     s.add_argument('--model', '--agent', help='actual model id or agent/tool name, recorded before claiming')
     s.add_argument('rva', nargs='?')
     s.add_argument('--exe')

@@ -8,8 +8,8 @@ All three are original code and contain no game data. **Everything they write is
 stays under `.local/`** (G1 and G2 in `docs/authorizations.md`); never copy a pack into a tracked
 file, issue, PR, log or upload.
 
-External contributors can opt into `./sr --json --yes setup --decompiler`; see
-[the contributor guide](../../docs/contributing-agent.md#optional-local-decompiler). It creates
+External contributors get the recommended decompiler by default with `./sr --json --yes setup`;
+`--no-decompiler` skips it. See [the contributor guide](../../docs/contributing-agent.md#recommended-local-decompiler). It creates
 its own hash-checked private project and reuses only this directory's original scripts.
 `ExportPack.java`'s `contrib` mode writes a labelled `decomp.c` with direct callee signatures;
 internal `full` and `refs` exports keep their existing format. `ContribConfigure.java` disables

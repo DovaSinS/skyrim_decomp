@@ -26,7 +26,7 @@ authentication steps can also require their action; do not claim they are alread
    Show them the link. Pass `--accept-microsoft-license` only after they say they accept it. Never
    accept it yourself.
 
-Before you read any pack, ask once: reading a listing or optional decompiler view made from their
+Before you read any pack, ask once: reading a listing or decompiler view made from their
 own copy of the game sends parts of it to your AI provider. That is their decision and their
 responsibility, under their provider's terms; the project grants no rights in the game. Continue only if they agree. Nothing
 from a pack ever goes into the repository, a pull request, an issue or CI.
@@ -100,11 +100,11 @@ source that submit will commit.
 A pass on this machine is not acceptance. Tell the person that the project re-runs the comparison
 on its own two hosts and a Reviewer checks the source before the function counts as matched.
 
-## Optional local decompiler
+## Recommended local decompiler
 
-`./sr --json --yes setup --decompiler` (Windows: `.\sr.cmd --json --yes setup --decompiler`)
-adds a private Ghidra view; `go --decompiler` enables the same optional step. The ordinary byte
-and LLVM listings remain available without it. The helper first checks the owner's executable
+`./sr --json --yes setup` (Windows: `.\sr.cmd --json --yes setup`) and `./sr go`
+install the recommended private Ghidra view by default. Use `--no-decompiler` to skip it.
+The ordinary byte and LLVM listings remain available without it. The helper first checks the owner's executable
 against the pinned hash, then downloads **Ghidra 12.2** from the official NSA GitHub release and
 **Eclipse Temurin 25.0.1+8**, checking every archive against the exact SHA-256 in
 [`tools/contrib-decompiler-pins.json`](../tools/contrib-decompiler-pins.json). Ghidra is Apache-2.0;
@@ -124,11 +124,15 @@ peak process-tree RSS of **4.62 GiB**. The configured Java heap cap is **16 GiB*
 four analysis CPUs and additional native memory. RSS is not a minimum RAM requirement: sampling,
 nonresident pages and other work on the machine affect it. The earlier 8 GiB-cap attempt reported
 a JVM out-of-memory error.
+Before a new analysis, setup measures available RAM and free disk. It automatically skips the
+decompiler below **18 GiB available RAM** (16 GiB heap plus a 2 GiB margin), below about **3 GiB
+free disk**, or when resources cannot be measured. One line explains the skip and says to rerun
+`./sr --yes setup` later. Installation or launch failure also leaves ordinary setup usable.
 A per-function `decomp` took **13.5 seconds**, with **0.44 GiB** sampled peak RSS. Installed tools
 occupied **1.16 GiB**, the completed project **0.64 GiB**, and the complete decompiler directory
 **1.82 GiB**, excluding archive cache and the executable. These are measured local observations,
 not cold-install timing or universal capacity guarantees; see [method and platform limits](contributor-platforms.md#optional-decompiler-status).
-It runs in the background: rerun `setup --decompiler` to see
+It runs in the background, so the first function can start before analysis finishes: rerun `setup` to see
 its phase, elapsed seconds and sampled process-tree RSS in the `decompiler` result. The private
 `state.json` and `analysis.log` paths are printed at launch. An interrupted run reuses the saved
 import and restarts the incomplete analysis pass; a completed analysis is reused. PDB acquisition

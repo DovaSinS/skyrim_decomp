@@ -169,9 +169,99 @@ class DecompilerTests(unittest.TestCase):
             self.assertIsNone(d.process_tree_rss(10))
 
     def test_setup_and_go_accept_opt_in(self):
-        self.assertTrue(contrib.parser().parse_args(['setup', '--decompiler']).decompiler)
-        self.assertTrue(contrib.parser().parse_args(['go', '--decompiler']).decompiler)
+        for command in ('setup', 'go'):
+            self.assertTrue(contrib.parser().parse_args([command]).decompiler)
+            self.assertTrue(contrib.parser().parse_args([command, '--decompiler']).decompiler)
+            self.assertFalse(contrib.parser().parse_args([command, '--no-decompiler']).decompiler)
         self.assertEqual(contrib.parser().parse_args(['decomp', '0x1234']).rva, '0x1234')
+
+    def ordinary_setup(self, *extra):
+        self.ctx.platform = 'linux'
+        args = contrib.parser().parse_args(['setup', '--no-sources', '--no-sibling', '--no-self-test', *extra])
+        with patch.object(self.ctx, 'which', return_value='/synthetic/git'), \
+                patch.object(contrib, 'check_toolchain', return_value={'status': 'override', 'bin': 'synthetic'}), \
+                patch.object(contrib, 'wanted_packages', return_value=[]), \
+                patch.object(contrib, 'package_manager', return_value=None), \
+                patch.object(contrib, 'resolve_exe', return_value=({'status': 'ok', 'path': 'synthetic.exe'}, 'synthetic')):
+            return contrib.cmd_setup(self.ctx, args)
+
+    def test_ordinary_setup_installs_decompiler_by_default_and_opt_out_skips_it(self):
+        with patch.object(d, 'recommended_setup', return_value={'state': 'starting'}) as setup:
+            code, data, _ = self.ordinary_setup()
+            self.assertEqual(code, contrib.OK)
+            self.assertEqual(data['decompiler']['state'], 'starting')
+            setup.assert_called_once_with(self.ctx, False)
+            setup.reset_mock()
+            code, data, _ = self.ordinary_setup('--no-decompiler')
+            self.assertEqual(code, contrib.OK)
+            self.assertNotIn('decompiler', data)
+            setup.assert_not_called()
+
+    def test_low_available_ram_skips_without_download_or_setup_failure(self):
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'available_ram', return_value=17 * 1024**3), \
+                patch.object(d, 'install') as install:
+            code, data, _ = self.ordinary_setup()
+        self.assertEqual(code, contrib.OK)
+        self.assertEqual(data['decompiler']['state'], 'skipped')
+        self.assertIn('17.0 GiB available RAM', data['decompiler']['reason'])
+        install.assert_not_called()
+        lines = [line for line in self.ctx.log if 'decompiler:' in line]
+        self.assertEqual(len(lines), 1)
+        self.assertIn('setup later', lines[0])
+
+    def test_low_disk_unknown_ram_and_launch_failure_are_nonblocking(self):
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'available_ram', return_value=20 * 1024**3), \
+                patch.object(d.shutil, 'disk_usage', return_value=Mock(free=2 * 1024**3)), \
+                patch.object(d, 'setup') as setup:
+            result = d.recommended_setup(self.ctx)
+            self.assertEqual(result['state'], 'skipped')
+            self.assertIn('free disk', result['reason'])
+            setup.assert_not_called()
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'available_ram', return_value=None):
+            self.assertIn('could not be measured', d.recommended_setup(self.ctx)['reason'])
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'resource_problem', return_value=None), \
+                patch.object(d, 'setup', side_effect=contrib.Stop(contrib.NETWORK, 'synthetic failure')):
+            self.assertEqual(d.recommended_setup(self.ctx)['state'], 'skipped')
+
+    def test_ready_analysis_stays_available_without_new_resource_reservation(self):
+        d.write_json(self.project / 'state.json', dict(state='ready'))
+        with patch.object(d, 'identity', return_value=('synthetic.exe', self.project)), \
+                patch.object(d, 'resource_problem') as resources, patch.object(d, 'setup') as setup:
+            self.assertEqual(d.recommended_setup(self.ctx)['state'], 'ready')
+            self.assertTrue(contrib.load_config(self.ctx)['decompiler'])
+            resources.assert_not_called()
+            setup.assert_not_called()
+
+    def test_go_forwards_default_and_opt_out_to_setup(self):
+        for extra in ([], ['--no-decompiler']):
+            args = contrib.parser().parse_args(['go', *extra])
+            with patch.object(contrib, 'cmd_setup', side_effect=contrib.Stop(contrib.USAGE, 'synthetic stop')) as setup:
+                with self.assertRaises(contrib.Stop):
+                    contrib.cmd_go(self.ctx, args)
+                self.assertEqual(setup.call_args.args[1].decompiler, not extra)
+
+    def test_available_ram_uses_available_values_on_mac_linux_and_windows(self):
+        self.ctx.platform = 'darwin'
+        self.ctx.runner = lambda *a, **kw: subprocess.CompletedProcess(a, 0, stdout=(
+            'Mach Virtual Memory Statistics: (page size of 16384 bytes)\n'
+            'Pages free: 100.\nPages inactive: 200.\nPages speculative: 300.\nPages wired down: 900.\n'))
+        self.assertEqual(d.available_ram(self.ctx), 300 * 16384)
+        self.ctx.platform = 'linux'
+        with patch.object(Path, 'read_text', return_value='MemTotal: 99999 kB\nMemAvailable: 12345 kB\n'):
+            self.assertEqual(d.available_ram(self.ctx), 12345 * 1024)
+        self.ctx.platform = 'win32'
+        import ctypes
+        def memory(pointer):
+            self.assertEqual(pointer._obj.length, 64)
+            pointer._obj.avail_phys = 123456
+            return 1
+        with patch.object(ctypes, 'windll', Mock(), create=True) as dll:
+            dll.kernel32.GlobalMemoryStatusEx.side_effect = memory
+            self.assertEqual(d.available_ram(self.ctx), 123456)
 
     def test_go_does_not_swallow_optional_decompiler_setup_failure(self):
         args = contrib.parser().parse_args(['go', '--decompiler'])

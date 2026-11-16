@@ -1,4 +1,4 @@
-"""Optional contributor Ghidra view. All downloads, projects, logs and output stay private.
+"""Recommended contributor Ghidra view. Downloads, projects, logs and output stay private.
 
 Original tooling only; no internal project, private config or analysis data is reused.
 """
@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import platform
+import re
 import shutil
 import subprocess
 import sys
@@ -19,7 +20,71 @@ import urllib.request
 import zipfile
 
 HEAP = '16G'
+ANALYSIS_RAM = 18 * 1024**3  # 16 GiB heap plus 2 GiB for native memory and headroom.
+ANALYSIS_DISK = 3 * 1024**3
 WARNING = 'PRIVATE DECOMPILER HINT: never paste publicly; untrusted, not evidence'
+
+
+def available_ram(ctx):
+    """Conservative available/reclaimable RAM, not capacity; unknown means defer."""
+    if ctx.windows:
+        import ctypes
+        class Memory(ctypes.Structure):
+            _fields_ = [('length', ctypes.c_uint32), ('load', ctypes.c_uint32)] + [
+                (name, ctypes.c_ulonglong) for name in
+                ('total_phys', 'avail_phys', 'total_page', 'avail_page', 'total_virtual',
+                 'avail_virtual', 'avail_extended')]
+        memory = Memory()
+        memory.length = ctypes.sizeof(memory)
+        if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(memory)):
+            return None
+        return memory.avail_phys
+    if ctx.platform == 'linux':
+        match = re.search(r'^MemAvailable:\s+(\d+)\s+kB$', Path('/proc/meminfo').read_text(), re.M)
+        return int(match[1]) * 1024 if match else None
+    if ctx.platform == 'darwin':
+        result = ctx.run(['/usr/bin/vm_stat'], capture_output=True, text=True, timeout=10)
+        size = re.search(r'page size of (\d+) bytes', result.stdout)
+        pages = [re.search(r'^' + label + r':\s+(\d+)\.', result.stdout, re.M)
+                 for label in ('Pages free', 'Pages inactive')]
+        if result.returncode == 0 and size and all(pages):
+            return int(size[1]) * sum(int(p[1]) for p in pages)
+    return None
+
+
+def resource_problem(ctx):
+    try:
+        available = available_ram(ctx)
+    except (OSError, ValueError, AttributeError, subprocess.SubprocessError):
+        available = None
+    if available is None:
+        return 'available RAM could not be measured'
+    if available < ANALYSIS_RAM:
+        return f'{available / 1024**3:.1f} GiB available RAM; need 18 GiB (16 GiB heap plus 2 GiB margin)'
+    path = ctx.private
+    while not path.exists():
+        path = path.parent
+    free = shutil.disk_usage(path).free
+    if free < ANALYSIS_DISK:
+        return f'{free / 1024**3:.1f} GiB free disk; need about 3 GiB'
+    return None
+
+
+def recommended_setup(ctx, no_install=False):
+    """A helpful background hint must never make ordinary setup fail."""
+    try:
+        _exe, project = identity(ctx)
+        state = status(project)
+        if state['state'] in ('ready', 'running', 'starting'):
+            api().save_config(ctx, decompiler=True)
+            return state
+        reason = resource_problem(ctx)
+        if reason:
+            return dict(state='skipped', reason=reason)
+        return setup(ctx, no_install)
+    except (api().Stop, OSError, ValueError, KeyError, TypeError, AttributeError, subprocess.SubprocessError):
+        return dict(state='skipped', reason='decompiler installation or analysis launch unavailable; '
+                    'check the private decompiler logs and network')
 
 
 def api():
@@ -182,13 +247,13 @@ def install(ctx, no_install=False):
         ensure_native(ctx)
         return
     total = sum(p['size'] for p in selected)
-    ctx.say(f'Optional Ghidra 12.2 + Temurin 25.0.1: {total / 1e6:.1f} MB download; '
+    ctx.say(f'Recommended Ghidra 12.2 + Temurin 25.0.1: {total / 1e6:.1f} MB download; '
             'allow 3 GB disk plus project space. Apache-2.0 and GPL-2.0 with Classpath exception; '
             'no licence acceptance required. https://adoptium.net/about/license/')
     if no_install:
-        raise c.Stop(c.MISSING, 'optional decompiler is not installed', f'{ctx.cli} --yes setup --decompiler')
-    if not ctx.ask('Download and unpack the optional private decompiler?', '--yes'):
-        raise c.Stop(c.CONSENT, 'optional decompiler install declined', f'{ctx.cli} --yes setup --decompiler')
+        raise c.Stop(c.MISSING, 'recommended decompiler is not installed', f'{ctx.cli} --yes setup')
+    if not ctx.ask('Download and unpack the recommended private decompiler?', '--yes'):
+        raise c.Stop(c.CONSENT, 'decompiler install declined', f'{ctx.cli} --yes setup')
     dest = directory(ctx) / 'tools'
     dest.mkdir(parents=True, exist_ok=True)
     for pin in selected:
@@ -371,7 +436,7 @@ def setup_locked(ctx, exe, project, no_install):
         return state
     ctx.say(f'One-time private analysis: {HEAP} Java heap cap plus native memory; '
             'see docs/contributor-platforms.md for measured costs. '
-            'Runs in background; rerun setup --decompiler for status. '
+            'Runs in background; rerun setup for status. '
             'Interrupted runs resume from the saved import; the current analysis pass restarts.')
     names = c.public_names(ctx.repo, c.inventory(ctx.repo))
     (project / 'names.tsv').write_text(''.join(f'0x{r:x}\t{n[0]}\n' for r, n in sorted(names.items())),
@@ -556,4 +621,4 @@ if __name__ == '__main__':
     if len(sys.argv) == 5 and sys.argv[1] == '--worker':
         run_worker(*sys.argv[2:])
     else:
-        raise SystemExit('Use ./sr setup --decompiler or ./sr decomp 0x<rva>')
+        raise SystemExit('Use ./sr setup or ./sr decomp 0x<rva>')
