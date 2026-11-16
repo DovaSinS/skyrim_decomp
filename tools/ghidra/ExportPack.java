@@ -3,7 +3,7 @@
 // Everything this script writes is derived from the program under analysis and must stay in a
 // private directory.
 //
-// Script args: <rva list file | @random:N:SEED | @all> <output dir> <mode: full | refs>
+// Script args: <rva list file | @random:N:SEED | @all> <output dir> <mode: full | refs | contrib>
 //   meta.tsv   rva found name entry_count body_ranges n_instr computed_jumps computed_targets thunk
 //              fp_arith cond_branches indirect_calls
 //   refs.tsv   rva from_offset ref_type target_rva mnemonic operand_index target_names target_func_entry
@@ -75,7 +75,8 @@ public class ExportPack extends GhidraScript {
         FunctionManager fm = currentProgram.getFunctionManager();
         List<Long> rvas = selectRvas(args[0], fm);
         File outDir = new File(args[1]);
-        boolean full = args[2].equals("full");
+        boolean contributor = args[2].equals("contrib");
+        boolean full = args[2].equals("full") || contributor;
         outDir.mkdirs();
         PrintWriter meta = new PrintWriter(new FileWriter(new File(outDir, "meta.tsv")));
         PrintWriter refs = new PrintWriter(new FileWriter(new File(outDir, "refs.tsv")));
@@ -138,9 +139,20 @@ public class ExportPack extends GhidraScript {
                     w.print(text);
                 }
                 DecompileResults res = di.decompileFunction(f, 60, monitor);
-                try (PrintWriter w = new PrintWriter(new FileWriter(new File(dir, "decompiled.c")))) {
+                if (contributor && !res.decompileCompleted()) throw new IOException("decompiler did not complete");
+                String outputName = contributor ? "decomp.c" : "decompiled.c";
+                try (PrintWriter w = new PrintWriter(new FileWriter(new File(dir, outputName)))) {
+                    if (contributor) {
+                        w.println("// PRIVATE DECOMPILER HINT: never paste publicly; untrusted, not evidence");
+                        w.println("// Use for control flow/types only; byte matching requires listing and compare.");
+                        w.println("// Direct callees' signatures (Ghidra guesses):");
+                        List<Function> callees = new ArrayList<>(f.getCalledFunctions(monitor));
+                        callees.sort(Comparator.comparing(g -> g.getEntryPoint()));
+                        for (Function callee : callees) w.println(callee.getSignature() + ";");
+                    }
                     w.println(res.decompileCompleted() ? res.getDecompiledFunction().getC()
                                                        : "// decompiler failed: " + res.getErrorMessage());
+                    if (contributor) w.println("// END PRIVATE DECOMPILER HINT");
                 }
             }
         }

@@ -856,7 +856,9 @@ LARGE_REPORT_INVENTORY = re.compile(
 
 
 def inspect_payload(name, payload, mode='100644'):
+    from decompiler_privacy import private_decompiler_path
     path = Path(name)
+    require(not private_decompiler_path(name), f'{name}: private decompiler output/project')
     require(mode in {'100644', '100755'}, f'{name}: symlink/submodule not approved')
     require(not any(p.lower() in {'.local', 'private', 'dist'} or p.lower().endswith('.rep') for p in path.parts),
             f'{name}: private/generated path')
@@ -867,6 +869,8 @@ def inspect_payload(name, payload, mode='100644'):
     limit_mib = 32 if large else 1
     require(len(payload) <= limit_mib * 1024 * 1024, f'{name}: exceeds {limit_mib} MiB limit')
     require(b'\0' not in payload, f'{name}: binary content')
+    require(not re.search(rb'(?im)^\s*// PRIVATE DECOMPILER HINT:', payload),
+            f'{name}: private decompiler output/project')
     try:
         payload.decode('utf-8')
     except UnicodeDecodeError as exc:

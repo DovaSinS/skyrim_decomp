@@ -5,8 +5,8 @@ Use `./sr` (Windows: `.\sr.cmd`) in your own clone. Start with
 `compare`, then `submit --dry-run` and `submit`. Project runners and private handoffs are not used.
 
 Read only the private pack named by the helper, after the owner has agreed to model exposure.
-Never post listings, bytes, objects, raw diagnostics or paths. Keep the skeleton's provenance and
-licence fields; name your actual model. Community headers supply hypotheses, not binary proof.
+Never post listings, pseudo-C, Ghidra projects, bytes, objects, raw diagnostics or paths. Keep the
+skeleton's provenance and licence fields; name your actual model. Community headers supply hypotheses, not binary proof.
 For FNV reuse use `SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence)` and cite each reused
 body in a `Sibling source: momusdigital/fnv_decomp@91e1b6e8 <path>:<line>` header line. Another
 game proves no Skyrim offset, layout or behavior. Follow LEGAL.md and PROVENANCE.md.
@@ -20,6 +20,22 @@ of 6 comparisons. Under `full`, use 4 without improvement and a hard cap of 10. 
 matching bytes improve; missing diagnostics are unknown. Stop when the helper says to stop,
 preserve the source and sanitized reason, and release the claim if you leave it. Never change
 inputs, compiler flags, comparator or checks to force a pass. The matching cookbook is optional.
+
+## Optional pseudo-C hint
+
+`./sr --json --yes setup --decompiler` or `go --decompiler` installs hash-pinned Ghidra and
+Temurin privately and starts a one-time background analysis. Budget about 0.7 GB download,
+3 GB tool/archive space plus the project, and an 8 GiB heap plus native memory. Allow 10–30
+minutes as an initial estimate; measured costs are pending. Rerun setup for progress.
+See [setup and platform status](contributing-agent.md#optional-local-decompiler).
+Once ready, `start` adds `decomp.c` beside the listing; `./sr --json decomp 0x<rva>` fills an
+existing pack. It includes direct callees' guessed signatures.
+
+Ask once before reading listings **or pseudo-C**: this sends parts of the owner's own game copy
+to their AI provider, under their own account and provider's terms; it is their decision and
+responsibility. Continue only if they agree. Pseudo-C is a private, untrusted hint for control
+flow and possible types. Write your own reconstruction; the listing and unchanged `compare`
+decide byte matching. Never paste the hint or project into a public place.
 
 ## Rules for small functions
 

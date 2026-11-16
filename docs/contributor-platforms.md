@@ -23,3 +23,14 @@ about **5.1 GiB** in that simulation, excluding the game installation. Leave add
 downloads, temporary extraction and comparisons. **8 GiB initially free is a planning buffer,
 not a measured minimum or guarantee.** A whole-game Steam installation needs separate space;
 other platforms and tasks can require more. Private reproduction logs remain with the operator.
+
+## Optional decompiler status
+
+The optional `setup --decompiler` workflow has mocked offline coverage for archive hash checking,
+installation reuse, platform selection, native-build commands, background analysis checkpoints,
+private pack layout and publication rejection. The official runtime downloads and local macOS
+native source build were exercised. A complete analysis followed by a per-function export has
+**not yet been validated**; end-to-end validation and measured time/RAM costs are deferred to a
+native Windows x64 run. No optional-decompiler success is inferred from the contributor workflow
+results above. Package sizes come from the pins; free-RAM and duration guidance are planning
+estimates.
