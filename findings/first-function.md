@@ -203,7 +203,7 @@ reference handling. The cost is that it exercises none of the relocation paths. 
 carry `REL32` call and data references, cover those next.
 
 Alternatives to the community name: NG could have the slot right and the method name wrong. A
-byte match would not settle the name (`docs/plan.md` step 5).
+byte match would not settle the name (see `docs/verification.md`, Behavior and names).
 
 ## Reproduction and sanitized evidence
 

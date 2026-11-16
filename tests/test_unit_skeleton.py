@@ -516,6 +516,7 @@ class AttemptMissingSource(unittest.TestCase):
         self.assertIn('does not exist yet', err.getvalue())
         self.assertFalse((self.dir / 'attempts.jsonl').exists())
         self.assertFalse((self.dir / 'attempts').exists())
+        self.assertFalse((self.dir / 'attribution-first.json').exists())
 
 
 if __name__ == '__main__':

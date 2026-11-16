@@ -2,6 +2,7 @@
 import copy
 import fcntl
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -102,9 +103,15 @@ class Supersession(unittest.TestCase):
     def test_generic_resume_preserves_supported_terminal_supersession(self):
         self.finish()
         saved = lane.read(self.path)
+        real_run = subprocess.run
+        owner_probe = ['ps', '-p', str(os.getpid()), '-o', 'lstart=']
+        def only_owner_probe(command, *args, **kwargs):
+            self.assertEqual(command, owner_probe, 'terminal CI must not be reobserved')
+            return real_run(command, *args, **kwargs)
         with patch.object(lane, 'lane_python', return_value=sys.executable), \
-                patch.object(lane.subprocess, 'run', side_effect=AssertionError('terminal CI must not be reobserved')):
+                patch.object(lane.subprocess, 'run', side_effect=only_owner_probe) as commands:
             result = lane.run_lane(self.root, self.fdir, resume='test-run')
+        commands.assert_called_once_with(owner_probe, capture_output=True, text=True)
         self.assertEqual(result, saved)
         self.assertEqual(lane.read(self.path), saved)
 

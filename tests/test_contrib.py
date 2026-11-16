@@ -179,7 +179,7 @@ class ExecutableTests(Base):
         found = contrib.exe_candidates(ctx, exists=lambda p: p in files, dir_exists=lambda p: p in dirs,
                                        read=lambda p: vdf)
         self.assertEqual(found, [r'D:\Games\SteamLibrary\steamapps\common\Skyrim Special Edition\SkyrimSE.exe'])
-        self.assertEqual(ctx.cli, 'py tools\\contrib.py')
+        self.assertEqual(ctx.cli, '.\\sr.cmd')
 
     def test_steamcmd_route_never_carries_credentials(self):
         lines = contrib.steamcmd_route(self.ctx())
@@ -264,7 +264,7 @@ class ClaimTests(Base):
         ctx = self.ctx(github=gh)
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
-            code = contrib.main(['--json', 'claim', f'0x{MAPPED:x}', *extra], ctx=ctx)
+            code = contrib.main(['--json', 'claim', '--model', 'synthetic-agent', f'0x{MAPPED:x}', *extra], ctx=ctx)
         return code, json.loads(out.getvalue())
 
     def test_json_shape(self):
@@ -273,6 +273,8 @@ class ClaimTests(Base):
         for key in ('command', 'ok', 'exit_code', 'error', 'next', 'messages'):
             self.assertIn(key, out)
         self.assertEqual(out['claim'], 'https://github.com/x/y/issues/99')
+        self.assertEqual(contrib.local_claims(self.ctx())[f'0x{MAPPED:x}']['model'], 'synthetic-agent')
+        self.assertEqual(contrib.load_config(self.ctx())['model'], 'synthetic-agent')
 
     def test_collision_is_refused(self):
         gh = FakeGitHub({MAPPED: [item('someone', 0)]})
@@ -308,7 +310,7 @@ class ClaimTests(Base):
     def test_matched_function_cannot_be_claimed(self):
         ctx = self.ctx(github=FakeGitHub())
         with contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(contrib.main(['--json', 'claim', f'0x{contrib.SELF_TEST_RVA:x}'], ctx=ctx), contrib.USAGE)
+            self.assertEqual(contrib.main(['--json', 'claim', '--model', 'synthetic-agent', f'0x{contrib.SELF_TEST_RVA:x}'], ctx=ctx), contrib.USAGE)
 
 
 class SkeletonTests(Base):
@@ -675,7 +677,7 @@ class ClaimFollowUpTests(Base):
         ctx = self.ctx(github=gh, env=env or {'PATH': ''})
         out = io.StringIO()
         with contextlib.redirect_stdout(out):
-            code = contrib.main(['--json', 'claim', f'0x{MAPPED:x}', *extra], ctx=ctx)
+            code = contrib.main(['--json', 'claim', '--model', 'synthetic-agent', f'0x{MAPPED:x}', *extra], ctx=ctx)
         return code, json.loads(out.getvalue())
 
     def test_link_only_is_not_recorded_as_claimed(self):
@@ -1003,6 +1005,47 @@ class OutsiderRegressionTests(Base):
 
 
 class SubmitPreflightTests(SubmitTests):
+    def test_renamed_or_legacy_upstream_can_never_receive_submit_push(self):
+        self.git('remote', 'remove', 'fork')
+        self.git('remote', 'add', 'origin', 'https://github.com/awarebayes/skyrim_decomp.git')
+        for url in ('https://github.com/awarebayes/skyrim_decomp.git',
+                    'git@github.com:awarebayes/skyrim-research.git',
+                    'https://github.com/AWAREBAYES/SKYRIM_DECOMP.git/'):
+            with self.subTest(url=url):
+                self.git('remote', 'set-url', 'origin', url)
+                before = self.state()
+                commands = []
+                def runner(cmd, **kw):
+                    commands.append(cmd)
+                    if cmd[:2] == ['git', 'push']:
+                        self.fail('submit attempted an upstream push, including a credential probe')
+                    return self.runner(cmd, **kw)
+                ctx = self.ctx(repo=self.repo, github=FakeGitHub(), runner=runner,
+                               env={'PATH': '/usr/bin:/bin', 'HOME': str(self.tmp)})
+                for dry_run in (True, False):
+                    out = io.StringIO()
+                    with contextlib.redirect_stdout(out):
+                        code = contrib.main(['--json', 'submit', '--base', 'HEAD'] +
+                                            (['--dry-run'] if dry_run else []), ctx=ctx)
+                    result = json.loads(out.getvalue())
+                    self.assertEqual(code, contrib.FAILED)
+                    self.assertIsNone(result['preflight']['fork_remote'])
+                    self.assertIn('no fork remote', ' '.join(result['blockers']))
+                    self.assertIn('<you>/skyrim_decomp.git', ' '.join(result['preflight']['actions']))
+                self.assertEqual(self.state(), before)
+                self.assertFalse(any(c[:2] in (['git', 'add'], ['git', 'commit']) for c in commands))
+
+    def test_fork_with_additional_upstream_push_url_is_refused(self):
+        self.git('remote', 'set-url', '--add', '--push', 'fork',
+                 'https://github.com/contributor/skyrim_decomp.git')
+        self.git('remote', 'set-url', '--add', '--push', 'fork',
+                 'https://github.com/awarebayes/skyrim_decomp.git')
+        ctx = self.ctx(repo=self.repo, runner=self.runner)
+        self.assertEqual(contrib.upstream_remote(ctx), ('fork', None))
+        code, out = self.submit()
+        self.assertEqual(code, contrib.FAILED)
+        self.assertIn('no fork remote', ' '.join(out['blockers']))
+
     def test_fork_push_auth_failure_precedes_staging_and_commit(self):
         before = self.state()
         def runner(cmd, **kw):
@@ -1048,3 +1091,48 @@ class SubmitPreflightTests(SubmitTests):
         self.assertFalse(result['preflight']['authenticated'])
         self.assertIn('no-target', result['ci_hash']['advice'])
         self.assertNotIn('fo4-private', ' '.join(result['warnings']))
+
+
+class ContributorActionsTests(Base):
+    def test_go_requires_person_to_file_link_only_claim_before_start(self):
+        args = contrib.parser().parse_args(['go', '0x1000'])
+        claim = {'claim': 'link-only', 'link': 'https://github.com/x/y/issues/new',
+                 'links': ['https://github.com/x/y/issues/new']}
+        with unittest.mock.patch.object(contrib, 'cmd_setup', return_value=(0, {}, None)), \
+                unittest.mock.patch.object(contrib, 'cmd_claim', return_value=(0, claim, 'file claim')), \
+                unittest.mock.patch.object(contrib, 'start') as start:
+            code, data, nxt = contrib.cmd_go(self.ctx(), args)
+        self.assertEqual(code, contrib.CONSENT)
+        self.assertEqual(data['claim'], 'link-only')
+        self.assertIn(claim['link'], nxt)
+        self.assertIn('claim 0x1000 --github-user', nxt)
+        start.assert_not_called()
+
+    def test_unsigned_claim_body_does_not_mention_placeholder_login(self):
+        import claims
+        body = claims.body('synthetic', [(0x1000, 0x1001)], {'functions': []}, None)
+        self.assertIn('Claimant: (issue author)', body)
+        self.assertNotIn('@claimant', body)
+        self.assertIn('Claimant: @tester', claims.body('synthetic', [(0x1000, 0x1001)],
+                                                     {'functions': []}, 'tester'))
+
+    def test_model_ids_are_preserved_in_attribution_and_claim(self):
+        import agent_identity
+        for model in ('claude-opus-5-5', 'gpt-6.1-sol', 'person, assisted by claude-opus-5-5'):
+            with self.subTest(model=model):
+                self.assertEqual(agent_identity.resolve(drafted_by=model), model)
+                self.assertEqual(agent_identity.resolve(model=model), model)
+                ctx = self.ctx(github=FakeGitHub())
+                contrib.save_config(ctx, drafted_by=model, model=None)
+                with contextlib.redirect_stdout(io.StringIO()):
+                    contrib.cmd_claim(ctx, contrib.parser().parse_args(['claim', f'0x{MAPPED:x}']))
+                self.assertEqual(contrib.load_config(ctx)['model'], model)
+                self.assertEqual(contrib.local_claims(ctx)[f'0x{MAPPED:x}']['model'], model)
+        self.assertEqual(agent_identity.resolve(agent='worker-12'), 'worker')
+
+    def test_contributor_profiles_use_the_contributor_card(self):
+        import profiles
+        for name in ('cheap', 'full'):
+            docs = profiles.get(name)['contrib_docs']
+            self.assertIn('docs/contributor-card.md', docs)
+            self.assertFalse(any('drafter-card' in doc for doc in docs))

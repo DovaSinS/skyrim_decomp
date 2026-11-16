@@ -76,6 +76,36 @@ class PushLane(unittest.TestCase):
         self.assertTrue(any('flow.py sync' in text for _, text in actions))
         self.assertEqual(self.lane()['state'], 'empty')
 
+    def test_service_next_actions_survives_the_read_only_snapshot(self):
+        self.enqueue()
+        lane.write(self.fdir / 'lane/service/config.json', {})
+        frozen = self.tmp / 'service-snapshot'
+        lane.snapshot(self.fdir, frozen)
+        self.assertFalse((frozen / 'lane/service/config.json').exists())
+        actions = flow.next_actions(self.root, frozen, online=False)
+        self.assertTrue(any(kind == 'wait' and 'persistent lane service' in text for kind, text in actions))
+        self.assertFalse(any(kind == 'run' and 'flow.py lane-run' in text for kind, text in actions))
+
+    def test_service_next_actions_holds_failed_inputs_instead_of_starting_a_worker_publisher(self):
+        self.enqueue()
+        result = self.lane(push=False)
+        result['error'] = 'synthetic binding mismatch'
+        lane.save_run(self.fdir, result)
+        lane.write(self.fdir / 'lane/service/config.json', {})
+        frozen = self.tmp / 'failed-service-snapshot'
+        lane.snapshot(self.fdir, frozen)
+        actions = flow.next_actions(self.root, frozen, online=False)
+        self.assertTrue(any(kind == 'stop' and 'Engineer triage' in text for kind, text in actions))
+        self.assertFalse(any(kind == 'run' and 'flow.py lane-run' in text for kind, text in actions))
+
+    def test_service_publication_does_not_send_claim_network_traffic(self):
+        self.enqueue()
+        with patch.object(claims, 'sync_safe') as sync:
+            result = self.lane(sync_claims=False)
+        self.assertEqual(result['state'], 'done')
+        self.assertEqual(result['integrated']['ci'], 'green')
+        sync.assert_not_called()
+
     def test_two_input_roots_share_one_commit_and_one_check(self):
         import shutil
         other = self.tmp / 'worker-two'

@@ -118,13 +118,14 @@ unless `--allow-low-disk` is explicitly supplied. That flag
 never overrides the 3 GB hard minimum. The lane's existing `--min-free-gb` / `SKYRIM_LANE_MIN_FREE_GB`
 can request a higher minimum; neither can admit a new build below 3 GB.
 
-Run `python3 tools/flow.py lane-run` after enqueueing all ready work. One runner takes everything
+Workers enqueue all ready work and leave publication to the persistent lane service below.
+An operator may run `python3 tools/flow.py lane-run` for a manual recovery. One runner takes everything
 queued at its start, carries only the approved input through the existing acceptance path into
 one isolated local clone at current `origin/main`, rebuilds the index once, stages named files,
 runs `check.py --staged` and makes one combined commit. It runs `check.py`, the full unit suite
 and `build_site.py` once on that exact commit, pushes it, and waits for exact-commit CI with
 `ci_status.py`. Work enqueued during the run remains queued for the next run. `--run` on an
-integration command enqueues and runs the lane; `--no-push` also runs it, stopping after checks.
+integration command remains an operator option; workers omit it. `--no-push` runs locally, stopping after checks.
 Resume a failed check or pending CI with `lane-run`; it retains the candidate and checkpoint.
 A red CI stops the lane before any later push.
 
@@ -221,7 +222,7 @@ commands retain their existing behavior. With `--no-wait-lane`, a busy lane retu
 leaving the registered request queued for the next runner.
 `lane-status` reports dead owners using PID, host and process birth, including legacy runs after
 their lock is free; its resume/retire commands preserve the receipt and candidates. A pushed run
-can resume CI but cannot be retired. No run is automatically retired.
+can resume CI but cannot be retired. The service may retire a dead local unpublished receipt and requeue its retained inputs as described below.
 
 For read-only bottleneck numbers, run `python3 tools/pipeline_report.py --root <shared-checkout>
 --flow-dir <shared-flow>` (one command), or add `--json`; `--output <file>` saves only that
@@ -424,6 +425,71 @@ also lock so multi-file mutations stay consistent. Group, queue and receipt JSON
 replacement. Run the updated tooling in every concurrent orchestrator; older integration
 processes retain their old whole-run lock until they finish.
 
+## Persistent lane service
+
+Never kill a lane process you didn't start. Only the lane service or a run's recorded owner
+may stop or retire it; a worker's time box or missing own output grants no ownership.
+
+Workers only enqueue: use `integrate`, `integrate-family`, `integrate-groups` or
+`tooling-push --enqueue-only` (clean committed tip). Omit `--run`. Enqueue-only tooling
+records the immutable revision and returns without taking the lane, checking runtime freshness,
+running tests or waiting for CI. Keep input checkouts and approvals available.
+Never kill a shared publisher, its descendants or process group because a worker's box ends,
+its own acceptance output is absent, or it has waited 15 minutes. Report the receipt and log
+instead. A publisher can be doing work for thousands of other queued functions.
+
+Run the generic service from an operator-managed scheduler using an ignored configuration:
+
+```sh
+python3.13 tools/lane_service.py --config <private-service-config> run-once
+```
+
+The private JSON configuration names `root`, `flow_dir`, `python`, `branch`, `soft_free_gb`,
+`ci_wait` and optional `environment` settings. Scheduler installation and machine-specific values
+belong in the operator's ignored runbook. Supply the private publication and anonymity policies
+through that environment when needed. `run-once` probes an empty or busy queue without publishing;
+with actionable inputs it really publishes. Do not terminate a live publisher.
+
+Each tick probes the existing lane lock and returns immediately if busy. A separate service
+lock prevents overlapping service invocations. An idle tick sends no network traffic. A working
+tick checks disk admission before fetching, refreshes only its dedicated clean `origin-tools`
+checkout, and starts a new interpreter from that exact origin revision. It runs stock `lane-run`
+with all existing acceptance, freshness, full-check, push and exact-SHA CI gates. Gate machinery
+continues to publish separately from function selections. New arrivals wait for the next tick.
+The service's network operations are git fetch/push and gh CI status only; it disables post-CI
+claim synchronization and never dispatches models, remote verifiers or workflow repairs.
+
+Recovery uses the existing retirement path under the lane and state locks. Only known dead
+local owners, without a recorded failure and before push, qualify. Their still-owned running or
+stale function/tooling queue entries become queued again; newer queue owners and terminal
+outcomes stay intact. Receipts, candidates, immutable tooling revisions and every approval are
+retained. No review is rewritten or revoked. Recorded failures, conflicts, unknown-host owners
+and explicit retirements remain for triage. Legacy tooling receipts use their existing resume
+path; workflow repairs require an operator. Pushed checkpoints resume exact-SHA CI and cannot
+be retired. The service never overrides the disk floor or weakens a check.
+
+`lane-stop <run-id> --reason ...` and `lane-retire` enforce recorded PID, host and process
+birth ownership, or the active service worker's private lock and owner record. A shared source
+checkout is not ownership. Foreign calls refuse with a clear message and send no signal or
+retirement write. Stop sends SIGTERM only to the birth-checked recorded PID, never a shared
+process group. An intentional stop stays held for triage instead of being automatically restarted.
+Retirement of a live leased lane still refuses. The service can recover known
+dead local owners through its existing guarded recovery path. The private role record prevents
+accidental cross-worker control; like the rest of the private flow state, it is not an
+authentication boundary against deliberate local state forgery.
+
+Long publishers update `heartbeat` in the run receipt every 10 seconds, including during silent
+acceptance, tests, site generation and CI. `alive_at` reports observation time; `progress_at`
+advances only when phase/step, measured CPU growth of at least 0.1 seconds (excluding the observer thread), process count,
+or log bytes change. Read both: a recent liveness pulse alone is not evidence of forward
+progress, a byte match or approval. Missing output is not a timeout. Heartbeats preserve receipt
+sidecars and newer ownership and never change a gate, kill a process or imply a test passed.
+
+All service logs and status are under `.local/flow/lane/service/`: `last.json`, timestamped
+publisher logs/results and scheduler stdout/stderr. Results record exit status and terminating
+signal when observed; service signal handlers log SIGTERM/SIGINT. SIGKILL cannot write a final
+receipt, so the next tick recovers a dead owner. A failed command remains visible for triage.
+
 ## Pipelined publication and tooling batches
 
 `tooling-push --wait-lane` records the clean committed input before waiting. A new runner takes all
@@ -486,8 +552,8 @@ stale-sibling and changed-carried-file targets from finished receipts. Without `
 creates a retained worktree on current origin/main, merges each dropped unit, and confirms every
 reported function sharing a changed unit on the configured independent runners. No live receipt
 or chunk controller is changed. Conflicting inputs and failed comparisons stay held with logs;
-failed comparisons are never retried into a pass. `--wake-mac <MAC>` sends Wake-on-LAN only if the
-native runner is unreachable; it changes no host settings. Disk admission keeps the normal floors.
+failed comparisons are never retried into a pass. An optional wake hook may restore an
+unreachable runner using private configuration. Disk admission keeps the normal floors.
 
 The result names private review briefs, full/delta review modes and a single
 `reconfirm-dropped --resume <id>` command. Dispatch the fresh admitted Reviewers named in those

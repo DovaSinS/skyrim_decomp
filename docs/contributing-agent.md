@@ -1,12 +1,12 @@
 # Guide for a contributor's coding agent
 
-Follow `docs/anti-eu-bureaucracy.md`: ship in bulk, decide rather than stop, and add no ceremony beyond named rules. One PR may carry any number of functions.
+One PR may carry any number of functions.
 
 You are a coding agent helping an **external contributor** match one function of Skyrim Special
-Edition. This file is all you need. Do not follow the orchestrator, Boat or verifier-session
-instructions elsewhere in this repository (`AGENTS.md` "Multi-agent execution",
-`docs/boat-agent-guidelines.md`, `tools/verifier/attempt|confirm|session`): they are for the
-project's own machines. Never use Boat, the project's internal verifier hosts or its runner tools.
+Edition. This file is all you need. Do not follow the internal orchestration or verifier-session
+instructions in [the internal workflow](internal-agent-workflow.md) (including
+`tools/verifier/attempt|confirm`): they are for the
+project's own machines. Do not use the project's internal verifier hosts or its runner tools.
 Everything below runs on the contributor's computer.
 
 Drive one tool, `tools/contrib.py` (macOS/Linux: `./sr`, which finds a working Python 3.11+
@@ -17,7 +17,8 @@ problem, 5 input missing, 6 claimed by someone else, 7 a person must decide, 8 o
 
 ## When to ask the person
 
-Stop and ask the person, quoting what the tool printed, only for these:
+For game setup, ask the person when the helper reports these decisions. Account, fork and
+authentication steps can also require their action; do not claim they are already complete.
 
 1. **The path to their `SkyrimSE.exe`**, when `setup` could not find it in a Steam library
    (exit 5, `game executable`).
@@ -40,21 +41,14 @@ decision: pass `--yes`.
 ## The loop
 
 ```sh
-python3 tools/contrib.py --json --yes go [--exe "<path>"] [--accept-microsoft-license] \
+./sr --json --yes go [--exe "<path>"] [--accept-microsoft-license] \
     [--profile cheap|full] --drafted-by "<person>, assisted by <your model id>"
 ```
 
-**Profiles.** `cheap` (the default) is for small, cheap models (Haiku- or Luna-class): read
-`docs/drafter-card-small.md`, sections "Rules for small functions" and "Result lines" (where it
-says `attempt`, run `contrib.py compare`; its queue, budget and handoff parts do not apply to
-you), and stop after 6 compare runs without a pass. `full` is for Sonnet-class models: read
-`docs/drafter-card.md` and `docs/matching-cookbook.md` (step 2 below), and stop after about 10.
-`start` prints the documents, the limit and a rough cost line; `python3 tools/profiles.py` prints
-them all. Rough cost: `cheap` about $0.01-0.03 of model usage per passing function (an estimate),
-`full` about $0.18 per function for drafting (measured on the project's own runs). `cheap` is
-the default because small models pass the same comparator gate on small functions; a profile
-never changes what counts as a match. If `compare` says to stop under `cheap`, the function may
-still be within reach with `--profile full`.
+**Profiles.** Read [the self-contained contributor card](contributor-card.md). `cheap` uses
+3 no-improvement attempts and a hard cap of 6 comparisons; `full` uses 4 and 10. The helper
+prints the current limit. The full profile may help a harder function, but neither changes
+what counts as a pass. [The matching cookbook](matching-cookbook.md) is optional reference.
 
 `go` = `setup` (idempotent; installs Wine and msitools off Windows, LLVM, the community headers,
 the FNV decompilation and its index, the pinned MSVC 19.16.27054 toolset and SDK from Microsoft's
@@ -68,9 +62,8 @@ Then:
    fields as `..`, and each call or data target with its public name) and `listing.txt`
    (disassembly, when LLVM is installed). These files never leave the machine: do not paste them
    into issues, pull requests, commit messages or any public place.
-2. Read the documents your profile names (`start` prints them under `read`). Under `full`:
-   `docs/matching-cookbook.md` once, and `docs/drafter-card.md` for the source and label rules
-   (its Boat and attempt-budget parts do not apply to you; its sibling rules do).
+2. Read `docs/contributor-card.md` for source, labels, diagnostics and stopping rules.
+   The matching cookbook is optional; internal Drafter cards are not contributor instructions.
 3. Edit the unit the skeleton created (`reconstruction/<area>/<Class>.h` and `.cpp`). Declare only
    the members the function needs, at the offsets the listing uses. Names come from the community
    headers in the explicit search roots below (label `COMMUNITY(...)`), `GUESS` only for names you
@@ -79,62 +72,23 @@ Then:
    layouts or slots (another game, older engine, 32-bit). Label what you take
    `SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence)`, and add a
    `Sibling source: momusdigital/fnv_decomp@91e1b6e8 <path>:<line>` header line for a reused body.
-4. `python3 tools/contrib.py --json compare`. Read `functions[].reason`, `first_mismatch`, sizes and
+4. `./sr --json compare`. Read `functions[].reason`, `first_mismatch`, sizes and
    `hint`; the private `side-by-side.txt` under `private_dir` shows target and candidate together.
    If `bind` lists `UNBOUND`, add the hint it names to the task's `bind-hints.json` with an RVA from
-   the pack. Revise and repeat. Stop when `next` says to (your profile's limit), or after about ten
-   tries without progress on the first mismatch, and tell the person; `release 0x<rva> --reason "<one line>"` gives the function back.
-5. On PASS: `python3 tools/contrib.py --json submit --dry-run`, fix any `blockers`, then
+   the pack. Revise and repeat. Stop when `next` says to (the no-improvement threshold or hard
+   outer cap), using the printed current/target matching bytes and change versus the previous
+   attempt, and tell the person; `release 0x<rva> --reason "<one line>"` gives the function back.
+5. On PASS: `./sr --json submit --dry-run`, fix any `blockers`, then
    `submit`. It needs a fork remote; if it reports none, ask the person to fork the repository on
-   GitHub and add it (`git remote add fork https://github.com/<them>/skyrim-research.git`).
+   GitHub and add it (`git remote add fork https://github.com/<them>/skyrim_decomp.git`).
 
 A pass on this machine is not acceptance. Tell the person that the project re-runs the comparison
 on its own two hosts and a Reviewer checks the source before the function counts as matched.
 
-## Several agents on one machine
+## Optional advanced use
 
-Give each agent its own Git worktree and assign disjoint classes/units so they do not edit the
-same source files or contributor task. Point each worktree at the same **existing** private
-storage directory with `SR_LOCAL_DIR` (an absolute path is best):
-
-```sh
-export SR_LOCAL_DIR="<absolute path to the shared .local directory>"
-export SR_CONTRIB_OFFLINE=1
-export SR_NO_SIBLING_NAMES=1
-./sr --json claim 0x<rva> --offline-ok
-./sr --json start 0x<rva> --no-branch --drafted-by "<person>, assisted by <model>"
-./sr --json compare <task-id>
-./sr --json submit <task-id> --dry-run
-```
-
-Without `SR_LOCAL_DIR`, storage stays in this checkout's `.local`. The override shares toolchains,
-sources, config, claims, packs and tasks without a symlink; the source under `reconstruction/`
-stays in each worktree. Run `setup` once before dispatching agents. Avoid simultaneous writes to
-shared config/claims or the same task; coordinate claims and allocate work before the agents start.
-`SR_CONTRIB_OFFLINE=1` with `claim --offline-ok` records unpublished local claims; it does not
-reserve anything on GitHub. Unset it and run `claim` online before submitting. `start --no-branch`
-keeps the worktree's existing branch. When several tasks exist, name the task explicitly in
-`compare <task-id>` and `submit <task-id>`; `start` prints its id.
-
-For an agent assigned community headers only, allow searches in the assigned unit, its private
-pack, the profile's documents, and these explicit source roots (relative to `SR_LOCAL_DIR`, or to
-`.local` without an override):
-
-- `sources/CommonLibSSE-NG/include` and `sources/CommonLibSSE-NG/src`;
-- `sources/CommonLibSSE-po3/include` and `sources/CommonLibSSE-po3/src`;
-- `sources/AddressLibraryDatabase` (the community name lists).
-
-Exclude `sources/fnv_decomp`, the sibling decompilation directory. Never recursively search all
-of `.local`, `SR_LOCAL_DIR` or `sources/`: that includes sibling content. `setup --no-sibling`
-skips fetching the optional sibling clone. `SR_NO_SIBLING_NAMES=1` suppresses identifiers in
-sibling lookup output from `start` and submit's label/origin advice; for the label tool alone,
-`python3 tools/check_labels.py --no-sibling-names <files>` does the same. Findings and exit codes
-are unchanged: this controls message text, and does not grant permission to read sibling files.
-
-Adding new functions to an existing unit is fine. Never change the bodies of already matched
-functions; add new ones alongside them. Intake re-confirms **every accepted function in a touched
-unit** with the unchanged comparator on two hosts. If an accepted function stops matching, that
-part is dropped and sent back. A local pass is still not project acceptance.
+Use one clone/task for ordinary contributions. [Parallel agents and shared private storage](contributor-parallel.md)
+are opt-in and do not replace public claiming.
 
 ## The game executable
 
@@ -151,13 +105,19 @@ read Steam's account files. A Steam install made in October 2026 delivered exact
 
 ## Claims
 
-`claim` opens an assigned GitHub issue with the `claim` label. A claim may cover one function,
+`claim` requires `--model <actual-model-id>`, `--agent <name>`, or `--drafted-by` attribution
+(including the model when AI-assisted) before claiming, and remembers it in private config and
+claim records. `go --drafted-by` supplies this up front. Later claim/compare commands inherit it;
+an external contributor's model is never guessed from a project profile.
+
+`claim` publishes a GitHub issue, or prints a link for you to file. The issue author identifies
+the claimant; labels and assignment are optional project-side decoration. A claim may cover one function,
 hundreds of functions, several classes or half-open address ranges. For example:
 
 ```sh
-python3 tools/contrib.py claim 0x1000 0x2000
-python3 tools/contrib.py claim --class Actor --class TESForm
-python3 tools/contrib.py claim --list functions.txt --range 0x1000-0x2000
+./sr claim 0x1000 0x2000 --model <your-model-id>
+./sr claim --class Actor --class TESForm
+./sr claim --list functions.txt --range 0x1000-0x2000
 ```
 
 List files hold one RVA per line, with optional names after it and `#` comment lines. A range
@@ -173,7 +133,9 @@ and names the issue. Overlap with your own claim is allowed. If claims race, the
 wins and the newer claim is withdrawn. Claims lapse after 24 hours without activity (an issue
 update, comment or linked pull request); `claim --take-over` records a takeover comment. With no network,
 `claim --offline-ok` records an unpublished local claim: run it again online to make it visible.
-Without signed-in `gh`, the helper prints prefilled issue links; file them, assign yourself and
+The claim form accepts `title`, `body` (the full versioned claim block) and optional `plan`
+prefill IDs. If a browser does not prefill the form, paste the helper's complete sanitized claim
+body into its claim field; do not post a listing. Without signed-in `gh`, the helper prints prefilled issue links; file them and
 run `claim` again (`--github-user <login>` identifies you). Releasing one member of a batch does
 not close the entire batch: edit its scope or close the issue on GitHub.
 
@@ -183,11 +145,8 @@ specific addresses. Reads use an ignored `.local/claims-cache.json` with a ten-m
 Project `publish` and `sync` renew live claims after 12 hours of inactivity while their work
 remains active in the pipeline or is a planned family member.
 
-## What is tested
+## Platform status and storage
 
-On macOS (Apple silicon) `setup`, the self-test (same code-section hash as the one the project
-recorded), `start` and `compare` on an unmatched function ran with the real pinned compiler.
-`claim` and `submit` against GitHub and the one-command `go` have not been run live. Linux and
-Windows are not yet run (see `CONTRIBUTING.md`, "Status of the platforms"). If a step
-fails, report the `--redact` JSON output (it holds no game data) in an issue rather than working
-around a check.
+Use [the tested-platform matrix and disk budget](contributor-platforms.md). Do not infer native
+Windows or Linux validation from a macOS run or from synthetic tests. Report failures using a
+sanitized summary; do not work around a check.

@@ -13,12 +13,12 @@
         "strong": {"provider": "claude", "model": "opus", "effort": null, "harness": "claude-code"}
       },
       "project_docs": ["docs/drafter-runbook.md", "docs/drafter-card-small.md"],
-      "contrib_docs": ["docs/contributing-agent.md", "docs/drafter-card-small.md (sections \"Rules for small functions\" and \"Result lines\")"],
+      "contrib_docs": ["docs/contributing-agent.md", "docs/contributor-card.md"],
       "kit": "unit skeleton (tools/skeleton.py) and paged sheets (tools/sheet.py); the queue hands out one unit at a time",
       "queue_dir": ".local/queue/small",
       "stuck_after": 3,
       "contrib_max_tries": 6,
-      "cost": "cheap: Haiku/Luna-class drafting, roughly $0.01-0.03 of model usage per passing function (estimate from about 17k tokens per passing Haiku function; not a ledger figure)"
+      "cost": "cheap: historical drafting estimate $0.01-0.03 per passing function; contributor costs depend on the actual model and provider (not a ledger figure)"
     },
     "full": {
       "summary": "what ran for the first 243 matches: Sonnet Drafter with the full card and brief",
@@ -29,12 +29,12 @@
         "strong": {"provider": "claude", "model": "opus", "effort": null, "harness": "claude-code"}
       },
       "project_docs": ["docs/drafter-card.md", "docs/matching-cookbook.md", "the unit BRIEF.md and packs"],
-      "contrib_docs": ["docs/contributing-agent.md", "docs/drafter-card.md", "docs/matching-cookbook.md"],
+      "contrib_docs": ["docs/contributing-agent.md", "docs/contributor-card.md"],
       "kit": "class pack skeleton.h, per-function packs and the full brief; skeleton and sheets optional",
       "queue_dir": ".local/queue/full",
       "stuck_after": 4,
       "contrib_max_tries": 10,
-      "cost": "full: Sonnet-class drafting, about $0.18 per matched function for drafting alone (measured over 243 matched functions; the whole pipeline then was about $1.14)"
+      "cost": "full: historical project drafting, about $0.18 per matched function for drafting alone (measured over 243 matched functions; the whole pipeline then was about $1.14)"
     },
     "claude-low": {
       "drafter_tiers": ["first", "fallback", "strong"],
@@ -53,7 +53,7 @@
                    "requires": "gpt-6.1-sol admitted for any review under claude-low and required for strong duties by maintainer decision without calibration; a second pass uses a different model"}
       },
       "project_docs": ["docs/drafter-runbook.md", "docs/drafter-card-small.md"],
-      "contrib_docs": ["docs/contributing-agent.md", "docs/drafter-card-small.md (sections \"Rules for small functions\" and \"Result lines\")"],
+      "contrib_docs": ["docs/contributing-agent.md", "docs/contributor-card.md"],
       "kit": "same kit as cheap",
       "queue_dir": ".local/queue/small",
       "stuck_after": 3,

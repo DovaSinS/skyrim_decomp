@@ -17,7 +17,7 @@ probe` prints the compiler version, size and SHA-256, plus the hashes and sizes 
 If the installed component differs or the self-test fails, the job tries Microsoft's evergreen
 VS2017 Build Tools bootstrapper at `https://aka.ms/vs/15/release/vs_buildtools.exe`. It checks
 the bootstrapper's Microsoft Authenticode signature and supplies the existing fixed 15.9.85
-catalog URL and SHA-256 from `tools/verifier/setup_boat_machine.sh` through
+catalog URL and SHA-256 from `tools/verifier/setup_toolchain.sh` through
 `--installCatalogUri`. It probes the resulting binaries against exactly the same pins. This
 tests an official exact-version source without assuming that the evergreen installer or a
 toolset directory name will yield the pin. Failure or mismatch remains visible; no pin changes.

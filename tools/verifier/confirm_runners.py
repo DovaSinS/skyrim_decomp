@@ -61,7 +61,7 @@ def reproduction(base, task, fn, closure, recipe):
     version = recipe['compiler']['version'].split(' ')[0]
     return (f'From the repository root, on each compile host, with cl {version} x64 unpacked at <msvc> (an MSVC '
             f'toolset and Windows SDK whose compiler binaries match tools/verifier/pinned.sha256; '
-            f'tools/verifier/setup_boat_machine.sh shows one way to unpack them with msvc-wine) and {unset} removed '
+            f'tools/verifier/setup_toolchain.sh shows one way to unpack them with msvc-wine) and {unset} removed '
             f'from the environment. Under Wine: <msvc>/bin/x64/cl {flags} /Fo<work>/candidate.obj {task["compiled"]} '
             f'(the msvc-wine wrapper sets INCLUDE to toolchain and SDK directories only). Natively on Windows: set '
             f'INCLUDE to the directories the wrapper uses, in its order, '

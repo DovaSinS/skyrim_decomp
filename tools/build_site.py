@@ -8,6 +8,7 @@ from check import ROOT, load
 from check_source_digest import source_digest_cache
 import cost_ledger
 import build_model_trend
+import build_leaderboard
 
 
 def plural(n, word, many=None):
@@ -146,6 +147,8 @@ def main():
         blobs.close()
     (output / 'index.html').write_text(render(data, revision, costs, trends))
     (output / 'join.html').write_text(render_join(data, revision))
+    leaderboard = build_leaderboard.standings(ROOT, data)
+    (output / 'leaderboard.html').write_text(build_leaderboard.html(leaderboard))
     (output / 'style.css').write_text((ROOT / 'site/style.css').read_text())
     (output / 'model-trend.svg').write_text(build_model_trend.render(trends))
     (output / 'progress-trend.svg').write_text(build_model_trend.render_cumulative(trends))

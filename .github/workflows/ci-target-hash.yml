@@ -8,6 +8,9 @@ on:
       - 'tools/ci_*'
       - 'tools/target_hashes.py'
       - 'tools/contrib.py'
+      - 'tools/contributor_standing.py'
+      - 'tools/build_leaderboard.py'
+      - 'tools/build_model_trend.py'
       - '.gitattributes'
       - '.github/workflows/ci-target-hash.yml'
   schedule:

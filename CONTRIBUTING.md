@@ -3,26 +3,25 @@
 The project rebuilds Skyrim Special Edition's code one function at a time: you write C++ that the
 same Microsoft compiler turns into exactly the bytes of the game's function. No programming
 background is needed if you let a coding agent (Claude Code, Codex, Gemini CLI, ...) do the work;
-you supply the game and approve two things.
+you supply the game and approve required personal actions.
 
 ## Match one function
 
 **You need:** a computer running Windows, macOS or Linux; Python 3.11 or newer and git; a GitHub
 account; your own copy of Skyrim Special Edition **1.7.104.0 from Steam** (the exact file is pinned
-in `builds/target.json`); about 5 GB of free disk and a download of about 1 GB. Everything else is
+in `builds/target.json`); disk space for the measured baseline plus margin ([platform and disk record](docs/contributor-platforms.md)). Everything else is
 installed for you.
 
 ```sh
-git clone https://github.com/awarebayes/skyrim-research.git
-cd skyrim-research
-python3 tools/contrib.py go            # Windows (cmd or PowerShell): .\sr.cmd go
+git clone https://github.com/awarebayes/skyrim_decomp.git
+cd skyrim_decomp
+./sr go            # Windows (cmd or PowerShell): .\sr.cmd go
 ```
 
 `go` checks your machine, installs what is missing (Wine on macOS and Linux, LLVM, the pinned
 Microsoft compiler from Microsoft's own servers), proves the setup on a function the project
 already matched, picks a small unclaimed function, claims it on GitHub and creates its source file.
-It stops and tells you the exact next command whenever a person is needed. Only two things are
-ever asked of you:
+It stops and tells you the exact next command whenever a person is needed. Game-specific setup needs these two decisions:
 
 1. **Where your `SkyrimSE.exe` is** (found automatically in a normal Steam library).
 2. **Whether you accept Microsoft's licence** for the Visual Studio 2017 Build Tools, which the
@@ -35,8 +34,9 @@ winget on Windows asks you once to accept the terms of its package source.
 Then write the function (or ask your agent to) and run:
 
 ```sh
-python3 tools/contrib.py compare       # compile + compare; repeat until PASS
-python3 tools/contrib.py submit        # checks, commit, push to your fork, open the pull request
+./sr compare       # compile + compare; repeat until PASS
+./sr submit --dry-run  # check the unit and report any blockers
+./sr submit            # commit, push to your fork, open the pull request
 ```
 
 **With a coding agent:** open your agent in the cloned folder and say *"Help me match one function
@@ -48,18 +48,17 @@ re-compiles and re-compares your source on two of its own machines, and a Review
 is plausible source with honest provenance. If both agree, the function is recorded as matched and
 you are credited in the commit. If not, the reasons come back on your pull request.
 
-**Status of the platforms.** The helper is designed for Windows, macOS and Linux. On macOS (Apple
-silicon) `setup`, the self-test, `start` and `compare` ran with the real pinned compiler: on a Mac
-with Rosetta already installed, `setup --yes --accept-microsoft-license` installed the pinned
-compiler unattended in under 4 minutes, and the self-test compiled an accepted function to the
-code-section hash recorded by the project. That time excludes the Wine download (about 185 MB),
-which had been fetched earlier; the timed run downloaded about 0.9 GB, and the result takes about
-3.5 GB on disk. A compare takes about 7 seconds. On one Windows 11 x64 PC (native compiler, no
-Wine), `.\sr.cmd` doctor, setup with the compiler already unpacked, its self-test and a practice
-compare passed, and the native compiler gave the project's code-section hashes for every accepted
-function (`docs/windows-verifier-host.md`); the compiler download through `setup` and the winget
-package installs were not run there. `claim` and `submit` against GitHub and the one-command `go`
-have not been run live, and Linux has not been run. Please report what happens on yours.
+The intake service is operated by the maintainer, has no promised turnaround and may take days.
+As of 2026-11-15 it has never processed an outside PR through acceptance; follow your PR labels
+and comments for status.
+
+A contradicted explicit exact-head match claim (including the generated local PASS table) can earn
+a [strike](docs/contributor-ci.md#strike-rules). Setup or compile failures, missing targets,
+unverified results and review rejection do not.
+
+**Tested platforms and storage:** see the single [platform-status and disk record](docs/contributor-platforms.md).
+Git author/co-author credit is preserved in the accepted integration commit. A rejected or
+incomplete contribution receives reasons to revise; a local pass is not an accepted match.
 
 ### The game executable
 
@@ -70,8 +69,7 @@ fine: the Steam app on Windows, or Valve's command-line client SteamCMD (also th
 and Linux, where the Steam app cannot install this Windows-only game). `setup --steamcmd` installs
 SteamCMD with your package manager and prints the steps; you type your Steam login into SteamCMD
 yourself. SteamCMD itself is your install, from Valve's official download or your package
-manager's package of it; this tool does not hash-check it. The printed steps install the whole game (about 13 GB download, the route the maintainer
-used); since only the executable is needed, they also show a shorter alternative that fetches just
+manager's package of it; this tool does not hash-check it. The printed steps install the whole game (about 13 GB download); since only the executable is needed, they also show a shorter alternative that fetches just
 its depot (about 38 MB), not yet tried by the project. This tool never sees, stores or passes Steam credentials and never
 downloads the game itself; third-party downloaders, cracks and DRM removal are not acceptable
 routes. A Steam install made in October 2026 delivered exactly the pinned build; if yours is
@@ -80,7 +78,7 @@ different, `setup` says so.
 ### Rules that the tools check for you
 
 - Source files go in `reconstruction/<area>/<Class>.h` and `.cpp`, with the header comment the
-  skeleton gives you. Label every name with its origin (`docs/drafter-card.md`). Write C++ a
+  skeleton gives you. Label every name with its origin (`docs/contributor-card.md`). Write C++ a
   programmer could have written; no inline assembly, byte arrays or tricks to force bytes.
 - Never paste or attach bytes, listings, disassembly or decompiler output anywhere public (issues,
   pull requests, comments, screenshots). They stay in `.local/` on your machine. When you post the
@@ -105,7 +103,7 @@ different, `setup` says so.
   pinned community headers (`python3 tools/check_labels.py <files>` after `contrib.py setup`) is
   re-accepted by the project without a new review when the compiled code is unchanged. Change
   comments and labels only, not code or declared names.
-- **Platform reports.** Run `python3 tools/contrib.py --redact doctor` and `setup` on your machine
+- **Platform reports.** Run `./sr --redact doctor` and `setup` on your machine
   and open an issue with the output (it contains no game data) if something fails.
 - **Documentation.** Unclear steps in this file or `docs/contributing-agent.md` are bugs.
 
@@ -132,7 +130,7 @@ python3 tools/build_site.py
 
 Include these results in the PR, along with exact revisions and limitations. Do not attach
 private outputs. The automated guard is defense in depth, not a secret scanner or legal review.
-Use the PR checklist. A passed infrastructure check does not establish a byte match.
+Use the tooling/research PR checklist; function-only submissions use the separate function intake template. A passed infrastructure check does not establish a byte match.
 
 How an external pull request enters the acceptance pipeline is in `docs/contributor-intake.md`.
 

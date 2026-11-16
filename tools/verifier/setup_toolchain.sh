@@ -9,7 +9,7 @@
 # of whoever runs it (vsdownload.py --accept-license). Only run it if that licence basis is
 # recorded for your use.
 #
-# Usage: setup_boat_machine.sh [install-dir]       (default: $HOME/msvc)
+# Usage: setup_toolchain.sh [install-dir]       (default: $HOME/msvc)
 # Needs: sudo for apt, about 4 GB free disk, network access to the Ubuntu archive, GitHub
 # (public msvc-wine clone only, no credentials) and download.visualstudio.microsoft.com.
 set -euo pipefail

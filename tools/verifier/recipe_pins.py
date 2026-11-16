@@ -8,7 +8,7 @@ fails if that path or any pin goes missing, before a contributor's `setup` would
 from pathlib import Path
 import re
 
-RECIPE_SCRIPT = 'tools/verifier/setup_boat_machine.sh'
+RECIPE_SCRIPT = 'tools/verifier/setup_toolchain.sh'
 PIN_KEYS = ('MSVC_WINE_URL', 'MSVC_WINE_COMMIT', 'VSMAN_URL', 'VSMAN_SHA256', 'SDK_VERSION')
 
 

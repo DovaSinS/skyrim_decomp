@@ -72,6 +72,7 @@ LANE_TOOL_SOURCES = lane_tool_sources()
 sys.path.insert(0, str(TOOLS))
 import accept_function as af  # noqa: E402
 import family_review as fr  # noqa: E402
+import agent_advice  # noqa: E402
 import profiles  # noqa: E402
 from source_digest import include_closure, tu_digest  # noqa: E402
 from symbol_map import history_name  # noqa: E402
@@ -98,7 +99,8 @@ STATES = ('queued', 'drafting', 'draft-failed', 'drafted-pass', 'confirm-stale',
 
 
 class FlowError(Exception):
-    pass
+    def __init__(self, message):
+        super().__init__(agent_advice.explain(message))
 
 
 def refuse(ok, message):
@@ -614,6 +616,7 @@ def family_brief(root, path, profile=None, fdir=None, render_only=False, attache
     text = f"""# Family review {task}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: fresh independent admitted Reviewer. Follow docs/reviewer-runbook.md, Family reviews.
 Task: {task}; review scope is the family at `{path}` (spec digest `{fr.digest(fr.spec(family))}`).
@@ -1028,6 +1031,7 @@ def write_review_brief(root, g, by_rva, render_only=False):
     text = f"""# Brief {g['task_id']}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: Reviewer (`docs/reviewer-runbook.md`; in Claude Code `.claude/agents/reviewer.md`), fresh
 context, model {g['reviewer_model']}. Task id:
@@ -1097,6 +1101,7 @@ def write_rerun_brief(root, g, by_rva, render_only=False):
     text = f"""# Brief rerun-{g['name']}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: Engineer (or the routine orchestrator with a shell). Task: the sampling safeguard's
 from-scratch comparator re-run for group {g['name']} ({len(g['sampled'])} functions), on a clean
@@ -1321,7 +1326,10 @@ def split_group(root, fdir, name, selected):
 
 def next_actions(root, fdir, branch='main', now=None, online=True):
     """[(kind, text)] with kind 'stop', 'run', 'dispatch', 'wait' or 'done', in the order to do them."""
-    lane_pending = any(json.loads(p.read_text()).get('state') in ('queued', 'running')
+    live = Path(fdir) / 'lane-live.json'
+    service_enabled = ((Path(fdir) / 'lane/service/config.json').is_file()
+                       or (live.is_file() and json.loads(live.read_text()).get('service_enabled', False)))
+    lane_pending = any(json.loads(p.read_text()).get('state') in ('queued', 'running', 'stale')
                        for name in ('queue', 'tooling-queue')
                        for p in (Path(fdir) / 'lane' / name).glob('*.json'))
     import time
@@ -1504,6 +1512,12 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
                   if json.loads(p.read_text()).get('kind') != 'tooling-request']
     for run in stale_runs:
         if run.get('status') in ('stale', 'paused'):
+            if service_enabled:
+                if run.get('error') and not (run.get('integrated') or {}).get('pushed'):
+                    out.insert(0, ('stop', f'lane {run["id"]} requires Engineer triage; inputs retained: {run["error"]}'))
+                else:
+                    out.insert(len(stops), ('wait', f'persistent lane service handles lane {run["id"]}; leave publishers running'))
+                continue
             command = run['resume_command']
             alternative = ('; or ' + run['retire_command']) if run.get('retire_command') else ''
             out.insert(0, ('wait' if run.get('lane_busy') else 'run',
@@ -1513,7 +1527,8 @@ def next_actions(root, fdir, branch='main', now=None, online=True):
         live = Path(fdir) / 'lane-live.json'
         active = json.loads(live.read_text())['running'] if live.is_file() else flow_lane.running(fdir)
         out.insert(len(stops), ('wait', 'push lane is running; new work remains queued for the next run')
-                   if active else ('run', 'python3 tools/flow.py lane-run'))
+                   if active else ('wait', 'persistent lane service will publish queued inputs')
+                   if service_enabled else ('run', 'python3 tools/flow.py lane-run'))
     return out or [('done', 'nothing to do')]
 
 
@@ -1560,7 +1575,8 @@ Read `docs/drafter-runbook.md` and follow it exactly. Your worker label is `<mod
 (for example `haiku-{stamp}-{i}`). Your unit kind is {kind}. Pass `--profile {queue_profile}` to `next`. Queue directory:
 `{queue_dir}` (put `--queue-dir {queue_dir}` before the subcommand on every work_queue.py call).
 Documents: {', '.join(docs)}. Stop on a function after {p['stuck_after']} counted
-attempts with no change in its first mismatch; the unit budget is what `attempt` prints.
+attempts with no improvement over its best matching-byte progress; keep going while matching bytes rise,
+even if the first mismatch stays put. The existing unit attempt budget remains the hard outer cap.
 
 Return only the short table from the runbook ("Return message"); full details go to the queue.
 Do not push, post publicly, mark `matched`, or start further agents.
@@ -1585,13 +1601,14 @@ You may replace an uncompared placeholder for your assigned target and complete 
 inside your own unit when that target requires them; every retained regression must still pass.
 An accepted adjustor thunk and the destructor it calls are separate targets. A wrong accepted
 body needs Engineer revocation, never silent replacement. Remove failed additions by exact text.
-Record a function as failed only after its attempt budget is used or a named structural blocker;
-stop when it passes. Record one result per newly attempted function and the unit.
+Keep going while matching-byte progress rises. Stop after {p['stuck_after']} counted attempts
+with no improvement over its best, its hard attempt budget, or a named structural blocker; stop when it passes. Record one result per newly attempted function and the unit.
 No Boat, git or network. Do not push, post publicly, mark `matched`, or start further agents.
 Return the short table from the runbook; full details go to the queue.
 '''
         text += '''
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 On claim, `next` prints the private draft checkout. That is the only place to edit source;
 cd there and run every attempt there. Never edit source in the shared checkout. The sanctioned
@@ -1734,6 +1751,7 @@ def brief_confirm(root, fdir, manifests=None, tasks=None):
     text = f"""# Brief confirm-{stamp}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: strong role of the profile (Claude: Engineer), or the routine orchestrator with a shell when every step below is a
 plain run. Reproduce the drafted passes on two runner hosts (docs/verification.md, Runner hosts).
@@ -1784,6 +1802,7 @@ def brief_triage(root, fdir, group=None, units=None, held=False):
     text = f"""# Brief triage-{stamp}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: strong role of the profile (Claude: Engineer, Opus; claude-low: Sol). Triage, fix and re-draft; you did not draft these functions (if you
 did, say so and stop). Gates: as recorded; G2 for reading reviews and packs.
@@ -1811,6 +1830,7 @@ def brief_direction(root, fdir):
     text = f"""# Brief direction-check-{n}
 
 Follow `docs/anti-eu-bureaucracy.md`; report to the orchestrator within 90 minutes and follow its box rule.
+Never kill a lane process you didn't start. Enqueue publication; leave lane stop/retire to its recorded owner or the service.
 
 Role: direction check (`.claude/agents/direction-check.md`; strong role of the profile), fresh context. Read only;
 you edit nothing except your own output file.
@@ -1837,6 +1857,10 @@ Return a five-line summary. Do not push, post publicly, mark `matched`, or start
 
 def run(cmd, root, step, env=None, log_path=None):
     """Run one integration step; raise FlowError with its output on failure."""
+    global LANE_STEP
+    previous = globals().get('LANE_STEP', {})
+    LANE_STEP = dict(phase=step, sequence=previous.get('sequence', 0) + 1,
+                     log_path=str(log_path) if log_path else None)
     fd = inherited_lock() if 'tools/accept_function.py' in cmd else None
     if fd is not None:
         env = dict(os.environ if env is None else env, SKYRIM_FLOW_LOCK_FD=str(fd))
@@ -2144,8 +2168,9 @@ def _legacy_integrate(root, fdir, name, branch='main', push=True, ci_wait=600, p
         refuse(files, 'nothing changed to commit')
         git(tree, 'add', '--', *files)
         commit_date = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+        run([python, 'tools/build_leaderboard.py'], tree, 'build_leaderboard.py')
         run([python, 'tools/build_model_trend.py', '--pending-date', commit_date], tree, 'build_model_trend.py')
-        trend_files = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg']
+        trend_files = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg', 'LEADERBOARD.md', 'data/contributors.json']
         git(tree, 'add', '--', *trend_files)
         files = sorted(set(files) | set(changed(tree, trend_files)))
         run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')
@@ -2336,8 +2361,9 @@ def _legacy_integrate_groups(root, fdir, names, batch_name, branch='main', push=
         refuse(files, 'nothing changed to commit')
         git(tree, 'add', '--', *files)
         commit_date = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
+        run([python, 'tools/build_leaderboard.py'], tree, 'build_leaderboard.py')
         run([python, 'tools/build_model_trend.py', '--pending-date', commit_date], tree, 'build_model_trend.py')
-        trend = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg']
+        trend = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg', 'LEADERBOARD.md', 'data/contributors.json']
         git(tree, 'add', '--', *trend)
         files = sorted(set(files) | set(changed(tree, trend)))
         run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')
@@ -2544,7 +2570,7 @@ def status_table(root, fdir, online=True):
 
 
 def parser():
-    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p = agent_advice.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument('--flow-dir')
     p.add_argument('--root', type=Path, default=ROOT, help=argparse.SUPPRESS)
     p.add_argument('--offline', action='store_true', help='do not read origin (pushed state unknown)')
@@ -2639,6 +2665,9 @@ def parser():
         sub.choices[command].add_argument('--soft-free-gb', type=float, help='soft disk floor; default 10 GB')
         sub.choices[command].add_argument('--allow-low-disk', action='store_true', help='explicitly override only the soft floor')
     sub.add_parser('lane-status')
+    s = sub.add_parser('lane-stop')
+    s.add_argument('run_id')
+    s.add_argument('--reason', required=True)
     s = sub.add_parser('lane-retire')
     s.add_argument('run_id')
     s.add_argument('--reason', required=True)
@@ -2647,6 +2676,7 @@ def parser():
     s.add_argument('--superseding-commit', required=True)
     s.add_argument('--reason', required=True)
     s = sub.add_parser('tooling-push')
+    s.add_argument('--enqueue-only', action='store_true', help='register the immutable tip for the persistent lane service and return')
     s.add_argument('--repair-red', help='exact red SHA; isolated, recorded repair of related advisory inputs only')
     s.add_argument('--branch', default='main')
     s.add_argument('--ci-wait', type=int, default=600)
@@ -2683,7 +2713,7 @@ def parser():
     return p
 
 
-def main(argv=None):
+def _main(argv=None):
     a = parser().parse_args(argv)
     root = a.root
     fdir = flow_dir(root, a.flow_dir)
@@ -2691,7 +2721,7 @@ def main(argv=None):
         try:
             fdir = af.active_flow_dir(root)
         except (af.Refused, OSError) as error:
-            print(f'flow: {error}', file=sys.stderr)
+            print(f'flow: {agent_advice.explain(error)}', file=sys.stderr)
             return 1
     if a.cmd == 'worktrees':
         import flow_worktrees
@@ -2706,10 +2736,10 @@ def main(argv=None):
                 flow_lane.snapshot(fdir, frozen)
                 return execute(a, root, frozen)
         except (FlowError, ValueError, OSError) as exc:
-            print(f'flow: {exc}', file=sys.stderr)
+            print(f'flow: {agent_advice.explain(exc)}', file=sys.stderr)
             return 1
     if a.cmd in ('integrate', 'integrate-groups', 'integrate-family', 'integrate-labels', 'lane-run', 'lane-status',
-                 'lane-retire', 'lane-finish-superseded', 'tooling-push', 'cleanup', 'sync', 'reconfirm-dropped'):
+                 'lane-stop', 'lane-retire', 'lane-finish-superseded', 'tooling-push', 'cleanup', 'sync', 'reconfirm-dropped'):
         return execute(a, root, fdir)
     # Readers take the same short scheduling lock as state mutations.
     with state_lock(fdir):
@@ -2803,7 +2833,7 @@ def execute(a, root, fdir):
             item = flow_lane.enqueue(root, fdir, kind, selection, a.branch,
                                      getattr(a, 'approved_only', False), getattr(a, 'with_metadata', False),
                                      getattr(a, 'name', None))
-            print(f'queued {item["id"]}: {kind}; next: python3 tools/flow.py lane-run')
+            print(f'queued {item["id"]}: {kind}; the persistent lane service will publish it')
             if a.run or a.no_push:
                 if flow_lane.running(fdir) and not a.wait_lane:
                     print('push lane is already running; request remains queued for the next run')
@@ -2828,6 +2858,9 @@ def execute(a, root, fdir):
             active = bool(owner.get('active') and flow_lane.owner_alive(owner))
             print(json.dumps(dict(queue=items, tooling_inputs=inputs, runs=[flow_lane.run_status(root, fdir, r, active) for r in runs],
                                   tooling=[flow_lane.run_status(root, fdir, r, active) for r in tooling]), indent=2))
+        elif a.cmd == 'lane-stop':
+            import flow_lane
+            print(json.dumps(flow_lane.stop_run(root, fdir, a.run_id, a.reason), indent=2))
         elif a.cmd == 'lane-retire':
             import flow_lane
             print(json.dumps(flow_lane.retire(root, fdir, a.run_id, a.reason), indent=2))
@@ -2836,6 +2869,11 @@ def execute(a, root, fdir):
             print(json.dumps(flow_lane.finish_superseded(root, fdir, a.run_id, a.superseding_commit, a.reason), indent=2))
         elif a.cmd == 'tooling-push':
             import flow_lane
+            if a.enqueue_only:
+                refuse(not a.resume and not a.repair_red, '--enqueue-only cannot resume or dispatch a red repair')
+                import flow_tooling
+                print(json.dumps(flow_tooling.enqueue(root, fdir, a.branch), indent=2))
+                return 0
             print(json.dumps(flow_lane.publish_tooling(root, fdir, a.branch, a.ci_wait, resume=a.resume, wait_lane=a.wait_lane,
                              soft_free_gb=a.soft_free_gb, allow_low_disk=a.allow_low_disk, repair_red=a.repair_red), indent=2))
         elif a.cmd == 'cleanup':
@@ -2872,9 +2910,17 @@ def execute(a, root, fdir):
             log_event(fdir, a.kind, note=a.note)
             print(f'recorded {a.kind}')
     except (FlowError, af.Refused, wq.QueueError, ValueError, KeyError, TypeError, OSError) as exc:
-        print(f'flow: {exc}', file=sys.stderr)
+        print(f'flow: {agent_advice.explain(exc)}', file=sys.stderr)
         return 1
     return 0
+
+
+def main(argv=None):
+    try:
+        return _main(argv)
+    except (FlowError, af.Refused, wq.QueueError, ValueError, KeyError, TypeError, OSError) as error:
+        print('flow: ' + agent_advice.explain(error), file=sys.stderr)
+        return 1
 
 
 if __name__ == '__main__':

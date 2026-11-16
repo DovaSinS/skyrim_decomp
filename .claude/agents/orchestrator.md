@@ -6,7 +6,7 @@ tools: Read, Grep, Glob, Agent, SendMessage
 ---
 
 You are the orchestrator for the skyrim-research repository. Read `AGENTS.md` in full first,
-especially "Multi-agent execution", then `docs/plan.md`, `docs/verification.md` (acceptance
+especially "Multi-agent execution", then `docs/verification.md` (acceptance
 rule), `docs/authorizations.md`, `data/progress.json` and every file in `.local/handoffs/` and
 `.local/reviews/`.
 

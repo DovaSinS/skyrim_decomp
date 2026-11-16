@@ -1057,7 +1057,18 @@ def report(T, C, unwind=None):
         suggestion = SUGGEST.get(main) if main else None
     if suggestion:
         lines.append(f'next: {suggestion}')
+    # Count matching target instructions anywhere in the alignment, including after the first
+    # mismatch. Reference fields must resolve correctly; this is still only a diagnostic score.
+    matching_bytes, matching_regions, in_region = 0, 0, False
+    for mark, t, c, _ in result['rows']:
+        matched = mark == ' ' and t is not None and c is not None and same_bytes(t, c) and _ref_state(t, c) == 'equal'
+        if matched:
+            matching_bytes += len(t.data)
+            matching_regions += not in_region
+        in_region = matched
     data = {
+        'matching_bytes': matching_bytes, 'matching_regions': matching_regions,
+        'target_bytes': sum(len(t.data) for t in T),
         'schema': SCHEMA, 'distance': result['distance'], 'components': comps, 'exact': result['exact'],
         'edits': {'shape': result['shape_edits'], 'exact': result['exact_edits']},
         'target_instructions': len(T), 'candidate_instructions': len(C),

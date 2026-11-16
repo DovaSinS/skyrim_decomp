@@ -8,10 +8,13 @@ Words: a **unit** is one class, `reconstruction/<area>/<Class>.h` + `.cpp`; its 
 compares its bytes with the game. Everything under `.local/` is private: never paste it anywhere.
 
 The cheap profile's pass-rate threshold depends on function size: compare like-sized samples
-before treating an overall rate as representative. One [contributor sample (issue #37)](https://github.com/awarebayes/skyrim-research/issues/37)
+before treating an overall rate as representative. One [contributor sample (issue #37)](https://github.com/awarebayes/skyrim_decomp/issues/37)
 reported drafter-only local passes of **15/15 at 3–56 B** and **13/24 at 67–228 B** with
 `deepseek-v4.1-flash`. This is one small sample, not accepted matches or a new threshold; the
 profile and acceptance rules are unchanged.
+
+Name your actual model when claiming (`next --worker <model-session> --model <model-id>`);
+`attempt` and `done` inherit it. A worker label naming the model/agent also supplies attribution.
 
 ## The loop, per unit (in the order the task gives)
 
@@ -67,7 +70,7 @@ Never write `asm`, `##`, `#pragma` (except `once`), byte arrays, `\x` strings. N
 | `PASS all-checks-passed` | bytes match | done with that function |
 | `function-size-mismatch size A/B` | yours is A bytes, target B | compare listings; add or remove the missing work |
 | `code-byte-mismatch at +0xNN` | first different byte | read `attempts/<NNN>/0x<rva>/side-by-side.txt` at that offset |
-| `unwind-info-mismatch`, `eh-...` | frame or exception layout | try one change; then save as near-miss |
+| `unwind-info-mismatch`, `eh-...` | frame or exception layout | revise while progress rises; save after the no-improvement limit |
 | `budget exhausted` | no attempts left | save near-misses, write lines, next unit |
 | `size A/B`, A = B+1 or B+2, last call | yours is `CALL`+`RET`, target `JMP` | rule 11 |
 
@@ -75,7 +78,10 @@ Never write `asm`, `##`, `#pragma` (except `once`), byte arrays, `\x` strings. N
 yours calls one. The base destructor must be an inline body in a stand-in in your own header (the form of
 `netimmerse/NiExtraData.h`); never edit a shared header. Cannot? save it as near-miss `inline base needed`.
 
-**Stuck** = three counted attempts with no change in the first mismatch, or the budget is spent.
+**Stuck** = three counted attempts with no improvement over the best matching-byte progress, or the hard
+attempt budget is spent. Keep going while matching bytes rise, even if the first mismatch stays put.
+`attempt` prints current/target bytes, change from the previous run and the no-improvement count;
+missing diagnostics are unknown, not zero. The score is diagnostic, never match evidence.
 Then move the function and the header lines only it needs to `<unit dir>/near-miss/<rva>.cpp`, first
 two lines: `// <reason>, size A/B, attempt N` and one sentence on the remaining difference. Run
 `attempt` once more so the rest passes.

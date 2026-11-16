@@ -1,7 +1,7 @@
 """Verifier session: two long-lived, separately installed verifier machines for one work period.
 
 Machine A is the standing verifier (`sr-verifier-msvc141`), machine B a second verifier built
-from the same recipe by its own run of setup_boat_machine.sh (not a disk fork), so a pair of
+from the same recipe by its own run of setup_toolchain.sh (not a disk fork), so a pair of
 runs on A and B checks the toolchain install as well as the process. A session costs at most one
 start per machine; `attempt` and `confirm` then run on the machines without starting or stopping
 anything. The command line is tools/verifier/session; this module is shared with attempt,
@@ -181,7 +181,7 @@ def create(name, ttl, force, log, reserve=None):
         env['SR_STARTS_FORCE'] = '1'
     if reserve is not None:
         env['SR_STARTS_RESERVE'] = str(reserve)
-    log(f'{name}: creating from the recipe (setup_boat_machine.sh; about 7 minutes)')
+    log(f'{name}: creating from the recipe (setup_toolchain.sh; about 7 minutes)')
     proc = subprocess.run([str(HERE / 'boat_up.sh')], env=env, capture_output=True, text=True)
     tail = (proc.stderr or '').strip().splitlines()[-3:]
     if proc.returncode != 0:
@@ -206,7 +206,7 @@ def up(ttl=DEFAULT_TTL, reserve=None, force=False, allow_create=False, only=None
         machine, state = boatctl.lookup(NAMES[key])
         if state == 'missing' and key == 'a':
             raise boatctl.BoatError(f'no machine named {NAMES["a"]}; rebuilding A is lifecycle rule 3 of '
-                                    'docs/boat-agent-guidelines.md, not part of `session up`')
+                                    'retired backend; not part of `session up`')
         if state == 'missing' and not allow_create:
             raise boatctl.BoatError(f'no machine named {NAMES[key]}; `session up --create` builds it from the '
                                     'recipe (one start, about 7 minutes, accepts the Build Tools licence)')

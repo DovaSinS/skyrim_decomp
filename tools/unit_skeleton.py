@@ -939,6 +939,8 @@ def overview(task_dir, cap=SHEET_CAP, repo=None):
     lines = [f'# Unit {unit["cls"]} ({unit["task"].get("task_id")})', '',
              f'Files: {unit["header"]} and {unit["compiled"]}. Budget: {unit["task"].get("max_attempts")} counted attempts.',
              f'Unit kind: {kind}. Card: docs/drafter-card-{kind}.md.',
+             'Keep going while matching bytes rise; stop after the brief/profile N attempts with no improvement '
+             'over the best score, or the hard attempt budget. The first mismatch may stay put.',
              '', '| RVA | bytes | name | sheet pages |', '|---|---|---|---|']
     for f in unit['functions']:
         n = len(paginate(function_sheet(unit, f, repo=repo), cap - FOOTER_ROOM))

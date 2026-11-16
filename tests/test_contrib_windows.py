@@ -74,9 +74,9 @@ class SrCmdTests(unittest.TestCase):
         launcher = re.search(r'set "SR_LAUNCHER=([^"]+)"', self.text).group(1)
         ctx = contrib.Ctx(platform='win32', env={'SR_LAUNCHER': launcher}, as_json=True)
         self.assertEqual(ctx.cli, '.\\sr.cmd')
-        self.assertEqual(contrib.Ctx(platform='win32', env={}, as_json=True).cli, 'py tools\\contrib.py')
+        self.assertEqual(contrib.Ctx(platform='win32', env={}, as_json=True).cli, '.\\sr.cmd')
         self.assertEqual(contrib.Ctx(platform='linux', env={'SR_LAUNCHER': launcher}, as_json=True).cli,
-                         'python3 tools/contrib.py')
+                         './sr')
 
     def test_runs_contrib_with_all_arguments_and_exit_code(self):
         self.assertIn('"%SR_ROOT%tools\\contrib.py" %*', self.text)

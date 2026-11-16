@@ -1,0 +1,277 @@
+"""Agent-facing recovery, attribution and progress, using synthetic inputs only."""
+import contextlib
+import importlib.machinery
+import importlib.util
+import io
+import json
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'tools'))
+sys.path.insert(0, str(ROOT / 'tools/verifier'))
+import agent_advice
+import agent_identity
+import attempt_progress as progress
+import align
+import contrib
+import flow
+import flow_lane
+import flow_tooling
+import friction
+import lane_accept
+import profiles
+import work_queue as queue
+
+
+def load_attempt():
+    loader = importlib.machinery.SourceFileLoader('ux_attempt', str(ROOT / 'tools/verifier/attempt'))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+class Recovery(unittest.TestCase):
+    def test_specific_next_actions_are_short_and_actionable(self):
+        cases = [
+            ('stale lane tooling', ('origin/main', 'rebase', 'Queued items are kept')),
+            ('push lane already running', ('not a stall', '--wait-lane')),
+            ('stale header', ('re-confirm', 'confirmation-pinned maps', 'symbol_map.path')),
+            ('missing symbol map or report inputs', ('confirmation-pinned map', 'record_refresh', 'source.translation_unit')),
+            ('not an inventory entry on origin', ('mapped-only', 'same lane item', 'enrollments', 'p152')),
+            ('insufficient free disk space', ('Free disk space', 'retry', 'private configuration')),
+        ]
+        for message, expected in cases:
+            with self.subTest(message=message):
+                output = str(flow.FlowError(message))
+                for text in expected:
+                    self.assertIn(text, output)
+                self.assertEqual(output.count('\n'), 1)
+                self.assertEqual(agent_advice.explain(output), output)
+
+    def test_lane_lock_refusal_and_wait_both_explain_waiting(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with flow_lane.lane_lock(Path(tmp)):
+                with self.assertRaisesRegex(flow.FlowError, 'not a stall.*--wait-lane'):
+                    with flow_lane.lane_lock(Path(tmp)):
+                        self.fail('lock contention must still refuse')
+            output = io.StringIO()
+            with contextlib.redirect_stderr(output), flow_lane.lane_lock(Path(tmp), wait=True):
+                pass
+            self.assertIn('not a stall', output.getvalue())
+            self.assertIn('--wait-lane', output.getvalue())
+
+    def test_disk_floor_still_refuses_with_generic_advice(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(flow_lane.shutil, 'disk_usage') as usage:
+            usage.return_value.free = 1
+            with self.assertRaisesRegex(flow.FlowError, 'private configuration'):
+                flow_lane.disk_preflight(Path(tmp), 3)
+
+    def test_stale_runtime_names_update_rebase_and_preserved_queue(self):
+        with patch.object(flow, 'git', return_value=''), \
+             patch.object(flow, 'lane_tool_sources', return_value={'tools/synthetic.py': 'new'}), \
+             patch.object(flow, 'LANE_TOOL_SOURCES', {'tools/synthetic.py': 'new'}):
+            with self.assertRaises(flow.FlowError) as refused:
+                flow_lane.require_base_tools(Path('/synthetic'), base='synthetic-base')
+        for text in ('origin/main', 'rebase', 'Queued items are kept', '--root'):
+            self.assertIn(text, str(refused.exception))
+
+    def test_tooling_publisher_explains_swallowed_busy_refusals_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            item = dict(id='synthetic', state='queued', revision='synthetic-revision')
+            result = dict(item, state='done', run='synthetic-run')
+            receipt = dict(id='synthetic-run', state='done', integrated=dict(pushed='synthetic-time'))
+            queued = directory / 'lane/tooling-queue/synthetic.json'
+            run = directory / 'lane/runs/synthetic-run.json'
+            flow_lane.write(queued, item)
+            def advance(*args, **kwargs):
+                if advance.calls < 2:
+                    advance.calls += 1
+                    raise flow.FlowError('push lane already running')
+                flow_lane.write(queued, result)
+                flow_lane.write(run, receipt)
+            advance.calls = 0
+            output = io.StringIO()
+            with patch.object(flow_tooling, 'enqueue', return_value=item), \
+                 patch.object(flow_lane, 'run_lane', side_effect=advance), \
+                 patch.object(flow_tooling.time, 'sleep'), contextlib.redirect_stderr(output):
+                published = flow_tooling.publish(directory, directory, 'main', 0, sys.executable, None, False)
+            self.assertEqual(published['state'], 'done')
+            self.assertEqual(output.getvalue().count('not a stall'), 1)
+            self.assertIn('--wait-lane', output.getvalue())
+            self.assertIn('Queued items are kept', output.getvalue())
+
+    def test_lane_dropped_member_keeps_reason_and_adds_next(self):
+        request = dict(kind='review', functions=['0x1000'])
+        data = dict(functions=[])
+        with patch.object(lane_accept.af, 'load', return_value=(data, {})), \
+             patch.object(lane_accept.af, 'inventory_index'), patch.object(lane_accept.af, 'stale_ids', return_value=set()), \
+             patch.object(lane_accept.af, 'accept_reviews', side_effect=ValueError('missing report inputs')):
+            result = lane_accept._accept(Path('/synthetic'), [request], timings={})
+        self.assertEqual(result['accepted'], [])
+        self.assertEqual(result['dropped'][0]['reason'], 'missing report inputs')
+        self.assertIn('confirmation-pinned map', result['dropped'][0]['next'])
+
+    def test_argument_errors_and_unclassified_contributor_errors_have_next_steps(self):
+        output = io.StringIO()
+        with contextlib.redirect_stderr(output), self.assertRaises(SystemExit):
+            contrib.parser().parse_args(['claim', '--bad-flag'])
+        self.assertIn('Next:', output.getvalue())
+        self.assertIn('--help', output.getvalue())
+        self.assertTrue(contrib.Stop(contrib.USAGE, 'unrecognised task input').next_action)
+        self.assertIsNone(contrib.Stop(contrib.OK, 'no startable function found').next_action)
+
+
+class Attribution(unittest.TestCase):
+    def test_explicit_agent_and_profile_defaults(self):
+        with self.assertRaisesRegex(ValueError, 'required before work starts'):
+            agent_identity.resolve()
+        self.assertEqual(agent_identity.resolve(agent='synthetic-tool'), 'synthetic-tool')
+        self.assertEqual(agent_identity.resolve(profile='full'), profiles.role('full', 'drafter')['model'])
+        self.assertEqual(agent_identity.resolve('actual-model', agent='worker-1', profile='cheap'), 'actual-model')
+
+    def test_queue_records_model_at_claim_and_inherits_it_at_done(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            qdir = Path(tmp)
+            (qdir / 'queue.tsv').write_text('unit\treconstruction/misc/X.cpp\t0x1000\t4\n')
+            with patch.object(queue.github_claims, 'project_claims', return_value=({}, None)):
+                queue.claim(qdir, 'session-1', model='actual-model')
+            claim = json.loads((qdir / 'claims/unit.lock').read_text())
+            self.assertEqual(claim['model'], 'actual-model')
+            with patch.object(queue.github_claims, 'project_claims', return_value=({}, None)):
+                self.assertTrue(queue.claim(qdir, 'session-1')['resumed'])
+            with self.assertRaisesRegex(queue.QueueError, 'differs from claim'):
+                queue.finish(qdir, 'unit', ['{"rva":"0x1000","result":"fail"}'], model='another-model')
+            records = queue.finish(qdir, 'unit', ['{"rva":"0x1000","result":"fail"}'])
+            self.assertEqual(records[0]['model'], 'actual-model')
+            self.assertEqual(queue.stats(qdir)['model']['actual-model']['functions'], 1)
+
+    def test_contributor_claim_requires_identity_before_github_access(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx = contrib.Ctx(repo=Path(tmp), env={}, interactive=False, as_json=True)
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output), patch.object(ctx, 'github') as github:
+                code = contrib.main(['--json', 'claim', '0x1000'], ctx)
+            self.assertEqual(code, contrib.USAGE)
+            github.assert_not_called()
+            self.assertIn('--model', json.loads(output.getvalue())['next'])
+            self.assertFalse(ctx.private.exists())
+
+    def test_friction_reports_missing_function_count_without_inventing_models(self):
+        records = [dict(rva='0x1000', worker=None), dict(rva='0x2000', model='actual-model'),
+                   dict(rva='0x3000', worker='legacy-model-1'), dict(unit='unit', worker=None)]
+        with tempfile.TemporaryDirectory() as tmp, \
+             patch.object(flow, 'queue_results', return_value=records), \
+             patch.object(flow, 'queue_units', return_value=[]):
+            report = friction.summarise(tmp)
+        self.assertEqual(report['missing_model_functions'], 1)
+        self.assertIn('Functions with no model or agent recorded: 1', friction.render(report))
+        self.assertIn('actual-model', report['by_model'])
+
+
+class Progress(unittest.TestCase):
+    @staticmethod
+    def metric(n):
+        return dict(metric='aligned_matching_bytes', value=n, total=20, regions=2)
+
+    def test_new_best_resets_patience_and_oscillation_does_not(self):
+        history = []
+        for value, expected in [(4, 0), (4, 1), (3, 2), (4, 3), (8, 0)]:
+            result = progress.update({'0x1000': self.metric(value)}, history)
+            self.assertEqual(result['0x1000']['no_improvement'], expected)
+            history.append(dict(progress=result))
+        self.assertEqual(result['0x1000']['delta'], 4)
+        self.assertIn('+4 vs previous', progress.describe('0x1000', result['0x1000'], 3))
+
+    def test_missing_diagnostics_are_unknown_and_uncounted_runs_do_not_use_patience(self):
+        first = progress.update({'0x1000': self.metric(4)}, [])
+        result = progress.update({'0x1000': self.metric(4), '0x2000': None}, [dict(progress=first)], counted=False)
+        self.assertEqual(result['0x1000']['no_improvement'], 0)
+        self.assertIsNone(result['0x2000'])
+        self.assertIn('unavailable', progress.describe('0x2000', None, 3))
+        self.assertIsNone(progress.measure({}))
+
+    def test_diagnostic_methods_do_not_compare_unlike_numbers(self):
+        first = progress.update({'0x1000': self.metric(4)}, [])
+        other = dict(metric='compared_code_bytes', value=2, total=20)
+        result = progress.update({'0x1000': other}, [dict(progress=first)])
+        self.assertIsNone(result['0x1000']['previous'])
+        self.assertEqual(result['0x1000']['no_improvement'], 0)
+
+    def test_later_matching_region_rises_with_unchanged_first_mismatch(self):
+        target = '1000: b8 01 00 00 00  mov eax, 1\n1005: 83 c0 02  add eax, 2\n1008: c3  ret\n'
+        before = '0: b8 03 00 00 00  mov eax, 3\n5: 83 c0 04  add eax, 4\n8: c3  ret\n'
+        after = '0: b8 03 00 00 00  mov eax, 3\n5: 83 c0 02  add eax, 2\n8: c3  ret\n'
+        _, old = align.summarise(target, before)
+        _, new = align.summarise(target, after)
+        self.assertGreater(new['matching_bytes'], old['matching_bytes'])
+        self.assertEqual(new['matching_bytes'], 4)
+        self.assertEqual(new['matching_regions'], 1)
+        self.assertFalse(new['exact'])
+
+    def test_attempt_persists_model_progress_and_keeps_hard_cap(self):
+        attempt = load_attempt()
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            (directory / 'task.json').write_text(json.dumps(dict(drafter_model='synthetic-model')))
+            task = dict(dir=directory, task_id='synthetic', compiled='reconstruction/misc/X.cpp',
+                        max_attempts=2, symbols_local=directory / 'symbols.json',
+                        functions=[dict(rva=0x1000, size=20, symbol='synthetic')])
+            values = iter([4, 8])
+            def run_once(task, host, files, tdir, dest):
+                fdir = dest / '0x1000'
+                fdir.mkdir(parents=True)
+                (fdir / 'report.json').write_text(json.dumps(dict(result='fail', reason='code-byte-mismatch',
+                                                               detail='differs at +0x0')))
+                (fdir / 'align.json').write_text(json.dumps(dict(matching_bytes=next(values),
+                                                               matching_regions=2, target_bytes=20)))
+                return 1
+            with patch.object(attempt.pipeline, 'load_task', return_value=task), \
+                 patch.object(attempt.pipeline, 'lock'), patch.object(attempt.pipeline, 'unit_manifest', return_value=({}, [])), \
+                 patch.object(attempt.pipeline, 'compiler_include_problem', return_value=None), \
+                 patch.object(attempt.pipeline, 'load_config', return_value={}), \
+                 patch('draft_worktrees.route_attempt'), patch.object(attempt, 'missing_source_message', return_value=None), \
+                 patch.object(attempt.runners, 'for_attempt', return_value=dict(host_id='synthetic-host')), \
+                 patch.object(attempt.runners, 'AgentHost') as host, patch.object(attempt.runners, 'describe', return_value='synthetic-host'), \
+                 patch.object(attempt.disasm, 'find_objdump', return_value=None), \
+                 patch.object(attempt.disasm, 'write_side_by_side', return_value=(None, None)), \
+                 patch.object(attempt, 'run_once', side_effect=run_once), \
+                 patch.object(attempt, 'label_warnings', return_value=[]), patch.object(attempt, 'origin_lines', return_value=[]):
+                host.return_value.waited = 0
+                output = io.StringIO()
+                with contextlib.redirect_stdout(output):
+                    self.assertEqual(attempt.attempt(directory), 1)
+                    self.assertEqual(attempt.attempt(directory), 1)
+                    self.assertEqual(attempt.attempt(directory), 5)
+                self.assertIn('+4 vs previous', output.getvalue())
+                self.assertIn('Next: revise the source', output.getvalue())
+                self.assertIn('stop after 3 counted attempts with no improvement', output.getvalue())
+                self.assertIn('attempt budget exhausted: 2 of 2', output.getvalue())
+            rows = [json.loads(line) for line in (directory / 'attempts.jsonl').read_text().splitlines()]
+            self.assertEqual(len(rows), 2)
+            self.assertEqual(rows[-1]['model'], 'synthetic-model')
+            self.assertEqual(rows[-1]['progress']['0x1000']['best'], 8)
+            self.assertTrue((directory / 'attempts/001/attempt.txt').read_text().startswith('attempt 1 '))
+            self.assertEqual(json.loads((directory / 'task.json').read_text()), dict(drafter_model='synthetic-model'))
+
+    def test_attempt_refuses_missing_identity_before_using_a_runner(self):
+        attempt = load_attempt()
+        with tempfile.TemporaryDirectory() as tmp:
+            directory = Path(tmp)
+            (directory / 'task.json').write_text('{}')
+            with patch.object(attempt.pipeline, 'load_task', return_value=dict(dir=directory, max_attempts=3)), \
+                 patch.object(attempt, 'missing_source_message', return_value=None), \
+                 patch('draft_worktrees.route_attempt'), patch.object(attempt.pipeline, 'lock'), \
+                 patch.object(attempt.runners, 'for_attempt') as runner:
+                with self.assertRaisesRegex(ValueError, 'required before work starts'):
+                    attempt.attempt(directory)
+                runner.assert_not_called()
+
+
+if __name__ == '__main__':
+    unittest.main()

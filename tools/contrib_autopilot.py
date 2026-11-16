@@ -2,9 +2,8 @@
 """Ten-minute contributor intake job. Only trusted main tools execute; PR blobs are data.
 
     python3 tools/contrib_autopilot.py run-once [--dry-run] [--pr NUMBER]
-    python3 tools/contrib_autopilot.py write-launchd
 
-Private config/state/logs: .local/contrib-autopilot/. Never installs or loads the launchd job.
+Private config/state/logs: .local/contrib-autopilot/. Scheduling is configured by the operator.
 """
 import argparse
 from contextlib import contextmanager
@@ -14,9 +13,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import plistlib
 import re
-import shlex
 import shutil
 import socket
 import subprocess
@@ -25,10 +22,11 @@ import time
 import uuid
 
 from flow_state import atomic_write, state_lock
+import contributor_standing
 from contrib_screen import screen, screen_tree, STANDARD_HEADERS, MAX_BYTES
 
 ROOT = Path(__file__).resolve().parents[1]
-REPOSITORY = 'awarebayes/skyrim-research'
+REPOSITORY = 'awarebayes/skyrim_decomp'
 UNIT = re.compile(r'reconstruction/([a-z][a-z0-9_]*)/([A-Z][A-Za-z0-9_]*)\.(h|cpp)\Z')
 SHA = re.compile(r'[0-9a-f]{40}\Z')
 DEFAULTS = dict(max_functions=60, daily_compiles=240, daily_reviews=80, command_timeout=120,
@@ -484,8 +482,9 @@ class Runtime:
                 return False
         if responds(60):
             return
-        if self.config.get('wol_mac') and self.config.get('wol_broadcast'):
-            wake_windows(self.config['wol_mac'], self.config['wol_broadcast'])
+        if not self.config.get('wol_mac') or not self.config.get('wol_broadcast'):
+            raise Stop('verifier host unavailable; restore the host or configure an optional wake hook')
+        wake_windows(self.config['wol_mac'], self.config['wol_broadcast'])
         deadline = time.monotonic() + self.config['wol_wait']
         while time.monotonic() < deadline:
             time.sleep(5)
@@ -521,7 +520,7 @@ class Runtime:
         for directory in tasks:
             def bind_task():
                 self.state.reserve('compiles')
-                result = self.command([sys.executable, 'tools/verifier/attempt', directory], cwd=tree,
+                result = self.command([sys.executable, 'tools/verifier/attempt', directory, '--agent', 'tools/contrib_autopilot.py'], cwd=tree,
                                       timeout=self.config['confirm_timeout'], check=False)
                 if result.returncode == 3:
                     return False
@@ -842,6 +841,13 @@ def process(runtime, state, pr, dry_run=False):
         revision.update(done=True, abandoned=True)
         state.save()
         return revision
+    if not revision.get('enqueued'):
+        current = contributor_standing.standing(contributor_standing.load(runtime.root), pr['author']['login'])
+        if not current['auto_merge_eligible']:
+            runtime.feedback(revision, 'strikes', 'needs-maintainer',
+                             'Three active contributor strikes; maintainer clearance required.')
+            state.save()
+            return revision
     # Once enqueued, settle only the frozen selection; new PR metadata cannot cancel a receipt.
     if not revision.get('enqueued') and (pr.get('baseRefName', 'main') != 'main' or selection_problem(pr.get('files', []))):
         runtime.feedback(revision, 'scope', 'needs-maintainer', 'Only reconstruction unit source PRs targeting main are eligible.')
@@ -899,20 +905,6 @@ def process(runtime, state, pr, dry_run=False):
     return revision
 
 
-def write_launchd(root, private, python):
-    private.mkdir(parents=True, exist_ok=True)
-    label = 'com.skyrim-research.contrib-autopilot'
-    path = private / (label + '.plist')
-    document = dict(Label=label, ProgramArguments=[str(Path(python).resolve()),
-                    str(Path(root).resolve() / 'tools/contrib_autopilot.py'), 'run-once'],
-                    WorkingDirectory=str(Path(root).resolve()), StartInterval=600, RunAtLoad=False,
-                    EnvironmentVariables=dict(PATH=os.environ.get('PATH', '/usr/bin:/bin')),
-                    StandardOutPath=str(private / 'launchd.stdout.log'),
-                    StandardErrorPath=str(private / 'launchd.stderr.log'))
-    atomic_write(path, plistlib.dumps(document))
-    # Bootstrap from the private plist directly; no tracked machine paths and no job installed here.
-    return path, f'launchctl bootstrap gui/$(id -u) {shlex.quote(str(path))}'
-
 
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -921,14 +913,9 @@ def main(argv=None):
     run = sub.add_parser('run-once')
     run.add_argument('--pr', type=int)
     run.add_argument('--dry-run', action='store_true')
-    sub.add_parser('write-launchd')
     args = p.parse_args(argv)
     root = args.root.resolve()
     private = shared_root(root) / '.local/contrib-autopilot'
-    if args.command == 'write-launchd':
-        path, install = write_launchd(root, private, sys.executable)
-        print(f'Wrote {path}\nInstall after a dry run: {install}')
-        return 0
     config = dict(DEFAULTS, **read_json(private / 'config.json', {}))
     for key in ('max_functions', 'daily_compiles', 'daily_reviews', 'command_timeout', 'intake_timeout', 'confirm_timeout',
                 'model_timeout', 'export_timeout', 'wol_wait'):

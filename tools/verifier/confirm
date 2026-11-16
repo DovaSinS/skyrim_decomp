@@ -7,8 +7,8 @@
     tools/verifier/confirm --boat ...                                  # Boat session even with runners set
 
 When .local/verifier/runners.json lists `confirm` hosts, confirm runs on them instead of Boat
-(confirm_runners.py: the maintainer's Mac under Wine and Windows PC natively; every unit compiled
-on each, compared on each and cross-compared on this Mac; docs/verification.md, "Runner hosts").
+(confirm_runners.py: independently configured machines and loaders; every unit compiled
+on each, compared on each and cross-compared on the calling host; docs/verification.md, "Runner hosts").
 --boat keeps the Boat session path. On runner hosts each unit's lines are logged as it finishes
 (also to .local/verifier/confirm-logs/), and --resume skips units an earlier run completed for
 the same inputs and freshly measured toolchains (tools/verifier/README.md).

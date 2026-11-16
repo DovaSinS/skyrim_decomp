@@ -102,6 +102,15 @@ class RevisionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Anonymous sibling guard'):
             check.check_git(self.root, staged=True)
 
+    def test_staged_cache_rechecks_changed_private_workflow_policy(self):
+        self.assertEqual(check.check_git(self.root, staged=True), 6)
+        with patch.object(check, 'index_blob', side_effect=AssertionError('unexpected reread')):
+            self.assertEqual(check.check_git(self.root, staged=True), 6)
+        self.write('.local/publication-forbidden.json',
+                   json.dumps({'forbidden_strings': ['synthetic header']}))
+        with self.assertRaisesRegex(ValueError, 'Private workflow guard'):
+            check.check_git(self.root, staged=True)
+
     def test_explicit_policy_still_invalidates_a_cached_scan(self):
         self.assertEqual(check.check_git(self.root, staged=True), 6)
         policy = self.root / '.local/caller-policy.json'

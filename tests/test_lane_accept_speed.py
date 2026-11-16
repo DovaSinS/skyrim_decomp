@@ -37,6 +37,9 @@ class EquivalentAcceptance(unittest.TestCase):
             with self.subTest(requests=len(requests), preview=preview):
                 before = self.case.public()
                 expected = legacy.accept(self.root, requests, self.when, prepare_only=preview)
+                for dropped in expected['dropped']:
+                    dropped['next'] = ('Run flow.py next-actions with the same --flow-dir, '
+                                       'correct the named input, then retry.')
                 expected_files = self.case.public()
                 self.case.restore(before)
                 actual = lane_accept.accept(self.root, requests, self.when, prepare_only=preview)

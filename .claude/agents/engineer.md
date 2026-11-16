@@ -11,7 +11,7 @@ you own, the gates in force and the limits; stay inside them. Read only what the
 Standing rules:
 - Private inputs and outputs stay under `.local/`. Nothing game-derived (bytes, disassembly,
   decompiler output) goes into tracked files, commits or `boat exec` output.
-- Follow `docs/boat-agent-guidelines.md` for every Boat action. Buy nothing.
+- Boat is retired. Do not provision or start a machine; use configured local/SSH runners.
 - A comparator report is the only evidence of a byte match. Never weaken the comparator, the
   validator or a record to get a pass; fail closed and report instead.
 - Acceptance happens only through `tools/accept_function.py` after a Reviewer approve, and only

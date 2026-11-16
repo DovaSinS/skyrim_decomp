@@ -780,6 +780,11 @@ def check_progress_svg(root):
 COST_LEDGER = 'data/costs.json'
 
 
+def check_contributor_ledger(root):
+    from contributor_standing import load
+    load(root)
+
+
 def check_costs(root, data):
     """The cost ledger's schema and allocations (docs/costs.md), against this inventory.
 
@@ -827,6 +832,7 @@ def _load_uncached(staged=False):
         lint(ROOT, sorted({n for n in names if n and (ROOT / n).is_file()}), skeleton_ok=set(untracked) - {''})
         check_index(ROOT, data)
         check_costs(ROOT, data)
+        check_contributor_ledger(ROOT)
         check_progress_svg(ROOT)
         return data
     # Match records, source and recipe are checked as staged too, so the index gets its own tree.
@@ -838,6 +844,7 @@ def _load_uncached(staged=False):
         lint(root)
         check_index(root, data)
         check_costs(root, data)
+        check_contributor_ledger(root)
         check_progress_svg(root)
         return data
 
@@ -925,15 +932,47 @@ def check_anonymity(name, payload, terms):
             'Anonymous sibling guard: forbidden private identity in publication tree (details withheld)')
 
 
+def private_workflow_terms(root=ROOT):
+    """Optional ignored publication denylist; never print its values.
+
+    .local/publication-forbidden.json: {"forbidden_strings": [<private value>, ...]}.
+    SR_PUBLICATION_FORBIDDEN_CONFIG carries the policy into isolated publication clones.
+    Without the list (including public CI), this additional guard is a no-op.
+    """
+    from local_paths import local_dir
+    explicit = os.environ.get('SR_PUBLICATION_FORBIDDEN_CONFIG')
+    path = Path(explicit) if explicit else local_dir(root) / 'publication-forbidden.json'
+    if not explicit and not path.is_file():
+        common = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
+                                cwd=root, capture_output=True, text=True)
+        if common.returncode == 0:
+            path = Path(common.stdout.strip()).parent / '.local/publication-forbidden.json'
+    if not explicit and not path.is_file():
+        return ()
+    try:
+        terms = json.loads(path.read_text())['forbidden_strings']
+        require(isinstance(terms, list) and terms and all(text(t) for t in terms), '')
+        return tuple(t.casefold() for t in terms)
+    except (OSError, ValueError, KeyError, TypeError):
+        raise ValueError('Private workflow guard: private config missing or invalid') from None
+
+
+def check_private_workflow(name, payload, terms):
+    content = name.casefold() + '\n' + payload.decode('utf-8', 'replace').casefold()
+    require(not any(term in content for term in terms),
+            'Private workflow guard: forbidden private value in publication tree (details withheld)')
+
+
 def check_git(root=ROOT, staged=False, content_revision=None):
     records = subprocess.check_output(['git', 'ls-files', '--stage', '-z'], cwd=root).split(b'\0')
     terms = anonymity_terms(root)
+    workflow_terms = private_workflow_terms(root)
     publication_key = None
     if staged:
         import revision_cache
         # An identical immutable index was already scanned under these exact tools and denylist.
         # Working files never use this shortcut; the current private denylist is read above.
-        publication_key = hashlib.sha256((revision_cache.snapshot(root, staged=True) + repr(terms)).encode()
+        publication_key = hashlib.sha256((revision_cache.snapshot(root, staged=True) + repr(terms) + repr(workflow_terms)).encode()
                                          + b'\0'.join(records)).hexdigest()
         saved = revision_cache.read(root, 'publication-index', publication_key)
         if saved is not None:
@@ -952,12 +991,14 @@ def check_git(root=ROOT, staged=False, content_revision=None):
             # Index blobs matter: a staged binary may have been replaced by harmless text on disk.
             payload = index_blob(objects, sha, name)
             check_anonymity(name, payload, terms)
+            check_private_workflow(name, payload, workflow_terms)
             inspect_payload(name, payload, mode)
             if not staged:
                 path = root / name
                 require(path.is_file() and not path.is_symlink(), f'{name}: missing file/symlink')
                 payload = path.read_bytes()
                 check_anonymity(name, payload, terms)
+                check_private_workflow(name, payload, workflow_terms)
                 inspect_payload(name, payload, mode)
             content.update(name.encode() + b'\0' + mode.encode() + b'\0')
             content.update(hashlib.sha256(payload).digest())
