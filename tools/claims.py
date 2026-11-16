@@ -287,7 +287,7 @@ def scope(entries, public, build):
 
 
 def body(build, entries, public, me, total=None, done=0, managed=False):
-    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or not re.fullmatch(r'[A-Za-z0-9-]+', me):
+    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or (me is not None and not re.fullmatch(r'[A-Za-z0-9-]+', me)):
         raise ValueError('invalid build id or GitHub login')
     names = {f['rva']: f.get('name') for f in public['functions'] if f['build_id'] == build}
     lines = []
@@ -300,7 +300,8 @@ def body(build, entries, public, me, total=None, done=0, managed=False):
             text += ' ' + name
         lines.append(text)
     total = len(entries) if total is None else total
-    text = (f'Claimant: @{me}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
+    claimant = f'@{me}' if me else '(issue author)'
+    text = (f'Claimant: {claimant}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
             f'Functions: {total}\nAccepted on origin/main: {done} / {total}\n\n'
             'This claim lapses after 24 hours without activity (a comment, an update or a linked pull request); anyone may then take it over.\n'
             'Only public metadata belongs in this issue.\n\n'
@@ -386,7 +387,7 @@ def active_entries(root, public, family_roots=()):
     build = public['target_build_id']
     accepted = {f['rva'] for f in public['functions'] if f['build_id'] == build and f['status'] == 'matched'}
     import flow
-    states = flow.function_states(root, flow.flow_dir(root), online=False)
+    states = flow.function_states(root, flow.flow_dir(root), online=False, tolerate_review_path_errors=True)
     active = {'queued', 'drafting', 'confirmed', 'review-pending'}
     addresses = {rva(a) for a, state in states.items() if state.get('state') in active}
     return [(a, a + 1) for a in addresses - accepted]

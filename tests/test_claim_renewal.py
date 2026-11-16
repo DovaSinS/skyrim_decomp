@@ -82,7 +82,9 @@ class AdvisoryClaims(unittest.TestCase):
             with patch.object(flow, 'queue_results', return_value=[]), \
                  patch.object(flow, 'queue_units', return_value=[]), \
                  patch.object(flow, 'groups', return_value={'escape': group}):
-                states = flow.function_states(root, root / '.local/flow', online=False)
+                with self.assertRaisesRegex(flow.FlowError, 'review path escapes private reviews'):
+                    flow.function_states(root, root / '.local/flow', online=False)
+                states = flow.function_states(root, root / '.local/flow', online=False, tolerate_review_path_errors=True)
                 entries = claims.active_entries(root, public)
             self.assertEqual(states['0x1000']['state'], 'review-malformed')
             self.assertIn('review path escapes private reviews', states['0x1000']['detail'])

@@ -261,10 +261,7 @@ def review_path(root, task):
 
 def read_review(root, g, functions):
     """(status, {rva: block}) of a group's saved review: status 'missing', 'malformed: <why>' or 'ok'."""
-    try:
-        path = review_path(root, g)
-    except FlowError as exc:
-        return f'malformed: {exc}', {}
+    path = review_path(root, g)
     if not path.is_file():
         return 'missing', {}
     try:
@@ -314,7 +311,7 @@ def prior_holds(root):
 
 # ------------------------------------------------------------------ state of every function
 
-def function_states(root, fdir, branch='main', online=True, review_rvas=None):
+def function_states(root, fdir, branch='main', online=True, review_rvas=None, *, tolerate_review_path_errors=False):
     """{rva hex: {'state', 'id', 'name', 'unit', 'group', 'profile', 'detail'}} for every tracked function."""
     root = Path(root)
     data = inventory(root)
@@ -359,7 +356,14 @@ def function_states(root, fdir, branch='main', online=True, review_rvas=None):
             continue
         if review_rvas is not None and not set(g['functions']) & review_rvas:
             continue
-        status, blocks = read_review(root, g, data['functions'])
+        try:
+            status, blocks = read_review(root, g, data['functions'])
+        except FlowError as exc:
+            # Claims inspect activity only; an invalid path is inactive, never approval.
+            # Acceptance and family callers retain the strict default refusal.
+            if not tolerate_review_path_errors or 'review path escapes private reviews' not in str(exc):
+                raise
+            status, blocks = f'malformed: {exc}', {}
         for rva in g['functions']:
             row = out.setdefault(rva, {'unit': None, 'profile': None, 'detail': ''})
             row['group'] = name
