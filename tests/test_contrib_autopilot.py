@@ -503,6 +503,36 @@ class GitTransport(unittest.TestCase):
         # Retaining this same history still refuses the original bad include.
         with self.assertRaisesRegex(Exception, 'deterministic screen'):
             flow_lane.contributor_history(self.root, self.root, dict(contribution, merge_method='merge'))
+        from contrib_publication import PublicationRejected, screen_publication
+        with self.assertRaises(PublicationRejected) as caught:
+            screen_publication(self.root, self.base, fixed, merge_method='merge')
+        self.assertEqual(caught.exception.commit, bad)
+        self.assertEqual(caught.exception.path, 'reconstruction/synth/Synth.cpp')
+
+    def test_shared_screen_refusals_identify_commit_and_path_without_echoing_them(self):
+        from contrib_publication import PublicationRejected, screen_publication
+        for kind, content in [('screen', '#pragma comment(lib,"malicious")\n'),
+                              ('size', 'x' * (screen.MAX_BYTES + 1)),
+                              ('mode', 'synthetic-link-target\n')]:
+            with self.subTest(kind=kind):
+                self.git('checkout', '--quiet', 'contributor')
+                name = 'reconstruction/synth/Synth.cpp'
+                (self.root / name).write_text(content)
+                self.git('add', name)
+                if kind == 'mode':
+                    blob = self.git('rev-parse', ':' + name)
+                    self.git('update-index', '--cacheinfo', '120000,' + blob + ',' + name)
+                self.git('commit', '--quiet', '-m', 'synthetic refusal ' + kind)
+                bad = self.git('rev-parse', 'HEAD')
+                if kind == 'mode':
+                    self.git('reset', '--hard', 'HEAD')  # Materialize the synthetic index-only symlink.
+                self.git('checkout', '--quiet', 'main')
+                with self.assertRaises(PublicationRejected) as caught:
+                    screen_publication(self.root, self.base, bad)
+                self.assertEqual(caught.exception.commit, bad)
+                self.assertEqual(caught.exception.path, name)
+                self.assertNotIn(bad, str(caught.exception))
+                self.assertNotIn(name, str(caught.exception))
 
     def contribution(self):
         return dict(head=self.head, base=self.base, authors=['Original Contributor <contributor@example.invalid>'],

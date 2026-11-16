@@ -16,6 +16,11 @@ SHA = re.compile(r'[0-9a-f]{40}\Z')
 class PublicationRejected(ValueError):
     """A fixed, publication-safe reason; never include source or Git diagnostics."""
 
+    def __init__(self, reason, *, commit=None, path=None):
+        super().__init__(reason)
+        self.commit = commit
+        self.path = path
+
 
 def screen_publication(root, base, head, *, merge_method='squash', headers=STANDARD_HEADERS,
                        max_files=120, git=None):
@@ -67,12 +72,12 @@ def screen_publication(root, base, head, *, merge_method='squash', headers=STAND
         for name in names:
             mode = git('ls-tree', commit, '--', name).decode().split()
             if not mode or mode[0] != '100644':
-                raise PublicationRejected('non-regular source file or historical deletion')
+                raise PublicationRejected('non-regular source file or historical deletion', commit=commit, path=name)
             if int(git('cat-file', '-s', f'{commit}:{name}')) > MAX_BYTES:
-                raise PublicationRejected('deterministic screen: file-size-cap')
+                raise PublicationRejected('deterministic screen: file-size-cap', commit=commit, path=name)
             codes = screen(git('show', f'{commit}:{name}'), name, headers=headers)
             if codes:
-                raise PublicationRejected('deterministic screen: ' + ', '.join(codes))
+                raise PublicationRejected('deterministic screen: ' + ', '.join(codes), commit=commit, path=name)
         args = ['diff', '--no-ext-diff', '--no-textconv', comparison]
         if merge_method == 'merge':
             args.append(commit)
