@@ -31,13 +31,20 @@ same point as a Drafter's worktree branch.
    The maintainer accepts the residual risk of compiling untrusted C++ on the verifier hosts
    after the automated screens.** This changes no acceptance, lint, validator or comparator rule.
 3. **Confirmation.** The project's existing `tools/ghidra/export_pack.py` writes private unit
-   task directories; the ordinary attempt/bind path resolves symbols, then
-   `tools/verifier/confirm` independently compiles and compares on the configured Wine and native
-   Windows hosts. The contributor's local summary is never evidence. An unavailable host can use
-   an optional configured wake hook followed by bounded probes; network addresses come exclusively
-   from private configuration. Each host's compiler
+   task directories; the ordinary attempt/bind path resolves symbols. Every outside PR uses
+   **the project's Wine host** as its first verifier and **CI** as its second verifier.
+   Intake derives an isolated Wine/CI runner profile automatically, including for clean sampling
+   reruns; it neither probes nor wakes a maintainer PC. The shared internal runner configuration
+   is unchanged. A fresh Wine attempt supplies full comparator evidence, and CI compiles twice
+   with the pinned toolchain and validates the published target and complete object-content
+   commitments under the authorized CI-host rule in verification.md. Missing target hashes,
+   compiler problems and CI failures remain blockers. The contributor's local summary is never
+   evidence. Each host's compiler
    has a 180-second timeout that terminates its process tree, including after an SSH disconnect.
    Confirmation is checkpointed per function so a failed comparison need not discard other passes.
+   If GitHub requires approval for a fork PR's CI run, intake reports the exact-head run link
+   with a clear approval-needed notice so the watcher can approve it. This advisory notice
+   never replaces project confirmation or review.
 4. **Review.** A fresh `gpt-6.1-terra` Reviewer runs through `codex exec` under the admitted
    `claude-low` profile and follows `docs/reviewer-runbook.md`. The usual flow sampler selects the
    first 20 under new components and at least five percent at random. Required second passes
@@ -92,9 +99,13 @@ before retrying. Machine-specific scheduler installation belongs in the operator
 
 Optional `.local/contrib-autopilot/config.json` keys: `max_functions` (60), `daily_compiles` (240),
 `daily_reviews` (80, including Engineer screens), `command_timeout` (120 seconds), `intake_timeout` (300 seconds),
-`confirm_timeout` (1200), `model_timeout` (1200), `export_timeout` (1800), `wol_mac`,
-`wol_broadcast` and `wol_wait` (180). Waking is disabled unless both address fields are set.
+`confirm_timeout` (1200), `model_timeout` (1200), and `export_timeout` (1800).
+Runner paths and installation details stay in ignored private configuration.
 Daily limits reset at UTC midnight; each host compilation
+reserves capacity before execution. A Wine attempt reserves up to two compilations because
+automatic binding can rebuild once; CI reserves two native compilations for determinism.
+Unused reservations remain charged for that day, including on interrupted work. These are
+admission reservations rather than a measurement of executed compiles. Each host compilation
 counts separately, including attempts and sampling reruns. `standard_headers` may narrow the
 fixed compiler-header allowlist; community headers must resolve inside the repository's
 `reconstruction/` include closure, never a private source checkout. Input screens cap each file
@@ -105,8 +116,10 @@ and a 1 MiB diff. These are intake/resource limits, not changes to the match gat
 Unknown contributor drafting prompts get a separate first-20 component per PR head.
 
 Dry runs perform real screens, exports, confirmations, reviews and acceptance preparation, so
-consume the same daily budgets. They keep separate PR checkpoints, flow groups and review directories, never post,
-label, merge, close, enqueue into the live lane or push. Their synthetic integration tests need
+consume the same daily budgets. Real CI confirmation publishes an isolated source-only batch ref
+and dispatches CI, including in dry-run mode; the command reports this before work starts.
+Dry runs keep separate PR checkpoints, flow groups and review directories. They never post, label,
+merge or close PRs, enqueue acceptance, or push main. Their synthetic integration tests need
 no game input, network, compiler or model account.
 
 ## Threat note: compiling contributed source

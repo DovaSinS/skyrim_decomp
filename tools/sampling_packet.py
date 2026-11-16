@@ -26,6 +26,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import uuid
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from review_packet import approved_commit  # noqa: E402
@@ -43,10 +44,28 @@ def summary(record):
             sorted({r.get('compiled_on') for r in runs}), len(runs))
 
 
-def compare(committed, rerun):
+def compare(committed, rerun, *, root=None, fn=None, target=None):
     """(agree, row text) for one function's committed and re-run records."""
     a_digest, a_results, a_hashes, _, a_runs = summary(committed)
     b_digest, b_results, b_hashes, b_hosts, b_runs = summary(rerun)
+    if any('ci_confirmation' in record for record in (committed, rerun)):
+        if root is None or fn is None or target is None:
+            return False, 'CI sampling requires the source tree and function identity DISAGREE'
+        import check
+        root = Path(root)
+        scratch = root / 'reports' / target['build_id'] / ('.sampling-' + uuid.uuid4().hex + '.json')
+        scratch.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            for record in (committed, rerun):
+                if 'ci_confirmation' in record:
+                    scratch.write_text(json.dumps(record) + '\n')
+                    check.validate_match(dict(fn, report=scratch.relative_to(root).as_posix()), target, root=root)
+        except (ValueError, TypeError, KeyError, OSError):
+            return False, 'CI sampling evidence failed the complete match gate DISAGREE'
+        finally:
+            scratch.unlink(missing_ok=True)
+        if 'ci_confirmation' in rerun:
+            b_hosts = sorted(set(b_hosts) | {rerun['ci_confirmation']['host_id']})
     ok = (a_digest == b_digest and a_results == b_results and a_hashes == b_hashes
           and len(b_hashes) == 1 and len(b_hosts) == 2)
     return ok, (f'runs {a_runs}/{b_runs} digest_same {a_digest == b_digest} hash_same {a_hashes == b_hashes} '
@@ -135,12 +154,15 @@ def main(argv=None):
         verdicts = parse_rows(args.compare.read_text().splitlines(keepends=True))
     elif args.rerun:
         rows, verdicts = [], {}
+        data = json.loads((root / 'data/progress.json').read_text())
+        functions = {fn['rva']: fn for fn in data['functions'] if fn['build_id'] == BUILD}
+        target = json.loads((root / 'builds/target.json').read_text())
         for group in ('reviewed', 'label_only'):
             for unit, rvas in sample.get(group, {}).items():
                 for rva in rvas:
                     committed = json.loads((root / f'reports/{BUILD}/{rva}.json').read_text())
                     rerun = json.loads((args.rerun / BUILD / f'{rva}.json').read_text())
-                    ok, row = compare(committed, rerun)
+                    ok, row = compare(committed, rerun, root=root, fn=functions[int(rva, 16)], target=target)
                     verdicts[rva] = 'AGREE' if ok else 'DISAGREE'
                     rows.append(f'{group:10} {unit:30} {rva:10} {row}')
         text = '\n'.join(rows) + '\n'
