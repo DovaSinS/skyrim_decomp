@@ -5,10 +5,11 @@ compare locally and open a pull request. Python 3.11+ standard library only; Lin
     ./sr go [--profile cheap|full]   # one command: setup, pick, claim and start a function
     ./sr doctor             # what is present, what is missing, the one next step
     ./sr setup [--yes] [--exe PATH] [--accept-microsoft-license]
-    ./sr next               # easy unclaimed functions
+    ./sr next               # unclaimed targets ranked by advisory draft readiness
     ./sr claim 0x<rva>      # GitHub issue as a claim (or a prefilled link)
     ./sr start 0x<rva>      # branch, unit skeleton, local pack from your exe
     ./sr compare            # compile with the pinned MSVC and run the comparator
+    ./sr preflight          # shared deterministic intake checks, before or after compare
     ./sr submit [--dry-run] # checks, commit, push, pull request
     ./sr release 0x<rva>    # give a claim back
     ./sr intake --base REF  # contributor-scope checks of a diff (CI, maintainers)
@@ -319,23 +320,31 @@ def unit_files(repo, cls, area=None):
     return area, f'reconstruction/{area}/{cls}.h', f'reconstruction/{area}/{cls}.cpp'
 
 
-def candidates(repo, data, claimed=(), max_size=None):
-    """Mapped functions a newcomer can start on, cheapest first: classes without a unit (no accepted
-    function goes stale), an area the layout rule knows, a plain Class::Method name, small size."""
-    out = []
+def candidates(repo, data, claimed=(), max_size=None, readiness_facts=None):
+    """Mapped, unclaimed targets ordered by advisory declaration/draft readiness, then size/RVA."""
+    from contrib_readiness import readiness
+    out, headers, layouts = [], {}, {}
     for fn in data['functions']:
         if fn['status'] != 'mapped' or fn['rva'] in claimed:
             continue
         if max_size and fn['size'] > max_size:
             continue
         m = PLAIN_NAME.fullmatch(fn.get('name') or '')
-        cls = m.group(1) if m else None
-        area, _h, cpp = unit_files(repo, cls) if cls else (None, None, None)
+        cls, method = m.groups() if m else ('', '')
+        if cls not in layouts:
+            layouts[cls] = unit_files(repo, cls) if cls else (None, None, None)
+        area, header, cpp = layouts[cls]
         has_unit = bool(cpp and (Path(repo) / cpp).is_file())
+        if header not in headers:
+            path = Path(repo) / header if header else None
+            headers[header] = path.read_text() if path and path.is_file() else ''
+        rank, reason, cautions = readiness(fn, cls, method, headers[header],
+                                          (readiness_facts or {}).get(fn['rva']))
         out.append({'rva': f'0x{fn["rva"]:x}', 'size': fn['size'], 'name': fn.get('name'),
                     'name_origin': fn.get('name_origin'), 'unit': cpp, 'unit_exists': has_unit,
-                    'startable': bool(m and area),
-                    '_key': (not m or area is None, has_unit, fn['size'], fn['rva'])})
+                    'startable': bool(m and area), 'readiness_rank': rank, 'reason': reason,
+                    'cautions': cautions,
+                    '_key': (not m or area is None, rank, fn['size'], fn['rva'])})
     out.sort(key=lambda c: c.pop('_key'))
     return out
 
@@ -931,8 +940,11 @@ def save_local_claim(ctx, rva, record):
 
 # ------------------------------------------------------------------ unit skeleton and task
 
-def skeleton(fn, cls, method, area, drafted_by, recipe):
-    """(.h text, .cpp text) of a new unit that compiles and passes the lint, with labels filled in."""
+def skeleton(fn, cls, method, area, drafted_by, recipe, code_origin=None):
+    """New unit metadata; code origin deliberately stays unfinished until truthfully declared."""
+    if code_origin is not None and (not code_origin.strip() or len(code_origin) > 2048
+                                    or any(ord(c) < 32 for c in code_origin)):
+        raise Stop(USAGE, 'code origin must be a nonempty single-line declaration')
     target = fn['build_id']
     label, licence = community_label(fn.get('name_source'))
     label = label or 'GUESS(low)'
@@ -944,6 +956,10 @@ def skeleton(fn, cls, method, area, drafted_by, recipe):
         f'// Type declarations for the {cls} translation unit (build {target}).',
         '//',
         '// Labels: v2',
+        f'// Evidence: {fn["evidence"]}.',
+        f'// Recipe: {recipe}',
+        f'// Drafted by {drafted_by}.',
+        f'// Code origin: {code_origin or "SKELETON_TODO_CODE_ORIGIN (state the actual origin and any adaptation)"}',
         '// Source exposure: binary-analysis (a local listing of the contributor\'s own copy of the pinned image).',
         *lic_line,
         '// Community names are unverified. Only the members the compared code needs are declared.',
@@ -962,6 +978,7 @@ def skeleton(fn, cls, method, area, drafted_by, recipe):
         '//',
         '// Labels: v2',
         f'// Evidence: {fn["evidence"]}.',
+        f'// Code origin: {code_origin or "SKELETON_TODO_CODE_ORIGIN (state the actual origin and any adaptation)"}',
         f'// Source exposure: binary-analysis. Drafted by {drafted_by}.',
         *lic_line,
         '// A byte match shows that this source and recipe produce the checked code; it does not verify the',
@@ -1518,10 +1535,19 @@ def cmd_next(ctx, args):
         online = False
         ctx.say(f'claims unavailable: {exc}')
     claimed |= {parse_rva(k) for k in local_claims(ctx)}
-    rows = [c for c in candidates(ctx.repo, data, claimed, args.max_size) if c['startable']][:args.count]
+    facts = {}
+    if getattr(args, 'function_table', None):
+        from contrib_readiness import local_facts
+        target = target_manifest(ctx.repo)
+        try:
+            facts = local_facts(args.function_table, data['target_build_id'], target['image_sha256'])
+        except (OSError, ValueError, KeyError) as exc:
+            raise Stop(USAGE, str(exc)) from None
+    rows = [c for c in candidates(ctx.repo, data, claimed, args.max_size, facts) if c['startable']][:args.count]
     for c in rows:
         ctx.say(f'{c["rva"]:>10}  {c["size"]:>5} B  {c["name"]}  -> {c["unit"]}' + ('' if not c['unit_exists']
-                                                                                   else '  (existing unit)'))
+                                                                                   else '  (existing unit)')
+                + f'  — {c["reason"]}')
     if not online:
         ctx.say('note: GitHub not reachable; claims by others are not excluded')
     if not rows:
@@ -1750,6 +1776,9 @@ def start(ctx, args, quiet=False):
         (tdir / 'sibling.md').write_text(f'# {cls}: pointers into the FNV decompilation (private)\n'
                                          + '\n'.join(sibling) + '\n')
     created = []
+    if not args.practice and not getattr(args, 'code_origin', None) and ctx.interactive:
+        args.code_origin = input('Code origin: describe the actual sources and any adaptation '
+                                 '(leave blank to fill the required header after drafting): ').strip() or None
     if not (ctx.repo / cpp).exists():
         if args.practice:
             raise Stop(USAGE, f'{cpp} does not exist; practice works on accepted units only')
@@ -1757,7 +1786,8 @@ def start(ctx, args, quiet=False):
         if not drafted:
             raise Stop(CONSENT, 'say who drafts the unit (a person, and the AI model if one writes code)',
                        f'{ctx.cli} start {" ".join(args.rva)} --drafted-by "<your name>, assisted by <model or none>"')
-        h_text, cpp_text = skeleton(fns[0], cls, m[0].group(2), area, drafted, recipe)
+        h_text, cpp_text = skeleton(fns[0], cls, m[0].group(2), area, drafted, recipe,
+                                    getattr(args, 'code_origin', None))
         if not (ctx.repo / header).exists():
             (ctx.repo / header).parent.mkdir(parents=True, exist_ok=True)
             write_source(ctx.repo / header, h_text)
@@ -1765,9 +1795,20 @@ def start(ctx, args, quiet=False):
         write_source(ctx.repo / cpp, cpp_text)
         created.append(cpp)
         save_config(ctx, drafted_by=drafted)
-    elif not args.practice:
-        ctx.say(f'{cpp} exists: add each new function and its "RVA 0x<rva>, <n> bytes" header line yourself. '
-                'Editing an accepted unit makes its accepted functions stale until the project re-confirms them.')
+    if not args.practice:
+        drafted = args.drafted_by or load_config(ctx).get('drafted_by') or 'unknown'
+        text = (ctx.repo / cpp).read_text()
+        additions = []
+        for fn, mm in zip(fns, m):
+            if not re.search(rf'\bRVA 0x{fn["rva"]:x}\b', text, re.I):
+                _h, metadata = skeleton(fn, cls, mm.group(2), area, drafted, recipe,
+                                        getattr(args, 'code_origin', None))
+                additions.append(metadata.split('#include', 1)[0])
+        if additions:
+            write_source(ctx.repo / cpp, ''.join(additions) + text)
+        ctx.say('Function header metadata is prepared. Add the new declarations and bodies; '
+                'replace each code-origin placeholder truthfully before compare. '
+                'Accepted companions are re-confirmed by the project.')
     prof = contrib_profile(ctx, getattr(args, 'profile', None))
     save_config(ctx, profile=prof['name'])
     task = {'task_id': tdir.name, 'build_id': target['build_id'], 'compiled': cpp, 'recipe': recipe,
@@ -1973,51 +2014,13 @@ def git_blob(ctx, ref, name):
     return proc.stdout if proc.returncode == 0 else None
 
 
-def intake_problems(ctx, base, head='HEAD', files=None):
-    """Contributor-scope rules on a diff, reading file contents from git (never executing them):
-    only reconstruction unit files, a size cap and the source lint. Sibling (FNV) material is
-    allowed on the Drafters' terms; the lint checks its SIBLING(...) labels and `Sibling source:`
-    lines, and submit's label and origin checks read the clone when it is present."""
-    import lint_reconstruction as lint
-    problems = []
+def intake_problems(ctx, base, head='HEAD', files=None, details=None):
+    """Shared deterministic submission checks; acceptance remains the project's separate gate."""
+    from contrib_validation import intake_problems as validate, publication_problems
     rows = files if files is not None else changed_files(ctx, base, head)
-    target = target_manifest(ctx.repo)['build_id']
-    names = [n for status, n in rows if UNIT_PATH.fullmatch(n) and status != 'D']
-    from git_context import tree_entries, blobs, lint_dependencies
-    if head and names:
-        _revision, entries = tree_entries(ctx.repo, head)
-        sources = blobs(ctx.repo, entries, names)
-    else:
-        sources = {n: (ctx.repo / n).read_bytes() for n in names if (ctx.repo / n).is_file()}
-    for status, name in rows:
-        if not UNIT_PATH.fullmatch(name):
-            problems.append(f'{name}: outside contributor scope (reconstruction/<area>/<Class>.h or .cpp only)')
-            continue
-        if status == 'D':
-            problems.append(f'{name}: deleting a unit file is for maintainers')
-            continue
-        blob = sources.get(name)
-        if blob is None:
-            problems.append(f'{name}: not readable at {head}')
-            continue
-        if len(blob) > MAX_UNIT_FILE_BYTES:
-            problems.append(f'{name}: {len(blob)} bytes, over the {MAX_UNIT_FILE_BYTES}-byte contributor cap')
-    # Lint the files as they would be integrated, in a temporary tree holding the head versions of
-    # what the lint reads (sources, recipes, evidence files), so the working tree is never trusted.
-    if names:
-        import tempfile
-        if head:
-            context = blobs(ctx.repo, entries, lint_dependencies(sources))
-        else:
-            context = {n: (ctx.repo / n).read_bytes() for n in lint_dependencies(sources)
-                       if (ctx.repo / n).is_file()}
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            for rel, blob in context.items():
-                (root / rel).parent.mkdir(parents=True, exist_ok=True)
-                (root / rel).write_bytes(blob)
-            for n in names:
-                problems += lint.lint_file(root, n, target)
+    problems = validate(ctx, rows, head, details)
+    if not problems:
+        problems += publication_problems(ctx, base, rows, head)
     return problems
 
 
@@ -2031,6 +2034,40 @@ def cmd_intake(ctx, args):
         ctx.say(f'problem: {p}')
     ctx.say('intake: ' + ('PASS' if not problems else f'FAIL ({len(problems)} problem(s))'))
     return (OK if not problems else FAILED), {'problems': problems}, None if not problems else 'fix the problems listed'
+
+
+def submission_files(ctx, base, unit, head='HEAD'):
+    branch_rows = changed_files(ctx, base, head) if base != 'HEAD' else []
+    return list(dict.fromkeys([(s, n) for s, n in branch_rows if n not in unit] + [('M', n) for n in unit]))
+
+
+def cmd_preflight(ctx, args):
+    """Source-only intake checks are useful before the first local comparator pass, too."""
+    from contrib_validation import project_reconfirmation
+    _tdir, task = load_task(ctx, args.task)
+    up, _push = upstream_remote(ctx)
+    base = args.base or (f'{up}/main' if up else 'origin/main')
+    if ctx.run(['git', 'rev-parse', '--verify', '--quiet', base], cwd=ctx.repo, capture_output=True).returncode:
+        base = 'HEAD'
+    unit = task['contrib']['unit']
+    files = submission_files(ctx, base, unit)
+    head = git(ctx, 'write-tree') if args.staged else None
+    details = {}
+    problems = intake_problems(ctx, base, head=head, files=files, details=details)
+    reconfirmation = project_reconfirmation(ctx.repo, [n for _status, n in files])
+    labels, origin, warnings = (details.get('label_findings', []), details.get('origin_findings', []),
+                                details.get('warnings', []))
+    for warning in warnings:
+        ctx.say('warning: ' + warning)
+    for problem in problems:
+        ctx.say('BLOCKED: ' + problem)
+    for item in reconfirmation:
+        ctx.say(f'{item["file"]}:1: {item["rva"]}: {item["status"]}')
+    for label in labels:
+        ctx.say('label: ' + label)
+    return (FAILED if problems else OK), dict(problems=problems, blockers=problems, label_findings=labels,
+                                            project_reconfirmation=reconfirmation, origin_findings=origin, warnings=warnings), \
+        'fix the listed findings' if problems else f'{ctx.cli} compare'
 
 
 def upstream_remote(ctx):
@@ -2108,13 +2145,19 @@ def cmd_submit(ctx, args):
     except (OSError, ValueError):
         raise Stop(USAGE, 'no comparison yet', f'{ctx.cli} compare')
     from source_digest import include_closure, tu_digest
-    digest = tu_digest(ctx.repo, include_closure(ctx.repo, task['compiled']))
-    if digest != summary['source_revision']:
-        blockers.append('the unit changed since the last compare')
+    try:
+        digest = tu_digest(ctx.repo, include_closure(ctx.repo, task['compiled']))
+        if digest != summary['source_revision']:
+            blockers.append(f'{task["compiled"]}:1: the unit changed since the last compare; fix: run compare again')
+    except (OSError, ValueError):
+        blockers.append(f'{task["compiled"]}:1: comparison source closure cannot be resolved; '
+                        'fix: repair the include findings below, then run compare again')
     if not all(r['result'] == 'pass' for r in summary['functions']):
-        blockers.append('not every function passed the last compare')
+        blockers.append(f'{task["compiled"]}:1: not every function passed the last compare; '
+                        'fix: resolve the comparison failures before submitting')
     if summary['compiler'] != 'pinned':
-        blockers.append('the last compare used a stand-in compiler, not the pinned MSVC')
+        blockers.append(f'{task["compiled"]}:1: the last compare used a stand-in compiler, not the pinned MSVC; '
+                        'fix: install the pinned compiler with setup and compare again')
     if practice:
         blockers.append('practice tasks re-do accepted functions and are not submitted')
     unit = [n for n in task['contrib']['unit'] if (ctx.repo / n).is_file()]
@@ -2127,28 +2170,16 @@ def cmd_submit(ctx, args):
         base = 'HEAD'
     # Everything the branch would bring, not only the unit: committed changes since the base plus
     # the unit as it is on disk now.
-    branch_rows = changed_files(ctx, base, 'HEAD') if base != 'HEAD' else []
-    files = list(dict.fromkeys([(s, n) for s, n in branch_rows if n not in unit] + [('M', n) for n in unit]))
-    problems = intake_problems(ctx, base, head=None, files=files)
+    files = submission_files(ctx, base, unit)
+    details = {}
+    problems = intake_problems(ctx, base, head=None, files=files, details=details)
     blockers += problems
-    import check_labels
-    import check_origin
-    labels = check_labels.check([ctx.repo / n for n in unit], root=ctx.repo, env=ctx.env)
-    warnings += [f'label: {x}' for x in labels]
-    clones, missing = check_origin.open_clones(ctx.repo, env=ctx.env)
-    hits = check_origin.check_unit([ctx.repo / n for n in unit], clones, root=ctx.repo)
-    origin = [check_origin.describe(h, no_sibling_names=no_sibling_names(ctx.env)) for h in hits]
-    if any(not h['trivial'] and not h['fork_of'] and not h['declared'] for h in hits):
-        blockers.append('a body close to a community body is not declared in the unit header '
-                        '(docs/drafter-card.md, "Declare adapted bodies")')
-    missing = [r for r in missing if r != 'fo4-private']
-    if missing:
-        warnings.append('origin check ran without: ' + ', '.join(
-            'a sibling checkout' if no_sibling_names(ctx.env) and r in check_origin.SIBLINGS else r
-            for r in missing))
-    full = ctx.run([sys.executable, str(ctx.repo / 'tools/check.py')], cwd=ctx.repo, capture_output=True, text=True)
-    if full.returncode != 0:
-        blockers.append('tools/check.py: ' + (full.stderr or full.stdout).strip()[-300:])
+    labels, origin = details.get('label_findings', []), details.get('origin_findings', [])
+    warnings += details.get('warnings', [])
+    from contrib_validation import project_reconfirmation
+    reconfirmation = project_reconfirmation(ctx.repo, [n for _status, n in files])
+    for item in reconfirmation:
+        warnings.append(f'{item["file"]}:1: {item["rva"]}: {item["status"]}')
     try:
         open_items = ctx.github().open_items(refresh=True)
         me = ctx.github().user()
@@ -2172,7 +2203,8 @@ def cmd_submit(ctx, args):
         ctx.say(f'BLOCKED: {b}')
     drafted = args.drafted_by or load_config(ctx).get('drafted_by') or 'not stated'
     data = {'title': title, 'body_file': str(tdir / 'pr-body.md'), 'files': unit, 'blockers': blockers,
-            'warnings': warnings, 'dry_run': bool(args.dry_run), 'base': base, 'preflight': preflight,
+            'warnings': warnings, 'project_reconfirmation': reconfirmation,
+            'dry_run': bool(args.dry_run), 'base': base, 'preflight': preflight,
             'ci_hash': {'advisory': True, 'advice': 'For optional public hash CI, add // CI hash: <RVA> <COFF-symbol> in the first 8192 bytes of the .cpp header. Without a resolved binding CI reports no-target; green CI is not acceptance.'},
             'commit_message': f'{title}\n\nDrafted by {drafted}. Local comparator pass with the pinned recipe; '
                               'not yet confirmed by the project.'}
@@ -2180,7 +2212,7 @@ def cmd_submit(ctx, args):
     ctx.say('A local pass is not acceptance: the project re-runs the comparison on two of its own hosts and a '
             'Reviewer checks the source before the function is recorded as matched.')
     if args.dry_run:
-        plan = [f'git push --dry-run {push or "<your fork remote>"} HEAD', f'git add {" ".join(unit)}', 'python3 tools/check.py --staged',
+        plan = [f'git push --dry-run {push or "<your fork remote>"} HEAD', f'git add {" ".join(unit)}', f'{ctx.cli} preflight --staged --base {base}',
                 f'git commit -m "{title}" -- {" ".join(unit)}',f'git push {push or "<your fork remote>"} HEAD',
                 f'gh pr create --repo {ctx.github().repo} --title "{title}" --body-file {tdir / "pr-body.md"}']
         for p in plan:
@@ -2206,10 +2238,12 @@ def cmd_submit(ctx, args):
                    'configure Git push credentials for your fork, then rerun submit', **data)
     preflight['git_push_auth'] = 'passed'
     git(ctx, 'add', '--', *unit)
-    staged = ctx.run([sys.executable, str(ctx.repo / 'tools/check.py'), '--staged'], cwd=ctx.repo,
-                     capture_output=True, text=True)
-    if staged.returncode != 0:
-        raise Stop(FAILED, 'tools/check.py --staged: ' + (staged.stderr or staged.stdout).strip()[-300:])
+    # Validate the immutable index that will be committed, without requiring project acceptance.
+    index_tree = git(ctx, 'write-tree')
+    staged_problems = intake_problems(ctx, base, head=index_tree, files=files)
+    if staged_problems:
+        raise Stop(FAILED, 'staged submission preflight failed', 'fix the listed findings',
+                   blockers=staged_problems)
     git(ctx, 'commit', '-m', data['commit_message'], '--', *unit)
     if not push:
         raise Stop(USAGE, 'no fork remote to push to', 'fork the repository on GitHub, then '
@@ -2301,6 +2335,7 @@ def parser():
     s = sub.add_parser('next')
     s.add_argument('--count', type=int, default=5)
     s.add_argument('--max-size', type=int, default=64)
+    s.add_argument('--function-table', help='optional private function table derived locally from your own pinned image')
     s = sub.add_parser('claim')
     s.add_argument('rva', nargs='*')
     s.add_argument('--class', dest='classes', action='append', default=[])
@@ -2321,6 +2356,7 @@ def parser():
     s.add_argument('--area')
     s.add_argument('--recipe')
     s.add_argument('--practice', action='store_true', help='try an already matched function as an exercise')
+    s.add_argument('--code-origin', help='truthful code/declaration origin, including any adapted sources; otherwise a required placeholder')
     s.add_argument('--profile', choices=CONTRIB_PROFILES,
                    help='cheap (default: small card, Haiku/Luna-class) or full (full card, Sonnet-class); never changes the gate')
     s.add_argument('--no-branch', action='store_true')
@@ -2333,6 +2369,10 @@ def parser():
     s.add_argument('--base')
     s.add_argument('--drafted-by')
     s.add_argument('--ack-collision', action='store_true')
+    s = sub.add_parser('preflight')
+    s.add_argument('task', nargs='?')
+    s.add_argument('--base')
+    s.add_argument('--staged', action='store_true', help='validate index source, rather than working files')
     s = sub.add_parser('intake')
     s.add_argument('--base', required=True)
     s.add_argument('--head', default='HEAD')
@@ -2354,7 +2394,7 @@ def parser():
 
 
 COMMANDS = {'doctor': cmd_doctor, 'setup': cmd_setup, 'next': cmd_next, 'claim': cmd_claim, 'release': cmd_release,
-            'start': cmd_start, 'compare': cmd_compare, 'submit': cmd_submit, 'intake': cmd_intake, 'go': cmd_go}
+            'start': cmd_start, 'compare': cmd_compare, 'submit': cmd_submit, 'preflight': cmd_preflight, 'intake': cmd_intake, 'go': cmd_go}
 
 
 def main(argv=None, ctx=None):

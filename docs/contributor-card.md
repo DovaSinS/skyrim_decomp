@@ -6,7 +6,10 @@ Use `./sr` (Windows: `.\sr.cmd`) in your own clone. Start with
 
 Read only the private pack named by the helper, after the owner has agreed to model exposure.
 Never post listings, bytes, objects, raw diagnostics or paths. Keep the skeleton's provenance and
-licence fields; name your actual model. Community headers supply hypotheses, not binary proof.
+licence fields; name your actual model. Fill the required `Code origin:` placeholder truthfully in
+each file, including any adaptations and sources. `start` prepares build/evidence/recipe/model and
+per-function metadata; it never invents an original-code declaration. Community headers supply
+hypotheses, not binary proof.
 For FNV reuse use `SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence)` and cite each reused
 body in a `Sibling source: momusdigital/fnv_decomp@91e1b6e8 <path>:<line>` header line. Another
 game proves no Skyrim offset, layout or behavior. Follow LEGAL.md and PROVENANCE.md.
@@ -39,9 +42,11 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
    { return ((a_flags >> a_bit) & 1) != 0; }`, call `TestBit(flags, 3)`, label `// TestBit: GUESS(low)`.
 7. **Null test the target repeats:** read the member again instead of keeping a local copy.
 8. **`static_assert` needs a message:** `static_assert(sizeof(X) == 0x20, "X size");`.
-9. **Includes:** own header `#include "X.h"`; other reconstruction headers use `"area/Y.h"`
-   relative to `reconstruction/`. Never use parent-directory paths. Some accepted headers still
-   need re-confirmation before their old spelling can change; see the [include audit](contributor-include-audit.md).
+9. **Includes:** own header `#include "X.h"`; shared headers use reconstruction-root paths such as
+   `"area/Y.h"` with the matching recipe include root. Parent steps and host/private paths fail the
+   contributor screen. Follow the skeleton's recipe; do not change compiler flags to force a match.
+   Some accepted headers still need re-confirmation before their old spelling can change; see the
+   [include audit](contributor-include-audit.md).
 10. **Labels.** A label line is `// <names>: <LABEL>`; LABEL is `COMMUNITY(<owner>/<repo>@<rev>, <licence>)`,
     `GUESS(low)`, `EXE_RTTI`, `OBSERVED`, or `STANDIN` plus one of those. Copy the skeleton's labels;
     add one for every name you add. Never write the label words anywhere else. One label per line:
@@ -52,11 +57,17 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
 Never write `asm`, `##`, `#pragma` (except `once`), byte arrays, `\x` strings. Never edit verifier inputs, tools, or another unit to force a pass.
 
 
-A local PASS is a contribution candidate. Run the source lint and the helper's submit dry-run;
+A local PASS is a contribution candidate. Run `preflight` while drafting, then `submit --dry-run`;
 fix its blockers before submitting. Submit source plus the generated sanitized summary only.
 The project independently confirms on two hosts and reviews it before recording `matched`.
 You do not need prior project acceptance or a project Reviewer approval to open the intake PR.
 Git author/co-author credit is added at accepted integration; model charts are separate.
+
+`next` explains its advisory readiness ranking: usable declarations and simple accessor/flag/
+forwarder names first, ABI-heavy or locally known EH/unsupported/parked cases later. Existing units
+can be extended. Size and names alone prove no readiness or match. Stale accepted companions show
+**project re-confirmation needed (no action for you)**; the project renews their evidence under the
+unchanged acceptance gate, and they do not block your submission preflight.
 
 Ordinary work uses one clone and one task. [Parallel agents and shared private storage](contributor-parallel.md)
 are advanced, opt-in use. They are not prerequisites and offline claims do not reserve work publicly.
