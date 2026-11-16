@@ -1,0 +1,381 @@
+{
+  "binding": {
+    "build_id": "sse-steam-1-7-104",
+    "comparator": {
+      "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+      "version": "0.6.1-runtime"
+    },
+    "compiler": {
+      "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+      "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
+      "flags": [
+        "/nologo",
+        "/c",
+        "/O2",
+        "/MD",
+        "/GS-",
+        "/EHsc",
+        "/GR",
+        "/fp:precise",
+        "/Gy"
+      ],
+      "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
+    },
+    "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+    "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "toolchain_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf"
+  },
+  "family_schema": 1,
+  "first_members": {
+    "sse-steam-1-7-104-0x9ef6e8": "4b45727cf8f4a8bff2d1429cbe90f2466bc39a5287e527608dd924ba9cae6002",
+    "sse-steam-1-7-104-0x9ef6f4": "6d9f540026ede03ac71c8de7f75e5d028c5036a49f01a6fd864b87ab75c32f36",
+    "sse-steam-1-7-104-0x9ef700": "438fb1b5d79e916d127996408466cf3516296707cefeaf7dab63fbbb0acd2a5c",
+    "sse-steam-1-7-104-0x9ef70c": "78df0504071a2d04d7686460aadba52bb7e68e5de00e704fd53cb45a25a366cc",
+    "sse-steam-1-7-104-0x9ef718": "61139f42cc3ac82c8d46932ea3c6babc93006eb16f65fe83e7c14d0b46d7dbc8",
+    "sse-steam-1-7-104-0x9ef724": "021ab1623e2f85d4ccc3e6cc686bede39b230f6503da9640fc55397ee0cbb0f3",
+    "sse-steam-1-7-104-0x9ef730": "8768f034b5bb6c145f41257823233c67b5b18e371b0b301a5bb75d0357e2fa5d",
+    "sse-steam-1-7-104-0x9ef73c": "b1a4df0e2a43627eb67a517676ab276283910d7516c20512d55069c73cd3b1f6",
+    "sse-steam-1-7-104-0x9ef748": "b85419cf365eb2371e0ff084a1b1936a1e4189771252f9993f7ca4b8a4c2a494",
+    "sse-steam-1-7-104-0x9ef754": "d113b6dd3cbdd6a6d0d4dee5f49e913b91ae360d35adcdd69fb0e9539311ead7",
+    "sse-steam-1-7-104-0x9ef760": "f7fcb5924111a947569494d057a4372ca357e6cf497329f218b5b0ecde7dbbb5",
+    "sse-steam-1-7-104-0x9ef76c": "7ad690442aebdcfa72cec2afcdb7da8c17ee0bf9a557c85000d07f43f4c49a23",
+    "sse-steam-1-7-104-0x9ef778": "efbe92f1bf0bde073e57d2e9debeab7099a94be3fad5afe064a31f07843a50b3",
+    "sse-steam-1-7-104-0x9ef784": "0ee558c9a86a3c16b74286a69c0ff96a8c98fb84e67540da146f7bfbe12cd93a",
+    "sse-steam-1-7-104-0x9ef790": "0939a7d9d99257fa00d97aafb19bc81756e6ed2ffe41d42c6e4aa5df3b3e9660",
+    "sse-steam-1-7-104-0x9ef79c": "c59a2ff8a3cb8e9759d1f72bcbe6424cc2956a08a0b82839c2ca775d06100328",
+    "sse-steam-1-7-104-0x9ef7b4": "a637593173591a233aeb2995c361a5d16e87067c0bef16f1901c6b498ad1cf87",
+    "sse-steam-1-7-104-0x9ef7c0": "43194a130ccfef6c9b4bf49e958cb5d9190fafca70459e93d64c4eb912200362",
+    "sse-steam-1-7-104-0x9ef7cc": "23cece0b8292910d976cb10ce2d9051f924a4fff40b0ca2a6df79400839f7d9c",
+    "sse-steam-1-7-104-0x9ef7d8": "c6afe2c95a217949c0ddfd8bd7cbeeb306f1b7bd4393dc244b1cc73d1702caa1"
+  },
+  "origin": {
+    "family": "vm-prefix-large-adjustor",
+    "template_digest": "5c18393eb06f4973ec7fd1e60ae2d874904178df13e949f62f43213dce8ae4a8",
+    "version": "1"
+  },
+  "parameter_ranges": {
+    "rows": [
+      {
+        "base-type": ".?AV?$BSTEventSink@UPositionPlayerEvent@@@@",
+        "entry-rva": 10418148,
+        "offset": 416,
+        "secondary-table": 26811032,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UStatsEvent@BSScript@@@@",
+        "entry-rva": 10418160,
+        "offset": 424,
+        "secondary-table": 26811056,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESAmiiboForcedStopDetectionEvent@@@@",
+        "entry-rva": 10418112,
+        "offset": 392,
+        "secondary-table": 26810960,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESAmiiboTouchEvent@@@@",
+        "entry-rva": 10418100,
+        "offset": 384,
+        "secondary-table": 26810936,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESFastTravelEndEvent@@@@",
+        "entry-rva": 10418136,
+        "offset": 408,
+        "secondary-table": 26811008,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESGrabReleaseEvent@@@@",
+        "entry-rva": 10418316,
+        "offset": 128,
+        "secondary-table": 26810168,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESHitEvent@@@@",
+        "entry-rva": 10418328,
+        "offset": 136,
+        "secondary-table": 26810192,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESInitScriptEvent@@@@",
+        "entry-rva": 10418340,
+        "offset": 144,
+        "secondary-table": 26810216,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESLoadGameEvent@@@@",
+        "entry-rva": 10418352,
+        "offset": 152,
+        "secondary-table": 26810240,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESLockChangedEvent@@@@",
+        "entry-rva": 10418364,
+        "offset": 160,
+        "secondary-table": 26810264,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESMagicEffectApplyEvent@@@@",
+        "entry-rva": 10418376,
+        "offset": 168,
+        "secondary-table": 26810288,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESMagicWardHitEvent@@@@",
+        "entry-rva": 10418388,
+        "offset": 176,
+        "secondary-table": 26810312,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESMoveAttachDetachEvent@@@@",
+        "entry-rva": 10418400,
+        "offset": 184,
+        "secondary-table": 26810336,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESObjectLoadedEvent@@@@",
+        "entry-rva": 10418412,
+        "offset": 192,
+        "secondary-table": 26810360,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESObjectREFRTranslationEvent@@@@",
+        "entry-rva": 10418424,
+        "offset": 200,
+        "secondary-table": 26810384,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESOpenCloseEvent@@@@",
+        "entry-rva": 10418436,
+        "offset": 208,
+        "secondary-table": 26810408,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESPackageEvent@@@@",
+        "entry-rva": 10418448,
+        "offset": 216,
+        "secondary-table": 26810432,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESPerkEntryRunEvent@@@@",
+        "entry-rva": 10418460,
+        "offset": 224,
+        "secondary-table": 26810456,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESPlayerBowShotEvent@@@@",
+        "entry-rva": 10418124,
+        "offset": 400,
+        "secondary-table": 26810984,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESQuestInitEvent@@@@",
+        "entry-rva": 10418472,
+        "offset": 232,
+        "secondary-table": 26810480,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESQuestStageEvent@@@@",
+        "entry-rva": 10418484,
+        "offset": 240,
+        "secondary-table": 26810504,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESResetEvent@@@@",
+        "entry-rva": 10418496,
+        "offset": 248,
+        "secondary-table": 26810528,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESResolveNPCTemplatesEvent@@@@",
+        "entry-rva": 10417896,
+        "offset": 256,
+        "secondary-table": 26810552,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSceneActionEvent@@@@",
+        "entry-rva": 10417920,
+        "offset": 272,
+        "secondary-table": 26810600,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSceneEvent@@@@",
+        "entry-rva": 10417908,
+        "offset": 264,
+        "secondary-table": 26810576,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESScenePhaseEvent@@@@",
+        "entry-rva": 10417932,
+        "offset": 280,
+        "secondary-table": 26810624,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSellEvent@@@@",
+        "entry-rva": 10417944,
+        "offset": 288,
+        "secondary-table": 26810648,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSleepStartEvent@@@@",
+        "entry-rva": 10417956,
+        "offset": 296,
+        "secondary-table": 26810672,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSleepStopEvent@@@@",
+        "entry-rva": 10417968,
+        "offset": 304,
+        "secondary-table": 26810696,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSpellCastEvent@@@@",
+        "entry-rva": 10417980,
+        "offset": 312,
+        "secondary-table": 26810720,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESSwitchRaceCompleteEvent@@@@",
+        "entry-rva": 10418076,
+        "offset": 376,
+        "secondary-table": 26810912,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTopicInfoEvent@@@@",
+        "entry-rva": 10417992,
+        "offset": 320,
+        "secondary-table": 26810744,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTrackedStatsEvent@@@@",
+        "entry-rva": 10418004,
+        "offset": 328,
+        "secondary-table": 26810768,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTrapHitEvent@@@@",
+        "entry-rva": 10418016,
+        "offset": 336,
+        "secondary-table": 26810792,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTriggerEnterEvent@@@@",
+        "entry-rva": 10418040,
+        "offset": 352,
+        "secondary-table": 26810840,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTriggerEvent@@@@",
+        "entry-rva": 10418028,
+        "offset": 344,
+        "secondary-table": 26810816,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESTriggerLeaveEvent@@@@",
+        "entry-rva": 10418052,
+        "offset": 360,
+        "secondary-table": 26810864,
+        "size": 12,
+        "target-rva": 10423696
+      },
+      {
+        "base-type": ".?AV?$BSTEventSink@UTESUniqueIDChangeEvent@@@@",
+        "entry-rva": 10418064,
+        "offset": 368,
+        "secondary-table": 26810888,
+        "size": 12,
+        "target-rva": 10423696
+      }
+    ]
+  },
+  "parameter_source": {
+    "path": "tools/vm_prefix_adjustor_bindings_v1.py",
+    "sha256": "c94fab4fb06793c897dd1ee05b534d68c63eea9193f7073a1a2f33d6b408de3e"
+  },
+  "pause_reason": "",
+  "paused": false,
+  "review": {
+    "profile": "claude-low",
+    "review_sha256": "9bfb9e11f767891f2d12af798bd236e91fe7ca145abfa947a3e3524900fe5506",
+    "review_task_id": "review-family-491b3573cddfab732d2d",
+    "reviewer_model": "gpt-6.1-terra",
+    "spec_sha256": "d65e6e1445edd190783e0c1b6f125f16197f47d996d6db2d7936f1d7a0624b54"
+  },
+  "template_source": {
+    "path": "reconstruction/bsengine/SkyrimVMInterfacePrefixLayout.cpp",
+    "sha256": "5c18393eb06f4973ec7fd1e60ae2d874904178df13e949f62f43213dce8ae4a8"
+  }
+}
