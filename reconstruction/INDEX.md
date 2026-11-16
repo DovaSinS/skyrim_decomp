@@ -9215,6 +9215,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/BGSMovableStatic` | `BGSMovableStatic::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x2640a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2640a0.json` | matched | full | open |
 | - | `BGSMovableStatic::InitItemImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x264370` / 146 | - | - | mapped | - | - |
 | `forms/BGSMovableStatic` | `BGSMovableStatic::dtor` (COMMUNITY) | `sse-steam-1-7-104` / `0x264444` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x264444.json` | matched | full | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x264450` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x264450.json` | matched | full | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x26445c` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26445c.json` | matched | full | open |
 | - | `BGSMovableStatic::~BGSMovableStatic` (COMMUNITY) | `sse-steam-1-7-104` / `0x264470` / 147 | - | - | mapped | - | - |
 | `forms/TESObjectSTAT` | `TESObjectSTAT::IsHeadingMarker` (COMMUNITY) | `sse-steam-1-7-104` / `0x264510` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x264510.json` | matched | full | checked |
 | - | `TESObjectSTAT::GetPlayable` (COMMUNITY) | `sse-steam-1-7-104` / `0x264520` / 3 | - | - | mapped | - | - |
@@ -12558,6 +12560,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `storage/StorageInit5d6180` | `StorageInit5d6180::initialize` (GUESS) | `sse-steam-1-7-104` / `0x5d6180` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d6180.json` | matched | family | open |
 | `fo4fresh_60700ec8/ModelReferenceEffect` | `ModelReferenceEffect::Get3D` (GUESS) | `sse-steam-1-7-104` / `0x5d6a40` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d6a40.json` | matched | full | open |
 | `fo4fresh_60700ec8/ModelReferenceEffect` | `ModelReferenceEffect::GetAttached` (GUESS) | `sse-steam-1-7-104` / `0x5d77c0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d77c0.json` | matched | full | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x5d87b0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d87b0.json` | matched | full | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x5d87bc` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d87bc.json` | matched | full | open |
 | `leaves/LeafAddress5d8900` | `LeafAddress5d8900::Address` (GUESS) | `sse-steam-1-7-104` / `0x5d8900` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d8900.json` | matched | family | open |
 | `bsengine/ModelReferenceEffect` | `ModelReferenceEffect::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x5d8910` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d8910.json` | matched | family | open |
 | `leaves/LeafForward5d8c50` | `LeafForward5d8c50::Forward` (GUESS) | `sse-steam-1-7-104` / `0x5d8c50` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5d8c50.json` | matched | family | open |
@@ -12650,6 +12654,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `fo4fresh_be805e0e/SummonCreatureEffect` | `SummonCreatureEffect::HandleEvent` (GUESS) | `sse-steam-1-7-104` / `0x5e4680` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e4680.json` | matched | full | open |
 | `leaves/TableStoreLeaf5e51e0` | `TableStoreLeaf5e51e0::~TableStoreLeaf5e51e0` (GUESS) | `sse-steam-1-7-104` / `0x5e51e0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e51e0.json` | matched | family | open |
 | `leaves/TableStoreLeaf5e51f0` | `TableStoreLeaf5e51f0::~TableStoreLeaf5e51f0` (GUESS) | `sse-steam-1-7-104` / `0x5e51f0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e51f0.json` | matched | family | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x5e51fc` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e51fc.json` | matched | full | open |
+| `bsengine/ReferenceEffectComponentPrefixLayout` | `represented initial component destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x5e5208` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e5208.json` | matched | full | open |
 | `leaves/DeletingLeaf5e5220` | `DeletingLeaf5e5220::~DeletingLeaf5e5220` (GUESS) | `sse-steam-1-7-104` / `0x5e5220` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e5220.json` | matched | family | open |
 | - | `DeletingLeaf5e5250::~DeletingLeaf5e5250` (GUESS) | `sse-steam-1-7-104` / `0x5e5250` / 43 | - | - | mapped | - | - |
 | `leaves/LeafAddress5e5340` | `LeafAddress5e5340::Address` (GUESS) | `sse-steam-1-7-104` / `0x5e5340` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5e5340.json` | matched | full | checked |

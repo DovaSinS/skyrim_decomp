@@ -416359,6 +416359,90 @@
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
       "report": "reports/sse-steam-1-7-104/0x9cb0e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x264450",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2507856,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x264450.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26445c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2507868,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26445c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5d87b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6129584,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5d87b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5d87bc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6129596,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5d87bc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5e51fc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6181372,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5e51fc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5e5208",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6181384,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "represented initial component destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): public reference-effect/form storage and independently bound target owner/COL/primary target; full owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5e5208.json"
     }
   ],
   "milestones": [
@@ -416401,7 +416485,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-16T01:04:29Z",
+  "updated_at": "2026-11-16T01:43:26Z",
   "work_items": [
     {
       "id": "pin-target",
