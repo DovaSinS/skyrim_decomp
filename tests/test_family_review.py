@@ -21,6 +21,7 @@ import accept_function as af
 import check
 import family_review as fr
 import flow
+import build_leaderboard
 from compare import compare
 from source_digest import tu_digest
 from test_match_gate import GateFixture, CPP, HDR, MAP, PIN, RECORD, REVIEW
@@ -658,6 +659,9 @@ class FamilyReviewTests(GateFixture, unittest.TestCase):
                 return 'changed files (stage these by name; nothing was committed):\n' + ''.join('  ' + p + '\n' for p in changed)
             if step in ('build_index.py', 'build_progress_svg.py'):
                 return ''
+            if step == 'build_leaderboard.py':
+                build_leaderboard.write(tree, fr.read(tree, 'data/progress.json'))
+                return ''
             if step == 'build_model_trend.py':
                 for path in ('README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg'):
                     (tree / path).parent.mkdir(parents=True, exist_ok=True)
@@ -674,10 +678,14 @@ class FamilyReviewTests(GateFixture, unittest.TestCase):
             group = flow._legacy_integrate_family(self.root, self.fdir, self.batch_path, push=False)
         result = group['integrated']
         self.assertIsNone(result['pushed'])
-        self.assertEqual(ran, ['accept_function.py', 'build_progress_svg.py', 'build_model_trend.py', 'check.py --staged', 'git commit'])
+        self.assertEqual(ran, ['accept_function.py', 'build_progress_svg.py', 'build_leaderboard.py', 'build_model_trend.py', 'check.py --staged', 'git commit'])
         checks.assert_called_once()
         integrated = json.loads(self.git('show', result['commit'] + ':data/progress.json'))
         self.assertTrue(all(fn['status'] == 'matched' for fn in integrated['functions']))
+        self.assertIn('LEADERBOARD.md', result['files'])
+        self.assertIn('data/contributors.json', result['files'])
+        self.assertIn('# Contributor leaderboard', self.git('show', result['commit'] + ':LEADERBOARD.md'))
+        self.assertEqual(json.loads(self.git('show', result['commit'] + ':data/contributors.json'))['schema'], 1)
         self.reload_data()
         self.assertTrue(any(fn['status'] != 'matched' for fn in self.data['functions']))
         self.assertNotEqual(result['commit'], self.git('rev-parse', 'origin/main'))

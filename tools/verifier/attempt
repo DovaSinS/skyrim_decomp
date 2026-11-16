@@ -157,16 +157,6 @@ def attempt(task_dir, tier='first', qdir=None, model=None, agent=None, profile=N
     draft_worktrees.route_attempt(task['dir'], pipeline.REPO)
     task_dir = task['dir']
     handle = pipeline.lock(task_dir)  # held before attribution or attempt writes
-    raw = json.loads((task_dir / 'task.json').read_text())
-    identity_path = task_dir / f'attribution-{tier}.json'
-    identity = attempt_progress.read_json(identity_path)
-    profile = profile or identity.get('profile') or raw.get('drafter_profile')
-    model = agent_identity.resolve(model or identity.get('model') or raw.get('drafter_model') or raw.get('model'),
-                                   agent=agent or raw.get('agent') or (raw.get('export') or {}).get('generator'),
-                                   profile=profile, tier=tier)
-    patience = profiles.get(profile)['stuck_after']
-    # Task bytes can be pinned by a generator's resume digest. Keep attribution alongside them.
-    draft_worktrees.save(identity_path, dict(model=model, profile=profile or profiles.DEFAULT))
     attempts = task_dir / 'attempts'
     done = sorted(p for p in attempts.glob('[0-9][0-9][0-9]') if p.is_dir()) if attempts.is_dir() else []
     number = int(done[-1].name) + 1 if done else 1
@@ -180,6 +170,16 @@ def attempt(task_dir, tier='first', qdir=None, model=None, agent=None, profile=N
         # Same exit and stream as the include-closure error this replaces; only the words differ.
         print(f'attempt: {missing}', file=sys.stderr)
         return 2
+    raw = json.loads((task_dir / 'task.json').read_text())
+    identity_path = task_dir / f'attribution-{tier}.json'
+    identity = attempt_progress.read_json(identity_path)
+    profile = profile or identity.get('profile') or raw.get('drafter_profile')
+    model = agent_identity.resolve(model or identity.get('model') or raw.get('drafter_model') or raw.get('model'),
+                                   agent=agent or raw.get('agent') or (raw.get('export') or {}).get('generator'),
+                                   profile=profile, tier=tier)
+    patience = profiles.get(profile)['stuck_after']
+    # Task bytes can be pinned by a generator's resume digest. Keep attribution alongside them.
+    draft_worktrees.save(identity_path, dict(model=model, profile=profile or profiles.DEFAULT))
     files, closure = pipeline.unit_manifest(task)
     problem = pipeline.compiler_include_problem(task)
     if problem:

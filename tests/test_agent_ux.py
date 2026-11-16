@@ -264,7 +264,8 @@ class Progress(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             directory = Path(tmp)
             (directory / 'task.json').write_text('{}')
-            with patch.object(attempt.pipeline, 'load_task', return_value=dict(dir=directory)), \
+            with patch.object(attempt.pipeline, 'load_task', return_value=dict(dir=directory, max_attempts=3)), \
+                 patch.object(attempt, 'missing_source_message', return_value=None), \
                  patch('draft_worktrees.route_attempt'), patch.object(attempt.pipeline, 'lock'), \
                  patch.object(attempt.runners, 'for_attempt') as runner:
                 with self.assertRaisesRegex(ValueError, 'required before work starts'):
