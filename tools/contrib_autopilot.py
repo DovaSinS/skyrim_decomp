@@ -479,7 +479,7 @@ class Runtime:
             raise Stop('outside intake requires one configured project Wine host and the CI-hash backend')
         profile = dict(runners_schema=1, attempt='wine', confirm=['wine', 'ci'], hosts=dict(
             wine=wines[0], ci=dict(backend='ci-hash', host_id='github-windows-native',
-                machine='github-hosted-windows', loader='native', repository='awarebayes/skyrim-research')))
+                machine='github-hosted-windows', loader='native', repository='awarebayes/skyrim_decomp')))
         path = directory / 'intake-runners.json'
         save_json(path, profile)
         return path
