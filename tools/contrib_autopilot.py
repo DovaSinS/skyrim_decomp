@@ -133,13 +133,17 @@ class State:
 
 
 def select_prs(prs):
-    """Deterministic oldest-first, one PR per contributor; others wait rather than get rejected."""
-    seen, selected = set(), []
+    """Take the oldest PR per author in each round, skipping drafts."""
+    groups = {}
     for pr in sorted(prs, key=lambda p: p['number']):
-        login = pr['author']['login'].casefold()
-        if not pr.get('isDraft') and login not in seen:
-            selected.append(pr)
-            seen.add(login)
+        if not pr.get('isDraft'):
+            groups.setdefault(pr['author']['login'].casefold(), []).append(pr)
+    selected = []
+    while groups:
+        for login in list(groups):
+            selected.append(groups[login].pop(0))
+            if not groups[login]:
+                del groups[login]
     return selected
 
 
@@ -1079,7 +1083,7 @@ def main(argv=None):
                     pr['isDraft'] = False  # reconcile the receipt even if the PR became a draft
             # An enqueued older revision must settle before its contributor can take another PR.
             inflight = {r['author'].casefold(): r['number'] for k, r in state.data['prs'].items()
-                        if k.startswith('dry-') == args.dry_run and not r.get('done')}
+                        if k.startswith('dry-') == args.dry_run and r.get('enqueued') and not r.get('done')}
             selected = select_prs([pr for pr in prs if inflight.get(pr['author']['login'].casefold(), pr['number']) == pr['number']])
             pending = False
             for pr in selected:

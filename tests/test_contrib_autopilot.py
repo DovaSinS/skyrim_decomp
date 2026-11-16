@@ -138,7 +138,11 @@ class Selection(unittest.TestCase):
 
     def test_oldest_one_per_contributor_case_insensitive_and_drafts_wait(self):
         rows = [pr(4, 'Alice'), pr(3, 'Bob'), pr(2, 'alice'), dict(pr(1, 'Alice'), isDraft=True)]
-        self.assertEqual([p['number'] for p in ap.select_prs(rows)], [2, 3])
+        self.assertEqual([p['number'] for p in ap.select_prs(rows)], [2, 3, 4])
+
+    def test_round_robin(self):
+        rows = [pr(1, 'A'), pr(2, 'A'), pr(3, 'A'), pr(4, 'B')]
+        self.assertEqual([p['author']['login'] for p in ap.select_prs(rows)], ['A', 'B', 'A', 'A'])
 
 
 class FakeRuntime:
