@@ -24,6 +24,32 @@ GOOD = b'''// Original synthetic fixture; source https://example.org/types.
 class Synth { public: int value; };
 '''
 
+class FreshWinePreparation(unittest.TestCase):
+    def test_existing_runner_prepares_toolchain_afresh_and_fetches_private_evidence(self):
+        import wine_confirm
+        task = dict(dir=Path('/synthetic/task'))
+        host = dict(backend='local', loader='wine', host_id='mac-wine')
+        with patch.object(wine_confirm.pipeline, 'load_task', return_value=task), \
+                patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=(['synthetic.cpp'], [])), \
+                patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                patch.object(wine_confirm.runners, 'AgentHost') as factory:
+            factory.return_value.run.return_value = (0, None)
+            self.assertEqual(wine_confirm.run(task['dir']), 0)
+        self.assertIs(factory.call_args.kwargs['fresh_prep'], True)
+        factory.return_value.fetch.assert_called_once_with(task['dir'] / 'confirm/mac-wine')
+
+    def test_native_or_missing_first_host_never_starts_a_worker(self):
+        import wine_confirm
+        for host in (None, dict(backend='ssh', loader='native', host_id='winpc-native')):
+            with self.subTest(host=host), \
+                    patch.object(wine_confirm.pipeline, 'load_task', return_value=dict(dir=Path('/synthetic/task'))), \
+                    patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=([], [])), \
+                    patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                    patch.object(wine_confirm.runners, 'AgentHost') as factory:
+                with self.assertRaises(wine_confirm.runners.RunnerError):
+                    wine_confirm.run(Path('/synthetic/task'))
+                factory.assert_not_called()
+
 
 def pr(number=1, author='contributor', head='a' * 40, paths=('reconstruction/synth/Synth.cpp',)):
     return dict(number=number, author=dict(login=author), headRefOid=head, isDraft=False,
@@ -240,6 +266,16 @@ class ResumeAndLimits(unittest.TestCase):
             self.assertEqual(got['state'], 'unavailable')
             self.assertEqual(got['acceptance'], 'not-evaluated')
 
+    def test_fork_approval_notice_does_not_skip_project_confirmation_or_review(self):
+        self.runtime.ci_hash_signal = Mock(return_value=dict(
+            state='absent', approval_required=True,
+            approval_url='https://github.com/example/project/actions/runs/2'))
+        ap.process(self.runtime, self.state, pr())
+        notice = next(message for key, label, message in self.runtime.messages if key == 'ci-approval')
+        self.assertIn('watcher can approve', notice)
+        self.assertIn('confirm', self.runtime.calls)
+        self.assertIn('reviews', self.runtime.calls)
+
     def test_ci_hash_signal_never_bypasses_intake_confirmation_or_review(self):
         for status in ('success', 'failure', 'pending', 'absent', 'unavailable'):
             with self.subTest(status=status), tempfile.TemporaryDirectory() as tmp:
@@ -366,29 +402,111 @@ class PublicationAndScheduling(unittest.TestCase):
             self.assertIn('withheld', ap.safe_reason(value))
         self.assertEqual(ap.safe_reason('0x1234: comparison failed'), '0x1234: comparison failed')
 
-    def test_unavailable_hosts_wake_only_with_private_configuration(self):
+    def test_outside_verifiers_override_a_pc_profile_without_changing_it(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            config = dict(attempt='pc', confirm=['pc', 'wine'], hosts=dict(
+                pc=dict(backend='ssh', loader='native', available=False),
+                wine=dict(backend='local', loader='wine', host_id='mac-wine')))
+            path = tree / '.local/verifier/runners.json'
+            ap.save_json(path, config)
+            before = path.read_bytes()
+            runtime = ap.Runtime.__new__(ap.Runtime)
+            runtime.root, runtime.logs = tree, tree / 'logs'
+            runtime.logs.mkdir()
+            runtime.config = dict(ap.DEFAULTS)
+            with patch.dict(os.environ, SR_RUNNERS_CONFIG='unavailable-pc.json'), \
+                    patch.object(ap.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, b'', b'')) as run:
+                runtime.command([sys.executable, 'tools/verifier/confirm', 'synthetic-task'], cwd=tree)
+            selected = ap.read_json(run.call_args.kwargs['env']['SR_RUNNERS_CONFIG'])
+            self.assertEqual(selected['attempt'], 'wine')
+            self.assertEqual(selected['confirm'], ['wine', 'ci'])
+            self.assertEqual(set(selected['hosts']), {'wine', 'ci'})
+            self.assertEqual(selected['hosts']['ci']['backend'], 'ci-hash')
+            self.assertEqual(path.read_bytes(), before)
+
+    def test_unavailable_wine_host_stops_without_pc_wake_or_fallback(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
         runtime.config = dict(ap.DEFAULTS)
         runtime.command = Mock(return_value=Mock(returncode=1))
-        runners = dict(confirm=['a', 'b'], attempt='a',
-                       hosts=dict(a=dict(backend='local'), b=dict(backend='ssh')))
-        with patch.object(ap, 'read_json', return_value=runners), patch.object(ap, 'wake_windows') as wake:
-            with self.assertRaisesRegex(ap.Stop, 'restore the host'):
-                runtime.ensure_hosts(ROOT)
-            wake.assert_not_called()
-            runtime.config.update(wol_mac='00:00:5E:00:53:01', wol_broadcast='192.0.2.255', wol_wait=0)
-            with self.assertRaisesRegex(ap.Stop, 'unavailable after'):
-                runtime.ensure_hosts(ROOT)
-            wake.assert_called_once_with('00:00:5E:00:53:01', '192.0.2.255')
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(wine=dict(backend='local', loader='wine'))))
+            with self.assertRaisesRegex(ap.Stop, 'no PC fallback'):
+                runtime.ensure_hosts(tree)
+        self.assertEqual(len(runtime.command.call_args_list), 1)
 
-    def test_wake_packet_both_ports(self):
-        sock = Mock()
-        with patch.object(ap.socket, 'socket') as factory:
-            factory.return_value.__enter__.return_value = sock
-            ap.wake_windows('00:00:5E:00:53:01', '192.0.2.255')
-        calls = sock.sendto.call_args_list
-        self.assertEqual([c.args[1][1] for c in calls], [9, 7])
-        self.assertEqual(calls[0].args[0], b'\xff' * 6 + bytes.fromhex('00005E005301') * 16)
+    def test_missing_wine_host_never_selects_a_native_pc(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        runtime.command = Mock()
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(pc=dict(backend='ssh', loader='native'))))
+            with self.assertRaisesRegex(ap.Stop, 'project Wine host'):
+                runtime.ensure_hosts(tree)
+        runtime.command.assert_not_called()
+
+    def test_preflight_uses_real_status_logic_for_wine_only(self):
+        import runners
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            wine = dict(backend='local', loader='wine', host_id='mac-wine', machine='synthetic-wine',
+                        msvc='toolchain', work='work', wine_bin='wine', image='private-image')
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(wine=wine, pc=dict(backend='ssh', available=False))))
+            runtime = ap.Runtime.__new__(ap.Runtime)
+            seen = []
+            def command(argv, **kwargs):
+                config = runners.validate(ap.read_json(kwargs['runner_config']), root=tree)
+                self.assertEqual(set(config['hosts']), {'wine'})
+                def probe(host):
+                    seen.append(host['host_id'])
+                    return dict(toolchain='ok', image='ok', loader='wine', os='macos', python='3.13',
+                                cpus=1, running=0)
+                with patch.object(runners, 'slots_busy', return_value=0):
+                    code = runners.status(config, log=lambda line: None, probe_fn=probe)
+                return subprocess.CompletedProcess(argv, code, b'', b'')
+            runtime.command = command
+            runtime.ensure_hosts(tree)
+            self.assertEqual(seen, ['mac-wine'])
+
+    def test_fork_ci_approval_is_reported_for_the_exact_head(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        runtime.command = Mock(side_effect=[
+            subprocess.CompletedProcess([], 0, b'[{"check_runs": []}]', b''),
+            subprocess.CompletedProcess([], 0, json.dumps([dict(workflow_runs=[
+                dict(id=1, head_sha='b' * 40, status='action_required', html_url='https://github.com/wrong'),
+                dict(id=2, head_sha='a' * 40, status='completed', conclusion='action_required',
+                     html_url='https://github.com/example/project/actions/runs/2')])]).encode(), b'')])
+        signal = runtime.ci_hash_signal('a' * 40)
+        self.assertTrue(signal['approval_required'])
+        self.assertTrue(signal['approval_url'].endswith('/2'))
+        self.assertEqual(signal['acceptance'], 'not-evaluated')
+
+    def test_real_confirmation_submission_pushes_only_an_isolated_ci_ref(self):
+        import ci_confirm
+        import ci_confirmation
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            name = 'reconstruction/synth/Synth.cpp'
+            source = root / name
+            source.parent.mkdir(parents=True)
+            source.write_text('// Original synthetic submission.\n')
+            request = dict(base_sha='a' * 40, files={name: ci_confirmation.sha(source.read_bytes())}, units=[])
+            def command(argv, *args, **kwargs):
+                if argv[:2] == ['git', 'ls-remote']:
+                    return request['base_sha'] + '\trefs/heads/main'
+                return 'b' * 40
+            with patch.object(ci_confirm, 'command', side_effect=command) as transport, \
+                    patch.object(ci_confirm, 'gh') as api:
+                ci_confirm.submit(root, request, root, lambda message: None)
+            pushes = [call.args[0] for call in transport.call_args_list if call.args[0][:2] == ['git', 'push']]
+            self.assertEqual(len(pushes), 1)
+            self.assertIn(':refs/heads/ci-confirm/', pushes[0][-1])
+            self.assertNotIn(':refs/heads/main', pushes[0][-1])
+            self.assertTrue(api.call_args.args[1].endswith('/dispatches'))
 
     def test_compiler_timeout_kills_child_and_does_not_leave_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -746,6 +864,16 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.kit.write('docs/verification.md', (ROOT / 'docs/verification.md').read_bytes())
         self.kit.write('.gitignore', '.local/\n')
         self.kit.write('tools/trusted.txt', 'original trusted main tools\n')
+        self.kit.write('tools/toolchain/v141-manifest.json', '{}')
+        import ci_confirmation
+        self.ci_row = dict(rva=self.kit.fn['rva'], size=self.kit.fn['size'],
+                          extraction='linked-reference-inference', normalized_sha256='1' * 64,
+                          layout_sha256='2' * 64)
+        tools = patch.object(ci_confirmation, 'tools_digest', return_value='3' * 64)
+        targets = patch.object(ci_confirmation.target_hashes, 'load_manifest',
+                               return_value={'functions': [self.ci_row]})
+        tools.start(); targets.start()
+        self.addCleanup(tools.stop); self.addCleanup(targets.stop)
         self.git('init', '--quiet', '-b', 'main')
         self.git('config', 'user.name', 'Synthetic Maintainer')
         self.git('config', 'user.email', 'maintainer@example.invalid')
@@ -768,7 +896,8 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.git('push', '--quiet', 'origin', 'HEAD:refs/pull/1/head')
         self.git('checkout', '--quiet', 'main')
         ap.save_json(self.root / '.local/verifier/runners.json', dict(confirm=['mac', 'windows'], attempt='mac',
-                     hosts={'mac': dict(backend='local'), 'windows': dict(backend='ssh')}))
+                     hosts={'mac': dict(backend='local', loader='wine'),
+                            'windows': dict(backend='ssh', loader='native', available=False)}))
         self.private = self.root / '.local/contrib-autopilot'
         self.private.mkdir()
         self.state = ap.State(self.private, ap.DEFAULTS)
@@ -791,6 +920,8 @@ class SyntheticEndToEnd(unittest.TestCase):
         output = b''
         if argv[0] == 'gh':
             if argv[1] == 'api':
+                if '/actions/runs?' in argv[-1]:
+                    return subprocess.CompletedProcess(argv, 0, b'[{"workflow_runs": []}]', b'')
                 self.assertTrue(argv[-1].endswith('/check-runs'))
                 return subprocess.CompletedProcess(argv, 0, b'[{"check_runs": []}]', b'')
             self.assertEqual(argv[1:3], ['pr', 'view'])
@@ -808,14 +939,18 @@ class SyntheticEndToEnd(unittest.TestCase):
                 ap.save_json(cwd / '.local/tasks' / tid / 'task.json', dict(task_id=tid, build_id=build,
                              compiled=cpp, recipe=self.fixture.RECIPE, symbols='symbols.json',
                              functions=[dict(rva=rva, size=self.kit.fn['size'], symbol='SyntheticSum')]))
-        elif len(argv) > 1 and argv[1] == 'tools/verifier/attempt':
-            pass
+        elif len(argv) > 1 and argv[1] in ('tools/verifier/attempt', 'tools/verifier/wine_confirm.py'):
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertEqual(set(selected['hosts']), {'wine', 'ci'})
         elif len(argv) > 1 and argv[1] == 'tools/verifier/bind.py':
             directory = Path(Path(argv[argv.index('--list') + 1]).read_text().strip())
             task = ap.read_json(directory / 'task.json')
             task['symbols'] = self.fixture.MAP
             ap.save_json(directory / 'task.json', task)
         elif len(argv) > 1 and argv[1] == 'tools/verifier/confirm':
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertEqual(selected['hosts']['ci']['backend'], 'ci-hash')
+            self.assertNotIn('windows', selected['hosts'])
             output_dir = Path(argv[argv.index('--out') + 1])
             original = self.kit.root
             try:
@@ -824,9 +959,27 @@ class SyntheticEndToEnd(unittest.TestCase):
                 self.kit.record['build'] = self.kit.build_block()
             finally:
                 self.kit.root = original
-            ap.save_json(output_dir / 'synthetic-fixture/0x1010.json', self.kit.record)
+            import ci_confirmation as ci
+            record = self.kit.record
+            record['runs'] = record['runs'][:1]
+            record['runs'][0].update(compiled_on='mac-wine', compared_on='mac-wine')
+            record['build']['hosts'] = {'mac-wine': next(iter(record['build']['hosts'].values()))}
+            pins = {name: digest for digest, name in
+                    (line.split() for line in (cwd / 'tools/verifier/pinned.sha256').read_text().splitlines())}
+            record['ci_confirmation'] = dict(schema=1, kind='ci-hash', host_id='github-windows-native',
+                machine='github-hosted-windows', loader='native', os='windows', workflow=ci.WORKFLOW,
+                conclusion='success', run_id=123, run_attempt=1, base_sha=self.base, candidate_sha='b' * 40,
+                tools_sha256='3' * 64, toolchain_manifest_sha256=ci.sha(b'{}'), cache_verified=True,
+                toolset='MATCH', compiler_sha256=pins, target=self.ci_row, build_id=self.kit.target['build_id'],
+                source_sha256=record['source']['digest'], unit=record['source']['compiled'],
+                recipe_sha256=record['recipe']['sha256'], result='hash-match', deterministic=True,
+                mac_content_sha256='4' * 64, content_sha256='4' * 64, object_sha256='5' * 64,
+                request_sha256='6' * 64, normalized_sha256='1' * 64, layout_sha256='2' * 64,
+                mac_object_sha256=record['runs'][0]['report']['candidate']['object_sha256'])
+            ap.save_json(output_dir / 'synthetic-fixture/0x1010.json', record)
         elif len(argv) > 1 and argv[1] == 'tools/verifier/runners.py':
-            pass
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertNotIn('windows', selected['hosts'])
         else:
             return self.real_command(argv, cwd=cwd, **kwargs)
         return subprocess.CompletedProcess(argv, 0, output, b'')
@@ -934,7 +1087,7 @@ reasons: original synthetic source and comparator reports
         self.assertIn('@outside-contributor', (tree / 'LEADERBOARD.md').read_text())
         self.assertEqual(ap.read_json(tree / 'data/contributors.json')['contributors']['outside-contributor']['verified_matches'], 1)
 
-    def test_dry_run_reaches_real_acceptance_without_post_merge_or_push(self):
+    def test_dry_run_completes_with_pc_unavailable_and_wine_ci_profile(self):
         result = ap.process(self.runtime, self.state,
                             pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
         self.assertTrue(result['done'])
@@ -942,14 +1095,14 @@ reasons: original synthetic source and comparator reports
         self.assertEqual(published['accepted'], 1)
         self.assertEqual(published['dropped'], 0)
         self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
-        self.assertEqual(self.state.data['days'][self.state.today], dict(compiles=5, reviews=3))
+        self.assertEqual(self.state.data['days'][self.state.today], dict(compiles=10, reviews=3))
         self.assertEqual(self.git('rev-parse', 'origin/main'), self.base)
         self.assertFalse((self.root / '.local/flow/lane/queue').exists())
         self.assertFalse((self.root / '.local/flow/groups').exists())
         for argv in self.commands:
             if argv[0] == 'gh':
                 if argv[1] == 'api':
-                    self.assertTrue(argv[-1].endswith('/check-runs'))
+                    self.assertTrue(argv[-1].endswith('/check-runs') or '/actions/runs?' in argv[-1])
                 else:
                     self.assertEqual(argv[1:3], ['pr', 'view'])
             if argv[0] == 'git':
@@ -962,6 +1115,14 @@ reasons: original synthetic source and comparator reports
         # Checkpointed dry run resumes without a second model call or compiler invocation.
         ap.process(self.runtime, ap.State(self.private, ap.DEFAULTS), pr(head=self.head, paths=(self.fixture.CPP,)), True)
         self.assertEqual(len(self.models), 3)
+
+    def test_ci_determinism_compile_budget_is_reserved_before_sampling(self):
+        self.state.config = dict(ap.DEFAULTS, daily_compiles=9)
+        with self.assertRaises(ap.Limit):
+            ap.process(self.runtime, self.state, pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        self.assertEqual(self.state.data['days'][self.state.today]['compiles'], 6)
+        self.assertEqual(sum(len(argv) > 1 and argv[1] in (
+            'tools/verifier/attempt', 'tools/verifier/wine_confirm.py') for argv in self.commands), 2)
 
     def test_changed_accepted_unit_is_reconfirmed_reviewed_and_reaccepted(self):
         # Trusted main already accepted this member; the contributor edits its unit.
