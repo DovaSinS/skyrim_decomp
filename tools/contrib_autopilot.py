@@ -217,20 +217,24 @@ class Runtime:
                           'number,author,headRefOid,isDraft,files,state,baseRefName').stdout)
 
     def list_prs(self, number=None):
-        fields = 'number,author,headRefOid,isDraft,files,state,baseRefName'
         if number:
             pr = self.view_pr(number)
             return [pr] if pr['state'] == 'OPEN' else []
         pages = json.loads(self.command(['gh', 'api', '--paginate', '--slurp',
                             f'repos/{REPOSITORY}/pulls?state=open&per_page=100']).stdout)
+        # The REST list can lag a push (including while its files endpoint is current).
+        # Use it for discovery only, never to reuse a completed revision or select an author.
+        # Revisit saved identities too: a stale list can omit a reopened PR entirely.
+        numbers = {pr['number'] for page in pages for pr in page}
+        numbers.update(saved['number'] for key, saved in self.state.data['prs'].items()
+                       if key.startswith('dry-') == self.dry_run)
         prs = []
-        for page in pages:
-            for pr in page:
-                files = json.loads(self.command(['gh', 'api', '--paginate', '--slurp',
-                                   f'repos/{REPOSITORY}/pulls/{pr["number"]}/files?per_page=100']).stdout)
-                prs.append(dict(number=pr['number'], author=dict(login=pr['user']['login']),
-                                headRefOid=pr['head']['sha'], isDraft=pr['draft'], baseRefName=pr['base']['ref'],
-                                files=[dict(path=f['filename']) for group in files for f in group]))
+        for candidate in sorted(numbers):
+            pr = self.view_pr(candidate)  # A transport error aborts this tick, never says complete.
+            if pr['state'] == 'OPEN':
+                # Persist the new revision before any later PR lookup or intake can fail.
+                self.state.revision(pr, self.dry_run)
+                prs.append(pr)
         return prs
 
     def feedback(self, revision, key, label, message, commits=()):
@@ -409,6 +413,23 @@ class Runtime:
             return ['trusted intake did not produce its JSON result']
         return [safe_reason(p) for p in data.get('problems', [])] or ([] if result.returncode == 0 else ['trusted intake failed'])
 
+    def companions(self, fetched):
+        """Accepted members whose old include closure intersects this source change."""
+        import sparse_checkouts
+        tree = Path(fetched['tree'])
+        data = read_json(tree / 'data/progress.json')
+        changed = {f['path'] for f in fetched['files']}
+        units = {}
+        members = {fn['report']: fn for fn in data['functions']
+                   if fn['build_id'] == data['target_build_id'] and fn.get('status') == 'matched' and fn.get('report')}
+        for name, record in sparse_checkouts.reports(tree, members):
+            if record is None:
+                raise Stop('accepted companion report is unavailable')
+            src = record['source']
+            if changed.intersection(src['translation_unit']):
+                units.setdefault(src['compiled'], []).append(members[name]['rva'])
+        return units
+
     def functions(self, fetched):
         tree = Path(fetched['tree'])
         data = read_json(tree / 'data/progress.json')
@@ -423,13 +444,9 @@ class Runtime:
                 path = tree / (cpp[:-4] + suffix)
                 if path.is_file():
                     rvas.update(int(m, 16) for m in re.findall(r'\bRVA\s+(0x[0-9a-fA-F]+)\b', path.read_text()))
-        changed = {f['path'] for f in fetched['files']}
         # An edit to a shared header can stale accepted functions in other units too.
-        for fn in data['functions']:
-            if fn.get('status') == 'matched' and fn.get('report'):
-                src = read_json(tree / fn['report'])['source']
-                if changed.intersection(src['translation_unit']):
-                    units.setdefault(src['compiled'], set()).add(fn['rva'])
+        for cpp, rvas in self.companions(fetched).items():
+            units.setdefault(cpp, set()).update(rvas)
         if not units or any(not rvas for rvas in units.values()):
             raise Rejected('each changed unit must identify its functions with RVA header lines')
         if any(r not in by_rva for rs in units.values() for r in rs):
@@ -689,7 +706,7 @@ class Runtime:
     def reviews(self, fetched, groups, tasks, revision):
         import flow
         tree = Path(fetched['tree'])
-        approved, failed, hold_history = [], [], False
+        approved, approved_functions, failed, hold_history = [], [], [], False
         def quarantine(blocks):
             return any(b.get('_checks', {}).get('provenance', '').split(',')[0].strip() == 'fail'
                        or b.get('_checks', {}).get('publication_hygiene', '').split(',')[0].strip() == 'fail'
@@ -733,12 +750,14 @@ class Runtime:
                                        or 'Reviewer escalation; source remains held'))
             if accepted and not unit_quarantine:
                 approved.append(name)
+                approved_functions.extend(accepted)
             elif unit_quarantine:
                 failed.append(dict(group=name, reason='unit quarantined for provenance or publication hygiene'))
         # Merging a head preserves all of its history, including quarantined units.
         if hold_history:
             failed.append(dict(reason='PR history held because it contains a quarantined unit'))
-        return dict(groups=[] if hold_history else approved, failed=failed)
+        return dict(groups=[] if hold_history else approved,
+                    approved=[] if hold_history else approved_functions, failed=failed)
 
     def current_head(self, number):
         return json.loads(self.gh('pr', 'view', str(number), '--json', 'headRefOid').stdout)['headRefOid']
@@ -885,9 +904,17 @@ def process(runtime, state, pr, dry_run=False):
         state.save()
         return revision
     tasks = state.once(revision, 'export', lambda: runtime.export(fetched, units))
+    companions = state.once(revision, 'companions', lambda: runtime.companions(fetched))
+    required = {f'0x{r:x}' for rvas in companions.values() for r in rvas}
     confirmed = state.once(revision, 'confirmation', lambda: runtime.confirm(fetched, tasks, revision))
     for index, failure in enumerate(confirmed['failed']):
         runtime.feedback(revision, 'compare-' + str(index), 'needs-changes', f'{failure["rva"]}: {failure["reason"]}')
+    if required - set(confirmed['passed']):
+        runtime.feedback(revision, 'companion-confirmation', 'needs-maintainer',
+                         'Unit extension held: an already-accepted companion needs two-host re-confirmation.')
+        revision['done'] = True
+        state.save()
+        return revision
     if not confirmed['passed']:
         revision['done'] = True
         state.save()
@@ -897,6 +924,12 @@ def process(runtime, state, pr, dry_run=False):
     for index, failure in enumerate(reviewed['failed']):
         runtime.feedback(revision, 'review-' + str(index), 'needs-changes',
                          f'{failure.get("rva", "Unit")}: {failure["reason"]}')
+    if required - set(reviewed.get('approved', [])):
+        runtime.feedback(revision, 'companion-review', 'needs-maintainer',
+                         'Unit extension held: an already-accepted companion needs an approving re-review.')
+        revision['done'] = True
+        state.save()
+        return revision
     if reviewed['groups']:
         published = state.once(revision, 'publication', lambda: runtime.publish(fetched, reviewed, revision))
         runtime.finish(revision, published)

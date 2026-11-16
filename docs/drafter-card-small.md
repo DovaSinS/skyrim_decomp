@@ -48,7 +48,8 @@ Name your actual model when claiming (`next --worker <model-session> --model <mo
    { return ((a_flags >> a_bit) & 1) != 0; }`, call `TestBit(flags, 3)`, label `// TestBit: GUESS(low)`.
 7. **Null test the target repeats:** read the member again instead of keeping a local copy.
 8. **`static_assert` needs a message:** `static_assert(sizeof(X) == 0x20, "X size");`.
-9. **Includes:** own header `#include "X.h"`; others only as the skeleton gives them (`"../area/Y.h"`).
+9. **Includes:** own header `#include "X.h"`; other reconstruction headers use `"area/Y.h"`
+   relative to `reconstruction/`. Never use parent-directory paths; see the [include audit](contributor-include-audit.md).
 10. **Labels.** A label line is `// <names>: <LABEL>`; LABEL is `COMMUNITY(<owner>/<repo>@<rev>, <licence>)`,
     `GUESS(low)`, `EXE_RTTI`, `OBSERVED`, or `STANDIN` plus one of those. Copy the skeleton's labels;
     add one for every name you add. Never write the label words anywhere else. One label per line:

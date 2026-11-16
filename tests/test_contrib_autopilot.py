@@ -152,6 +152,9 @@ class FakeRuntime:
     def export(self, fetched, units):
         return self.call('export', ['synthetic-task'])
 
+    def companions(self, fetched):
+        return getattr(self, 'accepted_companions', {})
+
     def confirm(self, fetched, tasks, revision):
         return self.call('confirm', self.confirmed)
 
@@ -717,10 +720,108 @@ reasons: original synthetic source and comparator reports
         ap.process(self.runtime, ap.State(self.private, ap.DEFAULTS), pr(head=self.head, paths=(self.fixture.CPP,)), True)
         self.assertEqual(len(self.models), 3)
 
+    def test_changed_accepted_unit_is_reconfirmed_reviewed_and_reaccepted(self):
+        # Trusted main already accepted this member; the contributor edits its unit.
+        # Its old approval must remain stale until new two-host records AND review bind it.
+        import check
+        self.kit.fn['status'] = 'matched'
+        self.kit.save_review()
+        self.kit.write('data/progress.json', json.dumps(self.kit.data))
+        self.git('add', 'data/progress.json', self.fixture.REVIEW)
+        self.git('commit', '--quiet', '-m', 'synthetic accepted baseline')
+        self.git('push', '--quiet', 'origin', 'main')
+        self.base = self.git('rev-parse', 'HEAD')
+        result = ap.process(self.runtime, self.state,
+                            pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        self.assertEqual(result['completed']['companions'], {self.fixture.CPP: [0x1010]})
+        self.assertEqual(result['completed']['confirmation']['passed'], ['0x1010'])
+        self.assertEqual(result['completed']['reviews']['approved'], ['0x1010'])
+        self.assertEqual(result['completed']['publication']['accepted'], 1)
+        self.assertEqual(result['completed']['publication']['dropped'], 0)
+        self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
+        tree = Path(result['completed']['fetch']['tree'])
+        fn = ap.read_json(tree / 'data/progress.json')['functions'][0]
+        self.assertEqual(check.acceptance_staleness(fn, tree), check.STALE_REVIEW)
+
 
 class RecoveryRegression(unittest.TestCase):
     setUp = GitTransport.setUp
     git = GitTransport.git
+
+    def test_reject_push_network_error_then_poll_uses_detail_not_stale_list(self):
+        old = pr(72, 'outside', head='d' * 40)
+        pushed = dict(pr(72, 'outside', head='e' * 40), state='OPEN')
+        runtime = FakeRuntime()
+        runtime.fetch = Mock(return_value=dict(problem='deterministic screen: include-outside-roots'))
+        rejected = ap.process(runtime, self.state, old)
+        self.assertTrue(rejected['done'])
+        # Even after the push the REST discovery list keeps returning the rejected head.
+        listing = [[dict(number=72, head=dict(sha=old['headRefOid']))]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=ap.Stop('error connecting to api.github.com'))
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        self.runtime.view_pr.side_effect = None
+        self.runtime.view_pr.return_value = pushed
+        observed = self.runtime.list_prs()
+        self.assertEqual(observed, [pushed])
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], pushed['headRefOid'])
+        self.assertFalse(saved.get('done'))
+        self.assertEqual(saved['completed'], {})
+        fresh = FakeRuntime()
+        result = ap.process(fresh, self.state, observed[0])
+        self.assertTrue(result['done'])
+        self.assertEqual(fresh.calls, ['fetch', 'intake', 'functions', 'screen', 'export',
+                                       'confirm', 'groups', 'reviews', 'publish', 'finish'])
+
+    def test_new_revision_saved_before_another_detail_lookup_fails(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        listing = [[dict(number=72), dict(number=73)]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=[dict(pr(72, head='e' * 40), state='OPEN'), ap.Stop('network')])
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], 'e' * 40)
+        self.assertFalse(saved.get('done'))
+
+    def test_stale_discovery_omission_revisits_saved_done_reopened_pr(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, b'[[]]', b''))
+        self.runtime.view_pr = Mock(return_value=dict(pr(72, head='e' * 40), state='OPEN'))
+        self.assertEqual([p['number'] for p in self.runtime.list_prs()], [72])
+        self.runtime.view_pr.return_value = dict(pr(72, head='e' * 40), state='CLOSED')
+        self.assertEqual(self.runtime.list_prs(), [])
+
+    def test_companion_confirmation_failure_holds_extension_before_review(self):
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x3000]}
+        result = ap.process(runtime, self.state, pr(head=self.head))
+        self.assertTrue(result['done'])
+        self.assertNotIn('reviews', runtime.calls)
+        self.assertNotIn('publish', runtime.calls)
+        self.assertEqual(runtime.messages[-1][0], 'companion-confirmation')
+
+    def test_companion_must_be_re_reviewed_before_extension_can_publish(self):
+        for approved in ([], ['0x1000']):
+            with self.subTest(approved=approved):
+                runtime = FakeRuntime()
+                runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+                runtime.reviewed['approved'] = approved
+                state = ap.State(self.private / str(len(approved)), ap.DEFAULTS)
+                result = ap.process(runtime, state, pr(head=self.head))
+                self.assertTrue(result['done'])
+                self.assertNotIn('publish', runtime.calls)
+                self.assertEqual(runtime.messages[-1][0], 'companion-review')
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+        runtime.reviewed['approved'] = ['0x1000', '0x2000']
+        state = ap.State(self.private / 'approved', ap.DEFAULTS)
+        ap.process(runtime, state, pr(head=self.head))
+        self.assertIn('publish', runtime.calls)
 
     def test_interrupted_initial_clone_is_retained_and_reinitialized(self):
         original = self.runtime.link_inputs

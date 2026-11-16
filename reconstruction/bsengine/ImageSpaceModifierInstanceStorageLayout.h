@@ -37,7 +37,7 @@
 #include <cstdint>
 #include <cstddef>
 #include "BSFixedStringStorageLayout.h"
-#include "../netimmerse/NiObjectStorageLayout.h"
+#include "netimmerse/NiObjectStorageLayout.h"
 
 namespace ResearchLayouts {
 class NiAVObject;
