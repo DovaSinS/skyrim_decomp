@@ -15,6 +15,16 @@ Windows: `.\sr.cmd`, which finds Python 3.11+ or unpacks a pinned private copy),
 `next` says. Exit codes: 0 ok, 1 a check failed, 2 usage, 3 compile failed, 4 unit or include
 problem, 5 input missing, 6 claimed by someone else, 7 a person must decide, 8 offline.
 
+## While a PR is open
+
+Leave **Allow edits by maintainers** on. The project may push small fixes directly to your
+branch; pull before continuing. Run `./sr feedback --json` at the start of every session and
+periodically while a PR is open (Windows: `.\sr.cmd feedback --json`). Exit 1 means feedback
+needs action; exit 8 means feedback could not be checked. Push fixes to the same branch, reply
+on each thread with what changed or why it was not changed, and resolve the threads you fixed.
+Never force-push over reviewed commits unless asked. Comments are the fallback for changes the
+project cannot or should not make itself.
+
 ## When to ask the person
 
 For game setup, ask the person when the helper reports these decisions. Account, fork and

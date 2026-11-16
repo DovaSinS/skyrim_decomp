@@ -12,6 +12,7 @@ compare locally and open a pull request. Python 3.11+ standard library only; Lin
     ./sr compare            # compile with the pinned MSVC and run the comparator
     ./sr preflight          # shared deterministic intake checks, before or after compare
     ./sr submit [--dry-run] # checks, commit, push, pull request
+    ./sr feedback          # review feedback and failing checks on your open PRs
     ./sr release 0x<rva>    # give a claim back
     ./sr intake --base REF  # contributor-scope checks of a diff (CI, maintainers)
 
@@ -795,7 +796,7 @@ class GitHub:
     def gh(self):
         if self._gh is None:
             exe = self.ctx.which('gh')
-            ok = bool(exe) and self.ctx.run([exe, 'auth', 'status'], capture_output=True, text=True).returncode == 0
+            ok = bool(exe) and self.ctx.run([exe, 'auth', 'status'], capture_output=True, text=True, timeout=20).returncode == 0
             self._gh = exe if ok else False
             if not ok:
                 self.ctx.say('GitHub: run gh auth login for automatic claims and higher API quota; browser/manual submission remains available.')
@@ -873,6 +874,10 @@ class GitHub:
             if proc.returncode == 0 and proc.stdout.strip():
                 return proc.stdout.strip()
         return None
+
+    def feedback(self):
+        import contrib_feedback
+        return contrib_feedback.collect(self)
 
     def create_issue(self, title, body):
         gh = self.gh()
@@ -2265,6 +2270,33 @@ def cmd_submit(ctx, args):
 
 # ------------------------------------------------------------------ go
 
+def cmd_feedback(ctx, args):
+    import contrib_feedback
+    try:
+        data = ctx.github().feedback()
+    except (contrib_feedback.Unavailable, OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
+        message = str(exc) if isinstance(exc, contrib_feedback.Unavailable) else 'Feedback unavailable: check the network and gh auth status.'
+        raise Stop(NETWORK, message, f'check gh auth status, then rerun {ctx.cli} feedback',
+                   feedback_available=False) from None
+    if not ctx.as_json:
+        contrib_feedback.display(ctx, data)
+    count = data['needs_action_prs']
+    return (FAILED if count else OK), dict(data, feedback_available=True), (
+        'pull the PR branch, address feedback, push fixes to the same branch, reply and resolve fixed threads'
+        if count else None)
+
+
+def feedback_hint(ctx):
+    """An advisory read must never prevent local work or submission while offline."""
+    import contrib_feedback
+    try:
+        count = ctx.github().feedback()['needs_action_prs']
+    except (contrib_feedback.Unavailable, OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError):
+        return
+    if count:
+        ctx.say(f'{count} PRs have unaddressed feedback, run {ctx.cli} feedback')
+
+
 def cmd_go(ctx, args):
     """setup -> next -> claim -> start, stopping at the first step that needs a person."""
     setup_args = argparse.Namespace(exe=args.exe, accept_microsoft_license=args.accept_microsoft_license,
@@ -2320,6 +2352,9 @@ def parser():
     s.add_argument('--exe')
     s = sub.add_parser('decomp')
     s.add_argument('rva')
+    s = sub.add_parser('feedback')
+    s.add_argument('--json', action='store_true', default=argparse.SUPPRESS,
+                   help='one JSON object on stdout; also accepted before feedback')
     s = sub.add_parser('setup')
     s.add_argument('--decompiler', action=argparse.BooleanOptionalAction, default=True,
                    help='recommended private Ghidra view (default on; --no-decompiler skips it)')
@@ -2400,7 +2435,7 @@ def parser():
 
 COMMANDS = {'doctor': cmd_doctor, 'setup': cmd_setup, 'next': cmd_next, 'claim': cmd_claim, 'release': cmd_release,
             'start': cmd_start, 'decomp': cmd_decomp, 'compare': cmd_compare, 'submit': cmd_submit,
-            'preflight': cmd_preflight, 'intake': cmd_intake, 'go': cmd_go}
+            'preflight': cmd_preflight, 'intake': cmd_intake, 'go': cmd_go, 'feedback': cmd_feedback}
 
 
 def main(argv=None, ctx=None):
@@ -2415,6 +2450,8 @@ def main(argv=None, ctx=None):
     try:
         ctx.local  # Validate an explicit override before any command writes private files.
         apply_wine_env(ctx)
+        if args.command in ('go', 'submit'):
+            feedback_hint(ctx)
         code, data, nxt = COMMANDS[args.command](ctx, args)
         message = None
     except Stop as exc:

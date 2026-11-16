@@ -18,6 +18,9 @@ Cargo/build/cache instructions here or modify its checkout as part of a research
 - Claim a small issue before a long task. Record human owner, agent/model if used, exact build,
   reproduction command, outcome, blockers and next step. Launch agents only as described in
   "Multi-agent execution" below, or when the human maintainer asks.
+- Apply small outside-PR fixes directly with a cheap-model worker when **Allow edits by
+  maintainers** is on, retaining co-author credit; request changes only when the project cannot
+  or should not make the fix itself. Keep all acceptance and publication gates.
 - All shell commands run from this repo. Private command paths must stay in local configs.
 - Keep ordinary CLI/tooling work on macOS; Windows Arm VM and live Skyrim/SKSE compatibility are
   unverified. Do not install a VM, change a game install or provision paid machines without scope.

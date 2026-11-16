@@ -53,6 +53,9 @@ class FakeGitHub:
     def gh(self):
         return 'gh' if self.can_create else None
 
+    def feedback(self):
+        return {'needs_action_prs': 0}
+
     def create_issue(self, title, body):
         if not self.can_create:
             return None
