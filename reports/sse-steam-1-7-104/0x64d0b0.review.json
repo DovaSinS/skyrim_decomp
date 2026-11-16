@@ -1,0 +1,23 @@
+{
+  "build_id": "sse-steam-1-7-104",
+  "code_section_sha256": "e4c9f8475fe7a1cf1692046263dd8718ba61a7787269cc1d301917de307ed8bd",
+  "escalation_category": "none",
+  "function_id": "sse-steam-1-7-104-0x64d0b0",
+  "naming_findings": [
+    "class and function names labelled GUESS(low) although the cited sibling supplies them; SIBLING would be accurate"
+  ],
+  "previous_code_section_sha256": null,
+  "previous_review_sha256": null,
+  "previous_source_digest": null,
+  "review_date": "2026-11-15",
+  "review_kind": "full",
+  "review_record_schema": 3,
+  "review_sha256": "2484f298f7f2f88c06c7a2cd03e045e0525487fda77c9905514ecaa7a967203d",
+  "review_task_id": "review-flow-g178",
+  "reviewer_model": "claude-opus-5-5",
+  "rva": 6607024,
+  "size": 43,
+  "source_digest": "b2a3eddcece32222bc30e5a3a4a000c7c0fff959978e72d642e5bc0a7a83bb50",
+  "source_digest_method": "tu-sha256-v1",
+  "verdict": "approve"
+}
