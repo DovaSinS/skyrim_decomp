@@ -585,6 +585,8 @@ class Runtime:
             if f'0x{fn["rva"]:x}' in passed:
                 fn['report'] = f'reports/{fn["build_id"]}/0x{fn["rva"]:x}.json'
         save_json(tree / 'data/progress.json', data)
+        from build_index import write_index
+        write_index(data, tree)
         return dict(passed=passed, failed=failed)
 
     def make_groups(self, fetched, confirmed):

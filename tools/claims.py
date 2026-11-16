@@ -46,7 +46,7 @@ def live(item, now=None):
 
 def parse_issue(issue):
     """One parser for legacy titles, PR titles and the versioned batch block."""
-    title, body = issue.get('title') or '', issue.get('body') or ''
+    title, body = issue.get('title') or '', (issue.get('body') or '').replace('\r\n', '\n')
     block = re.search(r'```[^\n]*\n' + MARKER + r' ([A-Za-z0-9._-]+)\n(.*?)\n```', body, re.S)
     entries = []
     if block:
@@ -526,12 +526,23 @@ def sync(root, gh=None):
             if text != it['body']:
                 gh.edit(it['number'], it['title'], text, me)
             gh.close(it['number'])
-        elif done and MANAGED in it['body'] and len(functions) == total:
-            remaining = [(f['rva'], f['rva'] + 1) for f in functions if f['status'] != 'matched']
+        elif done and MANAGED in it['body']:
+            accepted = sorted(f['rva'] for f in functions if f['status'] == 'matched')
+            remaining = []
+            for start, end in it['entries']:
+                cursor = start
+                for address in accepted:
+                    if cursor <= address < end:
+                        if cursor < address:
+                            remaining.append((cursor, address))
+                        cursor = address + 1
+                if cursor < end:
+                    remaining.append((cursor, end))
             if remaining:
-                title = f'claim: {it["build_id"]} {scope(remaining, public, it["build_id"])} ({len(remaining)} functions)'
-                text = body(it['build_id'], remaining, public, me, managed=True)
-                # Scope maintenance is not a broad renewal of inactive members.
+                # Retain unknown starts and their declared count; absence is not acceptance.
+                left = total - done
+                title = f'claim: {it["build_id"]} {scope(remaining, public, it["build_id"])} ({left} functions)'
+                text = body(it['build_id'], remaining, public, me, total=left, done=0, managed=True)
                 renew(gh, it, active, 'Claim scope updated; only the listed active functions are renewed.', maintenance=True)
                 gh.edit(it['number'], title, text, me)
         else:

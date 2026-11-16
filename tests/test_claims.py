@@ -87,6 +87,12 @@ class ClaimsTests(unittest.TestCase):
         issue['title'] += ' 0x9999'
         self.assertEqual(claims.parse_issue(issue)['entries'], [(0x2000, 0x2100)])
 
+    def test_windows_claim_body_retains_scope(self):
+        issue = raw(entries=((0x1000, 0x1001),))
+        issue['title'] = f'claim: {BUILD} Alpha (1 functions)'
+        issue['body'] = issue['body'].replace('\n', '\r\n')
+        self.assertEqual(claims.parse_issue(issue)['entries'], [(0x1000, 0x1001)])
+
     def test_assignee_over_author_lapse_and_overlap(self):
         index = claims.ClaimIndex([claims.parse_issue(raw()), claims.parse_issue(raw(2, old=True))])
         self.assertEqual([i['number'] for i in claims.claimed(index, 0x1000)], [1])
@@ -278,8 +284,11 @@ class ClaimsTests(unittest.TestCase):
         with patch.object(claims, 'git_json', return_value=public), contextlib.redirect_stdout(io.StringIO()):
             claims.sync(self.root, fake.client)
         self.assertFalse(fake.closed)
-        self.assertIn('0 / 3', fake.rows[0]['body'])
-        self.assertFalse(fake.writes)  # a progress edit must not renew inactive unknown scope
+        self.assertIn('0 / 1', fake.rows[0]['body'])
+        remaining = claims.parse_issue(fake.rows[0])['entries']
+        self.assertFalse(any(a <= 0x1000 < b or a <= 0x1020 < b for a, b in remaining))
+        self.assertTrue(any(a <= 0x1030 < b for a, b in remaining))
+        self.assertEqual(fake.writes, [('comment', 8), ('edit', 8)])
 
     def test_sync_failure_is_nonfatal(self):
         with patch.object(claims, 'sync', side_effect=RuntimeError('offline')), contextlib.redirect_stderr(io.StringIO()) as err:
