@@ -1,7 +1,7 @@
 """Process serialization and atomic files for the private pipeline state."""
 from contextlib import contextmanager
 from contextvars import ContextVar
-import fcntl
+import file_lock as fcntl
 import json
 import os
 from pathlib import Path

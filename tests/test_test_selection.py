@@ -50,11 +50,11 @@ class Selection(unittest.TestCase):
         self.commit()
         return selection.select(self.root, self.base, 'HEAD', self.modules)
 
-    def test_direct_transitive_and_opaque_callers_run_unrelated_module_can_be_omitted(self):
+    def test_tool_changes_run_every_module_including_unrelated_and_opaque_callers(self):
         self.write('tools/leaf.py', 'VALUE = 2\n')
         selected, reason = self.selected()
-        self.assertEqual(selected, self.modules - {'test_unrelated'})
-        self.assertTrue(reason.startswith('affected:'))
+        self.assertEqual(selected, self.modules)
+        self.assertTrue(reason.startswith('full:'))
 
     def test_removed_import_and_deleted_module_keep_the_old_test_edges(self):
         self.write('tests/test_direct.py', '# import removed\n')
@@ -73,7 +73,7 @@ class Selection(unittest.TestCase):
         self.write('tools/pkg/leaf.py', 'VALUE = 2\n')
         selected, reason = self.selected()
         self.assertTrue({'test_direct', 'test_transitive'} <= selected)
-        self.assertTrue(reason.startswith('affected:'))
+        self.assertTrue(reason.startswith('full:'))
 
     def test_changed_test_is_always_selected(self):
         self.write('tests/test_unrelated.py', 'import unittest\n# changed test\n')
@@ -97,7 +97,7 @@ class T:
         selected, reason = self.selected()
         self.assertIn('test_direct', selected)
         self.assertIn('test_computed', selected)
-        self.assertTrue(reason.startswith('affected:'))
+        self.assertTrue(reason.startswith('full:'))
 
     def test_computed_file_reads_through_helpers_and_git_show_are_also_opaque(self):
         self.write('tools/reader.py', 'def read(path):\n return path.read_text()\n')
@@ -109,7 +109,7 @@ class T:
         self.write('tools/leaf.py', 'VALUE = 4\n')
         selected, reason = self.selected()
         self.assertTrue({'test_direct', 'test_reader', 'test_git'} <= selected)
-        self.assertTrue(reason.startswith('affected:'))
+        self.assertTrue(reason.startswith('full:'))
 
     def test_unmapped_and_unparseable_inputs_fall_back_to_full(self):
         for path, text in [('tools/new.py', 'VALUE = 1\n'), ('tools/leaf.py', 'not Python!!!')]:
@@ -129,7 +129,7 @@ class T:
                 self.write(path, '# original synthetic core change\n')
                 selected, reason = self.selected()
                 self.assertEqual(selected, self.modules)
-                self.assertEqual(reason, 'full: shared core changed')
+                self.assertTrue(reason.startswith('full:'))
 
     def test_workflow_and_recipe_references_select_covering_modules(self):
         for path in ['.github/workflows/synthetic.yml', 'reconstruction/recipes/synthetic.json']:
@@ -141,7 +141,7 @@ class T:
                 self.write(path, '{"changed":true}\n')
                 selected, reason = self.selected()
                 self.assertIn('test_direct', selected)
-                self.assertTrue(reason.startswith('affected:'), reason)
+                self.assertTrue(reason.startswith('full:'), reason)
 
     def test_reconstruction_reports_and_all_derived_views_need_no_local_unit_tests(self):
         for path in ['reconstruction/a/A.cpp', 'reconstruction/a/A.h', 'reports/synthetic/report.json',

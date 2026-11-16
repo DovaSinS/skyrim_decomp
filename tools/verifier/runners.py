@@ -774,6 +774,22 @@ def independence_problem(hosts, facts=None):
         return 'needs at least two compile hosts'
     if len({h['machine'] for h in hosts}) < 2:
         return 'all compile hosts are on one machine'
+    ci = [h for h in hosts if h.get('backend') == 'ci-hash']
+    if ci:
+        # This approved hash host has its own fresh compiles and no game input.
+        # Native/native is allowed only for this explicit CI-hash pair.
+        if len(hosts) != 2 or len(ci) != 1:
+            return 'CI hash confirmation needs exactly one independent first host'
+        if facts is not None:
+            for h in hosts:
+                if h.get('backend') == 'ci-hash':
+                    continue
+                reported = facts.get(h['host_id']) or {}
+                if (reported.get('loader') != h['loader']
+                        or (reported.get('loader'), reported.get('os')) not in
+                        {('native', 'windows'), ('wine', 'macos'), ('wine', 'linux')}):
+                    return 'first host reported incompatible loader or operating system'
+        return None
     if facts is not None:
         loaders = {(facts.get(h['host_id']) or {}).get('loader') for h in hosts}
     else:

@@ -483,7 +483,7 @@ def family_reviewed_gate(root, fdir, required, data, target):
         fr.require(status == 'ok' and blocks[rva].get('verdict') == 'approve'
                    and blocks[rva].get('source_digest') == rec['source']['digest'],
                    f'{fid}: saved approving sample review missing or stale')
-        ok, why = sampling_gate(root, fdir, g, data)
+        ok, why = sampling_gate(root, fdir, g, data, [rva])
         fr.require(ok, f'{fid}: sampling safeguard: {why}')
 
 
@@ -1251,10 +1251,13 @@ def redo_review(root, fdir, name):
 
 # ------------------------------------------------------------------ sampling gate
 
-def sampling_gate(root, fdir, g, data):
+def sampling_gate(root, fdir, g, data, functions=None):
     """(ok, problem) for a review group's sampled functions: second review saved and in agreement,
     and the from-scratch re-run recorded with AGREE for each."""
-    if not g.get('sampled'):
+    sampled = set(g.get('sampled') or [])
+    if functions is not None and not g.get('contributor'):
+        sampled &= set(functions)
+    if not sampled:
         return True, None
     s = load_group(fdir, g['pair'])
     if s.get('profile', profiles.DEFAULT) != g.get('profile', profiles.DEFAULT):
@@ -1268,7 +1271,7 @@ def sampling_gate(root, fdir, g, data):
     if status != 'ok':
         return False, f'redo: sampling review {s["task_id"]} {status}'
     _, first = read_review(root, g, data['functions'])
-    for rva in g['sampled']:
+    for rva in sorted(sampled):
         a, b = first.get(rva), second.get(rva)
         if a is None or b is None:
             return False, f'DISAGREE: {rva} lacks a block in one of the two reviews'
@@ -1277,8 +1280,8 @@ def sampling_gate(root, fdir, g, data):
                            + ('' if a.get('source_digest') == b.get('source_digest') else ', different digests'))
     if not g.get('rerun'):
         return False, f'waiting: from-scratch re-run not recorded (brief .local/briefs/rerun-{g["name"]}.md)'
-    failed = set(g['sampled']) & set(g['rerun']['not_agree'])
-    missing = set(g['sampled']) - set(g['rerun'].get('agree', []))
+    failed = sampled & set(g['rerun']['not_agree'])
+    missing = sampled - set(g['rerun'].get('agree', []))
     if failed or missing:
         return False, f'DISAGREE: re-run did not agree for {", ".join(sorted(failed | missing))}'
     return True, None
@@ -1315,8 +1318,9 @@ def split_group(root, fdir, name, selected):
         refuse(all(existing.get(k) == child.get(k) for k in ('functions', 'task_id', 'subset_of')),
                'existing subset differs')
         return existing
-    # A split cannot evade the random safeguard by excluding the original sample.
-    count = math.ceil(len(chosen) * SAMPLE_RATE)
+    # Internal subsets inherit the frozen draw; splitting does not start another review chain.
+    # Outside-contributor intake keeps its existing subset sampling policy.
+    count = math.ceil(len(chosen) * SAMPLE_RATE) if parent.get("contributor") else 0
     extra = max(0, count - len(child['sampled']))
     if extra:
         candidates = [r for r in chosen if r not in child['sampled']]

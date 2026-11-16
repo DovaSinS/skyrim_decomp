@@ -169,3 +169,13 @@ Only sanitized JSON results are uploaded as artifacts. The existing review, fami
 integration and acceptance steps still apply. No function is accepted by this machinery change.
 
 The same p148 task explicitly directs: "It submits a batch of candidate units by workflow_dispatch on a ref or branch, or by another mechanism that doesn't push to main. Batch many functions per run." This authorizes source-only candidate batch branches for this CI path before acceptance. Such branches are draft inputs, never accepted matches; the public publication guard and reconstruction lint run before upload.
+
+## Primary host and internal sampling directive (2026-11-17)
+
+awarebayes directs the internal primary host to be the native Windows PC, with Mac Wine as
+unreachable-PC fallback, and GitHub CI-hash as the independent second machine. Any registered
+primary host may supply the unchanged full comparator evidence; native/native is allowed only
+for this explicit CI-hash pair. Outside-contributor intake stays Mac Wine plus CI-hash.
+Internal functions require one independent admitted review; only the gate's frozen sampled
+subset requires the second/safeguard review and clean re-run. Existing sampling draws, first-20
+triggers, pins, exact hashes, validator, screen, lint and publication guards remain mandatory.

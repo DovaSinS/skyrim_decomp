@@ -66,6 +66,37 @@ class Evidence(GateFixture,unittest.TestCase):
     def test_local_full_pass_and_bound_ci_evidence_are_accepted(self):
         check.validate_match(self.fn,self.target,root=self.root)
 
+    def native_first(self):
+        host = 'winpc-native'
+        self.record['runs'][0].update(compiled_on=host, compared_on=host)
+        self.record['build']['hosts'] = {host: next(iter(self.record['build']['hosts'].values()))}
+        ci = self.record['ci_confirmation']
+        ci['first_host'] = dict(host_id=host, machine='synthetic-pc', loader='native', os='windows')
+        for field in ('object_sha256', 'content_sha256'):
+            ci['first_' + field] = ci.pop('mac_' + field)
+        self.save_record()
+
+    def test_native_first_host_and_ci_on_distinct_machines_pass(self):
+        self.native_first()
+        check.validate_match(self.fn, self.target, root=self.root)
+
+    def test_native_first_host_identity_reuse_and_content_tampering_fail(self):
+        self.native_first()
+        original = copy.deepcopy(self.record)
+        for field, value in [('host_id', 'github-windows-native'), ('machine', 'github-hosted-windows'),
+                             ('host_id', 'unbound-host'), ('os', 'linux')]:
+            with self.subTest(field=field, value=value):
+                self.record = copy.deepcopy(original)
+                self.record['ci_confirmation']['first_host'][field] = value
+                self.save_record()
+                with self.assertRaises(ValueError):
+                    check.validate_match(self.fn, self.target, root=self.root)
+        self.record = original
+        self.record['ci_confirmation']['first_content_sha256'] = '0' * 64
+        self.save_record()
+        with self.assertRaisesRegex(ValueError, 'content differs'):
+            check.validate_match(self.fn, self.target, root=self.root)
+
     def test_clean_ci_sampling_requires_full_attestation_and_local_comparator(self):
         import sampling_packet
         arguments=dict(root=self.root,fn=self.fn,target=self.target)
@@ -118,7 +149,7 @@ class Prepare(unittest.TestCase):
                 'findings/TEMPLATE.md':'Original synthetic evidence.\n',
                 'reconstruction/recipes/r.json':'{}',
                 'reconstruction/misc/Widget.cpp':SOURCE,'reconstruction/misc/Widget.h':HEADER}.items():
-                p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(data)
+                p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(data, newline="\n")
             git('add','.');git('commit','-qm','original synthetic fixture');base=git('rev-parse','HEAD')
             closure=include_closure(root,'reconstruction/misc/Widget.cpp')
             unit=dict(task_id='test-unit',unit='reconstruction/misc/Widget.cpp',closure=closure,
@@ -194,6 +225,15 @@ class Config(unittest.TestCase):
         raw=dict(runners_schema=1,hosts=dict(mac=mac,ci=ci),attempt='mac',confirm=['mac','ci'])
         hosts=runners.for_confirm(runners.validate(raw))
         self.assertEqual([h['backend'] for h in hosts],['local','ci-hash'])
+        pc = dict(mac, backend='ssh', host_id='winpc-native', machine='synthetic-pc',
+                  loader='native', ssh_host='synthetic', ssh_config='synthetic', python=['python'])
+        raw['hosts']['pc'] = pc
+        raw['attempt'] = 'pc'; raw['confirm'] = ['pc', 'ci']
+        self.assertEqual([h['host_id'] for h in runners.for_confirm(runners.validate(raw))],
+                         ['winpc-native', 'github-windows-native'])
+        raw['hosts']['pc']['machine'] = 'github-hosted-windows'
+        with self.assertRaisesRegex(runners.RunnerError, 'one machine'):
+            runners.for_confirm(runners.validate(raw))
         raw['attempt']='ci'
         with self.assertRaisesRegex(runners.RunnerError,'confirmation host only'):runners.validate(raw)
 

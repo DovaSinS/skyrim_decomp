@@ -567,7 +567,15 @@ Re-confirm the held units and review their deltas together before enqueueing the
 The final transaction validates everything, writes progress once and rebuilds the index once. Planning, dropped requests or any final failure
 restore all provisional public files; no sampled or unsampled member gains an exemption.
 
-Function-only lane runs rely on the lane acceptance checks, check.py and CI. The lane compares its exact candidate with its pinned origin base: only `reconstruction/`, `reports/`, `data/progress.json` and the generated progress/model SVGs qualify (README changes qualify only inside the generated model totals markers). Those runs skip the local full unit suite and site build; exact-SHA CI still runs both before a successor may push. Any tooling, test, workflow, prose documentation or other path change keeps all local checks. Acceptance records, bindings, digests, harvest equality and Reviewer admission are unchanged.
+Function-only lane runs rely on the lane acceptance checks, check.py, site build and exact-SHA CI. The lane compares its exact candidate with its pinned origin base: source and reports under `reconstruction/` and `reports/`, `data/progress.json` and the generated progress/model views qualify (README changes qualify only inside the generated model totals markers; Python and recipe changes do not qualify). Those runs skip only the local full unit suite; exact-SHA CI still runs the complete suite before a successor may push. All other changes run the full local suite too: computed file reads and dynamic imports prevent reliable dependency-based narrowing. Acceptance records, bindings, digests, harvest equality and Reviewer admission are unchanged.
+
+Lane candidates share successful revision and publication-blob memos in `<shared-flow>/revision-cache`,
+selected by their local Git configuration. Revision keys bind the exact index, working/untracked
+and ignored public inputs, executing tools, runtime/encoding and private policies. Blob keys bind Git blob identity,
+path, mode, scanner code and private policies. Working files are read and hashed on every scan,
+including files marked assume-unchanged. Failures never enter either cache; deleting the cache
+only makes the next checks cold. Concurrent revision writes use atomic replacement, and blob
+additions use atomic database transactions. No memo is acceptance or comparator evidence.
 
 
 ### Re-confirm dropped shared units

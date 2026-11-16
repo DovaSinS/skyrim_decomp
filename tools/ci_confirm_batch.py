@@ -99,7 +99,7 @@ def compile_batch(request, tree, bindir, work):
                 work / unit['task_id'] / str(attempt), tool)
             objects.append(built['object'].read_bytes())
         contents = [evidence.content_digest(b) for b in objects]
-        evidence.require(contents[0] == contents[1] == unit['mac_content_sha256'],
+        evidence.require(contents[0] == contents[1] == unit.get('first_content_sha256', unit.get('mac_content_sha256')),
                          'nondeterminism or local object content mismatch')
         for fn in unit['functions']:
             target = targets.get(fn['rva'])
@@ -121,7 +121,8 @@ def compile_batch(request, tree, bindir, work):
                              'target hash/layout mismatch or nondeterminism')
             rows.append(dict(task_id=unit['task_id'], rva=fn['rva'], target=target,
                 unit=unit['unit'], source_sha256=unit['source_sha256'], recipe_sha256=unit['recipe_sha256'],
-                mac_content_sha256=unit['mac_content_sha256'], mac_object_sha256=unit['mac_object_sha256'],
+                **({k: unit[k] for k in ('first_host', 'first_content_sha256', 'first_object_sha256')}
+                   if 'first_host' in unit else {k: unit[k] for k in ('mac_content_sha256', 'mac_object_sha256')}),
                 content_sha256=contents[0], object_sha256=evidence.sha(objects[0]),
                 result='hash-match', deterministic=True, **measurements[0]))
         return rows

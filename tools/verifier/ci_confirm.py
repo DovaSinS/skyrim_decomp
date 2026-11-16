@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batch CI second-host confirmation, retaining exact existing Mac comparator evidence.
+"""Batch CI second-host confirmation, retaining exact existing primary-host comparator evidence.
 
 Called by confirm when runners.json selects ci-hash, or directly with --root/--list. A submission
 uses a source-only branch, never main. Artifacts contain only sanitized JSON, never objects.
@@ -24,6 +24,7 @@ import check
 import ci_confirmation as evidence
 import lint_reconstruction
 import pipeline
+import runners
 from source_digest import DIGEST_METHOD, include_closure, tu_digest
 import target_hashes
 
@@ -52,11 +53,17 @@ def base_module():
 
 
 def local_inputs(root, task, base):
-    """Find a real all-pass Mac output whose exact object, TU and build facts still bind."""
+    """Find a registered primary host's all-pass output, binding its exact object and facts."""
+    config = runners.load()
+    evidence.require(config is not None, "first host needs a registered runner")
+    hosts = [h for h in runners.for_confirm(config) if h["backend"] != "ci-hash"]
+    evidence.require(len(hosts) == 1, "CI confirmation needs exactly one registered first host")
+    host = hosts[0]
+    label = host["host_id"]
     closure = include_closure(root, task['compiled'])
     digest = tu_digest(root, closure)
     recipe_sha = evidence.sha((root / task['recipe']).read_bytes())
-    candidates = [task['dir'] / 'confirm/mac-wine'] + sorted((task['dir'] / 'attempts').glob('*'), reverse=True)
+    candidates = [task['dir'] / ('confirm/' + label)] + sorted((task['dir'] / 'attempts').glob('*'), reverse=True)
     for dest in candidates:
         if not (dest / 'candidate.obj').is_file():
             continue
@@ -70,20 +77,24 @@ def local_inputs(root, task, base):
                    and r['recipe']['recipe_sha256'] == recipe_sha for r in rows):
             continue
         result = json.loads((dest / 'result.json').read_text())
+        if result.get('host') != label:
+            continue
         facts = result.get('host_facts') or {}
         pins = {name: value for value, name in (s.split() for s in
             (TOOLS_ROOT / 'tools/verifier/pinned.sha256').read_text().splitlines() if s.strip())}
-        evidence.require(facts.get('loader') == 'wine' and facts.get('os') == 'macos'
+        evidence.require(facts.get('loader') == host['loader']
+                         and (facts.get('loader'), facts.get('os')) in {('wine', 'macos'), ('wine', 'linux'), ('native', 'windows')}
                          and facts.get('toolchain_check') == 'checked'
-                         and facts.get('compiler_sha256') == pins, 'Mac output lacks verified Wine toolchain facts')
-        build = base.build_block(task, {'mac-wine': dest})
+                         and facts.get('compiler_sha256') == pins, 'first host lacks verified toolchain facts')
+        build = base.build_block(task, {label: dest})
         unit = dict(task_id=task['task_id'], unit=task['compiled'], closure=closure, source_sha256=digest,
                     recipe=task['recipe'], recipe_sha256=recipe_sha, functions=[
                         {k: v for k, v in f.items() if k in ('rva', 'size', 'symbol', 'internal_selector')}
-                        for f in task['functions']], mac_object_sha256=object_sha,
-                    mac_content_sha256=evidence.content_digest((dest / 'candidate.obj').read_bytes()))
+                        for f in task['functions']], first_host=dict(host_id=label, machine=host["machine"], loader=facts["loader"], os=facts["os"]),
+                    first_object_sha256=object_sha,
+                    first_content_sha256=evidence.content_digest((dest / 'candidate.obj').read_bytes()))
         return unit, reports, build
-    raise ValueError(f'{task["task_id"]}: no current all-pass Mac output with its exact object')
+    raise ValueError(f'{task["task_id"]}: no current all-pass first-host output with its exact object')
 
 
 def submit(root, request, directory, log):
@@ -206,12 +217,12 @@ def run(root, task_dirs, replace=False, out=None, log=print):
                             digest=unit['source_sha256']), recipe=dict(path=task['recipe'], sha256=unit['recipe_sha256']),
                 toolchain_pin=dict(path=check.TOOLCHAIN_PIN, sha256=evidence.sha((root / check.TOOLCHAIN_PIN).read_bytes())),
                 symbol_map=dict(path=task['symbols_repo'], sha256=evidence.sha(task['symbols_local'].read_bytes())),
-                reproduction='Run tools/verifier/confirm with a Mac/Wine runner and the ci-hash confirmation runner; '
+                reproduction='Run tools/verifier/confirm with a registered primary runner and the ci-hash confirmation runner; '
                              'tools/ci_confirm_batch.py compiles twice with the pinned recipe and checks published hashes.',
                 build=build, notes=['CI second-host exception authorized by awarebayes 2026-11-15. '
                     'Full local comparator report is verbatim; CI independently verifies published target hashes '
                     'and whole non-debug object content. No game bytes enter CI.'] + task['record_notes'],
-                runs=[dict(compiled_on='mac-wine', compared_on='mac-wine', report=json.loads(reports[rva].read_text()))])
+                runs=[dict(compiled_on=unit['first_host']['host_id'], compared_on=unit['first_host']['host_id'], report=json.loads(reports[rva].read_text()))])
             if fn.get('family_metadata'):
                 record.update(fn['family_metadata'])
             record['ci_confirmation'] = {k: v for k, v in report.items() if k != 'functions'}
