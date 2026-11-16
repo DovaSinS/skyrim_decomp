@@ -63,12 +63,11 @@ also lints other Drafters' unfinished files; a Reviewer rejects the rest):
 - Other classes the function uses may be declared in your header as minimal stand-ins (only the
   members and virtual slots the code needs). Say in the header comment which declarations are
   stand-ins and where each name comes from. Do not edit another unit to share a class.
-- If the brief lists a shared header for a class you use, include it with the line the brief gives,
-  `#include "../<area>/<Class>.h"` (the recipes pass no include root, so a path is relative to your
-  file; `"<Class>.h"` also works within the same area, `"<area>/<Class>.h"` never does, and
-  `attempt` refuses it uncounted) instead of declaring a stand-in; never edit it. If it lacks a
-  member or slot you need, declare your own stand-in and report `header-gap <Class>` in your
-  result line.
+- If the brief lists a shared header, use a same-directory name or a reconstruction-root path
+  such as `"forms/TESForm.h"`. Cross-area includes require the additive `-reconstruction` recipe
+  variant with `/I reconstruction`; new skeletons select it without changing existing accepted
+  recipes. Never use parent-directory include paths. If a shared header lacks a member or slot,
+  declare your own stand-in and report `header-gap <Class>` in your result line.
 - Include lines are exactly `#include "path"` or `#include <system>` with nothing else on the line;
   never `#` and `include` together in a comment or string; no include inside `/* */` or `#if`
   (header guard aside); repository headers quoted. `attempt` refuses a unit whose compiler include

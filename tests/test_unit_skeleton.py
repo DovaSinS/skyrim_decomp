@@ -86,6 +86,7 @@ class Fixture(unittest.TestCase):
         (r / 'findings/batch.md').write_text('x\n')
         (r / 'reconstruction/recipes').mkdir(parents=True)
         (r / 'reconstruction/recipes/r.json').write_text('{}\n')
+        (r / 'reconstruction/recipes/r-reconstruction.json').write_text('{"flags": ["/I", "reconstruction"]}\n')
         (r / 'reconstruction/misc').mkdir()
         (r / 'reconstruction/misc/WidgetBase.h').write_text(BASE_H)
         packs = r / '.local/packs' / BUILD
@@ -137,6 +138,26 @@ class Fixture(unittest.TestCase):
 
 
 class SkeletonText(Fixture):
+    def test_cross_area_header_uses_explicit_root_recipe_without_changing_old_recipe(self):
+        from contrib_screen import screen_tree
+        from pipeline import compiler_include_problem
+        header = self.root / 'reconstruction/forms/WidgetBase.h'
+        header.parent.mkdir()
+        (self.root / 'reconstruction/misc/WidgetBase.h').rename(header)
+        brief = self.unit / 'BRIEF.md'
+        brief.write_text(brief.read_text().replace('../misc/WidgetBase.h', 'forms/WidgetBase.h'))
+        before = (self.root / 'reconstruction/recipes/r.json').read_bytes()
+        h_rel, h, cpp_rel, cpp = self.files()
+        self.assertIn('#include "forms/WidgetBase.h"', h)
+        self.assertNotIn('../', h)
+        self.assertIn('Recipe: reconstruction/recipes/r-reconstruction.json', cpp)
+        us.write_skeleton(self.unit, repo=self.root)
+        task = json.loads((self.unit / 'task.json').read_text())
+        self.assertEqual(task['recipe'], 'reconstruction/recipes/r-reconstruction.json')
+        self.assertIsNone(compiler_include_problem(task, self.root))
+        self.assertEqual(screen_tree(self.root, cpp_rel), [])
+        self.assertEqual((self.root / 'reconstruction/recipes/r.json').read_bytes(), before)
+
     def test_header_fields_labels_and_stubs(self):
         h_rel, h, cpp_rel, cpp = self.files()
         self.assertEqual((h_rel, cpp_rel), ('reconstruction/misc/FancyWidget.h', 'reconstruction/misc/FancyWidget.cpp'))
@@ -151,7 +172,7 @@ class SkeletonText(Fixture):
         self.assertIn(f'// FancyWidget::~FancyWidget: COMMUNITY({PO3})', h)
         self.assertIn('// MidWidget: STANDIN EXE_RTTI', h)
         self.assertNotIn('class Cell;', h.split('#pragma once')[1])  # the included header declares it
-        self.assertIn('#include "../misc/WidgetBase.h"', h)
+        self.assertIn('#include "WidgetBase.h"', h)
         # The intermediate base is a stand-in padded to its image size; it inherits the base's
         # constructor because the base has no default one.
         self.assertIn('class MidWidget : public WidgetBase', h)
@@ -217,14 +238,14 @@ class SkeletonText(Fixture):
         base.write_text(BASE_H + '#include "Helper.h"\n')
         (base.parent / 'Helper.h').write_text('class FancyWidget {};\n')
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
         self.assertIn('class WidgetBase', h)
 
     def test_shared_header_needs_a_matching_size_assertion(self):
         base = self.root / 'reconstruction/misc/WidgetBase.h'
         base.write_text(BASE_H.replace('sizeof(WidgetBase) == 0x10', 'sizeof(WidgetBase) == 0x18'))
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
 
     def test_call_operator_keeps_parameters_name_and_binding_hint(self):
         task = json.loads((self.unit / 'task.json').read_text())
@@ -242,7 +263,7 @@ class SkeletonText(Fixture):
     def test_unresolved_shared_header_falls_back_to_local_standins(self):
         (self.root / 'reconstruction/misc/WidgetBase.h').write_text('// TODO type Missing: unresolved.\n')
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
         self.assertIn('class WidgetBase', h)
 
     def test_drafted_by_fills_the_model_line(self):
@@ -430,7 +451,7 @@ class InlineNiBase(Fixture):
         self.set_refs(['address LEA | 0x17 | `VTABLE_NiRefObject[0]`', 'read DEC.LOCK | 0x33 | `NiRefObject::TotalObjectCount`',
                        'call CALL | 0x15 | Ghidra `thunk`'])
         _h, h, _c, cpp = self.files()
-        self.assertNotIn('#include "../netimmerse/NiObject.h"', h)
+        self.assertNotIn('#include "netimmerse/NiObject.h"', h)
         self.assertIn('#include <intrin.h>', h)
         self.assertIn('Base form: inline stand-ins', h)
         self.assertIn('virtual ~NiRefObject()\n    {', h)
@@ -449,8 +470,8 @@ class InlineNiBase(Fixture):
     def test_shared_header_when_a_base_destructor_is_called(self):
         self.set_refs(['call CALL | 0x15 | `NiObject::~NiObject`'])
         _h, h, _c, _cpp = self.files()
-        self.assertIn('#include "../netimmerse/NiObject.h"', h)
-        self.assertIn('Base form: shared header ../netimmerse/NiObject.h', h)
+        self.assertIn('#include "netimmerse/NiObject.h"', h)
+        self.assertIn('Base form: shared header netimmerse/NiObject.h', h)
         self.assertNotIn('_InterlockedDecrement', h)
 
 

@@ -45,6 +45,8 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
 9. **Includes:** own header `#include "X.h"`; shared headers use reconstruction-root paths such as
    `"area/Y.h"` with the matching recipe include root. Parent steps and host/private paths fail the
    contributor screen. Follow the skeleton's recipe; do not change compiler flags to force a match.
+   Some accepted headers still need re-confirmation before their old spelling can change; see the
+   [include audit](contributor-include-audit.md).
 10. **Labels.** A label line is `// <names>: <LABEL>`; LABEL is `COMMUNITY(<owner>/<repo>@<rev>, <licence>)`,
     `GUESS(low)`, `EXE_RTTI`, `OBSERVED`, or `STANDIN` plus one of those. Copy the skeleton's labels;
     add one for every name you add. Never write the label words anywhere else. One label per line:

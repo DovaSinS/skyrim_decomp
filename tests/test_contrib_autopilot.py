@@ -24,6 +24,32 @@ GOOD = b'''// Original synthetic fixture; source https://example.org/types.
 class Synth { public: int value; };
 '''
 
+class FreshWinePreparation(unittest.TestCase):
+    def test_existing_runner_prepares_toolchain_afresh_and_fetches_private_evidence(self):
+        import wine_confirm
+        task = dict(dir=Path('/synthetic/task'))
+        host = dict(backend='local', loader='wine', host_id='mac-wine')
+        with patch.object(wine_confirm.pipeline, 'load_task', return_value=task), \
+                patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=(['synthetic.cpp'], [])), \
+                patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                patch.object(wine_confirm.runners, 'AgentHost') as factory:
+            factory.return_value.run.return_value = (0, None)
+            self.assertEqual(wine_confirm.run(task['dir']), 0)
+        self.assertIs(factory.call_args.kwargs['fresh_prep'], True)
+        factory.return_value.fetch.assert_called_once_with(task['dir'] / 'confirm/mac-wine')
+
+    def test_native_or_missing_first_host_never_starts_a_worker(self):
+        import wine_confirm
+        for host in (None, dict(backend='ssh', loader='native', host_id='winpc-native')):
+            with self.subTest(host=host), \
+                    patch.object(wine_confirm.pipeline, 'load_task', return_value=dict(dir=Path('/synthetic/task'))), \
+                    patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=([], [])), \
+                    patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                    patch.object(wine_confirm.runners, 'AgentHost') as factory:
+                with self.assertRaises(wine_confirm.runners.RunnerError):
+                    wine_confirm.run(Path('/synthetic/task'))
+                factory.assert_not_called()
+
 
 def pr(number=1, author='contributor', head='a' * 40, paths=('reconstruction/synth/Synth.cpp',)):
     return dict(number=number, author=dict(login=author), headRefOid=head, isDraft=False,
@@ -152,8 +178,14 @@ class FakeRuntime:
     def export(self, fetched, units):
         return self.call('export', ['synthetic-task'])
 
+    def companions(self, fetched):
+        return getattr(self, 'accepted_companions', {})
+
     def confirm(self, fetched, tasks, revision):
         return self.call('confirm', self.confirmed)
+
+    def credit_confirmation(self, fetched, confirmed, revision):
+        pass
 
     def make_groups(self, fetched, confirmed):
         return self.call('groups', ['g1'])
@@ -194,6 +226,32 @@ class ResumeAndLimits(unittest.TestCase):
         self.assertEqual(self.runtime.calls.count('fetch'), 1)
         self.assertEqual(self.runtime.calls.count('publish'), 1)
 
+    def test_squash_policy_rechecks_a_completed_same_head_history_rejection(self):
+        self.config['merge_method'] = 'merge'
+        old = self.state.revision(pr())
+        old.update(done=True, completed={'fetch': {'problem': 'deterministic screen: include-outside-roots'}})
+        self.state.save()
+        self.config['merge_method'] = 'squash'
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(result['merge_method'], 'squash')
+        self.assertIn('reviews', self.runtime.calls)
+        self.assertIn('publish', self.runtime.calls)
+
+    def test_enqueued_legacy_method_settles_before_same_head_squash_revision(self):
+        self.config['merge_method'] = 'merge'
+        self.runtime.crash = 'publish'
+        with self.assertRaises(OSError):
+            ap.process(self.runtime, self.state, pr())
+        self.config['merge_method'] = 'squash'
+        self.runtime.crash = None
+        settled = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(settled['merge_method'], 'merge')
+        self.assertTrue(settled['done'])
+        self.assertEqual(self.runtime.calls.count('fetch'), 1)
+        fresh = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(fresh['merge_method'], 'squash')
+        self.assertEqual(self.runtime.calls.count('fetch'), 2)
+
     def test_ci_hash_api_is_exact_head_and_failures_are_only_unavailable(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
         run = dict(id=3, head_sha='a' * 40, app=dict(slug='github-actions'),
@@ -207,6 +265,16 @@ class ResumeAndLimits(unittest.TestCase):
             got = runtime.ci_hash_signal('a' * 40)
             self.assertEqual(got['state'], 'unavailable')
             self.assertEqual(got['acceptance'], 'not-evaluated')
+
+    def test_fork_approval_notice_does_not_skip_project_confirmation_or_review(self):
+        self.runtime.ci_hash_signal = Mock(return_value=dict(
+            state='absent', approval_required=True,
+            approval_url='https://github.com/example/project/actions/runs/2'))
+        ap.process(self.runtime, self.state, pr())
+        notice = next(message for key, label, message in self.runtime.messages if key == 'ci-approval')
+        self.assertIn('watcher can approve', notice)
+        self.assertIn('confirm', self.runtime.calls)
+        self.assertIn('reviews', self.runtime.calls)
 
     def test_ci_hash_signal_never_bypasses_intake_confirmation_or_review(self):
         for status in ('success', 'failure', 'pending', 'absent', 'unavailable'):
@@ -334,29 +402,111 @@ class PublicationAndScheduling(unittest.TestCase):
             self.assertIn('withheld', ap.safe_reason(value))
         self.assertEqual(ap.safe_reason('0x1234: comparison failed'), '0x1234: comparison failed')
 
-    def test_unavailable_hosts_wake_only_with_private_configuration(self):
+    def test_outside_verifiers_override_a_pc_profile_without_changing_it(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            config = dict(attempt='pc', confirm=['pc', 'wine'], hosts=dict(
+                pc=dict(backend='ssh', loader='native', available=False),
+                wine=dict(backend='local', loader='wine', host_id='mac-wine')))
+            path = tree / '.local/verifier/runners.json'
+            ap.save_json(path, config)
+            before = path.read_bytes()
+            runtime = ap.Runtime.__new__(ap.Runtime)
+            runtime.root, runtime.logs = tree, tree / 'logs'
+            runtime.logs.mkdir()
+            runtime.config = dict(ap.DEFAULTS)
+            with patch.dict(os.environ, SR_RUNNERS_CONFIG='unavailable-pc.json'), \
+                    patch.object(ap.subprocess, 'run', return_value=subprocess.CompletedProcess([], 0, b'', b'')) as run:
+                runtime.command([sys.executable, 'tools/verifier/confirm', 'synthetic-task'], cwd=tree)
+            selected = ap.read_json(run.call_args.kwargs['env']['SR_RUNNERS_CONFIG'])
+            self.assertEqual(selected['attempt'], 'wine')
+            self.assertEqual(selected['confirm'], ['wine', 'ci'])
+            self.assertEqual(set(selected['hosts']), {'wine', 'ci'})
+            self.assertEqual(selected['hosts']['ci']['backend'], 'ci-hash')
+            self.assertEqual(path.read_bytes(), before)
+
+    def test_unavailable_wine_host_stops_without_pc_wake_or_fallback(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
         runtime.config = dict(ap.DEFAULTS)
         runtime.command = Mock(return_value=Mock(returncode=1))
-        runners = dict(confirm=['a', 'b'], attempt='a',
-                       hosts=dict(a=dict(backend='local'), b=dict(backend='ssh')))
-        with patch.object(ap, 'read_json', return_value=runners), patch.object(ap, 'wake_windows') as wake:
-            with self.assertRaisesRegex(ap.Stop, 'restore the host'):
-                runtime.ensure_hosts(ROOT)
-            wake.assert_not_called()
-            runtime.config.update(wol_mac='00:00:5E:00:53:01', wol_broadcast='192.0.2.255', wol_wait=0)
-            with self.assertRaisesRegex(ap.Stop, 'unavailable after'):
-                runtime.ensure_hosts(ROOT)
-            wake.assert_called_once_with('00:00:5E:00:53:01', '192.0.2.255')
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(wine=dict(backend='local', loader='wine'))))
+            with self.assertRaisesRegex(ap.Stop, 'no PC fallback'):
+                runtime.ensure_hosts(tree)
+        self.assertEqual(len(runtime.command.call_args_list), 1)
 
-    def test_wake_packet_both_ports(self):
-        sock = Mock()
-        with patch.object(ap.socket, 'socket') as factory:
-            factory.return_value.__enter__.return_value = sock
-            ap.wake_windows('00:00:5E:00:53:01', '192.0.2.255')
-        calls = sock.sendto.call_args_list
-        self.assertEqual([c.args[1][1] for c in calls], [9, 7])
-        self.assertEqual(calls[0].args[0], b'\xff' * 6 + bytes.fromhex('00005E005301') * 16)
+    def test_missing_wine_host_never_selects_a_native_pc(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        runtime.command = Mock()
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(pc=dict(backend='ssh', loader='native'))))
+            with self.assertRaisesRegex(ap.Stop, 'project Wine host'):
+                runtime.ensure_hosts(tree)
+        runtime.command.assert_not_called()
+
+    def test_preflight_uses_real_status_logic_for_wine_only(self):
+        import runners
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            wine = dict(backend='local', loader='wine', host_id='mac-wine', machine='synthetic-wine',
+                        msvc='toolchain', work='work', wine_bin='wine', image='private-image')
+            ap.save_json(tree / '.local/verifier/runners.json',
+                         dict(hosts=dict(wine=wine, pc=dict(backend='ssh', available=False))))
+            runtime = ap.Runtime.__new__(ap.Runtime)
+            seen = []
+            def command(argv, **kwargs):
+                config = runners.validate(ap.read_json(kwargs['runner_config']), root=tree)
+                self.assertEqual(set(config['hosts']), {'wine'})
+                def probe(host):
+                    seen.append(host['host_id'])
+                    return dict(toolchain='ok', image='ok', loader='wine', os='macos', python='3.13',
+                                cpus=1, running=0)
+                with patch.object(runners, 'slots_busy', return_value=0):
+                    code = runners.status(config, log=lambda line: None, probe_fn=probe)
+                return subprocess.CompletedProcess(argv, code, b'', b'')
+            runtime.command = command
+            runtime.ensure_hosts(tree)
+            self.assertEqual(seen, ['mac-wine'])
+
+    def test_fork_ci_approval_is_reported_for_the_exact_head(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        runtime.command = Mock(side_effect=[
+            subprocess.CompletedProcess([], 0, b'[{"check_runs": []}]', b''),
+            subprocess.CompletedProcess([], 0, json.dumps([dict(workflow_runs=[
+                dict(id=1, head_sha='b' * 40, status='action_required', html_url='https://github.com/wrong'),
+                dict(id=2, head_sha='a' * 40, status='completed', conclusion='action_required',
+                     html_url='https://github.com/example/project/actions/runs/2')])]).encode(), b'')])
+        signal = runtime.ci_hash_signal('a' * 40)
+        self.assertTrue(signal['approval_required'])
+        self.assertTrue(signal['approval_url'].endswith('/2'))
+        self.assertEqual(signal['acceptance'], 'not-evaluated')
+
+    def test_real_confirmation_submission_pushes_only_an_isolated_ci_ref(self):
+        import ci_confirm
+        import ci_confirmation
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            name = 'reconstruction/synth/Synth.cpp'
+            source = root / name
+            source.parent.mkdir(parents=True)
+            source.write_text('// Original synthetic submission.\n')
+            request = dict(base_sha='a' * 40, files={name: ci_confirmation.sha(source.read_bytes())}, units=[])
+            def command(argv, *args, **kwargs):
+                if argv[:2] == ['git', 'ls-remote']:
+                    return request['base_sha'] + '\trefs/heads/main'
+                return 'b' * 40
+            with patch.object(ci_confirm, 'command', side_effect=command) as transport, \
+                    patch.object(ci_confirm, 'gh') as api:
+                ci_confirm.submit(root, request, root, lambda message: None)
+            pushes = [call.args[0] for call in transport.call_args_list if call.args[0][:2] == ['git', 'push']]
+            self.assertEqual(len(pushes), 1)
+            self.assertIn(':refs/heads/ci-confirm/', pushes[0][-1])
+            self.assertNotIn(':refs/heads/main', pushes[0][-1])
+            self.assertTrue(api.call_args.args[1].endswith('/dispatches'))
 
     def test_compiler_timeout_kills_child_and_does_not_leave_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -438,7 +588,72 @@ class GitTransport(unittest.TestCase):
         hidden = self.git('rev-parse', 'HEAD')
         self.git('push', '--quiet', '--force', 'origin', 'HEAD:refs/pull/1/head')
         self.git('checkout', '--quiet', 'main')
+        self.runtime.config = dict(self.runtime.config, merge_method='merge')
         self.assertIn('history changes files outside', self.runtime.fetch(pr(head=hidden))['problem'])
+
+    def test_fixed_tip_squashes_without_rejected_ancestor_and_keeps_credit(self):
+        import flow_lane
+        self.git('checkout', '--quiet', 'contributor')
+        source = self.root / 'reconstruction/synth/Synth.cpp'
+        source.write_text('#include "../synth/Private.h"\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'rejected include')
+        bad = self.git('rev-parse', 'HEAD')
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'fix include at tip')
+        fixed = self.git('rev-parse', 'HEAD')
+        self.git('push', '--quiet', 'origin', 'HEAD:refs/pull/1/head')
+        self.git('checkout', '--quiet', 'main')
+        fetched = self.runtime.fetch(pr(head=fixed))
+        self.assertNotIn('problem', fetched)
+        self.assertEqual(fetched['merge_method'], 'squash')
+        self.assertNotIn('../synth/Private.h', Path(fetched['diff']).read_text())
+        contribution = dict(self.contribution(), head=fixed, merge_method='squash')
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        flow_lane.commit_acceptance(self.root, [dict(item='item', contributor=contribution)],
+            [dict(id='item', root=str(self.root))], 'Accept synthetic squash', '2026-01-01T00:00:00+00:00')
+        self.assertEqual(self.git('rev-list', '--parents', '-n', '1', 'HEAD').split()[1:], [self.base])
+        self.assertNotIn(bad, self.git('rev-list', 'HEAD').splitlines())
+        self.assertNotIn(fixed, self.git('rev-list', 'HEAD').splitlines())
+        self.assertIn('Co-authored-by: Original Contributor <contributor@example.invalid>',
+                      self.git('log', '-1', '--format=%B'))
+        self.assertEqual(self.git('rev-parse', 'contributor'), fixed)
+        # Retaining this same history still refuses the original bad include.
+        with self.assertRaisesRegex(Exception, 'deterministic screen'):
+            flow_lane.contributor_history(self.root, self.root, dict(contribution, merge_method='merge'))
+        from contrib_publication import PublicationRejected, screen_publication
+        with self.assertRaises(PublicationRejected) as caught:
+            screen_publication(self.root, self.base, fixed, merge_method='merge')
+        self.assertEqual(caught.exception.commit, bad)
+        self.assertEqual(caught.exception.path, 'reconstruction/synth/Synth.cpp')
+
+    def test_shared_screen_refusals_identify_commit_and_path_without_echoing_them(self):
+        from contrib_publication import PublicationRejected, screen_publication
+        for kind, content in [('screen', '#pragma comment(lib,"malicious")\n'),
+                              ('size', 'x' * (screen.MAX_BYTES + 1)),
+                              ('mode', 'synthetic-link-target\n')]:
+            with self.subTest(kind=kind):
+                self.git('checkout', '--quiet', 'contributor')
+                name = 'reconstruction/synth/Synth.cpp'
+                (self.root / name).write_text(content)
+                self.git('add', name)
+                if kind == 'mode':
+                    blob = self.git('rev-parse', ':' + name)
+                    self.git('update-index', '--cacheinfo', '120000,' + blob + ',' + name)
+                self.git('commit', '--quiet', '-m', 'synthetic refusal ' + kind)
+                bad = self.git('rev-parse', 'HEAD')
+                if kind == 'mode':
+                    self.git('reset', '--hard', 'HEAD')  # Materialize the synthetic index-only symlink.
+                self.git('checkout', '--quiet', 'main')
+                with self.assertRaises(PublicationRejected) as caught:
+                    screen_publication(self.root, self.base, bad)
+                self.assertEqual(caught.exception.commit, bad)
+                self.assertEqual(caught.exception.path, name)
+                self.assertNotIn(bad, str(caught.exception))
+                self.assertNotIn(name, str(caught.exception))
 
     def contribution(self):
         return dict(head=self.head, base=self.base, authors=['Original Contributor <contributor@example.invalid>'],
@@ -498,6 +713,92 @@ class RuntimeEffects(unittest.TestCase):
             self.runtime.feedback(rev, 'test', 'needs-changes', 'synthetic reason')
         self.assertFalse(any(call.args[:2] == ('pr', 'comment') for call in gh.call_args_list))
         self.assertTrue(any(call.args[:2] == ('pr', 'edit') for call in gh.call_args_list))
+
+    def test_final_feedback_updates_existing_comment_after_saved_checkpoint(self):
+        rev = self.state.revision(pr())
+        rev['completed']['post-published'] = True
+        marker = f'<!-- contrib-autopilot:1:{rev["head"]}:published -->'
+        result = subprocess.CompletedProcess([], 0, json.dumps([[dict(id=42, body=marker + '\nold totals',
+                    user=dict(login='awarebayes'))]]).encode(), b'')
+        with patch.object(self.runtime, 'command', return_value=result) as command, patch.object(self.runtime, 'gh') as gh:
+            self.runtime.feedback(rev, 'published', None, 'Submitted functions: 2.', replace=True)
+        self.assertEqual(command.call_count, 2)
+        self.assertIn('PATCH', command.call_args.args[0])
+        self.assertIn('repos/awarebayes/skyrim_decomp/issues/comments/42', command.call_args.args[0])
+        gh.assert_not_called()
+
+    def test_plural_rvas_discover_every_member(self):
+        cpp = 'reconstruction/synth/Synth.cpp'
+        unit = self.root / cpp
+        unit.parent.mkdir(parents=True)
+        unit.write_text('// RVAs 0x1000, 0x2000, and 0x3000, 3 bytes each.\n// RVA 0x1000\nint Synthetic() { return 0; }\n')
+        ap.save_json(self.root / 'data/progress.json', dict(target_build_id='synthetic', functions=[
+            dict(build_id='synthetic', rva=r, status='mapped') for r in (0x1000, 0x2000, 0x3000)]))
+        with patch.object(ap, 'screen_tree', return_value=[]):
+            self.assertEqual(self.runtime.functions(dict(tree=str(self.root), files=[dict(path=cpp)])),
+                             {cpp: [0x1000, 0x2000, 0x3000]})
+
+    def test_finish_accounts_for_preintegration_failures_and_missing_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000, 0x2000, 0x3000]}
+        rev['completed']['confirmation'] = dict(failed=[dict(rva='0x2000', reason='two-host confirmation failed')])
+        published = dict(accepted=['0x1000'], dropped=0, failures=[], commits=['c' * 40])
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')), \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, published)
+        message = feedback.call_args.args[3]
+        self.assertIn('Submitted functions: 3.', message)
+        self.assertIn('0x2000: two-host confirmation failed', message)
+        self.assertIn('0x3000: not accepted; intake processing incomplete.', message)
+        self.assertIn('Functions not accepted: 2.', message)
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_expands_group_only_review_failure_to_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        rev['completed']['reviews'] = dict(failed=[dict(group='held', reason='sampling disagreement; batch paused')])
+        ap.save_json(self.runtime.fdir / 'groups/held.json', dict(functions=['0x1000']))
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')):
+            self.runtime.finish(rev, dict(accepted=[], dropped=0, failures=[], commits=[]))
+        self.assertIn('0x1000: sampling disagreement; batch paused', feedback.call_args.args[3])
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_removes_stale_label_after_full_acceptance(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        result = subprocess.CompletedProcess([], 0, b'{"labels":[{"name":"needs-changes"}]}', b'')
+        with patch.object(self.runtime, 'feedback') as feedback, patch.object(self.runtime, 'gh', return_value=result) as gh, \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, dict(accepted=['0x1000'], dropped=0, failures=[], commits=[]))
+        self.assertIsNone(feedback.call_args.args[2])
+        self.assertTrue(any(c.args[-2:] == ('--remove-label', 'needs-changes') for c in gh.call_args_list))
+
+    def test_timeout_keeps_diagnostics_in_private_log(self):
+        with patch.object(ap.subprocess, 'run', side_effect=subprocess.TimeoutExpired(['synthetic'], 1, output=b'partial')):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                self.runtime.command(['synthetic'])
+        self.assertEqual(next(self.runtime.logs.glob('*.log')).read_bytes(), b'partial\n')
+        self.assertEqual(self.state.data['last_timeout']['command'], ['synthetic'])
+
+    def test_pending_publication_uses_fresh_trusted_main_tools(self):
+        tree = self.root / 'frozen'
+        revision = self.state.revision(pr())
+        revision['enqueued'] = True
+        ap.save_json(self.runtime.fdir / 'lane/queue/item.json',
+                     dict(root=str(tree), selection=['g1'], state='running'))
+        pending = dict(settled=False)
+        green = dict(settled=True, accepted=['0x1000'])
+        with patch.object(self.runtime, 'lane_result', side_effect=[pending, green]), \
+             patch.object(self.runtime, 'git', return_value='b' * 40), \
+             patch.object(self.runtime, 'prepare_main_tree') as prepare, \
+             patch.object(self.runtime, 'command') as command:
+            self.assertEqual(self.runtime.publish(dict(tree=str(tree)), dict(groups=['g1']), revision), green)
+        publisher = tree.parent / ('publisher-' + 'b' * 40)
+        prepare.assert_called_once_with(publisher, 'b' * 40)
+        self.assertEqual(command.call_args.kwargs['cwd'], publisher)
+        self.assertNotEqual(command.call_args.kwargs['cwd'], tree)
 
     def test_model_uses_fresh_exact_model_and_read_only_sandbox(self):
         output = self.root / 'review.md'
@@ -563,6 +864,16 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.kit.write('docs/verification.md', (ROOT / 'docs/verification.md').read_bytes())
         self.kit.write('.gitignore', '.local/\n')
         self.kit.write('tools/trusted.txt', 'original trusted main tools\n')
+        self.kit.write('tools/toolchain/v141-manifest.json', '{}')
+        import ci_confirmation
+        self.ci_row = dict(rva=self.kit.fn['rva'], size=self.kit.fn['size'],
+                          extraction='linked-reference-inference', normalized_sha256='1' * 64,
+                          layout_sha256='2' * 64)
+        tools = patch.object(ci_confirmation, 'tools_digest', return_value='3' * 64)
+        targets = patch.object(ci_confirmation.target_hashes, 'load_manifest',
+                               return_value={'functions': [self.ci_row]})
+        tools.start(); targets.start()
+        self.addCleanup(tools.stop); self.addCleanup(targets.stop)
         self.git('init', '--quiet', '-b', 'main')
         self.git('config', 'user.name', 'Synthetic Maintainer')
         self.git('config', 'user.email', 'maintainer@example.invalid')
@@ -585,7 +896,8 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.git('push', '--quiet', 'origin', 'HEAD:refs/pull/1/head')
         self.git('checkout', '--quiet', 'main')
         ap.save_json(self.root / '.local/verifier/runners.json', dict(confirm=['mac', 'windows'], attempt='mac',
-                     hosts={'mac': dict(backend='local'), 'windows': dict(backend='ssh')}))
+                     hosts={'mac': dict(backend='local', loader='wine'),
+                            'windows': dict(backend='ssh', loader='native', available=False)}))
         self.private = self.root / '.local/contrib-autopilot'
         self.private.mkdir()
         self.state = ap.State(self.private, ap.DEFAULTS)
@@ -608,6 +920,8 @@ class SyntheticEndToEnd(unittest.TestCase):
         output = b''
         if argv[0] == 'gh':
             if argv[1] == 'api':
+                if '/actions/runs?' in argv[-1]:
+                    return subprocess.CompletedProcess(argv, 0, b'[{"workflow_runs": []}]', b'')
                 self.assertTrue(argv[-1].endswith('/check-runs'))
                 return subprocess.CompletedProcess(argv, 0, b'[{"check_runs": []}]', b'')
             self.assertEqual(argv[1:3], ['pr', 'view'])
@@ -625,14 +939,18 @@ class SyntheticEndToEnd(unittest.TestCase):
                 ap.save_json(cwd / '.local/tasks' / tid / 'task.json', dict(task_id=tid, build_id=build,
                              compiled=cpp, recipe=self.fixture.RECIPE, symbols='symbols.json',
                              functions=[dict(rva=rva, size=self.kit.fn['size'], symbol='SyntheticSum')]))
-        elif len(argv) > 1 and argv[1] == 'tools/verifier/attempt':
-            pass
+        elif len(argv) > 1 and argv[1] in ('tools/verifier/attempt', 'tools/verifier/wine_confirm.py'):
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertEqual(set(selected['hosts']), {'wine', 'ci'})
         elif len(argv) > 1 and argv[1] == 'tools/verifier/bind.py':
             directory = Path(Path(argv[argv.index('--list') + 1]).read_text().strip())
             task = ap.read_json(directory / 'task.json')
             task['symbols'] = self.fixture.MAP
             ap.save_json(directory / 'task.json', task)
         elif len(argv) > 1 and argv[1] == 'tools/verifier/confirm':
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertEqual(selected['hosts']['ci']['backend'], 'ci-hash')
+            self.assertNotIn('windows', selected['hosts'])
             output_dir = Path(argv[argv.index('--out') + 1])
             original = self.kit.root
             try:
@@ -641,9 +959,27 @@ class SyntheticEndToEnd(unittest.TestCase):
                 self.kit.record['build'] = self.kit.build_block()
             finally:
                 self.kit.root = original
-            ap.save_json(output_dir / 'synthetic-fixture/0x1010.json', self.kit.record)
+            import ci_confirmation as ci
+            record = self.kit.record
+            record['runs'] = record['runs'][:1]
+            record['runs'][0].update(compiled_on='mac-wine', compared_on='mac-wine')
+            record['build']['hosts'] = {'mac-wine': next(iter(record['build']['hosts'].values()))}
+            pins = {name: digest for digest, name in
+                    (line.split() for line in (cwd / 'tools/verifier/pinned.sha256').read_text().splitlines())}
+            record['ci_confirmation'] = dict(schema=1, kind='ci-hash', host_id='github-windows-native',
+                machine='github-hosted-windows', loader='native', os='windows', workflow=ci.WORKFLOW,
+                conclusion='success', run_id=123, run_attempt=1, base_sha=self.base, candidate_sha='b' * 40,
+                tools_sha256='3' * 64, toolchain_manifest_sha256=ci.sha(b'{}'), cache_verified=True,
+                toolset='MATCH', compiler_sha256=pins, target=self.ci_row, build_id=self.kit.target['build_id'],
+                source_sha256=record['source']['digest'], unit=record['source']['compiled'],
+                recipe_sha256=record['recipe']['sha256'], result='hash-match', deterministic=True,
+                mac_content_sha256='4' * 64, content_sha256='4' * 64, object_sha256='5' * 64,
+                request_sha256='6' * 64, normalized_sha256='1' * 64, layout_sha256='2' * 64,
+                mac_object_sha256=record['runs'][0]['report']['candidate']['object_sha256'])
+            ap.save_json(output_dir / 'synthetic-fixture/0x1010.json', record)
         elif len(argv) > 1 and argv[1] == 'tools/verifier/runners.py':
-            pass
+            selected = ap.read_json(self.runtime.intake_runners(cwd))
+            self.assertNotIn('windows', selected['hosts'])
         else:
             return self.real_command(argv, cwd=cwd, **kwargs)
         return subprocess.CompletedProcess(argv, 0, output, b'')
@@ -688,7 +1024,70 @@ reasons: original synthetic source and comparator reports
         output.write_text(document)
         return document
 
-    def test_dry_run_reaches_real_acceptance_without_post_merge_or_push(self):
+    def test_companion_credit_survives_shared_unit_digest_change(self):
+        info = pr(author='Later-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        revision = self.state.revision(info, True)
+        fetched = self.runtime.fetch(info)
+        fetched.update(number=1, head=self.head)
+        tree = Path(fetched['tree'])
+        path = tree / self.fixture.RECORD
+        previous = ap.read_json(path)
+        previous['submitter'] = 'earlier-contributor'
+        previous['matchers'] = [dict(handle='earlier-contributor', model='not-reported')]
+        ap.save_json(path, previous)
+        tasks = self.runtime.export(fetched, self.runtime.functions(fetched))
+        confirmed = self.runtime.confirm(fetched, tasks, revision)
+        self.assertEqual(confirmed['passed'], ['0x1010'])
+        current = ap.read_json(path)
+        self.assertNotEqual(current['source']['digest'], previous['source']['digest'])
+        self.assertEqual(current['submitter'], 'earlier-contributor')
+        self.assertEqual(current['matchers'], previous['matchers'])
+        self.assertNotEqual(current['source'], previous['source'])
+
+    def test_cached_confirmation_restores_credit_without_recomparison(self):
+        info = pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        result = ap.process(self.runtime, self.state, info, dry_run=True)
+        tree = Path(result['completed']['fetch']['tree'])
+        path = tree / self.fixture.RECORD
+        record = ap.read_json(path)
+        record.pop('submitter')
+        ap.save_json(path, record)
+        result['done'] = False
+        self.state.save()
+        comparisons = [c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm']
+        models = list(self.models)
+        ap.process(self.runtime, self.state, info, dry_run=True)
+        self.assertEqual(ap.read_json(path)['submitter'], 'outside-contributor')
+        self.assertEqual([c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm'], comparisons)
+        self.assertEqual(self.models, models)
+
+    def test_intake_acceptance_credits_pr_author_on_leaderboard(self):
+        import flow
+        import lane_accept
+        import build_leaderboard as board
+        result = ap.process(self.runtime, self.state,
+                            pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        fetched = result['completed']['fetch']
+        tree = Path(fetched['tree'])
+        groups = result['completed']['reviews']['groups']
+        requests = []
+        for name in groups:
+            group = flow.load_group(tree / '.local/flow', name)
+            requests.append(dict(kind='review', review=str(flow.review_path(tree, group)),
+                                 functions=group['functions'], profile='claude-low'))
+        accepted = lane_accept.accept(tree, requests)
+        self.assertFalse(accepted['dropped'])
+        self.assertTrue(accepted['accepted'])
+        record = ap.read_json(tree / self.fixture.RECORD)
+        self.assertEqual(record['submitter'], 'outside-contributor')
+        data = ap.read_json(tree / 'data/progress.json')
+        rows = board.write(tree, data)
+        self.assertEqual(rows[0]['contributor'], '@outside-contributor')
+        self.assertEqual(rows[0]['functions'], 1)
+        self.assertIn('@outside-contributor', (tree / 'LEADERBOARD.md').read_text())
+        self.assertEqual(ap.read_json(tree / 'data/contributors.json')['contributors']['outside-contributor']['verified_matches'], 1)
+
+    def test_dry_run_completes_with_pc_unavailable_and_wine_ci_profile(self):
         result = ap.process(self.runtime, self.state,
                             pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
         self.assertTrue(result['done'])
@@ -696,14 +1095,14 @@ reasons: original synthetic source and comparator reports
         self.assertEqual(published['accepted'], 1)
         self.assertEqual(published['dropped'], 0)
         self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
-        self.assertEqual(self.state.data['days'][self.state.today], dict(compiles=5, reviews=3))
+        self.assertEqual(self.state.data['days'][self.state.today], dict(compiles=10, reviews=3))
         self.assertEqual(self.git('rev-parse', 'origin/main'), self.base)
         self.assertFalse((self.root / '.local/flow/lane/queue').exists())
         self.assertFalse((self.root / '.local/flow/groups').exists())
         for argv in self.commands:
             if argv[0] == 'gh':
                 if argv[1] == 'api':
-                    self.assertTrue(argv[-1].endswith('/check-runs'))
+                    self.assertTrue(argv[-1].endswith('/check-runs') or '/actions/runs?' in argv[-1])
                 else:
                     self.assertEqual(argv[1:3], ['pr', 'view'])
             if argv[0] == 'git':
@@ -717,10 +1116,131 @@ reasons: original synthetic source and comparator reports
         ap.process(self.runtime, ap.State(self.private, ap.DEFAULTS), pr(head=self.head, paths=(self.fixture.CPP,)), True)
         self.assertEqual(len(self.models), 3)
 
+    def test_ci_determinism_compile_budget_is_reserved_before_sampling(self):
+        self.state.config = dict(ap.DEFAULTS, daily_compiles=9)
+        with self.assertRaises(ap.Limit):
+            ap.process(self.runtime, self.state, pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        self.assertEqual(self.state.data['days'][self.state.today]['compiles'], 6)
+        self.assertEqual(sum(len(argv) > 1 and argv[1] in (
+            'tools/verifier/attempt', 'tools/verifier/wine_confirm.py') for argv in self.commands), 2)
+
+    def test_changed_accepted_unit_is_reconfirmed_reviewed_and_reaccepted(self):
+        # Trusted main already accepted this member; the contributor edits its unit.
+        # Its old approval must remain stale until new two-host records AND review bind it.
+        import check
+        self.kit.fn['status'] = 'matched'
+        self.kit.save_review()
+        self.kit.write('data/progress.json', json.dumps(self.kit.data))
+        self.git('add', 'data/progress.json', self.fixture.REVIEW)
+        self.git('commit', '--quiet', '-m', 'synthetic accepted baseline')
+        self.git('push', '--quiet', 'origin', 'main')
+        self.base = self.git('rev-parse', 'HEAD')
+        result = ap.process(self.runtime, self.state,
+                            pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        self.assertEqual(result['completed']['companions'], {self.fixture.CPP: [0x1010]})
+        self.assertEqual(result['completed']['confirmation']['passed'], ['0x1010'])
+        self.assertEqual(result['completed']['reviews']['approved'], ['0x1010'])
+        self.assertEqual(result['completed']['publication']['accepted'], 1)
+        self.assertEqual(result['completed']['publication']['dropped'], 0)
+        self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
+        tree = Path(result['completed']['fetch']['tree'])
+        fn = ap.read_json(tree / 'data/progress.json')['functions'][0]
+        self.assertEqual(check.acceptance_staleness(fn, tree), check.STALE_REVIEW)
+
+    def test_same_head_method_change_uses_new_tree_tasks_screens_and_groups(self):
+        config = dict(ap.DEFAULTS, merge_method='merge')
+        self.state.config = self.runtime.config = config
+        row = pr(head=self.head, paths=(self.fixture.CPP,))
+        legacy = ap.process(self.runtime, self.state, row, dry_run=True)
+        config['merge_method'] = 'squash'
+        squashed = ap.process(self.runtime, self.state, row, dry_run=True)
+        self.assertNotEqual(legacy['completed']['fetch']['tree'], squashed['completed']['fetch']['tree'])
+        self.assertNotEqual(legacy['completed']['export'], squashed['completed']['export'])
+        self.assertNotEqual(legacy['completed']['groups'], squashed['completed']['groups'])
+        self.assertEqual(squashed['completed']['fetch']['merge_method'], 'squash')
+        self.assertEqual(squashed['completed']['publication']['accepted'], 1)
+        self.assertEqual(squashed['completed']['publication']['dropped'], 0)
+        self.assertEqual(len(self.models), 6)
+
 
 class RecoveryRegression(unittest.TestCase):
     setUp = GitTransport.setUp
     git = GitTransport.git
+
+    def test_reject_push_network_error_then_poll_uses_detail_not_stale_list(self):
+        old = pr(72, 'outside', head='d' * 40)
+        pushed = dict(pr(72, 'outside', head='e' * 40), state='OPEN')
+        runtime = FakeRuntime()
+        runtime.fetch = Mock(return_value=dict(problem='deterministic screen: include-outside-roots'))
+        rejected = ap.process(runtime, self.state, old)
+        self.assertTrue(rejected['done'])
+        # Even after the push the REST discovery list keeps returning the rejected head.
+        listing = [[dict(number=72, head=dict(sha=old['headRefOid']))]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=ap.Stop('error connecting to api.github.com'))
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        self.runtime.view_pr.side_effect = None
+        self.runtime.view_pr.return_value = pushed
+        observed = self.runtime.list_prs()
+        self.assertEqual(observed, [pushed])
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], pushed['headRefOid'])
+        self.assertFalse(saved.get('done'))
+        self.assertEqual(saved['completed'], {})
+        fresh = FakeRuntime()
+        result = ap.process(fresh, self.state, observed[0])
+        self.assertTrue(result['done'])
+        self.assertEqual(fresh.calls, ['fetch', 'intake', 'functions', 'screen', 'export',
+                                       'confirm', 'groups', 'reviews', 'publish', 'finish'])
+
+    def test_new_revision_saved_before_another_detail_lookup_fails(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        listing = [[dict(number=72), dict(number=73)]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=[dict(pr(72, head='e' * 40), state='OPEN'), ap.Stop('network')])
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], 'e' * 40)
+        self.assertFalse(saved.get('done'))
+
+    def test_stale_discovery_omission_revisits_saved_done_reopened_pr(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, b'[[]]', b''))
+        self.runtime.view_pr = Mock(return_value=dict(pr(72, head='e' * 40), state='OPEN'))
+        self.assertEqual([p['number'] for p in self.runtime.list_prs()], [72])
+        self.runtime.view_pr.return_value = dict(pr(72, head='e' * 40), state='CLOSED')
+        self.assertEqual(self.runtime.list_prs(), [])
+
+    def test_companion_confirmation_failure_holds_extension_before_review(self):
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x3000]}
+        result = ap.process(runtime, self.state, pr(head=self.head))
+        self.assertTrue(result['done'])
+        self.assertNotIn('reviews', runtime.calls)
+        self.assertNotIn('publish', runtime.calls)
+        self.assertEqual(runtime.messages[-1][0], 'companion-confirmation')
+
+    def test_companion_must_be_re_reviewed_before_extension_can_publish(self):
+        for approved in ([], ['0x1000']):
+            with self.subTest(approved=approved):
+                runtime = FakeRuntime()
+                runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+                runtime.reviewed['approved'] = approved
+                state = ap.State(self.private / str(len(approved)), ap.DEFAULTS)
+                result = ap.process(runtime, state, pr(head=self.head))
+                self.assertTrue(result['done'])
+                self.assertNotIn('publish', runtime.calls)
+                self.assertEqual(runtime.messages[-1][0], 'companion-review')
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+        runtime.reviewed['approved'] = ['0x1000', '0x2000']
+        state = ap.State(self.private / 'approved', ap.DEFAULTS)
+        ap.process(runtime, state, pr(head=self.head))
+        self.assertIn('publish', runtime.calls)
 
     def test_interrupted_initial_clone_is_retained_and_reinitialized(self):
         original = self.runtime.link_inputs
@@ -805,8 +1325,12 @@ class CompileSupervisorRegression(unittest.TestCase):
     def test_dead_outer_supervisor_does_not_cancel_the_child_deadline(self):
         with tempfile.TemporaryDirectory() as tmp:
             pidfile = Path(tmp) / 'child.pid'
+            # Existence signals readiness to kill the outer supervisor. Publish the
+            # complete PID atomically so the reader cannot observe an empty file.
             payload = ('import os,time;from pathlib import Path;'
-                       f'Path({str(pidfile)!r}).write_text(str(os.getpid()));time.sleep(30)')
+                       f'p=Path({str(pidfile)!r});'
+                       'p.with_suffix(".tmp").write_text(str(os.getpid()));'
+                       'p.with_suffix(".tmp").replace(p);time.sleep(30)')
             runner = ('import os,sys;sys.path.insert(0,' + repr(str(ROOT / 'tools/verifier')) + ');'
                       'import unit_build;unit_build.compile_bounded('
                       + repr([sys.executable, '-c', payload]) + ',' + repr(tmp) + ',dict(os.environ),timeout=0.5)')

@@ -37,7 +37,7 @@
 #include <cstdint>
 #include <cstddef>
 #include "CombatObjectStorageLayout.h"
-#include "../bsengine/BSFixedStringStorageLayout.h"
+#include "bsengine/BSFixedStringStorageLayout.h"
 
 namespace ResearchLayouts {
 class TESForm;

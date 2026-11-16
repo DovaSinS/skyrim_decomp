@@ -36,7 +36,7 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "../bsengine/BSFixedStringStorageLayout.h"
+#include "bsengine/BSFixedStringStorageLayout.h"
 #include "NiPSysModifierStorageLayout.h"
 
 namespace ResearchLayouts {

@@ -206,7 +206,8 @@ class CompilerIncludeRoots(unittest.TestCase):
         self.assertIn('reconstruction/b/B.h', source_digest.include_closure(self.repo, 'reconstruction/a/A.cpp'))
         problem = self.problem('b/B.h')
         self.assertIsNotNone(problem)
-        self.assertIn('"../<area>/<Class>.h"', problem)
+        self.assertIn('/I reconstruction', problem)
+        self.assertNotIn('../<area>', problem)
 
     def test_relative_includes_pass(self):
         self.assertIsNone(self.problem('../b/B.h'))
@@ -222,11 +223,17 @@ class CompilerIncludeRoots(unittest.TestCase):
         self.assertEqual(pipeline.recipe_include_roots(['/c', '/I', 'x', '-Iy', '/O2']), ('x', 'y'))
         self.assertEqual(pipeline.recipe_include_roots(['/nologo', '/c', '/O2', '/GR']), ())
 
-    def test_pinned_recipes_pass_no_root(self):
-        # If a pinned recipe ever gains /I, the include wording in docs/drafter-card.md is stale.
+    def test_legacy_recipes_stay_rootless_and_variants_only_add_the_root(self):
+        # Existing recipe hashes/settings stay unchanged; new variants add only the modeled root.
         for path in sorted((ROOT / 'reconstruction/recipes').glob('*.json')):
             with self.subTest(recipe=path.name):
-                self.assertEqual(pipeline.recipe_include_roots(json.loads(path.read_text())['flags']), ())
+                value = json.loads(path.read_text())
+                if path.stem.endswith('-reconstruction'):
+                    original = json.loads(path.with_name(path.stem.removesuffix('-reconstruction') + '.json').read_text())
+                    self.assertEqual(value, dict(original, flags=original['flags'] + ['/I', 'reconstruction']))
+                    self.assertEqual(pipeline.recipe_include_roots(value['flags']), ('reconstruction',))
+                else:
+                    self.assertEqual(pipeline.recipe_include_roots(value['flags']), ())
 
 
 class AttemptCharge(unittest.TestCase):

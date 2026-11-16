@@ -6,7 +6,7 @@
   "hash_algorithm": "SHA-256",
   "comparator_sha256": "a9bc14136d2f69195e5062cf3a2652b8caf1b948b2cf9ae57d94502978828b55",
   "normalizer_sha256": "d801f0991fdd7eed3540e50af3b3e6da6fdbdef19bd76e133e2c5e96886638d0",
-  "inventory_sha256": "b81e1d0882cc95ea191483d7411a94c90282baf486da67c2ba91679fda0a0853",
+  "inventory_sha256": "acb0d0c8f7f265e8ef1e9fcd70f662949903803efa414caf41e7da74f6d7c028",
   "offered_inventory_sha256": "fb2fa4e9048aab0871de1cfd67fa822f75c6491182a97a64bb8d596c71794319",
   "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
   "recipe_sha256": {
@@ -80,7 +80,12 @@
       "path": "data/target-hashes/sse-steam-1-7-104-part-012.json",
       "sha256": "5895139f4d557d6fb71799201edea39df1747f82ab12e741014229cb8ba15bbd",
       "count": 1406
+    },
+    {
+      "path": "data/target-hashes/sse-steam-1-7-104-part-013.json",
+      "sha256": "896e249ea7669524df10aa087b33e707635fad29f50e4030f1ce96483b714f79",
+      "count": 101
     }
   ],
-  "function_count": 25406
+  "function_count": 25507
 }

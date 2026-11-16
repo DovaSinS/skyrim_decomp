@@ -23,7 +23,7 @@ same point as a Drafter's worktree branch.
    Intake failures receive `needs-changes`. It never checks out a PR tree, executes its code,
    or uses its workflows, tools or hooks. A deterministic screen bounds input paths, directives,
    macros/templates, size, line count and encoding, including the complete include closure.
-   A fresh `gpt-6.1-sol` Engineer run then reads the diff and unpublished history in a read-only
+   A fresh `gpt-6.1-sol` Engineer run then reads the squashed diff and tip source in a read-only
    sandbox with a fixed screening checklist; anything except SAFE stops before compiling.
    **Maintainer decision (awarebayes, 2026-11-14): routine contributor intake,
    verification, review and merge have zero human steps. The pre-compile read is an Engineer
@@ -31,13 +31,21 @@ same point as a Drafter's worktree branch.
    The maintainer accepts the residual risk of compiling untrusted C++ on the verifier hosts
    after the automated screens.** This changes no acceptance, lint, validator or comparator rule.
 3. **Confirmation.** The project's existing `tools/ghidra/export_pack.py` writes private unit
-   task directories; the ordinary attempt/bind path resolves symbols, then
-   `tools/verifier/confirm` independently compiles and compares on the configured Wine and native
-   Windows hosts. The contributor's local summary is never evidence. An unavailable host can use
-   an optional configured wake hook followed by bounded probes; network addresses come exclusively
-   from private configuration. Each host's compiler
+   task directories; the ordinary attempt/bind path resolves symbols. Every outside PR uses
+   **the project's Wine host** as its first verifier and **CI** as its second verifier.
+   Intake derives an isolated Wine/CI runner profile automatically, including for clean sampling
+   reruns; it neither probes nor wakes a maintainer PC. The shared internal runner configuration
+   is unchanged. A fresh Wine preparation hashes the toolchain again and supplies full comparator evidence;
+   cached drafting attempts are insufficient. CI compiles twice
+   with the pinned toolchain and validates the published target and complete object-content
+   commitments under the authorized CI-host rule in verification.md. Missing target hashes,
+   compiler problems and CI failures remain blockers. The contributor's local summary is never
+   evidence. Each host's compiler
    has a 180-second timeout that terminates its process tree, including after an SSH disconnect.
    Confirmation is checkpointed per function so a failed comparison need not discard other passes.
+   If GitHub requires approval for a fork PR's CI run, intake reports the exact-head run link
+   with a clear approval-needed notice so the watcher can approve it. This advisory notice
+   never replaces project confirmation or review.
 4. **Review.** A fresh `gpt-6.1-terra` Reviewer runs through `codex exec` under the admitted
    `claude-low` profile and follows `docs/reviewer-runbook.md`. The usual flow sampler selects the
    first 20 under new components and at least five percent at random. Required second passes
@@ -48,19 +56,22 @@ same point as a Drafter's worktree branch.
    FNV material follows the same source, exposure and provenance rules as internal drafts.
 5. **Integration.** Approved selections enqueue with `flow.py integrate --approved-only` and
    publish together through `flow.py lane-run --wait-lane`, which invokes
-   `tools/accept_function.py` and all ordinary acceptance checks. The acceptance commit is a merge
-   with the original contributor head as an additional parent, preserving the exact contributor
-   commits and their authors without squashing or checking out their trees. Its tree contains
-   the accepted carried inputs; its message adds `Co-authored-by: <name> <email as in the
-   contributor's commit>` for each contributor. Unpublished history is screened too, because the
-   merge retains it. After the pushed acceptance SHA has green CI, the autopilot posts that SHA
+   `tools/accept_function.py` and all ordinary acceptance checks. Outside PRs publish as squash
+   commits containing only accepted tip inputs, with `Co-authored-by: <name> <email as in the
+   contributor's commits>` trailers. Contributor ancestors are never parents of a squash acceptance
+   commit, so a tip fix clears rejected ancestor content without publishing it or rewriting the
+   contributor branch. `contrib_publication.screen_publication` screens exactly the retained
+   snapshot and squashed diff; the full include closure, pre-compile read and every acceptance
+   gate remain required. Explicit legacy history-preserving merge groups retain the ancestor
+   screen. A merge-method change invalidates old completed intake checkpoints; queued receipts
+   still settle under their frozen method. After the pushed acceptance SHA has green CI, the
+   autopilot posts that SHA
    and closes the PR if GitHub has not already marked it merged. If the contributor changed the
    PR head while a receipt was settling, the old receipt completes without closing the revised PR.
 6. **Failures.** Comments contain only sanitized blocking reasons, never bytes, listings or
    private paths. Ordinary failed members are dropped from acceptance and the remaining approvals
    ship. Source in a shared translation unit can include an unaccepted function; it is never
-   counted as matched. A real provenance/publication doubt quarantines the PR history, since
-   preserving its original commits would otherwise publish that material. No acceptance rule is
+   counted as matched. A real provenance/publication doubt quarantines the whole source snapshot; partial acceptance cannot publish suspect material. No acceptance rule is
    bypassed to keep the routine path automatic. The contributor revises and the new head starts
    a fresh intake; operational failures resume the frozen revision on the next scheduler tick.
 
@@ -89,9 +100,13 @@ before retrying. Machine-specific scheduler installation belongs in the operator
 
 Optional `.local/contrib-autopilot/config.json` keys: `max_functions` (60), `daily_compiles` (240),
 `daily_reviews` (80, including Engineer screens), `command_timeout` (120 seconds), `intake_timeout` (300 seconds),
-`confirm_timeout` (1200), `model_timeout` (1200), `export_timeout` (1800), `wol_mac`,
-`wol_broadcast` and `wol_wait` (180). Waking is disabled unless both address fields are set.
+`confirm_timeout` (1200), `model_timeout` (1200), and `export_timeout` (1800).
+Runner paths and installation details stay in ignored private configuration.
 Daily limits reset at UTC midnight; each host compilation
+reserves capacity before execution. A Wine attempt reserves up to two compilations because
+automatic binding can rebuild once; CI reserves two native compilations for determinism.
+Unused reservations remain charged for that day, including on interrupted work. These are
+admission reservations rather than a measurement of executed compiles. Each host compilation
 counts separately, including attempts and sampling reruns. `standard_headers` may narrow the
 fixed compiler-header allowlist; community headers must resolve inside the repository's
 `reconstruction/` include closure, never a private source checkout. Input screens cap each file
@@ -102,8 +117,10 @@ and a 1 MiB diff. These are intake/resource limits, not changes to the match gat
 Unknown contributor drafting prompts get a separate first-20 component per PR head.
 
 Dry runs perform real screens, exports, confirmations, reviews and acceptance preparation, so
-consume the same daily budgets. They keep separate PR checkpoints, flow groups and review directories, never post,
-label, merge, close, enqueue into the live lane or push. Their synthetic integration tests need
+consume the same daily budgets. Real CI confirmation publishes an isolated source-only batch ref
+and dispatches CI, including in dry-run mode; the command reports this before work starts.
+Dry runs keep separate PR checkpoints, flow groups and review directories. They never post, label,
+merge or close PRs, enqueue acceptance, or push main. Their synthetic integration tests need
 no game input, network, compiler or model account.
 
 ## Threat note: compiling contributed source
