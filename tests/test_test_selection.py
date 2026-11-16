@@ -80,6 +80,37 @@ class Selection(unittest.TestCase):
         selected, _ = self.selected()
         self.assertIn('test_unrelated', selected)
 
+    def test_computed_self_path_stays_opaque_even_in_a_fixture_owning_module(self):
+        self.write('tests/test_computed.py', '''import tempfile
+from pathlib import Path
+class T:
+ def setup(self):
+  self.tmp = tempfile.TemporaryDirectory()
+  self.root = Path(__file__).resolve().parents[1] / "tools"
+  self.name = "leaf" + ".py"
+ def test_source(self):
+  return (self.root / self.name).read_text()
+''')
+        self.modules.add('test_computed')
+        self.base = self.commit()
+        self.write('tools/leaf.py', 'VALUE = 3\n')
+        selected, reason = self.selected()
+        self.assertIn('test_direct', selected)
+        self.assertIn('test_computed', selected)
+        self.assertTrue(reason.startswith('affected:'))
+
+    def test_computed_file_reads_through_helpers_and_git_show_are_also_opaque(self):
+        self.write('tools/reader.py', 'def read(path):\n return path.read_text()\n')
+        self.write('tests/test_reader.py', 'from reader import read\n')
+        self.write('tests/test_git.py', 'import subprocess as sp\n'
+                   'def read(path):\n return sp.check_output(["git", "show", path])\n')
+        self.modules.update({'test_reader', 'test_git'})
+        self.base = self.commit()
+        self.write('tools/leaf.py', 'VALUE = 4\n')
+        selected, reason = self.selected()
+        self.assertTrue({'test_direct', 'test_reader', 'test_git'} <= selected)
+        self.assertTrue(reason.startswith('affected:'))
+
     def test_unmapped_and_unparseable_inputs_fall_back_to_full(self):
         for path, text in [('tools/new.py', 'VALUE = 1\n'), ('tools/leaf.py', 'not Python!!!')]:
             with self.subTest(path=path):

@@ -92,21 +92,15 @@ def dependencies(files, inputs):
     for path, text in files.items():
         tree = ast.parse(text, filename=path)
         edges, has_dynamic = set(), False
-        process_names, process_modules = set(), {'subprocess'}
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Import):
-                process_modules.update(n.asname or n.name for n in node.names if n.name == 'subprocess')
-            elif isinstance(node, ast.ImportFrom) and node.module == 'subprocess':
-                process_names.update(n.asname or n.name for n in node.names)
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):
                 for name in node.names:
                     edges.update(aliases.get(name.name, ()))
-                    if name.name.split('.')[0] in {'importlib', 'runpy', 'builtins'}:
+                    if name.name.split('.')[0] in {'importlib', 'runpy', 'builtins', 'subprocess', 'inspect'}:
                         has_dynamic = True
             elif isinstance(node, ast.ImportFrom):
                 name = node.module or ''
-                if name.split('.')[0] in {'importlib', 'runpy', 'builtins'}:
+                if name.split('.')[0] in {'importlib', 'runpy', 'builtins', 'subprocess', 'inspect'}:
                     has_dynamic = True
                 if node.level:
                     parts = list(PurePosixPath(path).parent.parts)
@@ -124,38 +118,9 @@ def dependencies(files, inputs):
                 name = node.func.id if isinstance(node.func, ast.Name) else (
                     node.func.attr if isinstance(node.func, ast.Attribute) else '')
                 if name in {'__import__', 'eval', 'exec', 'import_module', 'spec_from_file_location',
-                            'run_module', 'run_path', 'getattr', 'input'}:
+                            'run_module', 'run_path', 'getattr', 'input', 'glob', 'rglob',
+                            'open', 'read_text', 'read_bytes', 'system', 'popen', 'execv', 'spawnv'}:
                     has_dynamic = True
-                if path.startswith('tests/') and name in {'glob', 'rglob'}:
-                    has_dynamic = True
-                is_process = (isinstance(node.func, ast.Name) and name in process_names
-                              or isinstance(node.func, ast.Attribute)
-                              and isinstance(node.func.value, ast.Name)
-                              and node.func.value.id in process_modules)
-                if is_process:
-                    # Literal non-Python commands do not create Python import dependencies.
-                    # Variable command vectors and interpreter/script dispatch remain opaque.
-                    argv = node.args[0] if node.args else None
-                    executable = (argv.elts[0] if isinstance(argv, (ast.List, ast.Tuple)) and argv.elts else None)
-                    if not (isinstance(executable, ast.Constant) and executable.value in
-                            {'git', 'gh', 'echo', 'true', 'false'}):
-                        has_dynamic = True
-                if path.startswith('tests/') and name in {'open', 'read_text', 'read_bytes'}:
-                    # Dynamic file inspection can test tooling without importing it. Only
-                    # fixture-owned self paths and literal references are bounded here.
-                    receiver = node.func.value if isinstance(node.func, ast.Attribute) else node
-                    fixture = ('TemporaryDirectory' in text
-                               and any(isinstance(n, ast.Attribute) and isinstance(n.value, ast.Name)
-                                       and n.value.id == 'self' and n.attr in {'root', 'tmp'}
-                                       for n in ast.walk(receiver)))
-                    literals = [n.value for n in ast.walk(node) if isinstance(n, ast.Constant)
-                                and isinstance(n.value, str)]
-                    non_python = any(PurePosixPath(value).suffix in
-                                     {'.json', '.md', '.h', '.hpp', '.cpp', '.txt', '.yml', '.yaml',
-                                      '.csv', '.svg', '.html', '.css', '.log'} for value in literals)
-                    if not fixture and not non_python and not any(target in value or filename in value
-                                                                 for value in literals for target, filename in references):
-                        has_dynamic = True
         graph[path] = edges
         if has_dynamic:
             opaque.add(path)
