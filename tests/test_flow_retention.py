@@ -76,6 +76,14 @@ class Retention(unittest.TestCase):
         self.assertEqual(rows[-1]['cold_storage_error'], 'synthetic bad config')
         self.assertFalse(rows[-1]['removed'])
 
+    def test_worker_archives_use_shared_flow_storage_not_worker_disk(self):
+        tree, _ = self.candidate()
+        worker = self.checkout(self.base / 'worker')
+        row = retention.cleanup(worker, self.fdir)[0]
+        self.assertTrue(row['removed'])
+        self.assertTrue(Path(row['archive']).is_relative_to(self.fdir.parent / 'archive/cleanup'))
+        self.assertFalse((worker / '.local/archive').exists())
+
     def test_automatic_removes_retries_and_isolation_keeps_evidence_and_git(self):
         old, receipt = self.candidate(attempt='0')
         new, _ = self.candidate(attempt='1')

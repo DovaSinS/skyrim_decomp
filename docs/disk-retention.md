@@ -8,7 +8,9 @@ links for toolchains, Wine prefixes, sources and analysis. It changes only clean
 workers and never replaces an existing private input. `draft_worktrees.link_private` already
 shares kit inputs rather than copying them.
 
-Lane completion calls `flow_cleanup.automatic_retention`. Terminal candidate/retry working
+Lane completion calls `flow_cleanup.automatic_retention`. All worker retention archives use
+`archive/cleanup` beside the shared flow directory, so one configured cold store covers them
+instead of creating independent archive piles in each worker. Terminal candidate/retry working
 files are removed after evidence is saved; dirty registered worktrees are refused **before**
 archiving. A process or open file protects the tree. Terminal isolation scheduling snapshots
 move to cold archives once all their candidate working files have gone. Git object stores
