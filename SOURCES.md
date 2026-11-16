@@ -65,3 +65,21 @@ reconstruction body close to a same-named body in the pinned community or FNV ch
 Original code in this bootstrap uses the Python standard library. GitHub Actions referenced in
 workflows execute as hosted dependencies, pinned by commit. No third-party runtime code is bundled.
 Future imports need a separate attribution entry with exact revision, license, paths and changes.
+
+## Additive contributor declaration kit
+
+`reconstruction/declarations/*.h` adapts declarations only from CharmedBaryon/CommonLibSSE-NG
+`b93280e832f263dbef44e44cbe2936622a02f91a` (MIT): `include/RE/N/NiRefObject.h`, `NiObject.h`,
+`NiObjectNET.h`, `NiAVObject.h`, `NiNode.h`, `include/RE/B/BaseFormComponent.h`, `BSTEvent.h`
+and `include/RE/T/TESForm.h`, with reference types from `include/RE/F/FormTypes.h` and
+`include/RE/B/BSCoreTypes.h`. `tools/declaration_kit.py` removes bodies, version macros and
+implementation comments; preserves virtual signatures/slot order; replaces member regions with
+explicitly unknown storage; retains full MIT notices. Sizes/slots remain community hypotheses,
+not target evidence. No upstream tree or game-derived class table is included.
+
+The contributor renderer may prepare other classes from these pinned NG headers, falling back
+to the permitted powerof3/CommonLibSSE revision above. Adapted declarations retain their origin
+labels, MIT attribution and GPL-3.0-or-later notices when applicable.
+`licenses/CommonLibSSE-GPL-3.0.txt` retains the full, unmodified `COPYING.txt` from
+powerof3 at the pinned revision; it applies to GPL-derived declarations, not the MIT-only kit.
+No community implementation body is adapted by the declaration-kit generator.

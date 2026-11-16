@@ -85,7 +85,7 @@ class Fixture(unittest.TestCase):
         (r / 'findings').mkdir()
         (r / 'findings/batch.md').write_text('x\n')
         (r / 'reconstruction/recipes').mkdir(parents=True)
-        (r / 'reconstruction/recipes/r.json').write_text('{}\n')
+        (r / 'reconstruction/recipes/r.json').write_text('{"flags": ["/Ireconstruction"]}\n')
         (r / 'reconstruction/recipes/r-reconstruction.json').write_text('{"flags": ["/I", "reconstruction"]}\n')
         (r / 'reconstruction/misc').mkdir()
         (r / 'reconstruction/misc/WidgetBase.h').write_text(BASE_H)
@@ -146,6 +146,7 @@ class SkeletonText(Fixture):
         (self.root / 'reconstruction/misc/WidgetBase.h').rename(header)
         brief = self.unit / 'BRIEF.md'
         brief.write_text(brief.read_text().replace('../misc/WidgetBase.h', 'forms/WidgetBase.h'))
+        (self.root / 'reconstruction/recipes/r.json').write_text('{}\n')
         before = (self.root / 'reconstruction/recipes/r.json').read_bytes()
         h_rel, h, cpp_rel, cpp = self.files()
         self.assertIn('#include "forms/WidgetBase.h"', h)
@@ -172,7 +173,8 @@ class SkeletonText(Fixture):
         self.assertIn(f'// FancyWidget::~FancyWidget: COMMUNITY({PO3})', h)
         self.assertIn('// MidWidget: STANDIN EXE_RTTI', h)
         self.assertNotIn('class Cell;', h.split('#pragma once')[1])  # the included header declares it
-        self.assertIn('#include "WidgetBase.h"', h)
+        self.assertIn('#include "misc/WidgetBase.h"', h)
+        self.assertNotIn('../', h)
         # The intermediate base is a stand-in padded to its image size; it inherits the base's
         # constructor because the base has no default one.
         self.assertIn('class MidWidget : public WidgetBase', h)
@@ -195,6 +197,15 @@ class SkeletonText(Fixture):
             self.assertIn(line, cpp)
         self.assertIn('Evidence: findings/batch.md', cpp)
         self.assertIn('Recipe: reconstruction/recipes/r.json', cpp)
+
+    def test_write_binds_additive_include_recipe_in_task_and_source(self):
+        recipes = self.root / 'reconstruction/recipes'
+        (recipes / 'r.json').write_text('{"flags": ["/O2"]}')
+        (recipes / 'r-root-includes.json').write_text('{"flags": ["/O2", "/Ireconstruction"]}')
+        _h, cpp = us.write_skeleton(self.unit, repo=self.root)
+        task = json.loads((self.unit / 'task.json').read_text())
+        self.assertEqual(task['recipe'], 'reconstruction/recipes/r-root-includes.json')
+        self.assertIn('Recipe: ' + task['recipe'], (self.root / cpp).read_text())
 
     def test_root_standin_has_vptr_and_size_t_include(self):
         (self.root / 'reconstruction/misc/WidgetBase.h').unlink()
@@ -451,8 +462,10 @@ class InlineNiBase(Fixture):
         self.set_refs(['address LEA | 0x17 | `VTABLE_NiRefObject[0]`', 'read DEC.LOCK | 0x33 | `NiRefObject::TotalObjectCount`',
                        'call CALL | 0x15 | Ghidra `thunk`'])
         _h, h, _c, cpp = self.files()
-        self.assertNotIn('#include "netimmerse/NiObject.h"', h)
-        self.assertIn('#include <intrin.h>', h)
+        self.assertNotIn('#include "../netimmerse/NiObject.h"', h)
+        self.assertIn('extern "C" long _InterlockedDecrement(volatile long*);', h)
+        from contrib_screen import screen
+        self.assertEqual(screen(h.encode(), 'reconstruction/misc/FancyWidget.h'), [])
         self.assertIn('Base form: inline stand-ins', h)
         self.assertIn('virtual ~NiRefObject()\n    {', h)
         self.assertIn('_InterlockedDecrement(&ms_totalObjects);', h)
@@ -471,6 +484,7 @@ class InlineNiBase(Fixture):
         self.set_refs(['call CALL | 0x15 | `NiObject::~NiObject`'])
         _h, h, _c, _cpp = self.files()
         self.assertIn('#include "netimmerse/NiObject.h"', h)
+        self.assertNotIn('../', h)
         self.assertIn('Base form: shared header netimmerse/NiObject.h', h)
         self.assertNotIn('_InterlockedDecrement', h)
 

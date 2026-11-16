@@ -24,6 +24,10 @@ matching bytes improve; missing diagnostics are unknown. Stop when the helper sa
 preserve the source and sanitized reason, and release the claim if you leave it. Never change
 inputs, compiler flags, comparator or checks to force a pass. The matching cookbook is optional.
 
+For typed bases, virtual signatures, cleanup choices and header gaps, see the
+[declaration kit](declaration-kit.md). `start` leaves bodies and code origin
+unfilled; resolve every skeleton marker before submitting.
+
 ## Rules for small functions
 
 1. **Members.** A byte-sized read from `this + 0x18` indicates a 1-byte member at offset 0x18. Split the
