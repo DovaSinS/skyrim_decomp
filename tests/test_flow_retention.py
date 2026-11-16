@@ -47,6 +47,35 @@ class Retention(unittest.TestCase):
         lane.write(path, receipt)
         return tree, path
 
+    def test_terminal_isolation_metadata_moves_once_but_borrowed_git_survives(self):
+        tree, _ = self.candidate()
+        snapshot = self.fdir / 'lane/isolation/finished'
+        isolated = self.checkout(snapshot / 'lane/trees/finished/0')
+        lane.write(snapshot / 'groups/frozen.json', dict(synthetic=True))
+        rows = retention.automatic_retention(self.root, self.fdir)
+        moved = [r for r in rows if r['tree'] == str(snapshot)]
+        self.assertEqual(len(moved), 1)
+        self.assertTrue((isolated / '.git').is_dir())
+        self.assertFalse((snapshot / 'groups').exists())
+        self.assertEqual(lane.read(Path(moved[0]['archive']) / 'files/groups/frozen.json'), dict(synthetic=True))
+        self.assertEqual(retention.prune_isolation(self.root, self.fdir, ''), [])
+
+    def test_live_process_protects_finished_candidate_and_isolation(self):
+        tree, _ = self.candidate()
+        with patch.object(retention, 'process_paths', return_value='123 worker --root ' + str(tree) + '/nested'):
+            rows = retention.automatic_retention(self.root, self.fdir)
+        self.assertFalse(rows[0]['removed'])
+        self.assertIn('open process', rows[0]['reason'])
+        self.assertTrue((tree / 'tracked').is_file())
+
+    def test_broken_cold_config_preserves_successful_lane_outcome(self):
+        tree, _ = self.candidate()
+        with patch('cold_storage.automatic', side_effect=ValueError('synthetic bad config')):
+            rows = retention.automatic_retention(self.root, self.fdir, offload=True)
+        self.assertFalse((tree / 'tracked').exists())
+        self.assertEqual(rows[-1]['cold_storage_error'], 'synthetic bad config')
+        self.assertFalse(rows[-1]['removed'])
+
     def test_automatic_removes_retries_and_isolation_keeps_evidence_and_git(self):
         old, receipt = self.candidate(attempt='0')
         new, _ = self.candidate(attempt='1')
@@ -201,6 +230,22 @@ class Retention(unittest.TestCase):
         removals = [c.args for c in commands.call_args_list if 'remove' in c.args]
         self.assertEqual(len(removals), 1)
         self.assertNotIn('--force', removals[0])
+
+    def test_automatic_dirty_worktree_does_not_repeat_failed_evidence_archives(self):
+        tree = self.fdir / 'reconfirm/dirty/tree'
+        tree.parent.mkdir(parents=True)
+        self.git(self.root, 'worktree', 'add', '--quiet', '--detach', str(tree), 'HEAD')
+        (tree / 'tracked').write_text('original uncommitted fixture\n')
+        (tree / 'untracked').write_text('original untracked fixture\n')
+        lane.write(tree.parent / 'state.json', dict(phase='queued', view=str(tree)))
+        lane.write(self.fdir / 'lane/queue/selection.json', dict(root=str(tree), state='done'))
+        for _ in range(2):
+            rows = retention.cleanup(self.root, self.fdir)
+            self.assertFalse(rows[0]['removed'])
+            self.assertIn('dirty checkout', rows[0]['reason'])
+        self.assertEqual((tree / 'tracked').read_text(), 'original uncommitted fixture\n')
+        self.assertEqual((tree / 'untracked').read_text(), 'original untracked fixture\n')
+        self.assertFalse((self.root / '.local/archive/cleanup').exists())
 
     def test_copied_view_removal_preserves_original_worktree_and_index(self):
         original = self.base / 'original'
