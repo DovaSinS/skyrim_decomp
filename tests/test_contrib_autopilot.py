@@ -24,6 +24,32 @@ GOOD = b'''// Original synthetic fixture; source https://example.org/types.
 class Synth { public: int value; };
 '''
 
+class FreshWinePreparation(unittest.TestCase):
+    def test_existing_runner_prepares_toolchain_afresh_and_fetches_private_evidence(self):
+        import wine_confirm
+        task = dict(dir=Path('/synthetic/task'))
+        host = dict(backend='local', loader='wine', host_id='mac-wine')
+        with patch.object(wine_confirm.pipeline, 'load_task', return_value=task), \
+                patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=(['synthetic.cpp'], [])), \
+                patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                patch.object(wine_confirm.runners, 'AgentHost') as factory:
+            factory.return_value.run.return_value = (0, None)
+            self.assertEqual(wine_confirm.run(task['dir']), 0)
+        self.assertIs(factory.call_args.kwargs['fresh_prep'], True)
+        factory.return_value.fetch.assert_called_once_with(task['dir'] / 'confirm/mac-wine')
+
+    def test_native_or_missing_first_host_never_starts_a_worker(self):
+        import wine_confirm
+        for host in (None, dict(backend='ssh', loader='native', host_id='winpc-native')):
+            with self.subTest(host=host), \
+                    patch.object(wine_confirm.pipeline, 'load_task', return_value=dict(dir=Path('/synthetic/task'))), \
+                    patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=([], [])), \
+                    patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                    patch.object(wine_confirm.runners, 'AgentHost') as factory:
+                with self.assertRaises(wine_confirm.runners.RunnerError):
+                    wine_confirm.run(Path('/synthetic/task'))
+                factory.assert_not_called()
+
 
 def pr(number=1, author='contributor', head='a' * 40, paths=('reconstruction/synth/Synth.cpp',)):
     return dict(number=number, author=dict(login=author), headRefOid=head, isDraft=False,
@@ -824,7 +850,7 @@ class SyntheticEndToEnd(unittest.TestCase):
                 ap.save_json(cwd / '.local/tasks' / tid / 'task.json', dict(task_id=tid, build_id=build,
                              compiled=cpp, recipe=self.fixture.RECIPE, symbols='symbols.json',
                              functions=[dict(rva=rva, size=self.kit.fn['size'], symbol='SyntheticSum')]))
-        elif len(argv) > 1 and argv[1] == 'tools/verifier/attempt':
+        elif len(argv) > 1 and argv[1] in ('tools/verifier/attempt', 'tools/verifier/wine_confirm.py'):
             selected = ap.read_json(self.runtime.intake_runners(cwd))
             self.assertEqual(set(selected['hosts']), {'wine', 'ci'})
         elif len(argv) > 1 and argv[1] == 'tools/verifier/bind.py':
@@ -943,8 +969,8 @@ reasons: original synthetic source and comparator reports
         with self.assertRaises(ap.Limit):
             ap.process(self.runtime, self.state, pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
         self.assertEqual(self.state.data['days'][self.state.today]['compiles'], 6)
-        self.assertEqual(sum(len(argv) > 1 and argv[1] == 'tools/verifier/attempt'
-                             for argv in self.commands), 2)
+        self.assertEqual(sum(len(argv) > 1 and argv[1] in (
+            'tools/verifier/attempt', 'tools/verifier/wine_confirm.py') for argv in self.commands), 2)
 
     def test_changed_accepted_unit_is_reconfirmed_reviewed_and_reaccepted(self):
         # Trusted main already accepted this member; the contributor edits its unit.

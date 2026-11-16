@@ -35,7 +35,8 @@ same point as a Drafter's worktree branch.
    **the project's Wine host** as its first verifier and **CI** as its second verifier.
    Intake derives an isolated Wine/CI runner profile automatically, including for clean sampling
    reruns; it neither probes nor wakes a maintainer PC. The shared internal runner configuration
-   is unchanged. A fresh Wine attempt supplies full comparator evidence, and CI compiles twice
+   is unchanged. A fresh Wine preparation hashes the toolchain again and supplies full comparator evidence;
+   cached drafting attempts are insufficient. CI compiles twice
    with the pinned toolchain and validates the published target and complete object-content
    commitments under the authorized CI-host rule in verification.md. Missing target hashes,
    compiler problems and CI failures remain blockers. The contributor's local summary is never

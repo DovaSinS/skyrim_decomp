@@ -171,7 +171,7 @@ class Runtime:
         env = dict(os.environ)
         env.pop('SKYRIM_FLOW_DIR', None)
         if len(argv) > 1 and Path(argv[1]).parent.name == 'verifier' and Path(argv[1]).name in (
-                'attempt', 'confirm', 'bind.py', 'runners.py'):
+                'attempt', 'confirm', 'bind.py', 'runners.py', 'wine_confirm.py'):
             env['SR_RUNNERS_CONFIG'] = str(runner_config or self.intake_runners(Path(cwd or self.root)))
         result = subprocess.run([str(a) for a in argv], cwd=cwd or self.root, input=input,
                                 capture_output=True, env=env, timeout=timeout or self.config['command_timeout'])
@@ -499,8 +499,7 @@ class Runtime:
             raise Stop('the project Wine host or CI-hash backend is unavailable; no PC fallback is used')
 
     def wine_attempt(self, tree, directory):
-        result = self.command([sys.executable, 'tools/verifier/attempt', str(directory),
-                               '--agent', 'tools/contrib_autopilot.py'], cwd=tree,
+        result = self.command([sys.executable, 'tools/verifier/wine_confirm.py', str(directory)], cwd=tree,
                               timeout=self.config['confirm_timeout'], check=False)
         if result.returncode not in (0, 1, 3):
             raise Stop('Wine comparison infrastructure did not complete; retry next tick')
