@@ -29,7 +29,8 @@ remote package hash, checks the complete local file inventory again, and writes 
 manifest **before** deleting local data. Failure or a new live reference retains the original.
 The manifest records each original path, remote package and SHA-256 for restoration. Package
 and manifest writes are serialized. Local schedulers can invoke `tools/retention_service.py --config <ignored-config>` periodically
-to offload archives even when no new publication occurs. Its config supplies `repository` and
+to offload archives even when no new publication occurs. Network offload runs only in this
+separate service invocation (`offload=True`), so publication never waits on archive transport. Its config supplies `repository` and
 `flow_dir`. Scheduler installation and paths stay local.
 
 Space is bounded for completed working files and verified cold archives when the destination

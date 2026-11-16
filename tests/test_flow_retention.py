@@ -71,7 +71,7 @@ class Retention(unittest.TestCase):
     def test_broken_cold_config_preserves_successful_lane_outcome(self):
         tree, _ = self.candidate()
         with patch('cold_storage.automatic', side_effect=ValueError('synthetic bad config')):
-            rows = retention.automatic_retention(self.root, self.fdir)
+            rows = retention.automatic_retention(self.root, self.fdir, offload=True)
         self.assertFalse((tree / 'tracked').exists())
         self.assertEqual(rows[-1]['cold_storage_error'], 'synthetic bad config')
         self.assertFalse(rows[-1]['removed'])

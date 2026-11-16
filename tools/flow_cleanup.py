@@ -361,10 +361,10 @@ def retention_state(fdir):
     return tuple((str(path), path.stat().st_mtime_ns, path.stat().st_size) for path in files)
 
 
-def automatic_retention(root, fdir):
+def automatic_retention(root, fdir, offload=False):
     """Skip unchanged state in this process, and never wait behind an explicit cleaner."""
     fdir = Path(fdir).resolve()
-    key = os.getpid(), str(fdir)
+    key = os.getpid(), str(fdir), offload
     state = retention_state(fdir)
     if _AUTOMATIC_STATE.get(key) == state:
         return []
@@ -373,21 +373,22 @@ def automatic_retention(root, fdir):
         with cleanup_lock(fdir, blocking=False):
             processes = process_paths()
             result.extend(prune_isolation(Path(root).resolve(), fdir, processes))
-            import cold_storage
-            def in_use(path):
-                if path_in_use(path, process_paths()):
-                    return True
+            if offload:
+                import cold_storage
+                def in_use(path):
+                    if path_in_use(path, process_paths()):
+                        return True
+                    try:
+                        with lane.state_lock(fdir):
+                            check_live(fdir, path, ('input', ''), None)
+                    except f.FlowError:
+                        return True
+                    return False
                 try:
-                    with lane.state_lock(fdir):
-                        check_live(fdir, path, ('input', ''), None)
-                except f.FlowError:
-                    return True
-                return False
-            try:
-                result.extend(cold_storage.automatic(root, in_use,
-                    config_path=fdir.parent / 'cold-storage.json', fdir=fdir))
-            except (OSError, ValueError, subprocess.SubprocessError) as error:
-                result.append(dict(cold_storage_error=str(error), removed=False))
+                    result.extend(cold_storage.automatic(root, in_use,
+                        config_path=fdir.parent / 'cold-storage.json', fdir=fdir))
+                except (OSError, ValueError, subprocess.SubprocessError) as error:
+                    result.append(dict(cold_storage_error=str(error), removed=False))
     except BlockingIOError:
         return []  # A busy skip is neither a completed run nor a cached state.
     lane.write(fdir / 'cleanup/last-retention.json', dict(recorded=f.utc(), results=result))

@@ -18,7 +18,7 @@ def main():
     for pattern in config.get('export_roots', [str(root)]):
         for path in glob.glob(pattern):
             exports.extend(staged_exports.reap(Path(path)))
-    print(json.dumps(dict(exports=exports, retention=flow_cleanup.automatic_retention(root, fdir)), indent=2))
+    print(json.dumps(dict(exports=exports, retention=flow_cleanup.automatic_retention(root, fdir, offload=True)), indent=2))
 
 
 if __name__ == '__main__':
