@@ -1,6 +1,6 @@
 {
   "batch_schema": 1,
-  "commitment": null,
+  "commitment": "8046edb55e1cea86931177a955407b07ac29171f",
   "family_path": "reports/sse-steam-1-7-104/families/84bc4c7ee09112dfc598f6e148faba66d74f7e259c2af753b4b61dbdd10bc921.json",
   "family_sha256": "da7cf0fba54c67574008d2337a266d1e02dc85b17d6fc143302d87b35edb4543",
   "members": {
@@ -215,6 +215,27 @@
     "sse-steam-1-7-104-0x1530780",
     "sse-steam-1-7-104-0x1530798"
   ],
-  "sample": null,
+  "sample": [
+    "sse-steam-1-7-104-0x150742c",
+    "sse-steam-1-7-104-0x15074bc",
+    "sse-steam-1-7-104-0x150763c",
+    "sse-steam-1-7-104-0x15076b4",
+    "sse-steam-1-7-104-0x15076cc",
+    "sse-steam-1-7-104-0x1507744",
+    "sse-steam-1-7-104-0x150775c",
+    "sse-steam-1-7-104-0x150778c",
+    "sse-steam-1-7-104-0x150781c",
+    "sse-steam-1-7-104-0x150787c",
+    "sse-steam-1-7-104-0x15078dc",
+    "sse-steam-1-7-104-0x150793c",
+    "sse-steam-1-7-104-0x150796c",
+    "sse-steam-1-7-104-0x15079cc",
+    "sse-steam-1-7-104-0x1507a2c",
+    "sse-steam-1-7-104-0x1507aec",
+    "sse-steam-1-7-104-0x1507b04",
+    "sse-steam-1-7-104-0x1507b64",
+    "sse-steam-1-7-104-0x1507b7c",
+    "sse-steam-1-7-104-0x1507b94"
+  ],
   "seed": "p178-box2-shader-20261116-fixed-before-draw"
 }
