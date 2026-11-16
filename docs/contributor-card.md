@@ -5,7 +5,7 @@ Use `./sr` (Windows: `.\sr.cmd`) in your own clone. Start with
 `compare`, then `submit --dry-run` and `submit`. Project runners and private handoffs are not used.
 
 Read only the private pack named by the helper, after the owner has agreed to model exposure.
-Never post listings, bytes, objects, raw diagnostics or paths. Keep the skeleton's provenance and
+Never post listings, pseudo-C, Ghidra projects, bytes, objects, raw diagnostics or paths. Keep the skeleton's provenance and
 licence fields; name your actual model. Fill the required `Code origin:` placeholder truthfully in
 each file, including any adaptations and sources. `start` prepares build/evidence/recipe/model and
 per-function metadata; it never invents an original-code declaration. Community headers supply
@@ -27,6 +27,26 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
 For typed bases, virtual signatures, cleanup choices and header gaps, see the
 [declaration kit](declaration-kit.md). `start` leaves bodies and code origin
 unfilled; resolve every skeleton marker before submitting.
+
+## Recommended pseudo-C hint, installed by default
+
+`./sr --json --yes setup` or `go` installs hash-pinned Ghidra and
+Temurin privately and starts a one-time background analysis. The macOS arm64 archives total
+706 MB; the measured install occupied 1.16 GiB and its project 0.64 GiB. Reused-install setup
+took 0.36 seconds; fresh import/analysis took 8.8 minutes, with 4.62 GiB sampled peak RSS under
+a 16 GiB heap cap. The complete measured directory used about 1.8 GiB. RSS is not a minimum
+RAM requirement. `--no-decompiler` skips this step; setup also skips it with a clear retry hint
+below 18 GiB available RAM (including a 2 GiB margin), about 3 GiB free disk, or unknown resources.
+It runs in the background; start the first function while it works. Rerun setup for progress.
+See [setup and platform status](contributing-agent.md#recommended-local-decompiler).
+Once ready, `start` adds `decomp.c` beside the listing; `./sr --json decomp 0x<rva>` fills an
+existing pack. It includes direct callees' guessed signatures.
+
+Ask once before reading listings **or pseudo-C**: this sends parts of the owner's own game copy
+to their AI provider, under their own account and provider's terms; it is their decision and
+responsibility. Continue only if they agree. Pseudo-C is a private, untrusted hint for control
+flow and possible types. Write your own reconstruction; the listing and unchanged `compare`
+decide byte matching. Never paste the hint or project into a public place.
 
 ## Rules for small functions
 

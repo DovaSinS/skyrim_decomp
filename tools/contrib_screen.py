@@ -24,7 +24,10 @@ def screen(blob, name, *, headers=STANDARD_HEADERS):
     Over-refusal is deliberate: scan both raw and spliced text, including inactive branches,
     comments and literals. Existing intake/lint/closure checks remain mandatory afterwards.
     """
+    from decompiler_privacy import private_decompiler_path, private_decompiler_text
     problems = set()
+    if private_decompiler_path(name):
+        problems.add('private-decompiler-output')
     if len(blob) > MAX_BYTES:
         return ['file-size-cap']
     try:
@@ -33,6 +36,8 @@ def screen(blob, name, *, headers=STANDARD_HEADERS):
         return ['non-utf8']
     if any(unicodedata.category(c).startswith('C') and c not in '\t\r\n' for c in text):
         problems.add('control-character')
+    if private_decompiler_text(text):
+        problems.add('private-decompiler-output')
     lines = text.splitlines()
     if len(lines) > MAX_LINES:
         problems.add('line-count-cap')

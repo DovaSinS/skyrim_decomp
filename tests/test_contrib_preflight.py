@@ -29,6 +29,14 @@ class Preflight(fixtures.SubmitTests):
             code = contrib.main(['--json', 'preflight', '--base', 'HEAD', *flags], ctx=ctx)
         return code, json.loads(output.getvalue())
 
+    def test_private_decompiler_marker_is_blocked_by_shared_preflight_and_submit(self):
+        cpp = self.repo / self.unit[1]
+        cpp.write_text(cpp.read_text() + '\n// PRIVATE DECOMPILER HINT: synthetic fixture\n')
+        self.refresh_digest()
+        for code, result in (self.preflight(), self.submit()):
+            self.assertEqual(code, contrib.FAILED)
+            self.assertTrue(any('private decompiler output/project' in p for p in result['blockers']))
+
     def test_missing_origin_is_found_before_submission_like_59(self):
         cpp = self.repo / self.unit[1]
         cpp.write_text('\n'.join(line for line in cpp.read_text().splitlines() if 'Code origin:' not in line) + '\n')

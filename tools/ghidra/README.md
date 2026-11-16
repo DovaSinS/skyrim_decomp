@@ -8,6 +8,15 @@ All three are original code and contain no game data. **Everything they write is
 stays under `.local/`** (G1 and G2 in `docs/authorizations.md`); never copy a pack into a tracked
 file, issue, PR, log or upload.
 
+External contributors get the recommended decompiler by default with `./sr --json --yes setup`;
+`--no-decompiler` skips it. See [the contributor guide](../../docs/contributing-agent.md#recommended-local-decompiler). It creates
+its own hash-checked private project and reuses only this directory's original scripts.
+`ExportPack.java`'s `contrib` mode writes a labelled `decomp.c` with direct callee signatures;
+internal `full` and `refs` exports keep their existing format. `ContribConfigure.java` disables
+PDB acquisition, `ContribNames.java` applies the helper's public names, and
+`ContribCheckpoint.java` checks that PDB analysis is disabled before marking analysis complete.
+No internal project, config, database or analysis output is shared with contributors.
+
 ## Setup
 
 A private config, by default `.local/config/export_pack.json`, holds every machine-specific path:

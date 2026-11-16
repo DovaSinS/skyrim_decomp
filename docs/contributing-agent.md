@@ -26,9 +26,9 @@ authentication steps can also require their action; do not claim they are alread
    Show them the link. Pass `--accept-microsoft-license` only after they say they accept it. Never
    accept it yourself.
 
-Before you read any pack, ask once: reading a listing made from their own copy of the game sends
-parts of it to your AI provider. That is their decision and their responsibility, under their
-provider's terms; the project grants no rights in the game. Continue only if they agree. Nothing
+Before you read any pack, ask once: reading a listing or decompiler view made from their
+own copy of the game sends parts of it to your AI provider. That is their decision and their
+responsibility, under their provider's terms; the project grants no rights in the game. Continue only if they agree. Nothing
 from a pack ever goes into the repository, a pull request, an issue or CI.
 
 Their system may add questions of its own, which only they answer: on Apple silicon, Rosetta 2 has
@@ -99,6 +99,66 @@ source that submit will commit.
 
 A pass on this machine is not acceptance. Tell the person that the project re-runs the comparison
 on its own two hosts and a Reviewer checks the source before the function counts as matched.
+
+## Recommended local decompiler
+
+`./sr --json --yes setup` (Windows: `.\sr.cmd --json --yes setup`) and `./sr go`
+install the recommended private Ghidra view by default. Use `--no-decompiler` to skip it.
+The ordinary byte and LLVM listings remain available without it. The helper first checks the owner's executable
+against the pinned hash, then downloads **Ghidra 12.2** from the official NSA GitHub release and
+**Eclipse Temurin 25.0.1+8**, checking every archive against the exact SHA-256 in
+[`tools/contrib-decompiler-pins.json`](../tools/contrib-decompiler-pins.json). Ghidra is Apache-2.0;
+Temurin is GPL-2.0 with the Classpath exception ([licence](https://adoptium.net/about/license/)).
+Neither needs an acceptance prompt; the existing `--yes` install choice covers these downloads.
+The runtime archives need no package manager or administrator access. The official archive
+contains Linux x64 and Windows x64 decompiler binaries; on macOS and Linux arm64 the helper
+builds the native decompiler from that same hash-checked source, with four compile jobs.
+macOS needs Apple's Command Line Tools (`make` and `clang++`, normally present with Homebrew);
+Linux arm64 needs `make` and `g++`. The helper prints an install command when build tools are
+missing. Build objects and binaries remain in the private tool tree.
+
+The pinned archives total **690–711 MB**, depending on platform (706.0 MB on macOS arm64).
+On the tested 24 GiB Apple-silicon Mac, reusing the verified install and launching setup took
+**0.36 seconds**; a fresh import and analysis took **526.5 seconds (8.8 minutes)**, with a sampled
+peak process-tree RSS of **4.62 GiB**. The configured Java heap cap is **16 GiB**, with at most
+four analysis CPUs and additional native memory. RSS is not a minimum RAM requirement: sampling,
+nonresident pages and other work on the machine affect it. The earlier 8 GiB-cap attempt reported
+a JVM out-of-memory error.
+Before a new analysis, setup measures available RAM and free disk. It automatically skips the
+decompiler below **18 GiB available RAM** (16 GiB heap plus a 2 GiB margin), below about **3 GiB
+free disk**, or when resources cannot be measured. One line explains the skip and says to rerun
+`./sr --yes setup` later. Installation or launch failure also leaves ordinary setup usable.
+A per-function `decomp` took **13.5 seconds**, with **0.44 GiB** sampled peak RSS. Installed tools
+occupied **1.16 GiB**, the completed project **0.64 GiB**, and the complete decompiler directory
+**1.82 GiB**, excluding archive cache and the executable. These are measured local observations,
+not cold-install timing or universal capacity guarantees; see [method and platform limits](contributor-platforms.md#optional-decompiler-status).
+It runs in the background, so the first function can start before analysis finishes: rerun `setup` to see
+its phase, elapsed seconds and sampled process-tree RSS in the `decompiler` result. The private
+`state.json` and `analysis.log` paths are printed at launch. An interrupted run reuses the saved
+import and restarts the incomplete analysis pass; a completed analysis is reused. PDB acquisition
+is disabled. Public names already resolved by the helper are applied where functions still have
+default names; Ghidra recovers RTTI names locally. These remain naming/type hypotheses.
+The JVM exits on memory exhaustion, and a pass with an OOM diagnostic cannot become ready.
+
+All tools, caches, logs, projects and exports live under the ignored `.local/contrib/` tree
+(or the existing private `SR_LOCAL_DIR/contrib` override). Ghidra rejects dot-prefixed project
+paths, so a temporary system-directory symlink (Windows: junction) points into this private tree
+while Ghidra runs; the alias contains no project data and is removed afterwards. Supported runtime
+packages cover macOS arm64/x64, Linux arm64/x64 and Windows x64. Native validation is recorded in
+[the platform record](contributor-platforms.md); synthetic tests do not establish an OS run.
+
+Once analysis is ready, `start` adds **`decomp.c`** to each function's private pack. If a task
+started while analysis was still running, use `./sr --json decomp 0x<rva>` afterwards; this also
+works for a function already matched by the project. It writes Ghidra's pseudo-C and direct
+callees' signatures, labelled **private, untrusted hints, not evidence**. Use it to understand
+control flow and suggest types, then reconstruct your own C++ and check it against the listing
+and `compare`. Never treat guessed types, prototypes or pseudo-C as proof of byte matching.
+
+The same once-per-owner model-exposure decision above covers this file: reading it sends parts
+of their own copy to their AI provider, under their account and provider's terms; it is their
+decision and responsibility. Never paste it, a Ghidra project, or other pack material into the
+repository, PRs, issues, commit messages or CI. Submission stages only the existing source
+allowlist; the publication guard and contributor screen reject private output/project paths.
 
 ## Optional advanced use
 
