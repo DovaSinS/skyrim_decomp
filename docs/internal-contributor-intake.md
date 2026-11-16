@@ -23,7 +23,7 @@ same point as a Drafter's worktree branch.
    Intake failures receive `needs-changes`. It never checks out a PR tree, executes its code,
    or uses its workflows, tools or hooks. A deterministic screen bounds input paths, directives,
    macros/templates, size, line count and encoding, including the complete include closure.
-   A fresh `gpt-6.1-sol` Engineer run then reads the diff and unpublished history in a read-only
+   A fresh `gpt-6.1-sol` Engineer run then reads the squashed diff and tip source in a read-only
    sandbox with a fixed screening checklist; anything except SAFE stops before compiling.
    **Maintainer decision (awarebayes, 2026-11-14): routine contributor intake,
    verification, review and merge have zero human steps. The pre-compile read is an Engineer
@@ -48,19 +48,22 @@ same point as a Drafter's worktree branch.
    FNV material follows the same source, exposure and provenance rules as internal drafts.
 5. **Integration.** Approved selections enqueue with `flow.py integrate --approved-only` and
    publish together through `flow.py lane-run --wait-lane`, which invokes
-   `tools/accept_function.py` and all ordinary acceptance checks. The acceptance commit is a merge
-   with the original contributor head as an additional parent, preserving the exact contributor
-   commits and their authors without squashing or checking out their trees. Its tree contains
-   the accepted carried inputs; its message adds `Co-authored-by: <name> <email as in the
-   contributor's commit>` for each contributor. Unpublished history is screened too, because the
-   merge retains it. After the pushed acceptance SHA has green CI, the autopilot posts that SHA
+   `tools/accept_function.py` and all ordinary acceptance checks. Outside PRs publish as squash
+   commits containing only accepted tip inputs, with `Co-authored-by: <name> <email as in the
+   contributor's commits>` trailers. Contributor ancestors are never parents of a squash acceptance
+   commit, so a tip fix clears rejected ancestor content without publishing it or rewriting the
+   contributor branch. `contrib_publication.screen_publication` screens exactly the retained
+   snapshot and squashed diff; the full include closure, pre-compile read and every acceptance
+   gate remain required. Explicit legacy history-preserving merge groups retain the ancestor
+   screen. A merge-method change invalidates old completed intake checkpoints; queued receipts
+   still settle under their frozen method. After the pushed acceptance SHA has green CI, the
+   autopilot posts that SHA
    and closes the PR if GitHub has not already marked it merged. If the contributor changed the
    PR head while a receipt was settling, the old receipt completes without closing the revised PR.
 6. **Failures.** Comments contain only sanitized blocking reasons, never bytes, listings or
    private paths. Ordinary failed members are dropped from acceptance and the remaining approvals
    ship. Source in a shared translation unit can include an unaccepted function; it is never
-   counted as matched. A real provenance/publication doubt quarantines the PR history, since
-   preserving its original commits would otherwise publish that material. No acceptance rule is
+   counted as matched. A real provenance/publication doubt quarantines the whole source snapshot; partial acceptance cannot publish suspect material. No acceptance rule is
    bypassed to keep the routine path automatic. The contributor revises and the new head starts
    a fresh intake; operational failures resume the frozen revision on the next scheduler tick.
 

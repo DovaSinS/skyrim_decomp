@@ -197,6 +197,32 @@ class ResumeAndLimits(unittest.TestCase):
         self.assertEqual(self.runtime.calls.count('fetch'), 1)
         self.assertEqual(self.runtime.calls.count('publish'), 1)
 
+    def test_squash_policy_rechecks_a_completed_same_head_history_rejection(self):
+        self.config['merge_method'] = 'merge'
+        old = self.state.revision(pr())
+        old.update(done=True, completed={'fetch': {'problem': 'deterministic screen: include-outside-roots'}})
+        self.state.save()
+        self.config['merge_method'] = 'squash'
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(result['merge_method'], 'squash')
+        self.assertIn('reviews', self.runtime.calls)
+        self.assertIn('publish', self.runtime.calls)
+
+    def test_enqueued_legacy_method_settles_before_same_head_squash_revision(self):
+        self.config['merge_method'] = 'merge'
+        self.runtime.crash = 'publish'
+        with self.assertRaises(OSError):
+            ap.process(self.runtime, self.state, pr())
+        self.config['merge_method'] = 'squash'
+        self.runtime.crash = None
+        settled = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(settled['merge_method'], 'merge')
+        self.assertTrue(settled['done'])
+        self.assertEqual(self.runtime.calls.count('fetch'), 1)
+        fresh = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(fresh['merge_method'], 'squash')
+        self.assertEqual(self.runtime.calls.count('fetch'), 2)
+
     def test_ci_hash_api_is_exact_head_and_failures_are_only_unavailable(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
         run = dict(id=3, head_sha='a' * 40, app=dict(slug='github-actions'),
@@ -441,7 +467,42 @@ class GitTransport(unittest.TestCase):
         hidden = self.git('rev-parse', 'HEAD')
         self.git('push', '--quiet', '--force', 'origin', 'HEAD:refs/pull/1/head')
         self.git('checkout', '--quiet', 'main')
+        self.runtime.config = dict(self.runtime.config, merge_method='merge')
         self.assertIn('history changes files outside', self.runtime.fetch(pr(head=hidden))['problem'])
+
+    def test_fixed_tip_squashes_without_rejected_ancestor_and_keeps_credit(self):
+        import flow_lane
+        self.git('checkout', '--quiet', 'contributor')
+        source = self.root / 'reconstruction/synth/Synth.cpp'
+        source.write_text('#include "../synth/Private.h"\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'rejected include')
+        bad = self.git('rev-parse', 'HEAD')
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'fix include at tip')
+        fixed = self.git('rev-parse', 'HEAD')
+        self.git('push', '--quiet', 'origin', 'HEAD:refs/pull/1/head')
+        self.git('checkout', '--quiet', 'main')
+        fetched = self.runtime.fetch(pr(head=fixed))
+        self.assertNotIn('problem', fetched)
+        self.assertEqual(fetched['merge_method'], 'squash')
+        self.assertNotIn('../synth/Private.h', Path(fetched['diff']).read_text())
+        contribution = dict(self.contribution(), head=fixed, merge_method='squash')
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        flow_lane.commit_acceptance(self.root, [dict(item='item', contributor=contribution)],
+            [dict(id='item', root=str(self.root))], 'Accept synthetic squash', '2026-01-01T00:00:00+00:00')
+        self.assertEqual(self.git('rev-list', '--parents', '-n', '1', 'HEAD').split()[1:], [self.base])
+        self.assertNotIn(bad, self.git('rev-list', 'HEAD').splitlines())
+        self.assertNotIn(fixed, self.git('rev-list', 'HEAD').splitlines())
+        self.assertIn('Co-authored-by: Original Contributor <contributor@example.invalid>',
+                      self.git('log', '-1', '--format=%B'))
+        self.assertEqual(self.git('rev-parse', 'contributor'), fixed)
+        # Retaining this same history still refuses the original bad include.
+        with self.assertRaisesRegex(Exception, 'deterministic screen'):
+            flow_lane.contributor_history(self.root, self.root, dict(contribution, merge_method='merge'))
 
     def contribution(self):
         return dict(head=self.head, base=self.base, authors=['Original Contributor <contributor@example.invalid>'],
@@ -742,6 +803,21 @@ reasons: original synthetic source and comparator reports
         tree = Path(result['completed']['fetch']['tree'])
         fn = ap.read_json(tree / 'data/progress.json')['functions'][0]
         self.assertEqual(check.acceptance_staleness(fn, tree), check.STALE_REVIEW)
+
+    def test_same_head_method_change_uses_new_tree_tasks_screens_and_groups(self):
+        config = dict(ap.DEFAULTS, merge_method='merge')
+        self.state.config = self.runtime.config = config
+        row = pr(head=self.head, paths=(self.fixture.CPP,))
+        legacy = ap.process(self.runtime, self.state, row, dry_run=True)
+        config['merge_method'] = 'squash'
+        squashed = ap.process(self.runtime, self.state, row, dry_run=True)
+        self.assertNotEqual(legacy['completed']['fetch']['tree'], squashed['completed']['fetch']['tree'])
+        self.assertNotEqual(legacy['completed']['export'], squashed['completed']['export'])
+        self.assertNotEqual(legacy['completed']['groups'], squashed['completed']['groups'])
+        self.assertEqual(squashed['completed']['fetch']['merge_method'], 'squash')
+        self.assertEqual(squashed['completed']['publication']['accepted'], 1)
+        self.assertEqual(squashed['completed']['publication']['dropped'], 0)
+        self.assertEqual(len(self.models), 6)
 
 
 class RecoveryRegression(unittest.TestCase):

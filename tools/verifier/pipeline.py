@@ -239,7 +239,7 @@ def compiler_include_problem(task, repo=REPO):
     """Why the compiler will not find a repository include the closure accepts, or None.
 
     The closure (tools/source_digest.py) also searches INCLUDE_ROOTS, which a recipe may pass as
-    `/I`; the pinned recipes pass none, so `#include "forms/TESForm.h"` resolves for the closure but
+    `/I`; legacy recipes pass none, so `#include "forms/TESForm.h"` resolves for the closure but
     is a C1083 on the host. Checked locally so the mistake costs no machine time and no attempt.
     """
     repo = Path(repo)
@@ -251,7 +251,7 @@ def compiler_include_problem(task, repo=REPO):
         if roots:
             return f'{exc} (recipe include roots: {", ".join(roots)})'
         return (f'{exc}; this recipe passes no include root, so a repository header is found only relative to '
-                'the including file: "<Class>.h" in the same area, "../<area>/<Class>.h" from another')
+                'the including file. For cross-area headers select a -reconstruction recipe with /I reconstruction and use "<area>/<Class>.h"')
     return None
 
 

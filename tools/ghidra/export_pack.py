@@ -1581,6 +1581,9 @@ def area_for(cls, classes=None):
 
 
 def write_task(task_id, unit_cpp, recipe, packs, target, task_root, max_attempts, attempts_per_function=None):
+    if not (REPO / unit_cpp).exists() and (REPO / f'reconstruction/recipes/{recipe}-reconstruction.json').is_file():
+        from reconstruction_includes import root_recipe
+        recipe = Path(root_recipe(REPO, f'reconstruction/recipes/{recipe}.json')).stem
     tdir = task_root / task_id
     tdir.mkdir(parents=True, exist_ok=True)
     old = {}
@@ -2132,12 +2135,11 @@ def brief_sections(cls, packs, functions, root=None):
     lines = ['', ORIGIN_LINE]
     hdrs = shared_headers(cls, packs, repository_headers(root), classes)
     if hdrs:
-        # The recipes pass no include root, so the line is relative to the unit's directory; `../<area>/`
-        # resolves from every area, the same area included.
+        # New-unit recipes add the reconstruction include root; never teach parent escapes.
         lines += ['', 'Shared headers (existing; include with the line given instead of declaring a stand-in, '
                   'never edit them; if one lacks a member or virtual slot you need, declare your own stand-in '
                   'instead and say `header-gap <Class>` in your result line):']
-        lines += [f'- `{c}`: `#include "../{h}"`' for c, h in hdrs]
+        lines += [f'- `{c}`: `#include "{h}"`' for c, h in hdrs]
     by_rva = {p['rva_hex']: p for p in packs}
     rules = []
     for f in functions:

@@ -145,8 +145,8 @@ INT_LITERAL = re.compile(r'(?<![\w.])(0[xX][0-9A-Fa-f]+|\d+)[uUlL]*(?![\w.])')
 CHAR_LITERAL = re.compile(r"(?:u8|u|U|L)?'(\\x[0-9A-Fa-f]+|\\[0-7]{1,3}|\\.|[^'\\\n])'")
 BRACED = re.compile(r'\{([^{}]*)\}', re.S)
 INCLUDE_NAME = re.compile(r'[A-Za-z0-9_][A-Za-z0-9_.+-]*(?:/[A-Za-z0-9_][A-Za-z0-9_.+-]*)*')
-# The one parent step allowed: a header of another area, `"../<area>/<Class>.h"` (docs/drafter-card.md),
-# which from reconstruction/<area>/ stays inside reconstruction/.
+# Legacy accepted units can spell one parent step to another reconstruction area. New units
+# use same-directory or reconstruction-root paths (docs/drafter-card.md).
 SHARED_HEADER = re.compile(r'\.\./[a-z][a-z0-9_]*/[A-Z][A-Za-z0-9_]*\.h')
 PRAGMA_LINE = re.compile(r'^[ \t]*#[ \t]*pragma\b(.*)$', re.M)
 # Placeholders of tools/skeleton.py (unit_skeleton.py): the stub body and the header fields the
@@ -506,7 +506,7 @@ def lint_file(root, name, target_build, skeleton_ok=False):
         if not shared and (not INCLUDE_NAME.fullmatch(target) or '..' in target.split('/')):
             problems.append(f'{name}: include name {target!r} must be a plain relative path '
                             '(letters, digits, _ . + - and /; no drive, backslash, leading / or ..), '
-                            'or "../<area>/<Class>.h" for another area\'s header')
+                            'with parent-directory spellings reserved for legacy units')
         if kind == '<':
             for base in INCLUDE_ROOTS:
                 if (root / base / target).exists():
