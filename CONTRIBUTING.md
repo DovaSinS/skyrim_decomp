@@ -48,9 +48,7 @@ re-compiles and re-compares your source on two of its own machines, and a Review
 is plausible source with honest provenance. If both agree, the function is recorded as matched and
 you are credited in the commit. If not, the reasons come back on your pull request.
 
-The intake service is operated by the maintainer, has no promised turnaround and may take days.
-As of 2026-11-15 it has never processed an outside PR through acceptance; follow your PR labels
-and comments for status.
+Intake runs automatically; follow your PR's labels and comments for status.
 
 A contradicted explicit exact-head match claim (including the generated local PASS table) can earn
 a [strike](docs/contributor-ci.md#strike-rules). Setup or compile failures, missing targets,
