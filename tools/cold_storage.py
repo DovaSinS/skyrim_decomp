@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import stat
 import subprocess
 import tarfile
 import tempfile
@@ -64,6 +65,8 @@ def offload(root, path, config, in_use=lambda path: False):
                 raise ValueError('archive changed or became active; original retained')
             item = dict(mac_path=str(path.resolve()), pc_path=remote, sha256=sha,
                         archive_bytes=package.stat().st_size, entries=len(before),
+                        size_bytes=sum(row[2] for row in before if stat.S_ISREG(row[1])),
+                        quarantined=False,
                         verified_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                         mac_deleted=False, archive_format='tar.gz')
             value = json.loads(manifest.read_text()) if manifest.is_file() else dict(schema=1, items=[])
