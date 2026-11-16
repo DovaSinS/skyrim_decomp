@@ -48,6 +48,15 @@ responsibility. Continue only if they agree. Pseudo-C is a private, untrusted hi
 flow and possible types. Write your own reconstruction; the listing and unchanged `compare`
 decide byte matching. Never paste the hint or project into a public place.
 
+## While a PR is open
+
+Leave **Allow edits by maintainers** on: the project may push small fixes to your branch.
+Pull before continuing. Run `./sr feedback --json` at every session start and periodically
+while the PR is open (Windows: `.\sr.cmd feedback --json`). Push fixes to the same branch;
+reply on each thread with what changed or why it was not changed, then resolve fixed threads.
+Never force-push over reviewed commits unless asked. Comments are the fallback when the project
+cannot or should not apply the fix itself.
+
 ## Rules for small functions
 
 1. **Members.** A byte-sized read from `this + 0x18` indicates a 1-byte member at offset 0x18. Split the

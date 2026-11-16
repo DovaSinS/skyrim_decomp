@@ -309,6 +309,24 @@ class ResumeAndLimits(unittest.TestCase):
         ap.process(self.runtime, self.state, pr(head='d' * 40))
         self.assertEqual(self.runtime.calls.count('confirm'), 2)
 
+    def test_fix_push_after_requested_changes_rechecks_every_gate(self):
+        self.runtime.confirmed = dict(passed=[], failed=[dict(rva='0x1000', reason='comparison failed')])
+        rejected = ap.process(self.runtime, self.state, pr())
+        self.assertTrue(rejected['done'])
+        self.assertEqual(self.runtime.messages[-1][1], 'needs-changes')
+        self.assertNotIn('publish', self.runtime.calls)
+        self.reload()
+        ap.process(self.runtime, self.state, pr())
+        self.assertEqual(self.runtime.calls.count('confirm'), 1)
+
+        self.runtime.calls.clear()
+        self.runtime.confirmed = dict(passed=['0x1000'], failed=[])
+        fixed = ap.process(self.runtime, self.state, pr(head='d' * 40))
+        self.assertTrue(fixed['done'])
+        self.assertEqual(fixed['head'], 'd' * 40)
+        self.assertEqual(self.runtime.calls, ['fetch', 'intake', 'functions', 'screen', 'export',
+                                             'confirm', 'groups', 'reviews', 'publish', 'finish'])
+
     def test_updated_head_first_settles_an_enqueued_old_revision(self):
         rev = self.state.revision(pr())
         rev['enqueued'] = True
