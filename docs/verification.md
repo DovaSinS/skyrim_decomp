@@ -739,3 +739,27 @@ The page renders the current committed data and source revision. Work items use 
 leaderboard, cost ledger or percentage is displayed without real supporting records.
 Add those only when there is data and a reviewed metric definition. Every record has an owner
 and outcome criteria. Update `updated_at` when the data changes. Git history is the audit trail.
+
+### CI hash check as the second host (p148)
+
+Date: 2026-11-15. Grantor: awarebayes.
+
+- Question: "May the CI hash check count as the second machine while the PC is down?"
+- Maintainer answer: "yes"
+- With: "idk lets do ci only for now without windows?"
+- Scope: until the maintainer revokes it, the GitHub-hosted Windows CI target-hash job (built by p128: pinned MSVC v141 19.16.27054 with a verified cache, normalized SHA-256 against the published (build id, RVA, size, hash)) may serve as the second independent host, in place of the native Windows PC. Mac under Wine stays the first host. The two hosts are still different machines with different OS loaders.
+- Unchanged: the comparator, the family rule, Reviewer approvals, sampling, and the acceptance rule.
+- No game bytes go to CI. Only reconstructed source, which is published on acceptance anyway, and the already-published hashes.
+
+Implementation: `ci-hash` confirmations retain the unmodified full Mac comparator report and
+add a separately identified CI attestation. CI compiles each unit twice, verifies its complete
+non-debug COFF content against the hash measured from the Mac comparator's exact object, and
+checks each function against its published target hash and relocation-layout commitment.
+The full object content commitment includes code, relocations, data, unwind and EH sections;
+only debug sections and their path checksum section are excluded. It does not substitute a
+masked hash for the Mac comparator's reference, alias, unwind or EH checks. Missing or
+unsupported target hashes are unconfirmable. Cache verification failure, compiler pin mismatch,
+non-reproduction or nondeterminism produces no confirmation. Candidate source travels on a
+separate batch branch; trusted tools and target hashes come from the dispatched main revision.
+Only sanitized JSON results are uploaded as artifacts. The existing review, family, sampling,
+integration and acceptance steps still apply. No function is accepted by this machinery change.

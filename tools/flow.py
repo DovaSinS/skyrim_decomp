@@ -203,6 +203,13 @@ def record_state(root, fn):
         return None
     rec = json.loads((Path(root) / rel).read_text())
     hosts = {r.get('compiled_on') for r in rec.get('runs') or []}
+    if 'ci_confirmation' in rec:
+        try:
+            import ci_confirmation
+            ci_confirmation.validate(Path(root), rec, fn, json.loads((Path(root) / 'builds/target.json').read_text()))
+            hosts.add(rec['ci_confirmation']['host_id'])
+        except (ValueError, KeyError, TypeError, OSError):
+            return 'confirm-stale'
     try:
         harvested = drafts.source_for(root, rec['source']['compiled'], fn['rva'])
         if harvested and not harvested.get('integrated'):
