@@ -280,6 +280,7 @@ def _text(path):
 
 def header_text(path, repo, seen=None):
     """Declarations in a header's local include closure, for collision and size checks."""
+    from reconstruction_includes import header_path
     seen = set() if seen is None else seen
     path = Path(path).resolve()
     if path in seen or not path.is_relative_to(Path(repo).resolve()) or not path.is_file():
@@ -287,7 +288,8 @@ def header_text(path, repo, seen=None):
     seen.add(path)
     text = _text(path)
     includes = re.findall(r'^\s*#\s*include\s+"([^"\n]+)"', text, re.M)
-    return text + '\n' + '\n'.join(header_text(path.parent / name, repo, seen) for name in includes)
+    return text + '\n' + '\n'.join(header_text(found, repo, seen) for name in includes
+                                    if (found := header_path(repo, path, name)) is not None)
 
 
 def class_defined(text, name):
@@ -454,23 +456,26 @@ def plan(unit, repo=None):
     packs = [f['pack_dir'] for f in unit['functions'] if f.get('pack_dir')]
     bases, sizes = class_chain(unit['material'], cls)
     chain = ancestors(bases, cls)
+    from reconstruction_includes import header_path
     shared = brief_shared_headers(unit['brief'])
     if not shared:
-        shared = {p.stem: '../' + p.relative_to(Path(repo) / 'reconstruction').as_posix()
+        shared = {p.stem: p.relative_to(Path(repo) / 'reconstruction').as_posix()
                   for p in (Path(repo) / 'reconstruction').glob('*/*.h') if p.stem != cls}
     # The inline form needs the chain to end in NiObject -> NiRefObject, the only roots it writes.
     inline_base = (chain[-2:] == list(reversed(INLINE_BASE_ROOTS))
                    and any(inlines_ni_base(f) for f in unit['functions']))
     include, standins = None, []
     for anc in chain:
-        shared_path = (repo / unit['header']).parent / shared[anc] if anc in shared else None
+        shared_path = header_path(repo, repo / unit['header'], shared[anc]) if anc in shared else None
         included = header_text(shared_path, repo) if shared_path else ''
         asserted = re.search(rf'static_assert\(sizeof\({re.escape(anc)}\)\s*==\s*(0x[0-9a-fA-F]+|\d+)',
                              included)
         sized = asserted and (anc not in sizes or int(asserted.group(1), 0) == sizes[anc])
         collisions = any(class_defined(included, name) for name in [cls] + standins)
         if (included and sized and not collisions and '// TODO type ' not in included and not inline_base):
-            include = (anc, shared[anc])
+            name = (shared_path.name if shared_path.parent == (repo / unit['header']).parent
+                    else shared_path.relative_to(repo / 'reconstruction').as_posix())
+            include = (anc, name)
             break
         standins.append(anc)
     if include is None:
@@ -480,7 +485,7 @@ def plan(unit, repo=None):
     standins.reverse()
     included_text = ''
     if include:
-        path = (Path(repo) / unit['header']).parent / include[1]
+        path = header_path(repo, repo / unit['header'], include[1])
         included_text = header_text(path, repo)
     elif inline_base:
         included_text = inline_base_blocks() + '\n'.join(f'class {t};' for t in INLINE_BASE_FORWARD)
@@ -520,6 +525,12 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
     cls, build = p['cls'], unit['task'].get('build_id')
     task_id = unit['task'].get('task_id') or Path(task_dir).name
     recipe = unit['task'].get('recipe')
+    if p['include'] and '/' in p['include'][1]:
+        from reconstruction_includes import root_recipe
+        try:
+            recipe = root_recipe(repo, recipe)
+        except (ValueError, OSError) as error:
+            raise SkeletonError(str(error)) from None
     evidence = brief_evidence(unit['brief'])
     labels = {}  # label text -> names, in first-seen order
 
@@ -779,6 +790,12 @@ def write_skeleton(task_dir, drafted_by=None, repo=None):
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, 'x') as out:  # 'x': never replace a file created since the check above
             out.write(text)
+    task_path = Path(task_dir) / 'task.json'
+    task = _json(task_path)
+    recipe = re.search(r'^// Recipe: (\S+)', cpp_text, re.M).group(1)
+    if task.get('recipe') != recipe:
+        task['recipe'] = recipe
+        task_path.write_text(json.dumps(task, indent=2) + '\n')
     p = plan(load_unit(task_dir, repo), repo)
     hints = {f'{p["cls"]}::{m["method"]}': m['fn']['rva'] for m in p['members']
              if m['method'].startswith('UnknownDtor_') or m['method'] == 'operator()'}

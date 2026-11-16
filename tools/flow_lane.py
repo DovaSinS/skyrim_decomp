@@ -1142,38 +1142,32 @@ def merge_metadata(tree, source, revision):
 
 
 def contributor_history(tree, source, contribution):
-    """Validate the ancestry that a contributor merge will retain, without checking it out.
+    """Validate what a contributor publication retains, without checking out PR code.
 
     Only accepted requests reach this path. The Engineer's AI screen and fresh reviews are
     recorded in the pinned group; this repeats the mechanical scope/resource checks for the
     exact parent being published. The acceptance tree still contains only carried inputs.
     """
     import re
-    from contrib_autopilot import SHA, UNIT
-    from contrib_screen import MAX_BYTES, screen
-    f.refuse(isinstance(contribution, dict) and set(contribution) == {'head', 'base', 'authors', 'paths'},
+    from contrib_publication import SHA
+    fields = {'head', 'base', 'authors', 'paths'}
+    f.refuse(isinstance(contribution, dict) and set(contribution) in (fields, fields | {'merge_method'}),
              'invalid contributor ancestry metadata')
+    method = contribution.get('merge_method', 'merge')  # Frozen legacy groups retain their history guard.
+    f.refuse(method in ('merge', 'squash'), 'unsupported contributor merge method')
     head, base = contribution['head'], contribution['base']
     f.refuse(isinstance(head, str) and SHA.fullmatch(head) and isinstance(base, str) and SHA.fullmatch(base),
              'invalid contributor ancestry revisions')
     f.git(tree, 'fetch', '--quiet', str(source), head)
-    paths = f.git(tree, 'diff', '--name-only', '--no-renames', f'{base}...{head}').splitlines()
-    f.refuse(paths and sorted(paths) == sorted(contribution['paths']) and all(UNIT.fullmatch(p) for p in paths),
+    from contrib_publication import PublicationRejected, screen_publication
+    try:
+        publication = screen_publication(tree, base, head, merge_method=method,
+            git=lambda *args: f.drafts.git(tree, *args))
+    except PublicationRejected as error:
+        raise f.FlowError(str(error)) from None
+    paths = [item['path'] for item in publication['files']]
+    f.refuse(sorted(paths) == sorted(contribution['paths']),
              'contributor ancestry changes files outside its screened scope')
-    commits = f.git(tree, 'rev-list', '--reverse', f'{base}..{head}').splitlines()
-    f.refuse(0 < len(commits) <= 100, 'contributor history resource cap')
-    for commit in commits:
-        parents = f.git(tree, 'rev-list', '--parents', '-n', '1', commit).split()
-        f.refuse(len(parents) == 2, 'unreviewed contributor merge history')
-        names = f.git(tree, 'diff-tree', '--no-commit-id', '--name-only', '--no-renames', '-r', commit).splitlines()
-        f.refuse(all(UNIT.fullmatch(p) for p in names), 'contributor history leaves source scope')
-        for name in names:
-            mode = f.git(tree, 'ls-tree', commit, '--', name).split()
-            f.refuse(mode and mode[0] == '100644', 'contributor history has a non-regular source or deletion')
-            f.refuse(int(f.git(tree, 'cat-file', '-s', f'{commit}:{name}')) <= MAX_BYTES,
-                     'contributor history file-size cap')
-            blob = f.drafts.git(tree, 'show', f'{commit}:{name}')
-            f.refuse(not screen(blob, name), 'contributor history failed the deterministic screen')
     authors = sorted(set(f.git(tree, 'log', '--format=%an <%ae>', f'{base}..{head}').splitlines()))
     f.refuse(authors and authors == contribution['authors'] and all(
         re.fullmatch(r'[^<>\r\n]{1,100} <[^<>\s]+@[^<>\s]+>', a) for a in authors),
@@ -1182,11 +1176,11 @@ def contributor_history(tree, source, contribution):
 
 
 def commit_acceptance(tree, requests, items, message, commit_date):
-    """An ordinary acceptance commit, or a merge with the original contributor parent(s).
+    """Squash outside tip snapshots with credit; retain history only for explicit merge groups.
 
-    commit-tree retains those exact commits and authors without ever checking out their trees,
-    running their hooks, or pulling rejected files into the accepted tree. This also supports a
-    partially accepted PR. Source acceptance and the staged guard have already passed unchanged.
+    A squash retains the contributor identity but no contributor parent. Legacy merges retain
+    exact screened commits. Neither checks out PR trees or runs their hooks. This also supports
+    partially accepted PRs. Source acceptance and the staged guard have already passed unchanged.
     """
     contributions = {}
     for request in requests:
@@ -1194,14 +1188,15 @@ def commit_acceptance(tree, requests, items, message, commit_date):
             value = request['contributor']
             source = Path(next(i['root'] for i in items if i['id'] == request['item']))
             head, authors = contributor_history(tree, source, value)
-            contributions[head] = authors
+            contributions[head] = dict(authors=authors, method=value.get('merge_method', 'merge'))
     env = dict(os.environ, GIT_COMMITTER_DATE=commit_date)
     if not contributions:
         f.run(['git', 'commit', '--quiet', '-m', message], tree, 'git commit', env=env)
         return
     previous = f.git(tree, 'rev-parse', 'HEAD')
-    parents = [previous] + [h for h in sorted(contributions) if h != previous]
-    trailers = sorted({a for names in contributions.values() for a in names})
+    parents = [previous] + [h for h in sorted(contributions)
+                            if h != previous and contributions[h]['method'] == 'merge']
+    trailers = sorted({a for value in contributions.values() for a in value['authors']})
     message += '\n\n' + '\n'.join('Co-authored-by: ' + author for author in trailers) + '\n'
     command = ['git', 'commit-tree', f.git(tree, 'write-tree')]
     for parent in parents:

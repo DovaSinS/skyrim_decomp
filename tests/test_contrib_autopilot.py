@@ -152,6 +152,9 @@ class FakeRuntime:
     def export(self, fetched, units):
         return self.call('export', ['synthetic-task'])
 
+    def companions(self, fetched):
+        return getattr(self, 'accepted_companions', {})
+
     def confirm(self, fetched, tasks, revision):
         return self.call('confirm', self.confirmed)
 
@@ -196,6 +199,32 @@ class ResumeAndLimits(unittest.TestCase):
         ap.process(self.runtime, self.state, pr())
         self.assertEqual(self.runtime.calls.count('fetch'), 1)
         self.assertEqual(self.runtime.calls.count('publish'), 1)
+
+    def test_squash_policy_rechecks_a_completed_same_head_history_rejection(self):
+        self.config['merge_method'] = 'merge'
+        old = self.state.revision(pr())
+        old.update(done=True, completed={'fetch': {'problem': 'deterministic screen: include-outside-roots'}})
+        self.state.save()
+        self.config['merge_method'] = 'squash'
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(result['merge_method'], 'squash')
+        self.assertIn('reviews', self.runtime.calls)
+        self.assertIn('publish', self.runtime.calls)
+
+    def test_enqueued_legacy_method_settles_before_same_head_squash_revision(self):
+        self.config['merge_method'] = 'merge'
+        self.runtime.crash = 'publish'
+        with self.assertRaises(OSError):
+            ap.process(self.runtime, self.state, pr())
+        self.config['merge_method'] = 'squash'
+        self.runtime.crash = None
+        settled = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(settled['merge_method'], 'merge')
+        self.assertTrue(settled['done'])
+        self.assertEqual(self.runtime.calls.count('fetch'), 1)
+        fresh = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(fresh['merge_method'], 'squash')
+        self.assertEqual(self.runtime.calls.count('fetch'), 2)
 
     def test_ci_hash_api_is_exact_head_and_failures_are_only_unavailable(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
@@ -441,7 +470,72 @@ class GitTransport(unittest.TestCase):
         hidden = self.git('rev-parse', 'HEAD')
         self.git('push', '--quiet', '--force', 'origin', 'HEAD:refs/pull/1/head')
         self.git('checkout', '--quiet', 'main')
+        self.runtime.config = dict(self.runtime.config, merge_method='merge')
         self.assertIn('history changes files outside', self.runtime.fetch(pr(head=hidden))['problem'])
+
+    def test_fixed_tip_squashes_without_rejected_ancestor_and_keeps_credit(self):
+        import flow_lane
+        self.git('checkout', '--quiet', 'contributor')
+        source = self.root / 'reconstruction/synth/Synth.cpp'
+        source.write_text('#include "../synth/Private.h"\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'rejected include')
+        bad = self.git('rev-parse', 'HEAD')
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        self.git('commit', '--quiet', '-m', 'fix include at tip')
+        fixed = self.git('rev-parse', 'HEAD')
+        self.git('push', '--quiet', 'origin', 'HEAD:refs/pull/1/head')
+        self.git('checkout', '--quiet', 'main')
+        fetched = self.runtime.fetch(pr(head=fixed))
+        self.assertNotIn('problem', fetched)
+        self.assertEqual(fetched['merge_method'], 'squash')
+        self.assertNotIn('../synth/Private.h', Path(fetched['diff']).read_text())
+        contribution = dict(self.contribution(), head=fixed, merge_method='squash')
+        source.parent.mkdir(parents=True, exist_ok=True)
+        source.write_text('// Original synthetic source\nint value;\n')
+        self.git('add', 'reconstruction/synth/Synth.cpp')
+        flow_lane.commit_acceptance(self.root, [dict(item='item', contributor=contribution)],
+            [dict(id='item', root=str(self.root))], 'Accept synthetic squash', '2026-01-01T00:00:00+00:00')
+        self.assertEqual(self.git('rev-list', '--parents', '-n', '1', 'HEAD').split()[1:], [self.base])
+        self.assertNotIn(bad, self.git('rev-list', 'HEAD').splitlines())
+        self.assertNotIn(fixed, self.git('rev-list', 'HEAD').splitlines())
+        self.assertIn('Co-authored-by: Original Contributor <contributor@example.invalid>',
+                      self.git('log', '-1', '--format=%B'))
+        self.assertEqual(self.git('rev-parse', 'contributor'), fixed)
+        # Retaining this same history still refuses the original bad include.
+        with self.assertRaisesRegex(Exception, 'deterministic screen'):
+            flow_lane.contributor_history(self.root, self.root, dict(contribution, merge_method='merge'))
+        from contrib_publication import PublicationRejected, screen_publication
+        with self.assertRaises(PublicationRejected) as caught:
+            screen_publication(self.root, self.base, fixed, merge_method='merge')
+        self.assertEqual(caught.exception.commit, bad)
+        self.assertEqual(caught.exception.path, 'reconstruction/synth/Synth.cpp')
+
+    def test_shared_screen_refusals_identify_commit_and_path_without_echoing_them(self):
+        from contrib_publication import PublicationRejected, screen_publication
+        for kind, content in [('screen', '#pragma comment(lib,"malicious")\n'),
+                              ('size', 'x' * (screen.MAX_BYTES + 1)),
+                              ('mode', 'synthetic-link-target\n')]:
+            with self.subTest(kind=kind):
+                self.git('checkout', '--quiet', 'contributor')
+                name = 'reconstruction/synth/Synth.cpp'
+                (self.root / name).write_text(content)
+                self.git('add', name)
+                if kind == 'mode':
+                    blob = self.git('rev-parse', ':' + name)
+                    self.git('update-index', '--cacheinfo', '120000,' + blob + ',' + name)
+                self.git('commit', '--quiet', '-m', 'synthetic refusal ' + kind)
+                bad = self.git('rev-parse', 'HEAD')
+                if kind == 'mode':
+                    self.git('reset', '--hard', 'HEAD')  # Materialize the synthetic index-only symlink.
+                self.git('checkout', '--quiet', 'main')
+                with self.assertRaises(PublicationRejected) as caught:
+                    screen_publication(self.root, self.base, bad)
+                self.assertEqual(caught.exception.commit, bad)
+                self.assertEqual(caught.exception.path, name)
+                self.assertNotIn(bad, str(caught.exception))
+                self.assertNotIn(name, str(caught.exception))
 
     def contribution(self):
         return dict(head=self.head, base=self.base, authors=['Original Contributor <contributor@example.invalid>'],
@@ -869,10 +963,123 @@ reasons: original synthetic source and comparator reports
         ap.process(self.runtime, ap.State(self.private, ap.DEFAULTS), pr(head=self.head, paths=(self.fixture.CPP,)), True)
         self.assertEqual(len(self.models), 3)
 
+    def test_changed_accepted_unit_is_reconfirmed_reviewed_and_reaccepted(self):
+        # Trusted main already accepted this member; the contributor edits its unit.
+        # Its old approval must remain stale until new two-host records AND review bind it.
+        import check
+        self.kit.fn['status'] = 'matched'
+        self.kit.save_review()
+        self.kit.write('data/progress.json', json.dumps(self.kit.data))
+        self.git('add', 'data/progress.json', self.fixture.REVIEW)
+        self.git('commit', '--quiet', '-m', 'synthetic accepted baseline')
+        self.git('push', '--quiet', 'origin', 'main')
+        self.base = self.git('rev-parse', 'HEAD')
+        result = ap.process(self.runtime, self.state,
+                            pr(head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        self.assertEqual(result['completed']['companions'], {self.fixture.CPP: [0x1010]})
+        self.assertEqual(result['completed']['confirmation']['passed'], ['0x1010'])
+        self.assertEqual(result['completed']['reviews']['approved'], ['0x1010'])
+        self.assertEqual(result['completed']['publication']['accepted'], 1)
+        self.assertEqual(result['completed']['publication']['dropped'], 0)
+        self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
+        tree = Path(result['completed']['fetch']['tree'])
+        fn = ap.read_json(tree / 'data/progress.json')['functions'][0]
+        self.assertEqual(check.acceptance_staleness(fn, tree), check.STALE_REVIEW)
+
+    def test_same_head_method_change_uses_new_tree_tasks_screens_and_groups(self):
+        config = dict(ap.DEFAULTS, merge_method='merge')
+        self.state.config = self.runtime.config = config
+        row = pr(head=self.head, paths=(self.fixture.CPP,))
+        legacy = ap.process(self.runtime, self.state, row, dry_run=True)
+        config['merge_method'] = 'squash'
+        squashed = ap.process(self.runtime, self.state, row, dry_run=True)
+        self.assertNotEqual(legacy['completed']['fetch']['tree'], squashed['completed']['fetch']['tree'])
+        self.assertNotEqual(legacy['completed']['export'], squashed['completed']['export'])
+        self.assertNotEqual(legacy['completed']['groups'], squashed['completed']['groups'])
+        self.assertEqual(squashed['completed']['fetch']['merge_method'], 'squash')
+        self.assertEqual(squashed['completed']['publication']['accepted'], 1)
+        self.assertEqual(squashed['completed']['publication']['dropped'], 0)
+        self.assertEqual(len(self.models), 6)
+
 
 class RecoveryRegression(unittest.TestCase):
     setUp = GitTransport.setUp
     git = GitTransport.git
+
+    def test_reject_push_network_error_then_poll_uses_detail_not_stale_list(self):
+        old = pr(72, 'outside', head='d' * 40)
+        pushed = dict(pr(72, 'outside', head='e' * 40), state='OPEN')
+        runtime = FakeRuntime()
+        runtime.fetch = Mock(return_value=dict(problem='deterministic screen: include-outside-roots'))
+        rejected = ap.process(runtime, self.state, old)
+        self.assertTrue(rejected['done'])
+        # Even after the push the REST discovery list keeps returning the rejected head.
+        listing = [[dict(number=72, head=dict(sha=old['headRefOid']))]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=ap.Stop('error connecting to api.github.com'))
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        self.runtime.view_pr.side_effect = None
+        self.runtime.view_pr.return_value = pushed
+        observed = self.runtime.list_prs()
+        self.assertEqual(observed, [pushed])
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], pushed['headRefOid'])
+        self.assertFalse(saved.get('done'))
+        self.assertEqual(saved['completed'], {})
+        fresh = FakeRuntime()
+        result = ap.process(fresh, self.state, observed[0])
+        self.assertTrue(result['done'])
+        self.assertEqual(fresh.calls, ['fetch', 'intake', 'functions', 'screen', 'export',
+                                       'confirm', 'groups', 'reviews', 'publish', 'finish'])
+
+    def test_new_revision_saved_before_another_detail_lookup_fails(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        listing = [[dict(number=72), dict(number=73)]]
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, json.dumps(listing).encode(), b''))
+        self.runtime.view_pr = Mock(side_effect=[dict(pr(72, head='e' * 40), state='OPEN'), ap.Stop('network')])
+        with self.assertRaises(ap.Stop):
+            self.runtime.list_prs()
+        saved = ap.State(self.private, ap.DEFAULTS).data['prs']['72']
+        self.assertEqual(saved['head'], 'e' * 40)
+        self.assertFalse(saved.get('done'))
+
+    def test_stale_discovery_omission_revisits_saved_done_reopened_pr(self):
+        self.state.revision(pr(72))['done'] = True
+        self.state.save()
+        self.runtime.command = Mock(return_value=subprocess.CompletedProcess([], 0, b'[[]]', b''))
+        self.runtime.view_pr = Mock(return_value=dict(pr(72, head='e' * 40), state='OPEN'))
+        self.assertEqual([p['number'] for p in self.runtime.list_prs()], [72])
+        self.runtime.view_pr.return_value = dict(pr(72, head='e' * 40), state='CLOSED')
+        self.assertEqual(self.runtime.list_prs(), [])
+
+    def test_companion_confirmation_failure_holds_extension_before_review(self):
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x3000]}
+        result = ap.process(runtime, self.state, pr(head=self.head))
+        self.assertTrue(result['done'])
+        self.assertNotIn('reviews', runtime.calls)
+        self.assertNotIn('publish', runtime.calls)
+        self.assertEqual(runtime.messages[-1][0], 'companion-confirmation')
+
+    def test_companion_must_be_re_reviewed_before_extension_can_publish(self):
+        for approved in ([], ['0x1000']):
+            with self.subTest(approved=approved):
+                runtime = FakeRuntime()
+                runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+                runtime.reviewed['approved'] = approved
+                state = ap.State(self.private / str(len(approved)), ap.DEFAULTS)
+                result = ap.process(runtime, state, pr(head=self.head))
+                self.assertTrue(result['done'])
+                self.assertNotIn('publish', runtime.calls)
+                self.assertEqual(runtime.messages[-1][0], 'companion-review')
+        runtime = FakeRuntime()
+        runtime.accepted_companions = {'reconstruction/synth/Synth.cpp': [0x2000]}
+        runtime.reviewed['approved'] = ['0x1000', '0x2000']
+        state = ap.State(self.private / 'approved', ap.DEFAULTS)
+        ap.process(runtime, state, pr(head=self.head))
+        self.assertIn('publish', runtime.calls)
 
     def test_interrupted_initial_clone_is_retained_and_reinitialized(self):
         original = self.runtime.link_inputs

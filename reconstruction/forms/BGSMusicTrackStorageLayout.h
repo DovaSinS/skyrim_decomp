@@ -36,7 +36,7 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "../bsengine/BSIMusicTrackStorageLayout.h"
+#include "bsengine/BSIMusicTrackStorageLayout.h"
 #include "TESConditionStorageLayout.h"
 
 namespace ResearchLayouts {
