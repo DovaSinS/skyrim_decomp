@@ -9,10 +9,16 @@ rejected even when it resolves inside the repository. Standard headers must belo
 `contrib_screen.STANDARD_HEADERS`; existing use elsewhere does not make a header eligible.
 
 The audit found 592 rejected include directives in 586 files.
-12 directives in 11 currently unaccepted layout headers were rewritten to resolve to the same files.
-No current accepted translation unit includes those edited headers, so no accepted unit digest changes.
-The remaining 580 directives in 575 files are bound by current acceptances
-(986 distinct accepted functions across their include closures). They are listed below.
+At that baseline, 12 directives in 11 unaccepted layout headers could be rewritten to the
+same files. Eleven directives in ten headers retain that correction. The include rewrite in
+NiObjectNETStorageLayout.h is held: subsequent accepted SettingCollectionDataStorageLayout
+functions at 0x14e8580, 0x1558e70, 0x1925a0, 0x19ed70, 0x5e2100 and 0x661ea0 now include it.
+That header retains its published content until normal re-confirmation and review are complete.
+
+The baseline's other 580 directives in 575 files were bound by acceptances
+(986 distinct accepted functions across their include closures). The list below preserves that
+historical audit and adds the held NiObjectNET header; these baseline counts are not a fresh
+count of the current inventory.
 
 Changing any listed file changes accepted unit digests, even if the include resolves to the same header.
 These files require the normal two-host re-confirmation and full/delta review or eligible
@@ -606,3 +612,5 @@ A repeated path means the file contains more than one rejected include.
 - `wrappers/F004Representedfc80c0.h`: `#include "../f004support/IOTaskLayout.h"`
 - `wrappers/F004Representedff1b50.h`: `#include "../f004support/BSFixedStringLayout.h"`
 - `wrappers/F004Representedff1b50.h`: `#include "../f004support/NiExtraDataLayout.h"`
+
+- `netimmerse/NiObjectNETStorageLayout.h`: `#include "../bsengine/BSFixedStringStorageLayout.h"` (held after new acceptances)
