@@ -166,7 +166,7 @@ def prune_isolation(root, fdir, processes):
         paths = [path for path in paths if path.exists()]
         if not paths:
             continue
-        archive = root / '.local/archive/cleanup' / ('isolation-' + snapshot.name)
+        archive = fdir.parent / 'archive/cleanup' / ('isolation-' + snapshot.name)
         # Never overwrite a previous archive after an interrupted move.
         archive = archive.with_name(archive.name + '-' + uuid.uuid4().hex)
         for path in paths:
@@ -299,7 +299,7 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
                     with lane.state_lock(fdir):
                         check_live(fdir, tree, owner, metadata)
                         lane.write(reservation, dict(tree=str(tree), active=True, owner=lane.process_owner()))
-                    archive = root / '.local/archive' / 'cleanup' / uuid.uuid4().hex
+                    archive = fdir.parent / 'archive/cleanup' / uuid.uuid4().hex
                     archive.mkdir(parents=True)
                     if owner[0] == 'input':
                         archive_evidence(tree, archive, lane_copy, all_untracked=True)
