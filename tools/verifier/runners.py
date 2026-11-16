@@ -121,7 +121,7 @@ def validate(raw, root=None):
         if backend == 'ci-hash':
             if (hid != 'github-windows-native' or machine != 'github-hosted-windows'
                     or h['loader'] != 'native'
-                    or h.get('repository') != 'awarebayes/skyrim-research'):
+                    or h.get('repository') != 'awarebayes/skyrim_decomp'):
                 raise RunnerError(f'{where}: ci-hash requires the approved GitHub Windows host')
             host.update(max_parallel=1, batch=4096)
             out[name] = host

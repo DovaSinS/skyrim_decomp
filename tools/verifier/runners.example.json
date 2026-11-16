@@ -40,7 +40,7 @@
       "host_id": "github-windows-native",
       "machine": "github-hosted-windows",
       "loader": "native",
-      "repository": "awarebayes/skyrim-research"
+      "repository": "awarebayes/skyrim_decomp"
     }
   }
 }
