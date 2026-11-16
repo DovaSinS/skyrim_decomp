@@ -1213,6 +1213,7 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     except ValueError as error:
         raise f.FlowError(str(error)) from None
     started = time.monotonic()
+    stages = receipt['build_wall_seconds'] = {}
     receipt.setdefault('attempts', [])
     attempt = receipt.get('next_tree', 0)
     tree = fdir / 'lane/trees' / receipt['id'] / str(attempt)
@@ -1230,16 +1231,22 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     base = f.git(tree, 'rev-parse', f'origin/{branch}')
     require_base_tools(tree, branch, base)
     f.git(tree, 'checkout', '--quiet', '--detach', base)
+    stages['clone_fetch_checkout'] = time.monotonic() - started
     for key in ('user.name', 'user.email'):
         value = f.git(root, 'config', key, check=False)
         if value:
             f.git(tree, 'config', key, value)
     import flow_tooling
+    began = time.monotonic()
     active_tools, tool_dropped = flow_tooling.merge(tree, receipt.get('tooling', []))
+    stages['tooling_merge'] = time.monotonic() - began
     receipt['tooling_accepted'], receipt['tooling_dropped'] = active_tools, tool_dropped
     if active_tools:
         import flow_derived
+        began = time.monotonic()
         flow_derived.regenerate(tree, python)
+        stages['derived_views'] = time.monotonic() - began
+    integrate_started = time.monotonic()
     baseline = f.inventory(tree) if receipt['items'] else dict(functions=[])
     public_ids = {fn['id'] for fn in json.loads(f.git(tree, 'show', base + ':data/progress.json'))['functions']}
     carry_base = f.git(tree, 'rev-parse', 'HEAD')
@@ -1392,10 +1399,12 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
                    gate_dependencies=gate_dependencies,
                    origins=origins, input_pins=input_pins, tree=str(tree))
     if not result['accepted']:
-        f.run([python, 'tools/build_site.py'], tree, 'build_site.py')
+        stages['integrate'] = time.monotonic() - integrate_started
         receipt['integrated'] = dict(commit=carry_base, accepted=0, files=[], checks=None, pushed=None, ci=None,
                                     wall_seconds={'build': time.monotonic()-started}, base_revision=base)
         if carry_base == base and active_tools and not receipt.get('baseline_check'):
+            # Already-published no-op: no pre-push checks follow, so retain its site check here.
+            f.run([python, 'tools/build_site.py'], tree, 'build_site.py')
             receipt['integrated'].update(checks=f.utc(), pushed=f.utc())
         save_run(fdir, receipt)
         return tree
@@ -1412,10 +1421,14 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     f.run([python, 'tools/build_model_trend.py', '--pending-date', commit_date], tree, 'build_model_trend.py')
     trend = ['README.md', 'docs/model-trend.svg', 'docs/progress-trend.svg']
     f.git(tree, 'add', '--', *trend)
+    stages['integrate'] = time.monotonic() - integrate_started
+    began = time.monotonic()
     f.run([python, 'tools/check.py', '--staged'], tree, 'check.py --staged')
+    stages['staged_guard'] = time.monotonic() - began
+    began = time.monotonic()
     commit_acceptance(tree, result['accepted'], receipt['items'],
                       f'Accept queued work in push lane {receipt["id"]}', commit_date)
-    f.run([python, 'tools/build_site.py'], tree, 'build_site.py')
+    stages['commit'] = time.monotonic() - began
     integ = dict(commit=f.git(tree, 'rev-parse', 'HEAD'), accepted=sum(len(r['functions']) for r in result['accepted']),
                  files=sorted(set(files) | set(trend)), checks=None, pushed=None, ci=None,
                  wall_seconds={'build': time.monotonic() - started}, base_revision=base)
@@ -1577,6 +1590,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                              and not f.git(tree, 'status', '--porcelain', '--untracked-files=no'),
                              'candidate changed after checks; refusing push')
                     try:
+                        started = time.monotonic()
                         f.run(['git', 'push', 'origin', f'{integ["commit"]}:refs/heads/{branch}'], tree, 'git push')
                     except f.FlowError as error:
                         if 'non-fast-forward' not in str(error) and 'fetch first' not in str(error):
@@ -1584,6 +1598,7 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                         # The next iteration observes the winner and rebuilds through unchanged gates.
                         continue
                     integ['pushed'] = f.utc()
+                    integ['wall_seconds']['push'] = time.monotonic() - started
                     save_run(fdir, receipt)
                 lease.release()
                 receipt['lane_hold_seconds'] = lease.seconds

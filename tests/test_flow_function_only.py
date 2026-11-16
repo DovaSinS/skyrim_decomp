@@ -39,14 +39,14 @@ class FunctionOnly(unittest.TestCase):
             flow.pre_push_checks(self.root, commit, sys.executable, candidate=True, **kwargs)
         return [c.args[0] for c in run.call_args_list]
 
-    def test_function_and_generated_outputs_keep_hygiene_only_locally(self):
+    def test_function_and_generated_outputs_keep_hygiene_and_site_locally(self):
         for path in ['reconstruction/synthetic.cpp', 'reconstruction/INDEX.md',
                      'reports/synthetic.json', 'data/progress.json', 'docs/progress.svg',
                      'docs/progress-map.svg', 'docs/model-trend.svg', 'docs/progress-trend.svg']:
             self.write(path)
         commit = self.commit()
-        self.assertEqual(self.checks(commit, base_revision=self.base),
-                         [[sys.executable, 'tools/check.py']])
+        self.assertCountEqual(self.checks(commit, base_revision=self.base),
+                              [[sys.executable, 'tools/check.py'], [sys.executable, 'tools/build_site.py']])
         self.assertEqual(len(self.checks(commit)), 3, 'non-lane checks retain the full suite')
 
     def test_each_nonfunction_path_keeps_full_local_checks(self):
@@ -58,8 +58,9 @@ class FunctionOnly(unittest.TestCase):
                 self.write(path)
                 commands = self.checks(self.commit(), base_revision=self.base)
                 self.assertEqual(len(commands), 3)
-                self.assertEqual(commands[0], [sys.executable, 'tools/check.py'])
-                self.assertEqual(commands[-1], [sys.executable, 'tools/build_site.py'])
+                self.assertIn([sys.executable, 'tools/check.py'], commands)
+                self.assertIn([sys.executable, 'tools/build_site.py'], commands)
+                self.assertIn([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], commands)
 
     def test_empty_diff_and_dirty_candidate_cannot_take_function_only_shortcut(self):
         self.assertFalse(flow.function_only_diff(self.root, self.base, self.base))
@@ -75,7 +76,7 @@ class FunctionOnly(unittest.TestCase):
         base = self.commit()
         path.write_text(path.read_text().replace('>old<', '>new<'))
         self.git('add', 'README.md')
-        self.assertEqual(len(self.checks(self.commit(), base_revision=base)), 1)
+        self.assertEqual(len(self.checks(self.commit(), base_revision=base)), 2)
         path.write_text(path.read_text().replace('Synthetic prose', 'Changed prose'))
         self.git('add', 'README.md')
         self.assertEqual(len(self.checks(self.commit(), base_revision=base)), 3)

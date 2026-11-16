@@ -4,8 +4,9 @@ from html import escape
 import json
 from string import Template
 import subprocess
-from check import ROOT, load
+from check import ROOT, load, check_git
 from check_source_digest import source_digest_cache
+import sparse_checkouts as sparse
 import cost_ledger
 import build_model_trend
 import build_leaderboard
@@ -127,9 +128,22 @@ def render_join(data, revision):
         updated=escape(data['updated_at']), revision=escape(revision))
 
 
+def validated_data():
+    """Fresh publication scan; reuse only the validator's existing exact-content cache.
+
+    The content revision hashes every index blob and working file, even assume-unchanged
+    files. Private policies are re-read by check_git on every invocation. A cold/changed tree
+    runs the same complete metadata, match, lint and derived-consistency checks as check.py.
+    """
+    with sparse.full(ROOT):
+        content = []
+        check_git(ROOT, content_revision=content)
+        return load(publication_revision=content[0])
+
+
 @source_digest_cache()
 def main():
-    data = load()
+    data = validated_data()
     try:
         revision = subprocess.check_output(['git', 'rev-parse', '--short=12', 'HEAD'], cwd=ROOT, stderr=subprocess.DEVNULL).decode().strip()
         if subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT).strip():

@@ -36,6 +36,7 @@ evidence: acceptance still happens only through tools/accept_function.py, and `i
 wherever the manual process refuses (docs/verification.md). Briefs go to `.local/briefs/`.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import datetime as dt
 import hashlib
 import json
@@ -2540,13 +2541,17 @@ def pre_push_checks(root, commit, python, *, candidate=False, log_dir=None, base
                           ('tests', ([python, 'tools/test_suite.py'] if (Path(root) / 'tools/test_suite.py').is_file()
                                      else [python, '-m', 'unittest', 'discover', '-s', 'tests', '-v'])),
                           ('site', [python, 'tools/build_site.py'])]
-        if function_only_diff(root, base_revision, commit):
-            commands = commands[:1]
-            print('Function-only lane tree: acceptance checks, check.py and exact-SHA CI; '
-                  'full unit suite and site build run in CI', flush=True)
-        for name, cmd in commands:
-            options = {'log_path': Path(log_dir) / (name + '.log')} if log_dir is not None else {}
-            run(cmd, root, {'check': 'check.py', 'tests': 'unit tests', 'site': 'build_site.py'}[name] + ' (lane tree)', **options)
+        import test_selection
+        source_only = test_selection.source_only(root, base_revision, commit)
+        if source_only:
+            commands = [commands[0], commands[2]]
+            print('Function-only lane tree: acceptance checks, check.py, site and exact-SHA CI; '
+                  'full unit suite runs in CI', flush=True)
+        elif (base_revision and (Path(root) / 'tools/test_selection.py').is_file()
+              and (Path(root) / 'tools/test_suite.py').is_file()):
+            # The candidate's own selector widens shared-core/unknown changes to the full suite.
+            commands[1][1].extend(['--changed-since', base_revision])
+        parallel_checks(root, commands, log_dir)
         refuse(not git(root, 'status', '--porcelain', '--untracked-files=no'),
                'checks changed tracked candidate files')
         return
@@ -2562,6 +2567,56 @@ def pre_push_checks(root, commit, python, *, candidate=False, log_dir=None, base
     finally:
         git(root, 'worktree', 'remove', '--force', str(tree), check=False)
         shutil.rmtree(tmp, ignore_errors=True)
+
+
+def parallel_checks(root, commands, log_dir=None):
+    """Independent read-only checks, each in its original subprocess; require every result.
+
+    The caller owns an isolated immutable candidate and checks it again before pushing.
+    No pass is inferred from another command, and even a failure waits for all started checks.
+    Timings are local diagnostics, never a reusable check/acceptance receipt.
+    """
+    timings, errors = {}, []
+    started = time.monotonic()
+
+    def check_one(name, cmd):
+        began, ok = time.monotonic(), False
+        try:
+            options = {'log_path': Path(log_dir) / (name + '.log')} if log_dir is not None else {}
+            run(cmd, root, {'check': 'check.py', 'tests': 'unit tests', 'site': 'build_site.py'}[name]
+                + ' (lane tree)', **options)
+            ok = True
+        finally:
+            timings[name] = dict(seconds=time.monotonic() - began, passed=ok)
+
+    with ThreadPoolExecutor(max_workers=len(commands)) as pool:
+        # The site repeats the publication scan, then can reuse the check's exact-content
+        # metadata cache. Its rendering overlaps the suite without racing a cold validation.
+        check_future = None
+        futures = []
+        def after_check(name, cmd):
+            if check_future is not None:
+                try:
+                    check_future.result()
+                except FlowError:
+                    pass  # Still collect the site's independent result, never publish a failure.
+            check_one(name, cmd)
+        for name, cmd in commands:
+            future = pool.submit(after_check if name == 'site' else check_one, name, cmd)
+            futures.append(future)
+            if name == 'check':
+                check_future = future
+        for future in futures:
+            try:
+                future.result()
+            except FlowError as error:
+                errors.append(str(error))
+    report = dict(stages=timings, seconds=time.monotonic() - started)
+    if log_dir is not None:
+        atomic_write(Path(log_dir) / 'timings.json', (json.dumps(report, indent=2) + '\n').encode())
+    if errors:
+        raise FlowError('\n'.join(errors))
+    return report
 
 
 # ------------------------------------------------------------------ status
