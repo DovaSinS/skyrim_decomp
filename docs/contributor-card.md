@@ -4,6 +4,8 @@ Use `./sr` (Windows: `.\sr.cmd`) in your own clone. Start with
 `go --drafted-by "<person>, assisted by <model>"`, edit the two source files it creates, run
 `compare`, then `submit --dry-run` and `submit`. Project runners and private handoffs are not used.
 
+Batch: Group small related functions into one PR; a single large function can be its own PR.
+
 Read only the private pack named by the helper, after the owner has agreed to model exposure.
 Never post listings, pseudo-C, Ghidra projects, bytes, objects, raw diagnostics or paths. Keep the skeleton's provenance and
 licence fields; name your actual model. Fill the required `Code origin:` placeholder truthfully in

@@ -2,7 +2,7 @@
 
 One PR may carry any number of functions.
 
-You are a coding agent helping an **external contributor** match one function of Skyrim Special
+You are a coding agent helping an **external contributor** match one or more related functions of Skyrim Special
 Edition. This file is all you need. Do not follow the internal orchestration or verifier-session
 instructions in [the internal workflow](internal-agent-workflow.md) (including
 `tools/verifier/attempt|confirm`): they are for the
@@ -187,6 +187,29 @@ accept). `setup` prints the SteamCMD steps (the whole game, or only the executab
 and guard code into SteamCMD themselves. Never handle, store or type Steam credentials, and never
 read Steam's account files. A Steam install made in October 2026 delivered exactly the pinned build;
 `setup` checks the hash of whatever it finds.
+
+## Batch your work
+
+Group small related functions into one PR; a single large function can be its own PR.
+Accessors, IsEqual methods, AsX casts and tiny virtuals are good candidates to group by class
+into a reasonable amount of work to review. One function per PR is fine for a first try;
+each PR costs a full verification cycle, so batching can get your work merged faster.
+
+Claim the class or the selected RVAs, then start all selected methods of that class in one
+task and branch (start accepts one class per task):
+
+```sh
+./sr claim --class <Name> --model <your-model-id>
+# Alternatively: ./sr claim 0x1000 0x2000 --model <your-model-id>
+./sr start 0x1000 0x2000 --drafted-by "<person>, assisted by <model>"
+# Edit the unit and add each method and its RVA header line; compare until all pass.
+./sr --json compare
+./sr --json submit --dry-run
+./sr --json submit
+```
+
+Use actual RVAs for methods of the claimed class. The helper creates one skeleton; add the
+other methods yourself. You can add more same-class RVAs to the task with another `start`.
 
 ## Claims
 
