@@ -499,6 +499,92 @@ class RuntimeEffects(unittest.TestCase):
         self.assertFalse(any(call.args[:2] == ('pr', 'comment') for call in gh.call_args_list))
         self.assertTrue(any(call.args[:2] == ('pr', 'edit') for call in gh.call_args_list))
 
+    def test_final_feedback_updates_existing_comment_after_saved_checkpoint(self):
+        rev = self.state.revision(pr())
+        rev['completed']['post-published'] = True
+        marker = f'<!-- contrib-autopilot:1:{rev["head"]}:published -->'
+        result = subprocess.CompletedProcess([], 0, json.dumps([[dict(id=42, body=marker + '\nold totals',
+                    user=dict(login='awarebayes'))]]).encode(), b'')
+        with patch.object(self.runtime, 'command', return_value=result) as command, patch.object(self.runtime, 'gh') as gh:
+            self.runtime.feedback(rev, 'published', None, 'Submitted functions: 2.', replace=True)
+        self.assertEqual(command.call_count, 2)
+        self.assertIn('PATCH', command.call_args.args[0])
+        self.assertIn('repos/awarebayes/skyrim_decomp/issues/comments/42', command.call_args.args[0])
+        gh.assert_not_called()
+
+    def test_plural_rvas_discover_every_member(self):
+        cpp = 'reconstruction/synth/Synth.cpp'
+        unit = self.root / cpp
+        unit.parent.mkdir(parents=True)
+        unit.write_text('// RVAs 0x1000, 0x2000, and 0x3000, 3 bytes each.\n// RVA 0x1000\nint Synthetic() { return 0; }\n')
+        ap.save_json(self.root / 'data/progress.json', dict(target_build_id='synthetic', functions=[
+            dict(build_id='synthetic', rva=r, status='mapped') for r in (0x1000, 0x2000, 0x3000)]))
+        with patch.object(ap, 'screen_tree', return_value=[]):
+            self.assertEqual(self.runtime.functions(dict(tree=str(self.root), files=[dict(path=cpp)])),
+                             {cpp: [0x1000, 0x2000, 0x3000]})
+
+    def test_finish_accounts_for_preintegration_failures_and_missing_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000, 0x2000, 0x3000]}
+        rev['completed']['confirmation'] = dict(failed=[dict(rva='0x2000', reason='two-host confirmation failed')])
+        published = dict(accepted=['0x1000'], dropped=0, failures=[], commits=['c' * 40])
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')), \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, published)
+        message = feedback.call_args.args[3]
+        self.assertIn('Submitted functions: 3.', message)
+        self.assertIn('0x2000: two-host confirmation failed', message)
+        self.assertIn('0x3000: not accepted; intake processing incomplete.', message)
+        self.assertIn('Functions not accepted: 2.', message)
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_expands_group_only_review_failure_to_members(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        rev['completed']['reviews'] = dict(failed=[dict(group='held', reason='sampling disagreement; batch paused')])
+        ap.save_json(self.runtime.fdir / 'groups/held.json', dict(functions=['0x1000']))
+        with patch.object(self.runtime, 'feedback') as feedback, \
+             patch.object(self.runtime, 'gh', return_value=subprocess.CompletedProcess([], 0, b'{"labels":[]}', b'')):
+            self.runtime.finish(rev, dict(accepted=[], dropped=0, failures=[], commits=[]))
+        self.assertIn('0x1000: sampling disagreement; batch paused', feedback.call_args.args[3])
+        self.assertEqual(feedback.call_args.args[2], 'needs-changes')
+
+    def test_finish_removes_stale_label_after_full_acceptance(self):
+        rev = self.state.revision(pr())
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        result = subprocess.CompletedProcess([], 0, b'{"labels":[{"name":"needs-changes"}]}', b'')
+        with patch.object(self.runtime, 'feedback') as feedback, patch.object(self.runtime, 'gh', return_value=result) as gh, \
+             patch.object(self.runtime, 'current_head', return_value='b' * 40):
+            self.runtime.finish(rev, dict(accepted=['0x1000'], dropped=0, failures=[], commits=[]))
+        self.assertIsNone(feedback.call_args.args[2])
+        self.assertTrue(any(c.args[-2:] == ('--remove-label', 'needs-changes') for c in gh.call_args_list))
+
+    def test_timeout_keeps_diagnostics_in_private_log(self):
+        with patch.object(ap.subprocess, 'run', side_effect=subprocess.TimeoutExpired(['synthetic'], 1, output=b'partial')):
+            with self.assertRaises(subprocess.TimeoutExpired):
+                self.runtime.command(['synthetic'])
+        self.assertEqual(next(self.runtime.logs.glob('*.log')).read_bytes(), b'partial\n')
+        self.assertEqual(self.state.data['last_timeout']['command'], ['synthetic'])
+
+    def test_pending_publication_uses_fresh_trusted_main_tools(self):
+        tree = self.root / 'frozen'
+        revision = self.state.revision(pr())
+        revision['enqueued'] = True
+        ap.save_json(self.runtime.fdir / 'lane/queue/item.json',
+                     dict(root=str(tree), selection=['g1'], state='running'))
+        pending = dict(settled=False)
+        green = dict(settled=True, accepted=['0x1000'])
+        with patch.object(self.runtime, 'lane_result', side_effect=[pending, green]), \
+             patch.object(self.runtime, 'git', return_value='b' * 40), \
+             patch.object(self.runtime, 'prepare_main_tree') as prepare, \
+             patch.object(self.runtime, 'command') as command:
+            self.assertEqual(self.runtime.publish(dict(tree=str(tree)), dict(groups=['g1']), revision), green)
+        publisher = tree.parent / ('publisher-' + 'b' * 40)
+        prepare.assert_called_once_with(publisher, 'b' * 40)
+        self.assertEqual(command.call_args.kwargs['cwd'], publisher)
+        self.assertNotEqual(command.call_args.kwargs['cwd'], tree)
+
     def test_model_uses_fresh_exact_model_and_read_only_sandbox(self):
         output = self.root / 'review.md'
         def command(argv, **kwargs):

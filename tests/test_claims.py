@@ -127,7 +127,7 @@ class ClaimsTests(unittest.TestCase):
                             claims.sync(self.root, fake.client)
                 self.assertEqual(fake.writes, [('comment', 8)])
 
-    def test_active_entries_use_pipeline_and_planned_families(self):
+    def test_active_entries_exclude_planned_families(self):
         import flow
         (self.root / 'data').mkdir()
         (self.root / 'data/progress.json').write_text(json.dumps(PUBLIC))
@@ -139,7 +139,7 @@ class ClaimsTests(unittest.TestCase):
         with patch.object(claims, 'planned_family', return_value={0x4000}), \
                 patch.object(flow, 'function_states', return_value=states):
             entries = claims.active_entries(self.root, PUBLIC)
-        self.assertEqual(set(entries), {(0x1000, 0x1001), (0x2000, 0x2001), (0x4000, 0x4001)})
+        self.assertEqual(set(entries), {(0x1000, 0x1001), (0x2000, 0x2001)})
 
     def test_comment_and_linked_pr_extend_lapse(self):
         issue = raw(old=True)
@@ -222,6 +222,30 @@ class ClaimsTests(unittest.TestCase):
         created = claims.parse_issue(fake.rows[-1])
         self.assertEqual(created['entries'], [(0x2000, 0x2001)])
 
+    def test_publish_shrinks_expired_untouched_scope_after_scoped_renewal(self):
+        issue = raw(8, entries=((0x1000, 0x2100),), me='project', managed=True)
+        issue['claim_base_updated_at'] = (datetime.now(timezone.utc) - timedelta(hours=25)).isoformat()
+        issue['claim_renewals'] = [dict(time=NOW, entries=[(0x1000, 0x1001)])]
+        fake = FakeGh([issue])
+        with patch.object(claims, 'collect', return_value=(BUILD, [([(0x1000, 0x1001)], {})])), \
+                patch.object(claims, 'active_entries', return_value=[(0x1000, 0x1001)]), \
+                contextlib.redirect_stdout(io.StringIO()):
+            claims.publish(self.root, fake.client, PUBLIC)
+        self.assertEqual(claims.parse_issue(fake.rows[0])['entries'], [(0x1000, 0x1001)])
+        self.assertIn('Functions: 1', fake.rows[0]['body'])
+
+    def test_publish_preserves_unknown_scope_and_count_when_expired(self):
+        issue = raw(8, entries=((0x1000, 0x3000),), me='project', managed=True)
+        issue['body'] = claims.body(BUILD, [(0x1000, 0x3000)], PUBLIC, 'project', total=5, managed=True)
+        issue['claim_base_updated_at'] = (datetime.now(timezone.utc) - timedelta(hours=25)).isoformat()
+        issue['claim_renewals'] = [dict(time=NOW, entries=[(0x1000, 0x1001)])]
+        fake = FakeGh([issue])
+        with patch.object(claims, 'collect', return_value=(BUILD, [([(0x1000, 0x1001)], {})])), \
+             patch.object(claims, 'active_entries', return_value=[(0x1000, 0x1001)]), contextlib.redirect_stdout(io.StringIO()):
+            claims.publish(self.root, fake.client, PUBLIC)
+        self.assertIn('Functions: 5', fake.rows[0]['body'])
+        self.assertIn((0x1000, 0x3000), claims.parse_issue(fake.rows[0])['entries'])
+
     def test_sync_marks_done_then_closes_only_on_origin(self):
         fake = FakeGh([raw(8, me='project', managed=True)])
         public = json.loads(json.dumps(PUBLIC))
@@ -231,6 +255,18 @@ class ClaimsTests(unittest.TestCase):
         read.assert_called_once_with(self.root, 'origin/main')
         self.assertEqual(fake.closed, [8])
         self.assertEqual(fake.writes, [('edit', 8)])
+
+    def test_sync_drops_accepted_members_from_partial_managed_scope(self):
+        fake = FakeGh([raw(8, entries=((0x1000, 0x1001), (0x1020, 0x1021)), me='project', managed=True)])
+        public = json.loads(json.dumps(PUBLIC))
+        public['functions'][0]['status'] = 'matched'
+        with patch.object(claims, 'git_json', return_value=public), \
+             patch.object(claims, 'active_entries', return_value=[]), contextlib.redirect_stdout(io.StringIO()):
+            claims.sync(self.root, fake.client)
+        self.assertEqual(claims.parse_issue(fake.rows[0])['entries'], [(0x1020, 0x1021)])
+        self.assertEqual(fake.writes, [('comment', 8), ('edit', 8)])
+        self.assertIn('Functions: 1', fake.rows[0]['body'])
+        self.assertFalse(fake.closed)
 
     def test_range_sync_never_closes_with_unknown_members(self):
         issue = raw(8, entries=((0x1000, 0x1100),), me='project', managed=True)
@@ -242,7 +278,8 @@ class ClaimsTests(unittest.TestCase):
         with patch.object(claims, 'git_json', return_value=public), contextlib.redirect_stdout(io.StringIO()):
             claims.sync(self.root, fake.client)
         self.assertFalse(fake.closed)
-        self.assertIn('2 / 3', fake.rows[0]['body'])
+        self.assertIn('0 / 3', fake.rows[0]['body'])
+        self.assertFalse(fake.writes)  # a progress edit must not renew inactive unknown scope
 
     def test_sync_failure_is_nonfatal(self):
         with patch.object(claims, 'sync', side_effect=RuntimeError('offline')), contextlib.redirect_stderr(io.StringIO()) as err:
@@ -301,7 +338,9 @@ class ClaimsTests(unittest.TestCase):
         with patch.object(claims, 'cached', return_value=(claims.ClaimIndex(), 'authenticated')):
             self.assertEqual(claims.project_claims(self.root)[1], 'override')
 
-    def test_collect_queues_flow_families_and_static_ranges(self):
+    def test_collect_only_active_flow_not_static_populations(self):
+        (self.root / 'data').mkdir()
+        (self.root / 'data/progress.json').write_text(json.dumps(PUBLIC))
         q = self.root / '.local/queue/one'; q.mkdir(parents=True)
         (q / 'queue.tsv').write_text('a\ta.cpp\t0x1000,0x1020\t3\n')
         families = self.root / 'reports' / BUILD / 'families'; families.mkdir(parents=True)
@@ -313,10 +352,9 @@ class ClaimsTests(unittest.TestCase):
         with patch.object(flow, 'function_states', return_value={'0x2000': {'state': 'confirmed'}}):
             build, groups = claims.collect(self.root, PUBLIC, cluster_lists=[clusters])
         self.assertEqual(build, BUILD)
-        self.assertEqual(len(groups), 4)
-        self.assertEqual(groups[1], ([(0x3000, 0x3020)], {(0x3000, 0x3020): 2}))
+        self.assertEqual(groups, [([(0x2000, 0x2001)], {})])
         all_entries = [e for entries, _counts in groups for e in entries]
-        self.assertEqual(all_entries.count((0x1020, 0x1021)), 1)
+        self.assertEqual(all_entries.count((0x1020, 0x1021)), 0)
 
     def test_takeover_comment_releases_only_its_overlapping_scope(self):
         issue = raw(entries=((0x1000, 0x1100),))

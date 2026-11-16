@@ -178,8 +178,15 @@ class Runtime:
         # Never shell=True. Compiler/model diagnostics remain private; public output is fixed text.
         env = dict(os.environ)
         env.pop('SKYRIM_FLOW_DIR', None)
-        result = subprocess.run([str(a) for a in argv], cwd=cwd or self.root, input=input,
-                                capture_output=True, env=env, timeout=timeout or self.config['command_timeout'])
+        try:
+            result = subprocess.run([str(a) for a in argv], cwd=cwd or self.root, input=input,
+                                    capture_output=True, env=env, timeout=timeout or self.config['command_timeout'])
+        except subprocess.TimeoutExpired as exc:
+            log = self.logs / (uuid.uuid4().hex + '.log')
+            log.write_bytes((exc.stdout or b'') + b'\n' + (exc.stderr or b''))
+            self.state.data['last_timeout'] = dict(command=[str(a) for a in argv], log=str(log), seconds=timeout or self.config['command_timeout'])
+            self.state.save()
+            raise
         log = self.logs / (uuid.uuid4().hex + '.log')
         log.write_bytes(result.stdout + b'\n' + result.stderr)
         if check and result.returncode:
@@ -233,7 +240,7 @@ class Runtime:
                                 files=[dict(path=f['filename']) for group in files for f in group]))
         return prs
 
-    def feedback(self, revision, key, label, message, commits=()):
+    def feedback(self, revision, key, label, message, commits=(), replace=False):
         marker = f'<!-- contrib-autopilot:{revision["number"]}:{revision["head"]}:{key} -->'
         body = marker + '\n' + '\n'.join(safe_reason(line) for line in message.splitlines() if line.strip())
         for sha in commits:
@@ -249,8 +256,12 @@ class Runtime:
             comments = self.command(['gh', 'api', '--paginate', '--slurp',
                                      f'repos/{REPOSITORY}/issues/{revision["number"]}/comments']).stdout
             pages = json.loads(comments)
-            if not any(marker in c.get('body', '') and (c.get('user') or {}).get('login', '').casefold()
-                       == REPOSITORY.split('/')[0].casefold() for page in pages for c in page):
+            existing = next((c for page in pages for c in page if marker in c.get('body', '')
+                             and (c.get('user') or {}).get('login', '').casefold() == REPOSITORY.split('/')[0].casefold()), None)
+            if existing and replace and existing.get('body', '').strip() != body.strip():
+                self.command(['gh', 'api', '--method', 'PATCH',
+                              f'repos/{REPOSITORY}/issues/comments/{existing["id"]}', '-f', 'body=' + body])
+            if not existing:
                 path = self.private / 'comment.md'
                 path.write_text(body + '\n')
                 self.gh('pr', 'comment', str(revision['number']), '--body-file', str(path))
@@ -258,7 +269,10 @@ class Runtime:
                 self.gh('label', 'create', label, '--force', '--color', 'e4e669')
                 self.gh('pr', 'edit', str(revision['number']), '--add-label', label)
             return True
-        self.state.once(revision, 'post-' + key, post)
+        if replace:
+            post()
+        else:
+            self.state.once(revision, 'post-' + key, post)
 
     def waiting(self, revision, reason):
         messages = {
@@ -357,7 +371,8 @@ class Runtime:
         tree.parent.mkdir(parents=True, exist_ok=True)
         self.command(['git', 'clone', '--quiet', '--shared', '--no-checkout', str(self.root), str(tree)])
         self.git(tree, 'remote', 'set-url', 'origin', self.git(self.root, 'remote', 'get-url', 'origin'))
-        self.git(tree, 'checkout', '--quiet', '--detach', base)
+        self.command(['git', 'checkout', '--quiet', '--detach', base], cwd=tree,
+                     timeout=self.config['intake_timeout'])
         for key in ('user.name', 'user.email'):
             self.git(tree, 'config', key, self.git(self.root, 'config', key))
         self.link_inputs(tree)
@@ -422,7 +437,9 @@ class Runtime:
             for suffix in ('.h', '.cpp'):
                 path = tree / (cpp[:-4] + suffix)
                 if path.is_file():
-                    rvas.update(int(m, 16) for m in re.findall(r'\bRVA\s+(0x[0-9a-fA-F]+)\b', path.read_text()))
+                    # A plural header lists every function, including members with no singular note.
+                    for match in re.finditer(r'\bRVAs?\s+((?:0x[0-9a-fA-F]+)(?:(?:\s*,\s*(?:and\s+)?|\s+(?:and\s+)?)(?:0x[0-9a-fA-F]+))*)', path.read_text()):
+                        rvas.update(int(value, 16) for value in re.findall(r'0x[0-9a-fA-F]+', match[1]))
         changed = {f['path'] for f in fetched['files']}
         # An edit to a shared header can stale accepted functions in other units too.
         for fn in data['functions']:
@@ -802,7 +819,13 @@ class Runtime:
         if outcome['settled']:
             return outcome
         # A crash here resumes the same durable lane receipt; do not enqueue a new PR revision.
-        self.command([sys.executable, 'tools/flow.py', 'lane-run', '--wait-lane'], cwd=tree,
+        # Frozen contributor trees retain their evidence tools. Publication must use a fresh
+        # trusted-main runtime, or every scheduler retry refuses after main tooling advances.
+        self.git(self.root, 'fetch', '--quiet', 'origin', 'main')
+        base = self.git(self.root, 'rev-parse', 'origin/main')
+        publisher = tree.parent / ('publisher-' + base)
+        self.prepare_main_tree(publisher, base)
+        self.command([sys.executable, 'tools/flow.py', 'lane-run', '--wait-lane'], cwd=publisher,
                      timeout=7200, check=False)
         outcome = self.lane_result(tree, reviewed)
         if not outcome['settled']:
@@ -812,16 +835,38 @@ class Runtime:
     def finish(self, revision, published):
         if self.dry_run:
             return
-        failures = '\n'.join(f'{row["rva"]}: {row["reason"]}' for row in published.get('failures', []))
-        if not published['accepted']:
-            self.feedback(revision, 'dropped', 'needs-changes', 'No function passed integration; this PR remains open.\n' + failures)
+        completed = revision.get('completed', {})
+        submitted = {f'0x{int(r):x}' for members in completed.get('functions', {}).values() for r in members}
+        accepted = set(published['accepted'])
+        failures = {}
+        for stage in ('confirmation', 'reviews'):
+            for row in completed.get(stage, {}).get('failed', []):
+                members = [row['rva']] if row.get('rva') else (
+                    read_json(self.fdir / 'groups' / (row['group'] + '.json'), {}).get('functions', [])
+                    if row.get('group') else submitted)
+                for rva in members:
+                    failures[rva] = safe_reason(row['reason'])
+        failures.update({row['rva']: safe_reason(row['reason']) for row in published.get('failures', [])})
+        failures = {r: reason for r, reason in failures.items() if r not in accepted}
+        remaining = (submitted | set(failures)) - accepted
+        lines = [f'Submitted functions: {len(submitted | accepted | set(failures))}.',
+                 f'Accepted functions: {len(accepted)}.']
+        lines += [r + ': accepted.' for r in sorted(accepted)]
+        lines += [r + ': ' + failures.get(r, 'not accepted; intake processing incomplete.') for r in sorted(remaining)]
+        lines += [f'Functions not accepted: {len(remaining)}.',
+                  f'Functions dropped by integration: {published["dropped"]}.',
+                  'CI checks publication hygiene; matching rests on the two-host comparator reports.']
+        self.feedback(revision, 'published' if accepted else 'dropped',
+                      'needs-changes' if failures else ('needs-maintainer' if remaining else None),
+                      '\n'.join(lines), commits=published['commits'], replace=True)
+        # Remove stale service labels, keeping the one describing the final outcome.
+        keep = 'needs-changes' if failures else ('needs-maintainer' if remaining else None)
+        current = json.loads(self.gh('pr', 'view', str(revision['number']), '--json', 'labels').stdout)
+        for label in current.get('labels', []):
+            if label['name'] in ('needs-changes', 'needs-maintainer') and label['name'] != keep:
+                self.gh('pr', 'edit', str(revision['number']), '--remove-label', label['name'])
+        if not accepted:
             return
-        message = (f'Accepted functions: {len(published["accepted"])}.\n'
-                   + '\n'.join(rva + ': accepted.' for rva in published['accepted']) + '\n'
-                   + f'Functions dropped by integration: {published["dropped"]}.\n'
-                   + failures
-                   + '\nCI checks publication hygiene; matching rests on the two-host comparator reports.')
-        self.feedback(revision, 'published', None, message, commits=published['commits'])
         def close():
             if self.current_head(revision['number']) != revision['head']:
                 return False
@@ -889,6 +934,7 @@ def process(runtime, state, pr, dry_run=False):
     for index, failure in enumerate(confirmed['failed']):
         runtime.feedback(revision, 'compare-' + str(index), 'needs-changes', f'{failure["rva"]}: {failure["reason"]}')
     if not confirmed['passed']:
+        runtime.finish(revision, dict(accepted=[], dropped=0, failures=[], commits=[]))
         revision['done'] = True
         state.save()
         return revision
@@ -900,6 +946,8 @@ def process(runtime, state, pr, dry_run=False):
     if reviewed['groups']:
         published = state.once(revision, 'publication', lambda: runtime.publish(fetched, reviewed, revision))
         runtime.finish(revision, published)
+    else:
+        runtime.finish(revision, dict(accepted=[], dropped=0, failures=[], commits=[]))
     revision['done'] = True
     state.save()
     return revision

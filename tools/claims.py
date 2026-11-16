@@ -24,6 +24,7 @@ MANAGED = '<!-- skyrim-project-claim -->'
 BODY_LIMIT = 60000
 TTL = 600
 CLAIM_LAPSE = timedelta(hours=24)
+RENEWAL = 'skyrim-claim-renewal-v1'
 TOKEN = re.compile(r'(?<![A-Za-z0-9])0x([0-9a-fA-F]+)\b')
 ENTRY = re.compile(r'0x([0-9a-fA-F]+)(?:-0x([0-9a-fA-F]+))?(?:\s+[^\r\n]+)?')
 
@@ -70,7 +71,8 @@ def parse_issue(issue):
     return dict(number=issue['number'], title=title, body=body, build_id=build, entries=entries,
                 author=author, assignees=assignees, updated_at=issue.get('updated_at'),
                 url=issue.get('html_url'), pull_request='pull_request' in issue,
-                created_at=issue.get('created_at'))
+                created_at=issue.get('created_at'), claim_base_updated_at=issue.get('claim_base_updated_at'),
+                claim_renewals=issue.get('claim_renewals', []))
 
 
 class ClaimIndex(dict):
@@ -94,14 +96,27 @@ class ClaimIndex(dict):
         return found or default
 
     def overlaps(self, entries, me=None, active=True):
-        return [it for it in self.records if (not active or live(it)) and
+        return [it for it in self.records if (not active or any(a < d and c < b for a, b in entries
+                                     for c, d in live_entries(it))) and
                 (not me or me not in (it.get('assignees') or [it.get('author')])) and
                 any(a < d and c < b for a, b in entries for c, d in it['entries'])]
 
 
 def claimed(index, address, me=None):
-    return [it for it in index.get(address, []) if live(it) and
+    return [it for it in index.get(address, []) if (any(a <= address < b for a, b in live_entries(it))
+            if 'entries' in it else live(it)) and
             (not me or me not in (it.get('assignees') or [it.get('author')]))]
+
+
+def live_entries(item, now=None):
+    """Scoped machine renewals never refresh untouched members of a mixed batch."""
+    now = now or datetime.now(timezone.utc)
+    base = item.get('claim_base_updated_at') or item.get('updated_at')
+    if now - stamp(base) < CLAIM_LAPSE:
+        return item['entries']
+    return [(max(a, c), min(b, d)) for renewal in item.get('claim_renewals', [])
+            if now - stamp(renewal['time']) < CLAIM_LAPSE
+            for a, b in item['entries'] for c, d in renewal['entries'] if a < d and c < b]
 
 
 def load_json(path, default=None):
@@ -121,24 +136,44 @@ def git_json(root, ref='HEAD'):
 def activity(api, repo, raw):
     """Comments and linked PR activity also renew the containing claim."""
     updated = raw.get('updated_at')
+    renewals, ordinary = [], []
     if not (raw.get('comments') or raw.get('body')):
         return updated
     for page in range(1, 101):
         events = api(f'repos/{repo}/issues/{raw["number"]}/timeline?per_page=100&page={page}')
         for event in events:
+            renewal = re.search(r'<!-- ' + RENEWAL + r' (.*?) -->', event.get('body') or '')
+            if renewal:
+                try:
+                    value = json.loads(renewal[1])
+                    entries = [(rva(a), rva(b)) for a, b in value['entries']]
+                    if (not entries and value.get('maintenance') is not True) or any(not 0 <= a < b <= 2**64 for a, b in entries):
+                        raise ValueError('invalid renewal scope')
+                    renewals.append(dict(time=event.get('created_at'), entries=entries,
+                                         previous_activity=value['previous_activity']))
+                except (KeyError, TypeError, ValueError):
+                    pass  # malformed renewal text cannot extend a claim
+                continue
             for match in re.finditer(r'<!-- skyrim-claim-takeover-v1 (0x[0-9a-f]+)-(0x[0-9a-f]+) -->',
                                      event.get('body') or ''):
                 a, b = int(match[1], 16), int(match[2], 16)
                 if a < b:
                     raw.setdefault('claim_takeovers', []).append((a, b))
+            if event.get('event') == 'renamed' and MANAGED in (raw.get('body') or ''):
+                continue  # automatic scope/title maintenance is not a broad renewal
             dates = [event.get('updated_at'), event.get('created_at')]
             linked = (event.get('source') or {}).get('issue') or {}
             if 'pull_request' in linked:
                 dates.append(linked.get('updated_at'))
+            ordinary.extend(filter(None, dates))
             for value in filter(None, dates):
                 if not updated or stamp(value) > stamp(updated):
                     updated = value
         if len(events) < 100:
+            if renewals:
+                first = min(renewals, key=lambda r: stamp(r['time']))
+                raw['claim_base_updated_at'] = max([first['previous_activity'], *ordinary], key=stamp)
+                raw['claim_renewals'] = renewals
             return updated
     raise RuntimeError('claim timeline pagination limit reached')
 
@@ -214,7 +249,7 @@ def cached(root, refresh=False, gh=None, cache_dir=None):
         gh = gh or GitHub(root)
         login, items = gh.user(), gh.issues()
     except (OSError, ValueError, RuntimeError):
-        print('warning: GitHub claims unavailable; using stale claims cache; check gh auth login and your connection, then retry with --refresh', file=sys.stderr)
+        print('warning: GitHub claims unavailable; using stale claims cache', file=sys.stderr)
         return ClaimIndex(saved.get('items', [])), saved.get('login')
     try:
         base.mkdir(parents=True, exist_ok=True)
@@ -252,7 +287,7 @@ def scope(entries, public, build):
 
 
 def body(build, entries, public, me, total=None, done=0, managed=False):
-    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or (me is not None and not re.fullmatch(r'[A-Za-z0-9-]+', me)):
+    if not re.fullmatch(r'[A-Za-z0-9._-]+', build) or not re.fullmatch(r'[A-Za-z0-9-]+', me):
         raise ValueError('invalid build id or GitHub login')
     names = {f['rva']: f.get('name') for f in public['functions'] if f['build_id'] == build}
     lines = []
@@ -265,8 +300,7 @@ def body(build, entries, public, me, total=None, done=0, managed=False):
             text += ' ' + name
         lines.append(text)
     total = len(entries) if total is None else total
-    claimant = f'@{me}' if me else '(issue author)'
-    text = (f'Claimant: {claimant}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
+    text = (f'Claimant: @{me}\nBuild: {build}\nScope: {scope(entries, public, build)}\n'
             f'Functions: {total}\nAccepted on origin/main: {done} / {total}\n\n'
             'This claim lapses after 24 hours without activity (a comment, an update or a linked pull request); anyone may then take it over.\n'
             'Only public metadata belongs in this issue.\n\n'
@@ -338,70 +372,23 @@ def planned_family(root, path):
 
 
 def collect(root, public, family_roots=(), cluster_lists=()):
-    """Group queue, flow, planned family and cluster addresses; never publish their labels/paths."""
-    import work_queue
-    root = Path(root)
+    """Publish only active batch starts; static populations are planning guidance."""
     build = public['target_build_id']
-    accepted = {f['rva'] for f in public['functions'] if f['build_id'] == build and f['status'] == 'matched'}
-    groups = []
-    seen = set()
-    config = load_json(root / '.local/claims-config.json')
-    for family_root in [root, *config.get('family_roots', []), *family_roots]:
-        base = Path(family_root)
-        for p in sorted((base / 'reports' / build / 'families').glob('*.json')):
-            addresses = planned_family(base, p) - accepted - seen
-            if addresses:
-                groups.append(([(a, a + 1) for a in sorted(addresses)], {}))
-                seen |= addresses
-    for file in [*config.get('cluster_lists', []), *cluster_lists]:
-        doc = load_json(file)
-        if doc.get('build_id') != build:
-            raise ValueError('cluster list build does not match inventory')
-        for cluster in doc.get('clusters', []):
-            addresses = members(cluster)
-            if not addresses or addresses <= accepted:
-                continue
-            intervals = [(rva(v['start']), rva(v['end'])) for v in cluster.get('ranges', [])]
-            if not intervals:
-                intervals = [(a, a + 1) for a in sorted(addresses)]
-            if any(not 0 <= a < b <= 2**64 for a, b in intervals):
-                raise ValueError('invalid static cluster range')
-            if any(not any(a <= address < b for a, b in intervals) for address in addresses):
-                raise ValueError('static ranges do not cover their member starts')
-            counts = {e: sum(e[0] <= a < e[1] for a in addresses) for e in intervals}
-            groups.append((intervals, counts))
-            seen |= addresses
-    for path in sorted((root / '.local/queue').glob('*/queue.tsv')):
-        addresses = {rva(a) for unit in work_queue.read_queue(path.parent) for a in unit['functions']} - accepted - seen
-        if addresses:
-            groups.append(([(a, a + 1) for a in sorted(addresses)], {}))
-            seen |= addresses
-    # flow knows private report state and review groups, including functions not in a queue.
-    import flow
-    states = flow.function_states(root, flow.flow_dir(root), online=False)
-    addresses = {rva(a) for a, state in states.items() if state.get('state') not in ('accepted', 'pushed')} - accepted - seen
-    if addresses:
-        groups.append(([(a, a + 1) for a in sorted(addresses)], {}))
-    return build, groups
+    entries = sorted(active_entries(root, public))
+    return build, [(entries, {})] if entries else []
 
 
 def active_entries(root, public, family_roots=()):
-    """Find work still in the pipeline, without treating static cluster reservations as active."""
+    """Only active flow batches renew; planned families and static reservations do not."""
     root = Path(root)
     if not (root / 'data/progress.json').is_file():
         return []
     build = public['target_build_id']
     accepted = {f['rva'] for f in public['functions'] if f['build_id'] == build and f['status'] == 'matched'}
-    config = load_json(root / '.local/claims-config.json')
-    addresses = set()
-    for family_root in [root, *config.get('family_roots', []), *family_roots]:
-        base = Path(family_root)
-        for path in (base / 'reports' / build / 'families').glob('*.json'):
-            addresses |= planned_family(base, path)
     import flow
     states = flow.function_states(root, flow.flow_dir(root), online=False)
-    active = {'queued', 'drafting', 'drafted-pass', 'confirmed', 'review-pending', 'approved'}
-    addresses |= {rva(a) for a, state in states.items() if state.get('state') in active}
+    active = {'queued', 'drafting', 'confirmed', 'review-pending'}
+    addresses = {rva(a) for a, state in states.items() if state.get('state') in active}
     return [(a, a + 1) for a in addresses - accepted]
 
 
@@ -410,7 +397,25 @@ def keep_alive(gh, issue, active, done, total):
     age = now - stamp(issue.get('updated_at'))
     if (CLAIM_LAPSE / 2 < age < CLAIM_LAPSE and
             any(a < d and c < b for a, b in issue['entries'] for c, d in active)):
-        gh.comment(issue['number'], f'Progress: {done} / {total} accepted; work remains active.')
+        renew(gh, issue, active, f'Progress: {done} / {total} accepted; work remains active.')
+
+
+def renew(gh, issue, active, message='Project agents are continuing this active batch.', *, maintenance=False):
+    entries = sorted({(max(a, c), min(b, d)) for a, b in issue['entries']
+                      for c, d in active if a < d and c < b})
+    if not entries and not maintenance:
+        return False
+    # Keep each comment within GitHub's body limit even for a large active batch.
+    for offset in range(0, max(1, len(entries)), 500):
+        payload = dict(previous_activity=issue.get('claim_base_updated_at') or issue['updated_at'],
+                       entries=[[f'0x{a:x}', f'0x{b:x}'] for a, b in entries[offset:offset + 500]])
+        if maintenance:
+            payload['maintenance'] = True
+        # Explicit starts only; never a private batch name, path, listing or population label.
+        text = message + '\n<!-- ' + RENEWAL + ' ' + json.dumps(payload, separators=(',', ':')) + ' -->'
+        gh.comment(issue['number'], text)
+    return True
+
 
 
 def publish(root, gh, public, family_roots=(), cluster_lists=(), dry_run=False):
@@ -440,11 +445,21 @@ def publish(root, gh, public, family_roots=(), cluster_lists=(), dry_run=False):
                           any(a < d and c < b for a, b in chunk for c, d in it['entries'])), None)
             if prior:
                 used.add(prior['number'])
-                # Preserve already accepted members so sync can report and close the original scope.
-                all_entries = sorted(set(prior['entries']) | set(chunk))
+                # Drop lapsed untouched scope, retaining the original 24-hour window.
+                retained = live_entries(prior)
+                known = {f['rva'] for f in public['functions'] if f['build_id'] == build}
+                # Unknown inventory scope cannot be safely recounted or silently discarded.
+                original_count = re.search(r'^Functions: (\d+)$', prior['body'], re.M)
+                known_prior = {r for r in known if any(a <= r < b for a, b in prior['entries'])}
+                if original_count and int(original_count[1]) > len(known_prior):
+                    retained = prior['entries']
+                all_entries = sorted(set(retained) | set(chunk))
                 total_match = re.search(r'^Functions: (\d+)$', prior['body'], re.M)
                 additions = [e for e in chunk if not any(a <= e[0] and e[1] <= b for a, b in prior['entries'])]
                 total = (int(total_match[1]) if total_match else len(prior['entries'])) + sum(counts.get(e, 1) for e in additions)
+                if retained != prior['entries']:
+                    total = sum(f['build_id'] == build and any(a <= f['rva'] < b for a, b in all_entries)
+                                for f in public['functions'])
                 accepted = {f['rva'] for f in public['functions'] if f['build_id'] == build and f['status'] == 'matched'}
                 done = sum(any(a <= r < b for a, b in all_entries) for r in accepted)
                 try:
@@ -482,6 +497,7 @@ def publish(root, gh, public, family_roots=(), cluster_lists=(), dry_run=False):
                 gh.close(number, 'Withdrawn: an older overlapping claim won the publication race.')
                 raise ValueError('an older overlapping claim won the publication race')
         elif action == 'update':
+            renew(gh, prior, active)
             gh.edit(prior['number'], title, text, me)
         elif action == 'unchanged':
             match = re.search(r'^Accepted on origin/main: (\d+) / (\d+)$', text, re.M)
@@ -505,13 +521,26 @@ def sync(root, gh=None):
         if not match:
             continue
         total = int(match[1])
-        text = re.sub(r'^Accepted on origin/main: \d+ / \d+$', f'Accepted on origin/main: {done} / {total}', it['body'], flags=re.M)
-        if text != it['body']:
-            gh.edit(it['number'], it['title'], text, me)
         if done == total and total > 0:
+            text = re.sub(r'^Accepted on origin/main: \d+ / \d+$', f'Accepted on origin/main: {done} / {total}', it['body'], flags=re.M)
+            if text != it['body']:
+                gh.edit(it['number'], it['title'], text, me)
             gh.close(it['number'])
-        elif text == it['body'] and it.get('build_id') == public['target_build_id']:
-            keep_alive(gh, it, active, done, total)
+        elif done and MANAGED in it['body'] and len(functions) == total:
+            remaining = [(f['rva'], f['rva'] + 1) for f in functions if f['status'] != 'matched']
+            if remaining:
+                title = f'claim: {it["build_id"]} {scope(remaining, public, it["build_id"])} ({len(remaining)} functions)'
+                text = body(it['build_id'], remaining, public, me, managed=True)
+                # Scope maintenance is not a broad renewal of inactive members.
+                renew(gh, it, active, 'Claim scope updated; only the listed active functions are renewed.', maintenance=True)
+                gh.edit(it['number'], title, text, me)
+        else:
+            text = re.sub(r'^Accepted on origin/main: \d+ / \d+$', f'Accepted on origin/main: {done} / {total}', it['body'], flags=re.M)
+            if text != it['body']:
+                if MANAGED not in it['body'] or renew(gh, it, active):
+                    gh.edit(it['number'], it['title'], text, me)
+            elif it.get('build_id') == public['target_build_id']:
+                keep_alive(gh, it, active, done, total)
         print(f'#{it["number"]}: accepted {done}/{total}' + ('; closed' if done == total else ''))
 
 
@@ -555,12 +584,13 @@ def main(argv=None):
             else:
                 print('issue\tassignee\tcount\tdone\tage (days)')
                 for it in index.records:
-                    if not live(it):
+                    current_entries = live_entries(it)
+                    if not current_entries:
                         continue
                     rows = [f for f in public['functions'] if f['build_id'] == build and
-                            any(x <= f['rva'] < y for x, y in it['entries'])]
+                            any(x <= f['rva'] < y for x, y in current_entries)]
                     count = re.search(r'^Functions: (\d+)$', it['body'], re.M)
-                    total = int(count[1]) if count else len(rows)
+                    total = int(count[1]) if count and current_entries == it['entries'] else len(rows)
                     age = (datetime.now(timezone.utc) - stamp(it.get('created_at') or it['updated_at'])).days
                     print(f'{it["number"]}\t{it["author"]}\t{total}\t{sum(f["status"] == "matched" for f in rows)}\t{age}')
     except (OSError, ValueError, RuntimeError, KeyError, TypeError) as exc:

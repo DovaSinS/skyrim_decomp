@@ -261,7 +261,10 @@ def review_path(root, task):
 
 def read_review(root, g, functions):
     """(status, {rva: block}) of a group's saved review: status 'missing', 'malformed: <why>' or 'ok'."""
-    path = review_path(root, g)
+    try:
+        path = review_path(root, g)
+    except FlowError as exc:
+        return f'malformed: {exc}', {}
     if not path.is_file():
         return 'missing', {}
     try:
