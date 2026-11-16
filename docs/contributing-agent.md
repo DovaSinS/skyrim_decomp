@@ -78,9 +78,24 @@ Then:
    the pack. Revise and repeat. Stop when `next` says to (the no-improvement threshold or hard
    outer cap), using the printed current/target matching bytes and change versus the previous
    attempt, and tell the person; `release 0x<rva> --reason "<one line>"` gives the function back.
-5. On PASS: `./sr --json submit --dry-run`, fix any `blockers`, then
+5. Run `./sr --json preflight` while drafting (no comparator pass or fork required).
+   It shares intake's deterministic contributor screen, complete include-closure checks, source
+   lint and review-readiness checks. Findings name the file, line and a one-line repair; label
+   checks remain advisory. `start` prefills build, evidence, recipe and drafting attribution,
+   including headers for functions added to an existing unit. State the actual code and declaration
+   origin in each file's leading header: the interactive prompt or `start --code-origin "<truthful
+   declaration>"` supplies it, otherwise a required placeholder remains. Disclose adaptations and
+   sources; never claim original reconstruction just to satisfy the check. Update the declaration
+   if the drafting sources change. Header edits change the source digest, so compare again afterwards.
+6. On PASS: `./sr --json submit --dry-run`, fix any `blockers`, then
    `submit`. It needs a fork remote; if it reports none, ask the person to fork the repository on
    GitHub and add it (`git remote add fork https://github.com/<them>/skyrim_decomp.git`).
+
+Extending an accepted unit is allowed. A stale accepted companion is reported as **project
+re-confirmation needed (no action for you)**, separately from submission blockers. This does not
+renew its acceptance: the unchanged project acceptance gate still requires valid evidence,
+independent confirmation, review and integration. `preflight --staged` checks the exact index
+source that submit will commit.
 
 A pass on this machine is not acceptance. Tell the person that the project re-runs the comparison
 on its own two hosts and a Reviewer checks the source before the function counts as matched.
@@ -104,6 +119,17 @@ read Steam's account files. A Steam install made in October 2026 delivered exact
 `setup` checks the hash of whatever it finds.
 
 ## Claims
+
+`next` ranks **draft readiness**, then size and RVA. It prefers small accessor/flag-test/forwarder
+names with usable declarations in represented units; an existing class is welcome. Each result
+explains its ordering. Names and lexical signatures are heuristics, not proof of behavior, ABI,
+compiler support or likely acceptance. Constructors, destructors and adjustors need explicit ABI
+preparation and rank lower. Without local analysis, EH/support/parked-pattern facts remain unknown.
+Optionally pass `next --function-table .local/<your-table-directory>` for your own exporter's
+`table-meta.json` and `functions.jsonl`, or a JSON object containing `build_id` and `functions`.
+Known EH, unsupported and parked entries rank lower and carry cautions. The build and any recorded
+image hash must match the pin. Generate this data from your own legal copy; keep it private.
+Live claims are still excluded before ranking.
 
 `claim` requires `--model <actual-model-id>`, `--agent <name>`, or `--drafted-by` attribution
 (including the model when AI-assisted) before claiming, and remembers it in private config and

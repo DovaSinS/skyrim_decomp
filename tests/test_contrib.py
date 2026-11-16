@@ -319,7 +319,7 @@ class SkeletonTests(Base):
         fn = next(f for f in data['functions'] if f['status'] == 'mapped' and 'powerof3' in f['name_source']
                   and contrib.PLAIN_NAME.fullmatch(f['name']))
         cls, method = contrib.PLAIN_NAME.fullmatch(fn['name']).groups()
-        h, cpp = contrib.skeleton(fn, cls, method, 'forms', 'tester, no AI', contrib.DEFAULT_RECIPE)
+        h, cpp = contrib.skeleton(fn, cls, method, 'forms', 'tester, no AI', contrib.DEFAULT_RECIPE, code_origin='original synthetic fixture')
         root = self.tmp / 'repo'
         for rel in ('builds/target.json', contrib.DEFAULT_RECIPE, fn['evidence']):
             (root / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -338,13 +338,12 @@ class SkeletonTests(Base):
         contrib.write_source(path, 'a\nb\n')
         self.assertEqual(path.read_bytes(), b'a\nb\n')
 
-    def test_candidates_prefer_new_units_and_small_sizes(self):
+    def test_candidates_report_advisory_readiness_for_existing_units(self):
         rows = contrib.candidates(ROOT, contrib.inventory(ROOT))
-        startable = [r for r in rows if r['startable']]
-        self.assertTrue(startable)
-        firsts = [r for r in startable if not r['unit_exists']]
-        self.assertEqual(startable[:len(firsts)], firsts)
-        self.assertEqual([r['size'] for r in firsts], sorted(r['size'] for r in firsts))
+        self.assertTrue(any(r['unit_exists'] and r['startable'] for r in rows))
+        self.assertTrue(all(r['reason'] for r in rows))
+        self.assertEqual([(not r['startable'], r['readiness_rank'], r['size'], int(r['rva'], 16)) for r in rows],
+                         sorted((not r['startable'], r['readiness_rank'], r['size'], int(r['rva'], 16)) for r in rows))
 
 
 class IntakeTests(Base):
@@ -362,7 +361,7 @@ class IntakeTests(Base):
         self.git('add', '.')
         self.git('-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'base')
         fn = next(f for f in contrib.inventory(ROOT)['functions'] if f['rva'] == 0x1de5e0)
-        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
+        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE, code_origin='original synthetic fixture')
         (self.repo / 'reconstruction/forms').mkdir(parents=True)
         (self.repo / 'reconstruction/forms/TESActorBaseData.h').write_text(h)
         (self.repo / 'reconstruction/forms/TESActorBaseData.cpp').write_text(cpp)
@@ -382,8 +381,8 @@ class IntakeTests(Base):
         self.commit()
         problems = contrib.intake_problems(self.ctx(repo=self.repo), 'HEAD~1', 'HEAD')
         text = '\n'.join(problems)
-        self.assertIn('tools/x.py: outside contributor scope', text)
-        self.assertIn('contributor cap', text)
+        self.assertIn('tools/x.py:1: outside contributor scope', text)
+        self.assertIn('file-size-cap', text)
 
     def test_sibling_material_is_allowed_on_the_drafters_terms(self):
         cpp = self.repo / 'reconstruction/forms/TESActorBaseData.cpp'
@@ -531,7 +530,7 @@ class SubmitTests(Base):
         self.git('add', '.')
         self.git('-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'base')
         fn = next(f for f in contrib.inventory(ROOT)['functions'] if f['rva'] == self.RVA)
-        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
+        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE, code_origin='original synthetic fixture')
         self.unit = ['reconstruction/forms/TESActorBaseData.h', 'reconstruction/forms/TESActorBaseData.cpp']
         (self.repo / 'reconstruction/forms').mkdir(parents=True)
         (self.repo / self.unit[0]).write_text(h)
