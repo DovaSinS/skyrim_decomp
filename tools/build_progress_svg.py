@@ -299,7 +299,7 @@ def style():
             f'.rl{{font-size:13px}}.fn{{font-size:12px;fill:{MUTED}}}.mu{{fill:{MUTED}}}</style>')
 
 
-AREA_CAP = 12
+AREA_CAP = 8
 
 
 def accepted_area_rows(scope, st):
@@ -316,6 +316,51 @@ def accepted_area_rows(scope, st):
         rest = rows[AREA_CAP:]
         rows = rows[:AREA_CAP] + [(f'Other ({len(rest)} areas)', sum(r[1] for r in rest), GREEN)]
     return rows
+
+
+def remaining_area_rows(scope, progress):
+    """Tracked work only: the scope aggregates have no RVA membership to subtract from.
+
+    Exact, non-guessed class names can identify a subsystem, but cannot establish an
+    untracked/not-started remainder. Never subtract the whole inventory (which also
+    includes generated statics) from the scope's ordinary-function population.
+    Rows are (label, remaining, accepted), including accepted work only for context.
+    """
+    owners = {}
+    for block in scope['areas']['blocks']:
+        if block['treatment'] == 'in_scope' and block['basis'] == 'measured':
+            for cls in block['classes']:
+                if cls['basis'] == 'measured':
+                    owners.setdefault(cls['name'], set()).add(block['label'])
+    counts = {}
+    for fn in progress['functions']:
+        name = fn.get('name', '')
+        areas = owners.get(name.rsplit('::', 1)[0], set()) if '::' in name else set()
+        known = fn.get('name_origin') in ('COMMUNITY', 'EXE_RTTI', 'OBSERVED')
+        label = next(iter(areas)) if known and len(areas) == 1 else 'Unattributed'
+        counts.setdefault(label, Counter())['accepted' if fn['status'] == 'matched' else 'remaining'] += 1
+    rows = sorted(((label, values['remaining'], values['accepted']) for label, values in counts.items() if values['remaining']),
+                  key=lambda row: (-row[1], row[0]))
+    if len(rows) > AREA_CAP:
+        rest = rows[AREA_CAP:]
+        rows = rows[:AREA_CAP] + [(f'Other ({len(rest)} areas)', sum(r[1] for r in rest), sum(r[2] for r in rest))]
+    return rows
+
+
+def remaining_bars(rows, x, y, w):
+    """Each track is its area's tracked population; green is accepted, count is remaining."""
+    out = [f'<text x="{x}" y="{y}" class="st">Remaining by area</text>',
+           f'<text x="{x}" y="{y + 18}" class="fn">Tracked only · green = accepted · untracked unknown</text>']
+    track_x, track_w = x + 170, w - 170 - 48
+    for i, (label, remaining, accepted) in enumerate(rows):
+        ry = y + 34 + i * 26
+        out.append(f'<text x="{x}" y="{ry + 11}" class="rl">{escape(label)}</text>')
+        out.append(f'<rect x="{track_x}" y="{ry}" width="{track_w}" height="12" rx="3" fill="{TRACK}"/>')
+        if accepted:
+            out.append(f'<rect x="{track_x}" y="{ry}" width="{fmt(track_w * accepted / (remaining + accepted))}" '
+                       f'height="12" rx="3" fill="{GREEN}"/>')
+        out.append(f'<text x="{x + w}" y="{ry + 11}" class="rl" text-anchor="end">{thousands(remaining)}</text>')
+    return ''.join(out), y + 34 + len(rows) * 26 - 14
 
 
 def render(root=ROOT):
@@ -345,9 +390,8 @@ def render(root=ROOT):
                    ('Mapped, no match yet', counts['mapped'], AMBER)]
     svg, b1 = bars(f'Functions by status ({st["tracked"]} tracked)', status_rows, PAD, sy, col_w, max(st['tracked'], 1))
     body.append(svg)
-    area_rows = accepted_area_rows(scope, st)
-    svg, b2 = bars('Accepted functions by area', area_rows, PAD + col_w + 40, sy, col_w,
-                   max((r[1] for r in area_rows), default=1))
+    area_rows = remaining_area_rows(scope, progress)
+    svg, b2 = remaining_bars(area_rows, PAD + col_w + 40, sy, col_w)
     body.append(svg)
 
     fy = max(b1, b2) + 40

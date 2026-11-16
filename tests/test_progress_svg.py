@@ -29,6 +29,54 @@ class ProgressSvgTests(unittest.TestCase):
         for label, _, _ in rows:
             self.assertIsNone(re.search(r'^fo4|_[0-9a-f]{8}$', label, re.I))
 
+    def test_remaining_rows_cap_sums_the_tail_and_omits_completed_areas(self):
+        blocks, functions = [], []
+        for i in range(gen.AREA_CAP + 3):
+            blocks.append(dict(label=f'System {i}', treatment='in_scope', basis='measured',
+                               functions=1000, classes=[dict(name=f'Class{i}', basis='measured')]))
+            functions += [dict(name=f'Class{i}::Pending', name_origin='COMMUNITY', status='mapped') for _ in range(i + 1)]
+            functions.append(dict(name=f'Class{i}::Done', name_origin='COMMUNITY', status='matched'))
+        # This subsystem has no remaining tracked work, regardless of its aggregate scope.
+        blocks.append(dict(label='Completed', treatment='in_scope', basis='measured',
+                           functions=1000, classes=[dict(name='Done', basis='measured')]))
+        functions.append(dict(name='Done::Done', name_origin='COMMUNITY', status='matched'))
+        rows = gen.remaining_area_rows(dict(areas=dict(blocks=blocks)), dict(functions=functions))
+        self.assertLessEqual(gen.AREA_CAP, 10)
+        self.assertGreaterEqual(gen.AREA_CAP, 8)
+        self.assertEqual(len(rows), gen.AREA_CAP + 1)
+        expected = sorted(range(1, gen.AREA_CAP + 4), reverse=True)
+        self.assertEqual([r[1] for r in rows[:-1]], expected[:gen.AREA_CAP])
+        self.assertEqual(rows[-1], ('Other (3 areas)', sum(expected[gen.AREA_CAP:]), 3))
+        self.assertEqual(sum(r[1] for r in rows), sum(f['status'] != 'matched' for f in functions))
+        self.assertEqual(sum(r[2] for r in rows), len(blocks) - 1)
+        self.assertNotIn('Completed', [r[0] for r in rows])
+
+    def test_remaining_uses_known_scope_classes_and_preserves_unknowns(self):
+        def block(label, name, basis='measured'):
+            return dict(label=label, treatment='in_scope', basis=basis,
+                        classes=[dict(name=name, basis='measured')])
+        scope = dict(areas=dict(blocks=[block('Scene graph', 'NiNode'), block('Estimated', 'Estimate', 'estimated'),
+                                      block('One', 'Ambiguous'), block('Two', 'Ambiguous')]))
+        functions = [dict(name='NiNode::Update', name_origin='COMMUNITY', status='mapped'),
+                     dict(name='NiNode::Done', name_origin='EXE_RTTI', status='matched')]
+        for name, origin in [('NiNode::Guess', 'GUESS'), ('Unknown::Update', 'COMMUNITY'),
+                             ('Estimate::Update', 'COMMUNITY'), ('Ambiguous::Update', 'COMMUNITY'),
+                             ('fo4fresh_8dfe66cd::Update', 'GUESS')]:
+            functions.append(dict(name=name, name_origin=origin, status='reconstructed'))
+        self.assertEqual(gen.remaining_area_rows(scope, dict(functions=functions)),
+                         [('Unattributed', 5, 0), ('Scene graph', 1, 1)])
+
+    def test_remaining_panel_matches_tracked_work_and_has_no_directory_labels(self):
+        rows = gen.remaining_area_rows(self.scope, self.progress)
+        self.assertEqual(sum(r[1] for r in rows), sum(f['status'] != 'matched' for f in self.progress['functions']))
+        self.assertTrue(all(r[1] > 0 for r in rows))
+        self.assertLessEqual(len(rows), gen.AREA_CAP + 1)
+        for label, _, _ in rows:
+            self.assertNotRegex(label, r'(?i)^fo4|_[0-9a-f]{8}$|^(layouts|wrappers)$')
+        self.assertIn('Remaining by area', self.svg)
+        self.assertIn('untracked unknown', self.svg)
+        self.assertNotIn('Accepted functions by area', self.svg)
+
     def test_deterministic_and_current(self):
         self.assertEqual(self.svg, gen.render(ROOT))
         self.assertEqual(self.svg, (ROOT / 'docs/progress.svg').read_text(), 'run tools/build_progress_svg.py')
