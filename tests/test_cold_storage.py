@@ -44,6 +44,8 @@ class ColdStorage(unittest.TestCase):
         with patch.object(cold.subprocess, 'run', side_effect=self.transport), patch.object(cold.shutil, 'rmtree', side_effect=remove):
             item = cold.offload(self.root, self.archive, self.config)
         self.assertTrue(item['mac_deleted'])
+        self.assertFalse(item['quarantined'])
+        self.assertGreater(item['size_bytes'], 0)
         self.assertFalse(self.archive.exists())
         with tarfile.open(self.remote) as package:
             self.assertEqual(package.extractfile('fixture/evidence').read(), b'synthetic evidence\n')
