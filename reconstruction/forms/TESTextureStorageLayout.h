@@ -36,8 +36,8 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "../bsengine/BaseFormComponentStorageLayout.h"
-#include "../bsengine/BSFixedStringStorageLayout.h"
+#include "bsengine/BaseFormComponentStorageLayout.h"
+#include "bsengine/BSFixedStringStorageLayout.h"
 
 namespace ResearchLayouts {
 class TESTextureStorageLayout : public BaseFormComponentStorageLayout {

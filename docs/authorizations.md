@@ -143,3 +143,29 @@ VS2012: no layout, vtable slot, offset, form ID or address transfers without pro
 Skyrim target. Every function still needs the unchanged two-host comparator pass, independent
 admitted review and integration under `docs/verification.md`. Exposure is recorded as for FNV;
 this decision grants no new provider, paid compute, cloud placement or clean-room status.
+
+### CI hash check as the second host (p148)
+
+Date: 2026-11-15. Grantor: awarebayes.
+
+- Question: "May the CI hash check count as the second machine while the PC is down?"
+- Maintainer answer: "yes"
+- With: "idk lets do ci only for now without windows?"
+- Scope: until the maintainer revokes it, the GitHub-hosted Windows CI target-hash job (built by p128: pinned MSVC v141 19.16.27054 with a verified cache, normalized SHA-256 against the published (build id, RVA, size, hash)) may serve as the second independent host, in place of the native Windows PC. Mac under Wine stays the first host. The two hosts are still different machines with different OS loaders.
+- Unchanged: the comparator, the family rule, Reviewer approvals, sampling, and the acceptance rule.
+- No game bytes go to CI. Only reconstructed source, which is published on acceptance anyway, and the already-published hashes.
+
+Implementation: `ci-hash` confirmations retain the unmodified full Mac comparator report and
+add a separately identified CI attestation. CI compiles each unit twice, verifies its complete
+non-debug COFF content against the hash measured from the Mac comparator's exact object, and
+checks each function against its published target hash and relocation-layout commitment.
+The full object content commitment includes code, relocations, data, unwind and EH sections;
+only debug sections and their path checksum section are excluded. It does not substitute a
+masked hash for the Mac comparator's reference, alias, unwind or EH checks. Missing or
+unsupported target hashes are unconfirmable. Cache verification failure, compiler pin mismatch,
+non-reproduction or nondeterminism produces no confirmation. Candidate source travels on a
+separate batch branch; trusted tools and target hashes come from the dispatched main revision.
+Only sanitized JSON results are uploaded as artifacts. The existing review, family, sampling,
+integration and acceptance steps still apply. No function is accepted by this machinery change.
+
+The same p148 task explicitly directs: "It submits a batch of candidate units by workflow_dispatch on a ref or branch, or by another mechanism that doesn't push to main. Batch many functions per run." This authorizes source-only candidate batch branches for this CI path before acceptance. Such branches are draft inputs, never accepted matches; the public publication guard and reconstruction lint run before upload.

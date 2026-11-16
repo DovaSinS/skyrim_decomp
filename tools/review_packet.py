@@ -345,6 +345,12 @@ def function_view(root, fn, record, shown):
     reports = [r.get('report') or {} for r in runs]
     compiled_on = sorted({r.get('compiled_on') for r in runs})
     compared_on = sorted({r.get('compared_on') for r in runs})
+    ci = record.get('ci_confirmation')
+    if ci:
+        compiled_on.append(ci.get('host_id', 'invalid-ci-host'))
+        compared_on.append(ci.get('host_id', 'invalid-ci-host'))
+        out.append(f'CI second host: run {ci.get("run_id")}; {ci.get("result")}; '
+                   f'deterministic={ci.get("deterministic")}; explicit hash attestation, local comparator retained')
     symbols = sorted({(rep.get('function') or {}).get('symbol') for rep in reports})
     out.append(f'record: {fn["report"]}; {len(runs)} runs; compiled on {", ".join(compiled_on)}; '
                f'compared on {", ".join(compared_on)}')

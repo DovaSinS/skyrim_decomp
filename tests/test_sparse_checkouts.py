@@ -44,6 +44,21 @@ class SparseCheckouts(unittest.TestCase):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(text)
 
+    def test_app_worker_defaults_sparse_and_shared_without_touching_dirty_or_keep(self):
+        sparse.git(self.tree, 'sparse-checkout', 'disable')
+        shared = self.root / '.local/shared-kit'
+        shared.mkdir()
+        config = dict(worker_roots=[str(self.root / '.local')], shared=dict(toolchains=str(shared)))
+        self.assertTrue(sparse.worker_default(self.tree, config))
+        self.assertTrue((self.tree / '.local/toolchains').is_symlink())
+        self.assertEqual((self.tree / '.local/toolchains').resolve(), shared)
+        sparse.git(self.tree, 'sparse-checkout', 'disable')
+        self.assertFalse(sparse.worker_default(self.tree, dict(config, keep=[str(self.tree)])))
+        self.assertFalse(sparse.worker_default(self.root, config))
+        (self.tree / 'tools/worker.py').write_text('dirty fixture')
+        self.assertFalse(sparse.worker_default(self.tree, config))
+        self.assertFalse(sparse.active(self.tree))
+
     def test_no_bulk_checkout_and_no_shared_config_change(self):
         self.assertTrue(sparse.active(self.tree))
         self.assertFalse(sparse.active(self.root))

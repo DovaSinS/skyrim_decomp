@@ -188,52 +188,98 @@ def is_gpl(label):
 
 # ------------------------------------------------------------------ the contributor-flow writer
 
-def skeleton(fn, cls, method, area, drafted_by, recipe):
-    """(.h text, .cpp text) of a new one-function unit, as tools/contrib.py `start` writes it: the
-    signature is a placeholder and the body empty. Kept for that caller; task directories use
-    `skeleton_files`, which knows signatures and refuses to compile until a body is written."""
-    target = fn['build_id']
-    label, licence = community_label(fn.get('name_source'))
-    label = label or 'GUESS(low)'
-    gpl = licence and 'GPL' in licence
-    lic_line = [GPL_NOTE] if gpl else []
-    is_dtor = method.startswith('~')
-    decl = f'virtual {method}();' if is_dtor else f'void {method}();'
-    h = '\n'.join([
-        f'// Type declarations for the {cls} translation unit (build {target}).',
-        '//',
-        '// Labels: v2',
-        '// Source exposure: binary-analysis (a local listing of the contributor\'s own copy of the pinned image).',
-        *lic_line,
-        '// Community names are unverified. Only the members the compared code needs are declared.',
-        f'// {cls}: {label}',
-        f'// {method}: {label}',
-        '#pragma once',
-        '',
-        f'class {cls} {{',
-        'public:',
-        '    // Placeholder signature: replace the return and parameter types with the real ones.',
-        f'    {decl}',
-        '};',
-        ''])
-    cpp = '\n'.join([
-        f'// {cls}::{method}, build {target}, RVA 0x{fn["rva"]:x}, {fn["size"]} bytes.',
-        '//',
-        '// Labels: v2',
-        f'// Evidence: {fn["evidence"]}.',
-        f'// Source exposure: binary-analysis. Drafted by {drafted_by}.',
-        *lic_line,
-        '// A byte match shows that this source and recipe produce the checked code; it does not verify the',
-        '// community name or that the original source looked like this.',
-        f'// Recipe: {recipe} (compile this file alone).',
-        f'// Only {method} is compared.',
-        f'#include "{cls}.h"',
-        '',
-        f'{cls}::{method}()' if is_dtor else f'void {cls}::{method}()',
-        '{',
-        '}',
-        ''])
-    return h, cpp
+def skeleton(fn, cls, method, area, drafted_by, recipe, code_origin=None):
+    """Compatibility entry point; render through the same engine as task skeletons."""
+    unit = {'cls': cls, 'area': area, 'header': f'reconstruction/{area}/{cls}.h',
+            'compiled': f'reconstruction/{area}/{cls}.cpp', 'brief': '', 'material': [],
+            'task': {'task_id': f'contrib-{cls.lower()}', 'build_id': fn['build_id'], 'recipe': recipe},
+            'functions': [dict(fn, community_name=f'{cls}::{method}',
+                               pack_json={'identity': {'name_source': fn.get('name_source')}})],
+            'evidence': fn.get('evidence'), 'contributor_origin': True, 'code_origin': code_origin}
+    _hp, header, _cp, source = render_unit(unit, drafted_by)
+    return header, source
+
+
+def root_include_recipe(repo, recipe):
+    """Use an additive recipe carrying the already-admitted reconstruction include root."""
+    path = Path(repo) / recipe
+    doc = _json(path)
+    flags = doc.get('flags', [])
+    if (any(flag in ('/Ireconstruction', '-Ireconstruction') for flag in flags)
+            or any(flags[i:i + 2] in (['/I', 'reconstruction'], ['-I', 'reconstruction'])
+                   for i in range(len(flags)))):
+        return recipe
+    variant = path.with_stem(path.stem + '-root-includes')
+    added = _json(variant)
+    if added and added == dict(doc, flags=flags + ['/Ireconstruction']):
+        return variant.relative_to(Path(repo)).as_posix()
+    from reconstruction_includes import root_recipe
+    try:
+        return root_recipe(repo, recipe)
+    except (ValueError, OSError) as exc:
+        raise SkeletonError(str(exc)) from None
+
+
+def contributor_files(repo, functions, cls, area, drafted_by, recipe, sources=None, code_origin=None):
+    """Adapt public declarations and contributor-owned packs to the ordinary unit renderer.
+
+    Never consult internal queues, class exports or sibling indexes. Read community sources
+    only at the approved immutable Git revisions. Existing reviewed headers remain untouched.
+    """
+    from declaration_kit import pinned_class, notice
+    from header_index import advice
+    repo = Path(repo)
+    facts, notices, seen, current = {}, [], set(), cls
+    while current and current not in seen:
+        seen.add(current)
+        info = pinned_class(repo, current, sources=sources) if sources is not None else pinned_class(repo, current)
+        if not info:
+            break
+        facts[current] = info
+        text = notice(repo, info, sources=sources) if sources is not None else notice(repo, info)
+        if text not in notices:
+            notices.append(text)
+        current = info['bases'][0] if info['bases'] else None
+    members, hints = [], []
+    conflicts = []
+    for name, info in facts.items():
+        conflicts += [f'{name}: {gap}' for gap in info.get('preparation_gaps', [])]
+        for entry in info['virtuals']:
+            own = split_declaration(entry['declaration'])
+            if own is None:
+                continue
+            for ancestor in ancestors({n: f['bases'] for n, f in facts.items()}, name):
+                inherited = next((v for v in facts.get(ancestor, {}).get('virtuals', [])
+                                  if v['slot'] == entry['slot']), None)
+                if inherited and (parent := split_declaration(inherited['declaration'])):
+                    if signature_key(own) != signature_key(parent):
+                        conflicts.append(f'{name} slot {entry["slot"]}: signature differs from {ancestor}; '
+                                         'verify locally before choosing a base declaration')
+                    break
+    for fn in functions:
+        method = fn['name'].split('::')[-1]
+        decl = next((v for v in facts.get(cls, {}).get('virtuals', []) if v['name'] == method), None)
+        # A local exporter may supply this function's community signature/destructor metadata.
+        pack = Path(fn['pack']) if fn.get('pack') else None
+        readme = _text(pack / 'README.md') if pack else ''
+        local_pack = _json(pack / 'pack.json') if pack else {}
+        destructor = fn.get('destructor') or local_pack.get('destructor')
+        if decl and 'Community declaration:' not in readme:
+            readme += f'\nCommunity declaration: `{decl["declaration"]}`\n'
+        info = facts.get(cls, {})
+        members.append(dict(fn, community_name=fn['name'], pack_dir=pack, readme=readme, destructor=destructor,
+                            pack_json={'identity': {'name_source': info.get('source') or fn.get('name_source')}}))
+        hints += advice(repo, cls, method, decl['slot'] if decl else None)
+        if decl and facts.get(cls, {}).get('bases'):
+            hints += advice(repo, facts[cls]['bases'][0], method, decl['slot'])
+    unit = {'cls': cls, 'area': area, 'header': f'reconstruction/{area}/{cls}.h',
+            'compiled': f'reconstruction/{area}/{cls}.cpp', 'brief': '', 'material': [],
+            'task': {'task_id': f'contrib-{cls.lower()}', 'build_id': functions[0]['build_id'], 'recipe': recipe},
+            'functions': members, 'evidence': functions[0].get('evidence'), 'contributor': True, 'code_origin': code_origin,
+            'community_facts': facts, 'signature_conflicts': conflicts,
+            'notices': [n for n in notices if not any(n != other and n in other for other in notices)]}
+    rendered = render_unit(unit, drafted_by, repo)
+    return (*rendered, list(dict.fromkeys(hints + conflicts)), unit['task']['recipe'])
 
 
 # ------------------------------------------------------------------ task directory inputs
@@ -278,8 +324,19 @@ def _text(path):
         return ''
 
 
+def shared_path(repo, header, include):
+    """Resolve an existing repository header, emitting only reconstruction-root include names."""
+    repo = Path(repo).resolve()
+    for path in ((repo / header).parent / include, repo / 'reconstruction' / include):
+        path = path.resolve()
+        if path.is_relative_to(repo / 'reconstruction') and path.is_file():
+            return path
+    return None
+
+
 def header_text(path, repo, seen=None):
     """Declarations in a header's local include closure, for collision and size checks."""
+    from reconstruction_includes import header_path
     seen = set() if seen is None else seen
     path = Path(path).resolve()
     if path in seen or not path.is_relative_to(Path(repo).resolve()) or not path.is_file():
@@ -287,7 +344,8 @@ def header_text(path, repo, seen=None):
     seen.add(path)
     text = _text(path)
     includes = re.findall(r'^\s*#\s*include\s+"([^"\n]+)"', text, re.M)
-    return text + '\n' + '\n'.join(header_text(path.parent / name, repo, seen) for name in includes)
+    return text + '\n' + '\n'.join(header_text(target, repo, seen) for name in includes
+                                         if (target := shared_path(repo, path.relative_to(Path(repo).resolve()), name)))
 
 
 def class_defined(text, name):
@@ -391,6 +449,15 @@ def split_declaration(decl):
     return ret, params, quals, virtual, static
 
 
+def signature_key(parts):
+    """Compare types/qualifiers, ignoring community parameter names and default values."""
+    ret, params, quals, _virtual, _static = parts
+    params = without_defaults(params)
+    params = re.sub(r'\b[a-zA-Z_]\w*\s*(?=[,)]|$)',
+                    lambda m: '' if m[0].strip().startswith('a_') else m[0], params)
+    return tuple(re.sub(r'\s+', '', text) for text in (ret, params, quals))
+
+
 def without_defaults(params):
     out, depth, cur = [], 0, ''
     for ch in params + ',':
@@ -427,7 +494,7 @@ def type_names(text):
     for m in re.finditer(r'(?<![\w:])((?:[A-Za-z_]\w*::)*[A-Za-z_]\w*)(\s*[*&])?', text):
         name, indirect = m.group(1), m.group(2)
         first = name.split('::')[0]
-        if first in BUILTIN or name.startswith('std::') or not first[:1].isupper() or re.fullmatch(r'a_\w+', name):
+        if first in BUILTIN or name.startswith('std::') or not (first[:1].isupper() or first.startswith('bhk')) or re.fullmatch(r'a_\w+', name):
             continue
         (by_ref if indirect else by_value).append(name)
     return by_ref, by_value
@@ -453,24 +520,44 @@ def plan(unit, repo=None):
     cls, task = unit['cls'], unit['task']
     packs = [f['pack_dir'] for f in unit['functions'] if f.get('pack_dir')]
     bases, sizes = class_chain(unit['material'], cls)
+    facts = unit.get('community_facts') or {}
+    if facts:
+        bases = {name: info['bases'] for name, info in facts.items()}
+        sizes = {name: info['size'] for name, info in facts.items() if info.get('size') is not None}
     chain = ancestors(bases, cls)
+    from reconstruction_includes import header_path
     shared = brief_shared_headers(unit['brief'])
     if not shared:
-        shared = {p.stem: '../' + p.relative_to(Path(repo) / 'reconstruction').as_posix()
-                  for p in (Path(repo) / 'reconstruction').glob('*/*.h') if p.stem != cls}
+        shared = {p.stem: p.relative_to(Path(repo) / 'reconstruction').as_posix()
+                  for anc in chain for p in sorted((Path(repo) / 'reconstruction').glob(f'*/{anc}.h')) if p.stem != cls
+                  and p.parent.name != 'declarations'}
+    # For community-only preparation prefer the additive, complete-signature kit.
+    if facts:
+        shared.update({p.stem: p.relative_to(repo / 'reconstruction').as_posix()
+                       for p in (repo / 'reconstruction/declarations').glob('*.h') if p.stem != cls})
+    shared = {name: path.relative_to(repo / 'reconstruction').as_posix()
+              for name, value in shared.items()
+              if (path := shared_path(repo, unit['header'], value))}
     # The inline form needs the chain to end in NiObject -> NiRefObject, the only roots it writes.
     inline_base = (chain[-2:] == list(reversed(INLINE_BASE_ROOTS))
                    and any(inlines_ni_base(f) for f in unit['functions']))
     include, standins = None, []
     for anc in chain:
-        shared_path = (repo / unit['header']).parent / shared[anc] if anc in shared else None
-        included = header_text(shared_path, repo) if shared_path else ''
+        ancestor_path = shared_path(repo, unit['header'], shared[anc]) if anc in shared else None
+        included = header_text(ancestor_path, repo) if ancestor_path else ''
         asserted = re.search(rf'static_assert\(sizeof\({re.escape(anc)}\)\s*==\s*(0x[0-9a-fA-F]+|\d+)',
                              included)
         sized = asserted and (anc not in sizes or int(asserted.group(1), 0) == sizes[anc])
+        if included and unit.get('contributor'):
+            from contrib_screen import screen_tree
+            try:
+                if screen_tree(repo, ancestor_path.relative_to(repo).as_posix()):
+                    included = ''
+            except (ValueError, OSError):
+                included = ''
         collisions = any(class_defined(included, name) for name in [cls] + standins)
         if (included and sized and not collisions and '// TODO type ' not in included and not inline_base):
-            include = (anc, shared[anc])
+            include = (anc, ancestor_path.relative_to(repo / 'reconstruction').as_posix())
             break
         standins.append(anc)
     if include is None:
@@ -480,11 +567,11 @@ def plan(unit, repo=None):
     standins.reverse()
     included_text = ''
     if include:
-        path = (Path(repo) / unit['header']).parent / include[1]
+        path = shared_path(repo, unit['header'], include[1])
         included_text = header_text(path, repo)
     elif inline_base:
         included_text = inline_base_blocks() + '\n'.join(f'class {t};' for t in INLINE_BASE_FORWARD)
-    class_label = excerpt_label(unit['material'], packs)
+    class_label = facts.get(cls, {}).get('label') or excerpt_label(unit['material'], packs)
     members = []
     for f in unit['functions']:
         ident = (f.get('pack_json') or {}).get('identity') or {}
@@ -505,7 +592,7 @@ def plan(unit, repo=None):
     return {'cls': cls, 'task': task, 'chain': chain, 'bases': bases, 'sizes': sizes, 'include': include,
             'included_text': included_text, 'standins': standins, 'class_label': class_label,
             'inline_base': inline_base,
-            'members': members, 'rtti': bool(chain) or cls in sizes}
+            'members': members, 'rtti': (bool(chain) or cls in sizes) and not facts, 'facts': facts}
 
 
 def defined_in(text, name):
@@ -516,11 +603,26 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
     """(header path, header text, source path, source text) for a unit task directory."""
     repo = Path(repo or REPO)
     unit = load_unit(task_dir, repo)
+    return render_unit(unit, drafted_by, repo)
+
+
+def render_unit(unit, drafted_by=None, repo=None):
+    """One renderer for internal tasks and the contributor adapter."""
+    repo = Path(repo or REPO).resolve()
+    code_origin = unit.get('code_origin')
+    if code_origin is not None and (not code_origin.strip() or len(code_origin) > 2048
+                                    or any(ord(c) < 32 for c in code_origin)):
+        raise SkeletonError('code origin must be a nonempty single-line declaration')
+    origin_lines = ([f'// Code origin: {code_origin or "SKELETON_TODO_CODE_ORIGIN (state the actual origin and any adaptation)"}']
+                    if unit.get('contributor') or unit.get('contributor_origin') else [])
     p = plan(unit, repo)
     cls, build = p['cls'], unit['task'].get('build_id')
-    task_id = unit['task'].get('task_id') or Path(task_dir).name
+    task_id = unit['task'].get('task_id') or 'unit'
     recipe = unit['task'].get('recipe')
-    evidence = brief_evidence(unit['brief'])
+    if p['include']:
+        recipe = root_include_recipe(repo, recipe)
+        unit['task']['recipe'] = recipe
+    evidence = unit.get('evidence') or brief_evidence(unit['brief'])
     labels = {}  # label text -> names, in first-seen order
 
     def add(names, label):
@@ -537,7 +639,8 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
         add(cls, 'GUESS(low)')
     for s in p['standins']:
         if not (p['inline_base'] and s in INLINE_BASE_ROOTS):  # those blocks carry their own labels
-            add(s, 'STANDIN EXE_RTTI')
+            add(s, 'STANDIN ' + (p['facts'].get(s, {}).get('label')
+                                 or ('GUESS(low)' if unit.get('contributor') else 'EXE_RTTI')))
 
     forward, todo_types, decls, defs, notes = [], [], [], [], []
     nested_forward = {}
@@ -623,11 +726,52 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
             decls.append(f'void {method}();  // compared: 0x{rva:x}; TODO signature: no community declaration, '
                          'read it from the listing')
             head = f'void {cls}::{method}()'
-        if method == 'dtor' and p['inline_base'] and kind and 'deleting' in kind:
+        complete_form = (f.get('destructor') or {}).get('complete_form')
+        if method == 'dtor' and kind and 'deleting' in kind and complete_form == 'out-of-line':
+            # Keep only the declaration: the emitted deleting wrapper calls the complete dtor.
+            continue
+        if method == 'dtor' and kind and 'deleting' in kind and (p['inline_base'] or complete_form == 'inline'):
             # Nothing to write: the empty body plus the inline bases is the accepted form.
             defs.append('\n'.join([*comment_lines(f'Body done: {where}.'), head, '{', '}']))
             continue
         defs.append('\n'.join([*comment_lines(f'TODO body: {where}.'), head, '{', f'    {BODY_MARKER};', '}']))
+
+    # Keep every community virtual, in slot order, including un-compared declarations. This
+    # prevents a first contributed override from accidentally becoming slot zero of a new type.
+    def complete_virtuals(name, compared):
+        info = p['facts'].get(name, {})
+        ordered = []
+        remaining = list(compared)
+        for entry in sorted(info.get('virtuals', []), key=lambda v: v['slot']):
+            method = entry['name']
+            selected = next((d for d in remaining if re.search(rf'(?<!\w){re.escape(method)}\s*\(', d)), None)
+            if selected:
+                remaining.remove(selected)
+                ordered.append(selected + f'  // slot {entry["slot"]:02X}')
+            else:
+                ordered.append(entry['declaration'] + f'  // {entry["slot"]:02X}')
+                add(f'{name}::{method}', info['label'])
+            # Reference declarations for non-compared slots need the same preparation too.
+            parts = split_declaration(entry['declaration'])
+            refs, values = type_names(f'{parts[0]} ({parts[1]})') if parts else ([], [])
+            for t in refs:
+                if t in [cls] + p['standins'] or defined_in(p['included_text'], t):
+                    continue
+                if t in SUPPORT_DECLARATIONS:
+                    event_types.add(t)
+                    add(t, 'STANDIN ' + info['label'])
+                elif '::' not in t and t not in forward:
+                    forward.append(t)
+                    add(t, 'STANDIN ' + info['label'])
+            for t in values:
+                if (t in [cls, name] or t in SUPPORT_DECLARATIONS or defined_in(p['included_text'], t)
+                        or t in (x for x, _ in todo_types)):
+                    continue
+                todo_types.append((t, 'used by value: supply a permitted declaration before compiling'))
+        return ordered + remaining
+
+    if p['facts']:
+        decls = complete_virtuals(cls, decls)
 
     # Stand-ins and the class itself, padded to the image sizes so offsets line up from the start.
     pads, blocks = [], []
@@ -638,14 +782,16 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
     for s in p['standins']:
         if p['inline_base'] and s in INLINE_BASE_ROOTS:
             if s == INLINE_BASE_ROOTS[-1]:
-                blocks.append(inline_base_blocks())
+                block = inline_base_blocks()
+                blocks.append(block.replace(' EXE_RTTI', '') if unit.get('contributor') else block)
             parent, running = s, 0x10
             continue
         body, assert_line, running = pad_lines(s, running, p['sizes'], pads)
         base = f' : public {parent}' if parent else ''
         inherit = [f'    using {parent}::{parent};'] if ctor_params and parent else []
-        vptr = [f'    virtual ~{s}() = default;'] if parent is None else []
-        if vptr:
+        vptr = ([f'    {d}' for d in complete_virtuals(s, [])] if p['facts'].get(s) else
+                [f'    virtual ~{s}() = default;'] if parent is None else [])
+        if vptr and not p['facts'].get(s):
             add(f'{s}::~{s}', 'GUESS(low)')
         nested = [f'    struct {n};' for n in sorted(nested_forward.get(s, ()))]
         blocks.append('\n'.join([f'class {s}{base}', '{', 'public:', *nested, *inherit, *vptr, *body, '};', *assert_line, '']))
@@ -666,31 +812,53 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
 
     gpl = any(is_gpl(label) for label in labels)
     label_lines = [f'// {", ".join(names)}: {label}' for label, names in labels.items() if names]
+    from declaration_kit import MIT_NOTICE, GPL_NOTICE
+    notices = list(unit.get('notices', []))
+    for text, needed in ((MIT_NOTICE, p['inline_base'] or any('CommonLibSSE' in label for label in labels)),
+                         (GPL_NOTICE, gpl)):
+        notice_text = '\n'.join('// ' + line if line else '//' for line in text.splitlines())
+        if needed and not any(notice_text in n for n in notices):
+            notices.append(notice_text)
     header = [
         f'// {cls} declarations for build {build}.',
         '//',
         '// Labels: v2',
         f'// Task: {task_id}',
-        '// Source exposure: mixed (names and declarations from community headers; base classes, sizes and',
-        '// the compared functions from the pinned image).',
+        *origin_lines,
+        ('// Source exposure: mixed (names and declarations from community headers; base classes, sizes and'
+         if not p['facts'] else '// Source exposure: mixed (community declarations and the contributor-owned pack;'),
+        ('// the compared functions from the pinned image).' if not p['facts'] else
+         '// bases, sizes and slots are community hypotheses).'),
+        *(['// Sizes and slots are community hypotheses: verify C1-C5 locally before drafting.',
+           '// Size agreement alone proves neither fields nor ownership.'] if p['facts'] else []),
         *([GPL_NOTE] if gpl else []),
+        *notices,
         '// Started from a tools/skeleton.py skeleton: stand-ins carry only what the compared code needs, and',
         '// community names are unverified.',
         *base_form_lines(p),
         *label_lines,
         '#pragma once',
         '',
-        *(['#include <intrin.h>'] if p['inline_base'] else []),
+        *(['// Atomic lifetime counting uses the compiler intrinsic for one shared counter.',
+           'extern \"C\" long _InterlockedDecrement(volatile long*);'] if p['inline_base'] else []),
         '#include <cstdint>',
         '#include <cstddef>',
     ]
     if p['include']:
         header.append(f'#include "{p["include"][1]}"')
     header.append('')
+    if unit.get('contributor'):
+        for name in p['standins']:
+            if name not in p['facts']:
+                header += comment_lines(f'SKELETON_TODO_BASE_SIGNATURE: {name} has no prepared virtual declarations.')
+    for conflict in unit.get('signature_conflicts', []):
+        header += comment_lines('SKELETON_TODO_SIGNATURE: ' + conflict)
     if p['inline_base']:
         header += [f'class {t};' for t in INLINE_BASE_FORWARD] + ['']
     if forward:
-        header += [f'class {t};' for t in forward] + ['']
+        reference_kinds = {name: kind for info in p['facts'].values()
+                           for name, kind in info.get('reference_kinds', {}).items()}
+        header += [f'{reference_kinds.get(t, "class")} {t};' for t in forward] + ['']
     for t in sorted(event_types):
         header += [SUPPORT_DECLARATIONS[t], '']
     for t, why in todo_types:
@@ -699,7 +867,7 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
         header.append('')
     extra_bases = p['bases'].get(cls, [])[1:]
     if extra_bases:
-        header += [f'// TODO bases: the image also lists {", ".join(extra_bases)} after the first base; add them '
+        header += [f'// TODO bases: the available class context also lists {", ".join(extra_bases)} after the first base; add them '
                    'in that order if a compared function needs them (cookbook rule 25).', '']
     header += blocks + cls_block
 
@@ -710,9 +878,11 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
         '//',
         '// Labels: v2',
         f'// Task: {task_id}',
+        *origin_lines,
         '// Source exposure: mixed (names and declarations from community headers; the listing of the pinned',
         '// image).',
         *([GPL_NOTE] if gpl else []),
+        *notices,
         f'// Evidence: {evidence or "SKELETON_TODO_EVIDENCE (the findings/ file the brief names)"}',
         f'// Recipe: {recipe} (compile this file alone).',
         f'// Drafted by {drafted_by or MODEL_MARKER + " (the model or person who writes the bodies)"}, starting from',
@@ -779,6 +949,12 @@ def write_skeleton(task_dir, drafted_by=None, repo=None):
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, 'x') as out:  # 'x': never replace a file created since the check above
             out.write(text)
+    task_path = Path(task_dir) / 'task.json'
+    task = _json(task_path)
+    recipe = re.search(r'^// Recipe: (\S+)', cpp_text, re.M).group(1)
+    if task.get('recipe') != recipe:
+        task['recipe'] = recipe
+        task_path.write_text(json.dumps(task, indent=2) + '\n')
     p = plan(load_unit(task_dir, repo), repo)
     hints = {f'{p["cls"]}::{m["method"]}': m['fn']['rva'] for m in p['members']
              if m['method'].startswith('UnknownDtor_') or m['method'] == 'operator()'}

@@ -330,7 +330,7 @@ class DecompilerTests(unittest.TestCase):
         git('commit', '-qm', 'synthetic rejected input')
         ctx = contrib.Ctx(repo=repo, private=self.ctx.private, as_json=True)
         problems = contrib.intake_problems(ctx, 'HEAD~1', 'HEAD')
-        self.assertTrue(any('decomp.c: outside contributor scope' in p for p in problems))
+        self.assertTrue(any('decomp.c:1: outside contributor scope' in p for p in problems))
         self.assertTrue(any('project.rep' in p for p in problems))
 
     def test_commit_and_pr_reject_private_outputs(self):

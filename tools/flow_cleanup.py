@@ -7,6 +7,7 @@ import os
 import re
 from pathlib import Path
 import shutil
+import subprocess
 import uuid
 
 import flow as f
@@ -128,6 +129,57 @@ def check_live(fdir, tree, owner, metadata):
                          'queued/running input')
 
 
+def process_paths():
+    """Read-only process/open-file snapshot; never stop another worker."""
+    commands = subprocess.run(['ps', '-axo', 'pid,command'], capture_output=True, text=True, check=True).stdout
+    handles = subprocess.run(['lsof', '-nP', '-Fpn'], capture_output=True, text=True)
+    if handles.returncode not in (0, 1):
+        raise OSError('cannot inspect open files for retention')
+    return commands + '\n' + handles.stdout
+
+
+def path_in_use(tree, processes):
+    return bool(re.search(re.escape(str(tree)) + r"(?=$|[/\s'\"])", processes, re.M))
+
+
+def prune_isolation(root, fdir, processes):
+    """Move terminal snapshot metadata to cold archives, retaining borrowed Git stores."""
+    results = []
+    for snapshot in (fdir / 'lane/isolation').glob('*'):
+        run = snapshot.name.split('-')[0]
+        receipt = fdir / 'lane/runs' / (run + '.json')
+        if not receipt.is_file() or snapshot.is_symlink():
+            continue
+        value = lane.read(receipt)
+        if not finished(value) or lane.owner_alive(value.get('owner')) or path_in_use(snapshot, processes):
+            continue
+        trees = list((snapshot / 'lane/trees').glob('*/*'))
+        if any(set(p.name for p in tree.iterdir()) != {'.git'} for tree in trees if tree.is_dir()):
+            continue
+        try:
+            check_live(fdir, snapshot, ('lane', run), receipt)
+        except f.FlowError:
+            continue
+        paths = [snapshot / name for name in ('groups', 'imports', 'combined', 'versions.json',
+                                              'events.jsonl', 'lane/queue', 'lane/runs',
+                                              'lane/tooling', 'lane/tooling-queue', 'lane/owner.json')]
+        paths = [path for path in paths if path.exists()]
+        if not paths:
+            continue
+        archive = fdir.parent / 'archive/cleanup' / ('isolation-' + snapshot.name)
+        # Never overwrite a previous archive after an interrupted move.
+        archive = archive.with_name(archive.name + '-' + uuid.uuid4().hex)
+        for path in paths:
+            dest = archive / 'files' / path.relative_to(snapshot)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(path), dest)
+        row = dict(tree=str(snapshot), archive=str(archive), removed=True,
+                   proof='terminal isolation metadata; Git object stores retained')
+        lane.write(archive / 'receipt.json', row)
+        results.append(row)
+    return results
+
+
 def archive_evidence(tree, archive, lane_copy, all_untracked=False):
     """Clean tracked files remain recoverable from Git; archive private evidence only."""
     tracked = set(f.git(tree, 'ls-files', '-z').split('\0'))
@@ -184,6 +236,7 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
     (fdir / 'cleanup').mkdir(parents=True, exist_ok=True)
     # Serialize cleaners, never block an unrelated verifier/publication run.
     with cleanup_lock(fdir, blocking):
+        processes = process_paths()
         for tree, commit, proof, owner, metadata in candidates(root, fdir, prune_claims, input_paths):
             if not tree.exists() or set(p.name for p in tree.iterdir()) == {'.git'}:
                 continue
@@ -192,6 +245,7 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
             reservation = None
             with ExitStack() as locks:
                 try:
+                    f.refuse(not path_in_use(tree, processes), 'checkout has an open process or file')
                     lane_copy = owner[0] in ('lane', 'input', 'reconfirm')
                     if owner[0] == 'draft':
                         f.refuse(not any(owner[1].startswith(p) for p in keep_task_prefixes), 'protected worker task')
@@ -216,6 +270,11 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
                         except BlockingIOError:
                             raise f.FlowError('reconfirmation has a live owner') from None
                     f.refuse(Path(f.git(tree, 'rev-parse', '--show-toplevel')).resolve() == tree, 'not a checkout root')
+                    if owner[0] != 'input' and (tree / '.git').is_file():
+                        # Plain worktree removal refuses these changes. Check before copying
+                        # evidence, or every automatic retry archives the same dirty tree again.
+                        status = f.git(tree, 'status', '--porcelain', '--untracked-files=all')
+                        f.refuse(not status, 'dirty checkout: ' + status[:500])
                     if not lane_copy:
                         status = f.git(tree, 'status', '--porcelain', '--untracked-files=all', '--', '.', ':(exclude).local')
                         f.refuse(not status, 'dirty checkout: ' + status[:500])
@@ -240,7 +299,7 @@ def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=()
                     with lane.state_lock(fdir):
                         check_live(fdir, tree, owner, metadata)
                         lane.write(reservation, dict(tree=str(tree), active=True, owner=lane.process_owner()))
-                    archive = root / '.local/archive' / 'cleanup' / uuid.uuid4().hex
+                    archive = fdir.parent / 'archive/cleanup' / uuid.uuid4().hex
                     archive.mkdir(parents=True)
                     if owner[0] == 'input':
                         archive_evidence(tree, archive, lane_copy, all_untracked=True)
@@ -302,15 +361,34 @@ def retention_state(fdir):
     return tuple((str(path), path.stat().st_mtime_ns, path.stat().st_size) for path in files)
 
 
-def automatic_retention(root, fdir):
+def automatic_retention(root, fdir, offload=False):
     """Skip unchanged state in this process, and never wait behind an explicit cleaner."""
     fdir = Path(fdir).resolve()
-    key = os.getpid(), str(fdir)
+    key = os.getpid(), str(fdir), offload
     state = retention_state(fdir)
     if _AUTOMATIC_STATE.get(key) == state:
         return []
     try:
         result = cleanup(root, fdir, blocking=False)
+        with cleanup_lock(fdir, blocking=False):
+            processes = process_paths()
+            result.extend(prune_isolation(Path(root).resolve(), fdir, processes))
+            if offload:
+                import cold_storage
+                def in_use(path):
+                    if path_in_use(path, process_paths()):
+                        return True
+                    try:
+                        with lane.state_lock(fdir):
+                            check_live(fdir, path, ('input', ''), None)
+                    except f.FlowError:
+                        return True
+                    return False
+                try:
+                    result.extend(cold_storage.automatic(root, in_use,
+                        config_path=fdir.parent / 'cold-storage.json', fdir=fdir))
+                except (OSError, ValueError, subprocess.SubprocessError) as error:
+                    result.append(dict(cold_storage_error=str(error), removed=False))
     except BlockingIOError:
         return []  # A busy skip is neither a completed run nor a cached state.
     lane.write(fdir / 'cleanup/last-retention.json', dict(recorded=f.utc(), results=result))
