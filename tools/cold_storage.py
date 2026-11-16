@@ -156,7 +156,9 @@ def automatic(root, in_use=lambda path: False, config_path=None, fdir=None):
             if path.is_symlink() or not receipt.is_file():
                 continue
             row = json.loads(receipt.read_text())
-            if not row.get('removed') or time.time() - receipt.stat().st_mtime < config.get('min_age_seconds', 3600):
+            eligible = row.get('removed') or (config.get('include_failed_archives')
+                and row.get('removed') is False and bool(row.get('tree')))
+            if not eligible or time.time() - receipt.stat().st_mtime < config.get('min_age_seconds', 3600):
                 continue
             try:
                 results.append(offload(root, path, config, in_use))

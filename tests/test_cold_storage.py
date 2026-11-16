@@ -86,6 +86,19 @@ class ColdStorage(unittest.TestCase):
         self.assertTrue(result[0]['mac_deleted'])
         self.assertTrue(failed.exists())
 
+    def test_explicit_legacy_mode_offloads_completed_failed_copy_not_original(self):
+        original = self.root / 'original-dirty'
+        original.mkdir()
+        (original / 'keep').write_text('uncommitted synthetic work')
+        (self.archive / 'receipt.json').write_text(json.dumps(dict(removed=False, tree=str(original))))
+        config = self.root / '.local/cold-storage.json'
+        config.write_text(json.dumps(dict(self.config, include_failed_archives=True)))
+        with patch.object(cold.subprocess, 'run', side_effect=self.transport):
+            result = cold.automatic(self.root)
+        self.assertEqual(len(result), 1)
+        self.assertTrue(result[0]['mac_deleted'])
+        self.assertEqual((original / 'keep').read_text(), 'uncommitted synthetic work')
+
     def test_store_offload_keeps_borrowed_objects_and_all_refs(self):
         import flow_lane as lane
         fdir = self.root / '.local/flow'
