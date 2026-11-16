@@ -11,6 +11,31 @@
 7. Builds require Python 3.13 with pyexpat and 3 GB free; below the 10 GB soft floor only explicit `--allow-low-disk` admits a new heavy job.
 8. Preview `cleanup --dry-run`, then opt in with `cleanup`; working files alone may be removed, evidence and Git refs/stashes remain; `sync` after GREEN.
 
+### Minimal publication brief
+
+Name the immutable input root/tip, selected groups or family batches, shared flow directory,
+claim and handoff path. Enqueue all ready selections once, then use the stock lane and its
+receipt. Do not add a second publisher, polling script, source-digest audit, private scan,
+full local suite or site build around it: the lane validates the integrated source/evidence,
+pins live gates again before push, runs publication checks and waits for exact-SHA CI.
+Inspect its accepted/dropped selections and exact commit/CI outcome before reporting completion.
+
+Keep the staged guard immediately before each **new input tooling commit** as required by
+the internal workflow; the lane's staged guard checks a different, integrated index. Do not
+repeat it on an unchanged committed input. Keep required independent reviews, two-host
+confirmation and sampling reruns; rerun them when source/evidence changed or a named gate
+requires it, not merely because the publication worker changed.
+
+Local pre-push checks run validation and the site once. Reconstruction/header, report,
+progress and derived-view changes need no local tooling unit tests. Other changes select
+test modules through both base/current import and file-reference graphs; opaque callers
+are retained and unmapped inputs fall back to all tests. Shared comparator, validator,
+acceptance, digest and lane changes always select the full suite. `test_suite.py
+--changed-since <base>` is local only; CI keeps every shard and rejects combining that option
+with sharding. The check and suite overlap; the site follows the check so it can reuse only
+the validator's existing exact-content cache after its own fresh publication scan. No rendered
+site or acceptance result is trusted from a previous candidate.
+
 Follow `docs/anti-eu-bureaucracy.md`: ship in bulk, decide rather than stop, and add no ceremony beyond named rules.
 
 Paste into a fresh session started in this repository, naming the profile:

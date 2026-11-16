@@ -175,7 +175,7 @@ class SiteCreditRendering(unittest.TestCase):
             for name, data in original.items():
                 (root / name).write_bytes(data)
             with (patch.object(site, 'ROOT', root),
-                  patch.object(site, 'load', return_value={'functions': []}),
+                  patch.object(site, 'validated_data', return_value={'functions': []}),
                   patch.object(site.subprocess, 'check_output', side_effect=[b'synthetic-revision', b'']),
                   patch.object(site.build_model_trend, 'GitBlobs'),
                   patch.object(site.build_model_trend, 'history', return_value=([], [])),
