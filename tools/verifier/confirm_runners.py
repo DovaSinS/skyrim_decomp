@@ -320,6 +320,9 @@ def run_host(host, units, stage_root, deliver, log):
 def run(base, task_dirs, replace=False, out=None, log=print, hosts=None, resume=False, probe_fn=None):
     started = time.monotonic()
     hosts = hosts if hosts is not None else runners.for_confirm()
+    if hosts and any(h['backend'] == 'ci-hash' for h in hosts):
+        import ci_confirm
+        return ci_confirm.run(REPO, task_dirs, replace=replace, out=out, log=log)
     if not hosts:
         raise PipelineError('no runner confirm hosts in .local/verifier/runners.json ("confirm")')
     if out is None and not RUNNER_RECORDS_ALLOWED:

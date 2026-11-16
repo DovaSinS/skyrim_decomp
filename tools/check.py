@@ -257,7 +257,7 @@ def check_match(fn, target, root=None):
             'Match record: symbol map is for another build')
 
     runs = record.get('runs')
-    require(isinstance(runs, list) and len(runs) >= MIN_HOSTS, f'Match record: needs at least {MIN_HOSTS} runs')
+    require(isinstance(runs, list) and len(runs) >= (1 if 'ci_confirmation' in record else MIN_HOSTS), f'Match record: needs at least {MIN_HOSTS} runs')
     internal = record['match_record_schema'] == 3
     first = runs[0].get('report') if isinstance(runs[0], dict) else None
     identity = first.get('comparator') if isinstance(first, dict) else None
@@ -340,6 +340,11 @@ def check_match(fn, target, root=None):
     # read shows that they did.
     require(all(run['report'].get('symbol_map_sha256') == map_ref.get('sha256') for run in runs),
             'Match record: a report did not read the pinned symbol map (symbol_map_sha256 differs from the pin)')
+    if 'ci_confirmation' in record:
+        import ci_confirmation
+        ci_confirmation.validate(root, record, fn, target)
+        compiled_on.add(record['ci_confirmation']['host_id'])
+        compared_on.add(record['ci_confirmation']['host_id'])
     require(len(compiled_on) >= MIN_HOSTS and len(compared_on) >= MIN_HOSTS,
             f'Match record: runs must come from at least {MIN_HOSTS} compile hosts and {MIN_HOSTS} compare hosts')
     # Host names are self-reported. Without /Brepro, two clean compiles do not yield the same object

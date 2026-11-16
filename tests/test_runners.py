@@ -103,7 +103,7 @@ class Config(unittest.TestCase):
     def test_example_config_is_valid(self):
         example = json.loads((ROOT / 'tools/verifier/runners.example.json').read_text())
         c = runners.validate(example, root='/repo')
-        self.assertEqual(sorted(h['backend'] for h in c['hosts'].values()), ['boat', 'local', 'ssh'])
+        self.assertEqual(sorted(h['backend'] for h in c['hosts'].values()), ['boat', 'ci-hash', 'local', 'ssh'])
 
     def test_describe_names_no_paths(self):
         line = runners.describe(runners.validate(config(), root='/repo')['hosts']['winpc'])
