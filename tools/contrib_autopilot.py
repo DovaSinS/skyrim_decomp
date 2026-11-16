@@ -155,6 +155,21 @@ def safe_reason(text):
     return value
 
 
+def credit_confirmed(tree, data, passed, author):
+    """Record the GitHub PR author's public handle after project confirmation, never a Git name."""
+    from build_leaderboard import handle
+    submitter = handle(author)
+    if not submitter:
+        raise Stop('contributor has no valid public GitHub handle')
+    for fn in data['functions']:
+        if fn['status'] == 'matched' or f'0x{fn["rva"]:x}' not in passed:
+            continue  # A companion check does not transfer existing accepted credit.
+        path = Path(tree) / fn['report']
+        record = read_json(path)
+        record['submitter'] = submitter
+        save_json(path, record)
+
+
 def wake_windows(mac, broadcast):
     address = bytes.fromhex(mac.replace(':', ''))
     if len(address) != 6:
@@ -576,7 +591,13 @@ class Runtime:
                         return False
                     public = tree / 'reports' / task['build_id'] / (rhex + '.json')
                     public.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copyfile(record, public)
+                    previous = read_json(public, {})
+                    confirmed = read_json(record)
+                    if previous.get('function_id') and previous['function_id'] == confirmed.get('function_id'):
+                        for field in ('submitter', 'matchers'):
+                            if field in previous:
+                                confirmed[field] = previous[field]
+                    save_json(public, confirmed)
                     return True
                 ok = self.state.once(revision, 'confirm-' + task['task_id'] + '-' + rhex, one)
                 (passed if ok else failed).append(rhex if ok else dict(rva=rhex, reason='two-host confirmation failed'))
@@ -588,6 +609,12 @@ class Runtime:
         from build_index import write_index
         write_index(data, tree)
         return dict(passed=passed, failed=failed)
+
+    def credit_confirmation(self, fetched, confirmed, revision):
+        # Reconcile even a pre-upgrade outer confirmation checkpoint; never recompile for credit.
+        tree = Path(fetched['tree'])
+        data = read_json(tree / 'data/progress.json')
+        credit_confirmed(tree, data, confirmed['passed'], revision['author'])
 
     def make_groups(self, fetched, confirmed):
         import flow
@@ -933,6 +960,7 @@ def process(runtime, state, pr, dry_run=False):
         return revision
     tasks = state.once(revision, 'export', lambda: runtime.export(fetched, units))
     confirmed = state.once(revision, 'confirmation', lambda: runtime.confirm(fetched, tasks, revision))
+    runtime.credit_confirmation(fetched, confirmed, revision)
     for index, failure in enumerate(confirmed['failed']):
         runtime.feedback(revision, 'compare-' + str(index), 'needs-changes', f'{failure["rva"]}: {failure["reason"]}')
     if not confirmed['passed']:

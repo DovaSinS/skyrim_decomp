@@ -233,10 +233,10 @@ def cleanup_lock(fdir, blocking=True):
 def cleanup(root, fdir, dry_run=False, prune_claims=False, keep_task_prefixes=(), input_paths=(), blocking=True):
     root, fdir = Path(root).resolve(), Path(fdir).resolve()
     results = []
-    processes = process_paths()
     (fdir / 'cleanup').mkdir(parents=True, exist_ok=True)
     # Serialize cleaners, never block an unrelated verifier/publication run.
     with cleanup_lock(fdir, blocking):
+        processes = process_paths()
         for tree, commit, proof, owner, metadata in candidates(root, fdir, prune_claims, input_paths):
             if not tree.exists() or set(p.name for p in tree.iterdir()) == {'.git'}:
                 continue

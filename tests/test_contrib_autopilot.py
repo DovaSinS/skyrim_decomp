@@ -155,6 +155,9 @@ class FakeRuntime:
     def confirm(self, fetched, tasks, revision):
         return self.call('confirm', self.confirmed)
 
+    def credit_confirmation(self, fetched, confirmed, revision):
+        pass
+
     def make_groups(self, fetched, confirmed):
         return self.call('groups', ['g1'])
 
@@ -773,6 +776,69 @@ reasons: original synthetic source and comparator reports
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(document)
         return document
+
+    def test_companion_credit_survives_shared_unit_digest_change(self):
+        info = pr(author='Later-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        revision = self.state.revision(info, True)
+        fetched = self.runtime.fetch(info)
+        fetched.update(number=1, head=self.head)
+        tree = Path(fetched['tree'])
+        path = tree / self.fixture.RECORD
+        previous = ap.read_json(path)
+        previous['submitter'] = 'earlier-contributor'
+        previous['matchers'] = [dict(handle='earlier-contributor', model='not-reported')]
+        ap.save_json(path, previous)
+        tasks = self.runtime.export(fetched, self.runtime.functions(fetched))
+        confirmed = self.runtime.confirm(fetched, tasks, revision)
+        self.assertEqual(confirmed['passed'], ['0x1010'])
+        current = ap.read_json(path)
+        self.assertNotEqual(current['source']['digest'], previous['source']['digest'])
+        self.assertEqual(current['submitter'], 'earlier-contributor')
+        self.assertEqual(current['matchers'], previous['matchers'])
+        self.assertNotEqual(current['source'], previous['source'])
+
+    def test_cached_confirmation_restores_credit_without_recomparison(self):
+        info = pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,))
+        result = ap.process(self.runtime, self.state, info, dry_run=True)
+        tree = Path(result['completed']['fetch']['tree'])
+        path = tree / self.fixture.RECORD
+        record = ap.read_json(path)
+        record.pop('submitter')
+        ap.save_json(path, record)
+        result['done'] = False
+        self.state.save()
+        comparisons = [c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm']
+        models = list(self.models)
+        ap.process(self.runtime, self.state, info, dry_run=True)
+        self.assertEqual(ap.read_json(path)['submitter'], 'outside-contributor')
+        self.assertEqual([c for c in self.commands if len(c) > 1 and c[1] == 'tools/verifier/confirm'], comparisons)
+        self.assertEqual(self.models, models)
+
+    def test_intake_acceptance_credits_pr_author_on_leaderboard(self):
+        import flow
+        import lane_accept
+        import build_leaderboard as board
+        result = ap.process(self.runtime, self.state,
+                            pr(author='Outside-Contributor', head=self.head, paths=(self.fixture.CPP,)), dry_run=True)
+        fetched = result['completed']['fetch']
+        tree = Path(fetched['tree'])
+        groups = result['completed']['reviews']['groups']
+        requests = []
+        for name in groups:
+            group = flow.load_group(tree / '.local/flow', name)
+            requests.append(dict(kind='review', review=str(flow.review_path(tree, group)),
+                                 functions=group['functions'], profile='claude-low'))
+        accepted = lane_accept.accept(tree, requests)
+        self.assertFalse(accepted['dropped'])
+        self.assertTrue(accepted['accepted'])
+        record = ap.read_json(tree / self.fixture.RECORD)
+        self.assertEqual(record['submitter'], 'outside-contributor')
+        data = ap.read_json(tree / 'data/progress.json')
+        rows = board.write(tree, data)
+        self.assertEqual(rows[0]['contributor'], '@outside-contributor')
+        self.assertEqual(rows[0]['functions'], 1)
+        self.assertIn('@outside-contributor', (tree / 'LEADERBOARD.md').read_text())
+        self.assertEqual(ap.read_json(tree / 'data/contributors.json')['contributors']['outside-contributor']['verified_matches'], 1)
 
     def test_dry_run_reaches_real_acceptance_without_post_merge_or_push(self):
         result = ap.process(self.runtime, self.state,
