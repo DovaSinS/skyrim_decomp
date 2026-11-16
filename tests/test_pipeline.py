@@ -232,6 +232,10 @@ class CompilerIncludeRoots(unittest.TestCase):
                     original = json.loads(path.with_name(path.stem.removesuffix('-reconstruction') + '.json').read_text())
                     self.assertEqual(value, dict(original, flags=original['flags'] + ['/I', 'reconstruction']))
                     self.assertEqual(pipeline.recipe_include_roots(value['flags']), ('reconstruction',))
+                elif path.stem.endswith('-root-includes'):
+                    original = json.loads(path.with_name(path.stem.removesuffix('-root-includes') + '.json').read_text())
+                    self.assertEqual(value, dict(original, flags=original['flags'] + ['/Ireconstruction']))
+                    self.assertEqual(pipeline.recipe_include_roots(value['flags']), ('reconstruction',))
                 else:
                     self.assertEqual(pipeline.recipe_include_roots(value['flags']), ())
 
