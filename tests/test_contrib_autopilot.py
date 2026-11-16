@@ -800,6 +800,23 @@ class RuntimeEffects(unittest.TestCase):
         self.assertEqual(next(self.runtime.logs.glob('*.log')).read_bytes(), b'partial\n')
         self.assertEqual(self.state.data['last_timeout']['command'], ['synthetic'])
 
+    def test_rerun_pins_clean_tree_origin_main_to_frozen_base(self):
+        import flow
+        tree = self.root / 'frozen'
+        tree.mkdir()
+        base = subprocess.check_output(['git', 'rev-parse', 'HEAD~1'], cwd=ROOT, text=True).strip()
+        clean = tree.parent / 'rerun-g1'
+        def prepare(path, revision):
+            subprocess.run(['git', 'clone', '--quiet', '--shared', str(ROOT), str(path)], check=True)
+        with patch.object(self.runtime, 'prepare_main_tree', side_effect=prepare), \
+             patch.object(flow, 'inventory', return_value={'functions': []}), \
+             patch.object(flow, 'record_rerun', return_value=(True, [])):
+            self.runtime.rerun({'tree': str(tree), 'base': base},
+                               {'name': 'g1', 'sampled': [], 'build_id': 'synthetic'}, [], {})
+        actual = subprocess.check_output(['git', 'rev-parse', 'refs/remotes/origin/main'],
+                                         cwd=clean, text=True).strip()
+        self.assertEqual(actual, base)
+
     def test_pending_publication_uses_fresh_trusted_main_tools(self):
         tree = self.root / 'frozen'
         revision = self.state.revision(pr())
