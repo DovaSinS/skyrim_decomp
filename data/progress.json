@@ -77169,12 +77169,14 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2143184,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "NiAlphaProperty::~NiAlphaProperty",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x20b3d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "findings/p92-unit-supply-selection.md",
+      "report": "reports/sse-steam-1-7-104/0x20b3d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x20b410",
@@ -398623,7 +398625,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83c760.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83c970",
@@ -398635,7 +398639,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83c970.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83cc50",
@@ -398647,7 +398653,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83cc50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83cec0",
@@ -398659,7 +398667,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83cec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83d1d0",
@@ -398671,7 +398681,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83d1d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83d510",
@@ -398683,7 +398695,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83d510.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83d780",
@@ -398695,7 +398709,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83d780.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83da90",
@@ -398707,7 +398723,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83da90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83dd30",
@@ -398719,7 +398737,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83dd30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83e0b0",
@@ -398731,7 +398751,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83e0b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83e3c0",
@@ -398743,7 +398765,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83e3c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83e6d0",
@@ -398755,7 +398779,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83e6d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83e9b0",
@@ -398767,7 +398793,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83e9b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83ec70",
@@ -398779,7 +398807,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83ec70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83eef0",
@@ -398791,7 +398821,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83eef0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83f2b0",
@@ -398803,7 +398835,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83f2b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83f640",
@@ -398815,7 +398849,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83f640.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83f930",
@@ -398827,7 +398863,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83f930.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83fcc0",
@@ -398839,7 +398877,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83fcc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x83ffe0",
@@ -398851,7 +398891,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x83ffe0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x840360",
@@ -398863,7 +398905,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x840360.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8406e0",
@@ -398875,7 +398919,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8406e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x840950",
@@ -398887,7 +398933,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x840950.json"
     },
     {
       "id": "sse-steam-1-7-104-0x840c60",
@@ -398899,7 +398947,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x840c60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x840f70",
@@ -398911,7 +398961,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x840f70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x841260",
@@ -398923,7 +398975,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x841260.json"
     },
     {
       "id": "sse-steam-1-7-104-0x841470",
@@ -398935,7 +398989,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x841470.json"
     },
     {
       "id": "sse-steam-1-7-104-0x841750",
@@ -398947,7 +399003,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x841750.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8419f0",
@@ -398959,7 +399017,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8419f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x841d00",
@@ -398971,7 +399031,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x841d00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x842010",
@@ -398983,7 +399045,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x842010.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8422b0",
@@ -398995,7 +399059,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8422b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8425c0",
@@ -399007,7 +399073,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8425c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x842830",
@@ -399019,7 +399087,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x842830.json"
     },
     {
       "id": "sse-steam-1-7-104-0x842b40",
@@ -399031,7 +399101,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x842b40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x842dd0",
@@ -399043,7 +399115,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x842dd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8430d0",
@@ -399055,7 +399129,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8430d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x843330",
@@ -399067,7 +399143,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x843330.json"
     },
     {
       "id": "sse-steam-1-7-104-0x843570",
@@ -399079,7 +399157,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x843570.json"
     },
     {
       "id": "sse-steam-1-7-104-0x843810",
@@ -399091,7 +399171,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x843810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x843ab0",
@@ -399103,7 +399185,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x843ab0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x843dc0",
@@ -399115,7 +399199,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x843dc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x844060",
@@ -399127,7 +399213,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x844060.json"
     },
     {
       "id": "sse-steam-1-7-104-0x844340",
@@ -399139,7 +399227,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x844340.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8445e0",
@@ -399151,7 +399241,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8445e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x844910",
@@ -399163,7 +399255,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x844910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x844be0",
@@ -399175,7 +399269,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x844be0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x844e70",
@@ -399187,7 +399283,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x844e70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x845170",
@@ -399199,7 +399297,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x845170.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8453d0",
@@ -399211,7 +399311,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8453d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x845630",
@@ -399223,7 +399325,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x845630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x845820",
@@ -399235,7 +399339,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x845820.json"
     },
     {
       "id": "sse-steam-1-7-104-0x845b10",
@@ -399247,7 +399353,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x845b10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x845de0",
@@ -399259,7 +399367,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x845de0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846050",
@@ -399271,7 +399381,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846050.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846390",
@@ -399283,7 +399395,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846600",
@@ -399295,7 +399409,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846600.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846910",
@@ -399307,7 +399423,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846bb0",
@@ -399319,7 +399437,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846bb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x846ec0",
@@ -399331,7 +399451,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x846ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x847200",
@@ -399343,7 +399465,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x847200.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8474d0",
@@ -399355,7 +399479,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8474d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x847780",
@@ -399367,7 +399493,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x847780.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8479c0",
@@ -399379,7 +399507,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8479c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x847ca0",
@@ -399391,7 +399521,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x847ca0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x847f70",
@@ -399403,7 +399535,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x847f70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x848280",
@@ -399415,7 +399549,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x848280.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8484f0",
@@ -399427,7 +399563,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8484f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x848800",
@@ -399439,7 +399577,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x848800.json"
     },
     {
       "id": "sse-steam-1-7-104-0x848b10",
@@ -399451,7 +399591,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x848b10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x848d80",
@@ -399463,7 +399605,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x848d80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x849060",
@@ -399475,7 +399619,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x849060.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8492a0",
@@ -399487,7 +399633,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8492a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x849580",
@@ -399499,7 +399647,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x849580.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8497f0",
@@ -399511,7 +399661,9 @@
       "name_source": "GUESS(medium): represented declaration; original specialization unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md",
-      "status": "mapped"
+      "status": "matched",
+      "named": false,
+      "report": "reports/sse-steam-1-7-104/0x8497f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x9fdcd0",
@@ -407182,24 +407334,28 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19411536,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature1283250CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1283250.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283340",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature1283250CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1283340.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283280",
@@ -407230,264 +407386,308 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19411632,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature12832b0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12832b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12833a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411872,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature12832b0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12833a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12832e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411680,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature12832e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12832e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12833d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411920,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature12832e0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12833d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283310",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411728,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature1283310CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1283310.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283400",
       "build_id": "sse-steam-1-7-104",
       "rva": 19411968,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature1283310CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1283400.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129a590",
       "build_id": "sse-steam-1-7-104",
       "rva": 19506576,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129a590CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129a590.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129a5f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19506672,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129a590CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129a5f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129a5c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19506624,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129a5c0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129a5c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129a620",
       "build_id": "sse-steam-1-7-104",
       "rva": 19506720,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129a5c0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129a620.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129e740",
       "build_id": "sse-steam-1-7-104",
       "rva": 19523392,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129e740CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129e740.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129e7a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19523488,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129e740CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129e7a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129e770",
       "build_id": "sse-steam-1-7-104",
       "rva": 19523440,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129e770CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129e770.json"
     },
     {
       "id": "sse-steam-1-7-104-0x129e7d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19523536,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "ErasedSignature129e770CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x129e7d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12a2770",
       "build_id": "sse-steam-1-7-104",
       "rva": 19539824,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12a2770CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12a2770.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12a27d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19539920,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12a2770CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12a27d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12a27a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19539872,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12a27a0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12a27a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12a2800",
       "build_id": "sse-steam-1-7-104",
       "rva": 19539968,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12a27a0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12a2800.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12add90",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586448,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12add90CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12add90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adf10",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586832,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12add90CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12adf10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12addc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586496,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12addc0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12addc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adf40",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586880,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12addc0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12adf40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12addf0",
@@ -407518,24 +407718,28 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586592,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12ade20CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12ade20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adfa0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586976,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12ade20CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12adfa0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ade50",
@@ -407566,48 +407770,56 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586688,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12ade80CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12ade80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ae000",
       "build_id": "sse-steam-1-7-104",
       "rva": 19587072,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12ade80CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12ae000.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adeb0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19586736,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12adeb0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12adeb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ae030",
       "build_id": "sse-steam-1-7-104",
       "rva": 19587120,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12adeb0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12ae030.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adee0",
@@ -407662,24 +407874,28 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19645984,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12bc620CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12bc620.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12bc680",
       "build_id": "sse-steam-1-7-104",
       "rva": 19646080,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12bc620CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12bc680.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12c9990",
@@ -407734,96 +407950,112 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19717952,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12cdf40CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12cdf40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12cdf70",
       "build_id": "sse-steam-1-7-104",
       "rva": 19718000,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12cdf40CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12cdf70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d22e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735264,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d22e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d22e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d2370",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735408,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d22e0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d2370.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d2310",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735312,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d2310CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d2310.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d23a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735456,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d2310CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d23a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d2340",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735360,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d2340CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d2340.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12d23d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19735504,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature12d2340CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x12d23d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338ca0",
@@ -407878,48 +408110,56 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20155648,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature1338d00CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1338d00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338dc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20155840,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature1338d00CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1338dc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338d30",
       "build_id": "sse-steam-1-7-104",
       "rva": 20155696,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature1338d30CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1338d30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338df0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20155888,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
+      "named": true,
       "name": "ErasedSignature1338d30CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x1338df0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2626f4",
@@ -411196,6 +411436,2218 @@
       "evidence": "reports/sse-steam-1-7-104/0x8ffaa0.json",
       "report": "reports/sse-steam-1-7-104/0x8ffaa0.json",
       "drafter_model": "gpt-6.1-terra"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x120ca0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1182880,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented120ca0::~F004Represented120ca0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x120ca0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x121990",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1186192,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented121990::~F004Represented121990",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x121990.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17c610",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1558032,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17c610::~F004Represented17c610",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17c610.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17c710",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1558288,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17c710::~F004Represented17c710",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17c710.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d140",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1560896,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d140::~F004Represented17d140",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d140.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d180",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1560960,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d180::~F004Represented17d180",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d180.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d3e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1561568,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d3e0::~F004Represented17d3e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d3e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d4e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1561824,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d4e0::~F004Represented17d4e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d4e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d550",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1561936,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d550::~F004Represented17d550",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d550.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d590",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1562000,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d590::~F004Represented17d590",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d590.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d5d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1562064,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d5d0::~F004Represented17d5d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d5d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d720",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1562400,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d720::~F004Represented17d720",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d720.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17d9f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1563120,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17d9f0::~F004Represented17d9f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17d9f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17dc50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1563728,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17dc50::~F004Represented17dc50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17dc50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x17df70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1564528,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented17df70::~F004Represented17df70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x17df70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x19bf20",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1687328,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented19bf20::~F004Represented19bf20",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x19bf20.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2a5520",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2774304,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented2a5520::~F004Represented2a5520",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2a5520.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2a56b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2774704,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented2a56b0::~F004Represented2a56b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2a56b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2f9300",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3117824,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented2f9300::~F004Represented2f9300",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2f9300.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2f93c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3118016,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented2f93c0::~F004Represented2f93c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2f93c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6398b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6527152,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented6398b0::~F004Represented6398b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6398b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7dfcf0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8256752,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented7dfcf0::~F004Represented7dfcf0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7dfcf0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x80d9c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8444352,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented80d9c0::~F004Represented80d9c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x80d9c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x82f1a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8581536,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented82f1a0::~F004Represented82f1a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x82f1a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x82fa90",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8583824,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented82fa90::~F004Represented82fa90",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x82fa90.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x83bc10",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8633360,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented83bc10::~F004Represented83bc10",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x83bc10.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x83bc50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8633424,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented83bc50::~F004Represented83bc50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x83bc50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x83bd60",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8633696,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented83bd60::~F004Represented83bd60",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x83bd60.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x83be00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8633856,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Represented83be00::~F004Represented83be00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x83be00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf0f0b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15790256,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Representedf0f0b0::~F004Representedf0f0b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xf0f0b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xfc80c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16548032,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Representedfc80c0::~F004Representedfc80c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xfc80c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xff1b50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16718672,
+      "size": 52,
+      "status": "matched",
+      "named": false,
+      "name": "F004Representedff1b50::~F004Representedff1b50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): renamed represented declaration; original specialization unverified.",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xff1b50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x64c6b8",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6604472,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ChainExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x64c6b8.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x64c6c4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6604484,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ChainExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x64c6c4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x64c6d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6604496,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ChainExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x64c6d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6bbce4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7060708,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6bbce4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6bbcf0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7060720,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6bbcf0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6bbcfc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7060732,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6bbcfc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x73aa9c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7580316,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "CharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x73aa9c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x73aaa8",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7580328,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "CharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x73aaa8.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x73aab4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7580340,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "CharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x73aab4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7692b4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7770804,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerCharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7692b4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7692fc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7770876,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerCharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7692fc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x769308",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7770888,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerCharacterReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x769308.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7de724",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8251172,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ArrowProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7de724.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7de730",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8251184,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ArrowProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7de730.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7de73c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8251196,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ArrowProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7de73c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7dfb54",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8256340,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BarrierProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7dfb54.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7dfb60",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8256352,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BarrierProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7dfb60.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7dfb6c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8256364,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BarrierProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7dfb6c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e1058",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8261720,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BeamProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e1058.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e1064",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8261732,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BeamProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e1064.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e1070",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8261744,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BeamProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e1070.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e3350",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8270672,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ConeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e3350.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e335c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8270684,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ConeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e335c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e3368",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8270696,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ConeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e3368.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e9c7c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8297596,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e9c7c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e9c88",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8297608,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e9c88.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7e9c94",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8297620,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ExplosionReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7e9c94.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7eb4ec",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8303852,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "FlameProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7eb4ec.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7eb4f8",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8303864,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "FlameProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7eb4f8.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7eb504",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8303876,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "FlameProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7eb504.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7eccfc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8310012,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "GrenadeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7eccfc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ecd08",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8310024,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "GrenadeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7ecd08.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ecd14",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8310036,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "GrenadeProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7ecd14.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ef6b4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8320692,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "HazardReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7ef6b4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ef6c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8320704,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "HazardReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7ef6c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ef6cc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8320716,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "HazardReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7ef6cc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7f51e4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8344036,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MissileProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7f51e4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7f51f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8344048,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MissileProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7f51f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7f51fc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8344060,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MissileProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7f51fc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x804c74",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8408180,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x804c74.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x804c80",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8408192,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x804c80.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x804c8c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8408204,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ProjectileReferenceComponentPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): owner/inherited secondary RTTI and exact primary target; typed public initial component prefix; complete owner definition unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x804c8c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c876c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 21792620,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BSScript__Internal__VirtualMachineInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c876c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c8778",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 21792632,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BSScript__Internal__VirtualMachineInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c8778.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c8784",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 21792644,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BSScript__Internal__VirtualMachineInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c8784.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5b920c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6001164,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "LoadWaitSpinnerInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5b920c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5b9218",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6001176,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "LoadWaitSpinnerInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5b9218.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5b9224",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6001188,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "LoadWaitSpinnerInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x5b9224.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x65125c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623836,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PathManagerPositionPlayerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x65125c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x651268",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623848,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PathManagerPositionPlayerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x651268.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x651274",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623860,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PathManagerPositionPlayerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x651274.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x651280",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623872,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PathManagerPositionPlayerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x651280.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x65128c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623884,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerSleepWaitMovementControllerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x65128c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x651298",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623896,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerSleepWaitMovementControllerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x651298.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6512a4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623908,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerSleepWaitMovementControllerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6512a4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6512b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6623920,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerSleepWaitMovementControllerAdapterInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x6512b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7b1938",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8067384,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerControlsInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7b1938.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7b1944",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8067396,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerControlsInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7b1944.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7b1950",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8067408,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "PlayerControlsInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x7b1950.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x95e344",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 9823044,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MainMenuInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x95e344.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x95e350",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 9823056,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MainMenuInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x95e350.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x95e35c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 9823068,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "MainMenuInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x95e35c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x9a7f2c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10125100,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "Journal_SystemTabInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x9a7f2c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x9a7f38",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10125112,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "Journal_SystemTabInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x9a7f38.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x9a7f44",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10125124,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "Journal_SystemTabInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x9a7f44.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x9a7f50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10125136,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "Journal_SystemTabInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x9a7f50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xa67d8c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10911116,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "SkyrimSpeechRecognitionInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xa67d8c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xa67d98",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10911128,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "SkyrimSpeechRecognitionInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xa67d98.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xa67da4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10911140,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "SkyrimSpeechRecognitionInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xa67da4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xa67db0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10911152,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "SkyrimSpeechRecognitionInterfaceStoragePrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/secondary RTTI and primary target; pinned primary storage and fieldless interface contracts; full owner/lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xa67db0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xb518b4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 11868340,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ConstraintCollisionFilterListenerPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): independent target owner/listener RTTI, constructor-supported primary storage fields and exact primary target; original source spelling/container lifetime unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0xb518b4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c6ac",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1361580,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "EffectSettingExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c6ac.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c6b8",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1361592,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "EffectSettingExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c6b8.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14c6c4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1361604,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "EffectSettingExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x14c6c4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x25ca2c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2476588,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSApparatusExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x25ca2c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x25ca38",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2476600,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSApparatusExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x25ca38.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x25ca44",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2476612,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSApparatusExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x25ca44.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26161c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2496028,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSExplosionExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26161c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x261628",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2496040,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSExplosionExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x261628.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x261634",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2496052,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSExplosionExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x261634.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2675a4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2520484,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSTalkingActivatorExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2675a4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2675b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2520496,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSTalkingActivatorExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2675b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2675bc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2520508,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSTalkingActivatorExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2675bc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2693f4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2528244,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESAmmoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2693f4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x269400",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2528256,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESAmmoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x269400.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26940c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2528268,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESAmmoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26940c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26dc3c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2546748,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFloraExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26dc3c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26dc48",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2546760,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFloraExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26dc48.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26dc54",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2546772,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFloraExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26dc54.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26fe68",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2555496,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26fe68.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26fe74",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2555508,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26fe74.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x26fe80",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2555520,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x26fe80.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x270ee4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2559716,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESKeyExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x270ee4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x270ef0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2559728,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESKeyExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x270ef0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x270efc",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2559740,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESKeyExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x270efc.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ac8c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2600076,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectACTIExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ac8c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ac98",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2600088,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectACTIExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ac98.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27aca4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2600100,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectACTIExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27aca4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ef18",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2617112,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectARMOExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ef18.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ef30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2617136,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectARMOExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ef30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ef3c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2617148,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectARMOExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ef3c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x27ef48",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2617160,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectARMOExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x27ef48.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2806e8",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2623208,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectBOOKExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2806e8.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2806f4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2623220,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectBOOKExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x2806f4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x280700",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2623232,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectBOOKExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x280700.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x282324",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2630436,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectCONTExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x282324.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x282330",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2630448,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectCONTExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x282330.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x28233c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2630460,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectCONTExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x28233c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x285758",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2643800,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x285758.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x285764",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2643812,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x285764.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x285770",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2643824,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x285770.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x388364",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3703652,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESShoutExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x388364.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x388370",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3703664,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESShoutExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x388370.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x38837c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3703676,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESShoutExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x38837c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x388388",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3703688,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESShoutExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x388388.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x38c3d4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3720148,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSBodyPartDataExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x38c3d4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x38c3e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3720160,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSBodyPartDataExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x38c3e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x398028",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3768360,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSPerkExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x398028.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x398034",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3768372,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSPerkExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x398034.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x398040",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3768384,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "BGSPerkExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x398040.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3b2bf4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3877876,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESClassExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x3b2bf4.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3b2c00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3877888,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESClassExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x3b2c00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3b2c0c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3877900,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "TESClassExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x3b2c0c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x446c8c",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 4484236,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorValueInfoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x446c8c.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x446c98",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 4484248,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorValueInfoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x446c98.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x446ca4",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 4484260,
+      "size": 9,
+      "status": "matched",
+      "named": false,
+      "name": "ActorValueInfoExtendedFormPrefixLayout secondary destructor adjustor",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(medium): exact owner/component RTTI and primary target; pinned typed initial form component prefix; complete owner identity unclaimed",
+      "owner": "awarebayes",
+      "evidence": "findings/ghidra-import.md",
+      "report": "reports/sse-steam-1-7-104/0x446ca4.json"
     }
   ],
   "milestones": [
@@ -411238,7 +413690,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-15T23:55:28Z",
+  "updated_at": "2026-11-16T00:10:20Z",
   "work_items": [
     {
       "id": "pin-target",
