@@ -6,9 +6,15 @@
 // A byte match shows that this source and recipe produce the checked code; it does not verify the
 // community name or that the original source looked like this.
 // Recipe: reconstruction/recipes/msvc-19.16.27054-o2.json (compile this file alone).
-// Only Unk_0D is compared.
+// Unk_0C (RVA 0x432510, 3 bytes) and Unk_0D are compared.
+// CI hash: 0x432510 ?Unk_0C@BSFaceGenKeyframe@@QEAA_NXZ
 // CI hash: 0x4324f0 ?Unk_0D@BSFaceGenKeyframe@@QEAA_NXZ
 #include "BSFaceGenKeyframe.h"
+
+bool BSFaceGenKeyframe::Unk_0C()
+{
+    return false;
+}
 
 bool BSFaceGenKeyframe::Unk_0D()
 {
