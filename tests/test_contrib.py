@@ -313,6 +313,12 @@ class ClaimTests(Base):
             self.assertEqual(contrib.main(['--json', 'claim', '--model', 'synthetic-agent', f'0x{contrib.SELF_TEST_RVA:x}'], ctx=ctx), contrib.USAGE)
 
 
+def filled_skeleton(*args):
+    """Synthetic source for intake tests; an untouched draft must remain unpublishable."""
+    h, cpp = contrib.skeleton(*args)
+    return h, cpp.replace('SKELETON_TODO_BODY;', '').replace('SKELETON_TODO_ORIGIN', 'none')
+
+
 class SkeletonTests(Base):
     def test_skeleton_passes_the_lint(self):
         data = contrib.inventory(ROOT)
@@ -320,6 +326,9 @@ class SkeletonTests(Base):
                   and contrib.PLAIN_NAME.fullmatch(f['name']))
         cls, method = contrib.PLAIN_NAME.fullmatch(fn['name']).groups()
         h, cpp = contrib.skeleton(fn, cls, method, 'forms', 'tester, no AI', contrib.DEFAULT_RECIPE)
+        self.assertIn('SKELETON_TODO_BODY;', cpp)
+        self.assertIn('SKELETON_TODO_ORIGIN', cpp)
+        cpp = cpp.replace('SKELETON_TODO_BODY;', '').replace('SKELETON_TODO_ORIGIN', 'none')
         root = self.tmp / 'repo'
         for rel in ('builds/target.json', contrib.DEFAULT_RECIPE, fn['evidence']):
             (root / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -362,7 +371,7 @@ class IntakeTests(Base):
         self.git('add', '.')
         self.git('-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'base')
         fn = next(f for f in contrib.inventory(ROOT)['functions'] if f['rva'] == 0x1de5e0)
-        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
+        h, cpp = filled_skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
         (self.repo / 'reconstruction/forms').mkdir(parents=True)
         (self.repo / 'reconstruction/forms/TESActorBaseData.h').write_text(h)
         (self.repo / 'reconstruction/forms/TESActorBaseData.cpp').write_text(cpp)
@@ -531,7 +540,7 @@ class SubmitTests(Base):
         self.git('add', '.')
         self.git('-c', 'user.name=t', '-c', 'user.email=t@t', 'commit', '-q', '-m', 'base')
         fn = next(f for f in contrib.inventory(ROOT)['functions'] if f['rva'] == self.RVA)
-        h, cpp = contrib.skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
+        h, cpp = filled_skeleton(fn, 'TESActorBaseData', 'Unk_07', 'forms', 'tester', contrib.DEFAULT_RECIPE)
         self.unit = ['reconstruction/forms/TESActorBaseData.h', 'reconstruction/forms/TESActorBaseData.cpp']
         (self.repo / 'reconstruction/forms').mkdir(parents=True)
         (self.repo / self.unit[0]).write_text(h)

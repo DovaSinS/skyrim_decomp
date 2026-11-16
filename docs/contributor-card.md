@@ -21,6 +21,10 @@ matching bytes improve; missing diagnostics are unknown. Stop when the helper sa
 preserve the source and sanitized reason, and release the claim if you leave it. Never change
 inputs, compiler flags, comparator or checks to force a pass. The matching cookbook is optional.
 
+For typed bases, virtual signatures, cleanup choices and header gaps, see the
+[declaration kit](../reconstruction/declarations/README.md). `start` leaves bodies and code origin
+unfilled; resolve every skeleton marker before submitting.
+
 ## Rules for small functions
 
 1. **Members.** A byte-sized read from `this + 0x18` indicates a 1-byte member at offset 0x18. Split the
@@ -39,7 +43,7 @@ inputs, compiler flags, comparator or checks to force a pass. The matching cookb
    { return ((a_flags >> a_bit) & 1) != 0; }`, call `TestBit(flags, 3)`, label `// TestBit: GUESS(low)`.
 7. **Null test the target repeats:** read the member again instead of keeping a local copy.
 8. **`static_assert` needs a message:** `static_assert(sizeof(X) == 0x20, "X size");`.
-9. **Includes:** own header `#include "X.h"`; others only as the skeleton gives them (`"../area/Y.h"`).
+9. **Includes:** own header `#include "X.h"`; others use the skeleton's reconstruction-root paths (`"area/Y.h"`); never parent paths.
 10. **Labels.** A label line is `// <names>: <LABEL>`; LABEL is `COMMUNITY(<owner>/<repo>@<rev>, <licence>)`,
     `GUESS(low)`, `EXE_RTTI`, `OBSERVED`, or `STANDIN` plus one of those. Copy the skeleton's labels;
     add one for every name you add. Never write the label words anywhere else. One label per line:

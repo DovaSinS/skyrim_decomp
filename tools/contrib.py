@@ -931,50 +931,7 @@ def save_local_claim(ctx, rva, record):
 
 # ------------------------------------------------------------------ unit skeleton and task
 
-def skeleton(fn, cls, method, area, drafted_by, recipe):
-    """(.h text, .cpp text) of a new unit that compiles and passes the lint, with labels filled in."""
-    target = fn['build_id']
-    label, licence = community_label(fn.get('name_source'))
-    label = label or 'GUESS(low)'
-    gpl = licence and 'GPL' in licence
-    lic_line = (['// Declarations derived from powerof3/CommonLibSSE are GPL-3.0 (its licence).'] if gpl else [])
-    is_dtor = method.startswith('~')
-    decl = f'virtual {method}();' if is_dtor else f'void {method}();'
-    h = '\n'.join([
-        f'// Type declarations for the {cls} translation unit (build {target}).',
-        '//',
-        '// Labels: v2',
-        '// Source exposure: binary-analysis (a local listing of the contributor\'s own copy of the pinned image).',
-        *lic_line,
-        '// Community names are unverified. Only the members the compared code needs are declared.',
-        f'// {cls}: {label}',
-        f'// {method}: {label}',
-        '#pragma once',
-        '',
-        f'class {cls} {{',
-        'public:',
-        f'    // Placeholder signature: replace the return and parameter types with the real ones.',
-        f'    {decl}',
-        '};',
-        ''])
-    cpp = '\n'.join([
-        f'// {cls}::{method}, build {target}, RVA 0x{fn["rva"]:x}, {fn["size"]} bytes.',
-        '//',
-        '// Labels: v2',
-        f'// Evidence: {fn["evidence"]}.',
-        f'// Source exposure: binary-analysis. Drafted by {drafted_by}.',
-        *lic_line,
-        '// A byte match shows that this source and recipe produce the checked code; it does not verify the',
-        '// community name or that the original source looked like this.',
-        f'// Recipe: {recipe} (compile this file alone).',
-        f'// Only {method} is compared.',
-        f'#include "{cls}.h"',
-        '',
-        f'{cls}::{method}()' if is_dtor else f'void {cls}::{method}()',
-        '{',
-        '}',
-        ''])
-    return h, cpp
+from unit_skeleton import skeleton  # noqa: E402 (compatibility entry point; one renderer)
 
 
 def contrib_profile(ctx, given=None):
@@ -1749,6 +1706,8 @@ def start(ctx, args, quiet=False):
     if sibling:
         (tdir / 'sibling.md').write_text(f'# {cls}: pointers into the FNV decompilation (private)\n'
                                          + '\n'.join(sibling) + '\n')
+    from header_index import advice as header_advice
+    declaration_advice = [hint for mm in m for hint in header_advice(ctx.repo, cls, mm.group(2))]
     created = []
     if not (ctx.repo / cpp).exists():
         if args.practice:
@@ -1757,7 +1716,14 @@ def start(ctx, args, quiet=False):
         if not drafted:
             raise Stop(CONSENT, 'say who drafts the unit (a person, and the AI model if one writes code)',
                        f'{ctx.cli} start {" ".join(args.rva)} --drafted-by "<your name>, assisted by <model or none>"')
-        h_text, cpp_text = skeleton(fns[0], cls, m[0].group(2), area, drafted, recipe)
+        from unit_skeleton import contributor_files
+        inputs = [dict(fn, pack=functions[fn['rva']].get('pack')) for fn in fns]
+        if cleanup := getattr(args, 'deleting_cleanup', None):
+            for fn in inputs:
+                if fn['name'].split('::')[-1].startswith('~'):
+                    fn['destructor'] = {'kind': 'scalar deleting destructor', 'complete_form': cleanup}
+        _h, h_text, _cpp, cpp_text, declaration_advice, recipe = contributor_files(
+            ctx.repo, inputs, cls, area, drafted, recipe, sources=ctx.local / 'sources')
         if not (ctx.repo / header).exists():
             (ctx.repo / header).parent.mkdir(parents=True, exist_ok=True)
             write_source(ctx.repo / header, h_text)
@@ -1768,6 +1734,8 @@ def start(ctx, args, quiet=False):
     elif not args.practice:
         ctx.say(f'{cpp} exists: add each new function and its "RVA 0x<rva>, <n> bytes" header line yourself. '
                 'Editing an accepted unit makes its accepted functions stale until the project re-confirms them.')
+    for hint in declaration_advice:
+        ctx.say(hint)
     prof = contrib_profile(ctx, getattr(args, 'profile', None))
     save_config(ctx, profile=prof['name'])
     task = {'task_id': tdir.name, 'build_id': target['build_id'], 'compiled': cpp, 'recipe': recipe,
@@ -1794,7 +1762,8 @@ def start(ctx, args, quiet=False):
                 + attempt_progress.guidance(prof['stuck_after'])
                 + f' Hard cap: {prof["contrib_max_tries"]} compare runs. {prof["cost"]}')
     return OK, {'task': tdir.name, 'unit': [header, cpp], 'created': created, 'packs': packs, 'branch': branch,
-                'practice': bool(args.practice), 'sibling': str(tdir / 'sibling.md') if sibling else None,
+                'practice': bool(args.practice), 'declarations': declaration_advice,
+                'sibling': str(tdir / 'sibling.md') if sibling else None,
                 'profile': prof['name'], 'read': prof['contrib_docs'], 'max_tries': prof['contrib_max_tries'],
                 'cost': prof['cost']}, \
         f'edit {cpp}, then {ctx.cli} compare'
@@ -2320,6 +2289,8 @@ def parser():
     s.add_argument('--drafted-by')
     s.add_argument('--area')
     s.add_argument('--recipe')
+    s.add_argument('--deleting-cleanup', choices=('inline', 'out-of-line'),
+                   help='for a scalar deleting destructor identified locally: inline complete cleanup or call out')
     s.add_argument('--practice', action='store_true', help='try an already matched function as an exercise')
     s.add_argument('--profile', choices=CONTRIB_PROFILES,
                    help='cheap (default: small card, Haiku/Luna-class) or full (full card, Sonnet-class); never changes the gate')
