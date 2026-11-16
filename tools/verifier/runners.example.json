@@ -1,9 +1,14 @@
 {
   "runners_schema": 1,
   "attempt": "mac",
-  "confirm": ["mac", "winpc"],
+  "confirm": [
+    "mac",
+    "winpc"
+  ],
   "hosts": {
-    "boat": {"backend": "boat"},
+    "boat": {
+      "backend": "boat"
+    },
     "mac": {
       "backend": "local",
       "host_id": "mac-wine",
@@ -29,6 +34,13 @@
       "max_parallel": 8,
       "max_sessions": 4,
       "batch": 16
+    },
+    "ci": {
+      "backend": "ci-hash",
+      "host_id": "github-windows-native",
+      "machine": "github-hosted-windows",
+      "loader": "native",
+      "repository": "awarebayes/skyrim_decomp"
     }
   }
 }

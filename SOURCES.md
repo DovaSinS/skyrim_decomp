@@ -80,6 +80,6 @@ not target evidence. No upstream tree or game-derived class table is included.
 The contributor renderer may prepare other classes from these pinned NG headers, falling back
 to the permitted powerof3/CommonLibSSE revision above. Adapted declarations retain their origin
 labels, MIT attribution and GPL-3.0-or-later notices when applicable.
-`reconstruction/declarations/COPYING-GPL-3.0.txt` retains the full, unmodified `COPYING.txt` from
+`licenses/CommonLibSSE-GPL-3.0.txt` retains the full, unmodified `COPYING.txt` from
 powerof3 at the pinned revision; it applies to GPL-derived declarations, not the MIT-only kit.
 No community implementation body is adapted by the declaration-kit generator.

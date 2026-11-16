@@ -37,7 +37,7 @@
 #include <cstdint>
 #include <cstddef>
 #include "BSFixedStringStorageLayout.h"
-#include "../netimmerse/NiCollisionObjectStorageLayout.h"
+#include "netimmerse/NiCollisionObjectStorageLayout.h"
 
 namespace ResearchLayouts {
 class bhkWorldObject;

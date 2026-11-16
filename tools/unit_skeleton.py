@@ -188,14 +188,14 @@ def is_gpl(label):
 
 # ------------------------------------------------------------------ the contributor-flow writer
 
-def skeleton(fn, cls, method, area, drafted_by, recipe):
+def skeleton(fn, cls, method, area, drafted_by, recipe, code_origin=None):
     """Compatibility entry point; render through the same engine as task skeletons."""
     unit = {'cls': cls, 'area': area, 'header': f'reconstruction/{area}/{cls}.h',
             'compiled': f'reconstruction/{area}/{cls}.cpp', 'brief': '', 'material': [],
             'task': {'task_id': f'contrib-{cls.lower()}', 'build_id': fn['build_id'], 'recipe': recipe},
             'functions': [dict(fn, community_name=f'{cls}::{method}',
                                pack_json={'identity': {'name_source': fn.get('name_source')}})],
-            'evidence': fn.get('evidence')}
+            'evidence': fn.get('evidence'), 'contributor_origin': True, 'code_origin': code_origin}
     _hp, header, _cp, source = render_unit(unit, drafted_by)
     return header, source
 
@@ -205,16 +205,22 @@ def root_include_recipe(repo, recipe):
     path = Path(repo) / recipe
     doc = _json(path)
     flags = doc.get('flags', [])
-    if any(flag in ('/Ireconstruction', '-Ireconstruction') for flag in flags):
+    if (any(flag in ('/Ireconstruction', '-Ireconstruction') for flag in flags)
+            or any(flags[i:i + 2] in (['/I', 'reconstruction'], ['-I', 'reconstruction'])
+                   for i in range(len(flags)))):
         return recipe
     variant = path.with_stem(path.stem + '-root-includes')
     added = _json(variant)
     if added and added == dict(doc, flags=flags + ['/Ireconstruction']):
         return variant.relative_to(Path(repo)).as_posix()
-    raise SkeletonError(f'{recipe}: root-relative headers require the admitted /Ireconstruction recipe flag')
+    from reconstruction_includes import root_recipe
+    try:
+        return root_recipe(repo, recipe)
+    except (ValueError, OSError) as exc:
+        raise SkeletonError(str(exc)) from None
 
 
-def contributor_files(repo, functions, cls, area, drafted_by, recipe, sources=None):
+def contributor_files(repo, functions, cls, area, drafted_by, recipe, sources=None, code_origin=None):
     """Adapt public declarations and contributor-owned packs to the ordinary unit renderer.
 
     Never consult internal queues, class exports or sibling indexes. Read community sources
@@ -269,7 +275,7 @@ def contributor_files(repo, functions, cls, area, drafted_by, recipe, sources=No
     unit = {'cls': cls, 'area': area, 'header': f'reconstruction/{area}/{cls}.h',
             'compiled': f'reconstruction/{area}/{cls}.cpp', 'brief': '', 'material': [],
             'task': {'task_id': f'contrib-{cls.lower()}', 'build_id': functions[0]['build_id'], 'recipe': recipe},
-            'functions': members, 'evidence': functions[0].get('evidence'), 'contributor': True,
+            'functions': members, 'evidence': functions[0].get('evidence'), 'contributor': True, 'code_origin': code_origin,
             'community_facts': facts, 'signature_conflicts': conflicts,
             'notices': [n for n in notices if not any(n != other and n in other for other in notices)]}
     rendered = render_unit(unit, drafted_by, repo)
@@ -330,6 +336,7 @@ def shared_path(repo, header, include):
 
 def header_text(path, repo, seen=None):
     """Declarations in a header's local include closure, for collision and size checks."""
+    from reconstruction_includes import header_path
     seen = set() if seen is None else seen
     path = Path(path).resolve()
     if path in seen or not path.is_relative_to(Path(repo).resolve()) or not path.is_file():
@@ -518,6 +525,7 @@ def plan(unit, repo=None):
         bases = {name: info['bases'] for name, info in facts.items()}
         sizes = {name: info['size'] for name, info in facts.items() if info.get('size') is not None}
     chain = ancestors(bases, cls)
+    from reconstruction_includes import header_path
     shared = brief_shared_headers(unit['brief'])
     if not shared:
         shared = {p.stem: p.relative_to(Path(repo) / 'reconstruction').as_posix()
@@ -549,7 +557,7 @@ def plan(unit, repo=None):
                 included = ''
         collisions = any(class_defined(included, name) for name in [cls] + standins)
         if (included and sized and not collisions and '// TODO type ' not in included and not inline_base):
-            include = (anc, shared[anc])
+            include = (anc, ancestor_path.relative_to(repo / 'reconstruction').as_posix())
             break
         standins.append(anc)
     if include is None:
@@ -601,6 +609,12 @@ def skeleton_files(task_dir, drafted_by=None, repo=None):
 def render_unit(unit, drafted_by=None, repo=None):
     """One renderer for internal tasks and the contributor adapter."""
     repo = Path(repo or REPO).resolve()
+    code_origin = unit.get('code_origin')
+    if code_origin is not None and (not code_origin.strip() or len(code_origin) > 2048
+                                    or any(ord(c) < 32 for c in code_origin)):
+        raise SkeletonError('code origin must be a nonempty single-line declaration')
+    origin_lines = ([f'// Code origin: {code_origin or "SKELETON_TODO_CODE_ORIGIN (state the actual origin and any adaptation)"}']
+                    if unit.get('contributor') or unit.get('contributor_origin') else [])
     p = plan(unit, repo)
     cls, build = p['cls'], unit['task'].get('build_id')
     task_id = unit['task'].get('task_id') or 'unit'
@@ -810,6 +824,7 @@ def render_unit(unit, drafted_by=None, repo=None):
         '//',
         '// Labels: v2',
         f'// Task: {task_id}',
+        *origin_lines,
         ('// Source exposure: mixed (names and declarations from community headers; base classes, sizes and'
          if not p['facts'] else '// Source exposure: mixed (community declarations and the contributor-owned pack;'),
         ('// the compared functions from the pinned image).' if not p['facts'] else
@@ -863,6 +878,7 @@ def render_unit(unit, drafted_by=None, repo=None):
         '//',
         '// Labels: v2',
         f'// Task: {task_id}',
+        *origin_lines,
         '// Source exposure: mixed (names and declarations from community headers; the listing of the pinned',
         '// image).',
         *([GPL_NOTE] if gpl else []),
@@ -933,13 +949,13 @@ def write_skeleton(task_dir, drafted_by=None, repo=None):
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, 'x') as out:  # 'x': never replace a file created since the check above
             out.write(text)
-    unit = load_unit(task_dir, repo)
-    p = plan(unit, repo)
-    if p['include']:
-        recipe = root_include_recipe(repo, unit['task']['recipe'])
-        if recipe != unit['task']['recipe']:
-            unit['task']['recipe'] = recipe
-            (Path(task_dir) / 'task.json').write_text(json.dumps(unit['task'], indent=2) + '\n')
+    task_path = Path(task_dir) / 'task.json'
+    task = _json(task_path)
+    recipe = re.search(r'^// Recipe: (\S+)', cpp_text, re.M).group(1)
+    if task.get('recipe') != recipe:
+        task['recipe'] = recipe
+        task_path.write_text(json.dumps(task, indent=2) + '\n')
+    p = plan(load_unit(task_dir, repo), repo)
     hints = {f'{p["cls"]}::{m["method"]}': m['fn']['rva'] for m in p['members']
              if m['method'].startswith('UnknownDtor_') or m['method'] == 'operator()'}
     if hints:

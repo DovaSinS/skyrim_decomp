@@ -50,7 +50,7 @@ either version 3 of the License, or (at your option) any later version.
 This file is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 See the GNU General Public License for more details. A copy is provided in
-reconstruction/declarations/COPYING-GPL-3.0.txt; see also https://www.gnu.org/licenses/.'''
+licenses/CommonLibSSE-GPL-3.0.txt; see also https://www.gnu.org/licenses/.'''
 
 
 def class_body(text, cls):
@@ -201,7 +201,7 @@ def generate(root=ROOT):
     license_path = Path(root) / SOURCES[1][1]
     proc = subprocess.run(['git', '-C', str(license_path), 'show', f'{PO3_REV}:COPYING.txt'],
                           capture_output=True, text=True, check=True)
-    files['reconstruction/declarations/COPYING-GPL-3.0.txt'] = proc.stdout
+    files['licenses/CommonLibSSE-GPL-3.0.txt'] = proc.stdout
     return files
 
 

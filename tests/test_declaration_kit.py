@@ -76,13 +76,24 @@ class ContributorRenderer(unittest.TestCase):
                                                dict(slot=2, name='Query', declaration='virtual Other* Query(const Item& a_item);'),
                                                dict(slot=3, name='Reset', declaration='virtual void Reset();')])}
 
-    def files(self, functions=None):
+    def files(self, functions=None, **options):
         functions = functions or [dict(build_id=BUILD, rva=0x1000, size=4, name='Widget::Query',
                                       name_source='CommonLibSSE-NG', evidence='findings/synthetic.md')]
         with patch.object(kit, 'pinned_class', side_effect=lambda root, cls: self.facts.get(cls)), \
                 patch.object(kit, 'notice', return_value='// synthetic MIT notice'):
             return us.contributor_files(self.root, functions, 'Widget', 'misc', 'synthetic tester',
-                                        'reconstruction/recipes/test.json')
+                                        'reconstruction/recipes/test.json', **options)
+
+    def test_origin_metadata_survives_shared_renderer_and_refuses_invalid_input(self):
+        _hp, h, _cp, cpp, _hints, _recipe = self.files()
+        for text in (h, cpp):
+            self.assertIn('SKELETON_TODO_CODE_ORIGIN', text)
+        _hp, h, _cp, cpp, _hints, _recipe = self.files(code_origin='original synthetic fixture')
+        for text in (h, cpp):
+            self.assertIn('Code origin: original synthetic fixture', text)
+            self.assertNotIn('SKELETON_TODO_CODE_ORIGIN', text)
+        with self.assertRaisesRegex(us.SkeletonError, 'nonempty single-line'):
+            self.files(code_origin='synthetic\ninvalid')
 
     def test_all_functions_typed_base_slots_reference_declarations_and_markers(self):
         fns = [dict(build_id=BUILD, rva=rva, size=4, name='Widget::' + method,

@@ -86,6 +86,7 @@ class Fixture(unittest.TestCase):
         (r / 'findings/batch.md').write_text('x\n')
         (r / 'reconstruction/recipes').mkdir(parents=True)
         (r / 'reconstruction/recipes/r.json').write_text('{"flags": ["/Ireconstruction"]}\n')
+        (r / 'reconstruction/recipes/r-reconstruction.json').write_text('{"flags": ["/I", "reconstruction"]}\n')
         (r / 'reconstruction/misc').mkdir()
         (r / 'reconstruction/misc/WidgetBase.h').write_text(BASE_H)
         packs = r / '.local/packs' / BUILD
@@ -137,6 +138,27 @@ class Fixture(unittest.TestCase):
 
 
 class SkeletonText(Fixture):
+    def test_cross_area_header_uses_explicit_root_recipe_without_changing_old_recipe(self):
+        from contrib_screen import screen_tree
+        from pipeline import compiler_include_problem
+        header = self.root / 'reconstruction/forms/WidgetBase.h'
+        header.parent.mkdir()
+        (self.root / 'reconstruction/misc/WidgetBase.h').rename(header)
+        brief = self.unit / 'BRIEF.md'
+        brief.write_text(brief.read_text().replace('../misc/WidgetBase.h', 'forms/WidgetBase.h'))
+        (self.root / 'reconstruction/recipes/r.json').write_text('{}\n')
+        before = (self.root / 'reconstruction/recipes/r.json').read_bytes()
+        h_rel, h, cpp_rel, cpp = self.files()
+        self.assertIn('#include "forms/WidgetBase.h"', h)
+        self.assertNotIn('../', h)
+        self.assertIn('Recipe: reconstruction/recipes/r-reconstruction.json', cpp)
+        us.write_skeleton(self.unit, repo=self.root)
+        task = json.loads((self.unit / 'task.json').read_text())
+        self.assertEqual(task['recipe'], 'reconstruction/recipes/r-reconstruction.json')
+        self.assertIsNone(compiler_include_problem(task, self.root))
+        self.assertEqual(screen_tree(self.root, cpp_rel), [])
+        self.assertEqual((self.root / 'reconstruction/recipes/r.json').read_bytes(), before)
+
     def test_header_fields_labels_and_stubs(self):
         h_rel, h, cpp_rel, cpp = self.files()
         self.assertEqual((h_rel, cpp_rel), ('reconstruction/misc/FancyWidget.h', 'reconstruction/misc/FancyWidget.cpp'))
@@ -227,14 +249,14 @@ class SkeletonText(Fixture):
         base.write_text(BASE_H + '#include "Helper.h"\n')
         (base.parent / 'Helper.h').write_text('class FancyWidget {};\n')
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
         self.assertIn('class WidgetBase', h)
 
     def test_shared_header_needs_a_matching_size_assertion(self):
         base = self.root / 'reconstruction/misc/WidgetBase.h'
         base.write_text(BASE_H.replace('sizeof(WidgetBase) == 0x10', 'sizeof(WidgetBase) == 0x18'))
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
 
     def test_call_operator_keeps_parameters_name_and_binding_hint(self):
         task = json.loads((self.unit / 'task.json').read_text())
@@ -252,7 +274,7 @@ class SkeletonText(Fixture):
     def test_unresolved_shared_header_falls_back_to_local_standins(self):
         (self.root / 'reconstruction/misc/WidgetBase.h').write_text('// TODO type Missing: unresolved.\n')
         _hr, h, _cr, _cpp = self.files()
-        self.assertNotIn('#include "../misc/WidgetBase.h"', h)
+        self.assertNotIn('#include "WidgetBase.h"', h)
         self.assertIn('class WidgetBase', h)
 
     def test_drafted_by_fills_the_model_line(self):

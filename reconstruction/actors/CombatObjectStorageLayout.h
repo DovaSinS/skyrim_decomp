@@ -36,7 +36,7 @@
 #pragma once
 #include <cstdint>
 #include <cstddef>
-#include "../netimmerse/NiRefObjectStorageLayout.h"
+#include "netimmerse/NiRefObjectStorageLayout.h"
 
 namespace ResearchLayouts {
 class CombatObjectStorageLayout : public NiRefObjectStorageLayout {

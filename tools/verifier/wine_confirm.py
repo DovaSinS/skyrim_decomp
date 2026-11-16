@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+"""Prepare private Wine comparator output with fresh toolchain checks for CI confirmation."""
+import argparse
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import pipeline
+import runners
+
+
+def run(directory):
+    task = pipeline.load_task(directory)
+    files, _ = pipeline.unit_manifest(task)
+    host = runners.for_attempt()
+    if not host or (host.get('backend'), host.get('loader'), host.get('host_id')) != (
+            'local', 'wine', 'mac-wine'):
+        raise runners.RunnerError('CI first-host preparation requires the project Wine host')
+    worker = runners.AgentHost(host, task, log=print, fresh_prep=True)
+    code, _ = worker.run(files, task['dir'] / '.confirm-stage' / host['host_id'])
+    worker.fetch(task['dir'] / 'confirm' / host['host_id'])
+    return code
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('task', type=Path)
+    args = parser.parse_args()
+    try:
+        return run(args.task)
+    except Exception:
+        print('ERROR: Wine preparation infrastructure failed; see private runner diagnostics.')
+        return 2
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

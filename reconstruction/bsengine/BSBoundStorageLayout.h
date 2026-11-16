@@ -37,7 +37,7 @@
 #include <cstdint>
 #include <cstddef>
 #include "BSFixedStringStorageLayout.h"
-#include "../netimmerse/NiExtraDataStorageLayout.h"
+#include "netimmerse/NiExtraDataStorageLayout.h"
 
 namespace ResearchLayouts {
 class BSBoundStorageLayout : public NiExtraDataStorageLayout {
