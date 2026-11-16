@@ -577,6 +577,26 @@ class GitTransport(unittest.TestCase):
         return subprocess.run(['git', *args], cwd=self.root, check=True,
                               capture_output=True, text=True).stdout.strip()
 
+    def test_rerun_uses_live_origin_main_in_new_clean_tree(self):
+        import flow
+        tree = self.root / 'frozen'
+        tree.mkdir()
+        (self.root / 'trusted.txt').write_text('new main\n')
+        self.git('add', 'trusted.txt')
+        self.git('commit', '--quiet', '-m', 'advance main')
+        self.git('push', '--quiet', 'origin', 'main')
+        live = self.git('rev-parse', 'HEAD')
+        self.assertNotEqual(live, self.base)
+        clean = tree.parent / ('rerun-g1-' + live[:12])
+        with patch.object(self.runtime, 'link_inputs'), \
+             patch.object(flow, 'inventory', return_value={'functions': []}), \
+             patch.object(flow, 'record_rerun', return_value=(True, [])):
+            self.runtime.rerun({'tree': str(tree), 'base': self.base},
+                               {'name': 'g1', 'sampled': [], 'build_id': 'synthetic'}, [], {})
+        for ref in ('HEAD', 'refs/remotes/origin/main'):
+            actual = subprocess.check_output(['git', 'rev-parse', ref], cwd=clean, text=True).strip()
+            self.assertEqual(actual, live)
+
     def test_fetch_materializes_only_blobs_on_trusted_main(self):
         fetched = self.runtime.fetch(pr(head=self.head))
         self.assertNotIn('problem', fetched)
@@ -799,23 +819,6 @@ class RuntimeEffects(unittest.TestCase):
                 self.runtime.command(['synthetic'])
         self.assertEqual(next(self.runtime.logs.glob('*.log')).read_bytes(), b'partial\n')
         self.assertEqual(self.state.data['last_timeout']['command'], ['synthetic'])
-
-    def test_rerun_pins_clean_tree_origin_main_to_frozen_base(self):
-        import flow
-        tree = self.root / 'frozen'
-        tree.mkdir()
-        base = subprocess.check_output(['git', 'rev-parse', 'HEAD~1'], cwd=ROOT, text=True).strip()
-        clean = tree.parent / 'rerun-g1'
-        def prepare(path, revision):
-            subprocess.run(['git', 'clone', '--quiet', '--shared', str(ROOT), str(path)], check=True)
-        with patch.object(self.runtime, 'prepare_main_tree', side_effect=prepare), \
-             patch.object(flow, 'inventory', return_value={'functions': []}), \
-             patch.object(flow, 'record_rerun', return_value=(True, [])):
-            self.runtime.rerun({'tree': str(tree), 'base': base},
-                               {'name': 'g1', 'sampled': [], 'build_id': 'synthetic'}, [], {})
-        actual = subprocess.check_output(['git', 'rev-parse', 'refs/remotes/origin/main'],
-                                         cwd=clean, text=True).strip()
-        self.assertEqual(actual, base)
 
     def test_pending_publication_uses_fresh_trusted_main_tools(self):
         tree = self.root / 'frozen'
