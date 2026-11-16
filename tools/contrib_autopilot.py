@@ -444,9 +444,13 @@ class Runtime:
                 path = tree / (cpp[:-4] + suffix)
                 if path.is_file():
                     rvas.update(int(m, 16) for m in re.findall(r'\bRVA\s+(0x[0-9a-fA-F]+)\b', path.read_text()))
+        changed = {f['path'] for f in fetched['files']}
         # An edit to a shared header can stale accepted functions in other units too.
-        for cpp, rvas in self.companions(fetched).items():
-            units.setdefault(cpp, set()).update(rvas)
+        for fn in data['functions']:
+            if fn.get('status') == 'matched' and fn.get('report'):
+                src = read_json(tree / fn['report'])['source']
+                if changed.intersection(src['translation_unit']):
+                    units.setdefault(src['compiled'], set()).add(fn['rva'])
         if not units or any(not rvas for rvas in units.values()):
             raise Rejected('each changed unit must identify its functions with RVA header lines')
         if any(r not in by_rva for rs in units.values() for r in rs):
