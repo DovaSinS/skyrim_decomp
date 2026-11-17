@@ -544,12 +544,22 @@ def classify_windows(opened, repo, tool_roots):
     """Split /showIncludes paths of a native Windows compile into repository files (exact spelling,
     POSIX form), a toolchain count and anything else."""
     def norm(p):
-        return ntpath.normpath(str(p).replace('/', '\\'))
+        drive, tail = ntpath.splitdrive(str(p).replace('/', '\\'))
+        path = drive + '\\'
+        for part in tail.split('\\'):
+            if part:
+                path = ntpath.realpath(ntpath.join(path, part))
+        return path
     repo_n = norm(repo)
     roots = [norm(r).lower().rstrip('\\') + '\\' for r in tool_roots if r]
     files, outside, tools = set(), [], 0
     for raw in opened:
-        p = norm(raw)
+        path = raw.replace('/', '\\')
+        drive, tail = ntpath.splitdrive(path)
+        if drive and not tail.startswith('\\'):
+            outside.append(raw)
+            continue
+        p = norm(ntpath.join(repo_n, path))
         low = p.lower()
         if any(low.startswith(r) for r in roots):
             tools += 1
