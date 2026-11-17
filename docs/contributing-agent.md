@@ -269,3 +269,7 @@ remains active in the pipeline or is a planned family member.
 Use [the tested-platform matrix and disk budget](contributor-platforms.md). Do not infer native
 Windows or Linux validation from a macOS run or from synthetic tests. Report failures using a
 sanitized summary; do not work around a check.
+
+Agents: read docs/contributor-lessons.md before drafting.
+
+Run `./sr feedback <pr>` to retrieve the structured feedback as JSON.

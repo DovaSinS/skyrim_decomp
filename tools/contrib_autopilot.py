@@ -179,6 +179,64 @@ def credit_confirmed(tree, data, passed, author):
         save_json(path, record)
 
 
+LESSONS = {
+    'opaque': ('Never pad a base class with opaque bytes to force its size; declare represented fields with named unknowns at their offsets.', 'docs/reviewer-runbook.md#checklist-per-function'),
+    'decompiler': ('Write plausible original source rather than copying decompiler output.', 'docs/reviewer-runbook.md#checklist-per-function'),
+    'byte steering': ('Avoid code whose only plausible purpose is steering emitted bytes.', 'docs/reviewer-runbook.md#checklist-per-function'),
+    'binding': ('Ensure each submitted function compiles and binds to its intended symbol.', 'docs/verification.md'),
+    'confirmation': ('Reproduce the comparator pass on both verifier hosts before claiming a match.', 'docs/verification.md#acceptance-rule'),
+    'match': ('Reproduce the comparator pass on both verifier hosts before claiming a match.', 'docs/verification.md#acceptance-rule'),
+    'naming': ('Mark inferred names as guesses and preserve unknowns.', 'docs/reviewer-runbook.md#checklist-per-function'),
+}
+
+
+def lesson_for(finding):
+    value = safe_reason(finding)
+    lower = value.casefold()
+    for category, (lesson, reference) in LESSONS.items():
+        if category in lower:
+            return safe_reason(f'{lesson} ({reference})')
+    return value + ' (docs/contributing-agent.md)'
+
+
+def render_outcome(revision, message):
+    completed = revision.get('completed', {})
+    confirmation = completed.get('confirmation', {})
+    reviews = completed.get('reviews', {})
+    passed = set(confirmation.get('passed', []))
+    approved = set(reviews.get('approved', []))
+    functions = completed.get('functions', {})
+    submitted = {f'0x{int(r):x}' for members in functions.values() for r in members}
+    results = revision.get('feedback_results', {})
+    public_rvas = set(revision.get('feedback_public_rvas', []))
+    def public_text(value):
+        value = safe_reason(value)
+        return re.sub(r'(?i)0x[0-9a-f]{4,}', lambda m: m.group() if m.group().lower() in public_rvas else '[address withheld]', value)
+    submitted &= public_rvas
+    results = {r: status for r, status in results.items() if r in public_rvas}
+    lines = ['### Result']
+    for rva in sorted(submitted | set(results)):
+        status = results.get(rva) or ('reviewed' if rva in approved else 'confirmed on 2 hosts' if rva in passed else 'not confirmed')
+        name = revision.get('feedback_names', {}).get(rva, 'name unavailable')
+        lines.append(f'- {safe_reason(rva)} {public_text(name)}: {public_text(status)}')
+    if len(lines) == 1:
+        lines.append('- Intake did not reach function confirmation.')
+    lines += ['', '### What was good']
+    lines.append(f'- {len(passed)} function(s) confirmed on 2 hosts.' if passed else '- No passing function confirmation was recorded.')
+    findings = [public_text(line) for line in revision.get('feedback_findings', [line for line in message.splitlines() if line.strip()])]
+    lines += ['', '### What needs changing']
+    lines += ['- ' + line + ' (' + next((ref for category, (_, ref) in LESSONS.items() if category in line.casefold()), 'docs/contributing-agent.md') + ')' for line in findings] if findings else ['- None recorded.']
+    optional = reviews.get('naming', [])
+    if optional:
+        lines += ['', 'Optional:'] + ['- ' + public_text(item) + ' (docs/reviewer-runbook.md#checklist-per-function)' for item in optional]
+    lessons = list(dict.fromkeys(public_text(lesson_for(item)) for item in findings + optional))[:5]
+    if not lessons:
+        lessons = [lesson_for('match')]
+    lines += ['', '### For your agent', '<!-- agent-lessons:start -->'] + ['- ' + item for item in lessons] + ['<!-- agent-lessons:end -->',
+        "Copy these bullets into your agent's AGENTS.md or CLAUDE.md if you want them to stick."]
+    return '\n'.join(lines)
+
+
 class Runtime:
     def __init__(self, root, private, config, state, dry_run=False):
         self.root, self.private, self.config, self.state = Path(root), Path(private), config, state
@@ -305,8 +363,13 @@ class Runtime:
             return False
 
     def feedback(self, revision, key, label, message, commits=(), replace=False):
+        if key.startswith(('compare-', 'review-')):
+            return
+        if key in ('intake', 'functions', 'screen', 'fetch-rejected', 'published', 'dropped', 'companion-confirmation', 'companion-review'):
+            message = render_outcome(revision, message)
+            key, replace = 'feedback', True
         marker = f'<!-- contrib-autopilot:{revision["number"]}:{revision["head"]}:{key} -->'
-        body = marker + '\n' + '\n'.join(safe_reason(line) for line in message.splitlines() if line.strip())
+        body = marker + '\n' + '\n'.join(safe_reason(line) if line.strip() else '' for line in message.splitlines())
         for sha in commits:
             if not SHA.fullmatch(sha):
                 raise Stop('invalid publication commit')
@@ -320,7 +383,8 @@ class Runtime:
             comments = self.command(['gh', 'api', '--paginate', '--slurp',
                                      f'repos/{REPOSITORY}/issues/{revision["number"]}/comments']).stdout
             pages = json.loads(comments)
-            existing = next((c for page in pages for c in page if marker in c.get('body', '')
+            prior_marker = re.compile(r'<!-- contrib-autopilot:' + str(revision['number']) + r':[0-9a-f]{40}:feedback -->') if key == 'feedback' else None
+            existing = next((c for page in pages for c in page if (marker in c.get('body', '') or (prior_marker and prior_marker.search(c.get('body', ''))))
                              and (c.get('user') or {}).get('login', '').casefold() == REPOSITORY.split('/')[0].casefold()), None)
             if existing and replace and existing.get('body', '').strip() != body.strip():
                 self.command(['gh', 'api', '--method', 'PATCH',
@@ -852,7 +916,7 @@ class Runtime:
     def reviews(self, fetched, groups, tasks, revision):
         import flow
         tree = Path(fetched['tree'])
-        approved, approved_functions, failed, hold_history = [], [], [], False
+        approved, approved_functions, failed, naming, hold_history = [], [], [], [], False
         def quarantine(blocks):
             return any(b.get('_checks', {}).get('provenance', '').split(',')[0].strip() == 'fail'
                        or b.get('_checks', {}).get('publication_hygiene', '').split(',')[0].strip() == 'fail'
@@ -890,10 +954,11 @@ class Runtime:
             # A publication/provenance rejection quarantines the whole source unit; no partial leak.
             accepted = [r for r, b in blocks.items() if b.get('verdict') == 'approve']
             for rva, block in blocks.items():
+                naming.extend(safe_reason(item) for item in (block.get('_naming_findings') or []))
                 if block.get('verdict') != 'approve':
                     reasons = block.get('_blocking_findings') or []
-                    failed.append(dict(rva=rva, reason='; '.join(safe_reason(r) for r in reasons)
-                                       or 'Reviewer escalation; source remains held'))
+                    failed.extend(dict(rva=rva, reason=safe_reason(reason)) for reason in
+                                  (reasons or ['Reviewer escalation; source remains held']))
             if accepted and not unit_quarantine:
                 approved.append(name)
                 approved_functions.extend(accepted)
@@ -903,7 +968,7 @@ class Runtime:
         if hold_history:
             failed.append(dict(reason='PR history held because it contains a quarantined unit'))
         return dict(groups=[] if hold_history else approved,
-                    approved=[] if hold_history else approved_functions, failed=failed)
+                    approved=[] if hold_history else approved_functions, failed=failed, naming=naming)
 
     def current_head(self, number):
         return json.loads(self.gh('pr', 'view', str(number), '--json', 'headRefOid').stdout)['headRefOid']
@@ -993,9 +1058,12 @@ class Runtime:
                     read_json(self.fdir / 'groups' / (row['group'] + '.json'), {}).get('functions', [])
                     if row.get('group') else submitted)
                 for rva in members:
-                    failures[rva] = safe_reason(row['reason'])
-        failures.update({row['rva']: safe_reason(row['reason']) for row in published.get('failures', [])})
+                    failures.setdefault(rva, []).append(safe_reason(row['reason']))
+        for row in published.get('failures', []):
+            failures.setdefault(row['rva'], []).append(safe_reason(row['reason']))
         failures = {r: reason for r, reason in failures.items() if r not in accepted}
+        finding_rows = [(r, reason) for r, reasons in failures.items() for reason in reasons]
+        failures = {r: '; '.join(reasons) for r, reasons in failures.items()}
         remaining = (submitted | set(failures)) - accepted
         lines = [f'Submitted functions: {len(submitted | accepted | set(failures))}.',
                  f'Accepted functions: {len(accepted)}.']
@@ -1004,6 +1072,8 @@ class Runtime:
         lines += [f'Functions not accepted: {len(remaining)}.',
                   f'Functions dropped by integration: {published["dropped"]}.',
                   'CI checks publication hygiene; matching rests on the two-host comparator reports.']
+        revision['feedback_results'] = {r: ('matched, confirmed on 2 hosts, reviewed, merged' if r in accepted else failures.get(r, 'not accepted; intake processing incomplete')) for r in submitted | accepted | set(failures)}
+        revision['feedback_findings'] = [r + ': ' + reason for r, reason in finding_rows if r in remaining] + [r + ': intake processing incomplete' for r in sorted(remaining - set(failures))]
         self.feedback(revision, 'published' if accepted else 'dropped',
                       'needs-changes' if failures else ('needs-maintainer' if remaining else None),
                       '\n'.join(lines), commits=published['commits'], replace=True)
@@ -1061,6 +1131,14 @@ def process(runtime, state, pr, dry_run=False):
         state.save()
         return revision
     fetched.update(number=revision['number'], head=revision['head'])
+    public_rvas = set()
+    for entry in fetched.get('files', []):
+        path = Path(fetched['tree']) / entry['path']
+        if path.is_file():
+            public_rvas.update(m.lower() for m in re.findall(r'(?i)0x[0-9a-f]{4,}', path.read_text(errors='replace')))
+    revision['feedback_public_rvas'] = sorted(public_rvas)
+    inventory = read_json(Path(fetched['tree']) / 'data/progress.json') or {'functions': [], 'target_build_id': None}
+    revision['feedback_names'] = {f'0x{fn["rva"]:x}': safe_reason(fn.get('name') or 'name unavailable') for fn in inventory['functions'] if fn.get('build_id') == inventory['target_build_id']}
     problems = state.once(revision, 'intake', lambda: runtime.intake(fetched))
     if problems:
         runtime.feedback(revision, 'intake', 'needs-changes', '\n'.join(problems))

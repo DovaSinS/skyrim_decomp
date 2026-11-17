@@ -2273,11 +2273,16 @@ def cmd_submit(ctx, args):
 def cmd_feedback(ctx, args):
     import contrib_feedback
     try:
-        data = ctx.github().feedback()
+        data = (contrib_feedback.collect_outcome(ctx.github(), args.pr) if args.pr is not None
+                else ctx.github().feedback())
     except (contrib_feedback.Unavailable, OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as exc:
         message = str(exc) if isinstance(exc, contrib_feedback.Unavailable) else 'Feedback unavailable: check the network and gh auth status.'
         raise Stop(NETWORK, message, f'check gh auth status, then rerun {ctx.cli} feedback',
                    feedback_available=False) from None
+    if args.pr is not None:
+        if not ctx.as_json:
+            print(ctx.scrub(json.dumps(data, indent=2)))
+        return OK, data, None
     if not ctx.as_json:
         contrib_feedback.display(ctx, data)
     count = data['needs_action_prs']
@@ -2353,6 +2358,7 @@ def parser():
     s = sub.add_parser('decomp')
     s.add_argument('rva')
     s = sub.add_parser('feedback')
+    s.add_argument('pr', nargs='?', type=int)
     s.add_argument('--json', action='store_true', default=argparse.SUPPRESS,
                    help='one JSON object on stdout; also accepted before feedback')
     s = sub.add_parser('setup')
