@@ -138,6 +138,10 @@ def run_once(config_path):
             if not runtime.exists():
                 command(['git', 'clone', '--quiet', '--shared', '--no-checkout', str(root), str(runtime)])
                 command(['git', 'remote', 'set-url', 'origin', f.git(root, 'remote', 'get-url', 'origin')], runtime)
+                sparse_path = Path(f.git(runtime, 'rev-parse', '--path-format=absolute', '--git-path',
+                                         'info/sparse-checkout'))
+                sparse_path.parent.mkdir(parents=True, exist_ok=True)
+                sparse_path.touch(exist_ok=True)
                 command(['git', 'checkout', '--quiet', '--detach', 'HEAD'], runtime)
             f.refuse(not f.git(runtime, 'status', '--porcelain', '--untracked-files=all'),
                      'service tool checkout is dirty; preserve it for triage')

@@ -122,7 +122,8 @@ class LaneService(unittest.TestCase):
         path.write_text('# Original synthetic tooling\n')
         git(self.root, 'add', 'tools/example.py')
         git(self.root, 'commit', '--quiet', '-m', 'synthetic tooling input')
-        with patch.object(lane, 'publish_tooling') as publish, patch.object(lane, 'require_base_tools') as base:
+        with patch('flow_preflight.preflight', return_value=dict(ok=True, problem=None, rebased=False)), \
+                patch.object(lane, 'publish_tooling') as publish, patch.object(lane, 'require_base_tools') as base:
             self.assertEqual(flow.main(['--root', str(self.root), '--flow-dir', str(self.fdir),
                                         'tooling-push', '--enqueue-only']), 0)
         publish.assert_not_called()
@@ -160,6 +161,9 @@ class LaneService(unittest.TestCase):
         self.assertEqual(result['state'], 'failed')
         self.assertEqual(result['runtime'], git(self.root, 'rev-parse', 'HEAD'))
         self.assertTrue(Path(result['log']).is_file())
+        runtime = private / 'origin-tools'
+        sparse_path = Path(git(runtime, 'rev-parse', '--path-format=absolute', '--git-path', 'info/sparse-checkout'))
+        self.assertTrue(sparse_path.is_file())
 
 
 if __name__ == '__main__':
