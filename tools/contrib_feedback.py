@@ -224,3 +224,26 @@ def display(ctx, data):
                     ctx.say(f'  [{tag}] {kind}: {item["author"]}: {item["body"]}')
                 if item.get('url'):
                     ctx.say('    ' + item['url'])
+
+
+def parse_outcome(body):
+    needs = re.search(r'^### What needs changing\s*\n(.*?)(?=^### |\Z)', body, re.M | re.S)
+    agent = re.search(r'^<!-- agent-lessons:start -->\s*\n(.*?)\n<!-- agent-lessons:end -->', body, re.M | re.S)
+    if not needs or not agent:
+        raise Unavailable('Structured feedback is unavailable for this PR.')
+    return {'what_needs_changing': [line[2:] for line in needs.group(1).splitlines() if line.startswith('- ')],
+            'for_your_agent': agent.group(1)}
+
+
+def collect_outcome(github, number):
+    reader = Reader(github)
+    pr = reader.read(f'repos/{reader.repo}/pulls/{number}')
+    head = pr['head']['sha']
+    comments = reader.pages(f'repos/{reader.repo}/issues/{number}/comments')
+    marker = f'<!-- contrib-autopilot:{number}:{head}:feedback -->'
+    owner = reader.repo.split('/')[0].casefold()
+    matches = [row for row in comments if marker in (row.get('body') or '')
+               and author(row).casefold() == owner]
+    if not matches:
+        raise Unavailable('Structured feedback is unavailable for this PR revision.')
+    return parse_outcome(matches[-1]['body'])

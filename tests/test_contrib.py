@@ -1151,3 +1151,13 @@ class ContributorActionsTests(Base):
             docs = profiles.get(name)['contrib_docs']
             self.assertIn('docs/contributor-card.md', docs)
             self.assertFalse(any('drafter-card' in doc for doc in docs))
+
+class StructuredFeedbackParsingTests(unittest.TestCase):
+    def test_marker_delimited_lessons_and_findings(self):
+        import contrib_feedback
+        body = ('### What needs changing\n- Fix the binding.\n\n### For your agent\n'
+                '<!-- agent-lessons:start -->\n- Check binding (docs/verification.md).\n'
+                '<!-- agent-lessons:end -->\n')
+        parsed = contrib_feedback.parse_outcome(body)
+        self.assertEqual(parsed['what_needs_changing'], ['Fix the binding.'])
+        self.assertEqual(parsed['for_your_agent'], '- Check binding (docs/verification.md).')

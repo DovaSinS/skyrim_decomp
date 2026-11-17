@@ -889,7 +889,7 @@ class RuntimeEffects(unittest.TestCase):
     def test_final_feedback_updates_existing_comment_after_saved_checkpoint(self):
         rev = self.state.revision(pr())
         rev['completed']['post-published'] = True
-        marker = f'<!-- contrib-autopilot:1:{rev["head"]}:published -->'
+        marker = f'<!-- contrib-autopilot:1:{"d" * 40}:feedback -->'
         result = subprocess.CompletedProcess([], 0, json.dumps([[dict(id=42, body=marker + '\nold totals',
                     user=dict(login='awarebayes'))]]).encode(), b'')
         with patch.object(self.runtime, 'command', return_value=result) as command, patch.object(self.runtime, 'gh') as gh:
@@ -1636,3 +1636,27 @@ class WaitingFeedbackTests(unittest.TestCase):
             self.assertTrue(saved['waiting_feedback_pending'])
             self.assertEqual(saved['waiting_reason'], 'service-retry')
             self.assertFalse(saved.get('done'))
+
+class StructuredFeedbackTests(unittest.TestCase):
+    def test_lessons_are_documented_and_safe(self):
+        doc = (ROOT / 'docs/contributor-lessons.md').read_text()
+        for lesson, reference in ap.LESSONS.values():
+            self.assertIn(f'{lesson} ({reference})', doc)
+            self.assertEqual(ap.safe_reason(f'{lesson} ({reference})'), f'{lesson} ({reference})')
+
+    def test_accepted_and_rejected_render_and_filter(self):
+        rev = {'feedback_public_rvas': ['0x1000'], 'feedback_names': {'0x1000': 'Synthetic'},
+               'completed': {'functions': {'unit.cpp': [4096]},
+                             'confirmation': {'passed': ['0x1000']}, 'reviews': {'approved': ['0x1000']}}}
+        rev['feedback_results'] = {'0x1000': 'matched, confirmed on 2 hosts, reviewed, merged'}
+        accepted = ap.render_outcome(rev, '')
+        self.assertIn('matched, confirmed on 2 hosts', accepted)
+        self.assertIn('<!-- agent-lessons:start -->', accepted)
+        rejected = ap.render_outcome(rev, 'opaque storage\n/Users/private/secret\n0x12345678')
+        self.assertIn('Never pad a base class', rejected)
+        self.assertIn('Details withheld by the publication filter', rejected)
+        self.assertNotIn('/Users/private', rejected)
+        self.assertNotIn('0x12345678', rejected)
+        for line in rejected.splitlines():
+            if line.strip():
+                self.assertEqual(ap.safe_reason(line), line)
