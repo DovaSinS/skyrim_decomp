@@ -563,7 +563,37 @@ class Runtime:
             raise Rejected('exported regression functions exceed the per-PR function cap')
         return tasks
 
+    def rebase_retry(self, fetched, revision, force=False):
+        if revision.get('enqueued'):
+            return False
+        tree = Path(fetched['tree'])
+        marker = read_json(tree / '.local/contrib-initialized.json')
+        if not marker:
+            raise Stop('missing frozen intake base')
+        old = marker['base']
+        self.git(self.root, 'fetch', 'origin', 'main')
+        current = self.git(self.root, 'rev-parse', 'origin/main')
+        if not force and old == current:
+            return False
+        directory = tree.parent
+        archive = self.private / 'archive'
+        archive.mkdir(parents=True, exist_ok=True)
+        target = archive / (directory.name.removesuffix('-squash') + '-' + old[:12])
+        if target.exists():
+            target = archive / (target.name + '-' + uuid.uuid4().hex[:12])
+        self.command(['cp', '-c', '-R', str(directory), str(target)])
+        shutil.rmtree(directory)
+        completed = revision['completed']
+        for key in list(completed):
+            if key in ('fetch', 'intake', 'functions', 'export', 'companions', 'screen', 'confirmation', 'groups', 'reviews') or key.startswith(('bind-', 'confirm-')):
+                del completed[key]
+        revision['waiting_reason'] = 'service-retry'
+        self.state.save()
+        return True
+
     def confirm(self, fetched, tasks, revision):
+        if self.rebase_retry(fetched, revision):
+            raise Stop('main moved; rebuilding intake on next tick')
         tree = Path(fetched['tree'])
         self.ensure_hosts(tree)
         passed, failed = [], []
@@ -606,6 +636,9 @@ class Runtime:
                     old.unlink(missing_ok=True)
                     result = self.command([sys.executable, 'tools/verifier/confirm', str(dest), '--replace', '--out', str(output)],
                                           cwd=tree, timeout=self.config['confirm_timeout'], check=False)
+                    if (b'main moved; rebuild batch against its exact trusted revision' in result.stdout + result.stderr
+                            and self.rebase_retry(fetched, revision, force=True)):
+                        raise Stop('main moved; rebuilding intake on next tick')
                     self.require_comparison(result)
                     record = output / task['build_id'] / (rhex + '.json')
                     if not record.exists():

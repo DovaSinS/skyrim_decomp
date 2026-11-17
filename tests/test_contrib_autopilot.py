@@ -581,6 +581,31 @@ class GitTransport(unittest.TestCase):
         return subprocess.run(['git', *args], cwd=self.root, check=True,
                               capture_output=True, text=True).stdout.strip()
 
+    def test_stale_intake_is_archived_and_checkpoints_cleared(self):
+        directory = self.private / 'live' / ('pr-1-' + self.head + '-squash')
+        tree = directory / 'tree'
+        (tree / '.local').mkdir(parents=True)
+        ap.save_json(tree / '.local/contrib-initialized.json', dict(base='a' * 40))
+        (directory / 'evidence').write_text('retained')
+        revision = dict(completed={key: True for key in
+                        ('fetch', 'intake', 'functions', 'export', 'bind-x', 'companions',
+                         'screen', 'confirm-x', 'confirmation', 'feedback-x')},
+                        ci_hash={'state': 'pending'})
+        self.assertTrue(self.runtime.rebase_retry(dict(tree=str(tree)), revision))
+        archive = self.private / 'archive' / ('pr-1-' + self.head + '-' + 'a' * 12)
+        self.assertEqual((archive / 'evidence').read_text(), 'retained')
+        self.assertFalse(directory.exists())
+        self.assertEqual(revision['completed'], {'feedback-x': True})
+        self.assertEqual(revision['ci_hash'], {'state': 'pending'})
+        self.assertEqual(revision['waiting_reason'], 'service-retry')
+
+    def test_enqueued_intake_is_untouched(self):
+        revision = dict(enqueued=True, completed={'fetch': True})
+        with patch.object(self.runtime, 'git') as git:
+            self.assertFalse(self.runtime.rebase_retry(dict(tree='unused'), revision, force=True))
+        git.assert_not_called()
+        self.assertEqual(revision['completed'], {'fetch': True})
+
     def test_rerun_uses_live_origin_main_in_new_clean_tree(self):
         import flow
         tree = self.root / 'frozen'
