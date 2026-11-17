@@ -1,3 +1,4 @@
+
 """Contributor autopilot using only original synthetic source, fake GitHub and fake verifiers."""
 import copy
 import json
@@ -624,6 +625,18 @@ class GitTransport(unittest.TestCase):
         self.assertEqual(revision['completed'], {'feedback-x': True})
         self.assertEqual(revision['ci_hash'], {'state': 'pending'})
         self.assertEqual(revision['waiting_reason'], 'service-retry')
+
+    def test_archive_copy_platform_flags(self):
+        for platform, flags in [('darwin', ['-c', '-R']), ('linux', ['-R'])]:
+            directory = self.private / 'live' / ('pr-1-' + self.head + '-squash')
+            tree = directory / 'tree'
+            (tree / '.local').mkdir(parents=True)
+            ap.save_json(tree / '.local/contrib-initialized.json', dict(base='a' * 40))
+            revision = dict(completed={})
+            with patch.object(ap.sys, 'platform', platform), patch.object(self.runtime, 'command') as command:
+                self.runtime.rebase_retry(dict(tree=str(tree)), revision)
+            copy = next(call.args[0] for call in command.call_args_list if call.args[0][0] == 'cp')
+            self.assertEqual(copy[1:-2], flags)
 
     def test_enqueued_intake_is_untouched(self):
         revision = dict(enqueued=True, completed={'fetch': True})

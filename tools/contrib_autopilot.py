@@ -585,7 +585,7 @@ class Runtime:
         target = archive / (directory.name.removesuffix('-squash') + '-' + old[:12])
         if target.exists():
             target = archive / (target.name + '-' + uuid.uuid4().hex[:12])
-        self.command(['cp', '-c', '-R', str(directory), str(target)])
+        self.command(['cp', *(['-c'] if sys.platform == 'darwin' else []), '-R', str(directory), str(target)])
         shutil.rmtree(directory)
         completed = revision['completed']
         for key in list(completed):
