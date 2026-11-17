@@ -59,12 +59,71 @@ class Evidence(GateFixture,unittest.TestCase):
             recipe_sha256=self.record['recipe']['sha256'],result='hash-match',deterministic=True,
             mac_content_sha256='4'*64,content_sha256='4'*64,object_sha256='5'*64,request_sha256='6'*64,
             normalized_sha256='1'*64,layout_sha256='2'*64,mac_object_sha256=obj)
-        self.p1=patch.object(c,'tools_digest',return_value='3'*64);self.p1.start();self.addCleanup(self.p1.stop)
+        def git(*args):
+            return subprocess.run(['git', *args], cwd=self.root, check=True, capture_output=True).stdout.decode().strip()
+        self.git = git
+        git('init', '-q'); git('config', 'user.email', 'test@example.invalid'); git('config', 'user.name', 'Test')
+        for name in c.TOOLS:
+            self.write(name, 'synthetic tool')
+        git('add', '.'); git('commit', '-qm', 'fixture')
+        self.record['ci_confirmation']['base_sha'] = git('rev-parse', 'HEAD')
+        self.record['ci_confirmation']['tools_sha256'] = c.tools_digest(self.root)
         self.p2=patch.object(c.target_hashes,'load_manifest',return_value={'functions':[self.row]});self.p2.start();self.addCleanup(self.p2.stop)
         self.save_record()
 
     def test_local_full_pass_and_bound_ci_evidence_are_accepted(self):
         check.validate_match(self.fn,self.target,root=self.root)
+
+    def test_revision_bound_tools(self):
+        base = self.record['ci_confirmation']['base_sha']
+        self.write(c.TOOLS[0], 'changed tool')
+        self.git('add', c.TOOLS[0]); self.git('commit', '-qm', 'change tool')
+        c.validate(self.root, self.record, self.fn, self.target)
+        self.record['ci_confirmation']['tools_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'stale CI tools'):
+            c.validate(self.root, self.record, self.fn, self.target)
+        self.record['ci_confirmation']['base_sha'] = 'f' * 40
+        with self.assertRaisesRegex(ValueError, 'CI tools revision unavailable'):
+            c.validate(self.root, self.record, self.fn, self.target)
+        self.git('checkout', '-q', '--detach', base)
+        self.write(c.TOOLS[0], 'other tool')
+        self.git('add', c.TOOLS[0]); self.git('commit', '-qm', 'other branch')
+        other = self.git('rev-parse', 'HEAD')
+        self.git('checkout', '-q', '--detach', base)
+        self.record['ci_confirmation']['base_sha'] = other
+        with self.assertRaisesRegex(ValueError, 'not an ancestor'):
+            c.validate(self.root, self.record, self.fn, self.target)
+
+    def native_first(self):
+        host = 'winpc-native'
+        self.record['runs'][0].update(compiled_on=host, compared_on=host)
+        self.record['build']['hosts'] = {host: next(iter(self.record['build']['hosts'].values()))}
+        ci = self.record['ci_confirmation']
+        ci['first_host'] = dict(host_id=host, machine='synthetic-pc', loader='native', os='windows')
+        for field in ('object_sha256', 'content_sha256'):
+            ci['first_' + field] = ci.pop('mac_' + field)
+        self.save_record()
+
+    def test_native_first_host_and_ci_on_distinct_machines_pass(self):
+        self.native_first()
+        check.validate_match(self.fn, self.target, root=self.root)
+
+    def test_native_first_host_identity_reuse_and_content_tampering_fail(self):
+        self.native_first()
+        original = copy.deepcopy(self.record)
+        for field, value in [('host_id', 'github-windows-native'), ('machine', 'github-hosted-windows'),
+                             ('host_id', 'unbound-host'), ('os', 'linux')]:
+            with self.subTest(field=field, value=value):
+                self.record = copy.deepcopy(original)
+                self.record['ci_confirmation']['first_host'][field] = value
+                self.save_record()
+                with self.assertRaises(ValueError):
+                    check.validate_match(self.fn, self.target, root=self.root)
+        self.record = original
+        self.record['ci_confirmation']['first_content_sha256'] = '0' * 64
+        self.save_record()
+        with self.assertRaisesRegex(ValueError, 'content differs'):
+            check.validate_match(self.fn, self.target, root=self.root)
 
     def test_clean_ci_sampling_requires_full_attestation_and_local_comparator(self):
         import sampling_packet
@@ -118,7 +177,7 @@ class Prepare(unittest.TestCase):
                 'findings/TEMPLATE.md':'Original synthetic evidence.\n',
                 'reconstruction/recipes/r.json':'{}',
                 'reconstruction/misc/Widget.cpp':SOURCE,'reconstruction/misc/Widget.h':HEADER}.items():
-                p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(data)
+                p=root/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(data, newline="\n")
             git('add','.');git('commit','-qm','original synthetic fixture');base=git('rev-parse','HEAD')
             closure=include_closure(root,'reconstruction/misc/Widget.cpp')
             unit=dict(task_id='test-unit',unit='reconstruction/misc/Widget.cpp',closure=closure,
@@ -194,6 +253,15 @@ class Config(unittest.TestCase):
         raw=dict(runners_schema=1,hosts=dict(mac=mac,ci=ci),attempt='mac',confirm=['mac','ci'])
         hosts=runners.for_confirm(runners.validate(raw))
         self.assertEqual([h['backend'] for h in hosts],['local','ci-hash'])
+        pc = dict(mac, backend='ssh', host_id='winpc-native', machine='synthetic-pc',
+                  loader='native', ssh_host='synthetic', ssh_config='synthetic', python=['python'])
+        raw['hosts']['pc'] = pc
+        raw['attempt'] = 'pc'; raw['confirm'] = ['pc', 'ci']
+        self.assertEqual([h['host_id'] for h in runners.for_confirm(runners.validate(raw))],
+                         ['winpc-native', 'github-windows-native'])
+        raw['hosts']['pc']['machine'] = 'github-hosted-windows'
+        with self.assertRaisesRegex(runners.RunnerError, 'one machine'):
+            runners.for_confirm(runners.validate(raw))
         raw['attempt']='ci'
         with self.assertRaisesRegex(runners.RunnerError,'confirmation host only'):runners.validate(raw)
 

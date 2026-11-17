@@ -375,6 +375,18 @@ class FlowTests(unittest.TestCase):
         self.assertIn('Codex session', line)
         self.assertIn('docs/reviewer-runbook.md', line)
 
+    def test_unsampled_selection_needs_no_second_review_but_sampled_selection_still_does(self):
+        g = dict(name='synthetic', sampled=['0x1000'], pair='missing-safeguard')
+        data = flow.inventory(self.root)
+        self.assertEqual(flow.sampling_gate(self.root, self.fdir, g, data, ['0x2000']), (True, None))
+        with self.assertRaises(flow.FlowError):
+            flow.sampling_gate(self.root, self.fdir, g, data, ['0x1000'])
+
+    def test_contributor_selection_keeps_the_existing_full_sample_gate(self):
+        g = dict(name='synthetic', sampled=['0x1000'], pair='missing-safeguard', contributor={'synthetic': True})
+        with self.assertRaises(flow.FlowError):
+            flow.sampling_gate(self.root, self.fdir, g, flow.inventory(self.root), ['0x2000'])
+
     def test_claude_low_uses_exact_sol_model_for_strong_reviews(self):
         (self.root / 'docs/verification.md').write_text((ROOT / 'docs/verification.md').read_text())
         flow.log_event(self.fdir, 'session-start', profile='claude-low')
@@ -665,8 +677,20 @@ class FlowTests(unittest.TestCase):
         with self.assertRaises(flow.FlowError):
             flow.split_group(self.root, self.fdir, g['name'], ['0x1000'])
 
-    def test_split_without_original_sample_adds_a_new_safeguard(self):
+    def test_internal_split_inherits_draw_without_another_safeguard_chain(self):
         g = self.integrate_ready()
+        g['sampled'] = ['0x2000']
+        flow.save_group(self.fdir, g)
+        child = flow.split_group(self.root, self.fdir, g['name'], ['0x1000', '0x1010'])
+        self.assertEqual(child['sampled'], [])
+        self.assertEqual(child['pair'], g['pair'])
+        self.assertEqual(flow.load_group(self.fdir, g['name'])['sampled'], ['0x2000'])
+
+    def test_contributor_split_without_original_sample_adds_a_new_safeguard(self):
+        g = self.integrate_ready()
+        g = flow.load_group(self.fdir, g['name'])
+        g['contributor'] = {'synthetic': True}
+        flow.save_group(self.fdir, g)
         child = flow.split_group(self.root, self.fdir, g['name'], ['0x1000', '0x1010'])
         self.assertEqual(len(child['sampled']), 1)
         self.assertIsNone(child['rerun'])

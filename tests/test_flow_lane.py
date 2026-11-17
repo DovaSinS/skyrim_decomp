@@ -70,6 +70,8 @@ class PushLane(unittest.TestCase):
         self.assertEqual(result['integrated']['accepted'], 3)
         self.assertEqual(result['state'], 'done')
         self.assertTrue(Path(result['tree']).exists())
+        self.assertEqual(git(Path(result['tree']), 'config', '--local', '--get', 'skyrim.revisionCacheDirectory'),
+                         str((self.fdir / 'revision-cache').resolve()))
         self.assertTrue(all(i['state'] == 'done' for i in result['items']))
         self.assertEqual(git(self.root, 'rev-parse', 'origin/main'), result['integrated']['commit'])
         actions = flow.next_actions(self.root, self.fdir, online=False)

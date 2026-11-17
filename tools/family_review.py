@@ -10,6 +10,7 @@ import math
 from pathlib import Path
 import re
 import subprocess
+from validation_reads import read_bytes, read_text
 
 ID = re.compile(r'[a-z0-9][a-z0-9-]*\Z')
 HASH = re.compile(r'[0-9a-f]{64}\Z')
@@ -43,7 +44,7 @@ def read(root, name):
     if name.startswith('reports/') and not (Path(root) / name).is_file():
         from sparse_checkouts import ensure
         ensure(root, [name])
-    return json.loads((Path(root) / name).read_text(), object_pairs_hook=unique_fields)
+    return json.loads(read_text(Path(root) / name), object_pairs_hook=unique_fields)
 
 
 def write(root, name, value):
@@ -288,7 +289,7 @@ def private_approval(root, family, profile):
     path = Path(root) / '.local/reviews' / (review['review_task_id'] + '.family.json')
     base = (Path(root) / '.local/reviews').resolve()
     require(path.resolve().is_relative_to(base) and path.is_file(), 'saved approving family review missing')
-    blob = path.read_bytes()
+    blob = read_bytes(path)
     require(hashlib.sha256(blob).hexdigest() == review['review_sha256'], 'saved family review digest mismatch')
     doc = json.loads(blob, object_pairs_hook=unique_fields)
     expected = {'family_review_schema', 'review_task_id', 'reviewer_model', 'profile', 'spec_sha256',
@@ -307,7 +308,7 @@ def private_approval(root, family, profile):
     require(doc['checks'] == dict.fromkeys(checks, 'pass'), 'family review lacks passing checks')
     for field in ('template_source', 'parameter_source'):
         src = family[field]
-        require(hashlib.sha256((Path(root) / src['path']).read_bytes()).hexdigest() == src['sha256'],
+        require(hashlib.sha256(read_bytes(Path(root) / src['path'])).hexdigest() == src['sha256'],
                 'template or extraction source changed; start a new family')
     return doc
 
@@ -333,7 +334,7 @@ def validate_public_review(root, fn, record, review):
     family_path = public_path(evidence['family_path'], f'reports/{fn["build_id"]}/families/')
     batch_path = public_path(evidence['batch_path'], f'reports/{fn["build_id"]}/family-batches/')
     family, batch, batch_digest = _public_family_batch(
-        (Path(root) / family_path).read_bytes(), (Path(root) / batch_path).read_bytes())
+        read_bytes(Path(root) / family_path), read_bytes(Path(root) / batch_path))
     require(batch['family_path'] == evidence['family_path'], 'batch names another family')
     member_hash = member_digest(fn, record)
     require(fn['id'] in batch['population'] and batch['members'][fn['id']] == member_hash,

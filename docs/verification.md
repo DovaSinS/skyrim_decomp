@@ -192,7 +192,14 @@ accepted functions by `--refresh-named`. Functions accepted before this rule hav
 Open naming findings are closed by a Reviewer: a later full or delta review that lists none.
 Label fixes themselves do not need one: see "Label-only re-acceptance".
 
-**Sampling safeguard.** At least 5% of individually reviewed accepted functions (including reviewed
+**Sampling safeguard.** Internal work requires one independent admitted review per function.
+Only functions in the gate's frozen sampled subset require a second/safeguard review and
+clean comparator re-run; unrelated sampled members do not block an unsampled approved selection.
+Internal subsets inherit their parent's frozen draw without drawing another safeguard sample.
+The parent sample draw and first-20 triggers below remain unchanged; outside-contributor
+subset sampling is unchanged. Maintainer directive, 2026-11-17.
+
+At least 5% of individually reviewed accepted functions (including reviewed
 family members), chosen at random by the orchestrator,
 plus the first 20 accepted functions under every new recipe or compiler, every new Drafter prompt
 version, every new Reviewer prompt version (`.claude/agents/reviewer.md`, `docs/reviewer-runbook.md`)
@@ -747,17 +754,17 @@ Date: 2026-11-15. Grantor: awarebayes.
 - Question: "May the CI hash check count as the second machine while the PC is down?"
 - Maintainer answer: "yes"
 - With: "idk lets do ci only for now without windows?"
-- Scope: until the maintainer revokes it, the GitHub-hosted Windows CI target-hash job (built by p128: pinned MSVC v141 19.16.27054 with a verified cache, normalized SHA-256 against the published (build id, RVA, size, hash)) may serve as the second independent host, in place of the native Windows PC. Mac under Wine stays the first host. The two hosts are still different machines with different OS loaders.
+- Scope: until the maintainer revokes it, the GitHub-hosted Windows CI target-hash job (built by p128: pinned MSVC v141 19.16.27054 with a verified cache, normalized SHA-256 against the published (build id, RVA, size, hash)) may serve as the second independent host, in place of the native Windows PC. A registered primary runner (native Windows PC or Mac under Wine) supplies the full first-host comparator evidence. The machines and host identities must differ; the explicit CI-hash pair may use native Windows on both machines (maintainer directive, 2026-11-17). The ordinary two-comparator-host rule is unchanged.
 - Unchanged: the comparator, the family rule, Reviewer approvals, sampling, and the acceptance rule.
 - No game bytes go to CI. Only reconstructed source, which is published on acceptance anyway, and the already-published hashes.
 
-Implementation: `ci-hash` confirmations retain the unmodified full Mac comparator report and
+Implementation: `ci-hash` confirmations retain the unmodified full primary-host comparator report and
 add a separately identified CI attestation. CI compiles each unit twice, verifies its complete
-non-debug COFF content against the hash measured from the Mac comparator's exact object, and
+non-debug COFF content against the hash measured from the primary comparator's exact object, and
 checks each function against its published target hash and relocation-layout commitment.
 The full object content commitment includes code, relocations, data, unwind and EH sections;
 only debug sections and their path checksum section are excluded. It does not substitute a
-masked hash for the Mac comparator's reference, alias, unwind or EH checks. Missing or
+masked hash for the primary comparator's reference, alias, unwind or EH checks. Missing or
 unsupported target hashes are unconfirmable. Cache verification failure, compiler pin mismatch,
 non-reproduction or nondeterminism produces no confirmation. Candidate source travels on a
 separate batch branch; trusted tools and target hashes come from the dispatched main revision.

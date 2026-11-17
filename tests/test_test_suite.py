@@ -112,7 +112,7 @@ class T(unittest.TestCase):
                     self.assertNotEqual(run.returncode, 0)
                     self.assertIn('require --shard-count', run.stderr)
 
-    def test_local_dependency_selection_runs_the_covering_failure_and_ci_remains_full(self):
+    def test_non_source_changes_run_all_local_tests_and_ci_remains_full(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'tools').mkdir()
@@ -136,7 +136,7 @@ class T(unittest.TestCase):
             local = self.run_suite(root, '--changed-since', base)
             self.assertNotEqual(local.returncode, 0, local.stdout + local.stderr)
             report = json.loads((root / '.local/test-suite-results.json').read_text())
-            self.assertEqual((report['discovered'], report['selected'], report['executed']), (2, 1, 1))
+            self.assertEqual((report['discovered'], report['selected'], report['executed']), (2, 2, 2))
             self.assertTrue(report['failed'])
             ci = self.run_suite(root)
             self.assertNotEqual(ci.returncode, 0)

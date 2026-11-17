@@ -31,18 +31,19 @@ Cargo/build/cache instructions here or modify its checkout as part of a research
   `SR_PUBLICATION_FORBIDDEN_CONFIG` selects an explicit policy for isolated publication runs.
 - No broad staging: inspect `git diff`, then stage named files. Run `python3 tools/check.py --staged`
   immediately before committing. Never bypass a guard to ship suspect material.
-- Before a PR/push run `python3 tools/check.py`, `python3.13 tools/test_suite.py`,
-  and `python3 tools/build_site.py`; function-only lane runs rely on the lane acceptance checks,
-  check.py and CI. Review all staged text for provenance and secrets. The
+- Review all staged text for provenance and secrets. The lane runs the required publication
+  checks, test suite and site build; function-only runs use the documented local suite
+  exemption and the complete suite in CI. Do not duplicate the lane's checks before enqueueing. The
   integrating Engineer, or the orchestrator when run with a shell, then commits and pushes; there
   is no per-commit maintainer review.
 - Tooling publications use `python3 tools/flow.py tooling-push` with the shared flow directory.
   It takes the acceptance lane lock and runs the full checks, push and exact-SHA CI; do not
   duplicate those full checks before invoking it. Stage named files and run the staged guard
   immediately before the tooling commit as above.
-- Watch CI. Whoever pushes checks the CI result of the pushed commit with
-  `python3 tools/ci_status.py --commit <full sha> --wait 600` before reporting the work as done, and
-  records the result in the handoff. A red `main` is fixed, or its cause reported to the maintainer,
+- The lane waits for exact-SHA CI and records it in its finished receipt. Record that commit
+  and CI result in the handoff before reporting the work as done; do not repeat a successful
+  lane CI wait. For a publication outside the lane, use
+  `python3 tools/ci_status.py --commit <full sha> --wait 600`. A red `main` is fixed, or its cause reported to the maintainer,
   before any further push of unrelated work. Green CI proves publication hygiene only, never a match.
 - PRs describe evidence and limitations. Do not claim CI proves legality or gameplay parity.
 - Protect the research/implementation boundary. Do not port reconstructed functions into Mudcrab

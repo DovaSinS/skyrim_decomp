@@ -15,6 +15,8 @@ from source_digest import DIGEST_METHOD, INCLUDE_ROOTS, recipe_flag_problem, tu_
 from check_source_digest import include_closure, source_digest_cache
 from lint_reconstruction import lint_tree
 import cost_ledger
+import revision_cache
+from validation_reads import read_bytes, read_text, read_once
 import symbol_map as symbol_maps
 import sparse_checkouts as sparse
 import compare_internal
@@ -113,7 +115,7 @@ def is_hash(value):
 
 
 def file_sha256(root, name):
-    return hashlib.sha256((root / name).read_bytes()).hexdigest()
+    return hashlib.sha256(read_bytes(root / name)).hexdigest()
 
 
 def public_path(name, prefixes, what, root):
@@ -126,7 +128,7 @@ def public_path(name, prefixes, what, root):
 
 
 def pinned_compiler_sha256(root):
-    for line in (root / TOOLCHAIN_PIN).read_text().splitlines():
+    for line in read_text(root / TOOLCHAIN_PIN).splitlines():
         parts = line.split()
         if len(parts) == 2 and parts[1] == 'cl.exe':
             return parts[0]
@@ -178,7 +180,7 @@ def validate_match(fn, target, root=None):
         record = fn.get('report') or 'no record'
         unit = None
         try:
-            unit = json.loads(((ROOT if root is None else root) / record).read_text())['source']['compiled']
+            unit = json.loads(read_text((ROOT if root is None else root) / record))['source']['compiled']
         except (OSError, ValueError, KeyError, TypeError):
             pass
         raise ValueError(f'{exc} [entry {fn.get("id")}, record {record}, unit {unit or "unknown"}]') from None
@@ -196,7 +198,7 @@ def check_match(fn, target, root=None):
     root = ROOT if root is None else root
     record_path = public_path(fn.get('report'), {'reports'}, 'report', root)
     try:
-        record = json.loads((root / record_path).read_text())
+        record = json.loads(read_text(root / record_path))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError(f'Match record: {record_path} is not JSON ({exc})') from None
     require(isinstance(record, dict) and record.get('match_record_schema') in (MATCH_RECORD_SCHEMA, 3),
@@ -219,7 +221,7 @@ def check_match(fn, target, root=None):
     recipe_path = public_path(recipe_ref.get('path'), {'reconstruction'}, 'recipe', root)
     recipe_sha = file_sha256(root, recipe_path)
     require(recipe_ref.get('sha256') == recipe_sha, 'Match record: recipe hash is stale')
-    recipe = json.loads((root / recipe_path).read_text())
+    recipe = json.loads(read_text(root / recipe_path))
     compiler = recipe.get('compiler') or {}
     require(is_hash(compiler.get('binary_sha256')) and text(compiler.get('version')),
             'Match record: recipe does not pin a compiler hash and version')
@@ -447,7 +449,7 @@ def validate_review(fn, record, root=None):
     name = review_record_path(fn)
     require((root / name).is_file(), f'Review record: {name} is missing; matched needs a Reviewer approve')
     try:
-        review = json.loads((root / name).read_text())
+        review = json.loads(read_text(root / name))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ValueError(f'Review record: {name} is not JSON ({exc})') from None
     require(isinstance(review, dict) and review.get('review_record_schema') in REVIEW_SCHEMA_FIELDS,
@@ -495,7 +497,7 @@ def legacy_review_digest(review):
 @functools.lru_cache(maxsize=None)
 def _legacy_review_records():
     try:
-        listed = json.loads(LEGACY_REVIEW_RECORDS.read_text())['records']
+        listed = json.loads(read_text(LEGACY_REVIEW_RECORDS))['records']
     except (OSError, ValueError, KeyError, TypeError):
         return frozenset()
     return frozenset((path, digest) for path, digest in listed.items())
@@ -598,7 +600,7 @@ STALE_REVIEW = 'review behind'
 
 def _json_or_none(path):
     try:
-        value = json.loads(path.read_text())
+        value = json.loads(read_text(path))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         return None
     return value if isinstance(value, dict) else None
@@ -767,7 +769,7 @@ def check_index(root, data):
     """The generated status table must be what tools/build_index.py renders from this data."""
     from build_index import INDEX, render_index  # here, not at the top: build_index imports this module
     path = root / INDEX
-    require(path.is_file() and path.read_text() == render_index(data, root),
+    require(path.is_file() and read_text(path) == render_index(data, root),
             f'{INDEX} is out of date with data/progress.json and the records; run python3 tools/build_index.py')
 
 
@@ -777,7 +779,7 @@ def check_progress_svg(root):
     for name, render in (('docs/progress.svg', build_progress_svg.render),
                          ('docs/progress-map.svg', build_progress_svg.render_map)):
         path = root / name
-        require(path.is_file() and path.read_text() == render(root),
+        require(path.is_file() and read_text(path) == render(root),
                 f'{name} is out of date with the tracked data; run python3 tools/build_progress_svg.py')
 
 
@@ -799,7 +801,7 @@ def check_costs(root, data):
     if not path.is_file():
         return
     try:
-        cost_ledger.validate(json.loads(path.read_text()), data)
+        cost_ledger.validate(json.loads(read_text(path)), data)
     except (ValueError, KeyError, TypeError, AttributeError) as exc:
         raise ValueError(f'Cost ledger {COST_LEDGER}: {exc}') from None
 
@@ -822,10 +824,11 @@ def load(staged=False, publication_revision=None):
     return data
 
 
+@read_once()
 def _load_uncached(staged=False):
     if not staged:
-        data = validate(json.loads((ROOT / 'data/progress.json').read_text()),
-                        json.loads((ROOT / 'builds/target.json').read_text()))
+        data = validate(json.loads(read_text(ROOT / 'data/progress.json')),
+                        json.loads(read_text(ROOT / 'builds/target.json')))
         # Tracked and not-yet-added files alike, so a Drafter's new source is linted before staging.
         names = subprocess.check_output(['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z',
                                          '--', 'reconstruction'], cwd=ROOT).decode('utf-8').split('\0')
@@ -844,8 +847,8 @@ def _load_uncached(staged=False):
     with staged_exports.directory(ROOT) as tmp:
         subprocess.check_call(['git', 'checkout-index', '--all', f'--prefix={tmp}/'], cwd=ROOT)
         root = Path(tmp)
-        data = validate(json.loads((root / 'data/progress.json').read_text()),
-                        json.loads((root / 'builds/target.json').read_text()), root)
+        data = validate(json.loads(read_text(root / 'data/progress.json')),
+                        json.loads(read_text(root / 'builds/target.json')), root)
         lint(root)
         check_index(root, data)
         check_costs(root, data)
@@ -910,19 +913,12 @@ def anonymity_terms(root=ROOT):
     substrings inside opaque generated symbol keys. Owner/repository strings stay literal.
     SR_ANONYMITY_CONFIG carries that ignored config into isolated publication lane clones.
     """
-    from local_paths import local_dir
     explicit = os.environ.get('SR_ANONYMITY_CONFIG')
-    path = Path(explicit) if explicit else local_dir(root) / 'anonymity.json'
-    if not explicit and not path.is_file():
-        # Linked worktrees share the private policy without copying identities into each tree.
-        common = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
-                                cwd=root, capture_output=True, text=True)
-        if common.returncode == 0:
-            path = Path(common.stdout.strip()).parent / '.local/anonymity.json'
+    path = publication_policy_path(root, 'anonymity.json', 'SR_ANONYMITY_CONFIG')
     if not path.is_file() and not explicit:
         return ()
     try:
-        data = json.loads(path.read_text())
+        data = json.loads(read_text(path))
         terms = data['forbidden_strings']
         require(isinstance(terms, list) and terms and all(text(t) for t in terms), '')
         tokens = data.get('forbidden_tokens', [])
@@ -948,22 +944,29 @@ def private_workflow_terms(root=ROOT):
     SR_PUBLICATION_FORBIDDEN_CONFIG carries the policy into isolated publication clones.
     Without the list (including public CI), this additional guard is a no-op.
     """
-    from local_paths import local_dir
     explicit = os.environ.get('SR_PUBLICATION_FORBIDDEN_CONFIG')
-    path = Path(explicit) if explicit else local_dir(root) / 'publication-forbidden.json'
-    if not explicit and not path.is_file():
-        common = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
-                                cwd=root, capture_output=True, text=True)
-        if common.returncode == 0:
-            path = Path(common.stdout.strip()).parent / '.local/publication-forbidden.json'
+    path = publication_policy_path(root, 'publication-forbidden.json', 'SR_PUBLICATION_FORBIDDEN_CONFIG')
     if not explicit and not path.is_file():
         return ()
     try:
-        terms = json.loads(path.read_text())['forbidden_strings']
+        terms = json.loads(read_text(path))['forbidden_strings']
         require(isinstance(terms, list) and terms and all(text(t) for t in terms), '')
         return tuple(t.casefold() for t in terms)
     except (OSError, ValueError, KeyError, TypeError):
         raise ValueError('Private workflow guard: private config missing or invalid') from None
+
+
+def publication_policy_path(root, name, variable):
+    from local_paths import local_dir
+    explicit = os.environ.get(variable)
+    path = Path(explicit) if explicit else local_dir(root) / name
+    if not explicit and not path.is_file():
+        # Linked worktrees share the private policy without copying identities into each tree.
+        common = subprocess.run(['git', 'rev-parse', '--path-format=absolute', '--git-common-dir'],
+                                cwd=root, capture_output=True, text=True)
+        if common.returncode == 0:
+            path = Path(common.stdout.strip()).parent / '.local' / name
+    return path
 
 
 def check_private_workflow(name, payload, terms):
@@ -978,7 +981,6 @@ def check_git(root=ROOT, staged=False, content_revision=None):
     workflow_terms = private_workflow_terms(root)
     publication_key = None
     if staged:
-        import revision_cache
         # An identical immutable index was already scanned under these exact tools and denylist.
         # Working files never use this shortcut; the current private denylist is read above.
         publication_key = hashlib.sha256((revision_cache.snapshot(root, staged=True) + repr(terms) + repr(workflow_terms)).encode()
@@ -988,6 +990,20 @@ def check_git(root=ROOT, staged=False, content_revision=None):
             if content_revision is not None:
                 content_revision.append(saved['content_revision'])
             return saved['count']
+    # Include all executing scanner dependencies, as well as the checkout's tools. A scanner
+    # edit or even a whitespace-only private policy edit starts a fresh memo partition.
+    scanner = (revision_cache.runtime_digest() + revision_cache.TOOLS_AT_IMPORT
+               + revision_cache.tools_digest(Path(__file__).resolve().parents[1])
+               + revision_cache.tools_digest(root)
+               + revision_cache.policy_digest(root) + repr((terms, workflow_terms)).encode())
+    memo = revision_cache.BlobMemo(root, hashlib.sha256(scanner).hexdigest())
+
+    def scan(name, payload, mode):
+        check_anonymity(name, payload, terms)
+        check_private_workflow(name, payload, workflow_terms)
+        inspect_payload(name, payload, mode)
+        return hashlib.sha256(payload).hexdigest()
+
     count = 0
     content = hashlib.sha256()
     with subprocess.Popen(['git', 'cat-file', '--batch'], cwd=root,
@@ -998,22 +1014,37 @@ def check_git(root=ROOT, staged=False, content_revision=None):
             name = rawname.decode('utf-8')
             require(stage == '0', f'{name}: unresolved conflict')
             # Index blobs matter: a staged binary may have been replaced by harmless text on disk.
-            payload = index_blob(objects, sha, name)
-            check_anonymity(name, payload, terms)
-            check_private_workflow(name, payload, workflow_terms)
-            inspect_payload(name, payload, mode)
+            key = memo.key(sha, name, mode)
+            digest = memo.get(key)
+            if digest is None:
+                payload = index_blob(objects, sha, name)
+                digest = scan(name, payload, mode)
+                memo.put(key, digest)
             if not staged:
                 path = root / name
                 require(path.is_file() and not path.is_symlink(), f'{name}: missing file/symlink')
                 payload = path.read_bytes()
-                check_anonymity(name, payload, terms)
-                check_private_workflow(name, payload, workflow_terms)
-                inspect_payload(name, payload, mode)
+                # Compare actual bytes with the SHA-256 measured from this indexed Git blob.
+                # Never trust Git's stat cache, clean filters, or a SHA-1 match alone. Compute
+                # a raw Git object id only for changed working content, to key its own memo.
+                working_digest = hashlib.sha256(payload).hexdigest()
+                if working_digest != digest:
+                    algorithm = 'sha1' if len(sha) == 40 else 'sha256'
+                    blob = hashlib.new(algorithm, b'blob ' + str(len(payload)).encode() + b'\0' + payload,
+                                       usedforsecurity=False).hexdigest()
+                    working_key = memo.key(blob, name, mode)
+                    if memo.get(working_key) != working_digest:
+                        scan(name, payload, mode)
+                        # A colliding working id must never replace the indexed blob's digest.
+                        if blob != sha:
+                            memo.put(working_key, working_digest)
+                    digest = working_digest
             content.update(name.encode() + b'\0' + mode.encode() + b'\0')
-            content.update(hashlib.sha256(payload).digest())
+            content.update(bytes.fromhex(digest))
             count += 1
         objects.stdin.close()
         require(objects.wait() == 0, 'git cat-file failed')
+    memo.commit()
     if content_revision is not None:
         content_revision.append(content.hexdigest())
     if publication_key is not None:

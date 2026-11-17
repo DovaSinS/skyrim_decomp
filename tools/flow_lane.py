@@ -939,11 +939,11 @@ def prepare(item, frozen):
             esc = [r for r, b in blocks.items() if b.get('verdict') == 'escalate'
                    and b.get('escalation_category') in f.BLOCKING_ESCALATIONS]
             f.refuse(item['approved_only'] or not esc, f'{name}: blocking escalation; group held')
-            ok, why = f.sampling_gate(root, frozen, group, data)
-            f.refuse(ok, f'{name}: sampling gate: {why}')
             approved = sorted(r for r, b in blocks.items() if b.get('verdict') == 'approve'
                               and (not group.get('subset_of') or r in group['functions']))
             f.refuse(approved, f'{name}: no approvals')
+            ok, why = f.sampling_gate(root, frozen, group, data, approved)
+            f.refuse(ok, f'{name}: sampling gate: {why}')
             if item['kind'] == 'groups':
                 f.refuse(set(approved) == set(group['functions']), f'{name}: every member needs approval')
             f.family_group_hold(root, frozen, [fn['id'] for fn in data['functions']
@@ -1231,6 +1231,9 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     base = f.git(tree, 'rev-parse', f'origin/{branch}')
     require_base_tools(tree, branch, base)
     f.git(tree, 'checkout', '--quiet', '--detach', base)
+    # A candidate is disposable; successful exact-content memos belong to the lane. Git's
+    # local config carries this path to every check/site subprocess without changing inputs.
+    f.git(tree, 'config', '--local', 'skyrim.revisionCacheDirectory', str((fdir / 'revision-cache').resolve()))
     stages['clone_fetch_checkout'] = time.monotonic() - started
     for key in ('user.name', 'user.email'):
         value = f.git(root, 'config', key, check=False)

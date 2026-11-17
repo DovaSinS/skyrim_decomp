@@ -4,6 +4,8 @@ from contextvars import ContextVar
 import os
 from pathlib import Path, PurePosixPath
 
+from validation_reads import read_bytes
+
 from source_digest import INCLUDE_ROOTS, PRIVATE_DIRS, include_closure as reference_closure, quoted_includes
 
 
@@ -115,7 +117,7 @@ def include_closure(root, compiled, roots=None):
         resolved = cache['includes'].get(include_key) if cache is not None else None
         if resolved is None:
             resolved = []
-            for kind, target in quoted_includes((root / name).read_bytes(), name):
+            for kind, target in quoted_includes(read_bytes(root / name), name):
                 shown = f'"{target}"' if kind == '"' else f'<{target}>'
                 # Angle includes search only the /I roots (then the toolchain), never the includer's directory.
                 bases = (dirs if kind == '"' else []) + [PurePosixPath(r) for r in roots]
