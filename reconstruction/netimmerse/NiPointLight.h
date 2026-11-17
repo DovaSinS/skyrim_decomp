@@ -2,11 +2,13 @@
 //
 // Labels: v2
 // Task: contrib-nipointlight
-// Code origin: declarations written for this unit from CommonLibSSE-NG names and layouts (the Ctor
-// name from powerof3/CommonLibSSE); the NiObject, NiLight, NiStream and NiBinaryStream stand-ins
-// declare only what the compared code needs.
+// Code origin: original contributor declarations from CommonLibSSE-NG names and layouts (the Ctor
+// name from powerof3/CommonLibSSE). Review fix by gpt-6.1-sol reuses the represented NiAVObject
+// base from NiAVObject.h and the NiColor value declaration used in small202_b72804af/Sky.h.
+// NiLight member widths and offsets were recovered from the pinned image constructor,
+// LoadBinary and IsEqual; their semantic names remain guesses. No sibling source was used.
 // Source exposure: mixed (community declarations and the contributor-owned pack;
-// bases, sizes and slots are community hypotheses).
+// base declarations from existing repository headers and local analysis of the pinned image).
 // Size agreement alone proves neither fields nor ownership.
 // MIT License
 //
@@ -39,11 +41,13 @@
 // licenses/CommonLibSSE-GPL-3.0.txt; see also https://www.gnu.org/licenses/.
 // Started from a tools/skeleton.py skeleton: stand-ins carry only what the compared code needs, and
 // community names are unverified.
-// Base form: NiLight, a local stand-in of the community NiLight 0x140 size over a minimal NiObject;
-// the NiObject, NiObjectNET and NiAVObject layers between them are not modelled, and the virtual
-// slot order is not modelled (every base call in the compared code is direct, bound by address).
+// Base form: NiLight derives from the shared represented NiAVObject/NiObjectNET/NiObject layout.
+// NiLight contributes three RGB values, a scalar and an unrecovered 64-bit member.
+// Size and offset assertions check the representation, not the inferred member semantics.
 // NiPointLight, NiPointLight::LoadBinary, NiPointLight::~NiPointLight, NiPointLight::SaveBinary, NiPointLight::IsEqual, NiLight::~NiLight, NiLight::LoadBinary, NiLight::SaveBinary, NiLight::IsEqual: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 #pragma once
+
+#include "NiAVObject.h"
 
 #include <cstdint>
 #include <cstddef>
@@ -78,15 +82,19 @@ public:
     NiBinaryStream* oStr;  // 2A0
 };
 
-// NiObject: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); only the polymorphic root IsEqual takes
-class NiObject
+// NiColor, red, green, blue: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT);
+// represented value declaration reused from reconstruction/small202_b72804af/Sky.h.
+struct NiColor
 {
-public:
-    virtual ~NiObject();
+    float red;
+    float green;
+    float blue;
 };
+static_assert(sizeof(NiColor) == 0x0C, "NiColor size");
 
-// NiLight: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); the 0x140 community size
-class NiLight : public NiObject
+// NiLight: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT) OBSERVED;
+// the pinned image constructor calls the NiAVObject constructor directly.
+class NiLight : public NiAVObject
 {
 public:
     // NiLight::NiLight: GUESS(low); the base constructor the compared constructor calls, declared only, bound by address
@@ -94,14 +102,25 @@ public:
     // NiLight::~NiLight: declared only
     ~NiLight() override;
     // LoadBinary, SaveBinary, IsEqual: declared only; the compared overrides call them directly, bound by address
-    virtual void LoadBinary(NiStream& a_stream);
-    virtual void SaveBinary(NiStream& a_stream);
-    virtual bool IsEqual(NiObject* a_object);
+    void LoadBinary(NiStream& a_stream) override;
+    void SaveBinary(NiStream& a_stream) override;
+    bool IsEqual(NiObject* a_object) override;
 
-    // unk008: GUESS(low); the NiAVObject and NiLight members, not recovered
-    std::uint8_t unk008[0x138];  // 008
+    // color110, color11C, color128: GUESS(medium); three RGB values streamed in order.
+    NiColor color110;  // 110
+    NiColor color11C;  // 11C
+    NiColor color128;  // 128
+    // dimmer: GUESS(medium); scalar streamed before the colors, initialized to one.
+    float dimmer;  // 134
+    // unk138: GUESS(low); constructor clears this 64-bit member; purpose unknown.
+    std::uint64_t unk138;  // 138
 };
 static_assert(sizeof(NiLight) == 0x140, "NiLight size");
+static_assert(offsetof(NiLight, color110) == 0x110, "NiLight first color offset");
+static_assert(offsetof(NiLight, color11C) == 0x11C, "NiLight second color offset");
+static_assert(offsetof(NiLight, color128) == 0x128, "NiLight third color offset");
+static_assert(offsetof(NiLight, dimmer) == 0x134, "NiLight scalar offset");
+static_assert(offsetof(NiLight, unk138) == 0x138, "NiLight unknown member offset");
 
 class NiPointLight : public NiLight
 {
@@ -125,3 +144,6 @@ public:
     std::uint32_t unk14C;  // 14C
 };
 static_assert(sizeof(NiPointLight) == 0x150, "NiPointLight size");
+static_assert(offsetof(NiPointLight, constAttenuation) == 0x140, "constant attenuation offset");
+static_assert(offsetof(NiPointLight, linearAttenuation) == 0x144, "linear attenuation offset");
+static_assert(offsetof(NiPointLight, quadraticAttenuation) == 0x148, "quadratic attenuation offset");
