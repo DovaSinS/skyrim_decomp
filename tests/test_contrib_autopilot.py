@@ -177,7 +177,13 @@ class FakeRuntime:
         return self.call('functions', {'reconstruction/synth/Synth.cpp': [4096, 8192]})
 
     def ai_screen(self, fetched):
-        return self.call('screen', dict(safe=not self.unsafe, reasons=['suspicious compiler construct']))
+        return self.call('screen', dict(safe=not self.unsafe, reasons=getattr(self, 'screen_reasons', ['suspicious compiler construct'])))
+
+    def discard_screen(self, fetched):
+        pass
+
+    def waiting(self, revision, reason):
+        revision['waiting_reason'] = reason
 
     def export(self, fetched, units):
         return self.call('export', ['synthetic-task'])
@@ -352,6 +358,26 @@ class ResumeAndLimits(unittest.TestCase):
         ap.process(self.runtime, self.state, pr(head='e' * 40))
         self.assertNotIn('confirm', self.runtime.calls)
         self.assertIn('suspicious compiler construct', self.runtime.messages[-1][2])
+
+    def test_unavailable_closure_retries_then_requires_maintainer(self):
+        self.runtime.unsafe = True
+        self.runtime.screen_reasons = ['Compiler include closure was UNAVAILABLE']
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(result['waiting_reason'], 'service-retry')
+        self.assertNotIn('screen', result['completed'])
+        self.assertFalse(result.get('done', False))
+        ap.process(self.runtime, self.state, pr())
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertEqual(result['waiting_reason'], 'needs-maintainer')
+        ap.process(self.runtime, self.state, pr())
+        self.assertEqual(self.runtime.calls.count('screen'), 3)
+        self.assertFalse(any(m[1] == 'needs-changes' for m in self.runtime.messages))
+
+    def test_genuine_unsafe_still_needs_changes(self):
+        self.runtime.unsafe = True
+        result = ap.process(self.runtime, self.state, pr())
+        self.assertTrue(result['done'])
+        self.assertEqual(self.runtime.messages[-1][1], 'needs-changes')
 
     def test_function_limit_posts_changes_and_does_not_launch_model(self):
         self.runtime.reject = True
