@@ -122,7 +122,9 @@ class Screen(unittest.TestCase):
             (unit / 'Synth.cpp').write_text('#include "Synth.h"\n')
             (unit / 'Synth.h').write_bytes(GOOD)
             self.assertEqual(screen.screen_tree(root, 'reconstruction/synth/Synth.cpp'), [])
-            (unit / 'Synth.h').write_text('#include <host-secret.h>\n')
+            (unit / 'Synth.h').write_text('#include <intrin.h>\n')
+            self.assertEqual(screen.screen_tree(root, 'reconstruction/synth/Synth.cpp'), [])
+            (unit / 'Synth.h').write_text('#include <windows.h>\n')
             self.assertIn('include-outside-roots', screen.screen_tree(root, 'reconstruction/synth/Synth.cpp'))
             other = root / 'tools'
             other.mkdir()
