@@ -429374,6 +429374,62 @@
       "evidence": "reports/sse-steam-1-7-104/0x6a7c90.json",
       "report": "reports/sse-steam-1-7-104/0x6a7c90.json",
       "drafter_model": "gpt-6.1-sol"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3322e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3351264,
+      "size": 111,
+      "status": "matched",
+      "named": true,
+      "name": "Condition::GetStage",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
+      "owner": "awarebayes",
+      "evidence": "reports/sse-steam-1-7-104/0x3322e0.json",
+      "report": "reports/sse-steam-1-7-104/0x3322e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x332360",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3351392,
+      "size": 119,
+      "status": "matched",
+      "named": true,
+      "name": "Condition::GetStageDone",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
+      "owner": "awarebayes",
+      "evidence": "reports/sse-steam-1-7-104/0x332360.json",
+      "report": "reports/sse-steam-1-7-104/0x332360.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3342c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3359424,
+      "size": 119,
+      "status": "matched",
+      "named": false,
+      "name": "Condition::GetGlobalValue",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
+      "owner": "awarebayes",
+      "evidence": "reports/sse-steam-1-7-104/0x3342c0.json",
+      "report": "reports/sse-steam-1-7-104/0x3342c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x33a010",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3383312,
+      "size": 118,
+      "status": "matched",
+      "named": false,
+      "name": "Condition::HasKeyword",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
+      "owner": "awarebayes",
+      "evidence": "reports/sse-steam-1-7-104/0x33a010.json",
+      "report": "reports/sse-steam-1-7-104/0x33a010.json"
     }
   ],
   "milestones": [
@@ -429416,7 +429472,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T17:22:49Z",
+  "updated_at": "2026-11-17T18:41:29Z",
   "work_items": [
     {
       "id": "pin-target",
