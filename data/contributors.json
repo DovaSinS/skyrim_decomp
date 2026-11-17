@@ -1,6 +1,15 @@
 {
   "schema": 1,
   "contributors": {
+    "taylorturnerit": {
+      "handle": "taylorturnerit",
+      "false_claims": 0,
+      "strikes": 0,
+      "auto_merge_eligible": true,
+      "label": null,
+      "verified_matches": 1,
+      "matched_bytes": 4
+    },
     "v-macrev": {
       "handle": "v-macrev",
       "false_claims": 0,

@@ -197224,16 +197224,18 @@
       "report": "reports/sse-steam-1-7-104/0xff6ba0.json"
     },
     {
-      "id": "sse-steam-1-7-104-0xff6bb0",
       "build_id": "sse-steam-1-7-104",
-      "rva": 16739248,
-      "size": 4,
-      "status": "mapped",
+      "evidence": "findings/p92-unit-supply-selection.md",
+      "id": "sse-steam-1-7-104-0xff6bb0",
       "name": "BSSubIndexTriShape::AsSubIndexTriShape",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 11. RVA 0xff6bb0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xff6bb0.json",
+      "rva": 16739248,
+      "size": 4,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xff6be0",
@@ -428930,7 +428932,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-16T21:09:26Z",
+  "updated_at": "2026-11-17T00:16:47Z",
   "work_items": [
     {
       "id": "pin-target",

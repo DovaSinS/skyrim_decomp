@@ -21278,7 +21278,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForwardff6320` | `LeafForwardff6320::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff6320` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6320.json` | matched | family | open |
 | `leaves/LeafForwardff6470` | `LeafForwardff6470::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff6470` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6470.json` | matched | family | open |
 | `leaves/LeafAddressff6ba0` | `BSSubIndexTriShape::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xff6ba0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6ba0.json` | matched | full | open |
-| - | `BSSubIndexTriShape::AsSubIndexTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0xff6bb0` / 4 | - | - | mapped | - | - |
+| `bsengine/BSSubIndexTriShape` | `BSSubIndexTriShape::AsSubIndexTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0xff6bb0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6bb0.json` | matched | full | open |
 | `leaves/ReturnLeafff6bc0` | `ReturnLeafff6bc0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xff6bc0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6bc0.json` | matched | family | open |
 | `leaves/LeafForwardff6be0` | `LeafForwardff6be0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff6be0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6be0.json` | matched | family | open |
 | `leaves/LeafForwardff6bf0` | `LeafForwardff6bf0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff6bf0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6bf0.json` | matched | family | open |
