@@ -117,6 +117,8 @@ class State:
         if changed and previous.get('enqueued') and not previous.get('done'):
             return previous  # settle its receipt; never close a PR whose head has since changed
         if not previous or changed:
+            if previous:
+                self.data.setdefault('history', []).append(previous)
             previous = dict(number=pr['number'], head=pr['headRefOid'], author=pr['author']['login'],
                             completed={}, merge_method=self.config['merge_method'],
                             created=dt.datetime.now(dt.timezone.utc).isoformat())
@@ -251,6 +253,7 @@ class Runtime:
     def list_prs(self, number=None):
         if number:
             pr = self.view_pr(number)
+            self.prune_live(pr)
             return [pr] if pr['state'] == 'OPEN' else []
         pages = json.loads(self.command(['gh', 'api', '--paginate', '--slurp',
                             f'repos/{REPOSITORY}/pulls?state=open&per_page=100']).stdout)
@@ -263,11 +266,43 @@ class Runtime:
         prs = []
         for candidate in sorted(numbers):
             pr = self.view_pr(candidate)  # A transport error aborts this tick, never says complete.
+            self.prune_live(pr)
             if pr['state'] == 'OPEN':
                 # Persist the new revision before any later PR lookup or intake can fail.
                 self.state.revision(pr, self.dry_run)
                 prs.append(pr)
         return prs
+
+    def prune_live(self, pr):
+        if self.dry_run:
+            return
+        saved = self.state.data['prs'].get(str(pr['number']), {})
+        protected = saved.get('head') if saved.get('enqueued') and not saved.get('done') else None
+        pattern = re.compile(r'pr-' + str(pr['number']) + r'-([0-9a-f]{40})(?:-squash)?\Z')
+        directory = self.private / 'live'
+        if not directory.is_dir():
+            return
+        for path in directory.iterdir():
+            match = pattern.fullmatch(path.name)
+            if not match or path.is_symlink() or not path.is_dir():
+                continue
+            head = match.group(1)
+            if head == protected:
+                continue
+            if pr['state'] == 'OPEN' and head == pr['headRefOid']:
+                continue
+            if head == pr['headRefOid'] and (saved.get('head') != head or not saved.get('done')):
+                continue
+            shutil.rmtree(path)
+
+    def pc_reachable(self, host, tree):
+        try:
+            result = subprocess.run(['ssh', '-F', host['ssh_config'], '-o', 'BatchMode=yes',
+                                     '-o', 'ConnectTimeout=5', host['ssh_host'], 'exit'],
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5, cwd=tree)
+            return result.returncode == 0
+        except (OSError, subprocess.TimeoutExpired):
+            return False
 
     def feedback(self, revision, key, label, message, commits=(), replace=False):
         marker = f'<!-- contrib-autopilot:{revision["number"]}:{revision["head"]}:{key} -->'
@@ -518,17 +553,28 @@ class Runtime:
                  if host.get('backend') == 'local' and host.get('loader') == 'wine']
         if len(wines) != 1:
             raise Stop('outside intake requires one configured project Wine host and the CI-hash backend')
-        profile = dict(runners_schema=1, attempt='wine', confirm=['wine', 'ci'], hosts=dict(
-            wine=wines[0], ci=dict(backend='ci-hash', host_id='github-windows-native',
-                machine='github-hosted-windows', loader='native', repository='awarebayes/skyrim_decomp')))
+        pcs = [host for host in config.get('hosts', {}).values()
+               if host.get('backend') == 'ssh' and host.get('loader') == 'native'
+               and host.get('ssh_config') and host.get('ssh_host')]
+        choices = getattr(self, '_intake_choices', {})
+        key = str(tree)
+        if key not in choices:
+            choices[key] = pcs[0] if len(pcs) == 1 and self.pc_reachable(pcs[0], tree) else None
+            self._intake_choices = choices
+        first = choices[key]
+        name = 'pc' if first else 'wine'
+        profile = dict(runners_schema=1, attempt=name, confirm=[name, 'ci'], hosts={
+            name: first or wines[0], 'ci': dict(backend='ci-hash', host_id='github-windows-native',
+                machine='github-hosted-windows', loader='native', repository='awarebayes/skyrim_decomp')})
         path = directory / 'intake-runners.json'
         save_json(path, profile)
         return path
 
     def ensure_hosts(self, tree):
         config = read_json(self.intake_runners(tree))
-        # CI can only attest a real dispatch. Availability checks probe Wine alone.
-        probe = dict(config, confirm=[], hosts={'wine': config['hosts']['wine']})
+        # CI can only attest a real dispatch. Availability checks probe the selected first host alone.
+        name = config['attempt']
+        probe = dict(config, confirm=[], hosts={name: config['hosts'][name]})
         path = tree / '.local/verifier/intake-probe-runners.json'
         save_json(path, probe)
         try:
@@ -537,7 +583,7 @@ class Runtime:
         except subprocess.TimeoutExpired:
             ready = False
         if not ready:
-            raise Stop('the project Wine host or CI-hash backend is unavailable; no PC fallback is used')
+            raise Stop('the selected first host is unavailable')
 
     def wine_attempt(self, tree, directory):
         result = self.command([sys.executable, 'tools/verifier/wine_confirm.py', str(directory)], cwd=tree,
