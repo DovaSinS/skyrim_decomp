@@ -22,6 +22,7 @@ class AdvisoryRepair(unittest.TestCase):
         setup(self)
         exclude = Path(git(self.root, 'rev-parse', '--git-path', 'info/exclude'))
         if not exclude.is_absolute(): exclude = self.root / exclude
+        exclude.parent.mkdir(parents=True, exist_ok=True)
         with exclude.open('a') as stream: stream.write('\n__pycache__/\n')
 
     enqueue = enqueue

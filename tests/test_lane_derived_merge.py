@@ -66,6 +66,7 @@ class DerivedMerge(unittest.TestCase):
         git(self.root, 'checkout', '--quiet', '--detach', self.base)
         before = self.tip(1, 'current')
         attributes = self.root / '.git/info/attributes'
+        attributes.parent.mkdir(parents=True, exist_ok=True)
         attributes.write_text('# original candidate attributes\n')
         derived.merge(self.root, incoming)
         data = flow.inventory(self.root)

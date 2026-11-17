@@ -161,11 +161,13 @@ class HostRun(unittest.TestCase):
             shutil.copyfile(ROOT / name, self.repo / name)
         bindir = self.msvc / 'bin/x64'
         bindir.mkdir(parents=True)
-        (bindir / 'cl.exe').write_bytes(b'fake compiler binary')
-        (self.repo / 'tools/verifier/pinned.sha256').write_text(f'{sha(bindir / "cl.exe")}  cl.exe\n')
+        compiler_dir = self.msvc / 'compiler'
+        compiler_dir.mkdir()
+        (compiler_dir / 'cl.exe').write_bytes(b'fake compiler binary')
+        (self.repo / 'tools/verifier/pinned.sha256').write_text(f'{sha(compiler_dir / "cl.exe")}  cl.exe\n')
         base = 'z:' + str(self.msvc).replace('/', '\\')
         self.include = f'{base}\\vc\\include;{base}\\kits\\include'
-        (bindir / 'msvcenv.sh').write_text(f"BASE='{base}'\nBINDIR='{bindir}'\nDEFAULT_INCLUDE='{self.include}'\n"
+        (bindir / 'msvcenv.sh').write_text(f"BASE='{base}'\nBINDIR='{compiler_dir}'\nDEFAULT_INCLUDE='{self.include}'\n"
                                            'export INCLUDE="${FAKE_INCLUDE:-$DEFAULT_INCLUDE}"\n')
         (bindir / 'cl').write_text(FAKE_CL)
         (bindir / 'cl').chmod(0o755)
@@ -231,7 +233,7 @@ class HostRun(unittest.TestCase):
         # The second run in the same boot reuses the prep check.
         code, out = self.run_build()
         self.assertEqual(code, 0)
-        self.assertIn('prep cached', out)
+        self.assertIn('prep cached' if ub.boot_id() else 'prep checked', out)
 
     def test_compiler_opening_a_file_outside_the_closure_fails(self):
         (self.repo / 'reconstruction/synth/Other.h').write_text('#pragma once\n')
@@ -296,10 +298,10 @@ class HostRun(unittest.TestCase):
         self.assertFalse((self.repo / 'reconstruction/synth/Stale.h').exists())
 
     def test_toolchain_and_image_checks(self):
-        (self.msvc / 'bin/x64/cl.exe').write_bytes(b'another compiler')
+        (self.msvc / 'compiler/cl.exe').write_bytes(b'another compiler')
         code, _ = self.run_build()
         self.assertEqual(code, ub.EXIT_TOOLCHAIN)
-        (self.msvc / 'bin/x64/cl.exe').write_bytes(b'fake compiler binary')
+        (self.msvc / 'compiler/cl.exe').write_bytes(b'fake compiler binary')
         code, _ = self.run_build(image=self.tmp / 'private/missing.exe')
         self.assertEqual(code, ub.EXIT_IMAGE)
         self.assertTrue((self.tmp / 'private').is_dir())

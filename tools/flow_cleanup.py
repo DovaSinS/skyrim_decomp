@@ -132,10 +132,30 @@ def check_live(fdir, tree, owner, metadata):
 def process_paths():
     """Read-only process/open-file snapshot; never stop another worker."""
     commands = subprocess.run(['ps', '-axo', 'pid,command'], capture_output=True, text=True, check=True).stdout
-    handles = subprocess.run(['lsof', '-nP', '-Fpn'], capture_output=True, text=True)
-    if handles.returncode not in (0, 1):
-        raise OSError('cannot inspect open files for retention')
-    return commands + '\n' + handles.stdout
+    if shutil.which('lsof'):
+        handles = subprocess.run(['lsof', '-nP', '-Fpn'], capture_output=True, text=True)
+        if handles.returncode not in (0, 1):
+            raise OSError('cannot inspect open files for retention')
+        return commands + '\n' + handles.stdout
+    proc = Path('/proc')
+    if not (proc / 'self/fd').is_dir():
+        raise OSError('cannot inspect open files for retention: no lsof or /proc fd')
+    paths = []
+    for process in proc.iterdir():
+        if not process.name.isdigit():
+            continue
+        try:
+            descriptors = list((process / 'fd').iterdir())
+            for descriptor in descriptors:
+                try:
+                    paths.append(os.readlink(descriptor))
+                except FileNotFoundError:
+                    pass
+        except FileNotFoundError:
+            continue
+        except OSError as exc:
+            raise OSError('cannot inspect open files for retention: /proc access denied') from exc
+    return commands + '\n' + '\n'.join(paths)
 
 
 def path_in_use(tree, processes):
