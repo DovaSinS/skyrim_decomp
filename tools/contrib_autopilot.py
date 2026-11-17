@@ -40,7 +40,7 @@ merges retain the supplied unpublished history. Pinned toolchain and SDK system 
 include/path escapes, host file reads, compiler plugins/imports/pragmas/asm, encoded or macro
 obfuscation, macro/template resource exhaustion, suspicious compiler exploit constructs, pasted
 bytes/listings/secrets/private paths and provenance doubts. Ordinary programmer C++ only.
-Return exactly SAFE on the first line if all checks pass, otherwise UNSAFE, followed by short
+Return exactly SAFE on the first line if all checks pass, otherwise UNSAFE. In both cases follow with short
 reasons. Any uncertainty is UNSAFE. Never quote source, bytes, listings or private paths.
 """
 
@@ -1161,7 +1161,8 @@ def process(runtime, state, pr, dry_run=False):
         reasons = ' '.join(raw_reasons).casefold()
         withheld = 'Details withheld by the publication filter; see the private intake log.'
         placeholder = any(reason == withheld for reason in raw_reasons)
-        if (placeholder or (any(word in reasons for word in ('unavailable', 'unverified'))
+        # A verdict without stated reasons is an incomplete screen run, not evidence against the source.
+        if (placeholder or not raw_reasons or (any(word in reasons for word in ('unavailable', 'unverified'))
                 and any(word in reasons for word in ('include', 'closure', 'sdk', 'compiler')))):
             runtime.discard_screen(fetched)
             revision['completed'].pop('screen', None)
