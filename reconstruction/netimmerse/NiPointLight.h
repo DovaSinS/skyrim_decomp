@@ -2,8 +2,9 @@
 //
 // Labels: v2
 // Task: contrib-nipointlight
-// Code origin: declarations written for this unit from CommonLibSSE-NG names and layouts; the
-// NiObject, NiLight, NiStream and NiBinaryStream stand-ins declare only what the compared code needs.
+// Code origin: declarations written for this unit from CommonLibSSE-NG names and layouts (the Ctor
+// name from powerof3/CommonLibSSE); the NiObject, NiLight, NiStream and NiBinaryStream stand-ins
+// declare only what the compared code needs.
 // Source exposure: mixed (community declarations and the contributor-owned pack;
 // bases, sizes and slots are community hypotheses).
 // Size agreement alone proves neither fields nor ownership.
@@ -28,6 +29,14 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+// Declarations derived from powerof3/CommonLibSSE are GPL-3.0-or-later.
+// This file is free software: you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software Foundation,
+// either version 3 of the License, or (at your option) any later version.
+// This file is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details. A copy is provided in
+// licenses/CommonLibSSE-GPL-3.0.txt; see also https://www.gnu.org/licenses/.
 // Started from a tools/skeleton.py skeleton: stand-ins carry only what the compared code needs, and
 // community names are unverified.
 // Base form: NiLight, a local stand-in of the community NiLight 0x140 size over a minimal NiObject;
@@ -97,8 +106,10 @@ static_assert(sizeof(NiLight) == 0x140, "NiLight size");
 class NiPointLight : public NiLight
 {
 public:
-    // NiPointLight::NiPointLight: GUESS(low); the project lists it as NiPointLight::Ctor
-    NiPointLight();  // compared: 0xefe4e0
+    // NiPointLight::NiPointLight: GUESS(low); not compared on its own, inlined into Ctor
+    NiPointLight();
+    // NiPointLight::Ctor: COMMUNITY(powerof3/CommonLibSSE@654e55f, GPL-3.0); constructs in place
+    NiPointLight* Ctor();  // compared: 0xefe4e0
     // the complete destructor ??1NiPointLight: GUESS(low); declared only, bound by address to the
     // destructor the listing calls
     ~NiPointLight() override;  // compared: 0xefe5f0 (scalar deleting destructor)

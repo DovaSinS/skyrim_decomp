@@ -3,7 +3,8 @@
 // Labels: v2
 // Task: contrib-nipointlight
 // Code origin: bodies written for this unit from the listings of the pinned image; names and
-// declarations from CommonLibSSE-NG. No community or sibling body is adapted.
+// declarations from CommonLibSSE-NG, and the Ctor name from powerof3/CommonLibSSE. No community or
+// sibling body is adapted.
 // Source exposure: mixed (names and declarations from community headers; the listing of the pinned
 // image).
 // MIT License
@@ -27,6 +28,14 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
+// Declarations derived from powerof3/CommonLibSSE are GPL-3.0-or-later.
+// This file is free software: you can redistribute it and/or modify it under the terms
+// of the GNU General Public License as published by the Free Software Foundation,
+// either version 3 of the License, or (at your option) any later version.
+// This file is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details. A copy is provided in
+// licenses/CommonLibSSE-GPL-3.0.txt; see also https://www.gnu.org/licenses/.
 // Evidence: findings/fifth-batch-selection.md
 // Recipe: reconstruction/recipes/o2-fpfast-root-includes.json (compile this file alone). The fast
 // floating-point model, because IsEqual tests float equality without the NaN parity branch that the
@@ -44,6 +53,8 @@
 // A byte match shows that this source and recipe produce the checked code; it does not verify the
 // community names or that the original source looked like this.
 #include "NiPointLight.h"
+
+#include <new>
 
 // StreamRead, StreamWrite: GUESS(low); one raw read or write of a member through the stream's
 // function pointer, advancing the stream position by the bytes moved.
@@ -104,11 +115,17 @@ bool NiPointLight::IsEqual(NiObject* a_object)
     return true;
 }
 
-// RVA 0xefe4e0, 52 bytes. Defining the constructor also makes the compiler emit the vftable and,
-// beside it, the scalar deleting destructor compared at RVA 0xefe5f0.
+// Not compared on its own: inlined into Ctor below. Defining it also makes the compiler emit the
+// vftable and, beside it, the scalar deleting destructor compared at RVA 0xefe5f0.
 NiPointLight::NiPointLight() :
     constAttenuation(0.0f),
     linearAttenuation(1.0f),
     quadraticAttenuation(0.0f)
 {
+}
+
+// RVA 0xefe4e0, 52 bytes: constructs the light in place.
+NiPointLight* NiPointLight::Ctor()
+{
+    return new (this) NiPointLight;
 }
