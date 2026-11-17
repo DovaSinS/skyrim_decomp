@@ -21288,7 +21288,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafAddressff6f00` | `LeafAddressff6f00::Address` (GUESS) | `sse-steam-1-7-104` / `0xff6f00` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff6f00.json` | matched | family | open |
 | `leaves/ReturnLeafff70e0` | `ReturnLeafff70e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xff70e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff70e0.json` | matched | family | open |
 | `storage/StorageInitffaa00` | `StorageInitffaa00::initialize` (GUESS) | `sse-steam-1-7-104` / `0xffaa00` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xffaa00.json` | matched | family | open |
-| - | `BSMasterParticleSystem::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xffb470` / 3 | - | - | mapped | - | - |
+| `bsengine/BSMasterParticleSystem` | `BSMasterParticleSystem::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xffb470` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xffb470.json` | matched | full | open |
 | `leaves/LeafForwardffb850` | `LeafForwardffb850::Forward` (GUESS) | `sse-steam-1-7-104` / `0xffb850` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xffb850.json` | matched | family | open |
 | `storage/StorageInitffc440` | `StorageInitffc440::initialize` (GUESS) | `sse-steam-1-7-104` / `0xffc440` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xffc440.json` | matched | family | open |
 | `leaves/LeafAddressffc480` | `BSMasterParticleSystem::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xffc480` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xffc480.json` | matched | full | open |
