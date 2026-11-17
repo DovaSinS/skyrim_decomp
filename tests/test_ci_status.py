@@ -71,6 +71,16 @@ class CiStatusTests(unittest.TestCase):
         self.assertEqual(code, ci_status.GREEN)
         self.assertTrue(out.startswith('GREEN'))
 
+    def test_candidate_failure_does_not_mask_infrastructure_failure(self):
+        self.runs(run(1, 'Infrastructure checks'), run(2, 'Publish research report'),
+                  run(3, 'CI second-host confirmation', conclusion='failure'))
+        self.assertEqual(self.main()[0], ci_status.GREEN)
+        self.assertEqual(self.main('--without-advisory')[0], ci_status.GREEN)
+        self.runs(run(1, 'Infrastructure checks', conclusion='failure'),
+                  run(2, 'Publish research report'), run(3, 'CI second-host confirmation', conclusion='failure'))
+        self.jobs(1, {'name': 'check', 'conclusion': 'failure', 'steps': []})
+        self.assertEqual(self.main()[0], ci_status.RED)
+
     def test_lane_omits_only_named_advisory_runs_and_never_a_required_red(self):
         self.runs(run(1, 'Infrastructure checks'), run(2, 'Publish research report'),
                   run(3, 'Advisory target hashes', conclusion='failure'))

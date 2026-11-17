@@ -21,6 +21,7 @@ OK_CONCLUSIONS = {'success', 'skipped', 'neutral'}
 PAGES = 'Publish research report'
 CHECKS = 'Infrastructure checks'
 ADVISORY = {'Advisory target hashes', 'Public MSVC hash self-test'}
+CANDIDATE = {'CI second-host confirmation'}
 POLL_SECONDS = 15
 REPO = Path(__file__).resolve().parents[1]
 FULL_SHA = re.compile(r'[0-9a-f]{40}')
@@ -98,7 +99,9 @@ def status(commit, without_advisory=False, required_workflows=()):
     """(exit code, run summaries) for the workflow runs of one commit."""
     runs = gh('run', 'list', '--commit', commit, '--limit', '50',
               '--json', 'databaseId,workflowName,status,conclusion,headSha')
+    # These runs validate a dispatched candidate commit, not the commit they are attached to.
     runs = [r for r in runs if r.get('headSha') == commit
+            and r.get('workflowName') not in CANDIDATE
             and not (without_advisory and r.get('workflowName') in ADVISORY)]
     summaries = []
     cancelled_pages = []
