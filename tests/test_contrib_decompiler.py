@@ -25,6 +25,8 @@ class DecompilerTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.ctx = contrib.Ctx(repo=ROOT, private=self.root / '.local/contrib',
                                as_json=True, assume_yes=True, env={'PATH': ''})
+        if sys.platform == 'cygwin':
+            self.ctx.platform = 'linux'
         self.project = self.ctx.private / 'decompiler/projects/synthetic'
         self.project.mkdir(parents=True)
 

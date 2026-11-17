@@ -52,7 +52,9 @@ class SrTests(unittest.TestCase):
 
     def python(self, name, directory=None, valid=True):
         if valid:
-            body = f'export SR_TEST_SELECTED={shlex.quote(name)}\nexec {shlex.quote(sys.executable)} "$@"'
+            body = (f'export SR_TEST_SELECTED={shlex.quote(name)}\n'
+                    f'export PATH={shlex.quote(os.environ.get("PATH", ""))}:"$PATH"\n'
+                    f'exec {shlex.quote(sys.executable)} "$@"')
         else:
             body = 'exit 1'  # Version or pyexpat probe failed.
         return self.command(name, body, directory)
