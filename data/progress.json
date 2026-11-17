@@ -429744,7 +429744,8 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3351136,
       "size": 114,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "Condition::GetQuestCompleted",
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
@@ -429757,7 +429758,8 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3384000,
       "size": 144,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "Condition::LocationHasKeyword",
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
@@ -429806,7 +429808,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T20:20:17Z",
+  "updated_at": "2026-11-17T21:59:21Z",
   "work_items": [
     {
       "id": "pin-target",
