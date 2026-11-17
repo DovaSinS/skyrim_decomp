@@ -37,7 +37,7 @@ models are not counted. Distinct model counts exclude tools and unreported claim
 | Model family | Gross accepted bytes |
 | --- | ---: |
 | Claude | 22,725 |
-| GPT / Codex | 87,011 |
+| GPT / Codex | 89,943 |
 | Scripts and tools | 1,402,643 |
 | Not reported | 9,197 |
 <!-- /model-trend-totals -->
