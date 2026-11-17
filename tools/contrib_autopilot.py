@@ -718,9 +718,11 @@ class Runtime:
         import flow
         from sampling_packet import compare
         tree = Path(fetched['tree'])
-        clean = tree.parent / ('rerun-' + group['name'])
-        self.prepare_main_tree(clean, fetched['base'])
-        self.git(clean, 'update-ref', 'refs/remotes/origin/main', fetched['base'])
+        self.git(self.root, 'fetch', 'origin', 'main')
+        live = self.git(self.root, 'rev-parse', 'origin/main')
+        clean = tree.parent / ('rerun-' + group['name'] + '-' + live[:12])
+        self.prepare_main_tree(clean, live)
+        self.git(clean, 'update-ref', 'refs/remotes/origin/main', live)
         from source_digest import include_closure
         for rva in group['sampled']:
             fn = next(f for f in flow.inventory(tree)['functions'] if f['rva'] == int(rva, 16)
