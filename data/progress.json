@@ -429750,7 +429750,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x332260.json",
       "report": "reports/sse-steam-1-7-104/0x332260.json"
     },
     {
@@ -429764,7 +429764,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x33a2c0.json",
       "report": "reports/sse-steam-1-7-104/0x33a2c0.json"
     }
   ],
