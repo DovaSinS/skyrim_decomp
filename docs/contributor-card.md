@@ -106,3 +106,5 @@ unchanged acceptance gate, and they do not block your submission preflight.
 
 Ordinary work uses one clone and one task. [Parallel agents and shared private storage](contributor-parallel.md)
 are advanced, opt-in use. They are not prerequisites and offline claims do not reserve work publicly.
+
+Agents: read docs/contributor-lessons.md before drafting.
