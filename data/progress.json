@@ -180634,16 +180634,18 @@
       "evidence": "findings/p92-unit-supply-selection.md"
     },
     {
-      "id": "sse-steam-1-7-104-0xefe1f0",
       "build_id": "sse-steam-1-7-104",
-      "rva": 15720944,
-      "size": 192,
-      "status": "mapped",
+      "evidence": "findings/fifth-batch-selection.md",
+      "id": "sse-steam-1-7-104-0xefe1f0",
       "name": "NiPointLight::LoadBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 24. RVA 0xefe1f0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xefe1f0.json",
+      "rva": 15720944,
+      "size": 192,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xefe2c0",
@@ -180698,16 +180700,18 @@
       "evidence": "findings/fifth-batch-selection.md"
     },
     {
-      "id": "sse-steam-1-7-104-0xefe4e0",
       "build_id": "sse-steam-1-7-104",
-      "rva": 15721696,
-      "size": 52,
-      "status": "mapped",
+      "evidence": "findings/fifth-batch-selection.md",
+      "id": "sse-steam-1-7-104-0xefe4e0",
       "name": "NiPointLight::Ctor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), joined through Address Library id 70967. RVA 0xefe4e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xefe4e0.json",
+      "rva": 15721696,
+      "size": 52,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xefe520",
@@ -180724,16 +180728,18 @@
       "report": "reports/sse-steam-1-7-104/0xefe520.json"
     },
     {
-      "id": "sse-steam-1-7-104-0xefe5f0",
       "build_id": "sse-steam-1-7-104",
-      "rva": 15721968,
-      "size": 52,
-      "status": "mapped",
+      "evidence": "findings/fifth-batch-selection.md",
+      "id": "sse-steam-1-7-104-0xefe5f0",
       "name": "NiPointLight::~NiPointLight",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xefe5f0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xefe5f0.json",
+      "rva": 15721968,
+      "size": 52,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xefe630",
@@ -429410,7 +429416,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T02:57:50Z",
+  "updated_at": "2026-11-17T17:22:49Z",
   "work_items": [
     {
       "id": "pin-target",

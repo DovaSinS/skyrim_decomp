@@ -20004,14 +20004,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForwardefd3a0` | `LeafForwardefd3a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xefd3a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefd3a0.json` | matched | family | open |
 | `leaves/LeafForwardefd3b0` | `LeafForwardefd3b0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xefd3b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefd3b0.json` | matched | family | open |
 | - | `BSDynamicTriShape::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xefd460` / 3 | - | - | mapped | - | - |
-| - | `NiPointLight::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe1f0` / 192 | - | - | mapped | - | - |
+| `netimmerse/NiPointLight` | `NiPointLight::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe1f0` / 192 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xefe1f0.json` | matched | full | open |
 | `leaves/LeafForwardefe2c0` | `LeafForwardefe2c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xefe2c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefe2c0.json` | matched | family | open |
 | `leaves/LeafForwardefe2d0` | `LeafForwardefe2d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xefe2d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefe2d0.json` | matched | family | open |
 | - | `NiPointLight::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe2e0` / 192 | - | - | mapped | - | - |
 | - | `NiPointLight::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe3b0` / 102 | - | - | mapped | - | - |
-| - | `NiPointLight::Ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe4e0` / 52 | - | - | mapped | - | - |
+| `netimmerse/NiPointLight` | `NiPointLight::Ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe4e0` / 52 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xefe4e0.json` | matched | full | open |
 | `leaves/LeafForwardefe520` | `LeafForwardefe520::Forward` (GUESS) | `sse-steam-1-7-104` / `0xefe520` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefe520.json` | matched | full | open |
-| - | `NiPointLight::~NiPointLight` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe5f0` / 52 | - | - | mapped | - | - |
+| `netimmerse/NiPointLight` | `NiPointLight::~NiPointLight` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe5f0` / 52 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xefe5f0.json` | matched | full | open |
 | `leaves/LeafAddressefe630` | `NiPointLight::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xefe630` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xefe630.json` | matched | family | open |
 | `leaves/LeafForwardeffce0` | `LeafForwardeffce0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xeffce0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeffce0.json` | matched | family | open |
 | - | `NiDefaultAVObjectPalette::ResetAndFillFromScenegraph` (COMMUNITY) | `sse-steam-1-7-104` / `0xf002d0` / 140 | - | - | mapped | - | - |

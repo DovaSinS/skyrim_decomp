@@ -9,7 +9,7 @@
 <path d="M55 100h330" stroke="#30363d"/>
 <polyline points="55.0,259.9 110.0,258.5 165.0,188.8 220.0,126.4 275.0,114.2 330.0,110.0 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
 <circle cx="385.0" cy="110.0" r="4" fill="#3fb950"/>
-<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,505,549</text>
+<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,505,845</text>
 <text x="55.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="385.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-17</text>
 <text x="465" y="65" fill="#e6edf3" font-size="14">Functions matched, cumulative</text>
@@ -20,7 +20,7 @@
 <path d="M465 100h330" stroke="#30363d"/>
 <polyline points="465.0,260.0 520.0,258.8 575.0,182.8 630.0,139.4 685.0,117.1 740.0,110.0 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <circle cx="795.0" cy="110.0" r="4" fill="#58a6ff"/>
-<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">29,799</text>
+<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">29,802</text>
 <text x="465.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="795.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-17</text>
 </g></svg>

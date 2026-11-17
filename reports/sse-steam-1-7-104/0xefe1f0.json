@@ -1,0 +1,207 @@
+{
+  "build": {
+    "added_flags": [
+      "/showIncludes"
+    ],
+    "claim": "Build facts are self-reported by each compile host (tools/verifier/unit_build.py build record). tools/check.py verifies only that they are present and consistent with the runs and the translation unit.",
+    "cleared_environment": [
+      "CL",
+      "EXTERNAL_INCLUDE",
+      "INCLUDE",
+      "LIB",
+      "LIBPATH",
+      "_CL_"
+    ],
+    "hosts": {
+      "mac-wine": {
+        "command_flags": [
+          "/nologo",
+          "/c",
+          "/O2",
+          "/MD",
+          "/GS-",
+          "/EHsc",
+          "/GR",
+          "/fp:fast",
+          "/Gy",
+          "/Ireconstruction",
+          "/showIncludes"
+        ],
+        "object_sha256": "0b370ce58eba1798925cf051dd4bb1afc21d8595db118a24c835228b72dd9001",
+        "opened_equals_closure": true,
+        "repository_files_opened": [
+          "reconstruction/netimmerse/NiAVObject.h",
+          "reconstruction/netimmerse/NiObject.h",
+          "reconstruction/netimmerse/NiPointLight.cpp",
+          "reconstruction/netimmerse/NiPointLight.h"
+        ]
+      }
+    }
+  },
+  "ci_confirmation": {
+    "base_sha": "59479c2f38538f9cf1016004f95ddee110312fab",
+    "build_id": "sse-steam-1-7-104",
+    "cache_verified": true,
+    "candidate_sha": "3d4fb91e5d94960d69f582679b6be232b3f248c4",
+    "compiler_sha256": {
+      "c1xx.dll": "4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be",
+      "c2.dll": "03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b",
+      "cl.exe": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+      "link.exe": "70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099"
+    },
+    "conclusion": "success",
+    "content_sha256": "65de3e897fa87128971f51fb5b10393597599e0bf27cf220bd73636ef2e55499",
+    "deterministic": true,
+    "first_content_sha256": "65de3e897fa87128971f51fb5b10393597599e0bf27cf220bd73636ef2e55499",
+    "first_host": {
+      "host_id": "mac-wine",
+      "loader": "wine",
+      "machine": "maintainer-mac",
+      "os": "macos"
+    },
+    "first_object_sha256": "0b370ce58eba1798925cf051dd4bb1afc21d8595db118a24c835228b72dd9001",
+    "host_id": "github-windows-native",
+    "kind": "ci-hash",
+    "layout_sha256": "994cfe7d05730964209a72ad1cea009b0e72ba4c05a0c5254c40bb66ff36cfe3",
+    "loader": "native",
+    "machine": "github-hosted-windows",
+    "normalized_sha256": "0c4bb2f77f56620e12b037a320dc6b9b800b5bbb1bf06c96d9ffa14ae14fa519",
+    "object_sha256": "eaace0070062a31e514aae3b8fb3fa2ce7bcaf4895779aeee89120e96bad9f5b",
+    "os": "windows",
+    "recipe_sha256": "a6df3f3f1af44ec7ba9c6e181357718ee3fa4577d33abb58c3176ae33fd52d2c",
+    "request_sha256": "05229311be5620d4b9d97143f7de2ab8fe59866a3e889ce075eb5f8bbba5675d",
+    "result": "hash-match",
+    "run_attempt": 1,
+    "run_id": 44120233271,
+    "rva": 15720944,
+    "schema": 1,
+    "source_sha256": "66ae67440fa3c7c64600dc9adad85f3ccd3804775fd7acdbd3360846a6fa18db",
+    "target": {
+      "extraction": "linked-reference-inference",
+      "layout_sha256": "994cfe7d05730964209a72ad1cea009b0e72ba4c05a0c5254c40bb66ff36cfe3",
+      "normalized_sha256": "0c4bb2f77f56620e12b037a320dc6b9b800b5bbb1bf06c96d9ffa14ae14fa519",
+      "rva": 15720944,
+      "size": 192
+    },
+    "task_id": "contrib-pr102-4eb3058f-0-squash-efe1f0",
+    "toolchain_manifest_sha256": "3d358035ccde903aeed022b7dc6ea2b7e91a33922b0f9eda2bc7655749690337",
+    "tools_sha256": "e287e1ae34e16b19a23292b974e98ccc19c441e2804835520d974d2d18748101",
+    "toolset": "MATCH",
+    "unit": "reconstruction/netimmerse/NiPointLight.cpp",
+    "workflow": ".github/workflows/ci-confirm.yml"
+  },
+  "function_id": "sse-steam-1-7-104-0xefe1f0",
+  "match_record_schema": 2,
+  "notes": [
+    "CI second-host exception authorized by awarebayes 2026-11-15. Full local comparator report is verbatim; CI independently verifies published target hashes and whole non-debug object content. No game bytes enter CI."
+  ],
+  "recipe": {
+    "path": "reconstruction/recipes/o2-fpfast-root-includes.json",
+    "sha256": "a6df3f3f1af44ec7ba9c6e181357718ee3fa4577d33abb58c3176ae33fd52d2c"
+  },
+  "reproduction": "Run tools/verifier/confirm with a registered primary runner and the ci-hash confirmation runner; tools/ci_confirm_batch.py compiles twice with the pinned recipe and checks published hashes.",
+  "runs": [
+    {
+      "compared_on": "mac-wine",
+      "compiled_on": "mac-wine",
+      "report": {
+        "acceptance": "not-evaluated",
+        "candidate": {
+          "code_section_sha256": "eb3cabcc2f8a6844ca981bfb7efb92e29afd45bf669210223da4650f57257e23",
+          "code_sections": 1,
+          "object_sha256": "0b370ce58eba1798925cf051dd4bb1afc21d8595db118a24c835228b72dd9001"
+        },
+        "comparator": {
+          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
+          "version": "0.6.1-runtime"
+        },
+        "contract_version": 2,
+        "coverage": {
+          "aliases_declared": [],
+          "code_bytes_by_reference": 4,
+          "code_bytes_exact": 188,
+          "code_bytes_total": 192,
+          "eh": {
+            "bytes": 16,
+            "handlers": {},
+            "int_fields": 0,
+            "ref_fields": 0,
+            "structures": {},
+            "type_names_compared": 0
+          },
+          "funclet_bytes_by_reference": 0,
+          "funclet_bytes_exact": 0,
+          "funclet_bytes_total": 0,
+          "funclet_end_evidence": {},
+          "funclet_ranges": [],
+          "funclet_sections": 0,
+          "relocations_by_type": {
+            "REL32": 1
+          },
+          "self_rva_fields": 0,
+          "unwind": "covered",
+          "unwind_bytes_exact": 16,
+          "unwind_chained_entries": 0,
+          "unwind_entries": 1
+        },
+        "detail": "all contract v2 checks passed",
+        "function": {
+          "build_id": "sse-steam-1-7-104",
+          "rva": 15720944,
+          "size": 192,
+          "symbol": "?LoadBinary@NiPointLight@@UEAAXAEAVNiStream@@@Z"
+        },
+        "reason": "all-checks-passed",
+        "recipe": {
+          "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
+          "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
+          "flags": [
+            "/nologo",
+            "/c",
+            "/O2",
+            "/MD",
+            "/GS-",
+            "/EHsc",
+            "/GR",
+            "/fp:fast",
+            "/Gy",
+            "/Ireconstruction"
+          ],
+          "recipe_sha256": "a6df3f3f1af44ec7ba9c6e181357718ee3fa4577d33abb58c3176ae33fd52d2c"
+        },
+        "report_schema": 1,
+        "result": "pass",
+        "source": {
+          "path": "reconstruction/netimmerse/NiPointLight.cpp",
+          "source_revision": "66ae67440fa3c7c64600dc9adad85f3ccd3804775fd7acdbd3360846a6fa18db"
+        },
+        "symbol_map_sha256": "882d0d6b21d8d58b738674a8468030ab3e295fad2c557aeb24c3712ecc2d582b",
+        "target": {
+          "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
+          "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
+        },
+        "task_id": "sse-steam-1-7-104-0xefe1f0"
+      }
+    }
+  ],
+  "source": {
+    "compiled": "reconstruction/netimmerse/NiPointLight.cpp",
+    "digest": "66ae67440fa3c7c64600dc9adad85f3ccd3804775fd7acdbd3360846a6fa18db",
+    "digest_method": "tu-sha256-v1",
+    "translation_unit": [
+      "reconstruction/netimmerse/NiAVObject.h",
+      "reconstruction/netimmerse/NiObject.h",
+      "reconstruction/netimmerse/NiPointLight.cpp",
+      "reconstruction/netimmerse/NiPointLight.h"
+    ]
+  },
+  "submitter": "v-macrev",
+  "symbol_map": {
+    "path": "reports/sse-steam-1-7-104/unit-symbols/882d0d6b21d8d58b738674a8468030ab3e295fad2c557aeb24c3712ecc2d582b.json",
+    "sha256": "882d0d6b21d8d58b738674a8468030ab3e295fad2c557aeb24c3712ecc2d582b"
+  },
+  "toolchain_pin": {
+    "path": "tools/verifier/pinned.sha256",
+    "sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf"
+  }
+}
