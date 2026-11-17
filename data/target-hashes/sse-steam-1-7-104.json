@@ -10,9 +10,21 @@
   "offered_inventory_sha256": "fb2fa4e9048aab0871de1cfd67fa822f75c6491182a97a64bb8d596c71794319",
   "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
   "recipe_sha256": {
+    "reconstruction/recipes/msvc-19.16.27054-o2-reconstruction.json": "1698d9007b615136ca0b49cc9429352698c68e3ff6b29a322f01b867d3d843d2",
+    "reconstruction/recipes/msvc-19.16.27054-o2-root-includes.json": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
     "reconstruction/recipes/msvc-19.16.27054-o2.json": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "reconstruction/recipes/o2-fpfast-reconstruction.json": "d3b77ebfa44411a6c999e79068c1f0b70b8c41803da5a354f306ee41714b3217",
+    "reconstruction/recipes/o2-fpfast-root-includes.json": "a6df3f3f1af44ec7ba9c6e181357718ee3fa4577d33abb58c3176ae33fd52d2c",
     "reconstruction/recipes/o2-fpfast.json": "82cadfcb4415b21c1f923d1c9f2f49e7a72cf49fbb5c4765d3fe6f78ad23c4a3",
-    "reconstruction/recipes/o2-os.json": "c5a91a75efea396d076f547ce668370712db25ba7183678127101dfe90a2be7d"
+    "reconstruction/recipes/o2-os-reconstruction.json": "016c724aa0176b23017bb0c3b09c6da4fdbd5178162444bd4b6470aeecabff7b",
+    "reconstruction/recipes/o2-os-root-includes.json": "379155b8ae69718634fb94110edbf76e2e31816d3676bb8ce9e88b24b3e6902e",
+    "reconstruction/recipes/o2-os.json": "c5a91a75efea396d076f547ce668370712db25ba7183678127101dfe90a2be7d",
+    "reconstruction/recipes/represented-magic-wrapper-o2-reconstruction.json": "1698d9007b615136ca0b49cc9429352698c68e3ff6b29a322f01b867d3d843d2",
+    "reconstruction/recipes/represented-magic-wrapper-o2-root-includes.json": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
+    "reconstruction/recipes/represented-magic-wrapper-o2.json": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "reconstruction/recipes/represented-wrapper-o2-reconstruction.json": "1698d9007b615136ca0b49cc9429352698c68e3ff6b29a322f01b867d3d843d2",
+    "reconstruction/recipes/represented-wrapper-o2-root-includes.json": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
+    "reconstruction/recipes/represented-wrapper-o2.json": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
   },
   "acceptance": "not-evaluated",
   "shards": [
