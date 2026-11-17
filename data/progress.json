@@ -429646,12 +429646,14 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3357744,
       "size": 143,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "Condition::GetPCIsSex",
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x333c30.json",
+      "report": "reports/sse-steam-1-7-104/0x333c30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x334340",
@@ -429714,19 +429716,22 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3391424,
       "size": 388,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "Condition::IsInDialogueWithPlayer",
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x33bfc0.json",
+      "report": "reports/sse-steam-1-7-104/0x33bfc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x333dd0",
       "build_id": "sse-steam-1-7-104",
       "rva": 3358160,
       "size": 218,
-      "status": "mapped",
+      "status": "matched",
+      "named": false,
       "name": "Condition::GetIsID",
       "name_origin": "GUESS",
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
@@ -429775,7 +429780,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T19:41:09Z",
+  "updated_at": "2026-11-17T20:20:17Z",
   "work_items": [
     {
       "id": "pin-target",

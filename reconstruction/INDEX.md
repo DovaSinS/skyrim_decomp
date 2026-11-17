@@ -10501,8 +10501,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `conditions_getinworldspace/ConditionFunctions` | `Condition::GetInWorldspace` (GUESS) | `sse-steam-1-7-104` / `0x333580` / 192 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333580.json` | matched | full | open |
 | `conditions_getisrace/ConditionFunctions` | `Condition::GetIsRace` (GUESS) | `sse-steam-1-7-104` / `0x333790` / 147 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333790.json` | matched | full | open |
 | `conditions_getinfaction/ConditionFunctions` | `Condition::GetInFaction` (GUESS) | `sse-steam-1-7-104` / `0x3339f0` / 240 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3339f0.json` | matched | full | open |
-| - | `Condition::GetPCIsSex` (GUESS) | `sse-steam-1-7-104` / `0x333c30` / 143 | - | - | mapped | - | - |
-| - | `Condition::GetIsID` (GUESS) | `sse-steam-1-7-104` / `0x333dd0` / 218 | - | - | mapped | - | - |
+| `conditions_getpcissex/ConditionFunctions` | `Condition::GetPCIsSex` (GUESS) | `sse-steam-1-7-104` / `0x333c30` / 143 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333c30.json` | matched | full | open |
+| `conditions_getisid/ConditionFunctions` | `Condition::GetIsID` (GUESS) | `sse-steam-1-7-104` / `0x333dd0` / 218 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333dd0.json` | matched | full | open |
 | `conditions_getisvoicetype/ConditionFunctions` | `Condition::GetIsVoiceType` (GUESS) | `sse-steam-1-7-104` / `0x333eb0` / 211 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333eb0.json` | matched | full | open |
 | `conditions_getisreference/ConditionFunctions` | `Condition::GetIsReference` (GUESS) | `sse-steam-1-7-104` / `0x334180` / 127 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x334180.json` | matched | full | open |
 | `conditions_getglobalvalue/ConditionFunctions` | `Condition::GetGlobalValue` (GUESS) | `sse-steam-1-7-104` / `0x3342c0` / 119 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3342c0.json` | matched | full | open |
@@ -10515,7 +10515,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `conditions_getiseditorlocalias/ConditionFunctions` | `Condition::GetIsEditorLocAlias` (GUESS) | `sse-steam-1-7-104` / `0x33a7b0` / 165 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x33a7b0.json` | matched | full | checked |
 | `conditions_getkeyworddataforlocation/ConditionFunctions` | `Condition::GetKeywordDataForLocation` (GUESS) | `sse-steam-1-7-104` / `0x33ae20` / 111 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x33ae20.json` | matched | full | checked |
 | `conditions_getrelationshiprank/ConditionFunctions` | `Condition::GetRelationshipRank` (GUESS) | `sse-steam-1-7-104` / `0x33b740` / 148 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x33b740.json` | matched | full | open |
-| - | `Condition::IsInDialogueWithPlayer` (GUESS) | `sse-steam-1-7-104` / `0x33bfc0` / 388 | - | - | mapped | - | - |
+| `conditions_isindialoguewithplayer/ConditionFunctions` | `Condition::IsInDialogueWithPlayer` (GUESS) | `sse-steam-1-7-104` / `0x33bfc0` / 388 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x33bfc0.json` | matched | full | open |
 | `leaves/TableStoreLeaf340500` | `TableStoreLeaf340500::~TableStoreLeaf340500` (GUESS) | `sse-steam-1-7-104` / `0x340500` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x340500.json` | matched | family | open |
 | `leaves/DeletingWrapper3405b0` | `DeletingWrapper3405b0::~DeletingWrapper3405b0` (GUESS) | `sse-steam-1-7-104` / `0x3405b0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3405b0.json` | matched | full | checked |
 | `leaves/DeletingLeaf3405f0` | `DeletingLeaf3405f0::~DeletingLeaf3405f0` (GUESS) | `sse-steam-1-7-104` / `0x3405f0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3405f0.json` | matched | family | open |
