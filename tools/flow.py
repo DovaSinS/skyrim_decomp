@@ -2644,6 +2644,10 @@ def parser():
     p.add_argument('--root', type=Path, default=ROOT, help=argparse.SUPPRESS)
     p.add_argument('--offline', action='store_true', help='do not read origin (pushed state unknown)')
     sub = p.add_subparsers(dest='cmd', required=True)
+    s = sub.add_parser('preflight')
+    s.add_argument('--root', type=Path, default=argparse.SUPPRESS)
+    s.add_argument('--rebase', action='store_true')
+    sub.add_parser('install-main-guard')
     s = sub.add_parser('worktrees')
     ws = s.add_subparsers(dest='worktrees_action', required=True)
     ws.add_parser('list')
@@ -2745,6 +2749,8 @@ def parser():
     s.add_argument('--superseding-commit', required=True)
     s.add_argument('--reason', required=True)
     s = sub.add_parser('tooling-push')
+    s.add_argument('--root', type=Path, default=argparse.SUPPRESS)
+    s.add_argument('--flow-dir', default=argparse.SUPPRESS)
     s.add_argument('--enqueue-only', action='store_true', help='register the immutable tip for the persistent lane service and return')
     s.add_argument('--repair-red', help='exact red SHA; isolated, recorded repair of related advisory inputs only')
     s.add_argument('--branch', default='main')
@@ -2785,6 +2791,25 @@ def parser():
 def _main(argv=None):
     a = parser().parse_args(argv)
     root = a.root
+    if a.cmd == 'preflight':
+        import flow_preflight
+        result = flow_preflight.preflight(root, ROOT, a.rebase)
+        print(json.dumps(result))
+        return 0 if result['ok'] else 1
+    if a.cmd == 'install-main-guard':
+        import shlex
+        hooks = Path(git(ROOT, 'rev-parse', '--path-format=absolute', '--git-path', 'hooks'))
+        hooks.mkdir(parents=True, exist_ok=True)
+        hook = hooks / 'pre-commit'
+        refuse(not hook.exists(), 'pre-commit hook already exists')
+        hook.write_text('#!/bin/sh\nif [ "$(git branch --show-current)" = main ] && [ "$(git rev-parse --show-toplevel)" = ' + shlex.quote(str(ROOT.resolve())) + ' ]; then\n  echo "main checkout: publish from a worktree" >&2\n  exit 1\nfi\n')
+        hook.chmod(0o755)
+        print(str(hook))
+        return 0
+    if a.cmd == 'tooling-push':
+        import flow_preflight
+        preflight = flow_preflight.preflight(root, ROOT, rebase=True)
+        refuse(preflight['ok'], preflight['problem'])
     fdir = flow_dir(root, a.flow_dir)
     if a.cmd == 'tooling-push' and a.flow_dir is None:
         try:

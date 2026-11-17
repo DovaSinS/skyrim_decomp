@@ -104,7 +104,8 @@ class AdvisoryRepair(unittest.TestCase):
                 repair.approve(self.root,base,candidate,base,sys.executable,0)
 
     def test_cli_forwards_explicit_repair_sha(self):
-        with patch.object(lane,'publish_tooling',return_value={}) as publish,contextlib.redirect_stdout(io.StringIO()):
+        with patch('flow_preflight.preflight', return_value=dict(ok=True, problem=None, rebased=False)), \
+                patch.object(lane,'publish_tooling',return_value={}) as publish,contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(flow.main(['--root',str(self.root),'--flow-dir',str(self.fdir),
                 'tooling-push','--repair-red','a'*40]),0)
         self.assertEqual(publish.call_args.kwargs['repair_red'],'a'*40)

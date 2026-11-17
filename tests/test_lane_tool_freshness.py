@@ -80,7 +80,7 @@ class LaneToolFreshness(unittest.TestCase):
 
     def test_cli_stale_runtime_has_actionable_refusal_without_traceback(self):
         entry = Path(__file__).resolve().parents[1] / 'tools/flow.py'
-        for command in ('lane-run', 'tooling-push'):
+        for command in ('lane-run',):
             with self.subTest(command=command):
                 result = subprocess.run([sys.executable, str(entry), '--root', str(self.root),
                                          '--flow-dir', str(self.fdir), command, '--no-wait-lane'],

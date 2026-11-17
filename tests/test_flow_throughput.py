@@ -399,7 +399,8 @@ class Throughput(unittest.TestCase):
         self.assertIn('CONFLICT', bounced['reason'])
         self.assertTrue((Path(result['tree']) / 'last.txt').is_file())
         error = io.StringIO()
-        with contextlib.redirect_stderr(error):
+        with patch('flow_preflight.preflight', return_value=dict(ok=True, problem=None, rebased=False)), \
+                contextlib.redirect_stderr(error):
             code = flow.main(['--root', str(conflict), '--flow-dir', str(self.fdir),
                               'tooling-push', '--wait-lane'])
         self.assertEqual(code, 1)

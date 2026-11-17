@@ -63,7 +63,8 @@ class Operations(unittest.TestCase):
     def test_tooling_cli_defaults_to_the_common_shared_flow_directory(self):
         other = self.tmp / 'tooling-worktree'
         git(self.root, 'worktree', 'add', '--quiet', '--detach', str(other), 'HEAD')
-        with patch.object(lane, 'publish_tooling', return_value={}) as publish, contextlib.redirect_stdout(io.StringIO()):
+        with patch('flow_preflight.preflight', return_value=dict(ok=True, problem=None, rebased=False)), \
+                patch.object(lane, 'publish_tooling', return_value={}) as publish, contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(flow.main(['--root', str(other), 'tooling-push']), 0)
         self.assertEqual(publish.call_args.args[1].resolve(), self.fdir.resolve())
 
