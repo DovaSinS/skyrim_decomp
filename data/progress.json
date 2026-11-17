@@ -429720,6 +429720,19 @@
       "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
       "owner": "awarebayes",
       "evidence": "findings/ghidra-import.md"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x333dd0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3358160,
+      "size": 218,
+      "status": "mapped",
+      "name": "Condition::GetIsID",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(high): public CommonLibSSE-NG condition name; target command-table association independently checked; original signature and ownership unverified.",
+      "owner": "awarebayes",
+      "evidence": "reports/sse-steam-1-7-104/0x333dd0.json",
+      "report": "reports/sse-steam-1-7-104/0x333dd0.json"
     }
   ],
   "milestones": [

@@ -10502,6 +10502,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `conditions_getisrace/ConditionFunctions` | `Condition::GetIsRace` (GUESS) | `sse-steam-1-7-104` / `0x333790` / 147 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333790.json` | matched | full | open |
 | `conditions_getinfaction/ConditionFunctions` | `Condition::GetInFaction` (GUESS) | `sse-steam-1-7-104` / `0x3339f0` / 240 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3339f0.json` | matched | full | open |
 | - | `Condition::GetPCIsSex` (GUESS) | `sse-steam-1-7-104` / `0x333c30` / 143 | - | - | mapped | - | - |
+| - | `Condition::GetIsID` (GUESS) | `sse-steam-1-7-104` / `0x333dd0` / 218 | - | - | mapped | - | - |
 | `conditions_getisvoicetype/ConditionFunctions` | `Condition::GetIsVoiceType` (GUESS) | `sse-steam-1-7-104` / `0x333eb0` / 211 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x333eb0.json` | matched | full | open |
 | `conditions_getisreference/ConditionFunctions` | `Condition::GetIsReference` (GUESS) | `sse-steam-1-7-104` / `0x334180` / 127 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x334180.json` | matched | full | open |
 | `conditions_getglobalvalue/ConditionFunctions` | `Condition::GetGlobalValue` (GUESS) | `sse-steam-1-7-104` / `0x3342c0` / 119 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3342c0.json` | matched | full | open |
