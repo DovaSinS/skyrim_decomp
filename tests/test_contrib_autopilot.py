@@ -949,6 +949,82 @@ class RuntimeEffects(unittest.TestCase):
         self.assertIsNone(feedback.call_args.args[2])
         self.assertTrue(any(c.args[-2:] == ('--remove-label', 'needs-changes') for c in gh.call_args_list))
 
+    def _merge_fixture(self, head_after='a' * 40, screen_error=None, push_codes=(0,)):
+        rev = self.state.revision(pr(number=7, author='someone'))
+        rev['completed']['functions'] = {'synthetic.cpp': [0x1000]}
+        calls = []
+        pushes = list(push_codes)
+
+        def command(argv, cwd=None, **kw):
+            calls.append([str(a) for a in argv])
+            out = b''
+            if argv[:2] == ['git', 'rev-parse']:
+                out = b'a' * 40 if argv[2] == 'FETCH_HEAD' else b'f' * 40
+            elif argv[:2] == ['git', 'log']:
+                out = b'them@example.invalid'
+            code = pushes.pop(0) if argv[:2] == ['git', 'push'] else 0
+            return subprocess.CompletedProcess(argv, code, out, b'')
+
+        def gh(*args):
+            calls.append(['gh', *args])
+            body = b'{"state":"OPEN"}' if 'state' in args else b'{"labels":[]}'
+            return subprocess.CompletedProcess([], 0, body, b'')
+
+        import contrib_publication as cp
+        screen = patch.object(cp, 'screen_publication',
+                              side_effect=screen_error) if screen_error else patch.object(cp, 'screen_publication')
+        stack = [patch.object(self.runtime, 'command', side_effect=command),
+                 patch.object(self.runtime, 'gh', side_effect=gh),
+                 patch.object(self.runtime, 'current_head', return_value=head_after), screen,
+                 patch.object(self.runtime, 'feedback')]
+        return rev, calls, stack
+
+    def _run_finish(self, rev, stack):
+        mocks = []
+        from contextlib import ExitStack
+        with ExitStack() as es:
+            mocks = [es.enter_context(p) for p in stack]
+            self.runtime.finish(rev, dict(accepted=['0x1000'], dropped=0, failures=[], commits=['c' * 40]))
+        return mocks
+
+    def test_accepted_pr_is_merged_with_tree_neutral_merge(self):
+        rev, calls, stack = self._merge_fixture()
+        screen, feedback = self._run_finish(rev, stack)[3:]
+        self.assertEqual(rev['completed']['merge'], 'merged')
+        self.assertEqual(screen.call_args.kwargs['merge_method'], 'merge')
+        merge = next(c for c in calls if c[:2] == ['git', 'merge'])
+        self.assertEqual(merge[2:5], ['-s', 'ours', '--no-ff'])
+        self.assertEqual(merge[-1], 'a' * 40)
+        self.assertIn('Merge contributor PR #7 from someone', merge[6])
+        self.assertIn('Co-authored-by: someone <them@example.invalid>', merge[6])
+        self.assertIn(['git', 'push', 'origin', 'HEAD:main'], calls)
+        self.assertTrue(any(c[:3] == ['git', 'worktree', 'remove'] and '--force' not in c for c in calls))
+        self.assertFalse(any(c[:3] == ['gh', 'pr', 'close'] for c in calls))
+        self.assertIn('@someone', feedback.call_args.args[3])
+        self.assertIn('merged', feedback.call_args.args[3])
+
+    def test_non_fast_forward_push_retries_once(self):
+        rev, calls, stack = self._merge_fixture(push_codes=(1, 0))
+        self._run_finish(rev, stack)
+        self.assertEqual(rev['completed']['merge'], 'merged')
+        self.assertEqual(sum(c[:2] == ['git', 'merge'] for c in calls), 2)
+        self.assertIn(['git', 'reset', '--hard', 'f' * 40], calls)
+
+    def test_history_screen_failure_leaves_pr_open_without_close(self):
+        import contrib_publication as cp
+        rev, calls, stack = self._merge_fixture(screen_error=cp.PublicationRejected('bad history'))
+        feedback = self._run_finish(rev, stack)[4]
+        self.assertEqual(rev['completed']['merge'], 'history')
+        self.assertFalse(any(c[:2] == ['git', 'merge'] or c[:2] == ['git', 'push'] for c in calls))
+        self.assertFalse(any(c[:3] == ['gh', 'pr', 'close'] for c in calls))
+        self.assertIn('stays open', feedback.call_args.args[3])
+
+    def test_changed_head_skips_merge(self):
+        rev, calls, stack = self._merge_fixture(head_after='b' * 40)
+        self._run_finish(rev, stack)
+        self.assertEqual(rev['completed']['merge'], 'head-changed')
+        self.assertFalse(any(c[:2] == ['git', 'merge'] for c in calls))
+
     def test_timeout_keeps_diagnostics_in_private_log(self):
         with patch.object(ap.subprocess, 'run', side_effect=subprocess.TimeoutExpired(['synthetic'], 1, output=b'partial')):
             with self.assertRaises(subprocess.TimeoutExpired):
