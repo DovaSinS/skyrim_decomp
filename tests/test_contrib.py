@@ -8,6 +8,7 @@ import contextlib
 from datetime import datetime, timedelta, timezone
 import io
 import json
+import os
 from pathlib import Path, PureWindowsPath
 import shutil
 import subprocess
@@ -229,6 +230,35 @@ class ToolchainTests(Base):
         self.assertEqual(files, ['reconstruction/forms/A.h'])
         self.assertEqual(tools, 2)
         self.assertEqual(outside, [r'C:\Users\a\Desktop\secret.txt'])
+
+    def test_classify_windows_relative_includes(self):
+        opened = ['reconstruction/a/B.h', r'.\reconstruction\a\B.h',
+                  'reconstruction/a/../C.h']
+        self.assertEqual(contrib.classify_windows(opened, 'C:/repo', ['C:/msvc']),
+                         (['reconstruction/C.h', 'reconstruction/a/B.h'], 0, []))
+
+    def test_classify_windows_relative_escapes_and_drive_forms(self):
+        outside = ['../escape.h', r'..\escape.h', 'reconstruction/../../escape.h',
+                   r'C:relative.h', r'D:relative.h', r'D:\repo\a.h',
+                   r'C:\repository\a.h', r'C:\msvc-extra\a.h']
+        self.assertEqual(contrib.classify_windows(outside, 'C:/repo', ['C:/msvc']),
+                         ([], 0, outside))
+
+    def test_classify_windows_link_escapes(self):
+        repo, tool, outside = (self.tmp / name for name in ('repo', 'msvc', 'outside'))
+        for root in (repo, tool, outside / 'child'):
+            root.mkdir(parents=True)
+        (repo / 'link').symlink_to(outside / 'child', target_is_directory=True)
+        (tool / 'link').symlink_to(outside, target_is_directory=True)
+        paths = ['link/a.h', 'link/../a.h', 'C:' + str(tool / 'link/a.h')]
+
+        def windows_realpath(path):
+            posix = path.removeprefix('C:').replace('\\', '/')
+            return 'C:' + os.path.realpath(posix).replace('/', '\\')
+
+        with unittest.mock.patch.object(contrib.ntpath, 'realpath', side_effect=windows_realpath):
+            self.assertEqual(contrib.classify_windows(paths, 'C:' + str(repo), ['C:' + str(tool)]),
+                             ([], 0, paths))
 
     def test_install_needs_licence_without_terminal(self):
         ctx = self.ctx(env={'PATH': ''})
