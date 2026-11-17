@@ -24725,7 +24725,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForward1573df0` | `LeafForward1573df0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1573df0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1573df0.json` | matched | family | open |
 | `leaves/LeafForward1573e00` | `LeafForward1573e00::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1573e00` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1573e00.json` | matched | family | open |
 | `leaves/DeletingWrapper1574050` | `DeletingWrapper1574050::~DeletingWrapper1574050` (GUESS) | `sse-steam-1-7-104` / `0x1574050` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1574050.json` | matched | full | checked |
-| - | `BSMultiIndexTriShape::AsMultiIndexTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x1575450` / 4 | - | - | mapped | - | - |
+| `bsengine/BSMultiIndexTriShape` | `BSMultiIndexTriShape::AsMultiIndexTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x1575450` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1575450.json` | matched | full | open |
 | `bsengine/BSInlineHost15754d0` | `BSInlineHost15754d0::~BSInlineHost15754d0` (GUESS) | `sse-steam-1-7-104` / `0x15754d0` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15754d0.json` | matched | full | open |
 | `leaves/LeafAddress15755a0` | `BSMultiIndexTriShape::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x15755a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15755a0.json` | matched | family | open |
 | `leaves/TableStoreLeaf1575600` | `TableStoreLeaf1575600::~TableStoreLeaf1575600` (GUESS) | `sse-steam-1-7-104` / `0x1575600` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1575600.json` | matched | family | open |
