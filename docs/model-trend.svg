@@ -50,7 +50,7 @@
 <rect x="627.43" y="241.05" width="38.00" height="0.17" fill="#6e7681"/>
 <text x="646.43" y="272" fill="#9ba3ad" font-size="11" text-anchor="middle">11-16</text>
 <text x="646.43" y="296" fill="#c9d1d9" font-size="11" text-anchor="middle">3</text>
-<rect x="733.14" y="250.00" width="38.00" height="0.00" fill="#e5796b"/>
+<rect x="733.14" y="249.99" width="38.00" height="0.01" fill="#e5796b"/>
 <text x="752.14" y="272" fill="#9ba3ad" font-size="11" text-anchor="middle">11-17</text>
 <text x="752.14" y="296" fill="#c9d1d9" font-size="11" text-anchor="middle">1</text>
 <text x="24" y="296" fill="#9ba3ad" font-size="11">Models</text></g></svg>

@@ -19924,7 +19924,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafAddressef5700` | `BSFlattenedBoneTree::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xef5700` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef5700.json` | matched | family | open |
 | `leaves/Leafef5710` | `Leafef5710::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef5710` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef5710.json` | matched | family | open |
 | `leaves/LeafForwardef6170` | `LeafForwardef6170::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef6170` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef6170.json` | matched | family | open |
-| - | `BSDismemberSkinInstance::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xef6180` / 19 | - | - | mapped | - | - |
+| `bsengine/BSDismemberSkinInstance` | `BSDismemberSkinInstance::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xef6180` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef6180.json` | matched | full | open |
 | - | `NiSkinInstance::~NiSkinInstance` (COMMUNITY) | `sse-steam-1-7-104` / `0xef6f50` / 52 | - | - | mapped | - | - |
 | `leaves/LeafAddressef6f90` | `BSDismemberSkinInstance::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xef6f90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef6f90.json` | matched | family | open |
 | `leaves/LeafAddressef6fa0` | `LeafAddressef6fa0::Address` (GUESS) | `sse-steam-1-7-104` / `0xef6fa0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef6fa0.json` | matched | family | open |

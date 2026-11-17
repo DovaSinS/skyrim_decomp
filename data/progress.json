@@ -180112,16 +180112,18 @@
       "report": "reports/sse-steam-1-7-104/0xef6170.json"
     },
     {
-      "id": "sse-steam-1-7-104-0xef6180",
       "build_id": "sse-steam-1-7-104",
-      "rva": 15688064,
-      "size": 19,
-      "status": "mapped",
+      "evidence": "findings/p92-unit-supply-selection.md",
+      "id": "sse-steam-1-7-104-0xef6180",
       "name": "BSDismemberSkinInstance::RegisterStreamables",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 26. RVA 0xef6180; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xef6180.json",
+      "rva": 15688064,
+      "size": 19,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xef6f50",
@@ -428934,7 +428936,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T00:58:38Z",
+  "updated_at": "2026-11-17T01:30:28Z",
   "work_items": [
     {
       "id": "pin-target",
