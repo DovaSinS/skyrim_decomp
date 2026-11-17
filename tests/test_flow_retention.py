@@ -19,8 +19,28 @@ import flow_lane as lane
 class ProcessPaths(unittest.TestCase):
     @unittest.skipUnless(os.path.isdir('/proc/self/fd'), '/proc file descriptors unavailable')
     def test_proc_fallback_finds_open_file(self):
-        with tempfile.NamedTemporaryFile() as opened, patch.object(retention.shutil, 'which', return_value=None):
+        original_iterdir = Path.iterdir
+        def current_process_only(path):
+            if path == Path('/proc'):
+                return iter([path / str(os.getpid())])
+            return original_iterdir(path)
+        with tempfile.NamedTemporaryFile() as opened, patch.object(retention.shutil, 'which', return_value=None), \
+                patch.object(Path, 'iterdir', current_process_only):
             self.assertTrue(retention.path_in_use(Path(opened.name), retention.process_paths()))
+
+    @unittest.skipUnless(os.path.isdir('/proc/self/fd'), '/proc file descriptors unavailable')
+    def test_proc_access_denied_fails_closed(self):
+        original_iterdir = Path.iterdir
+        def inaccessible(path):
+            if path == Path('/proc'):
+                return iter([path / '1'])
+            if path == Path('/proc/1/fd'):
+                raise PermissionError('inaccessible')
+            return original_iterdir(path)
+        with patch.object(retention.shutil, 'which', return_value=None), \
+                patch.object(Path, 'iterdir', inaccessible):
+            with self.assertRaisesRegex(OSError, 'cannot inspect open files'):
+                retention.process_paths()
 
 
 class Retention(unittest.TestCase):
