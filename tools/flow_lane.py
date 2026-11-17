@@ -1478,6 +1478,36 @@ def build(root, fdir, receipt, python, branch, soft_free_gb=None, allow_low_disk
     return tree
 
 
+def reparent_tree_neutral(tree, receipt, integ, destination):
+    """Move a checked commit onto a new origin head whose tree equals the old base's.
+
+    Contributor history merges (-s ours) move origin without touching a file, so the staged
+    checks stay valid; rebuilding would only repeat them. The new commit keeps the same tree,
+    message, author and extra parents and is still pushed and CI-checked as its own SHA.
+    """
+    base, commit = integ['base_revision'], integ['commit']
+    if f.git(tree, 'rev-parse', destination + '^{tree}') != f.git(tree, 'rev-parse', base + '^{tree}'):
+        return False
+    if subprocess.run(['git', 'merge-base', '--is-ancestor', base, destination], cwd=tree).returncode != 0:
+        return False
+    if f.git(tree, 'rev-parse', commit + '^') != base:
+        return False
+    parents = f.git(tree, 'rev-list', '--parents', '-n', '1', commit).split()[1:]
+    fields = f.git(tree, 'log', '-1', '--format=%an%x00%ae%x00%aI', commit).split('\0')
+    env = dict(os.environ, GIT_AUTHOR_NAME=fields[0], GIT_AUTHOR_EMAIL=fields[1], GIT_AUTHOR_DATE=fields[2])
+    message = subprocess.run(['git', 'log', '-1', '--format=%B', commit], cwd=tree, capture_output=True, text=True).stdout
+    command = ['git', 'commit-tree', commit + '^{tree}', '-p', destination]
+    for parent in parents[1:]:
+        command += ['-p', parent]
+    result = subprocess.run(command, cwd=tree, env=env, input=message, capture_output=True, text=True)
+    f.refuse(result.returncode == 0, 'could not re-parent the checked commit: ' + result.stderr.strip())
+    new = result.stdout.strip()
+    f.git(tree, 'update-ref', 'HEAD', new, commit)
+    receipt.setdefault('attempts', []).append(dict(integ, superseded_by_reparent=new))
+    integ.update(commit=new, base_revision=destination, reparented_from=commit)
+    return True
+
+
 def disk_preflight(fdir, min_free_gb=None):
     """Refuse expensive lane work below the configured free-space threshold (decimal GB)."""
     setting = min_free_gb if min_free_gb is not None else os.environ.get('SKYRIM_LANE_MIN_FREE_GB', '3')
@@ -1576,13 +1606,16 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                     destination = f.git(tree, 'rev-parse', f'origin/{branch}')
                     require_base_tools(tree, branch, destination)
                     if destination != integ['base_revision']:
-                        for origin in receipt['origins']:
-                            f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],
-                                                          origin['build_id'], origin['functions'])
-                        receipt['attempts'].append(integ)
-                        receipt['integrated'] = None
-                        save_run(fdir, receipt)
-                        continue
+                        if reparent_tree_neutral(tree, receipt, integ, destination):
+                            save_run(fdir, receipt)
+                        else:
+                            for origin in receipt['origins']:
+                                f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],
+                                                              origin['build_id'], origin['functions'])
+                            receipt['attempts'].append(integ)
+                            receipt['integrated'] = None
+                            save_run(fdir, receipt)
+                            continue
                 if not integ['checks']:
                     started = time.monotonic()
                     logs = fdir / 'lane/logs' / receipt['id'] / str(len(receipt.get('attempts', [])))
@@ -1620,13 +1653,16 @@ def run_lane(root, fdir, branch='main', push=True, ci_wait=600, python=sys.execu
                     destination = f.git(tree, 'rev-parse', f'origin/{branch}')
                     require_base_tools(tree, branch, destination)
                     if destination != integ['base_revision']:
-                        for origin in receipt['origins']:
-                            f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],
-                                                          origin['build_id'], origin['functions'])
-                        receipt['attempts'].append(integ)
-                        receipt['integrated'] = None
-                        save_run(fdir, receipt)
-                        continue
+                        if reparent_tree_neutral(tree, receipt, integ, destination):
+                            save_run(fdir, receipt)
+                        else:
+                            for origin in receipt['origins']:
+                                f._integration_origin_unchanged(tree, origin['base'], destination, origin['paths'],
+                                                              origin['build_id'], origin['functions'])
+                            receipt['attempts'].append(integ)
+                            receipt['integrated'] = None
+                            save_run(fdir, receipt)
+                            continue
                     f.refuse(f.git(tree, 'rev-parse', 'HEAD') == integ['commit']
                              and not f.git(tree, 'status', '--porcelain', '--untracked-files=no'),
                              'candidate changed after checks; refusing push')

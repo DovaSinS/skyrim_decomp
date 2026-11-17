@@ -1133,6 +1133,15 @@ class Runtime:
                    f'The accepted functions landed in {landed}. This merge records the contributor\'s '
                    f'screened history; the tree is unchanged.\n\n'
                    f'Co-authored-by: {login} <{email}>\n')
+        # A lane run builds on one origin head and re-parents or rebuilds when it moves; a merge
+        # pushed during its build or push window would force exactly that. Wait for the lane.
+        import flow_lane
+        with flow_lane.lane_lock(self.fdir, wait=True):
+            self.git(self.root, 'fetch', '--quiet', 'origin', 'main')
+            base = self.git(self.root, 'rev-parse', 'origin/main')
+            return self.push_merge(number, head, base, message)
+
+    def push_merge(self, number, head, base, message):
         wt = self.private / 'merge-worktrees' / f'pr-{number}-{uuid.uuid4().hex[:8]}'
         wt.parent.mkdir(parents=True, exist_ok=True)
         self.git(self.root, 'worktree', 'add', '--detach', str(wt), base)
