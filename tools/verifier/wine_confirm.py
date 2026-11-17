@@ -13,9 +13,10 @@ def run(directory):
     task = pipeline.load_task(directory)
     files, _ = pipeline.unit_manifest(task)
     host = runners.for_attempt()
-    if not host or (host.get('backend'), host.get('loader'), host.get('host_id')) != (
-            'local', 'wine', 'mac-wine'):
-        raise runners.RunnerError('CI first-host preparation requires the project Wine host')
+    if not host or not ((host.get('backend'), host.get('loader'), host.get('host_id')) ==
+                        ('local', 'wine', 'mac-wine') or
+                        (host.get('backend'), host.get('loader')) == ('ssh', 'native')):
+        raise runners.RunnerError('CI first-host preparation requires a configured Wine or native SSH host')
     worker = runners.AgentHost(host, task, log=print, fresh_prep=True)
     code, _ = worker.run(files, task['dir'] / '.confirm-stage' / host['host_id'])
     worker.fetch(task['dir'] / 'confirm' / host['host_id'])

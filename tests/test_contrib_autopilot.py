@@ -39,9 +39,22 @@ class FreshWinePreparation(unittest.TestCase):
         self.assertIs(factory.call_args.kwargs['fresh_prep'], True)
         factory.return_value.fetch.assert_called_once_with(task['dir'] / 'confirm/mac-wine')
 
-    def test_native_or_missing_first_host_never_starts_a_worker(self):
+    def test_native_first_host_prepares_and_fetches(self):
         import wine_confirm
-        for host in (None, dict(backend='ssh', loader='native', host_id='winpc-native')):
+        task = dict(dir=Path('/synthetic/task'))
+        host = dict(backend='ssh', loader='native', host_id='synthetic-native')
+        with patch.object(wine_confirm.pipeline, 'load_task', return_value=task), \
+                patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=([], [])), \
+                patch.object(wine_confirm.runners, 'for_attempt', return_value=host), \
+                patch.object(wine_confirm.runners, 'AgentHost') as factory:
+            factory.return_value.run.return_value = (0, None)
+            self.assertEqual(wine_confirm.run(task['dir']), 0)
+            self.assertTrue(factory.call_args.kwargs['fresh_prep'])
+            factory.return_value.fetch.assert_called_once_with(task['dir'] / 'confirm/synthetic-native')
+
+    def test_unsupported_or_missing_first_host_never_starts_a_worker(self):
+        import wine_confirm
+        for host in (None, dict(backend='ssh', loader='wine', host_id='unsupported')):
             with self.subTest(host=host), \
                     patch.object(wine_confirm.pipeline, 'load_task', return_value=dict(dir=Path('/synthetic/task'))), \
                     patch.object(wine_confirm.pipeline, 'unit_manifest', return_value=([], [])), \
@@ -488,6 +501,45 @@ class PublicationAndScheduling(unittest.TestCase):
             self.assertEqual(selected['hosts']['ci']['backend'], 'ci-hash')
             self.assertEqual(path.read_bytes(), before)
 
+    def test_pc_selection_and_fallback(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tree = Path(tmp)
+            pc = dict(backend='ssh', loader='native', ssh_host='synthetic', ssh_config='config')
+            wine = dict(backend='local', loader='wine')
+            ap.save_json(tree / '.local/verifier/runners.json', dict(hosts=dict(pc=pc, wine=wine)))
+            for reachable, expected in ((True, 'pc'), (False, 'wine')):
+                runtime = ap.Runtime.__new__(ap.Runtime)
+                runtime.pc_reachable = Mock(return_value=reachable)
+                selected = ap.read_json(runtime.intake_runners(tree))
+                self.assertEqual(selected['attempt'], expected)
+                self.assertEqual(selected['confirm'], [expected, 'ci'])
+                runtime.pc_reachable.assert_called_once_with(pc, tree)
+
+    def test_pc_probe_timeout_falls_back(self):
+        runtime = ap.Runtime.__new__(ap.Runtime)
+        with patch.object(ap.subprocess, 'run', side_effect=subprocess.TimeoutExpired('ssh', 5)) as run:
+            self.assertFalse(runtime.pc_reachable(dict(ssh_host='synthetic', ssh_config='config'), Path('.')))
+        self.assertEqual(run.call_args.kwargs['timeout'], 5)
+
+    def test_retention_protects_open_head_and_inflight(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            runtime = ap.Runtime.__new__(ap.Runtime)
+            runtime.private, runtime.dry_run = root, False
+            runtime.state = ap.State(root, ap.DEFAULTS)
+            old, current, other = 'a' * 40, 'b' * 40, 'c' * 40
+            for head in (old, current, other):
+                (root / 'live' / ('pr-1-' + head)).mkdir(parents=True)
+            runtime.state.data['prs']['1'] = dict(head=old, enqueued=True)
+            runtime.prune_live(dict(number=1, headRefOid=current, state='OPEN'))
+            self.assertTrue((root / 'live' / ('pr-1-' + old)).exists())
+            self.assertTrue((root / 'live' / ('pr-1-' + current)).exists())
+            self.assertFalse((root / 'live' / ('pr-1-' + other)).exists())
+            runtime.state.data['prs']['1'].update(head=current, done=True)
+            runtime.prune_live(dict(number=1, headRefOid=current, state='CLOSED'))
+            self.assertEqual(list((root / 'live').iterdir()), [])
+            self.assertTrue(runtime.state.data['prs']['1']['done'])
+
     def test_unavailable_wine_host_stops_without_pc_wake_or_fallback(self):
         runtime = ap.Runtime.__new__(ap.Runtime)
         runtime.config = dict(ap.DEFAULTS)
@@ -496,7 +548,7 @@ class PublicationAndScheduling(unittest.TestCase):
             tree = Path(tmp)
             ap.save_json(tree / '.local/verifier/runners.json',
                          dict(hosts=dict(wine=dict(backend='local', loader='wine'))))
-            with self.assertRaisesRegex(ap.Stop, 'no PC fallback'):
+            with self.assertRaisesRegex(ap.Stop, 'selected first host'):
                 runtime.ensure_hosts(tree)
         self.assertEqual(len(runtime.command.call_args_list), 1)
 
