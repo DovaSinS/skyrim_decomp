@@ -153,6 +153,15 @@ def process_paths():
                     pass
         except FileNotFoundError:
             continue
+        except PermissionError as exc:
+            # Like unprivileged lsof, other users' descriptors are invisible; our own must be readable.
+            try:
+                foreign = process.stat().st_uid != os.getuid()
+            except FileNotFoundError:
+                continue
+            if foreign:
+                continue
+            raise OSError('cannot inspect open files for retention: /proc access denied') from exc
         except OSError as exc:
             raise OSError('cannot inspect open files for retention: /proc access denied') from exc
     return commands + '\n' + '\n'.join(paths)
