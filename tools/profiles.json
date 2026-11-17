@@ -40,8 +40,8 @@
       "drafter_tiers": ["first", "fallback", "strong"],
       "summary": "for when the Claude subscription runs low: OpenAI models through Codex for orchestration, review and strong work",
       "roles": {
-        "orchestrator": {"provider": "openai", "model": "gpt-6.1-terra", "effort": "medium", "harness": "codex",
-                         "alternatives": [{"provider": "openai", "model": "gpt-5.6-terra", "effort": "medium", "harness": "codex"}]},
+        "orchestrator": {"provider": "openai", "model": "gpt-6.1-terra", "effort": "high", "harness": "codex",
+                         "alternatives": [{"provider": "openai", "model": "gpt-5.6-terra", "effort": "high", "harness": "codex"}]},
         "drafter": {"provider": "claude", "model": "haiku", "effort": null, "harness": "claude-code",
                     "alternatives": [{"provider": "openai", "model": "gpt-5.6-luna", "effort": "medium", "harness": "codex",
                                       "note": "uses no Claude subscription at all"}]},
