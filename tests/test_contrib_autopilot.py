@@ -989,7 +989,7 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.ci_row = dict(rva=self.kit.fn['rva'], size=self.kit.fn['size'],
                           extraction='linked-reference-inference', normalized_sha256='1' * 64,
                           layout_sha256='2' * 64)
-        tools = patch.object(ci_confirmation, 'tools_digest', return_value='3' * 64)
+        tools = patch.object(ci_confirmation, 'tools_digest_at', return_value='3' * 64)
         targets = patch.object(ci_confirmation.target_hashes, 'load_manifest',
                                return_value={'functions': [self.ci_row]})
         tools.start(); targets.start()
