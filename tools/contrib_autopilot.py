@@ -308,6 +308,7 @@ class Runtime:
             'daily-budget': 'Waiting for the next UTC day: the intake service reached its daily budget.',
             'timeout': 'Waiting for an intake service retry after a stage timed out. No acceptance decision has been made.',
             'service-retry': 'Waiting for an intake service retry. A service or transport step did not complete; no acceptance decision has been made.',
+            'needs-maintainer': 'Screen could not inspect the compiler/SDK headers; maintainer check needed.',
         }
         revision['waiting_reason'] = reason
         self.state.save()
@@ -503,6 +504,9 @@ class Runtime:
         lines = value.splitlines()
         return dict(safe=bool(len(lines) >= 2 and lines[0].strip() == 'SAFE' and any(l.strip() for l in lines[1:])),
                     reasons=[safe_reason(line) for line in lines[1:] if line.strip()][:8])
+
+    def discard_screen(self, fetched):
+        (Path(fetched['tree']).parent / 'engineer-screen.txt').unlink(missing_ok=True)
 
     def intake_runners(self, tree):
         """Give outside tasks an isolated Wine/CI profile without changing shared runners."""
@@ -990,8 +994,21 @@ def process(runtime, state, pr, dry_run=False):
         revision['done'] = True
         state.save()
         return revision
+    if revision.get('screen_infrastructure_retries', 0) >= 3:
+        runtime.waiting(revision, 'needs-maintainer')
+        return revision
     screening = state.once(revision, 'screen', lambda: runtime.ai_screen(fetched))
     if not screening['safe']:
+        reasons = ' '.join(screening['reasons']).casefold()
+        if (any(word in reasons for word in ('unavailable', 'unverified'))
+                and any(word in reasons for word in ('include', 'closure', 'sdk', 'compiler'))):
+            runtime.discard_screen(fetched)
+            revision['completed'].pop('screen', None)
+            revision['screen_infrastructure_retries'] = revision.get('screen_infrastructure_retries', 0) + 1
+            state.save()
+            runtime.waiting(revision, 'needs-maintainer' if revision['screen_infrastructure_retries'] >= 3
+                            else 'service-retry')
+            return revision
         runtime.feedback(revision, 'screen', 'needs-changes', 'Engineer pre-compile screen: UNSAFE.\n'
                          + '\n'.join(screening['reasons']))
         revision['done'] = True
