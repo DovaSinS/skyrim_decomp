@@ -93,6 +93,8 @@ the run that drafted, engineered, triaged or first-reviewed the function. Outsid
 these duties stay with Opus.
 Under `claude-low`, the fallback Drafter is Terra with a separate per-tier attempt budget; it drafts only functions that did not pass in the first tier. What OpenAI models may read under `claude-low` is recorded in `docs/authorizations.md` (Notes). Under `claude-low`, the strong Drafter tier uses Sol after Terra, with 10 counted attempts per unpassed function.
 
+**Reasoning effort.** Every dispatch sets the effort from `tools/profiles.json` explicitly; never rely on a provider or harness default, which can be low. Agentic work (drafting, engineering, review, publication, multi-step ops) runs at `high` or above; `medium` is acceptable only for a one-shot lookup. Low effort makes workers stop early and hand back half-done work, which costs more in re-dispatches than the effort saves. A role whose effort is `null` uses the harness's own model setting and the dispatcher still states it.
+
 **Friction and direction checks.** The routine orchestrator produces the friction report
 (`python3 tools/friction.py --write`) every work session. A direction check (strong model, fresh
 context, `.claude/agents/direction-check.md`) runs after every 200 accepted functions and at
