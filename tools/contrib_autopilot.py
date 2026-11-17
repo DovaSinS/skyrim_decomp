@@ -1065,13 +1065,22 @@ class Runtime:
         finding_rows = [(r, reason) for r, reasons in failures.items() for reason in reasons]
         failures = {r: '; '.join(reasons) for r, reasons in failures.items()}
         remaining = (submitted | set(failures)) - accepted
-        lines = [f'Submitted functions: {len(submitted | accepted | set(failures))}.',
+        # Merge first so the final comment can say what actually happened to the PR.
+        outcome = self.state.once(revision, 'merge', lambda: self.merge_contributor(revision, published)) if accepted else None
+        login = revision.get('author')
+        lines = [f'Thanks for the contribution, @{login}!' if login else 'Thanks for the contribution!',
+                 f'Submitted functions: {len(submitted | accepted | set(failures))}.',
                  f'Accepted functions: {len(accepted)}.']
         lines += [r + ': accepted.' for r in sorted(accepted)]
         lines += [r + ': ' + failures.get(r, 'not accepted; intake processing incomplete.') for r in sorted(remaining)]
         lines += [f'Functions not accepted: {len(remaining)}.',
                   f'Functions dropped by integration: {published["dropped"]}.',
                   'CI checks publication hygiene; matching rests on the two-host comparator reports.']
+        if outcome == 'merged':
+            lines.append('Your accepted functions are in main with your credit, and this PR is now merged. Thank you!')
+        elif outcome == 'history':
+            lines.append('Your accepted functions landed in main with your credit, but this PR\'s commit history '
+                         'can\'t be merged as it is, so the PR stays open.')
         revision['feedback_results'] = {r: ('matched, confirmed on 2 hosts, reviewed, merged' if r in accepted else failures.get(r, 'not accepted; intake processing incomplete')) for r in submitted | accepted | set(failures)}
         revision['feedback_findings'] = [r + ': ' + reason for r, reason in finding_rows if r in remaining] + [r + ': intake processing incomplete' for r in sorted(remaining - set(failures))]
         self.feedback(revision, 'published' if accepted else 'dropped',
@@ -1083,16 +1092,48 @@ class Runtime:
         for label in current.get('labels', []):
             if label['name'] in ('needs-changes', 'needs-maintainer') and label['name'] != keep:
                 self.gh('pr', 'edit', str(revision['number']), '--remove-label', label['name'])
-        if not accepted:
-            return
-        def close():
-            if self.current_head(revision['number']) != revision['head']:
-                return False
-            data = json.loads(self.gh('pr', 'view', str(revision['number']), '--json', 'state').stdout)
-            if data['state'] == 'OPEN':
-                self.gh('pr', 'close', str(revision['number']))
-            return True
-        self.state.once(revision, 'close', close)
+
+    def merge_contributor(self, revision, published):
+        """Mark the PR merged with a tree-neutral merge; the accepted functions already landed via the lane."""
+        number, head, login = revision['number'], revision['head'], revision.get('author', 'contributor')
+        if self.current_head(number) != head:
+            return 'head-changed'
+        if json.loads(self.gh('pr', 'view', str(number), '--json', 'state').stdout).get('state') != 'OPEN':
+            return 'not-open'
+        self.git(self.root, 'fetch', '--quiet', 'origin', 'main')
+        self.git(self.root, 'fetch', '--quiet', 'origin', f'pull/{number}/head')
+        if self.git(self.root, 'rev-parse', 'FETCH_HEAD') != head:
+            return 'head-changed'
+        from contrib_publication import PublicationRejected, screen_publication
+        base = self.git(self.root, 'rev-parse', 'origin/main')
+        try:
+            # Every commit in the PR enters main through a merge commit, so each one is screened.
+            screen_publication(self.root, base, head, merge_method='merge',
+                               headers=self.config['standard_headers'], max_files=2 * self.config['max_functions'],
+                               git=lambda *args: self.command(['git', *args]).stdout)
+        except PublicationRejected:
+            return 'history'
+        email = self.git(self.root, 'log', '-1', '--format=%ae', head)
+        landed = ', '.join(published.get('commits') or []) or 'the publish lane commit'
+        message = (f'Merge contributor PR #{number} from {login}\n\n'
+                   f'The accepted functions landed in {landed}. This merge records the contributor\'s '
+                   f'screened history; the tree is unchanged.\n\n'
+                   f'Co-authored-by: {login} <{email}>\n')
+        wt = self.private / 'merge-worktrees' / f'pr-{number}-{uuid.uuid4().hex[:8]}'
+        wt.parent.mkdir(parents=True, exist_ok=True)
+        self.git(self.root, 'worktree', 'add', '--detach', str(wt), base)
+        try:
+            for attempt in (1, 2):
+                self.git(wt, 'merge', '-s', 'ours', '--no-ff', '-m', message, head)
+                if self.command(['git', 'push', 'origin', 'HEAD:main'], cwd=wt, check=False).returncode == 0:
+                    return 'merged'
+                if attempt == 2:
+                    raise Stop('merge push rejected twice; retry next tick')
+                # Non-fast-forward: main moved, so redo the merge on the new tip.
+                self.git(self.root, 'fetch', '--quiet', 'origin', 'main')
+                self.git(wt, 'reset', '--hard', self.git(self.root, 'rev-parse', 'origin/main'))
+        finally:
+            self.git(self.root, 'worktree', 'remove', str(wt))
 
 
 def process(runtime, state, pr, dry_run=False):
