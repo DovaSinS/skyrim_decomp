@@ -59,12 +59,40 @@ class Evidence(GateFixture,unittest.TestCase):
             recipe_sha256=self.record['recipe']['sha256'],result='hash-match',deterministic=True,
             mac_content_sha256='4'*64,content_sha256='4'*64,object_sha256='5'*64,request_sha256='6'*64,
             normalized_sha256='1'*64,layout_sha256='2'*64,mac_object_sha256=obj)
-        self.p1=patch.object(c,'tools_digest',return_value='3'*64);self.p1.start();self.addCleanup(self.p1.stop)
+        def git(*args):
+            return subprocess.run(['git', *args], cwd=self.root, check=True, capture_output=True).stdout.decode().strip()
+        self.git = git
+        git('init', '-q'); git('config', 'user.email', 'test@example.invalid'); git('config', 'user.name', 'Test')
+        for name in c.TOOLS:
+            self.write(name, 'synthetic tool')
+        git('add', '.'); git('commit', '-qm', 'fixture')
+        self.record['ci_confirmation']['base_sha'] = git('rev-parse', 'HEAD')
+        self.record['ci_confirmation']['tools_sha256'] = c.tools_digest(self.root)
         self.p2=patch.object(c.target_hashes,'load_manifest',return_value={'functions':[self.row]});self.p2.start();self.addCleanup(self.p2.stop)
         self.save_record()
 
     def test_local_full_pass_and_bound_ci_evidence_are_accepted(self):
         check.validate_match(self.fn,self.target,root=self.root)
+
+    def test_revision_bound_tools(self):
+        base = self.record['ci_confirmation']['base_sha']
+        self.write(c.TOOLS[0], 'changed tool')
+        self.git('add', c.TOOLS[0]); self.git('commit', '-qm', 'change tool')
+        c.validate(self.root, self.record, self.fn, self.target)
+        self.record['ci_confirmation']['tools_sha256'] = '0' * 64
+        with self.assertRaisesRegex(ValueError, 'stale CI tools'):
+            c.validate(self.root, self.record, self.fn, self.target)
+        self.record['ci_confirmation']['base_sha'] = 'f' * 40
+        with self.assertRaisesRegex(ValueError, 'CI tools revision unavailable'):
+            c.validate(self.root, self.record, self.fn, self.target)
+        self.git('checkout', '-q', '--detach', base)
+        self.write(c.TOOLS[0], 'other tool')
+        self.git('add', c.TOOLS[0]); self.git('commit', '-qm', 'other branch')
+        other = self.git('rev-parse', 'HEAD')
+        self.git('checkout', '-q', '--detach', base)
+        self.record['ci_confirmation']['base_sha'] = other
+        with self.assertRaisesRegex(ValueError, 'not an ancestor'):
+            c.validate(self.root, self.record, self.fn, self.target)
 
     def native_first(self):
         host = 'winpc-native'
