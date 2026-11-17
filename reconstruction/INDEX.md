@@ -9455,7 +9455,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/ReturnLeaf26d4a0` | `ReturnLeaf26d4a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x26d4a0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d4a0.json` | matched | family | open |
 | `bsengine/BSGeometryReturns` | `BSGeometry::AsMultiIndexTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x26d4b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d4b0.json` | matched | full | open |
 | `bsengine/BSGeometryReturns` | `BSGeometry::AsSkinnedDecalTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x26d4c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d4c0.json` | matched | full | open |
-| - | `BSTriShape::AsTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x26d4d0` / 4 | - | - | mapped | - | - |
+| `bsengine/BSTriShape` | `BSTriShape::AsTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0x26d4d0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d4d0.json` | matched | full | open |
 | `fields/FieldLeaf26d6b0` | `FieldLeaf26d6b0::Read` (GUESS) | `sse-steam-1-7-104` / `0x26d6b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d6b0.json` | matched | full | open |
 | `leaves/Leaf26d6c0` | `Leaf26d6c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x26d6c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d6c0.json` | matched | family | open |
 | `fields/FieldLeaf26d730` | `FieldLeaf26d730::Read` (GUESS) | `sse-steam-1-7-104` / `0x26d730` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26d730.json` | matched | family | open |
@@ -19899,7 +19899,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafAddressef1a50` | `LeafAddressef1a50::Address` (GUESS) | `sse-steam-1-7-104` / `0xef1a50` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef1a50.json` | matched | family | open |
 | `leaves/LeafForwardef1e30` | `LeafForwardef1e30::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef1e30` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef1e30.json` | matched | family | open |
 | `leaves/LeafForwardef1e40` | `LeafForwardef1e40::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef1e40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef1e40.json` | matched | family | open |
-| - | `BSTriShape::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xef2120` / 3 | - | - | mapped | - | - |
+| `bsengine/BSTriShape` | `BSTriShape::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xef2120` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef2120.json` | matched | full | open |
 | `leaves/LeafAddressef2620` | `BSTriShape::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xef2620` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef2620.json` | matched | family | open |
 | `leaves/ReturnLeafef2630` | `ReturnLeafef2630::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef2630` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef2630.json` | matched | family | open |
 | `leaves/LeafForwardef2650` | `LeafForwardef2650::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef2650` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef2650.json` | matched | family | open |

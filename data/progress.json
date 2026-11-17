@@ -80866,16 +80866,18 @@
       "report": "reports/sse-steam-1-7-104/0x26d4c0.json"
     },
     {
-      "id": "sse-steam-1-7-104-0x26d4d0",
       "build_id": "sse-steam-1-7-104",
-      "rva": 2544848,
-      "size": 4,
-      "status": "mapped",
+      "evidence": "findings/p92-unit-supply-selection.md",
+      "id": "sse-steam-1-7-104-0x26d4d0",
       "name": "BSTriShape::AsTriShape",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 9. RVA 0x26d4d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "report": "reports/sse-steam-1-7-104/0x26d4d0.json",
+      "rva": 2544848,
+      "size": 4,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0x26d6c0",
@@ -179786,16 +179788,18 @@
       "report": "reports/sse-steam-1-7-104/0xef1e40.json"
     },
     {
-      "id": "sse-steam-1-7-104-0xef2120",
       "build_id": "sse-steam-1-7-104",
-      "rva": 15671584,
-      "size": 3,
-      "status": "mapped",
+      "evidence": "findings/fifth-batch-selection.md",
+      "id": "sse-steam-1-7-104-0xef2120",
       "name": "BSTriShape::IsEqual",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 28. RVA 0xef2120; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "report": "reports/sse-steam-1-7-104/0xef2120.json",
+      "rva": 15671584,
+      "size": 3,
+      "status": "matched",
+      "named": false
     },
     {
       "id": "sse-steam-1-7-104-0xef2620",
@@ -428938,7 +428942,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-17T02:12:13Z",
+  "updated_at": "2026-11-17T02:57:50Z",
   "work_items": [
     {
       "id": "pin-target",
