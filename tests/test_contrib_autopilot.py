@@ -374,6 +374,20 @@ class ResumeAndLimits(unittest.TestCase):
         self.assertEqual(self.runtime.calls.count('screen'), 3)
         self.assertFalse(any(m[1] == 'needs-changes' for m in self.runtime.messages))
 
+    def test_filtered_and_raw_screen_reasons(self):
+        placeholder = 'Details withheld by the publication filter; see the private intake log.'
+        self.assertIn('Pinned toolchain and SDK system headers are hash-verified project inputs, not contributor content; do not inspect them, and their absence is not a reason for UNSAFE. Only flag includes that escape the repository or reach host files.', ap.SCREEN_CHECKLIST)
+        for head, raw, expected in [('a', None, 'service-retry'), ('b', ['SDK headers unavailable'], 'service-retry'), ('c', ['macro obfuscation'], 'needs-changes')]:
+            screening = dict(safe=False, reasons=[placeholder])
+            if raw is not None:
+                screening['raw_reasons'] = raw
+            self.runtime.ai_screen = lambda fetched: screening
+            result = ap.process(self.runtime, self.state, pr(head=head * 40))
+            if expected == 'service-retry':
+                self.assertEqual(result['waiting_reason'], expected)
+            else:
+                self.assertEqual(self.runtime.messages[-1][1], expected)
+
     def test_genuine_unsafe_still_needs_changes(self):
         self.runtime.unsafe = True
         result = ap.process(self.runtime, self.state, pr())
