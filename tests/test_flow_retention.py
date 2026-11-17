@@ -1,6 +1,7 @@
 """Working-copy retention uses tiny original repositories and private synthetic evidence."""
 import fcntl
 import json
+import os
 from pathlib import Path
 import subprocess
 import shutil
@@ -13,6 +14,13 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 import flow_cleanup as retention
 import flow_lane as lane
+
+
+class ProcessPaths(unittest.TestCase):
+    @unittest.skipUnless(os.path.isdir('/proc/self/fd'), '/proc file descriptors unavailable')
+    def test_proc_fallback_finds_open_file(self):
+        with tempfile.NamedTemporaryFile() as opened, patch.object(retention.shutil, 'which', return_value=None):
+            self.assertTrue(retention.path_in_use(Path(opened.name), retention.process_paths()))
 
 
 class Retention(unittest.TestCase):
