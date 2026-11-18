@@ -8043,7 +8043,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf146670` | `Leaf146670::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146670` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146670.json` | matched | full | checked |
 | `contrib_magicitem/MagicItem` | `MagicItem::GetChargeTime` (COMMUNITY) | `sse-steam-1-7-104` / `0x146680` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146680.json` | matched | full | - |
 | `unmapped/leaves/Leaf146690` | `Leaf146690::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146690` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146690.json` | matched | full | checked |
-| - | `AlchemyItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x1466b0` / 8 | - | - | mapped | - | - |
+| `contrib_alchemyitem/AlchemyItem` | `AlchemyItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x1466b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1466b0.json` | matched | full | - |
 | `unmapped/leaves/Leaf1466d0` | `Leaf1466d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1466d0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1466d0.json` | matched | full | checked |
 | `skyrim_shared/magic/AlchemyItem_1466e0` | `AlchemyItem::GetDelivery` (COMMUNITY) | `sse-steam-1-7-104` / `0x1466e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1466e0.json` | matched | full | open |
 | `skyrim_shared/forms/BGSEquipType` | `BGSEquipType::GetEquipSlot` (COMMUNITY) | `sse-steam-1-7-104` / `0x146700` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146700.json` | matched | delta | open |
