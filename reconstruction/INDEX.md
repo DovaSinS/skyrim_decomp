@@ -11314,7 +11314,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafAddress449920` | `LeafAddress449920::Address` (GUESS) | `sse-steam-1-7-104` / `0x449920` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x449920.json` | matched | family | open |
 | `leaves/LeafAddress449930` | `LeafAddress449930::Address` (GUESS) | `sse-steam-1-7-104` / `0x449930` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x449930.json` | matched | family | open |
 | - | `BGSAttackDataMap::GetAttackData` (COMMUNITY) | `sse-steam-1-7-104` / `0x44ab10` / 9 | - | - | mapped | - | - |
-| - | `BGSAttackData::~BGSAttackData` (COMMUNITY) | `sse-steam-1-7-104` / `0x44afe0` / 73 | - | - | mapped | - | - |
+| `forms/BGSAttackData` | `BGSAttackData::~BGSAttackData` (COMMUNITY) | `sse-steam-1-7-104` / `0x44afe0` / 73 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44afe0.json` | matched | full | - |
 | `leaves/Leaf44b170` | `Leaf44b170::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x44b170` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44b170.json` | matched | family | open |
 | `leaves/LeafForward44d2a0` | `LeafForward44d2a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x44d2a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d2a0.json` | matched | family | open |
 | `storage/StorageInit44d340` | `StorageInit44d340::initialize` (GUESS) | `sse-steam-1-7-104` / `0x44d340` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d340.json` | matched | family | open |
