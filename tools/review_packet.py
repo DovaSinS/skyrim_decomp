@@ -36,10 +36,9 @@ written.
 import argparse
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import subprocess
 import sys
-import tempfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check import (ROOT, STALE_UNIT, _json_or_none, acceptance_staleness,  # noqa: E402
@@ -54,17 +53,33 @@ def git(root, *args):
         return None
 
 
+def blobs_digest(blobs):
+    """tu-sha256-v1 over in-memory contents, the same lines `source_digest.tu_digest` hashes.
+
+    Kept here, not in source_digest.py, because that file is part of the comparator's source hash
+    and editing it would stale every accepted record. A test pins the two to each other.
+    """
+    lines = []
+    for name in sorted(blobs):
+        rel = PurePosixPath(name)
+        if rel.is_absolute() or '..' in rel.parts:
+            raise ValueError(f'translation unit path must be repository-relative: {name}')
+        lines.append(f'{hashlib.sha256(blobs[name]).hexdigest()}  {rel}\n')
+    if not lines:
+        raise ValueError('translation unit has no files')
+    return hashlib.sha256(''.join(lines).encode()).hexdigest()
+
+
 def digest_at(root, commit, files):
     """The tu-sha256-v1 digest of `files` as they were at `commit`, or None if one did not exist."""
-    with tempfile.TemporaryDirectory() as tmp:
-        for name in files:
-            blob = git(root, 'show', f'{commit}:{name}')
-            if blob is None:
-                return None
-            path = Path(tmp) / name
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_bytes(blob)
-        return tu_digest(tmp, files)
+    # In memory: the read-only Reviewer sandbox has no writable temporary directory.
+    blobs = {}
+    for name in files:
+        blob = git(root, 'show', f'{commit}:{name}')
+        if blob is None:
+            return None
+        blobs[name] = blob
+    return blobs_digest(blobs)
 
 
 def approved_commit(root, fn, files, digest):
