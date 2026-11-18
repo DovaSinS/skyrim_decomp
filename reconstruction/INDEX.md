@@ -21316,7 +21316,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafAddressfe1dd0` | `LeafAddressfe1dd0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfe1dd0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe1dd0.json` | matched | family | open |
 | `leaves/LeafAddressfe1de0` | `LeafAddressfe1de0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfe1de0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe1de0.json` | matched | family | open |
 | `leaves/LeafForwardfe4230` | `LeafForwardfe4230::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfe4230` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe4230.json` | matched | family | open |
-| - | `BSInstanceTriShape::~BSInstanceTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0xfe4240` / 52 | - | - | mapped | - | - |
+| `bsengine/BSInstanceTriShape` | `BSInstanceTriShape::~BSInstanceTriShape` (COMMUNITY) | `sse-steam-1-7-104` / `0xfe4240` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe4240.json` | matched | full | - |
 | `storage/StorageInitfe43a0` | `StorageInitfe43a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0xfe43a0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe43a0.json` | matched | family | open |
 | `storage/StorageInitfe43e0` | `StorageInitfe43e0::initialize` (GUESS) | `sse-steam-1-7-104` / `0xfe43e0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe43e0.json` | matched | family | open |
 | `leaves/LeafAddressfe4420` | `BSInstanceTriShape::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xfe4420` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe4420.json` | matched | family | open |
