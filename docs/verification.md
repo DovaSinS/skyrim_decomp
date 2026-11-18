@@ -716,3 +716,14 @@ unsupported target hashes are unconfirmable. Cache verification failure, compile
 non-reproduction or nondeterminism produces no confirmation. Candidate source travels on a
 separate batch branch; trusted tools and target hashes come from the dispatched main revision.
 Only sanitized JSON results are uploaded as artifacts. The review and acceptance steps still apply. No function is accepted by this machinery change.
+
+PR path: the `hash` job of `pr-check.yml` is admitted as this CI host in place of a per-function
+dispatch. `ci_confirmation` schema 2 (`tools/ci_confirmation.py`) records the run id and attempt,
+the job's `success`, the PR head SHA the run compiled, the trusted-tools base SHA (an ancestor of
+the tree being validated), the function's `pass` in the run's status map and rows, and the
+`source_sha256` and `recipe_sha256` from those rows. The validator requires them to equal the
+source digest and recipe the first host's comparator report is bound to, which ties both hosts
+to the same source content, and the published target row and compiler pins to be the current ones.
+The bot builds the evidence only from a run whose head is the revision it reviewed and merged. Only
+`pass` counts: `regressed`, `fail`, `preexisting-fail` and `unverified` give no confirmation, and a
+record without both hosts is refused as before.
