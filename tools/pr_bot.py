@@ -24,6 +24,7 @@ import threading
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import rva_headers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = 'awarebayes/skyrim_decomp'
@@ -174,11 +175,7 @@ def parse_review(text, functions):
 
 def functions_of(texts):
     """RVAs named by `RVA 0x..` header lines in the unit sources."""
-    rvas = set()
-    for text in texts:
-        for m in re.finditer(r'\bRVAs?\s+((?:0x[0-9a-fA-F]+)(?:(?:\s*,\s*(?:and\s+)?|\s+(?:and\s+)?)(?:0x[0-9a-fA-F]+))*)', text):
-            rvas.update(int(v, 16) for v in re.findall(r'0x[0-9a-fA-F]+', m[1]))
-    return rvas
+    return rva_headers.claimed_rvas(texts)
 
 
 def parse_leak_codes(stdout):
@@ -579,9 +576,22 @@ class Bot:
         out, failed = self.work / 'records' / tag, set()
         for task in sorted((self.tree / '.local/tasks').glob(f'prbot-{tag.split("/")[0]}-*')):
             info = json.loads((task / 'task.json').read_text())
+            wanted = {int(str(fn['rva']), 0) for fn in info['functions']} & set(rvas)
+            if not wanted:
+                continue
+            if not str(info.get('symbols', '')).startswith('reports/'):
+                # The record must point at a public symbol map; bind freezes this unit's names into an
+                # immutable one without touching the shared map.
+                (task / 'bind-list.txt').write_text(f'{task}\n')
+                bound = self.run([sys.executable, 'tools/verifier/bind.py', '--list', task / 'bind-list.txt',
+                                  '--unit-maps'], cwd=self.tree, check=False, timeout=self.config['compare_timeout'])
+                if bound.returncode:
+                    failed |= wanted
+                    continue
+                info = json.loads((task / 'task.json').read_text())
             for fn in info['functions']:
                 rva = int(str(fn['rva']), 0)
-                if rva not in rvas:
+                if rva not in wanted:
                     continue
                 dest = task / f'confirm-0x{rva:x}'
                 dest.mkdir(exist_ok=True)
@@ -591,12 +601,15 @@ class Bot:
                             check=False, timeout=self.config['compare_timeout']).returncode not in (0, 1):
                     raise Stop('record build did not complete')
                 row = ci['rows'].get(str(rva))
+                made = out / info['build_id'] / f'0x{rva:x}.json'
+                made.unlink(missing_ok=True)
                 if row is None:
-                    raise Stop('hash run has no row for an accepted function')
+                    failed.add(rva)
+                    continue
                 built = self.run([sys.executable, '-c', RECORD_CALL, self.tree, dest, out, json.dumps(
                     dict(run=ci['run'], report=ci['report'], row=row, map_status=ci['map'].get(str(rva))))],
                     cwd=self.tree, check=False, timeout=self.config['compare_timeout'])
-                if built.returncode or not (out / info['build_id'] / f'0x{rva:x}.json').is_file():
+                if built.returncode or not made.is_file():
                     failed.add(rva)  # the validator refused it: the function stays drafted
         return out, failed
 
@@ -650,6 +663,7 @@ class Bot:
             f_mac, f_ci = pool.submit(mac), pool.submit(ci)
             host2 = {int(k): v for k, v in f_mac.result().items()}
             host1 = {int(k): v for k, v in f_ci.result().items()}
+        host1 = self.settle_ci_debt(host1)
         host2 = self.classify_debt(host2, host1, base, units, state)
         self.overlay(head, files)
         # Only what both hosts passed can be accepted, so only that is worth a review call; a
@@ -674,6 +688,16 @@ class Bot:
                 state.set('decision', decision)
             state.set('records', str(records))
         return self.finish(pr, state, decision, started)
+
+    def settle_ci_debt(self, host1):
+        """`preexisting-fail` is debt only for a function that was matched at base.
+
+        The hash job compares a head row with the base compile of the same unit; a function new in
+        this PR has nothing at base to have failed, so its failure is a plain failure.
+        """
+        inventory = json.loads((self.tree / 'data/progress.json').read_text())
+        matched = {fn['rva'] for fn in inventory['functions'] if fn['status'] == 'matched'}
+        return {r: ('fail' if v == 'preexisting-fail' and r not in matched else v) for r, v in host1.items()}
 
     def classify_debt(self, host2, host1, base, units, state):
         """A head failure of a function matched on base is debt if it fails on base too, else a regression."""

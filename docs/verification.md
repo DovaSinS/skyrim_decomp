@@ -724,6 +724,10 @@ the tree being validated), the function's `pass` in the run's status map and row
 `source_sha256` and `recipe_sha256` from those rows. The validator requires them to equal the
 source digest and recipe the first host's comparator report is bound to, which ties both hosts
 to the same source content, and the published target row and compiler pins to be the current ones.
-The bot builds the evidence only from a run whose head is the revision it reviewed and merged. Only
+For a function with no accepted record the run finds its symbol itself: the unit header's RVA claim
+only selects a published target row (the row and hash always come from the base checkout, never the
+PR), and the object is searched for the function whose normalized hash and relocation layout equal
+that row. The evidence lists the matching names and the validator requires the first host's compared
+symbol to be among them, so both hosts are bound to the same function. The bot builds the evidence only from a run whose head is the revision it reviewed and merged. Only
 `pass` counts: `regressed`, `fail`, `preexisting-fail` and `unverified` give no confirmation, and a
 record without both hosts is refused as before.

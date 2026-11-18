@@ -18,7 +18,9 @@ sys.path.insert(0, str(ROOT / 'tools'))
 import ci_hash_check as public
 import contrib
 import lint_reconstruction as lint
-from pecoff import Reject
+import compare
+from pecoff import CoffObject, Reject
+from rva_headers import claimed_rvas
 from source_digest import include_closure, tu_digest
 import target_hashes as hashes
 
@@ -27,6 +29,9 @@ DEFAULT_RECIPE = 'reconstruction/recipes/msvc-19.16.27054-o2.json'
 # claim about which public target to try, never evidence of identity or acceptance.
 REQUEST = re.compile(r'^// CI hash: (0x[0-9a-fA-F]+) (\S+)\s*$', re.M)
 SHA = re.compile(r'[0-9a-f]{40}')
+UNIT_RECIPE = re.compile(r'\breconstruction/recipes/[a-zA-Z0-9_.-]+\.json')
+# A header can claim any number of RVAs; each claim costs a scan of the unit's object.
+MAX_CLAIMS_PER_UNIT = 64
 CI_INPUTS = ('data/target-hashes/', 'tools/toolchain/', 'tools/ci_',
              'tools/target_hashes.py', 'tools/contrib.py', 'tools/contributor_standing.py',
              'tools/build_leaderboard.py', 'tools/build_model_trend.py', '.gitattributes',
@@ -138,11 +143,43 @@ def requests(tree, changed, known):
             value = int(rva, 16)
             if value not in entries:
                 entries[value] = dict(rva=value, symbol=symbol, recipe=DEFAULT_RECIPE)
+        # A new function has no accepted record to name its symbol. Its header claims the RVA and
+        # the object is searched for the function whose hash equals that published target, so the
+        # symbol is found by the comparison, never taken from the PR.
+        recipe = (UNIT_RECIPE.search((tree / unit).read_text(encoding='utf-8-sig')) or [DEFAULT_RECIPE])[0]
+        stem = unit.rsplit('.', 1)[0]
+        texts = [(tree / (stem + ext)).read_text(encoding='utf-8-sig') for ext in ('.h', '.cpp')
+                 if (tree / (stem + ext)).is_file()]
+        for value in sorted(claimed_rvas(texts))[:MAX_CLAIMS_PER_UNIT]:
+            entries.setdefault(value, dict(rva=value, symbol=None, recipe=recipe))
         if not entries:
             result.append(dict(unit=unit, rva=None, symbol=None, recipe=DEFAULT_RECIPE))
         else:
             result += [dict(unit=unit, **r) for r in entries.values()]
     return result
+
+
+def matching_symbols(blob, target):
+    """Names of the object's functions whose normalized hash and layout equal the published target.
+
+    Only sections of the target's size are hashed. The validator requires the first host's symbol
+    to be among these names, so a small function that shares bytes with another cannot stand in.
+    """
+    obj = CoffObject(blob)
+    names = set()
+    for sym in obj.symbols.values():
+        if sym.section > 0 and sym.storage == compare.STORAGE_EXTERNAL:
+            sec = obj.section(sym.section)
+            if sec.data is not None and len(sec.data) == target['size']:
+                names.add(sym.name)
+    found = []
+    for name in sorted(names):
+        try:
+            if hashes.candidate(blob, name, target) == 'hash-match':
+                found.append(name)
+        except (ValueError, Reject):
+            continue
+    return found
 
 
 def compile_requests(root, tree, requests_, bindir, work, manifest):
@@ -171,11 +208,21 @@ def compile_requests(root, tree, requests_, bindir, work, manifest):
                 built[key] = None
         if built[key] is None:
             row['result'], row['reason'] = 'mismatch', 'compile-failed'
-        elif target is None or ref['symbol'] is None or target['extraction'] == 'unmasked-unsupported':
+        elif target is None or (ref['symbol'] is None and ref['rva'] is None) \
+                or target['extraction'] == 'unmasked-unsupported':
             row['reason'] = 'published-target-or-binding-unavailable'
         else:
             try:
-                row['result'] = hashes.candidate(built[key], ref['symbol'], target)
+                if ref['symbol'] is None:
+                    symbols = matching_symbols(built[key], target)
+                    row['result'] = 'hash-match' if symbols else 'mismatch'
+                    if not symbols:
+                        row['reason'] = 'no-matching-function'
+                else:
+                    row['result'] = hashes.candidate(built[key], ref['symbol'], target)
+                    symbols = [ref['symbol']]
+                if row['result'] == 'hash-match':
+                    row['symbols'] = symbols
                 row['source_sha256'] = tu_digest(tree, include_closure(tree, ref['unit']))
                 row['recipe_sha256'] = hashes.digest((root / ref['recipe']).read_bytes())
             except (ValueError, Reject):
