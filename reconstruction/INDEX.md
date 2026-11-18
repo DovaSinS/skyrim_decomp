@@ -9406,10 +9406,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/RaceComponentLayout` | `BGSTalkingActivatorExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x2675bc` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2675bc.json` | matched | full | open |
 | `forms/BGSOpenCloseForm` | `BGSOpenCloseForm::Unk_03` (COMMUNITY) | `sse-steam-1-7-104` / `0x267670` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267670.json` | matched | full | open |
 | `leaves/ReturnLeaf267680` | `ReturnLeaf267680::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x267680` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267680.json` | matched | family | open |
-| - | `TESObjectACTI::GetIgnoredBySandbox` (COMMUNITY) | `sse-steam-1-7-104` / `0x267690` / 12 | - | - | mapped | - | - |
+| `contrib_tesobjectacti/TESObjectACTI` | `TESObjectACTI::GetIgnoredBySandbox` (COMMUNITY) | `sse-steam-1-7-104` / `0x267690` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267690.json` | matched | full | - |
 | `contrib_bgstalkingactivator/BGSTalkingActivator` | `BGSTalkingActivator::GetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2676a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2676a0.json` | matched | full | - |
 | `leaves/ReturnLeaf2676b0` | `ReturnLeaf2676b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2676b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2676b0.json` | matched | family | open |
-| - | `TESObjectACTI::GetWaterType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2677d0` / 8 | - | - | mapped | - | - |
+| `contrib_tesobjectacti/TESObjectACTI` | `TESObjectACTI::GetWaterType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2677d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2677d0.json` | matched | full | - |
 | `forms/BGSOpenCloseForm` | `Leaf2677e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2677e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2677e0.json` | matched | full | open |
 | `forms/BGSOpenCloseForm` | `Leaf2677f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2677f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2677f0.json` | matched | full | open |
 | - | `TESBoundAnimObject::IsBoundAnimObject` (COMMUNITY) | `sse-steam-1-7-104` / `0x267800` / 3 | - | - | mapped | - | - |
@@ -9577,7 +9577,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `fo4freshb_ec14f6c6/TESObjectACTI` | `TESObjectACTI::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x279750` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x279750.json` | matched | full | open |
 | - | `TESObjectACTI::InitItemImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x279ce0` / 45 | - | - | mapped | - | - |
 | `leaves/ReturnLeaf27a590` | `ReturnLeaf27a590::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x27a590` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x27a590.json` | matched | family | open |
-| - | `TESObjectACTI::IsWater` (COMMUNITY) | `sse-steam-1-7-104` / `0x27a690` / 12 | - | - | mapped | - | - |
+| `contrib_tesobjectacti/TESObjectACTI` | `TESObjectACTI::IsWater` (COMMUNITY) | `sse-steam-1-7-104` / `0x27a690` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x27a690.json` | matched | full | - |
 | `leaves/TableStoreLeaf27ac80` | `TableStoreLeaf27ac80::~TableStoreLeaf27ac80` (GUESS) | `sse-steam-1-7-104` / `0x27ac80` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x27ac80.json` | matched | family | open |
 | `forms/RaceComponentLayout` | `TESObjectACTIExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x27ac8c` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x27ac8c.json` | matched | full | open |
 | `forms/RaceComponentLayout` | `TESObjectACTIExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x27ac98` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x27ac98.json` | matched | full | open |

@@ -80484,12 +80484,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2520720,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectACTI::GetIgnoredBySandbox",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 34. RVA 0x267690; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x267690.json",
+      "report": "reports/sse-steam-1-7-104/0x267690.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2676a0",
@@ -80509,12 +80510,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2521040,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectACTI::GetWaterType",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 61. RVA 0x2677d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2677d0.json",
+      "report": "reports/sse-steam-1-7-104/0x2677d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2677e0",
@@ -81836,12 +81838,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2598544,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectACTI::IsWater",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 42. RVA 0x27a690; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x27a690.json",
+      "report": "reports/sse-steam-1-7-104/0x27a690.json"
     },
     {
       "id": "sse-steam-1-7-104-0x27ac80",
@@ -430622,7 +430625,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T12:56:22Z",
+  "updated_at": "2026-11-18T13:00:32Z",
   "work_items": [
     {
       "id": "pin-target",
