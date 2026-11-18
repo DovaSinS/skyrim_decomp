@@ -18,6 +18,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -311,8 +312,10 @@ class Bot:
             if self.dry_run:
                 return False, []  # a replay may run before the tool is on this checkout; live never does
             raise Stop('leakgrep is not available')
-        result = self.run([sys.executable, script, '--base', base, '--head', head], check=False, timeout=120)
-        if result.returncode not in (0, 1):
+        result = self.run([sys.executable, script, '--base', base, '--head', head, '--repo', self.root,
+                           '--private-list', self.root / '.local/leakgrep-private.txt'], check=False, timeout=120)
+        # A crash also exits 1; only the summary line proves the scan ran.
+        if result.returncode not in (0, 1) or b'leakgrep: ' not in result.stdout:
             raise Stop('leakgrep did not complete')
         return result.returncode == 1, parse_leak_codes(result.stdout.decode(errors='replace'))
 
@@ -521,12 +524,32 @@ class Bot:
             return {r: 'pass' for r in functions}
         deadline = time.time() + self.config['hash_wait']
         probed = False
+        unusable = set()  # runs that finished without a result, e.g. on a stale base lacking the tools
+        target = self.work / 'hash' / f'{number}-{head[:12]}'
         while True:
             runs = self.gh_json('api', f'repos/{REPOSITORY}/commits/{head}/check-runs')['check_runs']
-            run = next((r for r in runs if r['name'] in HASH_CHECKS and r['head_sha'] == head), None)
+            mine = [r for r in runs if r['name'] in HASH_CHECKS and r['head_sha'] == head and r.get('id', r.get('details_url')) not in unusable]
+            run = max(mine, key=lambda r: r.get('started_at') or '', default=None)
             if run and run['status'] == 'completed':
-                break
-            if run is None:
+                run_id = re.search(r'/runs/(\d+)', run.get('details_url', ''))
+                if not run_id:
+                    raise Stop('hash check has no run')
+                meta = self.gh_json('api', f'repos/{REPOSITORY}/actions/runs/{run_id.group(1)}')
+                if meta.get('head_sha') != head or str(meta.get('id')) != run_id.group(1):
+                    raise Stop('hash run belongs to another revision')
+                shutil.rmtree(target, ignore_errors=True)
+                target.mkdir(parents=True, exist_ok=True)
+                self.run(['gh', 'run', 'download', run_id.group(1), '-R', REPOSITORY, '-D', target], check=False)
+                found = sorted(target.rglob('hash-result.json'))
+                if found:
+                    break
+                # The fork's own run used the base it was opened against; a probe on this commit uses today's.
+                unusable.add(run.get('id', run.get('details_url')))
+                if probed:
+                    raise Stop('hash check left no result')
+                self.probe_hash_run(number, head)
+                probed = True
+            elif run is None:
                 self.approve_pending(head)
                 if not probed:
                     self.probe_hash_run(number, head)
@@ -534,18 +557,6 @@ class Bot:
             if time.time() > deadline:
                 raise Stop('hash check has not finished')
             time.sleep(20)
-        run_id = re.search(r'/runs/(\d+)', run.get('details_url', ''))
-        if not run_id:
-            raise Stop('hash check has no run')
-        meta = self.gh_json('api', f'repos/{REPOSITORY}/actions/runs/{run_id.group(1)}')
-        if meta.get('head_sha') != head or str(meta.get('id')) != run_id.group(1):
-            raise Stop('hash run belongs to another revision')
-        target = self.work / 'hash' / f'{number}-{head[:12]}'
-        target.mkdir(parents=True, exist_ok=True)
-        self.run(['gh', 'run', 'download', run_id.group(1), '-R', REPOSITORY, '-D', target], check=False)
-        found = sorted(target.rglob('hash-result.json'))
-        if not found:
-            raise Stop('hash check left no result')
         table = results_from_report(found[0])
         if run.get('conclusion') != 'success' and 'regressed' not in table.values():
             return {r: 'fail' for r in functions}  # a job that failed for any other reason confirms nothing
@@ -681,7 +692,10 @@ class Bot:
             return self.finish(pr, state, decision, started, land=base, comment=(
                 'Everything in this PR is already on main through the PRs it was stacked on, so it is marked '
                 'merged with your credit. Thank you; your functions are recorded under the PR that landed them.'))
-        self.prepare_tree(base)
+        # Today's tools and inventory, with the PR's files on top: a PR cut long ago would otherwise be
+        # built and recorded with a base that lacks the record tooling.
+        tip = pinned or self.run(['git', 'rev-parse', 'origin/main']).stdout.decode().strip()
+        self.prepare_tree(tip or base)
         self.overlay(head, files)
         units = state.once('units', lambda: self.units(files))
         functions = sorted({r for rs in units.values() for r in rs})
