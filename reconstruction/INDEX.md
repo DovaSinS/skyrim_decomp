@@ -8065,12 +8065,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `MagicItem::IsAutoCalc` (COMMUNITY) | `sse-steam-1-7-104` / `0x146870` / 26 | - | - | mapped | - | - |
 | `leaves/ReturnLeaf146890` | `ReturnLeaf146890::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146890` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146890.json` | matched | full | open |
 | `forms/TESBoundObject` | `TESBoundObject::IsBoundObject` (COMMUNITY) | `sse-steam-1-7-104` / `0x1468a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1468a0.json` | matched | label-only | open |
-| - | `AlchemyItem::IsFood` (COMMUNITY) | `sse-steam-1-7-104` / `0x1468b0` / 56 | - | - | mapped | - | - |
+| `contrib_alchemyitem/AlchemyItem` | `AlchemyItem::IsFood` (COMMUNITY) | `sse-steam-1-7-104` / `0x1468b0` / 56 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1468b0.json` | matched | full | - |
 | `forms/TESForm` | `TESForm::IsFormTypeChild` (COMMUNITY) | `sse-steam-1-7-104` / `0x1468f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1468f0.json` | matched | full | open |
 | `forms/MagicItem` | `MagicItem::IsMagicItem` (COMMUNITY) | `sse-steam-1-7-104` / `0x146900` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146900.json` | matched | full | open |
-| - | `AlchemyItem::IsMedicine` (COMMUNITY) | `sse-steam-1-7-104` / `0x146910` / 24 | - | - | mapped | - | - |
+| `contrib_alchemyitem/AlchemyItem` | `AlchemyItem::IsMedicine` (COMMUNITY) | `sse-steam-1-7-104` / `0x146910` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146910.json` | matched | full | - |
 | `leaves/ReturnLeaf146930` | `ReturnLeaf146930::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146930` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146930.json` | matched | full | open |
-| - | `AlchemyItem::IsPoison` (COMMUNITY) | `sse-steam-1-7-104` / `0x146940` / 26 | - | - | mapped | - | - |
+| `contrib_alchemyitem/AlchemyItem` | `AlchemyItem::IsPoison` (COMMUNITY) | `sse-steam-1-7-104` / `0x146940` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146940.json` | matched | full | - |
 | `leaves/ReturnLeaf146960` | `ReturnLeaf146960::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146960` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146960.json` | matched | full | open |
 | `leaves/ReturnLeaf146970` | `ReturnLeaf146970::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146970` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146970.json` | matched | full | open |
 | `leaves/ReturnLeaf146980` | `ReturnLeaf146980::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x146980` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x146980.json` | matched | full | open |
