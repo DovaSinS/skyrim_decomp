@@ -81028,12 +81028,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2547984,
       "size": 20,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESFurniture::InitializeData",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 4. RVA 0x26e110; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x26e110.json",
+      "report": "reports/sse-steam-1-7-104/0x26e110.json"
     },
     {
       "id": "sse-steam-1-7-104-0x26e130",
@@ -81054,12 +81055,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2551168,
       "size": 55,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESFurniture::Clone3D",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 74. RVA 0x26ed80; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x26ed80.json",
+      "report": "reports/sse-steam-1-7-104/0x26ed80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x26ffa0",
@@ -430625,7 +430627,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T13:00:32Z",
+  "updated_at": "2026-11-18T13:45:24Z",
   "work_items": [
     {
       "id": "pin-target",

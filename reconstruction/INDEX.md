@@ -9473,9 +9473,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `fields/FieldLeaf26dee0` | `FieldLeaf26dee0::Read` (GUESS) | `sse-steam-1-7-104` / `0x26dee0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26dee0.json` | matched | family | open |
 | `leaves/Leaf26def0` | `Leaf26def0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x26def0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26def0.json` | matched | family | open |
 | `leaves/Leaf26df00` | `Leaf26df00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x26df00` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26df00.json` | matched | family | open |
-| - | `TESFurniture::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x26e110` / 20 | - | - | mapped | - | - |
+| `contrib_tesfurniture/TESFurniture` | `TESFurniture::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x26e110` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26e110.json` | matched | full | - |
 | `fo4b4s_26e130/TESFurniture` | `TESFurniture::ClearData` (COMMUNITY) | `sse-steam-1-7-104` / `0x26e130` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26e130.json` | matched | full | open |
-| - | `TESFurniture::Clone3D` (COMMUNITY) | `sse-steam-1-7-104` / `0x26ed80` / 55 | - | - | mapped | - | - |
+| `contrib_tesfurniture/TESFurniture` | `TESFurniture::Clone3D` (COMMUNITY) | `sse-steam-1-7-104` / `0x26ed80` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26ed80.json` | matched | full | - |
 | `forms/RaceComponentLayout` | `TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x26fe68` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26fe68.json` | matched | full | open |
 | `forms/RaceComponentLayout` | `TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x26fe74` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26fe74.json` | matched | full | open |
 | `forms/RaceComponentLayout` | `TESFurnitureExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x26fe80` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x26fe80.json` | matched | full | open |
