@@ -15113,8 +15113,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `MissileProjectile::Unk_C2` (COMMUNITY) | `sse-steam-1-7-104` / `0x7f5660` / 3 | - | - | mapped | - | - |
 | `leaves/Leaf7f5670` | `Leaf7f5670::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7f5670` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f5670.json` | matched | family | open |
 | `leaves/TableStoreLeaf7f71a0` | `TableStoreLeaf7f71a0::~TableStoreLeaf7f71a0` (GUESS) | `sse-steam-1-7-104` / `0x7f71a0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f71a0.json` | matched | family | open |
-| - | `Projectile::IsMissileProjectile` (COMMUNITY) | `sse-steam-1-7-104` / `0x7f92a0` / 3 | - | - | mapped | - | - |
-| - | `Projectile::IsGrenadeProjectile` (COMMUNITY) | `sse-steam-1-7-104` / `0x7f92b0` / 3 | - | - | mapped | - | - |
+| `contrib_projectile/Projectile` | `Projectile::IsMissileProjectile` (COMMUNITY) | `sse-steam-1-7-104` / `0x7f92a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f92a0.json` | matched | full | - |
+| `contrib_projectile/Projectile` | `Projectile::IsGrenadeProjectile` (COMMUNITY) | `sse-steam-1-7-104` / `0x7f92b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f92b0.json` | matched | full | - |
 | `leaves/ReturnLeaf7f92c0` | `ReturnLeaf7f92c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7f92c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f92c0.json` | matched | family | open |
 | `leaves/ReturnLeaf7f92d0` | `ReturnLeaf7f92d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7f92d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f92d0.json` | matched | family | open |
 | `leaves/ReturnLeaf7f92e0` | `ReturnLeaf7f92e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7f92e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7f92e0.json` | matched | family | open |

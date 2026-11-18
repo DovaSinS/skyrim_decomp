@@ -135423,24 +135423,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8360608,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "Projectile::IsMissileProjectile",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 162. RVA 0x7f92a0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7f92a0.json",
+      "report": "reports/sse-steam-1-7-104/0x7f92a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7f92b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 8360624,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "Projectile::IsGrenadeProjectile",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 163. RVA 0x7f92b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7f92b0.json",
+      "report": "reports/sse-steam-1-7-104/0x7f92b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7f9e30",
@@ -430594,7 +430596,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:42:27Z",
+  "updated_at": "2026-11-18T11:45:21Z",
   "work_items": [
     {
       "id": "pin-target",
