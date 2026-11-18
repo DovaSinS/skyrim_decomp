@@ -1273,7 +1273,7 @@ class SyntheticEndToEnd(unittest.TestCase):
         self.private.mkdir()
         self.state = ap.State(self.private, ap.DEFAULTS)
         self.runtime = ap.Runtime(self.root, self.private, ap.DEFAULTS, self.state, dry_run=True)
-        self.commands, self.models = [], []
+        self.commands, self.models, self.prompts = [], [], []
         self.real_command = self.runtime.command
         self.runtime.command = self.command
         self.runtime.model = self.model
@@ -1358,6 +1358,7 @@ class SyntheticEndToEnd(unittest.TestCase):
     def model(self, tree, model, prompt, output):
         self.state.reserve('reviews')
         self.models.append(model)
+        self.prompts.append((model, prompt))
         if output.name == 'engineer-screen.txt':
             document = 'SAFE\nOriginal synthetic programmer source.\n'
         else:
@@ -1467,6 +1468,10 @@ reasons: original synthetic source and comparator reports
         self.assertEqual(published['dropped'], 0)
         self.assertEqual(self.models, ['gpt-6.1-sol', 'gpt-6.1-terra', 'gpt-6.1-sol'])
         self.assertEqual(self.state.data['days'][self.state.today], dict(compiles=10, reviews=3))
+        reviews = [(m, p) for m, p in self.prompts if 'reviewer-runbook' in p]
+        self.assertTrue(reviews)
+        for m, p in reviews:
+            self.assertIn(f'--model {m}; use exactly that id', p)
         self.assertEqual(self.git('rev-parse', 'origin/main'), self.base)
         self.assertFalse((self.root / '.local/flow/lane/queue').exists())
         self.assertFalse((self.root / '.local/flow/groups').exists())

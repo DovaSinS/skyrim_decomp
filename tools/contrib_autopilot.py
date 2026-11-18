@@ -881,7 +881,12 @@ class Runtime:
                       'Sandbox is read-only: do not attempt to write. Return the ENTIRE review document in the\n'
                       'exact runbook format as your final response, without fences or the return table; the\n'
                       'dispatcher saves it verbatim to the path in the brief, as the runbook permits.\n'
-                      'Do not modify source, git state, tools, gates or reports. No network or subagents.\n')
+                      'Do not modify source, git state, tools, gates or reports. No network or subagents.\n'
+                      # A session cannot reliably introspect its own model name (some report a family
+                      # alias), and an unattestable id escalates every review. The dispatcher chose
+                      # the model on the command line, so it is the source of truth for the id.
+                      f'The dispatcher launched this run with --model {group["reviewer_model"]}; use exactly that id\n'
+                      'as reviewer_model.\n')
             if not path.exists():
                 self.model(tree, group['reviewer_model'], prompt, path)
             status, blocks = flow.read_review(tree, group, flow.inventory(tree)['functions'])
