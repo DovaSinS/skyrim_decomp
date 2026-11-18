@@ -414,11 +414,11 @@ class Bot:
                          '; '.join(f'{k}: {"agree" if v else "DIFFER"}' for k, v in facts.items()))
         row, run = evidence.get('row'), evidence.get('run')
         if row:
-            lines.append(f'  CI hash run {run.get("run_id")} on head {str(run.get("head_sha"))[:12]}: {row.get("status")}; '
+            lines.append(f'  second-host run {run.get("run_id")} (CI hash job, which compares the published target hashes) on head {str(run.get("head_sha"))[:12]}: {row.get("status")}; '
                          f'its source digest {"agrees" if row.get("source_sha256") == digest else "DIFFERS"}, '
                          f'its recipe hash {"agrees" if row.get("recipe_sha256") == recipe_sha else "DIFFERS"}')
         else:
-            lines.append(f'  CI hash status: {evidence.get("host1")}')
+            lines.append(f'  second-host run (CI hash job, which compares the published target hashes): {evidence.get("host1")}')
         return lines
 
     def review_context(self, units, functions, evidence=None):
@@ -461,8 +461,9 @@ class Bot:
                 'For the provenance comparison read .local/analysis/fnv_index.jsonl and the pinned FNV source '
                 'files it identifies. ' + EXPOSURE,
                 '', 'Records under reports/ for these functions, if any, are older acceptances of earlier source; '
-                'the evidence for this PR is the comparator report and CI result listed above. The unit files are '
-                'in the working directory at the paths above.']
+                'the evidence for this PR is the comparator report and CI result listed above. The second-host run '
+                'required by item 3 is the CI hash job listed per function; a function listed as passing on both '
+                'hosts has both. The unit files are in the working directory at the paths above.']
         return '\n'.join(out)
 
     def review(self, number, head, base, functions, grep, units=None, evidence=None):

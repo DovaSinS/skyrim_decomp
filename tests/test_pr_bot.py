@@ -550,7 +550,7 @@ class ReviewContextTests(unittest.TestCase):
         prompt = self.prompts[0]
         self.assertIn('.local/tasks/prbot-7-aaaaaaaa-0/attempts/001/0x10/report.json: result pass: agree', prompt)
         self.assertNotIn('DIFFER', prompt)
-        self.assertIn('CI hash run 555 on head ' + HEAD[:12] + ': pass; its source digest agrees, its recipe hash agrees', prompt)
+        self.assertIn('second-host run 555 (CI hash job, which compares the published target hashes) on head ' + HEAD[:12] + ': pass; its source digest agrees, its recipe hash agrees', prompt)
 
     def test_a_report_for_other_source_or_compiler_is_shown_as_differing(self):
         bad = self.evidence(source={'source_revision': '0' * 64, 'path': 'reconstruction/a/B.cpp'})
@@ -561,7 +561,7 @@ class ReviewContextTests(unittest.TestCase):
         self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
                         {0x10: dict(report=None, host1='pass', host2='pass', row=None, run=None)})
         self.assertIn('comparator report: NOT available', self.prompts[0])
-        self.assertIn('CI hash status: pass', self.prompts[0])
+        self.assertIn('second-host run (CI hash job, which compares the published target hashes): pass', self.prompts[0])
 
     def test_prompt_carries_the_runbook_standard_the_pins_the_packs_and_the_lint(self):
         self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
