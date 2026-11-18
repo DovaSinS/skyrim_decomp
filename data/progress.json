@@ -105457,24 +105457,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4760336,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSProcedureTreeConditionalItem::Unk_01",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 1. RVA 0x48a310; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x48a310.json",
+      "report": "reports/sse-steam-1-7-104/0x48a310.json"
     },
     {
       "id": "sse-steam-1-7-104-0x48a330",
       "build_id": "sse-steam-1-7-104",
       "rva": 4760368,
       "size": 9,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSProcedureTreeConditionalItem::Unk_02",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 2. RVA 0x48a330; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x48a330.json",
+      "report": "reports/sse-steam-1-7-104/0x48a330.json"
     },
     {
       "id": "sse-steam-1-7-104-0x48a340",
@@ -105495,12 +105497,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4760496,
       "size": 54,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSProcedureTreeConditionalItem::Unk_10",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 16. RVA 0x48a3b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x48a3b0.json",
+      "report": "reports/sse-steam-1-7-104/0x48a3b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x48a490",
@@ -430589,7 +430592,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:34:59Z",
+  "updated_at": "2026-11-18T11:36:48Z",
   "work_items": [
     {
       "id": "pin-target",

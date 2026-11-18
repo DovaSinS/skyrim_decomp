@@ -12053,10 +12053,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/VirtualTail48a130` | `VirtualTail48a130::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x48a130` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a130.json` | matched | family | open |
 | `leaves/LeafAddress48a1d0` | `LeafAddress48a1d0::Address` (GUESS) | `sse-steam-1-7-104` / `0x48a1d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a1d0.json` | matched | family | open |
 | `leaves/LeafAddress48a1e0` | `LeafAddress48a1e0::Address` (GUESS) | `sse-steam-1-7-104` / `0x48a1e0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a1e0.json` | matched | family | open |
-| - | `BGSProcedureTreeConditionalItem::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a310` / 13 | - | - | mapped | - | - |
-| - | `BGSProcedureTreeConditionalItem::Unk_02` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a330` / 9 | - | - | mapped | - | - |
+| `contrib_bgsproceduretreeconditionalitem/BGSProcedureTreeConditionalItem` | `BGSProcedureTreeConditionalItem::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a310` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a310.json` | matched | full | - |
+| `contrib_bgsproceduretreeconditionalitem/BGSProcedureTreeConditionalItem` | `BGSProcedureTreeConditionalItem::Unk_02` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a330` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a330.json` | matched | full | - |
 | `fo4b4a_48a340/BGSProcedureTreeConditionalItem` | `BGSProcedureTreeConditionalItem::Load` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a340` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a340.json` | matched | full | open |
-| - | `BGSProcedureTreeConditionalItem::Unk_10` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a3b0` / 54 | - | - | mapped | - | - |
+| `contrib_bgsproceduretreeconditionalitem/BGSProcedureTreeConditionalItem` | `BGSProcedureTreeConditionalItem::Unk_10` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a3b0` / 54 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a3b0.json` | matched | full | - |
 | - | `BGSProcedureTreeProcedure::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a490` / 93 | - | - | mapped | - | - |
 | `forms/BGSProcedureTreeProcedure` | `BGSProcedureTreeProcedure::Unk_02` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a650` / 54 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a650.json` | matched | full | open |
 | `forms/BGSProcedureTreeProcedure` | `BGSProcedureTreeProcedure::Unk_0B` (COMMUNITY) | `sse-steam-1-7-104` / `0x48a730` / 40 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x48a730.json` | matched | full | open |
