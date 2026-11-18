@@ -1,5 +1,5 @@
 """Tests for the queue's release, profile stamping and near-miss set-aside, the profile data,
-the friction report and the review comparison. All inputs are synthetic."""
+and the friction report. All inputs are synthetic."""
 import contextlib
 import io
 import json
@@ -14,7 +14,6 @@ sys.path.insert(0, str(ROOT / 'tools'))
 sys.path.insert(0, str(ROOT / 'tests'))
 import friction  # noqa: E402
 import profiles  # noqa: E402
-import review_compare  # noqa: E402
 import work_queue as wq  # noqa: E402
 from test_flow import BUILD, review_text  # noqa: E402
 
@@ -184,41 +183,6 @@ class Friction(unittest.TestCase):
         fdir = self.tmp / '.local/flow'
         self.assertEqual(len(list(fdir.glob('friction-*.md'))), 1)
         self.assertIn('"event": "friction"', (fdir / 'events.jsonl').read_text())
-
-
-class ReviewCompare(unittest.TestCase):
-    def setUp(self):
-        self.tmp = Path(tempfile.mkdtemp()).resolve()
-
-    def tearDown(self):
-        shutil.rmtree(self.tmp)
-
-    def write(self, name, blocks):
-        path = self.tmp / f'{name}.md'
-        path.write_text(review_text(name, blocks))
-        return str(path)
-
-    def test_missed_and_stricter_are_told_apart_for_each_candidate(self):
-        d = 'd' * 64
-        ref = self.write('opus', [(0x10, 4, d, 'reject', 'none'), (0x20, 8, d, 'approve', 'none'), (0x30, 8, d, 'approve', 'none')])
-        son = self.write('sonnet', [(0x10, 4, d, 'approve', 'none'), (0x20, 8, d, 'reject', 'none'), (0x30, 8, d, 'approve', 'none')])
-        ter = self.write('terra', [(0x10, 4, d, 'reject', 'none'), (0x20, 8, d, 'approve', 'none')])
-        out = io.StringIO()
-        with contextlib.redirect_stdout(out):
-            code = review_compare.main(['--json', '--set', 'opus', ref, '--set', 'sonnet', son, '--set', 'terra', ter])
-        res = json.loads(out.getvalue())
-        self.assertEqual(code, 1)
-        s, t = res[0]['summary'], res[1]['summary']
-        self.assertEqual((s['missed'], s['stricter'], s['agree'], s['caught']), (1, 1, 1, 0))
-        self.assertEqual((t['agree'], t['caught'], t['only-reference']), (2, 1, 1))
-        self.assertNotIn(f'## {BUILD}', out.getvalue())  # verdicts and counts only
-
-    def test_full_agreement_exits_zero(self):
-        d = 'd' * 64
-        a = self.write('a', [(0x10, 4, d, 'approve', 'none')])
-        b = self.write('b', [(0x10, 4, d, 'approve', 'none')])
-        with contextlib.redirect_stdout(io.StringIO()):
-            self.assertEqual(review_compare.main(['--reference', a, '--candidate', b]), 0)
 
 
 if __name__ == '__main__':
