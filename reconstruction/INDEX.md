@@ -13374,11 +13374,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BGSMoviePlayer::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0x6447f0` / 50 | - | - | mapped | - | - |
 | `small199_415a2dc1/BGSMoviePlayer` | `BGSMoviePlayer::Unk_03` (COMMUNITY) | `sse-steam-1-7-104` / `0x644870` / 40 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644870.json` | matched | full | open |
 | `small199_415a2dc1/BGSMoviePlayer` | `BGSMoviePlayer::Unk_04` (COMMUNITY) | `sse-steam-1-7-104` / `0x6448a0` / 40 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6448a0.json` | matched | full | open |
-| - | `BGSMoviePlayer::Unk_07` (COMMUNITY) | `sse-steam-1-7-104` / `0x6448d0` / 12 | - | - | mapped | - | - |
-| - | `BGSMoviePlayer::Unk_09` (COMMUNITY) | `sse-steam-1-7-104` / `0x644910` / 7 | - | - | mapped | - | - |
+| `forms/BGSMoviePlayer` | `BGSMoviePlayer::Unk_07` (COMMUNITY) | `sse-steam-1-7-104` / `0x6448d0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6448d0.json` | matched | full | - |
+| `forms/BGSMoviePlayer` | `BGSMoviePlayer::Unk_09` (COMMUNITY) | `sse-steam-1-7-104` / `0x644910` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644910.json` | matched | full | - |
 | `forms/BGSMoviePlayer` | `BGSMoviePlayer::Unk_0A` (COMMUNITY) | `sse-steam-1-7-104` / `0x644920` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644920.json` | matched | full | open |
-| - | `BGSMoviePlayer::Unk_0B` (COMMUNITY) | `sse-steam-1-7-104` / `0x644930` / 8 | - | - | mapped | - | - |
-| - | `BGSMoviePlayer::Unk_0C` (COMMUNITY) | `sse-steam-1-7-104` / `0x644940` / 17 | - | - | mapped | - | - |
+| `forms/BGSMoviePlayer` | `BGSMoviePlayer::Unk_0B` (COMMUNITY) | `sse-steam-1-7-104` / `0x644930` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644930.json` | matched | full | - |
+| `forms/BGSMoviePlayer` | `BGSMoviePlayer::Unk_0C` (COMMUNITY) | `sse-steam-1-7-104` / `0x644940` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644940.json` | matched | full | - |
 | `leaves/TableStoreLeaf644a90` | `TableStoreLeaf644a90::~TableStoreLeaf644a90` (GUESS) | `sse-steam-1-7-104` / `0x644a90` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644a90.json` | matched | family | open |
 | `leaves/DeletingLeaf644af0` | `DeletingLeaf644af0::~DeletingLeaf644af0` (GUESS) | `sse-steam-1-7-104` / `0x644af0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644af0.json` | matched | family | open |
 | `storage/StorageInit644c20` | `StorageInit644c20::initialize` (GUESS) | `sse-steam-1-7-104` / `0x644c20` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x644c20.json` | matched | family | open |

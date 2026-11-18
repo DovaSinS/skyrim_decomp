@@ -118382,24 +118382,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 6572240,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSMoviePlayer::Unk_07",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 7. RVA 0x6448d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x6448d0.json",
+      "report": "reports/sse-steam-1-7-104/0x6448d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x644910",
       "build_id": "sse-steam-1-7-104",
       "rva": 6572304,
       "size": 7,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSMoviePlayer::Unk_09",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 9. RVA 0x644910; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x644910.json",
+      "report": "reports/sse-steam-1-7-104/0x644910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x644920",
@@ -118412,7 +118414,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 10. RVA 0x644920; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x644920.json",
       "report": "reports/sse-steam-1-7-104/0x644920.json"
     },
     {
@@ -118420,24 +118422,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 6572336,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSMoviePlayer::Unk_0B",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 11. RVA 0x644930; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x644930.json",
+      "report": "reports/sse-steam-1-7-104/0x644930.json"
     },
     {
       "id": "sse-steam-1-7-104-0x644940",
       "build_id": "sse-steam-1-7-104",
       "rva": 6572352,
       "size": 17,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSMoviePlayer::Unk_0C",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 12. RVA 0x644940; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x644940.json",
+      "report": "reports/sse-steam-1-7-104/0x644940.json"
     },
     {
       "id": "sse-steam-1-7-104-0x644a90",
@@ -118506,7 +118510,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x645120.json",
       "report": "reports/sse-steam-1-7-104/0x645120.json"
     },
     {
@@ -118520,7 +118524,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x645130.json",
       "report": "reports/sse-steam-1-7-104/0x645130.json"
     },
     {
@@ -430600,7 +430604,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:57:50Z",
+  "updated_at": "2026-11-18T12:04:36Z",
   "work_items": [
     {
       "id": "pin-target",
