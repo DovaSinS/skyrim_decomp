@@ -20909,12 +20909,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `NiParticleSystem::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99260` / 89 | - | - | mapped | - | - |
 | - | `NiParticleSystem::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xf992c0` / 193 | - | - | mapped | - | - |
 | - | `NiParticleSystem::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99390` / 192 | - | - | mapped | - | - |
-| - | `NiParticleSystem::UpdateDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99a30` / 96 | - | - | mapped | - | - |
-| - | `NiParticleSystem::UpdateSelectedDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99aa0` / 109 | - | - | mapped | - | - |
+| `netimmerse/NiParticleSystem` | `NiParticleSystem::UpdateDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99a30` / 96 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xf99a30.json` | matched | full | - |
+| `netimmerse/NiParticleSystem` | `NiParticleSystem::UpdateSelectedDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99aa0` / 109 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xf99aa0.json` | matched | full | - |
 | - | `NiParticleSystem::SetSelectiveUpdateFlags` (COMMUNITY) | `sse-steam-1-7-104` / `0xf99ba0` / 68 | - | - | mapped | - | - |
 | `leaves/Leaff99e20` | `Leaff99e20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf99e20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf99e20.json` | matched | family | open |
 | `bsengine/BSInlineHostf9a080` | `BSInlineHostf9a080::~BSInlineHostf9a080` (GUESS) | `sse-steam-1-7-104` / `0xf9a080` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a080.json` | matched | full | open |
-| - | `NiParticleSystem::~NiParticleSystem` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a140` / 67 | - | - | mapped | - | - |
+| `netimmerse/NiParticleSystem` | `NiParticleSystem::~NiParticleSystem` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a140` / 67 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xf9a140.json` | matched | full | - |
 | `leaves/LeafAddressf9a260` | `NiParticleSystem::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a260` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a260.json` | matched | family | open |
 | `small181_e3fd9f08/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::LoadBinary` (GUESS) | `sse-steam-1-7-104` / `0xf9a4a0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a4a0.json` | matched | full | open |
 | `netimmerse/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::GetInterpolatorCount` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9b760` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9b760.json` | matched | family | open |
