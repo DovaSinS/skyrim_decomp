@@ -421,7 +421,7 @@ class Bot:
             lines.append(f'  second-host run (CI hash job, which compares the published target hashes): {evidence.get("host1")}')
         return lines
 
-    def review_context(self, units, functions, evidence=None):
+    def review_context(self, units, functions, evidence=None, changed=None):
         """What the Reviewer needs beyond the diff: the inputs the old review brief and packet gave it.
 
         Both hosts' results are in before the review starts, because checklist item 3 asks whether
@@ -429,6 +429,7 @@ class Bot:
         """
         from source_digest import include_closure, tu_digest
         tree, evidence = self.tree, evidence or {}
+        changed = set(changed) if changed is not None else None
         data = json.loads((tree / 'data/progress.json').read_text())
         target = json.loads((tree / 'builds/target.json').read_text())
         rows = {fn['rva']: fn for fn in data['functions'] if fn['build_id'] == target['build_id']}
@@ -444,7 +445,9 @@ class Bot:
             closure = include_closure(tree, cpp)
             files.update(closure)
             digest = tu_digest(tree, closure)
-            out.append(f'unit {cpp}: translation unit {", ".join(closure)}; tu digest {digest}')
+            names = ', '.join(c if changed is None else f'{c} ({"changed by this PR" if c in changed else "unchanged from main"})'
+                              for c in closure)
+            out.append(f'unit {cpp}: translation unit {names}; tu digest {digest}')
             for rva in rvas:
                 fn = rows.get(rva)
                 out.append(f'  0x{rva:x}: ' + (f'inventory size {fn["size"]}, status {fn["status"]}, name '
@@ -461,14 +464,16 @@ class Bot:
                 'For the provenance comparison read .local/analysis/fnv_index.jsonl and the pinned FNV source '
                 'files it identifies. ' + EXPOSURE,
                 '', 'Records under reports/ for these functions, if any, are older acceptances of earlier source; '
-                'the evidence for this PR is the comparator report and CI result listed above. The second-host run '
+                'the evidence for this PR is the comparator report and CI result listed above. Review the files this '
+                'PR changes in full; files marked unchanged from main were accepted with earlier functions, so read '
+                'them as context for how these functions use them, as the runbook does for the rest of a unit. The second-host run '
                 'required by item 3 is the CI hash job listed per function; a function listed as passing on both '
                 'hosts has both. The unit files are in the working directory at the paths above.']
         return '\n'.join(out)
 
-    def review(self, number, head, base, functions, grep, units=None, evidence=None):
+    def review(self, number, head, base, functions, grep, units=None, evidence=None, changed=None):
         diff = self.run(['git', 'diff', f'{base}', head, '--', 'reconstruction'], cwd=self.root).stdout.decode(errors='replace')
-        context = self.review_context(units, set(functions), evidence) if units else ''
+        context = self.review_context(units, set(functions), evidence, changed) if units else ''
         prompt = (PREAMBLE + '\n' + runbook_checklist(self.tree) + f'\n\nFunctions under review: '
                   f'{", ".join(f"0x{r:x}" for r in sorted(functions))}\n'
                   f'leakgrep: {"HIT " + ",".join(grep[1]) if grep[0] else "clean"}\n\n{context}\n\n'
@@ -653,7 +658,8 @@ class Bot:
         leak, verdict = 'no', {}
         if passed and 'regressed' not in list(host1.values()) + list(host2.values()):
             evidence = self.review_evidence(tag, passed, host1, host2, state)
-            text = state.once('review_text', lambda: self.review(number, head, base, passed, grep, units, evidence))
+            text = state.once('review_text', lambda: self.review(number, head, base, passed, grep, units, evidence,
+                                                                  {f['filename'] for f in files}))
             leak, verdict = parse_review(text, passed)
         verdict = {r: verdict.get(r, 'reject') for r in functions}
         decision = decide(functions, host1, host2, verdict, leak=leak)

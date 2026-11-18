@@ -552,6 +552,13 @@ class ReviewContextTests(unittest.TestCase):
         self.assertNotIn('DIFFER', prompt)
         self.assertIn('second-host run 555 (CI hash job, which compares the published target hashes) on head ' + HEAD[:12] + ': pass; its source digest agrees, its recipe hash agrees', prompt)
 
+    def test_the_sheet_marks_which_files_the_pr_changed_and_which_are_unchanged_context(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, self.evidence(),
+                        {'reconstruction/a/B.cpp'})
+        prompt = self.prompts[0]
+        self.assertIn('reconstruction/a/B.cpp (changed by this PR), reconstruction/a/B.h (unchanged from main)', prompt)
+        self.assertIn('Review the files this PR changes in full', prompt)
+
     def test_a_report_for_other_source_or_compiler_is_shown_as_differing(self):
         bad = self.evidence(source={'source_revision': '0' * 64, 'path': 'reconstruction/a/B.cpp'})
         self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, bad)
