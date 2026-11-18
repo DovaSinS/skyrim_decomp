@@ -12340,7 +12340,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/pathfinding/PathingCell_4e0460` | `PathingCell::GetWorld` (GUESS) | `sse-steam-1-7-104` / `0x4e0460` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e0460.json` | matched | full | open |
 | `skyrim_shared/pathfinding/PathingCell_4e04b0` | `PathingCell::Func8` (GUESS) | `sse-steam-1-7-104` / `0x4e04b0` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e04b0.json` | matched | full | open |
 | `unmapped/leaves/TableStoreLeaf4e0770` | `TableStoreLeaf4e0770::~TableStoreLeaf4e0770` (GUESS) | `sse-steam-1-7-104` / `0x4e0770` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e0770.json` | matched | family | open |
-| - | `BSPathingCell::~BSPathingCell` (COMMUNITY) | `sse-steam-1-7-104` / `0x4e0860` / 43 | - | - | mapped | - | - |
+| `bsengine/BSPathingCell` | `BSPathingCell::~BSPathingCell` (COMMUNITY) | `sse-steam-1-7-104` / `0x4e0860` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e0860.json` | matched | full | - |
 | - | `DeletingLeaf4e0890::~DeletingLeaf4e0890` (GUESS) | `sse-steam-1-7-104` / `0x4e0890` / 43 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf4e0990` | `Leaf4e0990::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4e0990` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e0990.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf4e0bc0` | `DeletingLeaf4e0bc0::~DeletingLeaf4e0bc0` (GUESS) | `sse-steam-1-7-104` / `0x4e0bc0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e0bc0.json` | matched | family | open |
