@@ -179713,7 +179713,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeee380.json",
       "id": "sse-steam-1-7-104-0xeee380",
       "name": "NiSwitchNode::AsSwitchNode",
       "name_origin": "COMMUNITY",
@@ -430690,7 +430690,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T20:03:39Z",
+  "updated_at": "2026-11-18T20:24:58Z",
   "work_items": [
     {
       "id": "pin-target",
