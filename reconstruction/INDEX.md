@@ -9398,7 +9398,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `fields/FieldLeaf267040` | `FieldLeaf267040::Read` (GUESS) | `sse-steam-1-7-104` / `0x267040` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267040.json` | matched | family | open |
 | `leaves/Leaf267050` | `Leaf267050::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x267050` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267050.json` | matched | family | open |
 | `leaves/ReturnLeaf267060` | `ReturnLeaf267060::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x267060` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267060.json` | matched | family | open |
-| - | `BGSTalkingActivator::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x2671e0` / 16 | - | - | mapped | - | - |
+| `contrib_bgstalkingactivator/BGSTalkingActivator` | `BGSTalkingActivator::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x2671e0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2671e0.json` | matched | full | - |
 | - | `BGSTalkingActivator::SaveGame` (COMMUNITY) | `sse-steam-1-7-104` / `0x267460` / 60 | - | - | mapped | - | - |
 | `fo4b4b_267530/BGSTalkingActivator` | `BGSTalkingActivator::Revert` (COMMUNITY) | `sse-steam-1-7-104` / `0x267530` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267530.json` | matched | full | open |
 | `forms/RaceComponentLayout` | `BGSTalkingActivatorExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x2675a4` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2675a4.json` | matched | full | open |
@@ -9407,13 +9407,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `forms/BGSOpenCloseForm` | `BGSOpenCloseForm::Unk_03` (COMMUNITY) | `sse-steam-1-7-104` / `0x267670` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267670.json` | matched | full | open |
 | `leaves/ReturnLeaf267680` | `ReturnLeaf267680::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x267680` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267680.json` | matched | family | open |
 | - | `TESObjectACTI::GetIgnoredBySandbox` (COMMUNITY) | `sse-steam-1-7-104` / `0x267690` / 12 | - | - | mapped | - | - |
-| - | `BGSTalkingActivator::GetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2676a0` / 8 | - | - | mapped | - | - |
+| `contrib_bgstalkingactivator/BGSTalkingActivator` | `BGSTalkingActivator::GetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2676a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2676a0.json` | matched | full | - |
 | `leaves/ReturnLeaf2676b0` | `ReturnLeaf2676b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2676b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2676b0.json` | matched | family | open |
 | - | `TESObjectACTI::GetWaterType` (COMMUNITY) | `sse-steam-1-7-104` / `0x2677d0` / 8 | - | - | mapped | - | - |
 | `forms/BGSOpenCloseForm` | `Leaf2677e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2677e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2677e0.json` | matched | full | open |
 | `forms/BGSOpenCloseForm` | `Leaf2677f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2677f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2677f0.json` | matched | full | open |
 | - | `TESBoundAnimObject::IsBoundAnimObject` (COMMUNITY) | `sse-steam-1-7-104` / `0x267800` / 3 | - | - | mapped | - | - |
-| - | `BGSTalkingActivator::SetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x267810` / 8 | - | - | mapped | - | - |
+| `contrib_bgstalkingactivator/BGSTalkingActivator` | `BGSTalkingActivator::SetObjectVoiceType` (COMMUNITY) | `sse-steam-1-7-104` / `0x267810` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x267810.json` | matched | full | - |
 | `fields/FieldLeaf268670` | `FieldLeaf268670::Read` (GUESS) | `sse-steam-1-7-104` / `0x268670` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x268670.json` | matched | family | open |
 | `leaves/Leaf268680` | `Leaf268680::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x268680` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x268680.json` | matched | family | open |
 | `fields/FieldLeaf2686f0` | `FieldLeaf2686f0::Read` (GUESS) | `sse-steam-1-7-104` / `0x2686f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2686f0.json` | matched | family | open |
