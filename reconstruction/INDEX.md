@@ -24660,8 +24660,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/BSLightingShaderMaterialSnow` | `BSLightingShaderMaterialSnow::CopyMembers` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528090` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1528090.json` | matched | full | open |
 | `bsengine/BSLightingShaderMaterialSnow` | `BSLightingShaderMaterialSnow::ComputeCRC32` (COMMUNITY) | `sse-steam-1-7-104` / `0x15280d0` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15280d0.json` | matched | full | open |
 | `bsengine/BSLightingShaderMaterialSnow` | `BSLightingShaderMaterialSnow::GetFeature` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528110` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1528110.json` | matched | full | open |
-| - | `BSLightingShaderMaterialSnow::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528120` / 46 | - | - | mapped | - | - |
-| - | `BSLightingShaderMaterialSnow::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528160` / 46 | - | - | mapped | - | - |
+| `bsengine/BSLightingShaderMaterialSnow` | `BSLightingShaderMaterialSnow::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528120` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1528120.json` | matched | full | - |
+| `bsengine/BSLightingShaderMaterialSnow` | `BSLightingShaderMaterialSnow::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528160` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1528160.json` | matched | full | - |
 | - | `BSLightingShaderMaterialMultiLayerParallax::Ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0x15281a0` / 102 | - | - | mapped | - | - |
 | - | `BSLightingShaderMaterialMultiLayerParallax::Create` (COMMUNITY) | `sse-steam-1-7-104` / `0x1528330` / 95 | - | - | mapped | - | - |
 | - | `BSLightingShaderMaterialMultiLayerParallax::ComputeCRC32` (COMMUNITY) | `sse-steam-1-7-104` / `0x15284c0` / 211 | - | - | mapped | - | - |

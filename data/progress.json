@@ -225710,7 +225710,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), joined through Address Library id 106825. RVA 0x1527fc0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1527fc0.json",
       "report": "reports/sse-steam-1-7-104/0x1527fc0.json"
     },
     {
@@ -225724,7 +225724,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 2. RVA 0x1528090; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1528090.json",
       "report": "reports/sse-steam-1-7-104/0x1528090.json"
     },
     {
@@ -225738,7 +225738,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 4. RVA 0x15280d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x15280d0.json",
       "report": "reports/sse-steam-1-7-104/0x15280d0.json"
     },
     {
@@ -225752,7 +225752,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 6. RVA 0x1528110; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1528110.json",
       "report": "reports/sse-steam-1-7-104/0x1528110.json"
     },
     {
@@ -225760,24 +225760,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22184224,
       "size": 46,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderMaterialSnow::SaveBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 12. RVA 0x1528120; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1528120.json",
+      "report": "reports/sse-steam-1-7-104/0x1528120.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1528160",
       "build_id": "sse-steam-1-7-104",
       "rva": 22184288,
       "size": 46,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderMaterialSnow::LoadBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 13. RVA 0x1528160; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1528160.json",
+      "report": "reports/sse-steam-1-7-104/0x1528160.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15281a0",
@@ -430584,7 +430586,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:10:36Z",
+  "updated_at": "2026-11-18T11:24:16Z",
   "work_items": [
     {
       "id": "pin-target",
