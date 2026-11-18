@@ -77569,7 +77569,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x213ab0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x213ab0.json",
       "report": "reports/sse-steam-1-7-104/0x213ab0.json"
     },
     {
@@ -195209,7 +195209,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 24. RVA 0xfce870; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfce870.json",
       "report": "reports/sse-steam-1-7-104/0xfce870.json"
     },
     {
@@ -195257,12 +195257,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16575152,
       "size": 18,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSMultiBoundAABB::SetCenter",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 45. RVA 0xfceab0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfceab0.json",
+      "report": "reports/sse-steam-1-7-104/0xfceab0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfceba0",
@@ -430599,7 +430600,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:55:48Z",
+  "updated_at": "2026-11-18T11:57:50Z",
   "work_items": [
     {
       "id": "pin-target",

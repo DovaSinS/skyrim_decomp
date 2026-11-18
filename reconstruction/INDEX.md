@@ -21228,7 +21228,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/LeafForwardfce8b0` | `LeafForwardfce8b0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfce8b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce8b0.json` | matched | family | open |
 | - | `BSMultiBoundAABB::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xfce8c0` / 19 | - | - | mapped | - | - |
 | `bsengine/BSMultiBoundAABB` | `BSMultiBoundAABB::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceaa0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfceaa0.json` | matched | full | open |
-| - | `BSMultiBoundAABB::SetCenter` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceab0` / 18 | - | - | mapped | - | - |
+| `bsengine/BSMultiBoundAABB` | `BSMultiBoundAABB::SetCenter` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceab0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfceab0.json` | matched | full | - |
 | - | `BSMultiBoundAABB::Unk_28` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceba0` / 276 | - | - | mapped | - | - |
 | - | `BSMultiBoundAABB::Unk_2A` (COMMUNITY) | `sse-steam-1-7-104` / `0xfcf0a0` / 163 | - | - | mapped | - | - |
 | - | `BSMultiBoundAABB::Unk_2B` (COMMUNITY) | `sse-steam-1-7-104` / `0xfcf150` / 65 | - | - | mapped | - | - |
