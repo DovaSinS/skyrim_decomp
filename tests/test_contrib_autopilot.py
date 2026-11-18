@@ -997,6 +997,21 @@ class RuntimeEffects(unittest.TestCase):
             self.assertEqual(self.runtime.functions(dict(tree=str(self.root), files=[dict(path=cpp)])),
                              {cpp: [0x1000, 0x2000, 0x3000]})
 
+    def test_header_rva_accepted_in_another_unit_is_not_a_regression_target(self):
+        cpp = 'reconstruction/synth/Synth.cpp'
+        unit = self.root / cpp
+        unit.parent.mkdir(parents=True)
+        unit.write_text('// RVA 0x1000; RVA 0x2000; RVA 0x3000.\nint Synthetic() { return 0; }\n')
+        for name, compiled in (('0x2000', cpp), ('0x3000', 'reconstruction/synth_other/Synth.cpp')):
+            ap.save_json(self.root / 'reports' / (name + '.json'), dict(source=dict(compiled=compiled, translation_unit=[compiled])))
+        ap.save_json(self.root / 'data/progress.json', dict(target_build_id='synthetic', functions=[
+            dict(build_id='synthetic', rva=0x1000, status='mapped'),
+            dict(build_id='synthetic', rva=0x2000, status='matched', report='reports/0x2000.json'),
+            dict(build_id='synthetic', rva=0x3000, status='matched', report='reports/0x3000.json')]))
+        with patch.object(ap, 'screen_tree', return_value=[]):
+            self.assertEqual(self.runtime.functions(dict(tree=str(self.root), files=[dict(path=cpp)])),
+                             {cpp: [0x1000, 0x2000]})
+
     def test_finish_accounts_for_preintegration_failures_and_missing_members(self):
         rev = self.state.revision(pr())
         rev['completed']['functions'] = {'synthetic.cpp': [0x1000, 0x2000, 0x3000]}
@@ -1151,6 +1166,27 @@ class RuntimeEffects(unittest.TestCase):
         self.assertNotIn('resume', argv)
         self.assertEqual(output.read_text(), 'SAFE\nsynthetic\n')
         self.assertEqual(self.state.data['days'][self.state.today]['reviews'], 1)
+
+    def test_model_response_path_has_no_symlink_when_output_is_in_a_symlinked_store(self):
+        store = self.root / 'shared-store'
+        store.mkdir()
+        tree = self.root / 'tree'
+        tree.mkdir()
+        (tree / 'reviews').symlink_to(store, target_is_directory=True)
+        output = tree / 'reviews' / 'review.md'
+        seen = []
+        def command(argv, **kwargs):
+            response = Path(argv[argv.index('--output-last-message') + 1])
+            seen.append(response)
+            # codex refuses any path containing a symlink component.
+            self.assertEqual(os.path.realpath(response.parent), str(response.parent))
+            response.write_text('APPROVE\nsynthetic\n')
+            return subprocess.CompletedProcess(argv, 0, b'', b'')
+        with patch.object(self.runtime, 'command', side_effect=command):
+            value = self.runtime.model(tree, 'gpt-6.1-sol', 'synthetic', output)
+        self.assertEqual(value, 'APPROVE\nsynthetic\n')
+        self.assertEqual((store / 'review.md').read_text(), value)
+        self.assertFalse(seen[0].exists())
 
     def test_all_dropped_receipt_is_terminal_and_not_a_fake_acceptance(self):
         tree = self.root / 'tree'

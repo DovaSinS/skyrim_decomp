@@ -569,6 +569,14 @@ class Runtime:
                     # A plural header lists every function, including members with no singular note.
                     for match in re.finditer(r'\bRVAs?\s+((?:0x[0-9a-fA-F]+)(?:(?:\s*,\s*(?:and\s+)?|\s+(?:and\s+)?)(?:0x[0-9a-fA-F]+))*)', path.read_text()):
                         rvas.update(int(value, 16) for value in re.findall(r'0x[0-9a-fA-F]+', match[1]))
+        # A header line can name an RVA whose accepted record compiles a different unit. That
+        # claim is not a regression check of this source, and it fails with or without the PR.
+        for cpp, rvas in units.items():
+            for rva in list(rvas):
+                fn = by_rva.get(rva)
+                if fn and fn.get('status') == 'matched' and fn.get('report') \
+                        and read_json(tree / fn['report'])['source']['compiled'] != cpp:
+                    rvas.discard(rva)
         changed = {f['path'] for f in fetched['files']}
         # An edit to a shared header can stale accepted functions in other units too.
         for fn in data['functions']:
@@ -594,7 +602,12 @@ class Runtime:
     def model(self, tree, model, prompt, output):
         self.state.reserve('reviews')  # Includes the Engineer AI screen and failed/retried runs.
         output.parent.mkdir(parents=True, exist_ok=True)
-        temporary = output.with_name(output.name + '.' + uuid.uuid4().hex + '.response')
+        # codex opens --output-last-message without following symlinks, and the live tree's
+        # .local/reviews is a symlink to the shared store. Write beside the tree through a
+        # fully resolved path, then link into the store.
+        scratch = tree.resolve().parent / 'model-responses'
+        scratch.mkdir(exist_ok=True)
+        temporary = scratch / (output.name + '.' + uuid.uuid4().hex + '.response')
         self.command(['codex', 'exec', '--ignore-user-config', '--ignore-rules', '--ephemeral',
                       '--model', model, '--sandbox', 'read-only', '-c', 'approval_policy="never"',
                       '--cd', str(tree), '--output-last-message', str(temporary), '-'],
