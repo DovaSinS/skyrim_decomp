@@ -77,6 +77,24 @@ class RecordTests(GateFixture, unittest.TestCase):
         self.assertEqual((self.root / 'data/progress.json').read_bytes(), snapshot)
 
 
+    def test_a_record_pointing_at_an_immutable_unit_map_carries_the_map_and_its_history(self):
+        import symbol_map
+        from test_match_gate import MAP
+        smap = json.loads((self.root / MAP).read_text())
+        blob = symbol_map.serialize(smap)
+        name = f'reports/synthetic-fixture/unit-symbols/{record.hashlib.sha256(blob).hexdigest()}.json'
+        symbol_map.create(self.root, name, smap)
+        pinned = record.hashlib.sha256((self.root / name).read_bytes()).hexdigest()
+        self.record['symbol_map'] = {'path': name, 'sha256': pinned}
+        for run in self.record['runs']:
+            run['report']['symbol_map_sha256'] = pinned
+        self.save_record(keep_build=True)
+        out = self.apply()
+        self.assertEqual(out['recorded'], [self.fn['rva']])
+        self.assertIn(name, out['files'])
+        self.assertIn(symbol_map.history_name(name), out['files'])
+        self.assertNotIn(MAP, out['files'])
+
     def test_grown_unit_rebinds_an_already_matched_function_and_a_failure_restores_it(self):
         self.apply()
         # A later stacked PR grows the unit: the digest changes, the old approval is stale.

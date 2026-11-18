@@ -29,6 +29,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_index  # noqa: E402
+import symbol_map  # noqa: E402
 from check import _json_or_none  # noqa: E402
 from check import (ROOT, DIGEST_METHOD, REVIEW_RECORD_SCHEMA, TOOLCHAIN_PIN, file_sha256,  # noqa: E402
                    record_code_section, review_record_path, validate_match, validate_review)
@@ -203,6 +204,10 @@ def apply(root, build_id, rvas, review_blob, *, model, task_id, author=None, rec
         changed.append(candidate)
         out['recorded'].append(rva)
         out['files'] += [report, review_record_path(fn)]
+        # A unit map is immutable and content-addressed, so a record that points at one must carry it.
+        for rel in (record['symbol_map']['path'], symbol_map.history_name(record['symbol_map']['path'])):
+            if '/unit-symbols/' in rel and (root / rel).is_file() and rel not in out['files']:
+                out['files'].append(rel)
     if changed:
         data['updated_at'] = when.strftime('%Y-%m-%dT%H:%M:%SZ')
         (root / PROGRESS).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')

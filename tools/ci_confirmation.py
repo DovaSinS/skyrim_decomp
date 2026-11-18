@@ -98,6 +98,8 @@ def pr_check_evidence(root, run, report, row, map_status, first_host):
     """
     require(map_status == 'pass' and row.get('status') == 'pass' and row.get('result') == 'hash-match',
             'the hash run did not pass this function')
+    require(isinstance(row.get('symbols'), list) and row['symbols'] and all(isinstance(n, str) for n in row['symbols']),
+            'the hash run names no matching function')
     require(is_sha(run.get('head_sha')) and report.get('head_sha') == run['head_sha'],
             'artifact belongs to another revision than the run')
     require(is_sha(report.get('base_sha')) and 'error' not in report and report.get('toolset') == 'MATCH',
@@ -111,6 +113,7 @@ def pr_check_evidence(root, run, report, row, map_status, first_host):
                 build_id=manifest['build_id'], rva=row['rva'], unit=row['unit'], status='pass',
                 map_status=map_status, result=row['result'], toolset='MATCH',
                 compiler_pins_sha256=report.get('compiler_pins_sha256'),
+                symbols=sorted(row['symbols']),
                 source_sha256=row.get('source_sha256'), recipe_sha256=row.get('recipe_sha256'),
                 target=target, normalized_sha256=target['normalized_sha256'],
                 layout_sha256=target['layout_sha256'], first_host=first_host)
@@ -148,6 +151,10 @@ def validate_pr_check(root, record, fn, target, c):
             and c.get('layout_sha256') == row['layout_sha256'], 'target binding differs')
     require(c.get('source_sha256') == record['source']['digest']
             and c.get('recipe_sha256') == record['recipe']['sha256'], 'source or recipe differs')
+    # CI found the function by hash, so it must be the one the first host's comparator bound.
+    symbols = {(run['report'].get('function') or {}).get('symbol') for run in record['runs']}
+    require(isinstance(c.get('symbols'), list) and len(symbols) == 1 and symbols <= set(c['symbols']),
+            'CI matched another function than the first host compared')
     require(isinstance(c.get('first_host'), dict), 'first host is not named')
     first_host_check(record, c)
 

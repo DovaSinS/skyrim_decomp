@@ -41,7 +41,8 @@ class PrCheckEvidence(GateFixture, unittest.TestCase):
         self.report = dict(head_sha=HEAD, base_sha=self.base, toolset='MATCH',
                            compiler_pins_sha256=c.sha((self.root / PIN).read_bytes()))
         self.ci_row = dict(rva=hex(self.fn['rva']), unit=self.record['source']['compiled'], result='hash-match',
-                           status='pass', source_sha256=self.record['source']['digest'],
+                           status='pass', symbols=[self.record['runs'][0]['report']['function']['symbol']],
+                           source_sha256=self.record['source']['digest'],
                            recipe_sha256=self.record['recipe']['sha256'])
         self.first = dict(host_id='mac-wine', machine='maintainer-mac', loader='wine', os='macos')
         self.install()
@@ -92,6 +93,18 @@ class PrCheckEvidence(GateFixture, unittest.TestCase):
             self.evidence(report=dict(self.report, error='ValueError'))
         with self.assertRaisesRegex(ValueError, 'verified toolset'):
             self.evidence(report=dict(self.report, toolset='MISMATCH'))
+
+    def test_ci_must_have_matched_the_function_the_first_host_compared(self):
+        self.record['ci_confirmation']['symbols'] = ['?OtherFunction@@YAXXZ']
+        self.save_record()
+        with self.assertRaisesRegex(ValueError, 'another function'):
+            check.validate_match(self.fn, self.target, root=self.root)
+        symbol = self.record['runs'][0]['report']['function']['symbol']
+        self.record['ci_confirmation']['symbols'] = ['?OtherFunction@@YAXXZ', symbol]
+        self.save_record()
+        check.validate_match(self.fn, self.target, root=self.root)
+        with self.assertRaisesRegex(ValueError, 'names no matching function'):
+            self.evidence(row=dict(self.ci_row, symbols=[]))
 
     def test_failed_job_and_other_workflow_are_refused(self):
         for key, value in (('conclusion', 'failure'), ('workflow', c.WORKFLOW), ('event', 'workflow_dispatch'),

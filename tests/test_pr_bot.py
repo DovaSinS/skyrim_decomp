@@ -152,6 +152,9 @@ class FakeBot(pr_bot.Bot):
     def classify_debt(self, host2, *a):
         return host2
 
+    def settle_ci_debt(self, host1):
+        return host1
+
     def build_records(self, *a):
         return Path('/nonexistent'), set(self.refused)
 
@@ -439,6 +442,99 @@ class Host1Tests(unittest.TestCase):
         self.files.pop('hash-result.json')
         with self.assertRaises(pr_bot.Stop):
             self.host1()
+
+
+class NewFunctionRecordTests(unittest.TestCase):
+    """Records for functions that have no accepted record yet: a public unit map is frozen first."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.work = Path(self.tmp.name)
+        self.tree = self.work / 'tree'
+        self.task = self.tree / '.local/tasks/prbot-7-aaaaaaaa-0'
+        self.task.mkdir(parents=True)
+        self.fns = [{'rva': '0x10', 'size': 8, 'symbol': '?F@@YAXXZ'}, {'rva': '0x20', 'size': 8, 'symbol': '?G@@YAXXZ'}]
+        self.set_task('symbols.json')
+        (self.tree / 'data').mkdir()
+        (self.tree / 'data/progress.json').write_text(json.dumps({'functions': [
+            {'rva': 0x10, 'status': 'mapped'}, {'rva': 0x20, 'status': 'matched'}]}))
+        self.calls, self.bind_code, self.record_ok = [], 0, {0x10: True, 0x20: True}
+        bot = pr_bot.Bot(root=ROOT, work=self.work)
+        bot.tree, bot.run = self.tree, self.fake_run
+        self.bot = bot
+        self.state = pr_bot.State(self.work / 's', 7, HEAD)
+        row = {'status': 'pass', 'symbols': ['?F@@YAXXZ']}
+        self.state.set('ci', dict(run={}, report={}, rows={'16': row, '32': row}, map={'16': 'pass', '32': 'pass'}))
+
+    def set_task(self, symbols):
+        (self.task / 'task.json').write_text(json.dumps({'task_id': 'prbot-7-aaaaaaaa-0', 'build_id': 'b',
+                                                        'symbols': symbols, 'functions': self.fns}))
+
+    def fake_run(self, argv, **kw):
+        argv = [str(a) for a in argv]
+        self.calls.append(argv)
+        code = 0
+        if argv[1].endswith('bind.py'):
+            code = self.bind_code
+            if not code:
+                self.set_task('reports/b/unit-symbols/' + 'c' * 64 + '.json')
+        if argv[1] == '-c':
+            rva = json.loads((Path(argv[4]) / 'task.json').read_text())['functions'][0]['rva']
+            if self.record_ok[int(rva, 0)]:
+                dest = Path(argv[5]) / 'b' / f'{rva}.json'
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text('{}')
+            else:
+                code = 1
+        return subprocess.CompletedProcess(argv, code, b'', b'')
+
+    def build(self, rvas=(0x10, 0x20)):
+        return self.bot.build_records('7-aaaaaaaa/records', {}, set(rvas), self.state)
+
+    def seen(self, name):
+        return [c for c in self.calls if any(name in a for a in c[:2])]
+
+    def test_a_private_symbol_map_is_frozen_once_before_any_confirmation(self):
+        out, failed = self.build()
+        self.assertEqual(failed, set())
+        self.assertEqual(len(self.seen('bind.py')), 1)
+        self.assertIn('--unit-maps', self.seen('bind.py')[0])
+        self.assertLess(self.calls.index(self.seen('bind.py')[0]), self.calls.index(self.seen('wine_confirm.py')[0]))
+        sub = json.loads((self.task / 'confirm-0x10/task.json').read_text())
+        self.assertTrue(sub['symbols'].startswith('reports/b/unit-symbols/'))
+        self.assertEqual(len(self.seen('wine_confirm.py')), 2)
+
+    def test_an_already_public_map_is_not_rebound(self):
+        self.set_task('reports/b/unit-symbols/' + 'd' * 64 + '.json')
+        self.build()
+        self.assertEqual(self.seen('bind.py'), [])
+
+    def test_a_failed_bind_refuses_every_function_of_the_unit_without_confirming_any(self):
+        self.bind_code = 1
+        out, failed = self.build()
+        self.assertEqual(failed, {0x10, 0x20})
+        self.assertEqual(self.seen('wine_confirm.py'), [])
+
+    def test_a_record_the_validator_refuses_fails_only_that_function(self):
+        self.record_ok[0x10] = False
+        out, failed = self.build()
+        self.assertEqual(failed, {0x10})
+
+    def test_a_function_without_a_ci_row_is_refused_not_waited_for(self):
+        self.state.data['ci']['rows'].pop('16')
+        out, failed = self.build()
+        self.assertEqual(failed, {0x10})
+
+    def test_a_stale_record_file_never_stands_in_for_a_refused_one(self):
+        out, _ = self.build()
+        self.record_ok[0x10] = False
+        out, failed = self.build()
+        self.assertEqual(failed, {0x10})
+
+    def test_ci_preexisting_fail_is_debt_only_for_a_function_matched_at_base(self):
+        got = self.bot.settle_ci_debt({0x10: 'preexisting-fail', 0x20: 'preexisting-fail', 0x30: 'pass'})
+        self.assertEqual(got, {0x10: 'fail', 0x20: 'preexisting-fail', 0x30: 'pass'})
 
 
 class HistoryTests(unittest.TestCase):
