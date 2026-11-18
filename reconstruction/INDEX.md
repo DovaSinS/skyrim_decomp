@@ -8136,13 +8136,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/AdditionalInterfacePrefixLayout` | `EnchantmentItemAdditionalStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x14e614` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e614.json` | matched | full | open |
 | `bsengine/AdditionalInterfacePrefixLayout` | `EnchantmentItemAdditionalStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x14e620` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e620.json` | matched | full | open |
 | `forms/EnchantmentItem` | `EnchantmentItem::GetAssociatedSkill` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e740` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e740.json` | matched | full | open |
-| - | `EnchantmentItem::GetCastingType` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e750` / 7 | - | - | mapped | - | - |
+| `contrib_enchantmentitem/EnchantmentItem` | `EnchantmentItem::GetCastingType` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e750` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e750.json` | matched | full | - |
 | `leaves/Leaf14e760` | `Leaf14e760::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e760` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e760.json` | matched | full | checked |
-| - | `EnchantmentItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e770` / 8 | - | - | mapped | - | - |
+| `contrib_enchantmentitem/EnchantmentItem` | `EnchantmentItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e770` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e770.json` | matched | full | - |
 | `magic/EnchantmentItem` | `EnchantmentItem::GetData1` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e780` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e780.json` | matched | full | open |
 | `leaves/Leaf14e790` | `Leaf14e790::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e790` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e790.json` | matched | full | checked |
-| - | `EnchantmentItem::GetDelivery` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7a0` / 7 | - | - | mapped | - | - |
-| - | `EnchantmentItem::GetSpellType` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7b0` / 7 | - | - | mapped | - | - |
+| `contrib_enchantmentitem/EnchantmentItem` | `EnchantmentItem::GetDelivery` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7a0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e7a0.json` | matched | full | - |
+| `contrib_enchantmentitem/EnchantmentItem` | `EnchantmentItem::GetSpellType` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7b0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e7b0.json` | matched | full | - |
 | `magic/MagicItem` | `MagicItem::IsMedicine` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e7c0.json` | matched | full | open |
 | `contrib_magicitem/MagicItem` | `MagicItem::IsPoison` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e7d0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e7d0.json` | matched | full | - |
 | `leaves/Leaf14e830` | `Leaf14e830::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e830` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e830.json` | matched | full | checked |
