@@ -179534,7 +179534,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeed3c0.json",
       "id": "sse-steam-1-7-104-0xeed3c0",
       "name": "NiSwitchNode::LoadBinary",
       "name_origin": "COMMUNITY",
@@ -179576,7 +179576,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeed490.json",
       "id": "sse-steam-1-7-104-0xeed490",
       "name": "NiSwitchNode::SaveBinary",
       "name_origin": "COMMUNITY",
@@ -179590,7 +179590,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeed530.json",
       "id": "sse-steam-1-7-104-0xeed530",
       "name": "NiSwitchNode::IsEqual",
       "name_origin": "COMMUNITY",
@@ -179604,7 +179604,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeed6e0.json",
       "id": "sse-steam-1-7-104-0xeed6e0",
       "name": "NiSwitchNode::AttachChild",
       "name_origin": "COMMUNITY",
@@ -179618,7 +179618,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeedae0.json",
       "id": "sse-steam-1-7-104-0xeedae0",
       "name": "NiSwitchNode::SetAt1",
       "name_origin": "COMMUNITY",
@@ -179635,52 +179635,56 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15653952,
       "size": 341,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiSwitchNode::UpdateDownwardPass",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 44. RVA 0xeedc40; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xeedc40.json",
+      "report": "reports/sse-steam-1-7-104/0xeedc40.json"
     },
     {
       "id": "sse-steam-1-7-104-0xeedda0",
       "build_id": "sse-steam-1-7-104",
       "rva": 15654304,
       "size": 363,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiSwitchNode::UpdateSelectedDownwardPass",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 45. RVA 0xeedda0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xeedda0.json",
+      "report": "reports/sse-steam-1-7-104/0xeedda0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xeedf20",
       "build_id": "sse-steam-1-7-104",
       "rva": 15654688,
       "size": 339,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiSwitchNode::UpdateRigidDownwardPass",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 46. RVA 0xeedf20; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xeedf20.json",
+      "report": "reports/sse-steam-1-7-104/0xeedf20.json"
     },
     {
       "id": "sse-steam-1-7-104-0xeee080",
       "build_id": "sse-steam-1-7-104",
       "rva": 15655040,
       "size": 110,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiSwitchNode::UpdateWorldBound",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 47. RVA 0xeee080; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xeee080.json",
+      "report": "reports/sse-steam-1-7-104/0xeee080.json"
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xeee100.json",
       "id": "sse-steam-1-7-104-0xeee100",
       "name": "NiSwitchNode::OnVisible",
       "name_origin": "COMMUNITY",
@@ -430685,7 +430689,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T19:08:03Z",
+  "updated_at": "2026-11-18T19:38:11Z",
   "work_items": [
     {
       "id": "pin-target",

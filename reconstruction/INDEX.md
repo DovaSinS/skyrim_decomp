@@ -20001,10 +20001,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `netimmerse/NiSwitchNode` | `NiSwitchNode::IsEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0xeed530` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeed530.json` | matched | full | open |
 | `netimmerse/NiSwitchNode` | `NiSwitchNode::AttachChild` (COMMUNITY) | `sse-steam-1-7-104` / `0xeed6e0` / 143 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeed6e0.json` | matched | full | open |
 | `netimmerse/NiSwitchNode` | `NiSwitchNode::SetAt1` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedae0` / 161 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeedae0.json` | matched | full | open |
-| - | `NiSwitchNode::UpdateDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedc40` / 341 | - | - | mapped | - | - |
-| - | `NiSwitchNode::UpdateSelectedDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedda0` / 363 | - | - | mapped | - | - |
-| - | `NiSwitchNode::UpdateRigidDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedf20` / 339 | - | - | mapped | - | - |
-| - | `NiSwitchNode::UpdateWorldBound` (COMMUNITY) | `sse-steam-1-7-104` / `0xeee080` / 110 | - | - | mapped | - | - |
+| `netimmerse/NiSwitchNode` | `NiSwitchNode::UpdateDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedc40` / 341 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeedc40.json` | matched | full | - |
+| `netimmerse/NiSwitchNode` | `NiSwitchNode::UpdateSelectedDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedda0` / 363 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeedda0.json` | matched | full | - |
+| `netimmerse/NiSwitchNode` | `NiSwitchNode::UpdateRigidDownwardPass` (COMMUNITY) | `sse-steam-1-7-104` / `0xeedf20` / 339 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeedf20.json` | matched | full | - |
+| `netimmerse/NiSwitchNode` | `NiSwitchNode::UpdateWorldBound` (COMMUNITY) | `sse-steam-1-7-104` / `0xeee080` / 110 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeee080.json` | matched | full | - |
 | `netimmerse/NiSwitchNode` | `NiSwitchNode::OnVisible` (COMMUNITY) | `sse-steam-1-7-104` / `0xeee100` / 170 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeee100.json` | matched | full | open |
 | `unmapped/leaves/LeafAddresseee370` | `NiSwitchNode::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xeee370` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeee370.json` | matched | family | open |
 | `netimmerse/NiSwitchNode` | `NiSwitchNode::AsSwitchNode` (COMMUNITY) | `sse-steam-1-7-104` / `0xeee380` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeee380.json` | matched | full | open |
