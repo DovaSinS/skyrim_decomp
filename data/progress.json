@@ -176756,7 +176756,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xe7b050.json",
       "report": "reports/sse-steam-1-7-104/0xe7b050.json"
     },
     {
@@ -176782,7 +176782,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xe7b080.json",
       "report": "reports/sse-steam-1-7-104/0xe7b080.json"
     },
     {
@@ -430605,7 +430605,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T12:28:27Z",
+  "updated_at": "2026-11-18T12:34:11Z",
   "work_items": [
     {
       "id": "pin-target",
