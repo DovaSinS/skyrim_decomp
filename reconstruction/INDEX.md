@@ -17403,8 +17403,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/LockedSource_F068_950e70` | `p117_950e70::LockedSource_F068_950e70::Remove` (GUESS) | `sse-steam-1-7-104` / `0x950e70` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x950e70.json` | mapped, record awaiting review | - | - |
 | - | `MagicFavorites::SetFavorite` (COMMUNITY) | `sse-steam-1-7-104` / `0x951050` / 241 | - | - | mapped | - | - |
 | - | `MagicFavorites::RemoveFavorite` (COMMUNITY) | `sse-steam-1-7-104` / `0x951150` / 213 | - | - | mapped | - | - |
-| - | `MagicItemData::GetName` (COMMUNITY) | `sse-steam-1-7-104` / `0x951d00` / 9 | - | - | mapped | - | - |
-| - | `MagicItemData::GetEquipState` (COMMUNITY) | `sse-steam-1-7-104` / `0x951d10` / 22 | - | - | mapped | - | - |
+| `contrib_magicitemdata/MagicItemData` | `MagicItemData::GetName` (COMMUNITY) | `sse-steam-1-7-104` / `0x951d00` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x951d00.json` | matched | full | - |
+| `contrib_magicitemdata/MagicItemData` | `MagicItemData::GetEquipState` (COMMUNITY) | `sse-steam-1-7-104` / `0x951d10` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x951d10.json` | matched | full | - |
 | `small202_6e9f7782/MagicItemData` | `MagicItemData::GetFavorite` (COMMUNITY) | `sse-steam-1-7-104` / `0x951e40` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x951e40.json` | matched | full | open |
 | `magic/MagicItemData` | `MagicItemData::GetEnabled` (COMMUNITY) | `sse-steam-1-7-104` / `0x951e80` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x951e80.json` | matched | full | open |
 | `leaves/TableStoreLeaf9557c0` | `TableStoreLeaf9557c0::~TableStoreLeaf9557c0` (GUESS) | `sse-steam-1-7-104` / `0x9557c0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9557c0.json` | matched | family | open |
