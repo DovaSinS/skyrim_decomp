@@ -11261,7 +11261,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/storage/StorageInit43ac30` | `StorageInit43ac30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x43ac30` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43ac30.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress43ac70` | `BSFaceGenNiNode::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x43ac70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43ac70.json` | matched | family | open |
 | `skyrim_shared/facegen/BSFaceGenKeyframeMultiple` | `BSFaceGenKeyframeMultiple::GetExpressionName` (COMMUNITY) | `sse-steam-1-7-104` / `0x43aca0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43aca0.json` | matched | full | open |
-| - | `BSFaceGenKeyframeMultiple::GetModifierName` (COMMUNITY) | `sse-steam-1-7-104` / `0x43acc0` / 23 | - | - | mapped | - | - |
+| `skyrim_shared/facegen/BSFaceGenKeyframeMultiple_e493fee3` | `BSFaceGenKeyframeMultiple::GetModifierName` (COMMUNITY) | `sse-steam-1-7-104` / `0x43acc0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43acc0.json` | matched | full | - |
 | `skyrim_shared/facegen/BSFaceGenKeyframeMultiple` | `BSFaceGenKeyframeMultiple::GetPhonemeName` (COMMUNITY) | `sse-steam-1-7-104` / `0x43ace0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43ace0.json` | matched | full | open |
 | - | `BSFaceGenKeyframeMultiple::GetCustomName` (COMMUNITY) | `sse-steam-1-7-104` / `0x43ad00` / 22 | - | - | mapped | - | - |
 | `unmapped/storage/StorageInit43e1d0` | `StorageInit43e1d0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x43e1d0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x43e1d0.json` | matched | family | open |
