@@ -9,6 +9,10 @@ record, flips that one inventory row to `matched` pointing at its own report, an
 one line of reconstruction/INDEX.md. Nothing else in the inventory is touched or regenerated:
 the cost of one acceptance stays proportional to the functions it names.
 
+`build_match_record` is how the bot makes the match record that `--records` supplies: the Mac
+comparator output of one function plus the pr-check.yml `hash` run as the second host, never a
+per-function CI dispatch.
+
 A function is recorded only if the validator accepts the result; anything it refuses is left
 as it was and reported. `--push` commits and pushes to main, and on a non-fast-forward fetches,
 rebases and tries again, re-applying from the new main when the rebase conflicts.
@@ -26,8 +30,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_index  # noqa: E402
 from check import _json_or_none  # noqa: E402
-from check import (ROOT, DIGEST_METHOD, REVIEW_RECORD_SCHEMA, record_code_section,  # noqa: E402
-                   review_record_path, validate_match, validate_review)
+from check import (ROOT, DIGEST_METHOD, REVIEW_RECORD_SCHEMA, TOOLCHAIN_PIN, file_sha256,  # noqa: E402
+                   record_code_section, review_record_path, validate_match, validate_review)
 
 PROGRESS = 'data/progress.json'
 TARGET = 'builds/target.json'
@@ -57,6 +61,72 @@ def review_record(fn, record, model, task_id, blob, when):
         'code_section_sha256': record_code_section(record),
         'naming_findings': [],
     }
+
+
+def assemble_record(root, task, unit, fn, report, build, ci):
+    """A match record: the first host's comparator report verbatim plus the CI host's confirmation."""
+    root = Path(root)
+    rva = fn['rva']
+    record = dict(
+        match_record_schema=3 if 'internal_selector' in fn else 2,
+        function_id=f'{task["build_id"]}-0x{rva:x}',
+        source=dict(translation_unit=unit['closure'], compiled=unit['unit'], digest_method=DIGEST_METHOD,
+                    digest=unit['source_sha256']),
+        recipe=dict(path=task['recipe'], sha256=unit['recipe_sha256']),
+        toolchain_pin=dict(path=TOOLCHAIN_PIN, sha256=file_sha256(root, TOOLCHAIN_PIN)),
+        symbol_map=dict(path=task['symbols_repo'], sha256=hashlib.sha256(Path(task['symbols_local']).read_bytes()).hexdigest()),
+        reproduction='Compile with the pinned recipe and compare with tools/verifier/attempt on a registered '
+                     'first host; the second host is the pr-check.yml hash job of the recorded run, which '
+                     'compiles the same source and checks the published target hashes.',
+        build=build,
+        notes=['Second host: the pr-check hash job (target-hash commitments, no game bytes in CI); '
+               'the first host\'s comparator report is verbatim.'] + list(task.get('record_notes') or []),
+        runs=[dict(compiled_on=unit['first_host']['host_id'], compared_on=unit['first_host']['host_id'],
+                   report=report)])
+    if fn.get('family_metadata'):
+        record.update(fn['family_metadata'])
+    record['ci_confirmation'] = ci
+    return record
+
+
+def build_match_record(root, task_dir, ci_run, out):
+    """Write reports/<build>/0x<rva>.json under `out` for a one-function task the Mac compared.
+
+    `ci_run` is {'run', 'report', 'row', 'map_status'} from the hash run of the reviewed head. Raises
+    ValueError when either host's evidence is missing or the validator refuses the record.
+    """
+    root = Path(root)
+    sys.path[:0] = [str(root / 'tools/verifier'), str(root / 'tools')]
+    import ci_confirm as client
+    import ci_confirmation
+    import lint_reconstruction
+    import pipeline
+    task = pipeline.load_task(task_dir, repo=root)
+    ci_confirmation.require(task['symbols_repo'] is not None and len(task['functions']) == 1,
+                            'a record needs one function and a public symbol map')
+    base = client.base_module()
+    base.REPO = root
+    unit, reports, build = client.local_inputs(root, task, base)
+    fn = task['functions'][0]
+    target = _load(root, TARGET)
+    for name in unit['closure']:
+        ci_confirmation.require(not lint_reconstruction.lint_file(root, name, target['build_id']),
+                                'source lint failed')
+    ci = ci_confirmation.pr_check_evidence(root, ci_run['run'], ci_run['report'], ci_run['row'],
+                                           ci_run['map_status'], unit['first_host'])
+    record = assemble_record(root, task, unit, fn, json.loads(Path(reports[fn['rva']]).read_text()), build, ci)
+    inventory = {f['rva']: f for f in _load(root, PROGRESS)['functions'] if f['build_id'] == task['build_id']}
+    dest = Path(out) / task['build_id'] / f'0x{fn["rva"]:x}.json'
+    scratch = root / 'reports' / task['build_id'] / f'.pr-{fn["rva"]:x}.json'
+    scratch.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        scratch.write_text(json.dumps(record, indent=2, sort_keys=True) + '\n')
+        validate_match(dict(inventory[fn['rva']], report=scratch.relative_to(root).as_posix()), target, root)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        scratch.replace(dest)
+    finally:
+        scratch.unlink(missing_ok=True)
+    return dest
 
 
 def _write_json(path, value):

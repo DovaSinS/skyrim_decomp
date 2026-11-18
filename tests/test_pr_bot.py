@@ -1,4 +1,7 @@
 """tools/pr_bot.py decisions and orchestration, with every host, model and GitHub call stubbed."""
+import contextlib
+import hashlib
+import io
 import json
 from pathlib import Path
 import subprocess
@@ -102,6 +105,8 @@ class FakeBot(pr_bot.Bot):
         self.review_text, self.grep = review, grep
         self.merge_ok = True
         self.landed = None
+        self.refused = set()
+        self.history = None
 
     def run(self, argv, **kw):
         argv = [str(a) for a in argv]
@@ -111,7 +116,7 @@ class FakeBot(pr_bot.Bot):
         return subprocess.CompletedProcess(argv, code, out, b'')
 
     def gh_json(self, *a):
-        return {'id': 99}
+        return {'id': 99, 'headRefOid': HEAD, 'state': 'OPEN'}
 
     def changed_files(self, number):
         self.calls.append(['changed_files'])
@@ -133,26 +138,32 @@ class FakeBot(pr_bot.Bot):
     def leakgrep(self, base, head):
         return self.grep
 
-    def review(self, *a):
-        self.calls.append(['review'])
+    def review(self, number, head, base, functions, *a):
+        self.calls.append(['review', sorted(functions)])
         return self.review_text
 
     def mac_compare(self, units, tag):
         self.calls.append(['mac'])
         return dict(self.h2)
 
-    def host1(self, number, head, functions):
+    def host1(self, number, head, functions, state=None, units=None):
         return dict(self.h1)
 
     def classify_debt(self, host2, *a):
         return host2
 
     def build_records(self, *a):
-        return Path('/nonexistent')
+        return Path('/nonexistent'), set(self.refused)
 
     def record(self, pr, state, rvas):
         self.calls.append(['record', rvas])
         state.set('recorded', True)
+
+    def history_problem(self, base, head):
+        return self.history
+
+    def prepare_tree(self, base):
+        self.calls.append(['prepare_tree'])
 
     def seen(self, *prefix):
         return [c for c in self.calls if c[:len(prefix)] == list(prefix)]
@@ -186,6 +197,21 @@ class ProcessTests(unittest.TestCase):
         bot.process(PR)
         self.assertEqual((len(bot.seen('review')), len(bot.seen('mac'))), (1, 1))
         self.assertEqual(len(bot.seen('gh', 'pr', 'merge')), 1)
+
+    def test_only_what_both_hosts_passed_is_reviewed_and_nothing_else_costs_a_call(self):
+        bot = FakeBot(self.work, h2={0x10: 'pass', 0x20: 'fail'})
+        out = bot.process(PR)
+        self.assertEqual(bot.seen('review'), [['review', [0x10]]])
+        self.assertEqual(out['verdicts'], {'0x10': 'matched', '0x20': 'fail:host2'})
+        other = FakeBot(self.work / 'n', h1={0x10: 'fail', 0x20: 'fail'})
+        other.process(PR)
+        self.assertEqual((other.seen('review'), other.seen('gh', 'pr', 'merge')), ([], []))
+
+    def test_a_regression_of_a_function_outside_the_pr_blocks_it(self):
+        bot = FakeBot(self.work, h1={0x10: 'pass', 0x20: 'pass', 0x99: 'regressed'})
+        out = bot.process(PR)
+        self.assertEqual(out['blocked'], 'regression')
+        self.assertEqual((bot.seen('review'), bot.seen('gh', 'pr', 'merge')), ([], []))
 
     def test_scope_rejection_never_compiles_reviews_or_merges(self):
         bot = FakeBot(self.work, files=[{'filename': '.github/workflows/pr-check.yml', 'status': 'modified'}])
@@ -227,13 +253,69 @@ class ProcessTests(unittest.TestCase):
         self.assertTrue(out['merge'])
         self.assertEqual((bot.seen('gh', 'pr', 'merge'), bot.seen('gh', 'pr', 'comment'), bot.seen('record')), ([], [], []))
 
-    def test_stacked_pr_whose_content_already_landed_is_closed_not_merged(self):
+    def test_stacked_pr_whose_content_already_landed_is_marked_merged_with_a_tree_neutral_merge(self):
         bot = FakeBot(self.work)
         bot.landed = []
         out = bot.process(PR)
         self.assertFalse(out['merge'])
         self.assertEqual((bot.seen('mac'), bot.seen('review'), bot.seen('gh', 'pr', 'merge')), ([], [], []))
-        self.assertEqual(len(bot.seen('gh', 'pr', 'close')), 1)
+        merge = bot.seen('git', 'merge', '-s', 'ours', '--no-ff')
+        self.assertEqual(len(merge), 1)
+        self.assertEqual(merge[0][-1], HEAD)
+        self.assertIn('Co-authored-by: alice <99+alice@users.noreply.github.com>', merge[0][-2])
+        self.assertEqual(len(bot.seen('git', 'push', '--quiet', 'origin', 'HEAD:main')), 1)
+        self.assertEqual(len(bot.seen('gh', 'pr', 'comment')), 1)
+        self.assertEqual(bot.seen('record'), [])
+        before = len(bot.calls)
+        bot.process(PR)
+        self.assertEqual(len(bot.calls), before)
+
+    def test_landed_pr_with_unmergeable_history_stays_open_and_nothing_is_pushed(self):
+        bot = FakeBot(self.work)
+        bot.landed = []
+        bot.history = 'leak'
+        bot.process(PR)
+        self.assertEqual((bot.seen('git', 'merge'), bot.seen('git', 'push')), ([], []))
+        self.assertIn('stays open', bot.seen('gh', 'pr', 'comment')[0][-1])
+
+    def test_landed_pr_whose_head_moved_starts_over(self):
+        bot = FakeBot(self.work)
+        bot.landed = []
+        bot.gh_json = lambda *a: {'id': 99, 'headRefOid': 'c' * 40, 'state': 'OPEN'}
+        with self.assertRaises(pr_bot.Stop):
+            bot.process(PR)
+        self.assertEqual(bot.seen('git', 'merge'), [])
+
+    def test_the_bot_never_closes_a_contributor_pr(self):
+        source = (ROOT / 'tools/pr_bot.py').read_text()
+        self.assertNotRegex(source, r"""['"]close['"]|pr close""")
+        scenarios = [dict(), dict(h2={0x10: 'fail', 0x20: 'fail'}), dict(grep=(True, ['asm-mnemonic'])),
+                     dict(files=[{'filename': 'tools/x.py', 'status': 'modified'}]),
+                     dict(review=json.dumps({'leak': 'yes', 'functions': {}})), dict(landed=[]), dict(history='leak')]
+        for index, scenario in enumerate(scenarios):
+            with self.subTest(index=index):
+                scenario = dict(scenario)
+                landed, history = scenario.pop('landed', None), scenario.pop('history', None)
+                bot = FakeBot(self.work / str(index), **scenario)
+                bot.landed, bot.history = landed, history
+                bot.process(PR)
+                self.assertFalse([c for c in bot.calls if 'close' in c], bot.calls)
+
+    def test_a_record_the_validator_refuses_keeps_that_function_drafted(self):
+        bot = FakeBot(self.work)
+        bot.refused = {0x20}
+        out = bot.process(PR)
+        self.assertEqual(out['verdicts'], {'0x10': 'matched', '0x20': 'fail:record'})
+        self.assertEqual(len(bot.seen('gh', 'pr', 'merge')), 1)
+        self.assertEqual(bot.seen('record')[0][1], [0x10])
+        self.assertIn('0x20', bot.seen('gh', 'pr', 'comment')[0][-1])
+
+    def test_no_function_recorded_means_no_merge(self):
+        bot = FakeBot(self.work)
+        bot.refused = {0x10, 0x20}
+        out = bot.process(PR)
+        self.assertFalse(out['merge'])
+        self.assertEqual((bot.seen('gh', 'pr', 'merge'), bot.seen('record')), ([], []))
 
     def test_refused_merge_starts_over(self):
         bot = FakeBot(self.work)
@@ -244,6 +326,276 @@ class ProcessTests(unittest.TestCase):
         bot.merge_ok = True
         bot.process(PR)
         self.assertEqual(len(bot.seen('record')), 1)
+
+
+class LeakgrepContractTests(unittest.TestCase):
+    OUTPUT = ('reconstruction/a/B.cpp:3 asm-mnemonic\nreconstruction/a/B.h:10 include-outside-roots\n'
+              'reconstruction/a/B.h:11 asm-mnemonic\nleakgrep: 3 hit(s)\n')
+
+    def test_codes_are_the_rule_names_not_the_file_positions_or_the_summary(self):
+        self.assertEqual(pr_bot.parse_leak_codes(self.OUTPUT), ['asm-mnemonic', 'include-outside-roots', 'asm-mnemonic'])
+        self.assertEqual(pr_bot.parse_leak_codes('leakgrep: 0 hit(s)\n'), [])
+        self.assertEqual(pr_bot.parse_leak_codes('<file 1>:4 private-path\n'), ['private-path'])
+
+    def test_exit_code_one_is_a_hit_and_two_is_an_infrastructure_failure(self):
+        bot = pr_bot.Bot(root=ROOT)
+        bot.root = Path(tempfile.mkdtemp())
+        (bot.root / 'tools').mkdir()
+        (bot.root / 'tools/leakgrep.py').write_text('')
+        for code, out, expect in ((1, self.OUTPUT, (True, ['asm-mnemonic', 'include-outside-roots', 'asm-mnemonic'])),
+                                  (0, 'leakgrep: 0 hit(s)\n', (False, []))):
+            bot.run = lambda argv, **kw: subprocess.CompletedProcess(argv, code, out.encode(), b'')
+            self.assertEqual(bot.leakgrep(BASE, HEAD), expect)
+        bot.run = lambda argv, **kw: subprocess.CompletedProcess(argv, 2, b'', b'')
+        with self.assertRaises(pr_bot.Stop):
+            bot.leakgrep(BASE, HEAD)
+
+    def test_live_mode_fails_closed_without_leakgrep_and_replay_does_not(self):
+        bot = pr_bot.Bot(root=Path(tempfile.mkdtemp()))
+        with self.assertRaises(pr_bot.Stop):
+            bot.leakgrep(BASE, HEAD)
+        bot.dry_run = True
+        self.assertEqual(bot.leakgrep(BASE, HEAD), (False, []))
+
+    def test_live_run_refuses_to_assume_the_ci_host(self):
+        with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            pr_bot.main(['pr', '1', '--host1', 'assume-pass'])
+
+
+class HashMapTests(unittest.TestCase):
+    def test_unit_keys_are_not_functions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'hash-result.json'
+            path.write_text(json.dumps({'0x10': 'pass', '0X20': 'regressed', 'reconstruction/a/New.cpp': 'unverified'}))
+            self.assertEqual(pr_bot.results_from_report(path), {0x10: 'pass', 0x20: 'regressed'})
+
+    def test_rows_keep_only_the_function_in_the_unit_it_was_found_in(self):
+        report = {'functions': [{'rva': '0x10', 'unit': 'reconstruction/a/B.cpp'},
+                                {'rva': '0x10', 'unit': 'reconstruction/other/C.cpp'},
+                                {'rva': None, 'unit': 'reconstruction/a/New.cpp'}]}
+        rows = pr_bot.ci_rows(report, {0x10: 'reconstruction/a/B.cpp'})
+        self.assertEqual({r: row['unit'] for r, row in rows.items()}, {0x10: 'reconstruction/a/B.cpp'})
+
+
+class Host1Tests(unittest.TestCase):
+    """The live host-1 path against a stubbed GitHub."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.work = Path(self.tmp.name)
+        self.job = {'name': 'hash', 'head_sha': HEAD, 'status': 'completed', 'conclusion': 'success',
+                    'details_url': 'https://github.com/o/r/actions/runs/555/job/9'}
+        self.meta = {'id': 555, 'head_sha': HEAD, 'run_attempt': 1, 'event': 'pull_request'}
+        self.files = {'hash-result.json': {'0x10': 'pass', '0x20': 'fail'},
+                      'target-result.json': {'head_sha': HEAD, 'base_sha': BASE, 'toolset': 'MATCH',
+                                             'compiler_pins_sha256': 'e' * 64, 'functions': [
+                                                 {'rva': '0x10', 'unit': 'reconstruction/a/B.cpp', 'status': 'pass'}]}}
+        bot = pr_bot.Bot(root=ROOT, work=self.work)
+        bot.run = self.fake_run
+        bot.gh_json = self.gh
+        bot.config['hash_wait'] = 0
+        self.bot = bot
+
+    def gh(self, *args):
+        return {'check_runs': [self.job]} if args[1].endswith('/check-runs') else self.meta
+
+    def fake_run(self, argv, **kw):
+        argv = [str(a) for a in argv]
+        if argv[:3] == ['gh', 'run', 'download']:
+            target = Path(argv[argv.index('-D') + 1])
+            for name, value in self.files.items():
+                (target / name).write_text(json.dumps(value))
+        return subprocess.CompletedProcess(argv, 0, b'', b'')
+
+    def host1(self):
+        state = pr_bot.State(self.work / 's', 7, HEAD)
+        got = self.bot.host1(7, HEAD, [0x10, 0x20], state, {'reconstruction/a/B.cpp': [0x10, 0x20]})
+        return got, state
+
+    def test_statuses_and_the_run_facts_for_the_record(self):
+        got, state = self.host1()
+        self.assertEqual(got, {0x10: 'pass', 0x20: 'fail'})
+        ci = state.get('ci')
+        self.assertEqual((ci['run']['run_id'], ci['run']['head_sha'], ci['run']['conclusion']), (555, HEAD, 'success'))
+        self.assertEqual(ci['map'], {'16': 'pass', '32': 'fail'})
+        self.assertEqual(set(ci['rows']), {'16'})
+        self.assertEqual(ci['report']['base_sha'], BASE)
+
+    def test_a_run_of_another_head_is_not_this_pr(self):
+        self.meta['head_sha'] = 'c' * 40
+        with self.assertRaises(pr_bot.Stop):
+            self.host1()
+
+    def test_a_failed_job_confirms_nothing_unless_it_reports_a_regression(self):
+        self.job['conclusion'] = 'failure'
+        got, _ = self.host1()
+        self.assertEqual(got, {0x10: 'fail', 0x20: 'fail'})
+        self.files['hash-result.json'] = {'0x10': 'regressed', '0x20': 'pass'}
+        got, _ = self.host1()
+        self.assertEqual(got, {0x10: 'regressed', 0x20: 'pass'})
+
+    def test_a_missing_artifact_is_retried_not_trusted(self):
+        self.files.pop('hash-result.json')
+        with self.assertRaises(pr_bot.Stop):
+            self.host1()
+
+
+class HistoryTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.repo = Path(self.tmp.name)
+
+    def git(self, *args):
+        return subprocess.run(['git', '-C', str(self.repo), '-c', 'user.email=t@example.invalid', '-c', 'user.name=T',
+                               *args], check=True, capture_output=True).stdout.decode().strip()
+
+    def commit(self, name, text, message='unit'):
+        path = self.repo / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text)
+        self.git('add', '--', name)
+        self.git('commit', '-qm', message)
+        return self.git('rev-parse', 'HEAD')
+
+    def bot(self, hits=()):
+        bot = pr_bot.Bot(root=self.repo, work=self.repo / '.w')
+        bot.leakgrep = lambda base, head: (self.git('show', head, '--format=%s', '-s') in hits, [])
+        bot.leakgrep_text = lambda text: text.strip() in hits
+        return bot
+
+    def test_clean_reconstruction_history_passes(self):
+        self.git('init', '-q')
+        base = self.commit('reconstruction/a.h', 'one\n')
+        head = self.commit('reconstruction/b.h', 'two\n')
+        self.assertIsNone(self.bot().history_problem(base, head))
+
+    def test_a_commit_outside_reconstruction_is_refused_even_if_later_reverted(self):
+        self.git('init', '-q')
+        base = self.commit('reconstruction/a.h', 'one\n')
+        self.commit('tools/x.py', 'x\n')
+        head = self.commit('reconstruction/b.h', 'two\n')
+        self.assertEqual(self.bot().history_problem(base, head), 'scope')
+
+    def test_a_flagged_commit_or_message_in_the_middle_is_refused(self):
+        self.git('init', '-q')
+        base = self.commit('reconstruction/a.h', 'one\n')
+        self.commit('reconstruction/b.h', 'two\n', 'dirty-diff')
+        head = self.commit('reconstruction/c.h', 'three\n')
+        self.assertEqual(self.bot(hits=('dirty-diff',)).history_problem(base, head), 'leak')
+        self.git('commit', '-q', '--amend', '-m', 'dirty-message')
+        head = self.git('rev-parse', 'HEAD')
+        self.assertEqual(self.bot(hits=('dirty-message',)).history_problem(base, head), 'leak')
+
+    def test_a_merge_commit_in_the_history_is_refused(self):
+        self.git('init', '-q', '-b', 'main')
+        base = self.commit('reconstruction/a.h', 'one\n')
+        self.git('checkout', '-q', '-b', 'side')
+        self.commit('reconstruction/s.h', 's\n')
+        self.git('checkout', '-q', 'main')
+        self.commit('reconstruction/m.h', 'm\n')
+        self.git('merge', '-q', '--no-ff', '-m', 'merge', 'side')
+        self.assertEqual(self.bot().history_problem(base, self.git('rev-parse', 'HEAD')), 'merge-commit')
+
+
+class ReviewContextTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.tree = Path(self.tmp.name)
+        files = {'data/progress.json': json.dumps({'functions': [
+                     {'id': 'b-0x10', 'build_id': 'b', 'rva': 0x10, 'size': 8, 'status': 'mapped', 'name': 'N', 'name_origin': 'GUESS'}]}),
+                 'builds/target.json': json.dumps({'build_id': 'b', 'image_sha256': 'f' * 64}),
+                 'tools/verifier/pinned.sha256': 'a' * 64 + ' cl.exe\n',
+                 'reconstruction/a/B.cpp': '#include "B.h"\nint f() { return 1; }\n',
+                 'reconstruction/a/B.h': '// RVA 0x10\nint f();\n',
+                 '.local/packs/b/0x10/listing.txt': 'private',
+                 'docs/reviewer-runbook.md': (ROOT / 'docs/reviewer-runbook.md').read_text()}
+        for name, text in files.items():
+            (self.tree / name).parent.mkdir(parents=True, exist_ok=True)
+            (self.tree / name).write_text(text)
+        self.prompts = []
+        bot = pr_bot.Bot(root=ROOT, work=self.tree / '.w')
+        bot.tree = self.tree
+        bot.run = self.fake_run
+        self.bot = bot
+
+    def fake_run(self, argv, **kw):
+        argv = [str(a) for a in argv]
+        if argv[0] == 'codex':
+            self.prompts.append(kw['input'].decode())
+            Path(argv[argv.index('--output-last-message') + 1]).write_text('{}')
+        out = b'reconstruction/a/B.h: check provenance: missing origin\n' if 'lint_review_readiness.py' in ' '.join(argv) else b''
+        return subprocess.CompletedProcess(argv, 0, out, b'')
+
+    def evidence(self, **report):
+        from source_digest import include_closure, tu_digest
+        digest = tu_digest(self.tree, include_closure(self.tree, 'reconstruction/a/B.cpp'))
+        recipe = self.tree / 'reconstruction/recipes/msvc-19.16.27054-o2.json'
+        recipe.parent.mkdir(parents=True, exist_ok=True)
+        recipe.write_text('{}')
+        body = {'result': 'pass', 'source': {'source_revision': digest, 'path': 'reconstruction/a/B.cpp'},
+                'recipe': {'recipe_sha256': hashlib.sha256(b'{}').hexdigest(), 'compiler_binary_sha256': 'a' * 64},
+                'target': {'image_sha256': 'f' * 64, 'expected_image_sha256': 'f' * 64}}
+        body.update(report)
+        path = self.tree / '.local/tasks/prbot-7-aaaaaaaa-0/attempts/001/0x10/report.json'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(body))
+        row = {'status': 'pass', 'source_sha256': digest, 'recipe_sha256': hashlib.sha256(b'{}').hexdigest()}
+        return {0x10: dict(report=path, host1='pass', host2='pass', row=row, run={'run_id': 555, 'head_sha': HEAD})}
+
+    def test_the_reviewer_sees_both_hosts_bound_to_the_source_so_item_3_can_be_judged(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, self.evidence())
+        prompt = self.prompts[0]
+        self.assertIn('.local/tasks/prbot-7-aaaaaaaa-0/attempts/001/0x10/report.json: result pass: agree', prompt)
+        self.assertNotIn('DIFFER', prompt)
+        self.assertIn('second-host run 555 (CI hash job, which compares the published target hashes) on head ' + HEAD[:12] + ': pass; its source digest agrees, its recipe hash agrees', prompt)
+
+    def test_the_sheet_marks_which_files_the_pr_changed_and_which_are_unchanged_context(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, self.evidence(),
+                        {'reconstruction/a/B.cpp'})
+        prompt = self.prompts[0]
+        self.assertIn('reconstruction/a/B.cpp (changed by this PR), reconstruction/a/B.h (unchanged from main)', prompt)
+        self.assertIn('Review the files this PR changes in full', prompt)
+
+    def test_a_report_for_other_source_or_compiler_is_shown_as_differing(self):
+        bad = self.evidence(source={'source_revision': '0' * 64, 'path': 'reconstruction/a/B.cpp'})
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, bad)
+        self.assertIn('source revision equals the tu digest and unit path: DIFFER', self.prompts[0])
+
+    def test_without_a_report_the_sheet_says_so_instead_of_inventing_one(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
+                        {0x10: dict(report=None, host1='pass', host2='pass', row=None, run=None)})
+        self.assertIn('comparator report: NOT available', self.prompts[0])
+        self.assertIn('second-host run (CI hash job, which compares the published target hashes): pass', self.prompts[0])
+
+    def test_prompt_carries_the_runbook_standard_the_pins_the_packs_and_the_lint(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
+                        self.evidence())
+        prompt = self.prompts[0]
+        self.assertIn('## Checklist (per function)', prompt)
+        self.assertIn('Names and labels (not blocking)', prompt)
+        self.assertIn('target image sha256: ' + 'f' * 64, prompt)
+        self.assertIn('a' * 64 + ' cl.exe', prompt)
+        self.assertIn('0x10: inventory size 8, status mapped', prompt)
+        self.assertIn('.local/packs/b/0x10/', prompt)
+        self.assertIn('.local/analysis/fnv_index.jsonl', prompt)
+        self.assertIn('check provenance: missing origin', prompt)
+        self.assertIn('reconstruction/a/B.cpp, reconstruction/a/B.h', prompt)
+        self.assertLess(prompt.index('Binding sheet'), prompt.index('UNTRUSTED DIFF DATA'))
+
+    def test_the_runbook_checklist_is_read_from_the_runbook_not_copied(self):
+        text = pr_bot.runbook_checklist(ROOT)
+        self.assertTrue(text.startswith('## Checklist (per function)'))
+        self.assertNotIn('For a change to the comparator', text)
+        self.assertIn('Plausible source', text)
+
+    def test_a_reply_with_reasons_still_parses_and_only_approve_approves(self):
+        leak, got = pr_bot.parse_review(json.dumps({'leak': 'no', 'functions': {
+            '0x10': {'verdict': 'approve', 'ground': 'none', 'why': 'fine'},
+            '0x20': {'verdict': 'reject', 'ground': 'binding', 'why': 'header disagrees'}}}), [0x10, 0x20, 0x30])
+        self.assertEqual((leak, got), ('no', {0x10: 'approve', 0x20: 'reject', 0x30: 'reject'}))
 
 
 if __name__ == '__main__':
