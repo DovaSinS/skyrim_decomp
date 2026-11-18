@@ -1,5 +1,6 @@
 """tools/pr_bot.py decisions and orchestration, with every host, model and GitHub call stubbed."""
 import contextlib
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -137,8 +138,8 @@ class FakeBot(pr_bot.Bot):
     def leakgrep(self, base, head):
         return self.grep
 
-    def review(self, *a):
-        self.calls.append(['review'])
+    def review(self, number, head, base, functions, *a):
+        self.calls.append(['review', sorted(functions)])
         return self.review_text
 
     def mac_compare(self, units, tag):
@@ -196,6 +197,21 @@ class ProcessTests(unittest.TestCase):
         bot.process(PR)
         self.assertEqual((len(bot.seen('review')), len(bot.seen('mac'))), (1, 1))
         self.assertEqual(len(bot.seen('gh', 'pr', 'merge')), 1)
+
+    def test_only_what_both_hosts_passed_is_reviewed_and_nothing_else_costs_a_call(self):
+        bot = FakeBot(self.work, h2={0x10: 'pass', 0x20: 'fail'})
+        out = bot.process(PR)
+        self.assertEqual(bot.seen('review'), [['review', [0x10]]])
+        self.assertEqual(out['verdicts'], {'0x10': 'matched', '0x20': 'fail:host2'})
+        other = FakeBot(self.work / 'n', h1={0x10: 'fail', 0x20: 'fail'})
+        other.process(PR)
+        self.assertEqual((other.seen('review'), other.seen('gh', 'pr', 'merge')), ([], []))
+
+    def test_a_regression_of_a_function_outside_the_pr_blocks_it(self):
+        bot = FakeBot(self.work, h1={0x10: 'pass', 0x20: 'pass', 0x99: 'regressed'})
+        out = bot.process(PR)
+        self.assertEqual(out['blocked'], 'regression')
+        self.assertEqual((bot.seen('review'), bot.seen('gh', 'pr', 'merge')), ([], []))
 
     def test_scope_rejection_never_compiles_reviews_or_merges(self):
         bot = FakeBot(self.work, files=[{'filename': '.github/workflows/pr-check.yml', 'status': 'modified'}])
@@ -513,8 +529,43 @@ class ReviewContextTests(unittest.TestCase):
         out = b'reconstruction/a/B.h: check provenance: missing origin\n' if 'lint_review_readiness.py' in ' '.join(argv) else b''
         return subprocess.CompletedProcess(argv, 0, out, b'')
 
+    def evidence(self, **report):
+        from source_digest import include_closure, tu_digest
+        digest = tu_digest(self.tree, include_closure(self.tree, 'reconstruction/a/B.cpp'))
+        recipe = self.tree / 'reconstruction/recipes/msvc-19.16.27054-o2.json'
+        recipe.parent.mkdir(parents=True, exist_ok=True)
+        recipe.write_text('{}')
+        body = {'result': 'pass', 'source': {'source_revision': digest, 'path': 'reconstruction/a/B.cpp'},
+                'recipe': {'recipe_sha256': hashlib.sha256(b'{}').hexdigest(), 'compiler_binary_sha256': 'a' * 64},
+                'target': {'image_sha256': 'f' * 64, 'expected_image_sha256': 'f' * 64}}
+        body.update(report)
+        path = self.tree / '.local/tasks/prbot-7-aaaaaaaa-0/attempts/001/0x10/report.json'
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(body))
+        row = {'status': 'pass', 'source_sha256': digest, 'recipe_sha256': hashlib.sha256(b'{}').hexdigest()}
+        return {0x10: dict(report=path, host1='pass', host2='pass', row=row, run={'run_id': 555, 'head_sha': HEAD})}
+
+    def test_the_reviewer_sees_both_hosts_bound_to_the_source_so_item_3_can_be_judged(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, self.evidence())
+        prompt = self.prompts[0]
+        self.assertIn('.local/tasks/prbot-7-aaaaaaaa-0/attempts/001/0x10/report.json: result pass: agree', prompt)
+        self.assertNotIn('DIFFER', prompt)
+        self.assertIn('CI hash run 555 on head ' + HEAD[:12] + ': pass; its source digest agrees, its recipe hash agrees', prompt)
+
+    def test_a_report_for_other_source_or_compiler_is_shown_as_differing(self):
+        bad = self.evidence(source={'source_revision': '0' * 64, 'path': 'reconstruction/a/B.cpp'})
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]}, bad)
+        self.assertIn('source revision equals the tu digest and unit path: DIFFER', self.prompts[0])
+
+    def test_without_a_report_the_sheet_says_so_instead_of_inventing_one(self):
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
+                        {0x10: dict(report=None, host1='pass', host2='pass', row=None, run=None)})
+        self.assertIn('comparator report: NOT available', self.prompts[0])
+        self.assertIn('CI hash status: pass', self.prompts[0])
+
     def test_prompt_carries_the_runbook_standard_the_pins_the_packs_and_the_lint(self):
-        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]})
+        self.bot.review(7, HEAD, BASE, [0x10], (False, []), {'reconstruction/a/B.cpp': [0x10]},
+                        self.evidence())
         prompt = self.prompts[0]
         self.assertIn('## Checklist (per function)', prompt)
         self.assertIn('Names and labels (not blocking)', prompt)

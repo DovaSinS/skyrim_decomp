@@ -13,6 +13,7 @@ Per-head state lives in .local/pr-bot/ so a re-run resumes instead of repeating 
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -99,7 +100,8 @@ def decide(functions, host1, host2, review, leak_hits=(), leak='no'):
     """Per-function verdicts. Each host maps rva to pass|fail|regressed|preexisting-fail."""
     if leak_hits or leak != 'no':
         return dict(blocked='leak', merge=False, verdicts={r: 'blocked' for r in functions})
-    if 'regressed' in [host1.get(r) for r in functions] + [host2.get(r) for r in functions]:
+    # A header change can break a matched function outside this PR's own list; the hash run names it too.
+    if 'regressed' in list(host1.values()) + list(host2.values()):
         return dict(blocked='regression', merge=False, verdicts={r: 'blocked' for r in functions})
     verdicts = {}
     for rva in functions:
@@ -370,33 +372,84 @@ class Bot:
                 return 'merged'
         raise Stop('push of the merge kept losing the race; retry next tick')
 
-    def review_context(self, units, functions):
-        """What the Reviewer needs beyond the diff: the same inputs the runbook's brief gave it.
+    def review_evidence(self, tag, functions, host1, host2, state):
+        """What each host said about each function, with the Mac comparator report's path in the tree."""
+        ci = state.get('ci') or {}
+        out = {}
+        for rva in functions:
+            reports = sorted(self.tree.glob(f'.local/tasks/prbot-{tag}-*/attempts/[0-9]*/0x{rva:x}/report.json'))
+            out[rva] = dict(report=reports[-1] if reports else None, host1=host1.get(rva), host2=host2.get(rva),
+                            row=(ci.get('rows') or {}).get(str(rva)), run=ci.get('run'))
+        return out
 
-        The comparator report and the CI run are produced in parallel with the review, and the
-        validator refuses a record whose source, recipe, compiler or target pins differ, so the
-        sheet states those pins for the Reviewer to hold the source against.
+    def binding_lines(self, rva, cpp, digest, evidence):
+        """Agreement of one function's comparator report and CI row with the files and pins, as computed here."""
+        import check
+        tree = self.tree
+        target = json.loads((tree / 'builds/target.json').read_text())
+        text = (tree / cpp).read_text()
+        recipe = re.search(r'\breconstruction/recipes/[a-zA-Z0-9_.-]+\.json', text)
+        recipe = recipe.group(0) if recipe else 'reconstruction/recipes/msvc-19.16.27054-o2.json'
+        recipe_sha = hashlib.sha256((tree / recipe).read_bytes()).hexdigest() if (tree / recipe).is_file() else None
+        report = None
+        if evidence.get('report'):
+            try:
+                report = json.loads(Path(evidence['report']).read_text())
+            except (OSError, ValueError):
+                report = None
+        lines = []
+        if report is None:
+            lines.append('  first-host comparator report: NOT available')
+        else:
+            src, rec, tgt = report.get('source') or {}, report.get('recipe') or {}, report.get('target') or {}
+            facts = {'result pass': report.get('result') == 'pass',
+                     'source revision equals the tu digest and unit path': src.get('source_revision') == digest
+                     and src.get('path') == cpp,
+                     'recipe hash equals the recipe file': recipe_sha is not None and rec.get('recipe_sha256') == recipe_sha,
+                     'compiler hash equals the pinned cl.exe': rec.get('compiler_binary_sha256') == check.pinned_compiler_sha256(tree),
+                     'target image equals builds/target.json': tgt.get('image_sha256') == tgt.get('expected_image_sha256')
+                     == target.get('image_sha256')}
+            rel = Path(evidence['report']).relative_to(tree).as_posix()
+            lines.append(f'  first-host (Mac, Wine) comparator report {rel}: ' +
+                         '; '.join(f'{k}: {"agree" if v else "DIFFER"}' for k, v in facts.items()))
+        row, run = evidence.get('row'), evidence.get('run')
+        if row:
+            lines.append(f'  CI hash run {run.get("run_id")} on head {str(run.get("head_sha"))[:12]}: {row.get("status")}; '
+                         f'its source digest {"agrees" if row.get("source_sha256") == digest else "DIFFERS"}, '
+                         f'its recipe hash {"agrees" if row.get("recipe_sha256") == recipe_sha else "DIFFERS"}')
+        else:
+            lines.append(f'  CI hash status: {evidence.get("host1")}')
+        return lines
+
+    def review_context(self, units, functions, evidence=None):
+        """What the Reviewer needs beyond the diff: the inputs the old review brief and packet gave it.
+
+        Both hosts' results are in before the review starts, because checklist item 3 asks whether
+        the report binds this source and whether the second-host reproduction is present.
         """
         from source_digest import include_closure, tu_digest
-        tree = self.tree
+        tree, evidence = self.tree, evidence or {}
         data = json.loads((tree / 'data/progress.json').read_text())
         target = json.loads((tree / 'builds/target.json').read_text())
         rows = {fn['rva']: fn for fn in data['functions'] if fn['build_id'] == target['build_id']}
         pins = (tree / 'tools/verifier/pinned.sha256').read_text().strip().splitlines()
-        out = [f'## Binding sheet (computed from the tree; public facts)',
+        out = ['## Binding sheet (computed from the tree and the host results; public facts)',
                f'build: {target["build_id"]}; target image sha256: {target.get("image_sha256")}',
                'compiler and toolchain pins (sha256 name):'] + [f'  {line}' for line in pins]
         files, packs = set(), []
         for cpp, rvas in sorted(units.items()):
+            rvas = [r for r in rvas if r in functions]
+            if not rvas:
+                continue
             closure = include_closure(tree, cpp)
             files.update(closure)
-            recipe = re.search(r'\breconstruction/recipes/[a-zA-Z0-9_.-]+\.json', (tree / cpp).read_text())
-            out.append(f'unit {cpp}: translation unit {", ".join(closure)}; tu digest {tu_digest(tree, closure)}; '
-                       f'recipe {recipe.group(0) if recipe else "default"}')
+            digest = tu_digest(tree, closure)
+            out.append(f'unit {cpp}: translation unit {", ".join(closure)}; tu digest {digest}')
             for rva in rvas:
                 fn = rows.get(rva)
                 out.append(f'  0x{rva:x}: ' + (f'inventory size {fn["size"]}, status {fn["status"]}, name '
                            f'{fn.get("name")} ({fn.get("name_origin")})' if fn else 'NOT in the inventory'))
+                out += self.binding_lines(rva, cpp, digest, evidence.get(rva, {}))
                 pack = tree / '.local/packs' / target['build_id'] / f'0x{rva:x}'
                 if pack.is_dir():
                     packs.append(f'.local/packs/{target["build_id"]}/0x{rva:x}/')
@@ -407,16 +460,14 @@ class Bot:
                 '', '## Private reading', f'Function packs: {", ".join(packs) or "none found"}.',
                 'For the provenance comparison read .local/analysis/fnv_index.jsonl and the pinned FNV source '
                 'files it identifies. ' + EXPOSURE,
-                '', 'Report binding (item 3): the first-host comparator report and the CI run for these functions '
-                'are produced while you review, and the validator refuses any record whose source digest, recipe, '
-                'compiler or target pins differ from the sheet above. Judge what you can see: the RVA header lines, '
-                'declared function, size and unit agree with the inventory rows above. The unit files are in the '
-                'working directory at the paths above.']
+                '', 'Records under reports/ for these functions, if any, are older acceptances of earlier source; '
+                'the evidence for this PR is the comparator report and CI result listed above. The unit files are '
+                'in the working directory at the paths above.']
         return '\n'.join(out)
 
-    def review(self, number, head, base, functions, grep, units=None):
+    def review(self, number, head, base, functions, grep, units=None, evidence=None):
         diff = self.run(['git', 'diff', f'{base}', head, '--', 'reconstruction'], cwd=self.root).stdout.decode(errors='replace')
-        context = self.review_context(units, functions) if units else ''
+        context = self.review_context(units, set(functions), evidence) if units else ''
         prompt = (PREAMBLE + '\n' + runbook_checklist(self.tree) + f'\n\nFunctions under review: '
                   f'{", ".join(f"0x{r:x}" for r in sorted(functions))}\n'
                   f'leakgrep: {"HIT " + ",".join(grep[1]) if grep[0] else "clean"}\n\n{context}\n\n'
@@ -500,7 +551,9 @@ class Bot:
                         if report.get(k) is not None},
                 rows={str(r): row for r, row in ci_rows(report, unit_of).items()},
                 map={str(r): v for r, v in table.items()}))
-        return {r: table.get(r, 'fail') for r in functions}
+        got = {r: table.get(r, 'fail') for r in functions}
+        got.update({r: v for r, v in table.items() if v == 'regressed'})
+        return got
 
     def approve_pending(self, head):
         """A fork's first workflow run waits for approval; the workflows hold no secrets."""
@@ -578,19 +631,30 @@ class Bot:
             state.set('decision', decision)
             return self.finish(pr, state, decision, started, leak_codes=grep[1])
 
-        def review():
-            text = state.once('review_text', lambda: self.review(number, head, base, functions, grep, units))
-            return parse_review(text, functions)
+        tag = f'{number}-{head[:8]}'
+
+        def mac():
+            return state.once('host2', lambda: {str(k): v for k, v in self.mac_compare(units, tag).items()})
+
+        def ci():
+            return state.once('host1', lambda: {str(k): v for k, v in
+                                                self.host1(number, head, functions, state, units).items()})
+        # Both hosts first: the Reviewer's binding check needs the comparator report and the CI result.
         with ThreadPoolExecutor(max_workers=2) as pool:
-            f_review = pool.submit(review)
-            f_mac = pool.submit(lambda: {str(k): v for k, v in state.once(
-                'host2', lambda: {str(k): v for k, v in self.mac_compare(units, f'{number}-{head[:8]}').items()}).items()})
+            f_mac, f_ci = pool.submit(mac), pool.submit(ci)
             host2 = {int(k): v for k, v in f_mac.result().items()}
-            leak, verdict = f_review.result()
-        host1 = state.once('host1', lambda: {str(k): v for k, v in self.host1(number, head, functions, state, units).items()})
-        host1 = {int(k): v for k, v in host1.items()}
+            host1 = {int(k): v for k, v in f_ci.result().items()}
         host2 = self.classify_debt(host2, host1, base, units, state)
         self.overlay(head, files)
+        # Only what both hosts passed can be accepted, so only that is worth a review call; a
+        # regression blocks the whole PR whatever the review says.
+        passed = [r for r in functions if host1.get(r) == 'pass' and host2.get(r) == 'pass']
+        leak, verdict = 'no', {}
+        if passed and 'regressed' not in list(host1.values()) + list(host2.values()):
+            evidence = self.review_evidence(tag, passed, host1, host2, state)
+            text = state.once('review_text', lambda: self.review(number, head, base, passed, grep, units, evidence))
+            leak, verdict = parse_review(text, passed)
+        verdict = {r: verdict.get(r, 'reject') for r in functions}
         decision = decide(functions, host1, host2, verdict, leak=leak)
         state.set('decision', decision)
         if decision['merge'] and not self.dry_run:
