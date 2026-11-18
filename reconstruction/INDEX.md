@@ -9515,9 +9515,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf271190` | `Leaf271190::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x271190` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271190.json` | matched | family | open |
 | `leaves/ReturnLeaf2711a0` | `ReturnLeaf2711a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2711a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2711a0.json` | matched | family | open |
 | `forms/TESLevCharacter` | `TESLevCharacter::InitItemImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x2717b0` / 64 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2717b0.json` | matched | full | open |
-| - | `TESLevCharacter::UnClone3D` (COMMUNITY) | `sse-steam-1-7-104` / `0x271800` / 3 | - | - | mapped | - | - |
+| `contrib_teslevcharacter/TESLevCharacter` | `TESLevCharacter::UnClone3D` (COMMUNITY) | `sse-steam-1-7-104` / `0x271800` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271800.json` | matched | full | - |
 | `leaves/Leaf271810` | `Leaf271810::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x271810` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271810.json` | matched | family | open |
-| - | `TESLevCharacter::SaveGame` (COMMUNITY) | `sse-steam-1-7-104` / `0x271840` / 43 | - | - | mapped | - | - |
+| `contrib_teslevcharacter/TESLevCharacter` | `TESLevCharacter::SaveGame` (COMMUNITY) | `sse-steam-1-7-104` / `0x271840` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271840.json` | matched | full | - |
 | `fo4b4a_271880/TESLevCharacter` | `TESLevCharacter::LoadGame` (GUESS) | `sse-steam-1-7-104` / `0x271880` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271880.json` | matched | full | open |
 | `fo4b4a_271880/TESLevCharacter` | `TESLevCharacter::Revert` (GUESS) | `sse-steam-1-7-104` / `0x2718c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2718c0.json` | matched | full | open |
 | `havok/PhantomOverlapListenerPrefixLayout` | `TESLevCharacterRemainingStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x271924` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x271924.json` | matched | full | open |
