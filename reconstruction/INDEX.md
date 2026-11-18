@@ -8231,10 +8231,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsengine/AdditionalInterfacePrefixLayout` | `ScrollItemAdditionalStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x154c14` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154c14.json` | matched | full | open |
 | `bsengine/AdditionalInterfacePrefixLayout` | `ScrollItemAdditionalStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x154c20` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154c20.json` | matched | full | open |
 | `forms/SpellItem` | `SpellItem::GetChunkID` (COMMUNITY) | `sse-steam-1-7-104` / `0x154ce0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154ce0.json` | matched | full | open |
-| - | `SpellItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x154cf0` / 8 | - | - | mapped | - | - |
+| `contrib_spellitem/SpellItem` | `SpellItem::GetData2` (COMMUNITY) | `sse-steam-1-7-104` / `0x154cf0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154cf0.json` | matched | full | - |
 | `leaves/Leaf154d10` | `Leaf154d10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x154d10` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154d10.json` | matched | family | open |
-| - | `SpellItem::GetDelivery` (COMMUNITY) | `sse-steam-1-7-104` / `0x154d20` / 7 | - | - | mapped | - | - |
-| - | `SpellItem::GetFixedCastDuration` (COMMUNITY) | `sse-steam-1-7-104` / `0x154d30` / 46 | - | - | mapped | - | - |
+| `contrib_spellitem/SpellItem` | `SpellItem::GetDelivery` (COMMUNITY) | `sse-steam-1-7-104` / `0x154d20` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154d20.json` | matched | full | - |
+| `contrib_spellitem/SpellItem` | `SpellItem::GetFixedCastDuration` (COMMUNITY) | `sse-steam-1-7-104` / `0x154d30` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154d30.json` | matched | full | - |
 | `fields/FieldLeaf154ed0` | `FieldLeaf154ed0::Read` (GUESS) | `sse-steam-1-7-104` / `0x154ed0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154ed0.json` | matched | family | open |
 | `leaves/Leaf154ee0` | `Leaf154ee0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x154ee0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154ee0.json` | matched | family | open |
 | `fields/FieldLeaf154f50` | `FieldLeaf154f50::Read` (GUESS) | `sse-steam-1-7-104` / `0x154f50` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154f50.json` | matched | family | open |
@@ -8242,7 +8242,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leaf154f70` | `Leaf154f70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x154f70` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154f70.json` | matched | family | open |
 | `leaves/LeafForward155250` | `LeafForward155250::Forward` (GUESS) | `sse-steam-1-7-104` / `0x155250` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155250.json` | matched | full | checked |
 | `storage/FieldRecoveryStorageLayout` | `represented typed field operation` (GUESS) | `sse-steam-1-7-104` / `0x155350` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155350.json` | matched | full | open |
-| - | `SpellItem::IgnoresResistance` (COMMUNITY) | `sse-steam-1-7-104` / `0x155360` / 26 | - | - | mapped | - | - |
+| `contrib_spellitem/SpellItem` | `SpellItem::IgnoresResistance` (COMMUNITY) | `sse-steam-1-7-104` / `0x155360` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155360.json` | matched | full | - |
 | `fo4b4b_155380/SpellItem` | `SpellItem::IgnoreLOS` (COMMUNITY) | `sse-steam-1-7-104` / `0x155380` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155380.json` | matched | full | open |
 | `fo4b4b_155380/SpellItem` | `SpellItem::GetNoAbsorb` (COMMUNITY) | `sse-steam-1-7-104` / `0x1553a0` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553a0.json` | matched | full | open |
 | `fo4b4b_155380/SpellItem` | `SpellItem::GetNoDualCastModifications` (COMMUNITY) | `sse-steam-1-7-104` / `0x1553c0` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553c0.json` | matched | full | open |
