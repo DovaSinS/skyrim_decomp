@@ -19730,7 +19730,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `leaves/Leafe124b0` | `Leafe124b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xe124b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe124b0.json` | matched | family | open |
 | `leaves/Leafe124c0` | `Leafe124c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xe124c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe124c0.json` | matched | family | open |
 | `bsengine/BSKeyboardDevice` | `BSKeyboardDevice::~BSKeyboardDevice` (COMMUNITY) | `sse-steam-1-7-104` / `0xe12680` / 104 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe12680.json` | matched | full | open |
-| - | `BSWin32KeyboardDevice::Release` (COMMUNITY) | `sse-steam-1-7-104` / `0xe12bd0` / 39 | - | - | mapped | - | - |
+| `bsengine/BSWin32KeyboardDevice` | `BSWin32KeyboardDevice::Release` (COMMUNITY) | `sse-steam-1-7-104` / `0xe12bd0` / 39 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe12bd0.json` | matched | full | - |
 | - | `BSWin32KeyboardDevice::Reset` (COMMUNITY) | `sse-steam-1-7-104` / `0xe12c00` / 20 | - | - | mapped | - | - |
 | `bsengine/BSWin32KeyboardDevice` | `Leafe12c20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xe12c20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe12c20.json` | matched | full | open |
 | `bsengine/BSWin32KeyboardDevice` | `Leafe12c30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xe12c30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe12c30.json` | matched | full | open |

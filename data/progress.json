@@ -176349,12 +176349,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 14756816,
       "size": 39,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSWin32KeyboardDevice::Release",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 3. RVA 0xe12bd0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xe12bd0.json",
+      "report": "reports/sse-steam-1-7-104/0xe12bd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xe12c00",
@@ -176379,7 +176380,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xe12c20.json",
       "report": "reports/sse-steam-1-7-104/0xe12c20.json"
     },
     {
@@ -176393,7 +176394,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xe12c30.json",
       "report": "reports/sse-steam-1-7-104/0xe12c30.json"
     },
     {
@@ -430588,7 +430589,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:26:16Z",
+  "updated_at": "2026-11-18T11:34:59Z",
   "work_items": [
     {
       "id": "pin-target",
