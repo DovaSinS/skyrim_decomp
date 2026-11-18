@@ -116008,36 +116008,39 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 6146512,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "ActiveEffectReferenceEffectController::GetManagerHandlesSaveLoad",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 14. RVA 0x5dc9d0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x5dc9d0.json",
+      "report": "reports/sse-steam-1-7-104/0x5dc9d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5dcae0",
       "build_id": "sse-steam-1-7-104",
       "rva": 6146784,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "ActiveEffectReferenceEffectController::GetWindPoint",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 31. RVA 0x5dcae0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x5dcae0.json",
+      "report": "reports/sse-steam-1-7-104/0x5dcae0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5dcb70",
       "build_id": "sse-steam-1-7-104",
       "rva": 6146928,
       "size": 15,
-      "status": "mapped",
+      "status": "matched",
       "name": "ActiveEffectReferenceEffectController::LoadGame",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 34. RVA 0x5dcb70; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x5dcb70.json",
+      "report": "reports/sse-steam-1-7-104/0x5dcb70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5dd150",
@@ -430596,7 +430599,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T11:45:21Z",
+  "updated_at": "2026-11-18T11:55:48Z",
   "work_items": [
     {
       "id": "pin-target",
