@@ -241,6 +241,8 @@ class Bot:
         self.config = dict(model_timeout=1500, compare_timeout=2400, hash_wait=1200, max_functions=60,
                            **(config or {}))
         self.tree = self.work / 'tree'
+        # The bot's own tools, which may live apart from the checkout that holds .local and the git history.
+        self.tools = Path(__file__).resolve().parent
 
     def run(self, argv, cwd=None, input=None, timeout=None, check=True):
         result = subprocess.run([str(a) for a in argv], cwd=cwd or self.root, input=input,
@@ -304,7 +306,7 @@ class Bot:
 
     def leakgrep(self, base, head):
         """(hit, codes) from tools/leakgrep.py: exit code plus rule codes on stdout, never matched text."""
-        script = self.root / 'tools/leakgrep.py'
+        script = self.tools / 'leakgrep.py'
         if not script.is_file():
             if self.dry_run:
                 return False, []  # a replay may run before the tool is on this checkout; live never does
@@ -316,7 +318,7 @@ class Bot:
 
     def leakgrep_text(self, text):
         """True if leakgrep flags free text (a commit message), fed to it as an added-lines diff."""
-        script = self.root / 'tools/leakgrep.py'
+        script = self.tools / 'leakgrep.py'
         if not script.is_file():
             raise Stop('leakgrep is not available')
         diff = '+++ b/commit-message\n@@ -0,0 +1 @@\n' + ''.join('+' + line + '\n' for line in text.splitlines())
@@ -583,6 +585,18 @@ class Bot:
                       '--body', f'Runs pr-check on the same commit as #{number}. Closed by the bot when it is done.'],
                      check=False)
 
+    def warm(self, pr):
+        """Start the hash run for a head that will need one, so a queue of PRs waits in parallel, not in turn."""
+        number, head = pr['number'], pr['headRefOid']
+        if State(self.work / 'state', number, head).get('done'):
+            return
+        runs = self.gh_json('api', f'repos/{REPOSITORY}/commits/{head}/check-runs')['check_runs']
+        if any(r['name'] in HASH_CHECKS and r['head_sha'] == head for r in runs):
+            return
+        if scope_problem(self.changed_files(number)):
+            return
+        self.probe_hash_run(number, head)
+
     def drop_probe(self, number):
         # Deleting the head branch ends the probe PR; the bot has no code path that closes a PR itself.
         self.run(['gh', 'api', '-X', 'DELETE', f'repos/{REPOSITORY}/git/refs/heads/probe/pr-{number}'], check=False)
@@ -812,23 +826,31 @@ class Bot:
         state.set('recorded', True)
 
 
-def poll(bot, interval):
+def poll(bot, interval, restart_after=None):
     lock = open(bot.work / 'poll.lock', 'a+')
     try:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except OSError:
         print('another pr_bot --poll holds the lock', file=sys.stderr)
         return 1
+    started = time.time()
     while True:
+        if restart_after and time.time() - started > restart_after:
+            return 0  # between cycles only; the supervisor restarts it on freshly fetched tools
         try:
             prs = bot.gh_json('pr', 'list', '-R', REPOSITORY, '--state', 'open', '--json',
                               'number,headRefOid,author,baseRefName,isDraft')
         except (Stop, subprocess.SubprocessError, ValueError) as exc:
             print('poll: gh failed:', exc, file=sys.stderr)
             prs = []
+        prs = [pr for pr in prs if pr['author']['login'].casefold() != OWNER.casefold()
+               and pr['baseRefName'] == 'main' and not pr['isDraft']]
         for pr in prs:
-            if pr['author']['login'].casefold() == OWNER.casefold() or pr['baseRefName'] != 'main' or pr['isDraft']:
-                continue
+            try:
+                bot.warm(pr)
+            except (Stop, subprocess.SubprocessError, OSError, ValueError, KeyError) as exc:
+                print(f'pr {pr["number"]}: warm: {type(exc).__name__}: {exc}', file=sys.stderr)
+        for pr in prs:
             try:
                 print(json.dumps(bot.process(pr)))
             except (Stop, Rejected, subprocess.SubprocessError, OSError, ValueError) as exc:
@@ -842,6 +864,7 @@ def main(argv=None):
     p.add_argument('number', nargs='?', type=int)
     p.add_argument('--poll', action='store_true')
     p.add_argument('--interval', type=int, default=60)
+    p.add_argument('--restart-after', type=int, help='--poll: exit between cycles after this many seconds')
     p.add_argument('--dry-run', action='store_true', help='no merge, push or comment')
     p.add_argument('--head')
     p.add_argument('--base')
@@ -854,7 +877,7 @@ def main(argv=None):
     bot = Bot(root=a.root, work=a.work, dry_run=a.dry_run, host1=a.host1)
     bot.work.mkdir(parents=True, exist_ok=True)
     if a.poll:
-        return poll(bot, a.interval)
+        return poll(bot, a.interval, a.restart_after)
     if a.command != 'pr' or not a.number:
         p.error('give `pr NUMBER` or --poll')
     pr = bot.gh_json('pr', 'view', str(a.number), '-R', REPOSITORY, '--json', 'number,headRefOid,author')

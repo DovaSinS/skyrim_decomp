@@ -342,9 +342,8 @@ class LeakgrepContractTests(unittest.TestCase):
 
     def test_exit_code_one_is_a_hit_and_two_is_an_infrastructure_failure(self):
         bot = pr_bot.Bot(root=ROOT)
-        bot.root = Path(tempfile.mkdtemp())
-        (bot.root / 'tools').mkdir()
-        (bot.root / 'tools/leakgrep.py').write_text('')
+        bot.tools = Path(tempfile.mkdtemp())
+        (bot.tools / 'leakgrep.py').write_text('')
         for code, out, expect in ((1, self.OUTPUT, (True, ['asm-mnemonic', 'include-outside-roots', 'asm-mnemonic'])),
                                   (0, 'leakgrep: 0 hit(s)\n', (False, []))):
             bot.run = lambda argv, **kw: subprocess.CompletedProcess(argv, code, out.encode(), b'')
@@ -355,6 +354,7 @@ class LeakgrepContractTests(unittest.TestCase):
 
     def test_live_mode_fails_closed_without_leakgrep_and_replay_does_not(self):
         bot = pr_bot.Bot(root=Path(tempfile.mkdtemp()))
+        bot.tools = Path(tempfile.mkdtemp())
         with self.assertRaises(pr_bot.Stop):
             bot.leakgrep(BASE, HEAD)
         bot.dry_run = True
@@ -450,6 +450,20 @@ class Host1Tests(unittest.TestCase):
         self.assertIn('ref=refs/heads/probe/pr-7', branch[0])
         self.assertEqual(len([c for c in calls if c[:3] == ['gh', 'pr', 'create']]), 1)
         self.assertIn('--draft', [c for c in calls if c[:3] == ['gh', 'pr', 'create']][0])
+
+    def test_warm_probes_only_a_head_with_no_run_and_in_scope(self):
+        probed = []
+        self.bot.probe_hash_run = lambda number, head: probed.append(number)
+        self.bot.changed_files = lambda number: [{'filename': 'reconstruction/a/B.cpp'}]
+        pr = {'number': 7, 'headRefOid': HEAD}
+        self.bot.warm(pr)
+        self.assertEqual(probed, [])  # the head already has a hash run
+        self.job['name'] = 'other'
+        self.bot.warm(pr)
+        self.assertEqual(probed, [7])
+        self.bot.changed_files = lambda number: [{'filename': 'tools/x.py'}]
+        self.bot.warm(pr)
+        self.assertEqual(probed, [7])
 
     def test_a_missing_artifact_is_retried_not_trusted(self):
         self.files.pop('hash-result.json')
