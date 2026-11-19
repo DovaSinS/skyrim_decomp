@@ -441952,12 +441952,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22066304,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "ImageSpaceEffect::IsActive",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 6. RVA 0x150b480; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x150b480.json",
+      "report": "reports/sse-steam-1-7-104/0x150b480.json"
     },
     {
       "id": "sse-steam-1-7-104-0x150b4b0",
@@ -450100,7 +450101,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-19T18:39:40Z",
+  "updated_at": "2026-11-19T18:50:06Z",
   "work_items": [
     {
       "id": "pin-target",

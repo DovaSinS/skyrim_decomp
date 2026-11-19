@@ -26008,7 +26008,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSImagespaceShaderWaterWadingHeightmap::Unk_0D` (GUESS) | `sse-steam-1-7-104` / `0x150b3e0` / 35 | - | - | mapped | - | - |
 | - | `BSImagespaceShaderWorldMap::Unk_0D` (GUESS) | `sse-steam-1-7-104` / `0x150b410` / 35 | - | - | mapped | - | - |
 | - | `BSImagespaceShaderWorldMapNoSkyBlur::Unk_0D` (GUESS) | `sse-steam-1-7-104` / `0x150b440` / 50 | - | - | mapped | - | - |
-| - | `ImageSpaceEffect::IsActive` (COMMUNITY) | `sse-steam-1-7-104` / `0x150b480` / 5 | - | - | mapped | - | - |
+| `bsshader/ImageSpaceEffect` | `ImageSpaceEffect::IsActive` (COMMUNITY) | `sse-steam-1-7-104` / `0x150b480` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x150b480.json` | matched | full | - |
 | `bsshader/BSImagespaceShader` | `Leaf150b490::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x150b490` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x150b490.json` | matched | full | open |
 | `unmapped/leaves/Leaf150b4a0` | `Leaf150b4a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x150b4a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x150b4a0.json` | matched | family | open |
 | - | `BSImagespaceShaderMap::Unk_0B` (GUESS) | `sse-steam-1-7-104` / `0x150b4b0` / 30 | - | - | mapped | - | - |
