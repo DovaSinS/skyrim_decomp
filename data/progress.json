@@ -81953,12 +81953,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2603440,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectANIO::InitItemImpl",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 19. RVA 0x27b9b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x27b9b0.json",
+      "report": "reports/sse-steam-1-7-104/0x27b9b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x27bb70",
@@ -81971,7 +81972,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 50. RVA 0x27bb70; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x27bb70.json",
       "report": "reports/sse-steam-1-7-104/0x27bb70.json"
     },
     {
@@ -82457,7 +82458,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 4. RVA 0x281530; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-1-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x281530.json",
       "report": "reports/sse-steam-1-7-104/0x281530.json"
     },
     {
@@ -82465,12 +82466,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2628144,
       "size": 190,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectCONT::InitItemImpl",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 19. RVA 0x281a30; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x281a30.json",
+      "report": "reports/sse-steam-1-7-104/0x281a30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x282370",
@@ -435510,7 +435512,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-19T15:01:16Z",
+  "updated_at": "2026-11-19T15:37:13Z",
   "work_items": [
     {
       "id": "pin-target",
