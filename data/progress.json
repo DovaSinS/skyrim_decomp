@@ -79777,12 +79777,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2495088,
       "size": 18,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSExplosion::UnClone3D",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 65. RVA 0x261270; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x261270.json",
+      "report": "reports/sse-steam-1-7-104/0x261270.json"
     },
     {
       "id": "sse-steam-1-7-104-0x261600",
@@ -85156,7 +85157,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x2e7fc0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/second-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x2e7fc0.json",
       "report": "reports/sse-steam-1-7-104/0x2e7fc0.json"
     },
     {
@@ -97386,7 +97387,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 2. RVA 0x44d8e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x44d8e0.json",
       "report": "reports/sse-steam-1-7-104/0x44d8e0.json"
     },
     {
@@ -97400,7 +97401,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x44d960.json",
       "report": "reports/sse-steam-1-7-104/0x44d960.json"
     },
     {
@@ -97428,7 +97429,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 7. RVA 0x44d980; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x44d980.json",
       "report": "reports/sse-steam-1-7-104/0x44d980.json"
     },
     {
@@ -97672,12 +97673,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4515424,
       "size": 81,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSPackageDataBool::~BGSPackageDataBool",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x44e660; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x44e660.json",
+      "report": "reports/sse-steam-1-7-104/0x44e660.json"
     },
     {
       "id": "sse-steam-1-7-104-0x44e7d0",
@@ -120783,7 +120785,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x675350.json",
       "report": "reports/sse-steam-1-7-104/0x675350.json"
     },
     {
@@ -120825,7 +120827,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x6797a0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6797a0.json",
       "report": "reports/sse-steam-1-7-104/0x6797a0.json"
     },
     {
@@ -120853,7 +120855,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x687c20; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x687c20.json",
       "report": "reports/sse-steam-1-7-104/0x687c20.json"
     },
     {
@@ -120881,7 +120883,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6990e0.json",
       "report": "reports/sse-steam-1-7-104/0x6990e0.json"
     },
     {
@@ -120895,7 +120897,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x69f8e0.json",
       "report": "reports/sse-steam-1-7-104/0x69f8e0.json"
     },
     {
@@ -121007,7 +121009,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x6af1b0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6af1b0.json",
       "report": "reports/sse-steam-1-7-104/0x6af1b0.json"
     },
     {
@@ -122227,7 +122229,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x6c5440; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6c5440.json",
       "report": "reports/sse-steam-1-7-104/0x6c5440.json"
     },
     {
@@ -122283,7 +122285,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x6cb920; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6cb920.json",
       "report": "reports/sse-steam-1-7-104/0x6cb920.json"
     },
     {
@@ -122395,7 +122397,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x6d7750; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6d7750.json",
       "report": "reports/sse-steam-1-7-104/0x6d7750.json"
     },
     {
@@ -122409,7 +122411,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/A/Actor.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x6d92b0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x6d92b0.json",
       "report": "reports/sse-steam-1-7-104/0x6d92b0.json"
     },
     {
@@ -430771,12 +430773,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8188384,
       "size": 160,
-      "status": "mapped",
+      "status": "matched",
       "name": "JumpAnimEventHandler::Handle",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 42892 (the list writes the name with a trailing _* marker, omitted here). RVA 0x7cf1e0; size from the 4 chained .pdata entries, equal to the Ghidra analysis body.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7cf1e0.json",
+      "report": "reports/sse-steam-1-7-104/0x7cf1e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x10645e0",
@@ -432295,12 +432298,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 7957184,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "MovementControllerNPC::Unk_0F",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 15. RVA 0x796ac0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x796ac0.json",
+      "report": "reports/sse-steam-1-7-104/0x796ac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x796ad0",
@@ -432931,24 +432935,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 9407968,
       "size": 64,
-      "status": "mapped",
+      "status": "matched",
       "name": "PlayerCamera::ForceFirstPerson",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/P/PlayerCamera.cpp (the function that holds the id's relocation), joined through Address Library 1.7.104.0 id 50790. RVA 0x8f8de0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x8f8de0.json",
+      "report": "reports/sse-steam-1-7-104/0x8f8de0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8f8f40",
       "build_id": "sse-steam-1-7-104",
       "rva": 9408320,
       "size": 78,
-      "status": "mapped",
+      "status": "matched",
       "name": "PlayerCamera::ForceThirdPerson",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/P/PlayerCamera.cpp (the function that holds the id's relocation), joined through Address Library 1.7.104.0 id 50796. RVA 0x8f8f40; size from the 3 chained .pdata entries, equal to the Ghidra analysis body.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x8f8f40.json",
+      "report": "reports/sse-steam-1-7-104/0x8f8f40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8f9330",
@@ -432979,12 +432985,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 9417184,
       "size": 31,
-      "status": "mapped",
+      "status": "matched",
       "name": "PlayerCamera::GetCurrentNormalFOV",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 50835 (the list writes the name with a trailing _* marker, omitted here). RVA 0x8fb1e0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x8fb1e0.json",
+      "report": "reports/sse-steam-1-7-104/0x8fb1e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8fb2e0",
@@ -435379,7 +435386,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-19T06:06:24Z",
+  "updated_at": "2026-11-19T06:26:42Z",
   "work_items": [
     {
       "id": "pin-target",
