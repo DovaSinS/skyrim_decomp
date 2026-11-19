@@ -4,6 +4,8 @@ import json
 import re
 import subprocess
 
+import repo_slug
+
 
 class Unavailable(Exception):
     pass
@@ -266,7 +268,9 @@ def collect_outcome(github, number):
     pr = reader.read(f'repos/{reader.repo}/pulls/{number}')
     head = pr['head']['sha']
     comments = reader.pages(f'repos/{reader.repo}/issues/{number}/comments')
-    owner = reader.repo.split('/')[0].casefold()
+    # The bot comments as the maintainer's account; the official repo is owned by an organisation.
+    owner = (repo_slug.MAINTAINER_LOGIN if repo_slug.same_repo(reader.repo, repo_slug.DEFAULT_SLUG)
+             else reader.repo.split('/')[0]).casefold()
     stickies = [(row, parse_sticky(row.get('body') or '')) for row in comments if author(row).casefold() == owner]
     stickies = [(row, sticky) for row, sticky in stickies if sticky]
     if not stickies:
