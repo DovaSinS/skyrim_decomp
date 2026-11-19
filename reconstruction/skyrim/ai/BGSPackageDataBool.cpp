@@ -1,12 +1,18 @@
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
+// Code origin: original reconstruction from the pinned image and community declarations.
 // Source exposure: mixed (names and declarations from community headers; the listing of the pinned
 // image).
 // Adapted bodies: none
 // 0x44d980 BGSPackageDataBool::Unk_07
+// 0x44e660 BGSPackageDataBool::~BGSPackageDataBool
 #include "BGSPackageDataBool.h"
 
+// Emits the vftable and its scalar deleting destructor.
+BGSPackageDataBool::BGSPackageDataBool()
+{
+}
+
 // RVA 0x44d7b0, 40 bytes
-// Near-miss: near-miss/0x44d7b0.cpp
 
 // RVA 0x44d980, 54 bytes
 void BGSPackageDataBool::Unk_07(BGSSaveGameBuffer* a_buf)
@@ -16,7 +22,6 @@ void BGSPackageDataBool::Unk_07(BGSSaveGameBuffer* a_buf)
 }
 
 // RVA 0x44d9c0, 85 bytes
-// Near-miss: near-miss/0x44d9c0.cpp
 
 // RVA 0x44d8e0, 107 bytes
 void BGSPackageDataBool::LoadPackage(TESFile* a_mod)
@@ -34,13 +39,14 @@ void BGSPackageDataBool::LoadPackage(TESFile* a_mod)
 }
 
 // RVA 0x44d7e0, 87 bytes
-// Near-miss: near-miss/0x44d7e0.cpp
 
 // RVA 0x44d840, 151 bytes
-// Near-miss: near-miss/0x44d840.cpp
 
-// RVA 0x44e660, 81 bytes
-// Near-miss: near-miss/0x44e660.cpp
+// RVA 0x44e660, 81 bytes. The packed-name member releases its storage in its own destructor.
+BGSPackageDataBool::~BGSPackageDataBool()
+{
+    flags08.bits &= ~std::uint64_t{3};
+}
 
 // Accepted leaf retained from the integrated version.
 // Unk_05: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
