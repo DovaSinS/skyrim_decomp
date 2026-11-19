@@ -10,12 +10,12 @@
   "review_date": "2026-11-19",
   "review_kind": "full",
   "review_record_schema": 3,
-  "review_sha256": "7dc37c9114862ec8ffcb07d817e12feb17189639365375ded9a7f51a0d4573e1",
-  "review_task_id": "pr-bot-414-867a8c5f",
+  "review_sha256": "5ddb1e86ca5b06b571c44e8b676ad928a1a014499d303323699f4ded17cc0095",
+  "review_task_id": "pr-bot-419-79823f88",
   "reviewer_model": "gpt-6.1-terra",
   "rva": 3969216,
   "size": 56,
-  "source_digest": "3f79d8101e1f969c497584aa131e2ee605fad98650f8d8406306f641adb82d9b",
+  "source_digest": "e68c4906879cd7085c5ef6efb871ef1e9c0a632c87e22ab5f07a4e7985b5400f",
   "source_digest_method": "tu-sha256-v2",
   "verdict": "approve"
 }
