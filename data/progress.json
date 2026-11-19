@@ -134624,24 +134624,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8249616,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "ArrowProjectile::GetStopMainSoundAfterImpact",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 177. RVA 0x7de110; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7de110.json",
+      "report": "reports/sse-steam-1-7-104/0x7de110.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7de810",
       "build_id": "sse-steam-1-7-104",
       "rva": 8251408,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "ArrowProjectile::Unk_C2",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 194. RVA 0x7de810; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7de810.json",
+      "report": "reports/sse-steam-1-7-104/0x7de810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7df690",
@@ -134662,24 +134664,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8255152,
       "size": 64,
-      "status": "mapped",
+      "status": "matched",
       "name": "BarrierProjectile::SaveGame",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 14. RVA 0x7df6b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7df6b0.json",
+      "report": "reports/sse-steam-1-7-104/0x7df6b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7df700",
       "build_id": "sse-steam-1-7-104",
       "rva": 8255232,
       "size": 55,
-      "status": "mapped",
+      "status": "matched",
       "name": "BarrierProjectile::LoadGame",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 15. RVA 0x7df700; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7df700.json",
+      "report": "reports/sse-steam-1-7-104/0x7df700.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7df740",
@@ -135352,12 +135356,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8342880,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "MissileProjectile::Unk_C3",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 195. RVA 0x7f4d60; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7f4d60.json",
+      "report": "reports/sse-steam-1-7-104/0x7f4d60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7f4d70",
@@ -135420,12 +135425,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8343120,
       "size": 30,
-      "status": "mapped",
+      "status": "matched",
       "name": "MissileProjectile::Revert",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 18. RVA 0x7f4e50; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7f4e50.json",
+      "report": "reports/sse-steam-1-7-104/0x7f4e50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7f5380",
@@ -135446,12 +135452,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8345184,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "MissileProjectile::Unk_C2",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 194. RVA 0x7f5660; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7f5660.json",
+      "report": "reports/sse-steam-1-7-104/0x7f5660.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7f5670",
@@ -435349,7 +435356,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-18T21:01:53Z",
+  "updated_at": "2026-11-19T03:06:23Z",
   "work_items": [
     {
       "id": "pin-target",
