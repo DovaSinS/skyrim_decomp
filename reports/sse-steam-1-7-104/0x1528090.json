@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "cd51f9e2f5dcefbc67f8ff7d1543968c1992db703a513182e51ca549054c3aec",
+        "object_sha256": "e1a5eb5c020fab9cd774dc39533e1ca91fc79df8493f9e723637600506369808",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsshader/BSLightingShaderMaterialSnow.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "097869ff3e896cda8b3a41af63e72c71a87fc8f6",
+    "base_sha": "0b8e5daeafc049323d5a9e4911819366bda839cc",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "3ef197a6ac79368ce9396faef21fb5ace1868cc6",
+    "head_sha": "7d5367fee2f6411c97be877f44f9e3991882d3a1",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44274568517,
+    "run_id": 44565179859,
     "rva": "0x1528090",
     "schema": 2,
-    "source_sha256": "22a19edb7dd10a0cba5b61eeccc7ecf5f235e1d2c3954edde137121eb8c49072",
+    "source_sha256": "0f05bfbca8fdf4b91fac5bf42b52843e3cebbeaaf14ace1b88eb53b3675ad6f2",
     "status": "pass",
     "symbols": [
       "?CopyMembers@BSLightingShaderMaterialSnow@@UEAAXPEAVBSShaderMaterial@@@Z"
@@ -76,7 +76,7 @@
       "size": 46
     },
     "toolset": "MATCH",
-    "unit": "reconstruction/bsengine/BSLightingShaderMaterialSnow.cpp",
+    "unit": "reconstruction/bsshader/BSLightingShaderMaterialSnow.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
   "function_id": "sse-steam-1-7-104-0x1528090",
@@ -98,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "a6ec3980e0632a0ab614383c33956701817c7629df16a008c62d417f152e6013",
           "code_sections": 1,
-          "object_sha256": "cd51f9e2f5dcefbc67f8ff7d1543968c1992db703a513182e51ca549054c3aec"
+          "object_sha256": "e1a5eb5c020fab9cd774dc39533e1ca91fc79df8493f9e723637600506369808"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -160,10 +160,10 @@
         "report_schema": 1,
         "result": "pass",
         "source": {
-          "path": "reconstruction/bsengine/BSLightingShaderMaterialSnow.cpp",
-          "source_revision": "22a19edb7dd10a0cba5b61eeccc7ecf5f235e1d2c3954edde137121eb8c49072"
+          "path": "reconstruction/bsshader/BSLightingShaderMaterialSnow.cpp",
+          "source_revision": "0f05bfbca8fdf4b91fac5bf42b52843e3cebbeaaf14ace1b88eb53b3675ad6f2"
         },
-        "symbol_map_sha256": "e490c8e53c5ca422594f22e80c409be7f2012faba20421e0a177409decf01652",
+        "symbol_map_sha256": "b3aea6d057638b1ea227c34d94e8b82338ff1c244c17694897567aa4ca6195af",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -174,19 +174,17 @@
   ],
   "source": {
     "compiled": "reconstruction/bsshader/BSLightingShaderMaterialSnow.cpp",
-    "digest": "dc2674d6791f7ae2a3d1a4767a7c2cdcd65da2ad720da06aef5757c72633ce74",
+    "digest": "0f05bfbca8fdf4b91fac5bf42b52843e3cebbeaaf14ace1b88eb53b3675ad6f2",
     "digest_method": "tu-sha256-v2",
-    "run_digest": "22a19edb7dd10a0cba5b61eeccc7ecf5f235e1d2c3954edde137121eb8c49072",
-    "run_digest_method": "tu-sha256-v1",
     "translation_unit": [
       "reconstruction/bsshader/BSLightingShaderMaterialSnow.cpp",
       "reconstruction/bsshader/BSLightingShaderMaterialSnow.h"
     ]
   },
-  "submitter": "hinkiii",
+  "submitter": "awarebayes",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/e490c8e53c5ca422594f22e80c409be7f2012faba20421e0a177409decf01652.json",
-    "sha256": "e490c8e53c5ca422594f22e80c409be7f2012faba20421e0a177409decf01652"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/b3aea6d057638b1ea227c34d94e8b82338ff1c244c17694897567aa4ca6195af.json",
+    "sha256": "b3aea6d057638b1ea227c34d94e8b82338ff1c244c17694897567aa4ca6195af"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
