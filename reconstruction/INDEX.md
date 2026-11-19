@@ -20042,9 +20042,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `NiFile::~NiFile` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae0b0` / 118 | - | - | mapped | - | - |
 | `bssystem/NiBinaryStream` | `NiBinaryStream::ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae130` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeae130.json` | matched | full | open |
 | `unmapped/leaves/TableStoreLeafeae160` | `NiBinaryStream::dtor` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae160` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeae160.json` | matched | family | open |
-| - | `NiBinaryStream::tell` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae180` / 4 | - | - | mapped | - | - |
+| `contrib_nibinarystream/NiBinaryStream` | `NiBinaryStream::tell` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae180` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeae180.json` | matched | full | - |
 | `bssystem/NiBinaryStream` | `NiBinaryStream::get_info` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae190` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeae190.json` | matched | full | open |
-| - | `NiBinaryStream::~NiBinaryStream` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae4a0` / 43 | - | - | mapped | - | - |
+| `contrib_nibinarystream/NiBinaryStream` | `NiBinaryStream::~NiBinaryStream` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae4a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeae4a0.json` | matched | full | - |
 | - | `BSNiAllocator::Allocate` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae5d0` / 137 | - | - | mapped | - | - |
 | - | `BSNiAllocator::Deallocate` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae660` / 99 | - | - | mapped | - | - |
 | - | `BSNiAllocator::Reallocate` (COMMUNITY) | `sse-steam-1-7-104` / `0xeae6d0` / 136 | - | - | mapped | - | - |
@@ -20531,7 +20531,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardf17bd0` | `LeafForwardf17bd0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf17bd0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf17bd0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf183e0` | `LeafForwardf183e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf183e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf183e0.json` | matched | family | open |
 | `unmapped/leaves/LeafAddressf18510` | `LeafAddressf18510::Address` (GUESS) | `sse-steam-1-7-104` / `0xf18510` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf18510.json` | matched | family | open |
-| - | `NiTriBasedGeom::AsNiTriBasedGeom` (COMMUNITY) | `sse-steam-1-7-104` / `0xf18520` / 4 | - | - | mapped | - | - |
+| `contrib_nitribasedgeom/NiTriBasedGeom` | `NiTriBasedGeom::AsNiTriBasedGeom` (COMMUNITY) | `sse-steam-1-7-104` / `0xf18520` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf18520.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaff18530` | `ReturnLeaff18530::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf18530` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf18530.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf186e0` | `LeafForwardf186e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf186e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf186e0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf186f0` | `LeafForwardf186f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf186f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf186f0.json` | matched | family | open |
@@ -20589,9 +20589,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardf1f3a0` | `LeafForwardf1f3a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf1f3a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f3a0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf1f3b0` | `LeafForwardf1f3b0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf1f3b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f3b0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf1f3e0` | `LeafForwardf1f3e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf1f3e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f3e0.json` | matched | family | open |
-| - | `NiTriBasedGeom::Unk_36` (COMMUNITY) | `sse-steam-1-7-104` / `0xf1f3f0` / 28 | - | - | mapped | - | - |
+| `contrib_nitribasedgeom/NiTriBasedGeom` | `NiTriBasedGeom::Unk_36` (COMMUNITY) | `sse-steam-1-7-104` / `0xf1f3f0` / 28 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f3f0.json` | matched | full | - |
 | `gamebryo/nimain/NiTriBasedGeom` | `NiTriBasedGeom::NiTriBasedGeom` (GUESS) | `sse-steam-1-7-104` / `0xf1f420` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f420.json` | matched | full | open |
-| - | `NiTriBasedGeom::~NiTriBasedGeom` (COMMUNITY) | `sse-steam-1-7-104` / `0xf1f480` / 62 | - | - | mapped | - | - |
+| `contrib_nitribasedgeom/NiTriBasedGeom` | `NiTriBasedGeom::~NiTriBasedGeom` (COMMUNITY) | `sse-steam-1-7-104` / `0xf1f480` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f480.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressf1f4c0` | `LeafAddressf1f4c0::Address` (GUESS) | `sse-steam-1-7-104` / `0xf1f4c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf1f4c0.json` | matched | family | open |
 | `unmapped/leaves/CommunityLeafStorageLayout` | `DeletingLeaff22f30::~DeletingLeaff22f30` (GUESS) | `sse-steam-1-7-104` / `0xf22f30` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf22f30.json` | matched | full | open |
 | `unmapped/storage/StorageInitf23080` | `StorageInitf23080::initialize` (GUESS) | `sse-steam-1-7-104` / `0xf23080` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf23080.json` | matched | family | open |
