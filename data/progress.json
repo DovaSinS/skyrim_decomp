@@ -438538,12 +438538,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16401504,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldAirFrictionCtlr::Functionfa4460",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysAirFieldAirFrictionCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfa4460; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa4460.json",
+      "report": "reports/sse-steam-1-7-104/0xfa4460.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa4540",
@@ -438562,12 +438563,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16402544,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldInheritVelocityCtlr::Functionfa4870",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysAirFieldInheritVelocityCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfa4870; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa4870.json",
+      "report": "reports/sse-steam-1-7-104/0xfa4870.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa4950",
@@ -438599,12 +438601,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16409232,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldSpreadCtlr::Functionfa6290",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysAirFieldSpreadCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfa6290; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa6290.json",
+      "report": "reports/sse-steam-1-7-104/0xfa6290.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa6390",
@@ -438773,24 +438776,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16441024,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationCtlr::Functionfadec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterDeclinationCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfadec0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfadec0.json",
+      "report": "reports/sse-steam-1-7-104/0xfadec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaded0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16441040,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationCtlr::Functionfaded0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterDeclinationCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaded0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaded0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaded0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfadf90",
@@ -438809,24 +438814,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16442048,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationVarCtlr::Functionfae2c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterDeclinationVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfae2c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae2c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfae2c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae2d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16442064,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationVarCtlr::Functionfae2d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterDeclinationVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfae2d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae2d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfae2d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae390",
@@ -438845,24 +438852,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16443072,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterInitialRadiusCtlr::Functionfae6c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterInitialRadiusCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfae6c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae6c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfae6c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae6d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16443088,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterInitialRadiusCtlr::Functionfae6d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterInitialRadiusCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfae6d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae6d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfae6d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae790",
@@ -438881,24 +438890,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16444096,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterLifeSpanCtlr::Functionfaeac0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterLifeSpanCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaeac0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaeac0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaeac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaead0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16444112,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterLifeSpanCtlr::Functionfaead0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterLifeSpanCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaead0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaead0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaead0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaeb90",
@@ -438917,24 +438928,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16445120,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleCtlr::Functionfaeec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterPlanarAngleCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaeec0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaeec0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaeec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaeed0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16445136,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleCtlr::Functionfaeed0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterPlanarAngleCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaeed0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaeed0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaeed0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaef90",
@@ -438953,24 +438966,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16446144,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleVarCtlr::Functionfaf2c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterPlanarAngleVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaf2c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf2c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf2c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf2d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16446160,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleVarCtlr::Functionfaf2d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterPlanarAngleVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaf2d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf2d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf2d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf390",
@@ -438989,24 +439004,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16447168,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterSpeedCtlr::Functionfaf6c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterSpeedCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaf6c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf6c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf6c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf6d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16447184,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterSpeedCtlr::Functionfaf6d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysEmitterSpeedCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfaf6d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf6d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf6d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf790",
@@ -439025,24 +439042,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16448192,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldAttenuationCtlr::Functionfafac0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldAttenuationCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfafac0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafac0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafad0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16448208,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldAttenuationCtlr::Functionfafad0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldAttenuationCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfafad0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafad0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafad0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafb90",
@@ -439061,24 +439080,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16449216,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMagnitudeCtlr::Functionfafec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldMagnitudeCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfafec0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafec0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafed0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16449232,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMagnitudeCtlr::Functionfafed0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldMagnitudeCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfafed0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafed0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafed0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaff90",
@@ -439097,24 +439118,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16450240,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMaxDistanceCtlr::Functionfb02c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldMaxDistanceCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb02c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb02c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb02c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb02d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16450256,
       "size": 19,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMaxDistanceCtlr::Functionfb02d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysFieldMaxDistanceCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb02d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb02d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb02d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb03a0",
@@ -439159,24 +439182,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16454400,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysGravityStrengthCtlr::Functionfb1300",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysGravityStrengthCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb1300; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1300.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1300.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1310",
       "build_id": "sse-steam-1-7-104",
       "rva": 16454416,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysGravityStrengthCtlr::Functionfb1310",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysGravityStrengthCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb1310; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1310.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1310.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb13d0",
@@ -439208,24 +439233,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16457408,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleCtlr::Functionfb1ec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotAngleCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb1ec0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1ec0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1ed0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16457424,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleCtlr::Functionfb1ed0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotAngleCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb1ed0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1ed0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1ed0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1f90",
@@ -439244,24 +439271,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16458432,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleVarCtlr::Functionfb22c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotAngleVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb22c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb22c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb22c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb22d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16458448,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleVarCtlr::Functionfb22d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotAngleVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb22d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb22d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb22d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb2390",
@@ -439280,24 +439309,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16459456,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedCtlr::Functionfb26c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotSpeedCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb26c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb26c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb26c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb26d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16459472,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedCtlr::Functionfb26d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotSpeedCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb26d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb26d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb26d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb2790",
@@ -439316,24 +439347,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16460480,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedVarCtlr::Functionfb2ac0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotSpeedVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb2ac0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb2ac0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb2ac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb2ad0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16460496,
       "size": 10,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedVarCtlr::Functionfb2ad0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysInitialRotSpeedVarCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb2ad0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb2ad0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb2ad0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb2b90",
@@ -439352,24 +439385,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16471984,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierActiveCtlr::Functionfb57b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysModifierActiveCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb57b0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb57b0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb57b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb57d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16472016,
       "size": 20,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierActiveCtlr::Functionfb57d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysModifierActiveCtlr that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfb57d0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb57d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb57d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb58a0",
@@ -439615,12 +439650,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16518496,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierFloatCtlr::InterpolatorIsCorrectType",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75571 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc0d60; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc0d60.json",
+      "report": "reports/sse-steam-1-7-104/0xfc0d60.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc0d70",
@@ -439677,12 +439713,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16521856,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierBoolCtlr::InterpolatorIsCorrectType",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75601 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc1a80; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc1a80.json",
+      "report": "reports/sse-steam-1-7-104/0xfc1a80.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc1a90",
@@ -466213,7 +466250,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T13:32:44Z",
+  "updated_at": "2026-11-20T13:33:43Z",
   "work_items": [
     {
       "id": "pin-target",
