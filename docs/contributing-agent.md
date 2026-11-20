@@ -108,6 +108,10 @@ The repository carries names and layouts generated from the community "CrashLogg
   `.local/pdb/SkyrimSE.pdb` (or point `SR_CRASHLOGGER_PDB` at it). `next` and `start` fall back to it for an RVA the
   committed map lacks; put the archive's version in `.local/pdb/version.txt` or `SR_CRASHLOGGER_PDB_VERSION`.
   `llvm-pdbutil dump -publics SkyrimSE.pdb` lists its publics; keep that output under `.local/`.
+- `start` also prints `PDB layout ...` with the header of the class a function belongs to
+  (`reconstruction/generated/crashlogger_pdb/types/<Class>.h`: fields, offsets, padding and `_base` members). A unit
+  that already declares the class copies only the members it needs; a unit that does not may include the header.
+  Layouts are community guesses; `compare` decides.
 - Never commit the `.pdb`, or a name list from it outside the generated directory.
 
 ## Mapping-only PRs
