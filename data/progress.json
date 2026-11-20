@@ -88833,132 +88833,143 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3312624,
       "size": 22,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::InitializeData",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 4. RVA 0x328bf0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328bf0.json",
+      "report": "reports/sse-steam-1-7-104/0x328bf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328e60",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313248,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetRoomLevel",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21189. RVA 0x328e60; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328e60.json",
+      "report": "reports/sse-steam-1-7-104/0x328e60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328e70",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313264,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetRoomHFLevel",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21190. RVA 0x328e70; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328e70.json",
+      "report": "reports/sse-steam-1-7-104/0x328e70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328e80",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313280,
       "size": 20,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetDecayTime",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21191. RVA 0x328e80; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328e80.json",
+      "report": "reports/sse-steam-1-7-104/0x328e80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328ea0",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313312,
       "size": 20,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetDecayHFRatio",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21192. RVA 0x328ea0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328ea0.json",
+      "report": "reports/sse-steam-1-7-104/0x328ea0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328ec0",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313344,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetReflectionLevel",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21193. RVA 0x328ec0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328ec0.json",
+      "report": "reports/sse-steam-1-7-104/0x328ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328ed0",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313360,
       "size": 20,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetReflectionDelay",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21194. RVA 0x328ed0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328ed0.json",
+      "report": "reports/sse-steam-1-7-104/0x328ed0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328ef0",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313392,
       "size": 8,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetReverbLevel",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21195. RVA 0x328ef0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328ef0.json",
+      "report": "reports/sse-steam-1-7-104/0x328ef0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328f20",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313440,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetDiffusion",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21197. RVA 0x328f20; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328f20.json",
+      "report": "reports/sse-steam-1-7-104/0x328f20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328f40",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313472,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetDensity",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21198. RVA 0x328f40; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328f40.json",
+      "report": "reports/sse-steam-1-7-104/0x328f40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x328f60",
       "build_id": "sse-steam-1-7-104",
       "rva": 3313504,
       "size": 12,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSReverbParameters::DoGetHFReference",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21199. RVA 0x328f60; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x328f60.json",
+      "report": "reports/sse-steam-1-7-104/0x328f60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x329160",
@@ -89021,12 +89032,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3315744,
       "size": 64,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSSoundCategory::Matches",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21217. RVA 0x329820; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x329820.json",
+      "report": "reports/sse-steam-1-7-104/0x329820.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3298d0",
@@ -89045,12 +89057,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3316000,
       "size": 59,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSSoundCategory::GetCategoryFrequency",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 21220. RVA 0x329920; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x329920.json",
+      "report": "reports/sse-steam-1-7-104/0x329920.json"
     },
     {
       "id": "sse-steam-1-7-104-0x329970",
@@ -459008,6 +459021,175 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x155aec0.json",
       "report": "reports/sse-steam-1-7-104/0x155aec0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x329870",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3315824,
+      "size": 76,
+      "status": "matched",
+      "name": "BGSSoundCategory::Function329870",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x329870; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x329870.json",
+      "report": "reports/sse-steam-1-7-104/0x329870.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x329a30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3316272,
+      "size": 48,
+      "status": "matched",
+      "name": "BGSSoundCategory::Function329a30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x329a30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x329a30.json",
+      "report": "reports/sse-steam-1-7-104/0x329a30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x329a70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3316336,
+      "size": 37,
+      "status": "matched",
+      "name": "BGSSoundCategory::Function329a70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x329a70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x329a70.json",
+      "report": "reports/sse-steam-1-7-104/0x329a70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x329aa0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3316384,
+      "size": 37,
+      "status": "matched",
+      "name": "BGSSoundCategory::Function329aa0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x329aa0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x329aa0.json",
+      "report": "reports/sse-steam-1-7-104/0x329aa0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x32a7a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3319712,
+      "size": 20,
+      "status": "matched",
+      "name": "BGSSoundDescriptorForm::Function32a7a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x32a7a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x32a7a0.json",
+      "report": "reports/sse-steam-1-7-104/0x32a7a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x32a7e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3319776,
+      "size": 11,
+      "status": "matched",
+      "name": "BGSSoundDescriptorForm::Function32a7e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x32a7e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x32a7e0.json",
+      "report": "reports/sse-steam-1-7-104/0x32a7e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x559a10",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5610000,
+      "size": 76,
+      "status": "matched",
+      "name": "BGSSoundDescriptorForm::Function559a10",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x559a10; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x559a10.json",
+      "report": "reports/sse-steam-1-7-104/0x559a10.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x559a70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5610096,
+      "size": 76,
+      "status": "matched",
+      "name": "BGSSoundDescriptorForm::Function559a70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x559a70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x559a70.json",
+      "report": "reports/sse-steam-1-7-104/0x559a70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcd6ae0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13462240,
+      "size": 35,
+      "status": "matched",
+      "name": "BSNullImplGameSound::Functioncd6ae0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcd6ae0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcd6ae0.json",
+      "report": "reports/sse-steam-1-7-104/0xcd6ae0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcd6b10",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13462288,
+      "size": 27,
+      "status": "matched",
+      "name": "BSNullImplGameSound::Functioncd6b10",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcd6b10; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcd6b10.json",
+      "report": "reports/sse-steam-1-7-104/0xcd6b10.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcd6b40",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13462336,
+      "size": 27,
+      "status": "matched",
+      "name": "BSNullImplGameSound::Functioncd6b40",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcd6b40; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcd6b40.json",
+      "report": "reports/sse-steam-1-7-104/0xcd6b40.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcd6b70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13462384,
+      "size": 11,
+      "status": "matched",
+      "name": "BSNullImplGameSound::Functioncd6b70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcd6b70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcd6b70.json",
+      "report": "reports/sse-steam-1-7-104/0xcd6b70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcd6be0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13462496,
+      "size": 9,
+      "status": "matched",
+      "name": "BSNullImplGameSound::Functioncd6be0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcd6be0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcd6be0.json",
+      "report": "reports/sse-steam-1-7-104/0xcd6be0.json"
     }
   ],
   "milestones": [
@@ -459050,7 +459232,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T09:47:14Z",
+  "updated_at": "2026-11-20T09:52:46Z",
   "work_items": [
     {
       "id": "pin-target",
