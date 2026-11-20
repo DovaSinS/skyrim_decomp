@@ -434501,12 +434501,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 17413488,
       "size": 199,
-      "status": "mapped",
+      "status": "matched",
       "name": "bhkCharacterController::CheckSupportImpl",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 13 of bhkCharRigidBodyController. RVA 0x109b570; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x109b570.json",
+      "report": "reports/sse-steam-1-7-104/0x109b570.json"
     },
     {
       "id": "sse-steam-1-7-104-0x109b640",
@@ -470506,7 +470507,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T20:45:24Z",
+  "updated_at": "2026-11-20T20:47:32Z",
   "work_items": [
     {
       "id": "pin-target",

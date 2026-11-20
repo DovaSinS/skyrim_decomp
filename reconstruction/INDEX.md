@@ -23901,7 +23901,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `bhkCharacterController::Unk_09` (COMMUNITY) | `sse-steam-1-7-104` / `0x109b320` / 166 | - | - | mapped | - | - |
 | - | `bhkCharacterController::Unk_0B` (COMMUNITY) | `sse-steam-1-7-104` / `0x109b3d0` / 382 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf109b560` | `Leaf109b560::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x109b560` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x109b560.json` | matched | family | open |
-| - | `bhkCharacterController::CheckSupportImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x109b570` / 199 | - | - | mapped | - | - |
+| `bshavok/BhkCharRigidBodyController_109b570` | `bhkCharacterController::CheckSupportImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x109b570` / 199 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0x109b570.json` | matched | full | - |
 | - | `bhkCharacterController::Unk_12` (COMMUNITY) | `sse-steam-1-7-104` / `0x109b640` / 1039 | - | - | mapped | - | - |
 | - | `bhkCharacterController::Unk_0A` (COMMUNITY) | `sse-steam-1-7-104` / `0x109ba60` / 232 | - | - | mapped | - | - |
 | - | `bhkCharacterController::RotateImpl` (COMMUNITY) | `sse-steam-1-7-104` / `0x109bb50` / 863 | - | - | mapped | - | - |
