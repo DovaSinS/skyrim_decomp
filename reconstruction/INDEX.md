@@ -20693,8 +20693,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSReadWriteLock::LockForWrite` (COMMUNITY) | `sse-steam-1-7-104` / `0xce32d0` / 126 | - | - | mapped | - | - |
 | `bscore/BSReadWriteLock` | `BSReadWriteLock::UnlockForRead` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3510` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3510.json` | matched | label-only | - |
 | `bscore/BSReadWriteLock` | `BSReadWriteLock::UnlockForWrite` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3520` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3520.json` | matched | label-only | - |
-| - | `Functionce36b0` (GUESS) | `sse-steam-1-7-104` / `0xce36b0` / 696 | - | - | mapped | - | - |
-| `bscore/BSTimer` | `BSTimer::SetGlobalTimeMultiplier` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3970` / 76 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xce3970.json` | matched | label-only | - |
+| `bscore/BSTimer` | `Functionce36b0` (GUESS) | `sse-steam-1-7-104` / `0xce36b0` / 696 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xce36b0.json` | matched | full | - |
+| `bscore/BSTimer` | `BSTimer::SetGlobalTimeMultiplier` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3970` / 76 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xce3970.json` | matched | full | - |
 | `unmapped/leaves/Leafce3f60` | `Leafce3f60::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce3f60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3f60.json` | matched | family | open |
 | `bscore/BSThread_ce4220` | `BSThread::Functionce4220` (GUESS) | `sse-steam-1-7-104` / `0xce4220` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4220.json` | matched | full | open |
 | `unmapped/leaves/Leafce4240` | `Leafce4240::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce4240` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4240.json` | matched | family | open |

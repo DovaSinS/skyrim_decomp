@@ -174679,7 +174679,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/B/BSTimer.h (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0xce3970; no .pdata entry (leaf); size from the Ghidra 12.2 function body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/second-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xce3970.json",
       "report": "reports/sse-steam-1-7-104/0xce3970.json"
     },
     {
@@ -433704,12 +433704,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 13514416,
       "size": 696,
-      "status": "mapped",
+      "status": "matched",
       "name": "Functionce36b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder; no class or method name from the pinned sources or from an image RTTI vftable slot. RVA 0xce36b0; size from the 5 chained .pdata entries, equal to the Ghidra analysis body.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xce36b0.json",
+      "report": "reports/sse-steam-1-7-104/0xce36b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xceed20",
@@ -458085,7 +458086,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T00:42:56Z",
+  "updated_at": "2026-11-20T01:03:45Z",
   "work_items": [
     {
       "id": "pin-target",
