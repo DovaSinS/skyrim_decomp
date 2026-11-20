@@ -470451,6 +470451,19 @@
       "name_source": "GUESS(low): descriptive name; uploads a grass geometry's per-instance fade values with the 960-instance cap. RVA 0x1523440; size from the image function table.",
       "owner": "eclepso",
       "evidence": "findings/grass-retail-constants.md"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7a6760",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8021856,
+      "size": 61,
+      "status": "matched",
+      "name": "MovementHandlerAgentStairsHelper::Function7a6760",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x7a6760; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x7a6760.json",
+      "report": "reports/sse-steam-1-7-104/0x7a6760.json"
     }
   ],
   "milestones": [
@@ -470493,7 +470506,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T19:53:46Z",
+  "updated_at": "2026-11-20T20:45:24Z",
   "work_items": [
     {
       "id": "pin-target",
