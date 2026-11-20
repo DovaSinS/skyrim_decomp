@@ -363228,7 +363228,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): storage-free ABI stand-in; original signature and owner unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x330720.json",
       "report": "reports/sse-steam-1-7-104/0x330720.json"
     },
     {
@@ -466893,7 +466893,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T14:19:09Z",
+  "updated_at": "2026-11-20T14:31:56Z",
   "work_items": [
     {
       "id": "pin-target",
