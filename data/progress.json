@@ -439752,192 +439752,208 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22052032,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderAlphaBlend::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106050 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507cc0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507cc0.json",
+      "report": "reports/sse-steam-1-7-104/0x1507cc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507d00",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052096,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderApplyReflections::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106051 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507d00; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507d00.json",
+      "report": "reports/sse-steam-1-7-104/0x1507d00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507d40",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052160,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur11::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106052 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507d40; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507d40.json",
+      "report": "reports/sse-steam-1-7-104/0x1507d40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507d80",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052224,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur13::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106053 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507d80; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507d80.json",
+      "report": "reports/sse-steam-1-7-104/0x1507d80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507dc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052288,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur15::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106054 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507dc0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507dc0.json",
+      "report": "reports/sse-steam-1-7-104/0x1507dc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507e40",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052416,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur5::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106056 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507e40; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507e40.json",
+      "report": "reports/sse-steam-1-7-104/0x1507e40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507e80",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052480,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur7::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106057 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507e80; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507e80.json",
+      "report": "reports/sse-steam-1-7-104/0x1507e80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507ec0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052544,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBlur9::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106058 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507ec0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507ec0.json",
+      "report": "reports/sse-steam-1-7-104/0x1507ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507f00",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052608,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur11::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106059 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507f00; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507f00.json",
+      "report": "reports/sse-steam-1-7-104/0x1507f00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507f40",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052672,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur13::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106060 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507f40; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507f40.json",
+      "report": "reports/sse-steam-1-7-104/0x1507f40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507f80",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052736,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur15::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106061 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507f80; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507f80.json",
+      "report": "reports/sse-steam-1-7-104/0x1507f80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1507fc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052800,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur3::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106062 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1507fc0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1507fc0.json",
+      "report": "reports/sse-steam-1-7-104/0x1507fc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508000",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052864,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur5::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106063 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508000; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508000.json",
+      "report": "reports/sse-steam-1-7-104/0x1508000.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508040",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052928,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur7::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106064 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508040; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508040.json",
+      "report": "reports/sse-steam-1-7-104/0x1508040.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508080",
       "build_id": "sse-steam-1-7-104",
       "rva": 22052992,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderBrightPassBlur9::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106065 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508080; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508080.json",
+      "report": "reports/sse-steam-1-7-104/0x1508080.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15080c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053056,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderCopy::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106066 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15080c0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15080c0.json",
+      "report": "reports/sse-steam-1-7-104/0x15080c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508100",
@@ -439956,516 +439972,559 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22053184,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderCopyDynamicFetchDisabled::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106068 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508140; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508140.json",
+      "report": "reports/sse-steam-1-7-104/0x1508140.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508180",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053248,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderCopyScaleBias::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106069 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508180; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508180.json",
+      "report": "reports/sse-steam-1-7-104/0x1508180.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15081c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053312,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDepthOfField::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106070 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15081c0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15081c0.json",
+      "report": "reports/sse-steam-1-7-104/0x15081c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508200",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053376,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDepthOfFieldFogged::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106071 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508200; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508200.json",
+      "report": "reports/sse-steam-1-7-104/0x1508200.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508240",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053440,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDepthOfFieldMaskedFogged::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106072 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508240; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508240.json",
+      "report": "reports/sse-steam-1-7-104/0x1508240.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508280",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053504,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDistantBlur::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106073 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508280; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508280.json",
+      "report": "reports/sse-steam-1-7-104/0x1508280.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15082c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053568,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDistantBlurFogged::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106074 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15082c0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15082c0.json",
+      "report": "reports/sse-steam-1-7-104/0x15082c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508300",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053632,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDistantBlurMaskedFogged::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106075 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508300; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508300.json",
+      "report": "reports/sse-steam-1-7-104/0x1508300.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508340",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053696,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderDoubleVision::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106076 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508340; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508340.json",
+      "report": "reports/sse-steam-1-7-104/0x1508340.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15083d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053840,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderGreyScale::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106078 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15083d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15083d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15083d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508410",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053904,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample16::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106079 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508410; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508410.json",
+      "report": "reports/sse-steam-1-7-104/0x1508410.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508450",
       "build_id": "sse-steam-1-7-104",
       "rva": 22053968,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample16LightAdapt::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106080 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508450; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508450.json",
+      "report": "reports/sse-steam-1-7-104/0x1508450.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508490",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054032,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample16Lum::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106081 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508490; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508490.json",
+      "report": "reports/sse-steam-1-7-104/0x1508490.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15084d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054096,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample16LumClamp::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106082 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15084d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15084d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15084d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508510",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054160,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample4::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106083 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508510; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508510.json",
+      "report": "reports/sse-steam-1-7-104/0x1508510.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508550",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054224,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample4LightAdapt::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106084 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508550; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508550.json",
+      "report": "reports/sse-steam-1-7-104/0x1508550.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508590",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054288,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample4LumClamp::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106085 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508590; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508590.json",
+      "report": "reports/sse-steam-1-7-104/0x1508590.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15085d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054352,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRDownSample4RGB2Lum::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106086 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15085d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15085d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15085d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508610",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054416,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRTonemapBlendCinematic::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106087 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508610; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508610.json",
+      "report": "reports/sse-steam-1-7-104/0x1508610.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508650",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054480,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderHDRTonemapBlendCinematicFade::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106088 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508650; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508650.json",
+      "report": "reports/sse-steam-1-7-104/0x1508650.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508690",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054544,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISApplyVolumetricLighting::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106089 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508690; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508690.json",
+      "report": "reports/sse-steam-1-7-104/0x1508690.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15086d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054608,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISBasicCopy::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106090 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15086d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15086d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15086d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508710",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054672,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISBlur::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106091 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508710; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508710.json",
+      "report": "reports/sse-steam-1-7-104/0x1508710.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508750",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054736,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISCompositeLensFlare::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106092 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508750; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508750.json",
+      "report": "reports/sse-steam-1-7-104/0x1508750.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508790",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054800,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISCompositeLensFlareVolumetricLighting::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106093 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508790; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508790.json",
+      "report": "reports/sse-steam-1-7-104/0x1508790.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15087d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054864,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISCompositeVolumetricLighting::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106094 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15087d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15087d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15087d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508810",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054928,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISCopySubRegionCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106095 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508810; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508810.json",
+      "report": "reports/sse-steam-1-7-104/0x1508810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508850",
       "build_id": "sse-steam-1-7-104",
       "rva": 22054992,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDebugSnow::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106096 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508850; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508850.json",
+      "report": "reports/sse-steam-1-7-104/0x1508850.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508890",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055056,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDepthOfFieldBlurHCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106097 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508890; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508890.json",
+      "report": "reports/sse-steam-1-7-104/0x1508890.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15088d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055120,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDepthOfFieldBlurVCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106098 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15088d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15088d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15088d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508910",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055184,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDisplayDepth::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106099 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508910; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508910.json",
+      "report": "reports/sse-steam-1-7-104/0x1508910.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508950",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055248,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDownsample::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106100 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508950; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508950.json",
+      "report": "reports/sse-steam-1-7-104/0x1508950.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508990",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055312,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDownsampleCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106101 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508990; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508990.json",
+      "report": "reports/sse-steam-1-7-104/0x1508990.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15089d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055376,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDownsampleIgnoreBrightest::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106102 (the list writes the name with a trailing _* marker, omitted here). RVA 0x15089d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15089d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15089d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508a10",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055440,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISDownsampleIgnoreBrightestCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106103 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508a10; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508a10.json",
+      "report": "reports/sse-steam-1-7-104/0x1508a10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508a50",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055504,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISExp::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106104 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508a50; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508a50.json",
+      "report": "reports/sse-steam-1-7-104/0x1508a50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508a90",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055568,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISIBLensFlares::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106105 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508a90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508a90.json",
+      "report": "reports/sse-steam-1-7-104/0x1508a90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508ad0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055632,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISLightingComposite::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106106 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508ad0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508ad0.json",
+      "report": "reports/sse-steam-1-7-104/0x1508ad0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508b10",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055696,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISLightingCompositeMenu::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106107 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508b10; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508b10.json",
+      "report": "reports/sse-steam-1-7-104/0x1508b10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508b50",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055760,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISLightingCompositeNoDirectionalLight::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106108 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508b50; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508b50.json",
+      "report": "reports/sse-steam-1-7-104/0x1508b50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508b90",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055824,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISMinify::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106109 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508b90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508b90.json",
+      "report": "reports/sse-steam-1-7-104/0x1508b90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508bd0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055888,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISMinifyContrast::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106110 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508bd0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508bd0.json",
+      "report": "reports/sse-steam-1-7-104/0x1508bd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508c10",
       "build_id": "sse-steam-1-7-104",
       "rva": 22055952,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShaderISParallaxMaskBlurHCS::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 106111 (the list writes the name with a trailing _* marker, omitted here). RVA 0x1508c10; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1508c10.json",
+      "report": "reports/sse-steam-1-7-104/0x1508c10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1508c50",
@@ -442849,12 +442908,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19128384,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf123e040::~DeletingLeaf123e040",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x123e040; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1507e00.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x123e040.json",
+      "report": "reports/sse-steam-1-7-104/0x123e040.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1259a70",
@@ -458643,7 +458703,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T09:38:58Z",
+  "updated_at": "2026-11-20T09:40:31Z",
   "work_items": [
     {
       "id": "pin-target",
