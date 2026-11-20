@@ -23416,9 +23416,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nianimation/BSWindModifier` | `BSWindModifier::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd8f90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd8f90.json` | matched | full | open |
 | `unmapped/leaves/LeafAddressfd92b0` | `LeafAddressfd92b0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfd92b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd92b0.json` | matched | family | open |
 | - | `Functionfd9500` (GUESS) | `sse-steam-1-7-104` / `0xfd9500` / 53 | - | - | mapped | - | - |
-| - | `BSPortalGraphEntry::ClearVisibility` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd96a0` / 185 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSPortalGraphEntry_fd96a0` | `BSPortalGraphEntry::ClearVisibility` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd96a0` / 185 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfd96a0.json` | matched | full | - |
+| `gamebryo/nimain/BSPortalGraphEntry_fd96a0` | `BSPortalGraphEntry::Functionfd9760` (GUESS) | `sse-steam-1-7-104` / `0xfd9760` / 47 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfd9760.json` | matched | full | - |
 | - | `BSPortalGraphEntry::Functionfd97a0` (GUESS) | `sse-steam-1-7-104` / `0xfd97a0` / 250 | - | - | mapped | - | - |
-| - | `BSPortalGraphEntry::AddVisibilityToMap` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd98a0` / 90 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSPortalGraphEntry_fd96a0` | `BSPortalGraphEntry::AddVisibilityToMap` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd98a0` / 90 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfd98a0.json` | matched | full | - |
 | - | `Functionfd9900` (GUESS) | `sse-steam-1-7-104` / `0xfd9900` / 143 | - | - | mapped | - | - |
 | - | `Functionfda220` (GUESS) | `sse-steam-1-7-104` / `0xfda220` / 166 | - | - | mapped | - | - |
 | - | `Functionfda3b0` (GUESS) | `sse-steam-1-7-104` / `0xfda3b0` / 285 | - | - | mapped | - | - |
@@ -23498,7 +23499,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Functionfe8770` (GUESS) | `sse-steam-1-7-104` / `0xfe8770` / 327 | - | - | mapped | - | - |
 | `gamebryo/nimain/BSOcclusionPlane_fe8e40` | `BSOcclusionPlane::GetFrustum` (GUESS) | `sse-steam-1-7-104` / `0xfe8e40` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe8e40.json` | matched | full | open |
 | - | `Functionfe8e60` (GUESS) | `sse-steam-1-7-104` / `0xfe8e60` / 363 | - | - | mapped | - | - |
-| - | `Functionfe93c0` (GUESS) | `sse-steam-1-7-104` / `0xfe93c0` / 272 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSOcclusionPlane_fe93c0` | `Functionfe93c0` (GUESS) | `sse-steam-1-7-104` / `0xfe93c0` / 272 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfe93c0.json` | matched | full | - |
 | - | `Functionfe94e0` (GUESS) | `sse-steam-1-7-104` / `0xfe94e0` / 887 | - | - | mapped | - | - |
 | - | `Functionfe9860` (GUESS) | `sse-steam-1-7-104` / `0xfe9860` / 304 | - | - | mapped | - | - |
 | `gamebryo/nimain/BSOcclusionPlane` | `BSOcclusionPlane::IsOcclusionPlane` (COMMUNITY) | `sse-steam-1-7-104` / `0xfe9bb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfe9bb0.json` | matched | full | open |
@@ -23585,8 +23586,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Functionff7790` (GUESS) | `sse-steam-1-7-104` / `0xff7790` / 552 | - | - | mapped | - | - |
 | - | `Functionff79c0` (GUESS) | `sse-steam-1-7-104` / `0xff79c0` / 276 | - | - | mapped | - | - |
 | - | `Functionff7ce0` (GUESS) | `sse-steam-1-7-104` / `0xff7ce0` / 72 | - | - | mapped | - | - |
-| - | `Functionff7d30` (GUESS) | `sse-steam-1-7-104` / `0xff7d30` / 79 | - | - | mapped | - | - |
-| - | `Functionff7d90` (GUESS) | `sse-steam-1-7-104` / `0xff7d90` / 79 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSCompoundFrustum_ff7d30` | `Functionff7d30` (GUESS) | `sse-steam-1-7-104` / `0xff7d30` / 79 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xff7d30.json` | matched | full | - |
+| `gamebryo/nimain/BSCompoundFrustum_ff7d30` | `Functionff7d90` (GUESS) | `sse-steam-1-7-104` / `0xff7d90` / 79 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xff7d90.json` | matched | full | - |
 | - | `Functionff7df0` (GUESS) | `sse-steam-1-7-104` / `0xff7df0` / 342 | - | - | mapped | - | - |
 | - | `Functionff7f50` (GUESS) | `sse-steam-1-7-104` / `0xff7f50` / 179 | - | - | mapped | - | - |
 | - | `Functionff8010` (GUESS) | `sse-steam-1-7-104` / `0xff8010` / 268 | - | - | mapped | - | - |
@@ -23754,7 +23755,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `bhkCharacterController::Function1063e80` (GUESS) | `sse-steam-1-7-104` / `0x1063e80` / 1770 | - | - | mapped | - | - |
 | - | `bhkCharacterController::Function10645e0` (GUESS) | `sse-steam-1-7-104` / `0x10645e0` / 27 | - | - | mapped | - | - |
 | - | `bhkCharacterController::Function1064690` (GUESS) | `sse-steam-1-7-104` / `0x1064690` / 55 | - | - | mapped | - | - |
-| - | `bhkCharacterController::Function1066020` (GUESS) | `sse-steam-1-7-104` / `0x1066020` / 72 | - | - | mapped | - | - |
+| `bshavok/BhkCharacterController_1066020` | `bhkCharacterController::Function1066020` (GUESS) | `sse-steam-1-7-104` / `0x1066020` / 72 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0x1066020.json` | matched | full | - |
 | - | `bhkCharacterController::IsHurtfulBody` (COMMUNITY) | `sse-steam-1-7-104` / `0x1066970` / 86 | - | - | mapped | - | - |
 | - | `bhkCharacterController::ProcessHurtfulBody` (COMMUNITY) | `sse-steam-1-7-104` / `0x1066c60` / 745 | - | - | mapped | - | - |
 | `unmapped/leaves/TableStoreLeaf10687d0` | `TableStoreLeaf10687d0::~TableStoreLeaf10687d0` (GUESS) | `sse-steam-1-7-104` / `0x10687d0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10687d0.json` | matched | family | open |
