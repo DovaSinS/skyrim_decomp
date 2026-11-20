@@ -438598,12 +438598,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16401728,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldAirFrictionCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74761 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfa4540; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa4540.json",
+      "report": "reports/sse-steam-1-7-104/0xfa4540.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa4870",
@@ -438623,12 +438624,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16402768,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldInheritVelocityCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74777 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfa4950; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa4950.json",
+      "report": "reports/sse-steam-1-7-104/0xfa4950.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa5ed0",
@@ -438661,12 +438663,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16409488,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysAirFieldSpreadCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74811 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfa6390; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa6390.json",
+      "report": "reports/sse-steam-1-7-104/0xfa6390.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa6570",
@@ -438711,12 +438714,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16415792,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysBombModifier::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74849 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfa7c30; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa7c30.json",
+      "report": "reports/sse-steam-1-7-104/0xfa7c30.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa8520",
@@ -438849,12 +438853,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16441232,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75005 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfadf90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfadf90.json",
+      "report": "reports/sse-steam-1-7-104/0xfadf90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae2c0",
@@ -438887,12 +438892,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16442256,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterDeclinationVarCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75021 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfae390; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae390.json",
+      "report": "reports/sse-steam-1-7-104/0xfae390.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfae6c0",
@@ -438925,12 +438931,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16443280,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterInitialRadiusCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75037 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfae790; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfae790.json",
+      "report": "reports/sse-steam-1-7-104/0xfae790.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaeac0",
@@ -438963,12 +438970,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16444304,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterLifeSpanCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75053 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfaeb90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaeb90.json",
+      "report": "reports/sse-steam-1-7-104/0xfaeb90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaeec0",
@@ -439001,12 +439009,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16445328,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75069 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfaef90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaef90.json",
+      "report": "reports/sse-steam-1-7-104/0xfaef90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf2c0",
@@ -439039,12 +439048,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16446352,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterPlanarAngleVarCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75085 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfaf390; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf390.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf390.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf6c0",
@@ -439077,12 +439087,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16447376,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterSpeedCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75101 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfaf790; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf790.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf790.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafac0",
@@ -439115,12 +439126,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16448400,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldAttenuationCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75117 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfafb90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafb90.json",
+      "report": "reports/sse-steam-1-7-104/0xfafb90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafec0",
@@ -439153,12 +439165,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16449424,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMagnitudeCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75133 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfaff90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaff90.json",
+      "report": "reports/sse-steam-1-7-104/0xfaff90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb02c0",
@@ -439191,12 +439204,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16450464,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysFieldMaxDistanceCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75149 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb03a0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb03a0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb03a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb0570",
@@ -439255,12 +439269,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16454608,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysGravityStrengthCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75182 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb13d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb13d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb13d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1b90",
@@ -439306,12 +439321,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16457616,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75212 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb1f90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1f90.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1f90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb22c0",
@@ -439344,12 +439360,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16458640,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotAngleVarCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75228 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb2390; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb2390.json",
+      "report": "reports/sse-steam-1-7-104/0xfb2390.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb26c0",
@@ -439382,12 +439399,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16459664,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75244 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb2790; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb2790.json",
+      "report": "reports/sse-steam-1-7-104/0xfb2790.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb2ac0",
@@ -439420,12 +439438,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16460688,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysInitialRotSpeedVarCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75260 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb2b90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb2b90.json",
+      "report": "reports/sse-steam-1-7-104/0xfb2b90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb57b0",
@@ -439458,12 +439477,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16472224,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierActiveCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75325 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfb58a0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb58a0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb58a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb7660",
@@ -439674,24 +439694,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16517328,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysVolumeEmitter::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75557 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc08d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc08d0.json",
+      "report": "reports/sse-steam-1-7-104/0xfc08d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc0930",
       "build_id": "sse-steam-1-7-104",
       "rva": 16517424,
       "size": 45,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierFloatCtlr::LoadBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75560 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc0930; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc0930.json",
+      "report": "reports/sse-steam-1-7-104/0xfc0930.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc0d60",
@@ -439711,12 +439733,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16518512,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierFloatCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75572 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc0d70; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc0d70.json",
+      "report": "reports/sse-steam-1-7-104/0xfc0d70.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc0f20",
@@ -439749,12 +439772,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16520784,
       "size": 45,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierBoolCtlr::LoadBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75590 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc1650; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc1650.json",
+      "report": "reports/sse-steam-1-7-104/0xfc1650.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc1a80",
@@ -439774,12 +439798,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16521872,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierBoolCtlr::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 75602 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfc1a90; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc1a90.json",
+      "report": "reports/sse-steam-1-7-104/0xfc1a90.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfe0f00",
@@ -467035,7 +467060,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T15:30:16Z",
+  "updated_at": "2026-11-20T15:39:13Z",
   "work_items": [
     {
       "id": "pin-target",
