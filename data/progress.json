@@ -73039,12 +73039,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 1698096,
       "size": 73,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStream::SaveLinkID",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 12. RVA 0x19e930; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x19e930.json",
+      "report": "reports/sse-steam-1-7-104/0x19e930.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1ae650",
@@ -179301,48 +179302,52 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15618144,
       "size": 136,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStream::GetLinkIDFromObject",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 11. RVA 0xee5060; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xee5060.json",
+      "report": "reports/sse-steam-1-7-104/0xee5060.json"
     },
     {
       "id": "sse-steam-1-7-104-0xee69c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 15624640,
       "size": 76,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStream::RegisterObjects",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 17. RVA 0xee69c0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xee69c0.json",
+      "report": "reports/sse-steam-1-7-104/0xee69c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xee6bc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 15625152,
       "size": 120,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStream::SaveTopLevelObjects",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 19. RVA 0xee6bc0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xee6bc0.json",
+      "report": "reports/sse-steam-1-7-104/0xee6bc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xee6e40",
       "build_id": "sse-steam-1-7-104",
       "rva": 15625792,
       "size": 121,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStream::PreSaveObjectSizeTable",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 21. RVA 0xee6e40; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xee6e40.json",
+      "report": "reports/sse-steam-1-7-104/0xee6e40.json"
     },
     {
       "id": "sse-steam-1-7-104-0xee6ec0",
@@ -180405,12 +180410,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15692160,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiStringExtraData::SaveBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 27. RVA 0xef7180; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xef7180.json",
+      "report": "reports/sse-steam-1-7-104/0xef7180.json"
     },
     {
       "id": "sse-steam-1-7-104-0xef71c0",
@@ -182495,12 +182501,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15794416,
       "size": 62,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiBooleanExtraData::~NiBooleanExtraData",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xf100f0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf100f0.json",
+      "report": "reports/sse-steam-1-7-104/0xf100f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf10130",
@@ -182828,12 +182835,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15803264,
       "size": 62,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiIntegerExtraData::~NiIntegerExtraData",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xf12380; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf12380.json",
+      "report": "reports/sse-steam-1-7-104/0xf12380.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf123c0",
@@ -466208,6 +466216,162 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x270a70.json",
       "report": "reports/sse-steam-1-7-104/0x270a70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xee4420",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15615008,
+      "size": 54,
+      "status": "matched",
+      "name": "NiStream::Functionee4420",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xee4420; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xee4420.json",
+      "report": "reports/sse-steam-1-7-104/0xee4420.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xee46d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15615696,
+      "size": 52,
+      "status": "matched",
+      "name": "NiStream::Functionee46d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xee46d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xee46d0.json",
+      "report": "reports/sse-steam-1-7-104/0xee46d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xef73d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15692752,
+      "size": 74,
+      "status": "matched",
+      "name": "NiStringExtraData::Functionef73d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xef73d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xef73d0.json",
+      "report": "reports/sse-steam-1-7-104/0xef73d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xef9840",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15702080,
+      "size": 44,
+      "status": "matched",
+      "name": "NiExtraData::Functionef9840",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xef9840; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xef9840.json",
+      "report": "reports/sse-steam-1-7-104/0xef9840.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xef9b00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15702784,
+      "size": 51,
+      "status": "matched",
+      "name": "NiExtraData::Functionef9b00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xef9b00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xef9b00.json",
+      "report": "reports/sse-steam-1-7-104/0xef9b00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xef9b50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15702864,
+      "size": 9,
+      "status": "matched",
+      "name": "NiExtraData::Functionef9b50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xef9b50; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xef9b50.json",
+      "report": "reports/sse-steam-1-7-104/0xef9b50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf10eb0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15797936,
+      "size": 79,
+      "status": "matched",
+      "name": "NiFloatExtraData::Functionf10eb0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf10eb0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf10eb0.json",
+      "report": "reports/sse-steam-1-7-104/0xf10eb0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf10f30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15798064,
+      "size": 79,
+      "status": "matched",
+      "name": "NiFloatExtraData::Functionf10f30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf10f30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf10f30.json",
+      "report": "reports/sse-steam-1-7-104/0xf10f30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf12100",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15802624,
+      "size": 79,
+      "status": "matched",
+      "name": "NiIntegerExtraData::Functionf12100",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf12100; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf12100.json",
+      "report": "reports/sse-steam-1-7-104/0xf12100.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf12180",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15802752,
+      "size": 79,
+      "status": "matched",
+      "name": "NiIntegerExtraData::Functionf12180",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf12180; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf12180.json",
+      "report": "reports/sse-steam-1-7-104/0xf12180.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf12a70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15805040,
+      "size": 57,
+      "status": "matched",
+      "name": "NiIntegersExtraData::Functionf12a70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf12a70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf12a70.json",
+      "report": "reports/sse-steam-1-7-104/0xf12a70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf12ab0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15805104,
+      "size": 57,
+      "status": "matched",
+      "name": "NiIntegersExtraData::Functionf12ab0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf12ab0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf12ab0.json",
+      "report": "reports/sse-steam-1-7-104/0xf12ab0.json"
     }
   ],
   "milestones": [
@@ -466250,7 +466414,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T13:33:43Z",
+  "updated_at": "2026-11-20T13:34:42Z",
   "work_items": [
     {
       "id": "pin-target",
