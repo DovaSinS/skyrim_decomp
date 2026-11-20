@@ -98390,7 +98390,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 11. RVA 0x432030; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x432030.json",
       "report": "reports/sse-steam-1-7-104/0x432030.json"
     },
     {
@@ -98404,7 +98404,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 14. RVA 0x432080; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x432080.json",
       "report": "reports/sse-steam-1-7-104/0x432080.json"
     },
     {
@@ -98485,7 +98485,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x432520.json",
       "report": "reports/sse-steam-1-7-104/0x432520.json"
     },
     {
@@ -98667,7 +98667,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), joined through Address Library id 27007. RVA 0x43aca0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x43aca0.json",
       "report": "reports/sse-steam-1-7-104/0x43aca0.json"
     },
     {
@@ -98694,7 +98694,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), joined through Address Library id 27009. RVA 0x43ace0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x43ace0.json",
       "report": "reports/sse-steam-1-7-104/0x43ace0.json"
     },
     {
@@ -98702,12 +98702,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4435200,
       "size": 22,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSFaceGenKeyframeMultiple::GetCustomName",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), joined through Address Library id 27010. RVA 0x43ad00; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x43ad00.json",
+      "report": "reports/sse-steam-1-7-104/0x43ad00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x43e1d0",
@@ -474804,7 +474805,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T23:22:57Z",
+  "updated_at": "2026-11-20T23:23:34Z",
   "work_items": [
     {
       "id": "pin-target",
