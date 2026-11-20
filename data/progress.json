@@ -430916,12 +430916,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 6839344,
       "size": 141,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectREFR::Function685c30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0x685c30; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x685c30.json",
+      "report": "reports/sse-steam-1-7-104/0x685c30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x692800",
@@ -430952,12 +430953,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 7066928,
       "size": 199,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectREFR::Function6bd530",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0x6bd530; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x6bd530.json",
+      "report": "reports/sse-steam-1-7-104/0x6bd530.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7cf1e0",
@@ -470374,6 +470376,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xfd9760.json",
       "report": "reports/sse-steam-1-7-104/0xfd9760.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x2f5860",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3102816,
+      "size": 46,
+      "status": "matched",
+      "name": "TESObjectREFR::Function2f5860",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x2f5860; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x2f5860.json",
+      "report": "reports/sse-steam-1-7-104/0x2f5860.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x679990",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6789520,
+      "size": 94,
+      "status": "matched",
+      "name": "PlayerCharacter::Function679990",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x679990; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x679990.json",
+      "report": "reports/sse-steam-1-7-104/0x679990.json"
     }
   ],
   "milestones": [
@@ -470416,7 +470444,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T19:23:04Z",
+  "updated_at": "2026-11-20T19:33:59Z",
   "work_items": [
     {
       "id": "pin-target",
