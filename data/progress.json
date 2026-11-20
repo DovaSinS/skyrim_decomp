@@ -466786,6 +466786,71 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x156aaf0.json",
       "report": "reports/sse-steam-1-7-104/0x156aaf0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf788a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16222368,
+      "size": 47,
+      "status": "matched",
+      "name": "NiBSplineCompColorInterpolator::Functionf788a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf788a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf788a0.json",
+      "report": "reports/sse-steam-1-7-104/0xf788a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf788e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16222432,
+      "size": 47,
+      "status": "matched",
+      "name": "NiBSplineCompColorInterpolator::Functionf788e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf788e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf788e0.json",
+      "report": "reports/sse-steam-1-7-104/0xf788e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf78f20",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16224032,
+      "size": 47,
+      "status": "matched",
+      "name": "NiBSplineCompFloatInterpolator::Functionf78f20",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf78f20; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf78f20.json",
+      "report": "reports/sse-steam-1-7-104/0xf78f20.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf79590",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16225680,
+      "size": 47,
+      "status": "matched",
+      "name": "NiBSplineCompPoint3Interpolator::Functionf79590",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf79590; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf79590.json",
+      "report": "reports/sse-steam-1-7-104/0xf79590.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf795d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16225744,
+      "size": 47,
+      "status": "matched",
+      "name": "NiBSplineCompPoint3Interpolator::Functionf795d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf795d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf795d0.json",
+      "report": "reports/sse-steam-1-7-104/0xf795d0.json"
     }
   ],
   "milestones": [
@@ -466828,7 +466893,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T14:14:00Z",
+  "updated_at": "2026-11-20T14:19:09Z",
   "work_items": [
     {
       "id": "pin-target",
