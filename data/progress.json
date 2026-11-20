@@ -473783,132 +473783,143 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20169568,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c360::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c360; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c360.json",
+      "report": "reports/sse-steam-1-7-104/0x133c360.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c370",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169584,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c370::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c370; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c370.json",
+      "report": "reports/sse-steam-1-7-104/0x133c370.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c380",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169600,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c380::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c380; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c380.json",
+      "report": "reports/sse-steam-1-7-104/0x133c380.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c390",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169616,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c390::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c390; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c390.json",
+      "report": "reports/sse-steam-1-7-104/0x133c390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c3a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169632,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c3a0::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c3a0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c3a0.json",
+      "report": "reports/sse-steam-1-7-104/0x133c3a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c3b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169648,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c3b0::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c3b0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c3b0.json",
+      "report": "reports/sse-steam-1-7-104/0x133c3b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c3c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169664,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c3c0::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c3c0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c3c0.json",
+      "report": "reports/sse-steam-1-7-104/0x133c3c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c3d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20169680,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf133c3d0::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x133c3d0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x133c3d0.json",
+      "report": "reports/sse-steam-1-7-104/0x133c3d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1346480",
       "build_id": "sse-steam-1-7-104",
       "rva": 20210816,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1346480::~TableStoreLeaf1346480",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1346480; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1346480.json",
+      "report": "reports/sse-steam-1-7-104/0x1346480.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1346750",
       "build_id": "sse-steam-1-7-104",
       "rva": 20211536,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1346750::~TableStoreLeaf1346750",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1346750; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1346750.json",
+      "report": "reports/sse-steam-1-7-104/0x1346750.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1346760",
       "build_id": "sse-steam-1-7-104",
       "rva": 20211552,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1346760::~TableStoreLeaf1346760",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1346760; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1346760.json",
+      "report": "reports/sse-steam-1-7-104/0x1346760.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13471e0",
@@ -473939,24 +473950,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20425040,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf137a950::~TableStoreLeaf137a950",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x137a950; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x137a950.json",
+      "report": "reports/sse-steam-1-7-104/0x137a950.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1382630",
       "build_id": "sse-steam-1-7-104",
       "rva": 20457008,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1382630::~TableStoreLeaf1382630",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1382630; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1382630.json",
+      "report": "reports/sse-steam-1-7-104/0x1382630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1386d50",
@@ -474095,36 +474108,39 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20826448,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf13dc950::~TableStoreLeaf13dc950",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13dc950; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13dc950.json",
+      "report": "reports/sse-steam-1-7-104/0x13dc950.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409c30",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011504,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1409c30::~TableStoreLeaf1409c30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1409c30; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409c30.json",
+      "report": "reports/sse-steam-1-7-104/0x1409c30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409c40",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011520,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1409c40::~TableStoreLeaf1409c40",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1409c40; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409c40.json",
+      "report": "reports/sse-steam-1-7-104/0x1409c40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x141dba0",
@@ -474155,60 +474171,65 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21370576,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf14616d0::~TableStoreLeaf14616d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14616d0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14616d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14616d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14616e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21370592,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf14616e0::~TableStoreLeaf14616e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14616e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14616e0.json",
+      "report": "reports/sse-steam-1-7-104/0x14616e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14616f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21370608,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf14616f0::~TableStoreLeaf14616f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14616f0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14616f0.json",
+      "report": "reports/sse-steam-1-7-104/0x14616f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462110",
       "build_id": "sse-steam-1-7-104",
       "rva": 21373200,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1462110::~TableStoreLeaf1462110",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462110; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462110.json",
+      "report": "reports/sse-steam-1-7-104/0x1462110.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462130",
       "build_id": "sse-steam-1-7-104",
       "rva": 21373232,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf1462130::~TableStoreLeaf1462130",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462130; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462130.json",
+      "report": "reports/sse-steam-1-7-104/0x1462130.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14632b0",
@@ -474263,24 +474284,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21435376,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf14713f0::~TableStoreLeaf14713f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14713f0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14713f0.json",
+      "report": "reports/sse-steam-1-7-104/0x14713f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14817b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21501872,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "TableStoreLeaf14817b0::~TableStoreLeaf14817b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14817b0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x10fca0.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14817b0.json",
+      "report": "reports/sse-steam-1-7-104/0x14817b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482900",
@@ -474311,12 +474334,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22656224,
       "size": 5,
-      "status": "mapped",
+      "status": "matched",
       "name": "FieldLeaf159b4e0::Read",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x159b4e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x112670.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159b4e0.json",
+      "report": "reports/sse-steam-1-7-104/0x159b4e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159b960",
@@ -474657,7 +474681,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T21:19:47Z",
+  "updated_at": "2026-11-20T21:49:39Z",
   "work_items": [
     {
       "id": "pin-target",
