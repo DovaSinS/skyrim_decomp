@@ -9254,6 +9254,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function207980` (GUESS) | `sse-steam-1-7-104` / `0x207980` / 2072 | - | - | mapped | - | - |
 | - | `Function2081a0` (GUESS) | `sse-steam-1-7-104` / `0x2081a0` / 1078 | - | - | mapped | - | - |
 | - | `Function2085e0` (GUESS) | `sse-steam-1-7-104` / `0x2085e0` / 1000 | - | - | mapped | - | - |
+| - | `TESGrassManager::SetShaderFadeStart` (GUESS) | `sse-steam-1-7-104` / `0x208f60` / 82 | - | - | mapped | - | - |
+| - | `TESGrassManager::GenerateLayerInstances` (GUESS) | `sse-steam-1-7-104` / `0x209020` / 2912 | - | - | mapped | - | - |
 | `unmapped/leaves/TableStoreLeaf20ab40` | `TableStoreLeaf20ab40::~TableStoreLeaf20ab40` (GUESS) | `sse-steam-1-7-104` / `0x20ab40` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20ab40.json` | matched | full | checked |
 | `unmapped/leaves/ThunkLeaf20ab50` | `ThunkLeaf20ab50::Forward` (GUESS) | `sse-steam-1-7-104` / `0x20ab50` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20ab50.json` | matched | full | - |
 | `unmapped/wrappers/BSInlineHost20b030` | `BSInlineHost20b030::~BSInlineHost20b030` (GUESS) | `sse-steam-1-7-104` / `0x20b030` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20b030.json` | matched | full | open |
@@ -10112,6 +10114,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/TESObjectLAND` | `TESObjectLAND::SetAltered` (COMMUNITY) | `sse-steam-1-7-104` / `0x2aa2e0` / 56 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2aa2e0.json` | matched | full | open |
 | - | `TESObjectLAND::CreateGroupData` (COMMUNITY) | `sse-steam-1-7-104` / `0x2aa390` / 160 | - | - | mapped | - | - |
 | `skyrim_shared/world/TESObjectLAND_2ab510` | `TESObjectLAND::Function2ab510` (GUESS) | `sse-steam-1-7-104` / `0x2ab510` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2ab510.json` | matched | full | open |
+| - | `TESGrassManager::BuildLayerRecords` (GUESS) | `sse-steam-1-7-104` / `0x2afb20` / 2131 | - | - | mapped | - | - |
 | `skyrim_shared/world/TESObjectLAND_2b2a30` | `TESObjectLAND::Function2b2a30` (GUESS) | `sse-steam-1-7-104` / `0x2b2a30` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b2a30.json` | matched | full | open |
 | `skyrim_shared/world/TESObjectLAND_2b2a30` | `TESObjectLAND::Function2b2a50` (GUESS) | `sse-steam-1-7-104` / `0x2b2a50` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b2a50.json` | matched | full | open |
 | - | `TESObjectLAND::Function2b3380` (GUESS) | `sse-steam-1-7-104` / `0x2b3380` / 950 | - | - | mapped | - | - |
@@ -27528,6 +27531,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSGrassShader::Func6` (GUESS) | `sse-steam-1-7-104` / `0x1522870` / 2048 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf1523080` | `Leaf1523080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1523080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1523080.json` | matched | family | open |
 | - | `Function15233c0` (GUESS) | `sse-steam-1-7-104` / `0x15233c0` / 120 | - | - | mapped | - | - |
+| - | `BSGrassShader::UploadInstanceFade` (GUESS) | `sse-steam-1-7-104` / `0x1523440` / 322 | - | - | mapped | - | - |
 | `bsshader/BSGrassShaderThunkLayout` | `BSGrassShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x1523584` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1523584.json` | matched | full | checked |
 | `bsshader/BSLightingShaderMaterialBase` | `BSLightingShaderMaterialBase::CopyMembers` (COMMUNITY) | `sse-steam-1-7-104` / `0x15237e0` / 384 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15237e0.json` | matched | full | - |
 | `bsshader/BSLightingShaderMaterialBase` | `BSLightingShaderMaterialBase::GetDefault` (COMMUNITY) | `sse-steam-1-7-104` / `0x1523d10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1523d10.json` | matched | full | open |
