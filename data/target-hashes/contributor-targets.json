@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "build_id": "sse-steam-1-7-104",
-  "snapshot_utc": "2026-11-20T20:45:10.041210+00:00",
+  "snapshot_utc": "2026-11-20T20:58:51.179131+00:00",
   "function_metadata_sha256": "15ba17036f4312634d884316084923fbf3e4bdad61101ab28ae476b187376710",
-  "claims_snapshot_sha256": "8e1f3d8fc54c6f7d9d948f4e24e1f11f2a0bdfd1599e1b27f72db97d5f17745b",
+  "claims_snapshot_sha256": "414936af6916918b0921c89838c6f1d33338be0681a25388d7dd5c15d3e0a3ea",
   "claims": [
     {
       "number": 545,
@@ -2452,7 +2452,7 @@
       ]
     }
   ],
-  "next_candidate_count": 3045,
+  "next_candidate_count": 3044,
   "claim_function_count": 543,
   "functions": [
     {
@@ -13461,12 +13461,6 @@
     {
       "rva": 8021840,
       "size": 9,
-      "extent_source": "local-function-table",
-      "class": "MovementHandlerAgentStairsHelper"
-    },
-    {
-      "rva": 8021856,
-      "size": 61,
       "extent_source": "local-function-table",
       "class": "MovementHandlerAgentStairsHelper"
     },
