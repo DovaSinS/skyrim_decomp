@@ -4,6 +4,7 @@
 // ErasedSignature1463310CallableLayout: GUESS(medium) STANDIN
 // Adapted bodies: none
 // 0x1463310 ErasedSignature1463310CallableLayout scalar deleting destructor
+// CI hash: 0x1463310 ??_GErasedSignature1463310CallableLayout@ResearchLayouts@@UEAAPEAXI@Z
 void operator delete(void*, unsigned __int64) noexcept;
 #include "ErasedSignature1463310CallableLayout.h"
 namespace ResearchLayouts {
