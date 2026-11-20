@@ -14095,10 +14095,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Actor::IsInMidair` (COMMUNITY) | `sse-steam-1-7-104` / `0x6747f0` / 140 | - | - | mapped | - | - |
 | - | `PlayerCharacter::Function674890` (GUESS) | `sse-steam-1-7-104` / `0x674890` / 138 | - | - | mapped | - | - |
 | `skyrim/ai/PackageProcess` | `P2071::HasPackageType29` (GUESS) | `sse-steam-1-7-104` / `0x674920` / 63 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x674920.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function674b70` (GUESS) | `sse-steam-1-7-104` / `0x674b70` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x674b70.json` | matched | full | - |
 | - | `Actor::Jump` (COMMUNITY) | `sse-steam-1-7-104` / `0x675110` / 505 | - | - | mapped | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function675310` (GUESS) | `sse-steam-1-7-104` / `0x675310` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675310.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Leaf675350::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x675350` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675350.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6754e0` | `Actor::Disable` (GUESS) | `sse-steam-1-7-104` / `0x6754e0` / 35 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6754e0.json` | matched | full | open |
 | `unmapped/leaves/LeafForward675510` | `LeafForward675510::Forward` (GUESS) | `sse-steam-1-7-104` / `0x675510` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675510.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function675540` (GUESS) | `sse-steam-1-7-104` / `0x675540` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675540.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function675560` (GUESS) | `sse-steam-1-7-104` / `0x675560` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675560.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_675bf0` | `Actor::TryMoveToMiddleLow` (GUESS) | `sse-steam-1-7-104` / `0x675bf0` / 47 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x675bf0.json` | matched | full | open |
 | `unmapped/leaves/LeafForward6761e0` | `LeafForward6761e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6761e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6761e0.json` | matched | family | open |
 | `skyrim_shared/actors/Actor_6761f0` | `Actor::TryUpdateActorLastSeenTime` (GUESS) | `sse-steam-1-7-104` / `0x6761f0` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6761f0.json` | matched | full | open |
@@ -14114,16 +14118,18 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Actor_67ea20` | `Actor::GetCrimeGoldValue` (GUESS) | `sse-steam-1-7-104` / `0x67ea20` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x67ea20.json` | matched | full | open |
 | `skyrim_shared/actors/Character` | `Character::SetCrimeFaction` (COMMUNITY) | `sse-steam-1-7-104` / `0x67eab0` / 234 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x67eab0.json` | matched | delta | open |
 | `skyrim_shared/refs/TESObjectREFR_67f1a0` | `TESObjectREFR::sub` (GUESS) | `sse-steam-1-7-104` / `0x67f1a0` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x67f1a0.json` | matched | full | open |
-| - | `Actor::GetBoundRadius` (COMMUNITY) | `sse-steam-1-7-104` / `0x685900` / 41 | - | - | mapped | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::GetBoundRadius` (COMMUNITY) | `sse-steam-1-7-104` / `0x685900` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x685900.json` | matched | full | - |
 | `skyrim_shared/actors/Character_685c00` | `Character::Function685c00` (GUESS) | `sse-steam-1-7-104` / `0x685c00` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x685c00.json` | matched | full | open |
 | - | `TESObjectREFR::Function685c30` (GUESS) | `sse-steam-1-7-104` / `0x685c30` / 141 | - | - | mapped | - | - |
 | `skyrim_shared/actors/Actor_686600` | `Actor::SetObjectReference` (GUESS) | `sse-steam-1-7-104` / `0x686600` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x686600.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::GetClass` (GUESS) | `sse-steam-1-7-104` / `0x686640` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x686640.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::IsKnockedDown` (GUESS) | `sse-steam-1-7-104` / `0x687a20` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687a20.json` | matched | full | open |
-| - | `Actor::IsMovementAnimationDriven` (COMMUNITY) | `sse-steam-1-7-104` / `0x687ac0` / 61 | - | - | mapped | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::IsMovementAnimationDriven` (COMMUNITY) | `sse-steam-1-7-104` / `0x687ac0` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687ac0.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_687b40` | `Actor::SetRestrained` (GUESS) | `sse-steam-1-7-104` / `0x687b40` / 80 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687b40.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function687c00` (GUESS) | `sse-steam-1-7-104` / `0x687c00` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687c00.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Actor::IsInRagdollState` (COMMUNITY) | `sse-steam-1-7-104` / `0x687c20` / 102 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687c20.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_687c90` | `Actor::SetActionComplete` (GUESS) | `sse-steam-1-7-104` / `0x687c90` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687c90.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function687f30` (GUESS) | `sse-steam-1-7-104` / `0x687f30` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x687f30.json` | matched | full | - |
 | - | `Function6892f0` (GUESS) | `sse-steam-1-7-104` / `0x6892f0` / 116 | - | - | mapped | - | - |
 | - | `Actor::Move` (COMMUNITY) | `sse-steam-1-7-104` / `0x689370` / 4309 | - | - | mapped | - | - |
 | `skyrim_shared/actors/Character_685c00` | `Character::Function68ab20` (GUESS) | `sse-steam-1-7-104` / `0x68ab20` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x68ab20.json` | matched | full | open |
@@ -14134,6 +14140,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/ActorPass` | `P2061::Actor::Function690b20` (GUESS) | `sse-steam-1-7-104` / `0x690b20` / 46 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x690b20.json` | mapped, record awaiting review | - | - |
 | - | `Actor::GetCollisionFilterInfo` (COMMUNITY) | `sse-steam-1-7-104` / `0x690be0` / 76 | - | - | mapped | - | - |
 | `skyrim_shared/actors/Actor_690e50` | `Actor::SetDelete` (GUESS) | `sse-steam-1-7-104` / `0x690e50` / 51 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x690e50.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function692320` (GUESS) | `sse-steam-1-7-104` / `0x692320` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x692320.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_690e50` | `Actor::GetRunSpeed` (GUESS) | `sse-steam-1-7-104` / `0x692650` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x692650.json` | matched | full | open |
 | `skyrim_shared/actors/ActorSpeedBlend` | `P2071::ActorSpeedBlend::GetJogSpeed` (GUESS) | `sse-steam-1-7-104` / `0x692670` / 57 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x692670.json` | matched | full | open |
 | `skyrim_shared/actors/ActorSpeedBlend` | `P2071::ActorSpeedBlend::GetFastWalkSpeed` (GUESS) | `sse-steam-1-7-104` / `0x6926b0` / 57 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6926b0.json` | matched | full | open |
@@ -14146,10 +14153,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Actor::SetRotationX` (COMMUNITY) | `sse-steam-1-7-104` / `0x692eb0` / 405 | - | - | mapped | - | - |
 | - | `Function693050` (GUESS) | `sse-steam-1-7-104` / `0x693050` / 412 | - | - | mapped | - | - |
 | `skyrim_shared/actors/Actor_6939e0` | `Actor::SetCriticalStage` (GUESS) | `sse-steam-1-7-104` / `0x6939e0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6939e0.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function696a40` (GUESS) | `sse-steam-1-7-104` / `0x696a40` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x696a40.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Leaf6990e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6990e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6990e0.json` | matched | full | open |
 | `skyrim_shared/forms/HandleQuery` | `P2061::HandleQuery::Function69c120` (GUESS) | `sse-steam-1-7-104` / `0x69c120` / 52 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x69c120.json` | mapped, record awaiting review | - | - |
 | `skyrim_shared/actors/ActorCache` | `P2071::ActorCache::InvalidateCache` (GUESS) | `sse-steam-1-7-104` / `0x69d120` / 58 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x69d120.json` | matched | full | open |
 | `unmapped/storage/FieldRecoveryStorageLayout` | `represented typed field operation` (GUESS) | `sse-steam-1-7-104` / `0x69dcd0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69dcd0.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function69f8c0` (GUESS) | `sse-steam-1-7-104` / `0x69f8c0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69f8c0.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Leaf69f8e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x69f8e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69f8e0.json` | matched | full | open |
 | `unmapped/leaves/Leaf69f8f0` | `Leaf69f8f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x69f8f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69f8f0.json` | matched | family | open |
 | `unmapped/leaves/Leaf69f900` | `Leaf69f900::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x69f900` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69f900.json` | matched | family | open |
@@ -14160,12 +14169,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Actor_69f9e0` | `Actor::ApplyPerksFromBase` (GUESS) | `sse-steam-1-7-104` / `0x69f9e0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69f9e0.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf69fa30` | `ReturnLeaf69fa30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x69fa30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69fa30.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf69fa40` | `ReturnLeaf69fa40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x69fa40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69fa40.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function69fe50` (GUESS) | `sse-steam-1-7-104` / `0x69fe50` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x69fe50.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6a15c0` (GUESS) | `sse-steam-1-7-104` / `0x6a15c0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a15c0.json` | matched | full | - |
 | `skyrim_shared/actors/ActorPass` | `P2061::Actor::unk_IsInDialogue` (GUESS) | `sse-steam-1-7-104` / `0x6a15e0` / 46 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6a15e0.json` | mapped, record awaiting review | - | - |
 | `unmapped/leaves/Leaf6a1bd0` | `Leaf6a1bd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6a1bd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a1bd0.json` | matched | family | open |
 | `skyrim_shared/actors/Character_6a3290` | `Character::ExceedsScaledMetric` (GUESS) | `sse-steam-1-7-104` / `0x6a3290` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a3290.json` | matched | full | open |
 | - | `Function6a33b0` (GUESS) | `sse-steam-1-7-104` / `0x6a33b0` / 3180 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward6a4e10` | `LeafForward6a4e10::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6a4e10` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a4e10.json` | matched | family | open |
 | `unmapped/leaves/LeafForward6a4e20` | `LeafForward6a4e20::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6a4e20` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a4e20.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6a51b0` (GUESS) | `sse-steam-1-7-104` / `0x6a51b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a51b0.json` | matched | full | - |
 | `skyrim_shared/actors/Character_6a5b00` | `Character::ForwardD` (GUESS) | `sse-steam-1-7-104` / `0x6a5b00` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a5b00.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6a5b30` | `Actor::sub` (GUESS) | `sse-steam-1-7-104` / `0x6a5b30` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a5b30.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6a5b30` | `Actor::sub` (GUESS) | `sse-steam-1-7-104` / `0x6a5b60` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a5b60.json` | matched | full | open |
@@ -14206,17 +14218,24 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/combat/Blocking` | `P2061::Blocking::IsBlocking` (GUESS) | `sse-steam-1-7-104` / `0x6aef60` / 57 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6aef60.json` | mapped, record awaiting review | - | - |
 | - | `Actor::IsMoving` (COMMUNITY) | `sse-steam-1-7-104` / `0x6aefa0` / 65 | - | - | mapped | - | - |
 | `skyrim_shared/refs/TESObjectREFR_6aec50` | `IsSprinting` (GUESS) | `sse-steam-1-7-104` / `0x6af090` / 57 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6af090.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6af0d0` (GUESS) | `sse-steam-1-7-104` / `0x6af0d0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6af0d0.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Actor::GetMoveDirectionRelativeToFacing` (COMMUNITY) | `sse-steam-1-7-104` / `0x6af1b0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6af1b0.json` | matched | full | open |
 | `skyrim_shared/actors/PlayerCharacter_69f950` | `PlayerCharacter::Function6af230` (GUESS) | `sse-steam-1-7-104` / `0x6af230` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6af230.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf6b0330` | `ReturnLeaf6b0330::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6b0330` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b0330.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b1160` (GUESS) | `sse-steam-1-7-104` / `0x6b1160` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b1160.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6a5b30` | `Actor::GetResponseString` (GUESS) | `sse-steam-1-7-104` / `0x6b1560` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b1560.json` | matched | full | open |
 | `skyrim_shared/forms/ComplexPass` | `P2061::ComplexPass::UpdateCombatControllerSettings` (GUESS) | `sse-steam-1-7-104` / `0x6b15f0` / 41 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6b15f0.json` | mapped, record awaiting review | - | - |
 | - | `Function6b1710` (GUESS) | `sse-steam-1-7-104` / `0x6b1710` / 917 | - | - | mapped | - | - |
 | - | `Actor::ProcessEvent` (GUESS) | `sse-steam-1-7-104` / `0x6b21b0` / 356 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward6b5150` | `LeafForward6b5150::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6b5150` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b5150.json` | matched | family | open |
 | `skyrim_shared/forms/ComplexPass` | `P2061::ComplexPass::DestroyActorMover` (GUESS) | `sse-steam-1-7-104` / `0x6b5200` / 48 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6b5200.json` | mapped, record awaiting review | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b5770` (GUESS) | `sse-steam-1-7-104` / `0x6b5770` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b5770.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b57d0` (GUESS) | `sse-steam-1-7-104` / `0x6b57d0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b57d0.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b5860` (GUESS) | `sse-steam-1-7-104` / `0x6b5860` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b5860.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b59f0` (GUESS) | `sse-steam-1-7-104` / `0x6b59f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b59f0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress6b5af0` | `LeafAddress6b5af0::Address` (GUESS) | `sse-steam-1-7-104` / `0x6b5af0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b5af0.json` | matched | family | open |
 | `skyrim_shared/actors/EquippedActor` | `P2071::EquippedActor::CalcEquippedWeight` (GUESS) | `sse-steam-1-7-104` / `0x6b5ee0` / 61 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6b5ee0.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6b60b0` (GUESS) | `sse-steam-1-7-104` / `0x6b60b0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b60b0.json` | matched | full | - |
 | `unmapped/leaves/LeafForward6b61a0` | `LeafForward6b61a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6b61a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b61a0.json` | matched | family | open |
 | `gamebryo/nianimation/IAnimationGraphManagerHolder` | `IAnimationGraphManagerHolder::GetGraphVariableCacheSize` (GUESS) | `sse-steam-1-7-104` / `0x6b61b0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b61b0.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf6b6580` | `ReturnLeaf6b6580::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6b6580` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6b6580.json` | matched | family | open |
@@ -14246,6 +14265,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/refs/TESObjectREFRComponentPrefixLayout` | `ActorReferenceComponentPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x6bbce4` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbce4.json` | matched | full | open |
 | `skyrim_shared/refs/TESObjectREFRComponentPrefixLayout` | `ActorReferenceComponentPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x6bbcf0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbcf0.json` | matched | full | open |
 | `skyrim_shared/refs/TESObjectREFRComponentPrefixLayout` | `ActorReferenceComponentPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x6bbcfc` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbcfc.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd08` (GUESS) | `sse-steam-1-7-104` / `0x6bbd08` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd08.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd14` (GUESS) | `sse-steam-1-7-104` / `0x6bbd14` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd14.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd20` (GUESS) | `sse-steam-1-7-104` / `0x6bbd20` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd20.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd2c` (GUESS) | `sse-steam-1-7-104` / `0x6bbd2c` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd2c.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd38` (GUESS) | `sse-steam-1-7-104` / `0x6bbd38` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd38.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bbd44` (GUESS) | `sse-steam-1-7-104` / `0x6bbd44` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bbd44.json` | matched | full | - |
 | `bscore/ArrayAllocatorLeafLayout` | `DeletingLeaf6bc110::~DeletingLeaf6bc110` (GUESS) | `sse-steam-1-7-104` / `0x6bc110` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bc110.json` | matched | full | open |
 | `unmapped/leaves/DeletingLeaf6bc140` | `DeletingLeaf6bc140::~DeletingLeaf6bc140` (GUESS) | `sse-steam-1-7-104` / `0x6bc140` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bc140.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf6bc170` | `DeletingLeaf6bc170::~DeletingLeaf6bc170` (GUESS) | `sse-steam-1-7-104` / `0x6bc170` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bc170.json` | matched | family | open |
@@ -14291,10 +14316,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Actor_690e50` | `Actor::CalcArmorRating` (GUESS) | `sse-steam-1-7-104` / `0x6bd520` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bd520.json` | matched | full | open |
 | - | `TESObjectREFR::Function6bd530` (GUESS) | `sse-steam-1-7-104` / `0x6bd530` / 199 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf6bd600` | `Leaf6bd600::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bd600` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bd600.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bdd60` (GUESS) | `sse-steam-1-7-104` / `0x6bdd60` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdd60.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_690e50` | `Actor::GetArmorBaseFactorSum` (GUESS) | `sse-steam-1-7-104` / `0x6bdd70` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdd70.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf6bdd80` | `ReturnLeaf6bdd80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bdd80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdd80.json` | matched | family | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::GetEditorLocation` (GUESS) | `sse-steam-1-7-104` / `0x6bdd90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdd90.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bde50` (GUESS) | `sse-steam-1-7-104` / `0x6bde50` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bde50.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf6bde60` | `ReturnLeaf6bde60::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bde60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bde60.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bde70` (GUESS) | `sse-steam-1-7-104` / `0x6bde70` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bde70.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bde80` (GUESS) | `sse-steam-1-7-104` / `0x6bde80` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bde80.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6bde90` (GUESS) | `sse-steam-1-7-104` / `0x6bde90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bde90.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf6bdea0` | `ReturnLeaf6bdea0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bdea0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdea0.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf6bdeb0` | `ReturnLeaf6bdeb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bdeb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdeb0.json` | matched | family | open |
 | `unmapped/leaves/Leaf6bdf10` | `Leaf6bdf10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6bdf10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6bdf10.json` | matched | family | open |
@@ -14309,6 +14339,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf6beb30` | `Leaf6beb30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6beb30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6beb30.json` | matched | family | open |
 | `unmapped/leaves/Leaf6beb40` | `Leaf6beb40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6beb40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6beb40.json` | matched | family | open |
 | `unmapped/leaves/Leaf6c06b0` | `Leaf6c06b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c06b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c06b0.json` | matched | full | checked |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c1170` (GUESS) | `sse-steam-1-7-104` / `0x6c1170` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1170.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c1180` (GUESS) | `sse-steam-1-7-104` / `0x6c1180` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1180.json` | matched | full | - |
 | - | `Function6c1190` (GUESS) | `sse-steam-1-7-104` / `0x6c1190` / 45 | - | - | mapped | - | - |
 | `unmapped/buffers/LockedSource_F063_6c11f0` | `p117_6c11f0::LockedSource_F063_6c11f0::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c11f0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c11f0.json` | mapped, record awaiting review | - | - |
 | `unmapped/buffers/LockedSource_F063_6c1370` | `p117_6c1370::LockedSource_F063_6c1370::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c1370` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c1370.json` | mapped, record awaiting review | - | - |
@@ -14331,9 +14363,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf6c2ae0` | `Leaf6c2ae0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2ae0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2ae0.json` | matched | family | open |
 | `unmapped/leaves/Leaf6c2b70` | `Leaf6c2b70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2b70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2b70.json` | matched | family | open |
 | `unmapped/leaves/Leaf6c2b80` | `Leaf6c2b80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2b80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2b80.json` | matched | family | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c2b90` (GUESS) | `sse-steam-1-7-104` / `0x6c2b90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2b90.json` | matched | full | - |
 | `unmapped/leaves/Leaf6c2ba0` | `Leaf6c2ba0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2ba0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2ba0.json` | matched | family | open |
 | `unmapped/leaves/Leaf6c2cb0` | `Leaf6c2cb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2cb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2cb0.json` | matched | family | open |
 | - | `ActorState::Unk_14` (COMMUNITY) | `sse-steam-1-7-104` / `0x6c2cc0` / 19 | - | - | mapped | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c2d00` (GUESS) | `sse-steam-1-7-104` / `0x6c2d00` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2d00.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c2d10` (GUESS) | `sse-steam-1-7-104` / `0x6c2d10` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2d10.json` | matched | full | - |
 | `unmapped/leaves/Leaf6c2d20` | `Leaf6c2d20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2d20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2d20.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf6c2d30` | `ReturnLeaf6c2d30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c2d30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2d30.json` | matched | family | open |
 | `unmapped/buffers/LockedSource_F068_6c2dd0` | `p117_6c2dd0::LockedSource_F068_6c2dd0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c2dd0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c2dd0.json` | mapped, record awaiting review | - | - |
@@ -14354,22 +14389,26 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/LockedSource_F063_6c7770` | `p117_6c7770::LockedSource_F063_6c7770::Add` (GUESS) | `sse-steam-1-7-104` / `0x6c7770` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c7770.json` | mapped, record awaiting review | - | - |
 | `unmapped/buffers/LockedSource_F068_6c7950` | `p117_6c7950::LockedSource_F068_6c7950::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6c7950` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c7950.json` | mapped, record awaiting review | - | - |
 | `skyrim_shared/actors/ChangeActor` | `P2071::ChangeActor::ResetActorChange` (GUESS) | `sse-steam-1-7-104` / `0x6c8060` / 60 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6c8060.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c8a40` (GUESS) | `sse-steam-1-7-104` / `0x6c8a40` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c8a40.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6a5b30` | `Actor::Function6c8a60` (GUESS) | `sse-steam-1-7-104` / `0x6c8a60` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c8a60.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6c9040` | `FindGroupActor` (GUESS) | `sse-steam-1-7-104` / `0x6c9040` / 35 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6c9040.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::GetCombatGroup` (GUESS) | `sse-steam-1-7-104` / `0x6c9070` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c9070.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::SetCombatGroup` (GUESS) | `sse-steam-1-7-104` / `0x6c9090` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c9090.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::IsInCombat` (GUESS) | `sse-steam-1-7-104` / `0x6c9850` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c9850.json` | matched | full | open |
 | `skyrim/ai/combat/CombatActor` | `P2071::CombatActor::EngagingInCombat` (GUESS) | `sse-steam-1-7-104` / `0x6c9870` / 59 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6c9870.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6c9f00` (GUESS) | `sse-steam-1-7-104` / `0x6c9f00` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c9f00.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf6c9f50` | `ReturnLeaf6c9f50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6c9f50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6c9f50.json` | matched | family | open |
 | `skyrim_shared/forms/ComplexPass` | `P2061::ComplexPass::IsCombatTarget` (GUESS) | `sse-steam-1-7-104` / `0x6c9f60` / 45 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6c9f60.json` | mapped, record awaiting review | - | - |
 | `skyrim_shared/actors/ActorPass` | `P2061::Actor::GetEquippedWeapon` (GUESS) | `sse-steam-1-7-104` / `0x6ca140` / 41 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6ca140.json` | mapped, record awaiting review | - | - |
 | `skyrim_shared/forms/Shield` | `P2061::Shield::GetEquippedShield` (GUESS) | `sse-steam-1-7-104` / `0x6ca230` / 46 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6ca230.json` | mapped, record awaiting review | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6ca270` (GUESS) | `sse-steam-1-7-104` / `0x6ca270` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ca270.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6ca480` | `Actor::HasBeenAttacked` (GUESS) | `sse-steam-1-7-104` / `0x6ca480` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ca480.json` | matched | full | open |
 | `skyrim_shared/actors/Actor` | `Actor::IsAttacking` (COMMUNITY) | `sse-steam-1-7-104` / `0x6cb920` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cb920.json` | matched | full | open |
 | `skyrim_shared/actors/PlayerCharacter_69f950` | `PlayerCharacter::Function6cba10` (GUESS) | `sse-steam-1-7-104` / `0x6cba10` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cba10.json` | matched | full | - |
 | `unmapped/leaves/Leaf6cc3b0` | `Leaf6cc3b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6cc3b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc3b0.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf6cc3c0` | `ReturnLeaf6cc3c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6cc3c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc3c0.json` | matched | family | open |
 | `skyrim_shared/forms/ComplexPass` | `P2061::ComplexPass::Func261` (GUESS) | `sse-steam-1-7-104` / `0x6cc460` / 41 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6cc460.json` | mapped, record awaiting review | - | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6cc8f0` (GUESS) | `sse-steam-1-7-104` / `0x6cc8f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc8f0.json` | matched | full | - |
 | `skyrim_shared/actors/Character` | `Character::StartDeferredKill` (COMMUNITY) | `sse-steam-1-7-104` / `0x6cc910` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc910.json` | matched | delta | open |
 | `skyrim_shared/actors/Actor_6cc950` | `Actor::EndDeferredKill` (GUESS) | `sse-steam-1-7-104` / `0x6cc950` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6cc950.json` | matched | full | open |
 | `unmapped/storage/StorageInit6d0b10` | `StorageInit6d0b10::initialize` (GUESS) | `sse-steam-1-7-104` / `0x6d0b10` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d0b10.json` | matched | family | open |
@@ -14387,11 +14426,19 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Actor_6a5b30` | `Actor::Func201` (GUESS) | `sse-steam-1-7-104` / `0x6d3d30` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d3d30.json` | matched | full | open |
 | `unmapped/leaves/Leaf6d43d0` | `Leaf6d43d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6d43d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d43d0.json` | matched | family | open |
 | `skyrim_shared/actors/Actor_6d45a0` | `Actor::GetAlpha` (GUESS) | `sse-steam-1-7-104` / `0x6d45a0` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d45a0.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d4d20` (GUESS) | `sse-steam-1-7-104` / `0x6d4d20` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d4d20.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::IsInCastPowerList` (GUESS) | `sse-steam-1-7-104` / `0x6d5350` / 36 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d5350.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6d6d00` | `HasSelectedSpell` (GUESS) | `sse-steam-1-7-104` / `0x6d6d00` / 48 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6d6d00.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d7070` (GUESS) | `sse-steam-1-7-104` / `0x6d7070` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d7070.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d7090` (GUESS) | `sse-steam-1-7-104` / `0x6d7090` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d7090.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Actor::HasShout` (COMMUNITY) | `sse-steam-1-7-104` / `0x6d7750` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d7750.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_6d8550` | `Actor::GetMagicTarget` (GUESS) | `sse-steam-1-7-104` / `0x6d8550` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d8550.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d8dd0` (GUESS) | `sse-steam-1-7-104` / `0x6d8dd0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d8dd0.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d9250` (GUESS) | `sse-steam-1-7-104` / `0x6d9250` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d9250.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d9270` (GUESS) | `sse-steam-1-7-104` / `0x6d9270` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d9270.json` | matched | full | - |
 | `skyrim_shared/actors/Actor` | `Actor::GetVoiceRecoveryTime` (COMMUNITY) | `sse-steam-1-7-104` / `0x6d92b0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d92b0.json` | matched | full | open |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d92d0` (GUESS) | `sse-steam-1-7-104` / `0x6d92d0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d92d0.json` | matched | full | - |
+| `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d92f0` (GUESS) | `sse-steam-1-7-104` / `0x6d92f0` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d92f0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf6da480` | `TableStoreLeaf6da480::~TableStoreLeaf6da480` (GUESS) | `sse-steam-1-7-104` / `0x6da480` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6da480.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf6da490` | `TableStoreLeaf6da490::~TableStoreLeaf6da490` (GUESS) | `sse-steam-1-7-104` / `0x6da490` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6da490.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf6da4a0` | `TableStoreLeaf6da4a0::~TableStoreLeaf6da4a0` (GUESS) | `sse-steam-1-7-104` / `0x6da4a0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6da4a0.json` | matched | family | open |
