@@ -431339,12 +431339,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5586880,
       "size": 140,
-      "status": "mapped",
+      "status": "matched",
       "name": "IAnimationGraphManagerHolder::UpdateAnimationGraphManager",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/I/IAnimationGraphManagerHolder.cpp (the function that holds the id's relocation), joined through Address Library 1.7.104.0 id 32899. RVA 0x553fc0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x553fc0.json",
+      "report": "reports/sse-steam-1-7-104/0x553fc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5584a0",
@@ -470444,7 +470445,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T19:33:59Z",
+  "updated_at": "2026-11-20T19:53:46Z",
   "work_items": [
     {
       "id": "pin-target",
