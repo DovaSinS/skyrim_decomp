@@ -84879,7 +84879,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x28e500; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-1-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x28e500.json",
       "report": "reports/sse-steam-1-7-104/0x28e500.json"
     },
     {
@@ -84907,7 +84907,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 20. RVA 0x28e7b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-1-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x28e7b0.json",
       "report": "reports/sse-steam-1-7-104/0x28e7b0.json"
     },
     {
@@ -84921,7 +84921,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 57. RVA 0x28e7f0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-1-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x28e7f0.json",
       "report": "reports/sse-steam-1-7-104/0x28e7f0.json"
     },
     {
@@ -84929,12 +84929,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2680848,
       "size": 15,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESObjectWEAP::GetPlayable",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 25. RVA 0x28e810; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-1-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x28e810.json",
+      "report": "reports/sse-steam-1-7-104/0x28e810.json"
     },
     {
       "id": "sse-steam-1-7-104-0x28ebd0",
@@ -474803,7 +474804,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T22:09:50Z",
+  "updated_at": "2026-11-20T23:22:57Z",
   "work_items": [
     {
       "id": "pin-target",

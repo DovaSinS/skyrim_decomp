@@ -9955,7 +9955,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/storage/StorageInit28e5b0` | `StorageInit28e5b0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x28e5b0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28e5b0.json` | matched | family | open |
 | `skyrim_shared/forms/TESObjectWEAP` | `TESObjectWEAP::GetDescriptionOwnerFile` (COMMUNITY) | `sse-steam-1-7-104` / `0x28e7b0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28e7b0.json` | matched | full | checked |
 | `skyrim_shared/forms/TESObjectWEAP` | `TESObjectWEAP::GetObjectTypeName` (COMMUNITY) | `sse-steam-1-7-104` / `0x28e7f0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28e7f0.json` | matched | full | open |
-| - | `TESObjectWEAP::GetPlayable` (COMMUNITY) | `sse-steam-1-7-104` / `0x28e810` / 15 | - | - | mapped | - | - |
+| `skyrim_shared/forms/TESObjectWEAP` | `TESObjectWEAP::GetPlayable` (COMMUNITY) | `sse-steam-1-7-104` / `0x28e810` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28e810.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf28ebc0` | `FieldLeaf28ebc0::Read` (GUESS) | `sse-steam-1-7-104` / `0x28ebc0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28ebc0.json` | matched | family | open |
 | `unmapped/leaves/Leaf28ebd0` | `Leaf28ebd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x28ebd0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28ebd0.json` | matched | family | open |
 | `unmapped/fields/FieldLeaf28ec40` | `FieldLeaf28ec40::Read` (GUESS) | `sse-steam-1-7-104` / `0x28ec40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28ec40.json` | matched | family | open |
