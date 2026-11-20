@@ -435478,12 +435478,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22550320,
       "size": 639,
-      "status": "mapped",
+      "status": "matched",
       "name": "Function1581730",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder; no class or method name from the pinned sources or from an image RTTI vftable slot. RVA 0x1581730; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1581730.json",
+      "report": "reports/sse-steam-1-7-104/0x1581730.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15872e0",
@@ -469992,6 +469993,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x18c370.json",
       "report": "reports/sse-steam-1-7-104/0x18c370.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1581e30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22552112,
+      "size": 82,
+      "status": "matched",
+      "name": "BSShadowDirectionalLight::Function1581e30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1581e30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1581e30.json",
+      "report": "reports/sse-steam-1-7-104/0x1581e30.json"
     }
   ],
   "milestones": [
@@ -470034,7 +470048,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T17:26:25Z",
+  "updated_at": "2026-11-20T17:28:57Z",
   "work_items": [
     {
       "id": "pin-target",

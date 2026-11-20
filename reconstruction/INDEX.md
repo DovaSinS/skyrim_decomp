@@ -27935,7 +27935,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSShadowDirectionalLight::Render` (COMMUNITY) | `sse-steam-1-7-104` / `0x157ebb0` / 335 | - | - | mapped | - | - |
 | `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::GetPassExtraParam` (COMMUNITY) | `sse-steam-1-7-104` / `0x157ed10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157ed10.json` | matched | full | open |
 | - | `BSShadowDirectionalLight::UpdateCamera` (COMMUNITY) | `sse-steam-1-7-104` / `0x157f080` / 9883 | - | - | mapped | - | - |
-| - | `Function1581730` (GUESS) | `sse-steam-1-7-104` / `0x1581730` / 639 | - | - | mapped | - | - |
+| `bsshader/BSShadowDirectionalLight` | `Function1581730` (GUESS) | `sse-steam-1-7-104` / `0x1581730` / 639 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1581730.json` | matched | full | - |
+| `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::Function1581e30` (GUESS) | `sse-steam-1-7-104` / `0x1581e30` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1581e30.json` | matched | full | - |
 | `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::GetIsFrustumOrDirectionalLight` (COMMUNITY) | `sse-steam-1-7-104` / `0x1582010` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1582010.json` | matched | full | open |
 | `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::GetIsDirectionalLight` (COMMUNITY) | `sse-steam-1-7-104` / `0x1582020` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1582020.json` | matched | full | open |
 | `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::GetNeedsClipPlanes` (COMMUNITY) | `sse-steam-1-7-104` / `0x1582030` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1582030.json` | matched | full | open |
