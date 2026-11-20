@@ -449875,312 +449875,338 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16444912,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaedf0::CtorLeaffaedf0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaedf0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaedf0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaedf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf1c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16445888,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf1c0::CtorLeaffaf1c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf1c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf1c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf1c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf1f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16445936,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf1f0::CtorLeaffaf1f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf1f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf1f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf1f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf5c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16446912,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf5c0::CtorLeaffaf5c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf5c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf5c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf5c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf5f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16446960,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf5f0::CtorLeaffaf5f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf5f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf5f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf5f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf9c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16447936,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf9c0::CtorLeaffaf9c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf9c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf9c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf9c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfaf9f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16447984,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffaf9f0::CtorLeaffaf9f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfaf9f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfaf9f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfaf9f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafdc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16448960,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffafdc0::CtorLeaffafdc0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfafdc0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafdc0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafdc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfafdf0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16449008,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffafdf0::CtorLeaffafdf0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfafdf0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfafdf0.json",
+      "report": "reports/sse-steam-1-7-104/0xfafdf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb01c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16449984,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb01c0::CtorLeaffb01c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb01c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb01c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb01c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb01f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16450032,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb01f0::CtorLeaffb01f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb01f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb01f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb01f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1200",
       "build_id": "sse-steam-1-7-104",
       "rva": 16454144,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb1200::CtorLeaffb1200",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb1200; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1200.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1200.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1230",
       "build_id": "sse-steam-1-7-104",
       "rva": 16454192,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb1230::CtorLeaffb1230",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb1230; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1230.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1230.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1dc0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16457152,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb1dc0::CtorLeaffb1dc0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb1dc0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1dc0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1dc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb1df0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16457200,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb1df0::CtorLeaffb1df0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb1df0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb1df0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb1df0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb21c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16458176,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb21c0::CtorLeaffb21c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb21c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb21c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb21c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb21f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16458224,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb21f0::CtorLeaffb21f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb21f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb21f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb21f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb25c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16459200,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb25c0::CtorLeaffb25c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb25c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb25c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb25c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb25f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16459248,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb25f0::CtorLeaffb25f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb25f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb25f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb25f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb29c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16460224,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb29c0::CtorLeaffb29c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb29c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb29c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb29c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb29f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16460272,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb29f0::CtorLeaffb29f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb29f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb29f0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb29f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb56e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16471776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb56e0::CtorLeaffb56e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb56e0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb56e0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb56e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb5710",
       "build_id": "sse-steam-1-7-104",
       "rva": 16471824,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb5710::CtorLeaffb5710",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb5710; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb5710.json",
+      "report": "reports/sse-steam-1-7-104/0xfb5710.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfb7580",
       "build_id": "sse-steam-1-7-104",
       "rva": 16479616,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffb7580::CtorLeaffb7580",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfb7580; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb7580.json",
+      "report": "reports/sse-steam-1-7-104/0xfb7580.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc0d30",
       "build_id": "sse-steam-1-7-104",
       "rva": 16518448,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffc0d30::CtorLeaffc0d30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfc0d30; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc0d30.json",
+      "report": "reports/sse-steam-1-7-104/0xfc0d30.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfc1a50",
       "build_id": "sse-steam-1-7-104",
       "rva": 16521808,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaffc1a50::CtorLeaffc1a50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0xfc1a50; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfc1a50.json",
+      "report": "reports/sse-steam-1-7-104/0xfc1a50.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfdb0c0",
@@ -450224,24 +450250,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16788640,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf1002ca0::CtorLeaf1002ca0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1002ca0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1002ca0.json",
+      "report": "reports/sse-steam-1-7-104/0x1002ca0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1003630",
       "build_id": "sse-steam-1-7-104",
       "rva": 16791088,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf1003630::CtorLeaf1003630",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1003630; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1003630.json",
+      "report": "reports/sse-steam-1-7-104/0x1003630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x107a390",
@@ -450260,12 +450288,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 17300208,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf107faf0::CtorLeaf107faf0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x107faf0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x107faf0.json",
+      "report": "reports/sse-steam-1-7-104/0x107faf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x10a18f0",
@@ -450284,24 +450313,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 17569776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf10c17f0::CtorLeaf10c17f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x10c17f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x10c17f0.json",
+      "report": "reports/sse-steam-1-7-104/0x10c17f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x10d04e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 17630432,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf10d04e0::CtorLeaf10d04e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x10d04e0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x10d04e0.json",
+      "report": "reports/sse-steam-1-7-104/0x10d04e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x116c790",
@@ -450344,12 +450375,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18663808,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf11cc980::CtorLeaf11cc980",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x11cc980; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x11cc980.json",
+      "report": "reports/sse-steam-1-7-104/0x11cc980.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11e9840",
@@ -450920,12 +450952,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22454432,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf156a0a0::CtorLeaf156a0a0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x156a0a0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x156a0a0.json",
+      "report": "reports/sse-steam-1-7-104/0x156a0a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15796b0",
@@ -450956,72 +450989,78 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22522864,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf157abf0::CtorLeaf157abf0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x157abf0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157abf0.json",
+      "report": "reports/sse-steam-1-7-104/0x157abf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157b390",
       "build_id": "sse-steam-1-7-104",
       "rva": 22524816,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf157b390::CtorLeaf157b390",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x157b390; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157b390.json",
+      "report": "reports/sse-steam-1-7-104/0x157b390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157b860",
       "build_id": "sse-steam-1-7-104",
       "rva": 22526048,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf157b860::CtorLeaf157b860",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x157b860; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157b860.json",
+      "report": "reports/sse-steam-1-7-104/0x157b860.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157bea0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22527648,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf157bea0::CtorLeaf157bea0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x157bea0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157bea0.json",
+      "report": "reports/sse-steam-1-7-104/0x157bea0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157c510",
       "build_id": "sse-steam-1-7-104",
       "rva": 22529296,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf157c510::CtorLeaf157c510",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x157c510; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157c510.json",
+      "report": "reports/sse-steam-1-7-104/0x157c510.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1584cf0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22564080,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf1584cf0::CtorLeaf1584cf0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1584cf0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1584cf0.json",
+      "report": "reports/sse-steam-1-7-104/0x1584cf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x158a170",
@@ -451040,36 +451079,39 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22671424,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf159f040::CtorLeaf159f040",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x159f040; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159f040.json",
+      "report": "reports/sse-steam-1-7-104/0x159f040.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15e7e80",
       "build_id": "sse-steam-1-7-104",
       "rva": 22969984,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf15e7e80::CtorLeaf15e7e80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x15e7e80; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15e7e80.json",
+      "report": "reports/sse-steam-1-7-104/0x15e7e80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15f3740",
       "build_id": "sse-steam-1-7-104",
       "rva": 23017280,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "CtorLeaf15f3740::CtorLeaf15f3740",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x15f3740; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x390cc0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15f3740.json",
+      "report": "reports/sse-steam-1-7-104/0x15f3740.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7265a0",
@@ -470226,7 +470268,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T18:51:53Z",
+  "updated_at": "2026-11-20T19:05:39Z",
   "work_items": [
     {
       "id": "pin-target",
