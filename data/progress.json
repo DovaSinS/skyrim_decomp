@@ -446401,840 +446401,910 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21110720,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1421fc0::~DeletingLeaf1421fc0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1421fc0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1421fc0.json",
+      "report": "reports/sse-steam-1-7-104/0x1421fc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14235e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21116384,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14235e0::~DeletingLeaf14235e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14235e0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14235e0.json",
+      "report": "reports/sse-steam-1-7-104/0x14235e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1423610",
       "build_id": "sse-steam-1-7-104",
       "rva": 21116432,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1423610::~DeletingLeaf1423610",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1423610; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1423610.json",
+      "report": "reports/sse-steam-1-7-104/0x1423610.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14324c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177536,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14324c0::~DeletingLeaf14324c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14324c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14324c0.json",
+      "report": "reports/sse-steam-1-7-104/0x14324c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14324f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177584,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14324f0::~DeletingLeaf14324f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14324f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14324f0.json",
+      "report": "reports/sse-steam-1-7-104/0x14324f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432520",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177632,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432520::~DeletingLeaf1432520",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432520; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432520.json",
+      "report": "reports/sse-steam-1-7-104/0x1432520.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432550",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177680,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432550::~DeletingLeaf1432550",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432550; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432550.json",
+      "report": "reports/sse-steam-1-7-104/0x1432550.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432580",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177728,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432580::~DeletingLeaf1432580",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432580; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432580.json",
+      "report": "reports/sse-steam-1-7-104/0x1432580.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14325b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14325b0::~DeletingLeaf14325b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14325b0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14325b0.json",
+      "report": "reports/sse-steam-1-7-104/0x14325b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432620",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177888,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432620::~DeletingLeaf1432620",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432620; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432620.json",
+      "report": "reports/sse-steam-1-7-104/0x1432620.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432650",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177936,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432650::~DeletingLeaf1432650",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432650; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432650.json",
+      "report": "reports/sse-steam-1-7-104/0x1432650.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432680",
       "build_id": "sse-steam-1-7-104",
       "rva": 21177984,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432680::~DeletingLeaf1432680",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432680; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432680.json",
+      "report": "reports/sse-steam-1-7-104/0x1432680.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14326b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21178032,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14326b0::~DeletingLeaf14326b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14326b0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14326b0.json",
+      "report": "reports/sse-steam-1-7-104/0x14326b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14326e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21178080,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14326e0::~DeletingLeaf14326e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14326e0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14326e0.json",
+      "report": "reports/sse-steam-1-7-104/0x14326e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1432710",
       "build_id": "sse-steam-1-7-104",
       "rva": 21178128,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1432710::~DeletingLeaf1432710",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1432710; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1432710.json",
+      "report": "reports/sse-steam-1-7-104/0x1432710.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14629d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375440,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14629d0::~DeletingLeaf14629d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14629d0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14629d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14629d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462a00",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375488,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462a00::~DeletingLeaf1462a00",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462a00; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462a00.json",
+      "report": "reports/sse-steam-1-7-104/0x1462a00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462a30",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375536,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462a30::~DeletingLeaf1462a30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462a30; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462a30.json",
+      "report": "reports/sse-steam-1-7-104/0x1462a30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462a60",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375584,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462a60::~DeletingLeaf1462a60",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462a60; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462a60.json",
+      "report": "reports/sse-steam-1-7-104/0x1462a60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462a90",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375632,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462a90::~DeletingLeaf1462a90",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462a90; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462a90.json",
+      "report": "reports/sse-steam-1-7-104/0x1462a90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462ac0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375680,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462ac0::~DeletingLeaf1462ac0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462ac0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462ac0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462ac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462af0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375728,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462af0::~DeletingLeaf1462af0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462af0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462af0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462af0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462b20",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462b20::~DeletingLeaf1462b20",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462b20; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462b20.json",
+      "report": "reports/sse-steam-1-7-104/0x1462b20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462b50",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375824,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462b50::~DeletingLeaf1462b50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462b50; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462b50.json",
+      "report": "reports/sse-steam-1-7-104/0x1462b50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462b80",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375872,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462b80::~DeletingLeaf1462b80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462b80; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462b80.json",
+      "report": "reports/sse-steam-1-7-104/0x1462b80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462bb0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375920,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462bb0::~DeletingLeaf1462bb0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462bb0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462bb0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462bb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462be0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21375968,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462be0::~DeletingLeaf1462be0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462be0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462be0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462be0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462c10",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376016,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462c10::~DeletingLeaf1462c10",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462c10; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462c10.json",
+      "report": "reports/sse-steam-1-7-104/0x1462c10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462d40",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376320,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462d40::~DeletingLeaf1462d40",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462d40; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462d40.json",
+      "report": "reports/sse-steam-1-7-104/0x1462d40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462d70",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376368,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462d70::~DeletingLeaf1462d70",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462d70; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462d70.json",
+      "report": "reports/sse-steam-1-7-104/0x1462d70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462da0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376416,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462da0::~DeletingLeaf1462da0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462da0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462da0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462da0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462dd0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376464,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462dd0::~DeletingLeaf1462dd0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462dd0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462dd0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462dd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462e00",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376512,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462e00::~DeletingLeaf1462e00",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462e00; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462e00.json",
+      "report": "reports/sse-steam-1-7-104/0x1462e00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462e30",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376560,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462e30::~DeletingLeaf1462e30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462e30; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462e30.json",
+      "report": "reports/sse-steam-1-7-104/0x1462e30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462e60",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376608,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462e60::~DeletingLeaf1462e60",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462e60; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462e60.json",
+      "report": "reports/sse-steam-1-7-104/0x1462e60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462e90",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376656,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462e90::~DeletingLeaf1462e90",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462e90; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462e90.json",
+      "report": "reports/sse-steam-1-7-104/0x1462e90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462ec0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376704,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462ec0::~DeletingLeaf1462ec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462ec0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462ec0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462ef0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376752,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462ef0::~DeletingLeaf1462ef0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462ef0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462ef0.json",
+      "report": "reports/sse-steam-1-7-104/0x1462ef0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462f20",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376800,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462f20::~DeletingLeaf1462f20",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462f20; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462f20.json",
+      "report": "reports/sse-steam-1-7-104/0x1462f20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462f50",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376848,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462f50::~DeletingLeaf1462f50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462f50; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462f50.json",
+      "report": "reports/sse-steam-1-7-104/0x1462f50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1462f80",
       "build_id": "sse-steam-1-7-104",
       "rva": 21376896,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1462f80::~DeletingLeaf1462f80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1462f80; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1462f80.json",
+      "report": "reports/sse-steam-1-7-104/0x1462f80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x146f7d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21428176,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf146f7d0::~DeletingLeaf146f7d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x146f7d0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x146f7d0.json",
+      "report": "reports/sse-steam-1-7-104/0x146f7d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x146f800",
       "build_id": "sse-steam-1-7-104",
       "rva": 21428224,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf146f800::~DeletingLeaf146f800",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x146f800; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x146f800.json",
+      "report": "reports/sse-steam-1-7-104/0x146f800.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1470670",
       "build_id": "sse-steam-1-7-104",
       "rva": 21431920,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1470670::~DeletingLeaf1470670",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1470670; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1470670.json",
+      "report": "reports/sse-steam-1-7-104/0x1470670.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14706a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21431968,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14706a0::~DeletingLeaf14706a0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14706a0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14706a0.json",
+      "report": "reports/sse-steam-1-7-104/0x14706a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14706d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21432016,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14706d0::~DeletingLeaf14706d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14706d0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14706d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14706d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1470700",
       "build_id": "sse-steam-1-7-104",
       "rva": 21432064,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1470700::~DeletingLeaf1470700",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1470700; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1470700.json",
+      "report": "reports/sse-steam-1-7-104/0x1470700.json"
     },
     {
       "id": "sse-steam-1-7-104-0x147c550",
       "build_id": "sse-steam-1-7-104",
       "rva": 21480784,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf147c550::~DeletingLeaf147c550",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x147c550; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x147c550.json",
+      "report": "reports/sse-steam-1-7-104/0x147c550.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14821e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504480,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14821e0::~DeletingLeaf14821e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14821e0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14821e0.json",
+      "report": "reports/sse-steam-1-7-104/0x14821e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482210",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504528,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482210::~DeletingLeaf1482210",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482210; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482210.json",
+      "report": "reports/sse-steam-1-7-104/0x1482210.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482240",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504576,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482240::~DeletingLeaf1482240",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482240; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482240.json",
+      "report": "reports/sse-steam-1-7-104/0x1482240.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14822a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504672,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14822a0::~DeletingLeaf14822a0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14822a0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14822a0.json",
+      "report": "reports/sse-steam-1-7-104/0x14822a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14822d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504720,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14822d0::~DeletingLeaf14822d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14822d0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14822d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14822d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482300",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504768,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482300::~DeletingLeaf1482300",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482300; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482300.json",
+      "report": "reports/sse-steam-1-7-104/0x1482300.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482330",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504816,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482330::~DeletingLeaf1482330",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482330; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482330.json",
+      "report": "reports/sse-steam-1-7-104/0x1482330.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482360",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504864,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482360::~DeletingLeaf1482360",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482360; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482360.json",
+      "report": "reports/sse-steam-1-7-104/0x1482360.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482390",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504912,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482390::~DeletingLeaf1482390",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482390; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482390.json",
+      "report": "reports/sse-steam-1-7-104/0x1482390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14823c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21504960,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14823c0::~DeletingLeaf14823c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14823c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14823c0.json",
+      "report": "reports/sse-steam-1-7-104/0x14823c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14823f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505008,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14823f0::~DeletingLeaf14823f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14823f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14823f0.json",
+      "report": "reports/sse-steam-1-7-104/0x14823f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482510",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505296,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482510::~DeletingLeaf1482510",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482510; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482510.json",
+      "report": "reports/sse-steam-1-7-104/0x1482510.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482570",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505392,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482570::~DeletingLeaf1482570",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482570; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482570.json",
+      "report": "reports/sse-steam-1-7-104/0x1482570.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14825a0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505440,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14825a0::~DeletingLeaf14825a0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14825a0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14825a0.json",
+      "report": "reports/sse-steam-1-7-104/0x14825a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14825d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505488,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14825d0::~DeletingLeaf14825d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14825d0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14825d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14825d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482600",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505536,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482600::~DeletingLeaf1482600",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482600; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482600.json",
+      "report": "reports/sse-steam-1-7-104/0x1482600.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482630",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505584,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482630::~DeletingLeaf1482630",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482630; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482630.json",
+      "report": "reports/sse-steam-1-7-104/0x1482630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482660",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505632,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482660::~DeletingLeaf1482660",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482660; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482660.json",
+      "report": "reports/sse-steam-1-7-104/0x1482660.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482690",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505680,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482690::~DeletingLeaf1482690",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482690; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482690.json",
+      "report": "reports/sse-steam-1-7-104/0x1482690.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14826c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505728,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14826c0::~DeletingLeaf14826c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14826c0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14826c0.json",
+      "report": "reports/sse-steam-1-7-104/0x14826c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14826f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14826f0::~DeletingLeaf14826f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14826f0; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14826f0.json",
+      "report": "reports/sse-steam-1-7-104/0x14826f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482720",
       "build_id": "sse-steam-1-7-104",
       "rva": 21505824,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1482720::~DeletingLeaf1482720",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482720; size from the image function table; selected as a member of the stamp cluster of matched exemplar 0x1259aa0.",
       "owner": "awarebayes",
-      "evidence": "findings/stamp-sweep-leaves.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482720.json",
+      "report": "reports/sse-steam-1-7-104/0x1482720.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1509690",
@@ -470156,7 +470226,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-20T18:48:26Z",
+  "updated_at": "2026-11-20T18:51:53Z",
   "work_items": [
     {
       "id": "pin-target",
