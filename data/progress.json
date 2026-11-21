@@ -476265,6 +476265,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xbc0fb0.json",
       "report": "reports/sse-steam-1-7-104/0xbc0fb0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x14e89b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 21924272,
+      "size": 15,
+      "status": "matched",
+      "name": "BSLeafAnimNode::Function14e89b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x14e89b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x14e89b0.json",
+      "report": "reports/sse-steam-1-7-104/0x14e89b0.json"
     }
   ],
   "milestones": [
@@ -476307,7 +476320,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:50:36Z",
+  "updated_at": "2026-11-21T20:03:19Z",
   "work_items": [
     {
       "id": "pin-target",

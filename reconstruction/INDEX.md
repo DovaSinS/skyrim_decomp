@@ -27409,6 +27409,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForward14e8860` | `LeafForward14e8860::Forward` (GUESS) | `sse-steam-1-7-104` / `0x14e8860` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8860.json` | matched | family | open |
 | `unmapped/leaves/LeafForward14e8870` | `LeafForward14e8870::Forward` (GUESS) | `sse-steam-1-7-104` / `0x14e8870` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8870.json` | matched | full | open |
 | - | `Function14e88f0` (GUESS) | `sse-steam-1-7-104` / `0x14e88f0` / 88 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSLeafAnimNode` | `BSLeafAnimNode::Function14e89b0` (GUESS) | `sse-steam-1-7-104` / `0x14e89b0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e89b0.json` | matched | full | - |
 | - | `BSLeafAnimNode::OnVisible` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e89d0` / 181 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafAddress14e8b30` | `LeafAddress14e8b30::Address` (GUESS) | `sse-steam-1-7-104` / `0x14e8b30` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8b30.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf14e8b40` | `ReturnLeaf14e8b40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e8b40` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8b40.json` | matched | family | open |
