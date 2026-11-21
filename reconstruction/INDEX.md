@@ -10351,6 +10351,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf2e9e10` | `Leaf2e9e10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2e9e10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2e9e10.json` | matched | family | open |
 | `unmapped/leaves/Leaf2e9e20` | `Leaf2e9e20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2e9e20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2e9e20.json` | matched | family | open |
 | `unmapped/leaves/Leaf2e9e30` | `Leaf2e9e30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2e9e30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2e9e30.json` | matched | family | open |
+| `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function2ebcb0` (GUESS) | `sse-steam-1-7-104` / `0x2ebcb0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2ebcb0.json` | matched | full | - |
 | `unmapped/leaves/Leaf2ebcd0` | `Leaf2ebcd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2ebcd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2ebcd0.json` | matched | family | open |
 | `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Get3D2` (COMMUNITY) | `sse-steam-1-7-104` / `0x2ebce0` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2ebce0.json` | matched | full | open |
 | `skyrim_shared/refs/TESObjectREFR_2e3da0` | `TESObjectREFR::GetRandomAnim` (GUESS) | `sse-steam-1-7-104` / `0x2ee6b0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2ee6b0.json` | matched | full | open |
@@ -10375,6 +10376,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/refs/REFRRetryPass` | `P2062::REFRRetryPass::GetAnimNoteReceiver` (GUESS) | `sse-steam-1-7-104` / `0x2f56b0` / 37 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x2f56b0.json` | mapped, record awaiting review | - | - |
 | `skyrim_shared/refs/TESObjectREFR_2f5860` | `TESObjectREFR::GetWaterHeight_14029B190_14029B190` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x2f5860` / 46 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0x2f5860.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf2f5920` | `ReturnLeaf2f5920::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2f5920` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2f5920.json` | matched | family | open |
+| `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function2f5930` (GUESS) | `sse-steam-1-7-104` / `0x2f5930` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2f5930.json` | matched | full | - |
 | `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function2f6280` (GUESS) | `sse-steam-1-7-104` / `0x2f6280` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2f6280.json` | matched | full | - |
 | `skyrim_shared/refs/REFRRetryPass` | `P2062::REFRRetryPass::Function2f6310` (GUESS) | `sse-steam-1-7-104` / `0x2f6310` / 42 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x2f6310.json` | mapped, record awaiting review | - | - |
 | `unmapped/leaves/Leaf2f6410` | `Leaf2f6410::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2f6410` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2f6410.json` | matched | family | open |
@@ -10509,6 +10511,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `TESObjectREFR::Function2ffd70` (GUESS) | `sse-steam-1-7-104` / `0x2ffd70` / 282 | - | - | mapped | - | - |
 | - | `Function2fff70` (GUESS) | `sse-steam-1-7-104` / `0x2fff70` / 61 | - | - | mapped | - | - |
 | - | `TESObjectREFR::Function300020` (GUESS) | `sse-steam-1-7-104` / `0x300020` / 84 | - | - | mapped | - | - |
+| `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function3002f0` (GUESS) | `sse-steam-1-7-104` / `0x3002f0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3002f0.json` | matched | full | - |
+| `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function300310` (GUESS) | `sse-steam-1-7-104` / `0x300310` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x300310.json` | matched | full | - |
 | `skyrim_shared/refs/TESObjectREFRExtraPrefixLayout` | `Extra-data member forwarding wrapper` (GUESS) | `sse-steam-1-7-104` / `0x300730` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x300730.json` | matched | full | open |
 | `skyrim_shared/refs/TESObjectREFR_300b20` | `GetEncounterZone` (GUESS) | `sse-steam-1-7-104` / `0x300b20` / 52 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x300b20.json` | matched | full | open |
 | `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::GetCalcLevel` (COMMUNITY) | `sse-steam-1-7-104` / `0x300b90` / 143 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x300b90.json` | matched | full | open |
