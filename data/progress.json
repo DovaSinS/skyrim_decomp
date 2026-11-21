@@ -79519,12 +79519,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2177520,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf2139f0::~DeletingLeaf2139f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2139f0.json",
+      "report": "reports/sse-steam-1-7-104/0x2139f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x213a20",
@@ -79693,12 +79694,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2188032,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf216300::~DeletingLeaf216300",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x216300.json",
+      "report": "reports/sse-steam-1-7-104/0x216300.json"
     },
     {
       "id": "sse-steam-1-7-104-0x216330",
@@ -120748,12 +120750,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 6600240,
       "size": 15,
-      "status": "mapped",
+      "status": "matched",
       "name": "ChainExplosion::Initialize",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 162. RVA 0x64b630; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x64b630.json",
+      "report": "reports/sse-steam-1-7-104/0x64b630.json"
     },
     {
       "id": "sse-steam-1-7-104-0x64bb80",
@@ -156768,12 +156771,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 9320416,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf8e37e0::~DeletingLeaf8e37e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x8e37e0.json",
+      "report": "reports/sse-steam-1-7-104/0x8e37e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x8e3980",
@@ -186730,12 +186734,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16102624,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiControllerSequence::~NiControllerSequence",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xf5b4e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf5b4e0.json",
+      "report": "reports/sse-steam-1-7-104/0xf5b4e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf5b520",
@@ -208605,12 +208610,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18967520,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1216be0::~DeletingLeaf1216be0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1216be0.json",
+      "report": "reports/sse-steam-1-7-104/0x1216be0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1216c10",
@@ -213279,12 +213285,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19151920,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1243c30::~DeletingLeaf1243c30",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1243c30.json",
+      "report": "reports/sse-steam-1-7-104/0x1243c30.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1243c60",
@@ -216718,12 +216725,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19700304,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf12c9a50::~DeletingLeaf12c9a50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12c9a50.json",
+      "report": "reports/sse-steam-1-7-104/0x12c9a50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12cc0f0",
@@ -225435,12 +225443,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21792816,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14c8830::~DeletingLeaf14c8830",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14c8830.json",
+      "report": "reports/sse-steam-1-7-104/0x14c8830.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14c8860",
@@ -440283,12 +440292,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2774368,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "ImageSpaceModifierInstanceDOF::~ImageSpaceModifierInstanceDOF",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x2a5560; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2a5560.json",
+      "report": "reports/sse-steam-1-7-104/0x2a5560.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2a5670",
@@ -476372,7 +476382,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T20:26:32Z",
+  "updated_at": "2026-11-21T20:32:24Z",
   "work_items": [
     {
       "id": "pin-target",
