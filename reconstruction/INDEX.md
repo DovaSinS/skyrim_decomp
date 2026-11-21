@@ -28119,6 +28119,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsshader/BSImagespaceShader` | `BSImagespaceShader::DispatchCopySubRegion` (COMMUNITY) | `sse-steam-1-7-104` / `0x1540db0` / 259 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1540db0.json` | matched | full | open |
 | `bsshader/BSImagespaceShader` | `BSImagespaceShader::Function15411e0` (GUESS) | `sse-steam-1-7-104` / `0x15411e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15411e0.json` | matched | full | - |
 | - | `Function1541230` (GUESS) | `sse-steam-1-7-104` / `0x1541230` / 938 | - | - | mapped | - | - |
+| `bsshader/BSImagespaceShader` | `BSImagespaceShader::Function1541630` (GUESS) | `sse-steam-1-7-104` / `0x1541630` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1541630.json` | matched | full | - |
 | - | `Function1541f40` (GUESS) | `sse-steam-1-7-104` / `0x1541f40` / 5188 | - | - | mapped | - | - |
 | - | `Function1547210` (GUESS) | `sse-steam-1-7-104` / `0x1547210` / 648 | - | - | mapped | - | - |
 | - | `Function1547d20` (GUESS) | `sse-steam-1-7-104` / `0x1547d20` / 2796 | - | - | mapped | - | - |

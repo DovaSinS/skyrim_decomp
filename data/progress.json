@@ -475747,6 +475747,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x4e0f40.json",
       "report": "reports/sse-steam-1-7-104/0x4e0f40.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1541630",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22287920,
+      "size": 15,
+      "status": "matched",
+      "name": "BSImagespaceShader::Function1541630",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1541630; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1541630.json",
+      "report": "reports/sse-steam-1-7-104/0x1541630.json"
     }
   ],
   "milestones": [
@@ -475789,7 +475802,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T18:54:45Z",
+  "updated_at": "2026-11-21T18:57:33Z",
   "work_items": [
     {
       "id": "pin-target",
