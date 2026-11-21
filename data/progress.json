@@ -206625,7 +206625,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x11cbe10.json",
       "report": "reports/sse-steam-1-7-104/0x11cbe10.json"
     },
     {
@@ -476028,6 +476028,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x3e0030.json",
       "report": "reports/sse-steam-1-7-104/0x3e0030.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4e3290",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5124752,
+      "size": 15,
+      "status": "matched",
+      "name": "BSPathingRequest::Function4e3290",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x4e3290; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4e3290.json",
+      "report": "reports/sse-steam-1-7-104/0x4e3290.json"
     }
   ],
   "milestones": [
@@ -476070,7 +476083,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:21:42Z",
+  "updated_at": "2026-11-21T19:28:35Z",
   "work_items": [
     {
       "id": "pin-target",
