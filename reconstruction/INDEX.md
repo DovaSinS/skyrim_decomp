@@ -23339,7 +23339,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafAddressfa7c70` | `LeafAddressfa7c70::Address` (GUESS) | `sse-steam-1-7-104` / `0xfa7c70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa7c70.json` | matched | full | checked |
 | `unmapped/leaves/LeafForwardfa7e50` | `LeafForwardfa7e50::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa7e50` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa7e50.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardfa7e60` | `LeafForwardfa7e60::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa7e60` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa7e60.json` | matched | family | open |
-| - | `NiPSysBoundUpdateModifier::Functionfa8520` (GUESS) | `sse-steam-1-7-104` / `0xfa8520` / 33 | - | - | mapped | - | - |
+| `gamebryo/niparticle/NiPSysBoundUpdateModifier` | `NiPSysBoundUpdateModifier::Functionfa8520` (GUESS) | `sse-steam-1-7-104` / `0xfa8520` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa8520.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfa8f10` | `LeafAddressfa8f10::Address` (GUESS) | `sse-steam-1-7-104` / `0xfa8f10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa8f10.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardfa9380` | `LeafForwardfa9380::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa9380` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa9380.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardfa9390` | `LeafForwardfa9390::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa9390` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa9390.json` | matched | family | open |

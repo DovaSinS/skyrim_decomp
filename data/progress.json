@@ -440852,12 +440852,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16418080,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysBoundUpdateModifier::Functionfa8520",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of NiPSysBoundUpdateModifier that is not its primary vftable. No usable method name in the pinned sources. RVA 0xfa8520; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa8520.json",
+      "report": "reports/sse-steam-1-7-104/0xfa8520.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa9970",
@@ -476515,7 +476516,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T21:15:34Z",
+  "updated_at": "2026-11-21T22:03:30Z",
   "work_items": [
     {
       "id": "pin-target",
