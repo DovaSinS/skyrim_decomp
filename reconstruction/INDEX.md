@@ -14965,6 +14965,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f51c0` (GUESS) | `sse-steam-1-7-104` / `0x6f51c0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f51c0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f51e0` (GUESS) | `sse-steam-1-7-104` / `0x6f51e0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f51e0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f5200` (GUESS) | `sse-steam-1-7-104` / `0x6f5200` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f5200.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6f5220` (GUESS) | `sse-steam-1-7-104` / `0x6f5220` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f5220.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::IsGreetingPlayer` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6f5250` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f5250.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f5270` (GUESS) | `sse-steam-1-7-104` / `0x6f5270` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f5270.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f52b0` (GUESS) | `sse-steam-1-7-104` / `0x6f52b0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f52b0.json` | matched | full | - |
@@ -14979,9 +14980,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f63c0` (GUESS) | `sse-steam-1-7-104` / `0x6f63c0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f63c0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f6400` (GUESS) | `sse-steam-1-7-104` / `0x6f6400` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6400.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f6470` (GUESS) | `sse-steam-1-7-104` / `0x6f6470` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6470.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6f64b0` (GUESS) | `sse-steam-1-7-104` / `0x6f64b0` / 28 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f64b0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::sub_140650D40` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6f6670` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6670.json` | matched | full | - |
 | - | `AIProcess::Update3DModel_Impl` (COMMUNITY) | `sse-steam-1-7-104` / `0x6f6720` / 1057 | - | - | mapped | - | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::ClearMovementStopped_140651490` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6f6dc0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6dc0.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6f6de0` (GUESS) | `sse-steam-1-7-104` / `0x6f6de0` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6de0.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6f6e10` (GUESS) | `sse-steam-1-7-104` / `0x6f6e10` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6e10.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6f6f30` (GUESS) | `sse-steam-1-7-104` / `0x6f6f30` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6f30.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f6f80` (GUESS) | `sse-steam-1-7-104` / `0x6f6f80` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6f80.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f6fa0` (GUESS) | `sse-steam-1-7-104` / `0x6f6fa0` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6fa0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6f6fc0` (GUESS) | `sse-steam-1-7-104` / `0x6f6fc0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6f6fc0.json` | matched | full | - |
@@ -14994,6 +14999,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6fde30` (GUESS) | `sse-steam-1-7-104` / `0x6fde30` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fde30.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6fde50` (GUESS) | `sse-steam-1-7-104` / `0x6fde50` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fde50.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::GetFadeState_1406588C0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6fe000` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe000.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6fe020` (GUESS) | `sse-steam-1-7-104` / `0x6fe020` / 42 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe020.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6fe5d0` (GUESS) | `sse-steam-1-7-104` / `0x6fe5d0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe5d0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6fe690` (GUESS) | `sse-steam-1-7-104` / `0x6fe690` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe690.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6fe6b0` (GUESS) | `sse-steam-1-7-104` / `0x6fe6b0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe6b0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6fe6d0` (GUESS) | `sse-steam-1-7-104` / `0x6fe6d0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6fe6d0.json` | matched | full | - |
@@ -15011,7 +15018,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess` | `AIProcess::ClearMuzzleFlashes` (COMMUNITY) | `sse-steam-1-7-104` / `0x6ff380` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff380.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6ff470` (GUESS) | `sse-steam-1-7-104` / `0x6ff470` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff470.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6ff490` (GUESS) | `sse-steam-1-7-104` / `0x6ff490` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff490.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6ff4b0` (GUESS) | `sse-steam-1-7-104` / `0x6ff4b0` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff4b0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6f5120` | `ActorProcess::Function6ff4e0` (GUESS) | `sse-steam-1-7-104` / `0x6ff4e0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff4e0.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6ff500` (GUESS) | `sse-steam-1-7-104` / `0x6ff500` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ff500.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6ffe80` (GUESS) | `sse-steam-1-7-104` / `0x6ffe80` / 40 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ffe80.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function6ffef0` (GUESS) | `sse-steam-1-7-104` / `0x6ffef0` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ffef0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::sub_14065A7A0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x700020` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x700020.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::Function700040` (GUESS) | `sse-steam-1-7-104` / `0x700040` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x700040.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::GetShout_14065A7E0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x700060` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x700060.json` | matched | full | - |
@@ -15070,10 +15081,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067A420` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x7206a0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7206a0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function720700` (GUESS) | `sse-steam-1-7-104` / `0x720700` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x720700.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function720720` (GUESS) | `sse-steam-1-7-104` / `0x720720` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x720720.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function720f60` (GUESS) | `sse-steam-1-7-104` / `0x720f60` / 25 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x720f60.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function721330` (GUESS) | `sse-steam-1-7-104` / `0x721330` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x721330.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function721350` (GUESS) | `sse-steam-1-7-104` / `0x721350` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x721350.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7216a0` (GUESS) | `sse-steam-1-7-104` / `0x7216a0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7216a0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7216c0` (GUESS) | `sse-steam-1-7-104` / `0x7216c0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7216c0.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function7216e0` (GUESS) | `sse-steam-1-7-104` / `0x7216e0` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7216e0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7219f0` (GUESS) | `sse-steam-1-7-104` / `0x7219f0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7219f0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function721a10` (GUESS) | `sse-steam-1-7-104` / `0x721a10` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x721a10.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function721f30` (GUESS) | `sse-steam-1-7-104` / `0x721f30` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x721f30.json` | matched | full | - |
@@ -15084,6 +15097,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function722090` (GUESS) | `sse-steam-1-7-104` / `0x722090` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x722090.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7220b0` (GUESS) | `sse-steam-1-7-104` / `0x7220b0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7220b0.json` | matched | full | - |
 | - | `Function722110` (GUESS) | `sse-steam-1-7-104` / `0x722110` / 18 | - | - | mapped | - | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function7231e0` (GUESS) | `sse-steam-1-7-104` / `0x7231e0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7231e0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7232d0` (GUESS) | `sse-steam-1-7-104` / `0x7232d0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7232d0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067CF40` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x723330` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x723330.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function723350` (GUESS) | `sse-steam-1-7-104` / `0x723350` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x723350.json` | matched | full | - |
@@ -15099,11 +15113,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067E3B0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x724600` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x724600.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function724640` (GUESS) | `sse-steam-1-7-104` / `0x724640` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x724640.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function7265a0` (GUESS) | `sse-steam-1-7-104` / `0x7265a0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7265a0.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function726eb0` (GUESS) | `sse-steam-1-7-104` / `0x726eb0` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x726eb0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function726fa0` (GUESS) | `sse-steam-1-7-104` / `0x726fa0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x726fa0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function726fc0` (GUESS) | `sse-steam-1-7-104` / `0x726fc0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x726fc0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727020` (GUESS) | `sse-steam-1-7-104` / `0x727020` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727020.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727060` (GUESS) | `sse-steam-1-7-104` / `0x727060` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727060.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727080` (GUESS) | `sse-steam-1-7-104` / `0x727080` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727080.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function7270a0` (GUESS) | `sse-steam-1-7-104` / `0x7270a0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7270a0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::SetAlpha_140680D70` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x7270d0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7270d0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function7270f0` (GUESS) | `sse-steam-1-7-104` / `0x7270f0` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7270f0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727110` (GUESS) | `sse-steam-1-7-104` / `0x727110` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727110.json` | matched | full | - |
@@ -15133,6 +15149,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727e50` (GUESS) | `sse-steam-1-7-104` / `0x727e50` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727e50.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727e70` (GUESS) | `sse-steam-1-7-104` / `0x727e70` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727e70.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727e90` (GUESS) | `sse-steam-1-7-104` / `0x727e90` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727e90.json` | matched | full | - |
+| `skyrim/ai/ActorProcess` | `ActorProcess::Function727eb0` (GUESS) | `sse-steam-1-7-104` / `0x727eb0` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727eb0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727ee0` (GUESS) | `sse-steam-1-7-104` / `0x727ee0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727ee0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function727f00` (GUESS) | `sse-steam-1-7-104` / `0x727f00` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727f00.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::sub_140681B50` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x727f20` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x727f20.json` | matched | full | - |
