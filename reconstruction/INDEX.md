@@ -9298,11 +9298,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf210e90` | `Leaf210e90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x210e90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x210e90.json` | matched | family | open |
 | `unmapped/leaves/Leaf212f20` | `Leaf212f20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x212f20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x212f20.json` | matched | family | open |
 | `unmapped/wrappers/BSInlineHost213910` | `BSInlineHost213910::~BSInlineHost213910` (GUESS) | `sse-steam-1-7-104` / `0x213910` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213910.json` | matched | full | open |
-| - | `DeletingLeaf2139c0::~DeletingLeaf2139c0` (GUESS) | `sse-steam-1-7-104` / `0x2139c0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf2139c0` | `DeletingLeaf2139c0::~DeletingLeaf2139c0` (GUESS) | `sse-steam-1-7-104` / `0x2139c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2139c0.json` | matched | full | - |
 | - | `DeletingLeaf2139f0::~DeletingLeaf2139f0` (GUESS) | `sse-steam-1-7-104` / `0x2139f0` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf213a20::~DeletingLeaf213a20` (GUESS) | `sse-steam-1-7-104` / `0x213a20` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf213a20` | `DeletingLeaf213a20::~DeletingLeaf213a20` (GUESS) | `sse-steam-1-7-104` / `0x213a20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213a20.json` | matched | full | - |
 | - | `DeletingLeaf213a50::~DeletingLeaf213a50` (GUESS) | `sse-steam-1-7-104` / `0x213a50` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf213a80::~DeletingLeaf213a80` (GUESS) | `sse-steam-1-7-104` / `0x213a80` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf213a80` | `DeletingLeaf213a80::~DeletingLeaf213a80` (GUESS) | `sse-steam-1-7-104` / `0x213a80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213a80.json` | matched | full | - |
 | `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::~BSMultiBoundAABB` (COMMUNITY) | `sse-steam-1-7-104` / `0x213ab0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213ab0.json` | matched | full | checked |
 | `gamebryo/nimain/BSMultiBoundOBB` | `BSMultiBoundOBB::~BSMultiBoundOBB` (COMMUNITY) | `sse-steam-1-7-104` / `0x213af0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213af0.json` | matched | full | checked |
 | `bsshader/BSTextureSet` | `NiRefObject::~NiRefObject` (COMMUNITY) | `sse-steam-1-7-104` / `0x213be0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213be0.json` | matched | full | open |
@@ -9901,9 +9901,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x285758` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285758.json` | matched | full | open |
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x285764` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285764.json` | matched | full | open |
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x285770` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285770.json` | matched | full | open |
-| - | `DeletingLeaf285790::~DeletingLeaf285790` (GUESS) | `sse-steam-1-7-104` / `0x285790` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf285790` | `DeletingLeaf285790::~DeletingLeaf285790` (GUESS) | `sse-steam-1-7-104` / `0x285790` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285790.json` | matched | full | - |
 | `unmapped/leaves/CommunityLeafStorageLayout` | `DeletingLeaf2857c0::~DeletingLeaf2857c0` (GUESS) | `sse-steam-1-7-104` / `0x2857c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2857c0.json` | matched | full | open |
-| - | `DeletingLeaf2857f0::~DeletingLeaf2857f0` (GUESS) | `sse-steam-1-7-104` / `0x2857f0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf2857f0` | `DeletingLeaf2857f0::~DeletingLeaf2857f0` (GUESS) | `sse-steam-1-7-104` / `0x2857f0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2857f0.json` | matched | full | - |
 | `unmapped/storage/StorageInit2859f0` | `StorageInit2859f0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x2859f0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2859f0.json` | matched | family | open |
 | - | `Actor::IsOnMount` (COMMUNITY) | `sse-steam-1-7-104` / `0x285a30` / 115 | - | - | mapped | - | - |
 | - | `p117_285f10::LockedSource_F063_285f10::Add` (GUESS) | `sse-steam-1-7-104` / `0x285f10` / 373 | - | - | mapped | - | - |
@@ -11303,7 +11303,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `TESActorBase::GetIsPlayerOwner` (COMMUNITY) | `sse-steam-1-7-104` / `0x3b03a0` / 11 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward3b06a0` | `LeafForward3b06a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x3b06a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b06a0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf3b0750` | `TableStoreLeaf3b0750::~TableStoreLeaf3b0750` (GUESS) | `sse-steam-1-7-104` / `0x3b0750` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b0750.json` | matched | family | open |
-| - | `DeletingLeaf3b0760::~DeletingLeaf3b0760` (GUESS) | `sse-steam-1-7-104` / `0x3b0760` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf3b0760` | `DeletingLeaf3b0760::~DeletingLeaf3b0760` (GUESS) | `sse-steam-1-7-104` / `0x3b0760` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b0760.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf3b2630` | `FieldLeaf3b2630::Read` (GUESS) | `sse-steam-1-7-104` / `0x3b2630` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b2630.json` | matched | family | open |
 | `unmapped/leaves/Leaf3b2640` | `Leaf3b2640::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3b2640` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b2640.json` | matched | family | open |
 | `unmapped/fields/FieldLeaf3b26b0` | `FieldLeaf3b26b0::Read` (GUESS) | `sse-steam-1-7-104` / `0x3b26b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3b26b0.json` | matched | family | open |
@@ -11562,7 +11562,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf3f6a20` | `Leaf3f6a20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3f6a20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f6a20.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf3f77f0` | `TableStoreLeaf3f77f0::~TableStoreLeaf3f77f0` (GUESS) | `sse-steam-1-7-104` / `0x3f77f0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f77f0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf3f7800` | `TableStoreLeaf3f7800::~TableStoreLeaf3f7800` (GUESS) | `sse-steam-1-7-104` / `0x3f7800` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f7800.json` | matched | family | open |
-| - | `DeletingLeaf3f7860::~DeletingLeaf3f7860` (GUESS) | `sse-steam-1-7-104` / `0x3f7860` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf3f7860` | `DeletingLeaf3f7860::~DeletingLeaf3f7860` (GUESS) | `sse-steam-1-7-104` / `0x3f7860` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f7860.json` | matched | full | - |
 | `unmapped/leaves/Leaf3f7bc0` | `Leaf3f7bc0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3f7bc0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f7bc0.json` | matched | family | open |
 | `unmapped/leaves/Leaf3f7bd0` | `Leaf3f7bd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3f7bd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f7bd0.json` | matched | family | open |
 | `unmapped/leaves/Leaf3f7be0` | `Leaf3f7be0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3f7be0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3f7be0.json` | matched | family | open |
@@ -11633,7 +11633,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf407f00` | `Leaf407f00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x407f00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x407f00.json` | matched | family | open |
 | `unmapped/leaves/LeafForward408470` | `LeafForward408470::Forward` (GUESS) | `sse-steam-1-7-104` / `0x408470` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x408470.json` | matched | family | open |
 | `unmapped/leaves/LeafForward408580` | `LeafForward408580::Forward` (GUESS) | `sse-steam-1-7-104` / `0x408580` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x408580.json` | matched | family | open |
-| - | `DeletingLeaf4088d0::~DeletingLeaf4088d0` (GUESS) | `sse-steam-1-7-104` / `0x4088d0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf4088d0` | `DeletingLeaf4088d0::~DeletingLeaf4088d0` (GUESS) | `sse-steam-1-7-104` / `0x4088d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4088d0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf4089f0` | `DeletingLeaf4089f0::~DeletingLeaf4089f0` (GUESS) | `sse-steam-1-7-104` / `0x4089f0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4089f0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf408bc0` | `DeletingLeaf408bc0::~DeletingLeaf408bc0` (GUESS) | `sse-steam-1-7-104` / `0x408bc0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x408bc0.json` | matched | family | open |
 | `unmapped/storage/StorageInit408db0` | `StorageInit408db0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x408db0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x408db0.json` | matched | family | open |
@@ -12450,7 +12450,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/BGSProcedureFollow_4724c0` | `BGSProcedureFollow::dtor_deleting` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x4724c0` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4724c0.json` | matched | full | - |
 | `skyrim/ai/BGSProcedureFollowTo_472660` | `BGSProcedureFollowTo::dtor_deleting` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x472660` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x472660.json` | matched | full | - |
 | `unmapped/leaves/CommunityLeafStorageLayout` | `DeletingLeaf4726a0::~DeletingLeaf4726a0` (GUESS) | `sse-steam-1-7-104` / `0x4726a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4726a0.json` | matched | full | open |
-| - | `DeletingLeaf4726d0::~DeletingLeaf4726d0` (GUESS) | `sse-steam-1-7-104` / `0x4726d0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf4726d0` | `DeletingLeaf4726d0::~DeletingLeaf4726d0` (GUESS) | `sse-steam-1-7-104` / `0x4726d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4726d0.json` | matched | full | - |
 | `unmapped/leaves/VirtualTail472890` | `VirtualTail472890::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x472890` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x472890.json` | matched | family | open |
 | `unmapped/leaves/VirtualTail4728b0` | `VirtualTail4728b0::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x4728b0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4728b0.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf472930` | `ReturnLeaf472930::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x472930` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x472930.json` | matched | family | open |
@@ -12756,7 +12756,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/VirtualTail496320` | `VirtualTail496320::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x496320` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x496320.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress4963c0` | `LeafAddress4963c0::Address` (GUESS) | `sse-steam-1-7-104` / `0x4963c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4963c0.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress4963d0` | `LeafAddress4963d0::Address` (GUESS) | `sse-steam-1-7-104` / `0x4963d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4963d0.json` | matched | family | open |
-| - | `DeletingLeaf496650::~DeletingLeaf496650` (GUESS) | `sse-steam-1-7-104` / `0x496650` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf496650` | `DeletingLeaf496650::~DeletingLeaf496650` (GUESS) | `sse-steam-1-7-104` / `0x496650` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x496650.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress4969a0` | `LeafAddress4969a0::Address` (GUESS) | `sse-steam-1-7-104` / `0x4969a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4969a0.json` | matched | family | open |
 | `unmapped/leaves/Leaf4969b0` | `Leaf4969b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4969b0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4969b0.json` | matched | family | open |
 | `unmapped/leaves/Leaf4969c0` | `Leaf4969c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4969c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4969c0.json` | matched | family | open |
@@ -12880,7 +12880,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf4aa100` | `ReturnLeaf4aa100::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4aa100` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4aa100.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf4aa110` | `ReturnLeaf4aa110::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4aa110` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4aa110.json` | matched | family | open |
 | `unmapped/leaves/Leaf4aa120` | `Leaf4aa120::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4aa120` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4aa120.json` | matched | family | open |
-| - | `DeletingLeaf4aa130::~DeletingLeaf4aa130` (GUESS) | `sse-steam-1-7-104` / `0x4aa130` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf4aa130` | `DeletingLeaf4aa130::~DeletingLeaf4aa130` (GUESS) | `sse-steam-1-7-104` / `0x4aa130` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4aa130.json` | matched | full | - |
 | `unmapped/represented/F004Recovered4aa1c0` | `F004Recovered4aa1c0::~F004Recovered4aa1c0` (GUESS) | `sse-steam-1-7-104` / `0x4aa1c0` / 52 | `represented-magic-wrapper-o2` | `reports/sse-steam-1-7-104/0x4aa1c0.json` | matched | full | - |
 | `unmapped/represented/F004Recovered4aa200` | `F004Recovered4aa200::~F004Recovered4aa200` (GUESS) | `sse-steam-1-7-104` / `0x4aa200` / 52 | `represented-magic-wrapper-o2` | `reports/sse-steam-1-7-104/0x4aa200.json` | matched | full | - |
 | `unmapped/storage/FieldLeaf4aa860` | `BSTempEffectDebris::Get3D` (COMMUNITY) | `sse-steam-1-7-104` / `0x4aa860` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4aa860.json` | matched | full | open |
@@ -12945,7 +12945,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForward4c1c00` | `LeafForward4c1c00::Forward` (GUESS) | `sse-steam-1-7-104` / `0x4c1c00` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c1c00.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf4c1d70` | `TableStoreLeaf4c1d70::~TableStoreLeaf4c1d70` (GUESS) | `sse-steam-1-7-104` / `0x4c1d70` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c1d70.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf4c1d80` | `DeletingLeaf4c1d80::~DeletingLeaf4c1d80` (GUESS) | `sse-steam-1-7-104` / `0x4c1d80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c1d80.json` | matched | family | open |
-| - | `DeletingLeaf4c1db0::~DeletingLeaf4c1db0` (GUESS) | `sse-steam-1-7-104` / `0x4c1db0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf4c1db0` | `DeletingLeaf4c1db0::~DeletingLeaf4c1db0` (GUESS) | `sse-steam-1-7-104` / `0x4c1db0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c1db0.json` | matched | full | - |
 | `unmapped/leaves/Leaf4c3370` | `Leaf4c3370::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4c3370` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c3370.json` | matched | family | open |
 | `unmapped/leaves/LeafForward4c3780` | `LeafForward4c3780::Forward` (GUESS) | `sse-steam-1-7-104` / `0x4c3780` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c3780.json` | matched | family | open |
 | `unmapped/storage/StorageInit4c3940` | `StorageInit4c3940::initialize` (GUESS) | `sse-steam-1-7-104` / `0x4c3940` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4c3940.json` | matched | family | open |
@@ -13049,7 +13049,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/TableStoreLeaf4e3540` | `TableStoreLeaf4e3540::~TableStoreLeaf4e3540` (GUESS) | `sse-steam-1-7-104` / `0x4e3540` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e3540.json` | matched | family | open |
 | `unmapped/leaves/Leaf4e3630` | `Leaf4e3630::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4e3630` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e3630.json` | matched | family | open |
 | `unmapped/leaves/CommunityLeafStorageLayout` | `DeletingLeaf4e3a50::~DeletingLeaf4e3a50` (GUESS) | `sse-steam-1-7-104` / `0x4e3a50` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e3a50.json` | matched | full | open |
-| - | `DeletingLeaf4e3a80::~DeletingLeaf4e3a80` (GUESS) | `sse-steam-1-7-104` / `0x4e3a80` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf4e3a80` | `DeletingLeaf4e3a80::~DeletingLeaf4e3a80` (GUESS) | `sse-steam-1-7-104` / `0x4e3a80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e3a80.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf4e4120` | `ReturnLeaf4e4120::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4e4120` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e4120.json` | matched | family | open |
 | `skyrim_shared/pathfinding/MasterFilePathingStreamWriteToBuffer` | `MasterFilePathingStreamWriteToBuffer::GetClassType` (GUESS) | `sse-steam-1-7-104` / `0x4e4130` / 47 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e4130.json` | matched | full | open |
 | `skyrim_shared/pathfinding/MasterFilePathingStreamGetSize` | `MasterFilePathingStreamGetSize::GetClassType` (GUESS) | `sse-steam-1-7-104` / `0x4e4610` / 47 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4e4610.json` | matched | full | open |
@@ -13285,7 +13285,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function51a6c0` (GUESS) | `sse-steam-1-7-104` / `0x51a6c0` / 21 | - | - | mapped | - | - |
 | - | `Function51a6e0` (GUESS) | `sse-steam-1-7-104` / `0x51a6e0` / 242 | - | - | mapped | - | - |
 | `unmapped/leaves/TableStoreLeaf51c190` | `TableStoreLeaf51c190::~TableStoreLeaf51c190` (GUESS) | `sse-steam-1-7-104` / `0x51c190` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51c190.json` | matched | family | open |
-| - | `DeletingLeaf51c480::~DeletingLeaf51c480` (GUESS) | `sse-steam-1-7-104` / `0x51c480` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf51c480` | `DeletingLeaf51c480::~DeletingLeaf51c480` (GUESS) | `sse-steam-1-7-104` / `0x51c480` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51c480.json` | matched | full | - |
 | `unmapped/storage/StorageInit51c510` | `StorageInit51c510::initialize` (GUESS) | `sse-steam-1-7-104` / `0x51c510` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51c510.json` | matched | family | open |
 | `skyrim_shared/world/BGSQueuedObjectDowngrade` | `BGSQueuedObjectDowngrade::Slot5` (GUESS) | `sse-steam-1-7-104` / `0x51c710` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51c710.json` | matched | full | open |
 | `skyrim_shared/world/BGSQueuedObjectInitialLoad` | `BGSQueuedObjectInitialLoad::Slot5` (GUESS) | `sse-steam-1-7-104` / `0x51c720` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51c720.json` | matched | family | open |
@@ -15766,7 +15766,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf7ab3b0` | `DeletingLeaf7ab3b0::~DeletingLeaf7ab3b0` (GUESS) | `sse-steam-1-7-104` / `0x7ab3b0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab3b0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf7ab3e0` | `DeletingLeaf7ab3e0::~DeletingLeaf7ab3e0` (GUESS) | `sse-steam-1-7-104` / `0x7ab3e0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab3e0.json` | matched | family | open |
 | `unmapped/leaves/LeafForward7ab630` | `LeafForward7ab630::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7ab630` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab630.json` | matched | family | open |
-| `skyrim/ai/movement/MovementTweenerAgentNodeFollower` | `MovementTweenerAgentNodeFollower::QClassAgentType` (GUESS) | `sse-steam-1-7-104` / `0x7ab640` / 140 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab640.json` | matched | full | open |
+| `skyrim/ai/movement/MovementTweenerAgentNodeFollower` | `MovementTweenerAgentNodeFollower::QClassAgentType` (GUESS) | `sse-steam-1-7-104` / `0x7ab640` / 140 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab640.json` | matched, STALE (unit changed) | full | open |
 | `unmapped/leaves/ReturnLeaf7ab6e0` | `ReturnLeaf7ab6e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7ab6e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab6e0.json` | matched | family | open |
 | `unmapped/leaves/Leaf7ab960` | `Leaf7ab960::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7ab960` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab960.json` | matched | family | open |
 | `unmapped/leaves/Leaf7ab970` | `Leaf7ab970::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7ab970` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7ab970.json` | matched | family | open |
@@ -21112,6 +21112,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardbbc0a0` | `LeafForwardbbc0a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xbbc0a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbbc0a0.json` | matched | family | open |
 | `gamebryo/nianimation/BSTweenerModifier` | `BSTweenerModifier::Unk_0A` (COMMUNITY) | `sse-steam-1-7-104` / `0xbbc0b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbbc0b0.json` | matched | full | open |
 | `unmapped/leaves/TableStoreLeafbbc550` | `TableStoreLeafbbc550::~TableStoreLeafbbc550` (GUESS) | `sse-steam-1-7-104` / `0xbbc550` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbbc550.json` | matched | family | open |
+| `gamebryo/nianimation/BSAnimationGraphManager` | `BSAnimationGraphManager::Functionbc0e60` (GUESS) | `sse-steam-1-7-104` / `0xbc0e60` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbc0e60.json` | matched | full | - |
+| `gamebryo/nianimation/BSAnimationGraphManager` | `BSAnimationGraphManager::Functionbc0fb0` (GUESS) | `sse-steam-1-7-104` / `0xbc0fb0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbc0fb0.json` | matched | full | - |
 | `gamebryo/nianimation/BSAnimationGraphManager_bc15e0` | `BSAnimationGraphManager::ProcessEvent` (COMMUNITY) | `sse-steam-1-7-104` / `0xbc15e0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbc15e0.json` | matched | full | open |
 | `gamebryo/nianimation/BSAnimationGraphManager_bc19d0` | `BSAnimationGraphManager::Functionbc19d0` (GUESS) | `sse-steam-1-7-104` / `0xbc19d0` / 39 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbc19d0.json` | matched | full | open |
 | `unmapped/leaves/TableStoreLeafbc1b00` | `TableStoreLeafbc1b00::~TableStoreLeafbc1b00` (GUESS) | `sse-steam-1-7-104` / `0xbc1b00` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xbc1b00.json` | matched | family | open |
@@ -21632,10 +21634,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSInputDevice::GetKeyMapping` (COMMUNITY) | `sse-steam-1-7-104` / `0xd6ee20` / 134 | - | - | mapped | - | - |
 | - | `BSInputDevice::GetMappedKeycode` (COMMUNITY) | `sse-steam-1-7-104` / `0xd6ef40` / 131 | - | - | mapped | - | - |
 | `unmapped/leaves/TableStoreLeafd70770` | `TableStoreLeafd70770::~TableStoreLeafd70770` (GUESS) | `sse-steam-1-7-104` / `0xd70770` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd70770.json` | matched | full | - |
-| - | `DeletingLeafd70890::~DeletingLeafd70890` (GUESS) | `sse-steam-1-7-104` / `0xd70890` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeafd70890` | `DeletingLeafd70890::~DeletingLeafd70890` (GUESS) | `sse-steam-1-7-104` / `0xd70890` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd70890.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeafd70900` | `DeletingLeafd70900::~DeletingLeafd70900` (GUESS) | `sse-steam-1-7-104` / `0xd70900` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd70900.json` | matched | family | open |
-| - | `DeletingLeafd70930::~DeletingLeafd70930` (GUESS) | `sse-steam-1-7-104` / `0xd70930` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeafd709e0::~DeletingLeafd709e0` (GUESS) | `sse-steam-1-7-104` / `0xd709e0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeafd70930` | `DeletingLeafd70930::~DeletingLeafd70930` (GUESS) | `sse-steam-1-7-104` / `0xd70930` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd70930.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeafd709e0` | `DeletingLeafd709e0::~DeletingLeafd709e0` (GUESS) | `sse-steam-1-7-104` / `0xd709e0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd709e0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeafd70a10` | `DeletingLeafd70a10::~DeletingLeafd70a10` (GUESS) | `sse-steam-1-7-104` / `0xd70a10` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd70a10.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeafd74e60` | `DeletingLeafd74e60::~DeletingLeafd74e60` (GUESS) | `sse-steam-1-7-104` / `0xd74e60` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd74e60.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeafd74e90` | `DeletingLeafd74e90::~DeletingLeafd74e90` (GUESS) | `sse-steam-1-7-104` / `0xd74e90` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xd74e90.json` | matched | family | open |
@@ -24006,7 +24008,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafAddress1004f70` | `LeafAddress1004f70::Address` (GUESS) | `sse-steam-1-7-104` / `0x1004f70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1004f70.json` | matched | family | open |
 | `unmapped/leaves/LeafForward1005030` | `LeafForward1005030::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1005030` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005030.json` | matched | family | open |
 | `gamebryo/nimain/NiNode` | `NiNode::Function1005370` (GUESS) | `sse-steam-1-7-104` / `0x1005370` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005370.json` | matched | full | - |
-| - | `BSNiNode::~BSNiNode` (COMMUNITY) | `sse-steam-1-7-104` / `0x1005450` / 62 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSNiNode` | `BSNiNode::~BSNiNode` (COMMUNITY) | `sse-steam-1-7-104` / `0x1005450` / 62 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1005450.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress1005490` | `BSNiNode::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x1005490` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005490.json` | matched | family | open |
 | `unmapped/storage/StorageInit1006f60` | `StorageInit1006f60::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1006f60` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1006f60.json` | matched | family | open |
 | - | `Function100ae80` (GUESS) | `sse-steam-1-7-104` / `0x100ae80` / 1697 | - | - | mapped | - | - |
@@ -24503,7 +24505,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf11175e0` | `Leaf11175e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x11175e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11175e0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf1123de0` | `DeletingLeaf1123de0::~DeletingLeaf1123de0` (GUESS) | `sse-steam-1-7-104` / `0x1123de0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1123de0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1123e10` | `DeletingLeaf1123e10::~DeletingLeaf1123e10` (GUESS) | `sse-steam-1-7-104` / `0x1123e10` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1123e10.json` | matched | family | open |
-| - | `DeletingLeaf1123ec0::~DeletingLeaf1123ec0` (GUESS) | `sse-steam-1-7-104` / `0x1123ec0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1123ec0` | `DeletingLeaf1123ec0::~DeletingLeaf1123ec0` (GUESS) | `sse-steam-1-7-104` / `0x1123ec0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1123ec0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1123ef0` | `DeletingLeaf1123ef0::~DeletingLeaf1123ef0` (GUESS) | `sse-steam-1-7-104` / `0x1123ef0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1123ef0.json` | matched | family | open |
 | `unmapped/leaves/Leaf11244e0` | `Leaf11244e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x11244e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11244e0.json` | matched | family | open |
 | `unmapped/leaves/Leaf1124520` | `Leaf1124520::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1124520` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1124520.json` | matched | family | open |
@@ -24530,9 +24532,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf1139200` | `DeletingLeaf1139200::~DeletingLeaf1139200` (GUESS) | `sse-steam-1-7-104` / `0x1139200` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139200.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1139230` | `DeletingLeaf1139230::~DeletingLeaf1139230` (GUESS) | `sse-steam-1-7-104` / `0x1139230` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139230.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1139260` | `DeletingLeaf1139260::~DeletingLeaf1139260` (GUESS) | `sse-steam-1-7-104` / `0x1139260` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139260.json` | matched | full | - |
-| - | `DeletingLeaf1139290::~DeletingLeaf1139290` (GUESS) | `sse-steam-1-7-104` / `0x1139290` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf11392c0::~DeletingLeaf11392c0` (GUESS) | `sse-steam-1-7-104` / `0x11392c0` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf11392f0::~DeletingLeaf11392f0` (GUESS) | `sse-steam-1-7-104` / `0x11392f0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1139290` | `DeletingLeaf1139290::~DeletingLeaf1139290` (GUESS) | `sse-steam-1-7-104` / `0x1139290` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139290.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf11392c0` | `DeletingLeaf11392c0::~DeletingLeaf11392c0` (GUESS) | `sse-steam-1-7-104` / `0x11392c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11392c0.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf11392f0` | `DeletingLeaf11392f0::~DeletingLeaf11392f0` (GUESS) | `sse-steam-1-7-104` / `0x11392f0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11392f0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1139320` | `DeletingLeaf1139320::~DeletingLeaf1139320` (GUESS) | `sse-steam-1-7-104` / `0x1139320` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139320.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf1139350` | `DeletingLeaf1139350::~DeletingLeaf1139350` (GUESS) | `sse-steam-1-7-104` / `0x1139350` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139350.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf1139380` | `DeletingLeaf1139380::~DeletingLeaf1139380` (GUESS) | `sse-steam-1-7-104` / `0x1139380` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1139380.json` | matched | family | open |
@@ -24548,8 +24550,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf1151590` | `DeletingLeaf1151590::~DeletingLeaf1151590` (GUESS) | `sse-steam-1-7-104` / `0x1151590` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1151590.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf11515c0` | `DeletingLeaf11515c0::~DeletingLeaf11515c0` (GUESS) | `sse-steam-1-7-104` / `0x11515c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11515c0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf11515f0` | `DeletingLeaf11515f0::~DeletingLeaf11515f0` (GUESS) | `sse-steam-1-7-104` / `0x11515f0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11515f0.json` | matched | family | open |
-| - | `DeletingLeaf1151680::~DeletingLeaf1151680` (GUESS) | `sse-steam-1-7-104` / `0x1151680` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1151830::~DeletingLeaf1151830` (GUESS) | `sse-steam-1-7-104` / `0x1151830` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1151680` | `DeletingLeaf1151680::~DeletingLeaf1151680` (GUESS) | `sse-steam-1-7-104` / `0x1151680` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1151680.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1151830` | `DeletingLeaf1151830::~DeletingLeaf1151830` (GUESS) | `sse-steam-1-7-104` / `0x1151830` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1151830.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf115ca80` | `DeletingLeaf115ca80::~DeletingLeaf115ca80` (GUESS) | `sse-steam-1-7-104` / `0x115ca80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x115ca80.json` | matched | family | open |
 | `unmapped/leaves/Leaf115e4d0` | `Leaf115e4d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x115e4d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x115e4d0.json` | matched | family | open |
 | `unmapped/leaves/VirtualTail1168e70` | `VirtualTail1168e70::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x1168e70` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1168e70.json` | matched | family | open |
@@ -24623,11 +24625,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf117b240` | `DeletingLeaf117b240::~DeletingLeaf117b240` (GUESS) | `sse-steam-1-7-104` / `0x117b240` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x117b240.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf117b360` | `DeletingLeaf117b360::~DeletingLeaf117b360` (GUESS) | `sse-steam-1-7-104` / `0x117b360` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x117b360.json` | matched | full | - |
 | - | `BSScaleformTranslator::dtor_impl` (COMMUNITY) | `sse-steam-1-7-104` / `0x117e540` / 243 | - | - | mapped | - | - |
-| - | `DeletingLeaf1184f70::~DeletingLeaf1184f70` (GUESS) | `sse-steam-1-7-104` / `0x1184f70` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1184f70` | `DeletingLeaf1184f70::~DeletingLeaf1184f70` (GUESS) | `sse-steam-1-7-104` / `0x1184f70` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1184f70.json` | matched | full | - |
 | `unmapped/leaves/LeafForward1190480` | `LeafForward1190480::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1190480` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1190480.json` | matched | family | open |
 | `unmapped/leaves/LeafForward1190490` | `LeafForward1190490::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1190490` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1190490.json` | matched | full | open |
 | `unmapped/leaves/Leaf1191110` | `Leaf1191110::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1191110` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1191110.json` | matched | family | open |
-| - | `DeletingLeaf1193080::~DeletingLeaf1193080` (GUESS) | `sse-steam-1-7-104` / `0x1193080` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1193080` | `DeletingLeaf1193080::~DeletingLeaf1193080` (GUESS) | `sse-steam-1-7-104` / `0x1193080` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1193080.json` | matched | full | - |
 | `unmapped/leaves/LeafForward11974c0` | `LeafForward11974c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x11974c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11974c0.json` | matched | family | open |
 | `skyrim_shared/quest/BGSMoviePlayer_11b2540` | `MoviePlayer::PlaySequenceThread` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x11b2540` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b2540.json` | matched | full | open |
 | `unmapped/storage/StorageInit11b3770` | `StorageInit11b3770::initialize` (GUESS) | `sse-steam-1-7-104` / `0x11b3770` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b3770.json` | matched | family | open |
@@ -24644,9 +24646,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/TableStoreLeaf11c4c00` | `TableStoreLeaf11c4c00::~TableStoreLeaf11c4c00` (GUESS) | `sse-steam-1-7-104` / `0x11c4c00` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c4c00.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf11c4c10` | `TableStoreLeaf11c4c10::~TableStoreLeaf11c4c10` (GUESS) | `sse-steam-1-7-104` / `0x11c4c10` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c4c10.json` | matched | family | open |
 | `skyrim_shared/pathfinding/BSPathing` | `BSPathing::~BSPathing` (COMMUNITY) | `sse-steam-1-7-104` / `0x11c52e0` / 65 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c52e0.json` | matched | full | - |
-| - | `DeletingLeaf11c5330::~DeletingLeaf11c5330` (GUESS) | `sse-steam-1-7-104` / `0x11c5330` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf11c5330` | `DeletingLeaf11c5330::~DeletingLeaf11c5330` (GUESS) | `sse-steam-1-7-104` / `0x11c5330` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c5330.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf11c5360` | `DeletingLeaf11c5360::~DeletingLeaf11c5360` (GUESS) | `sse-steam-1-7-104` / `0x11c5360` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c5360.json` | matched | family | open |
-| - | `DeletingLeaf11c5390::~DeletingLeaf11c5390` (GUESS) | `sse-steam-1-7-104` / `0x11c5390` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf11c5390` | `DeletingLeaf11c5390::~DeletingLeaf11c5390` (GUESS) | `sse-steam-1-7-104` / `0x11c5390` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c5390.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf11c53c0` | `DeletingLeaf11c53c0::~DeletingLeaf11c53c0` (GUESS) | `sse-steam-1-7-104` / `0x11c53c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c53c0.json` | matched | full | - |
 | `unmapped/leaves/DeletingWrapper11c53f0` | `DeletingWrapper11c53f0::~DeletingWrapper11c53f0` (GUESS) | `sse-steam-1-7-104` / `0x11c53f0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c53f0.json` | matched | full | checked |
 | `unmapped/leaves/DeletingLeaf11c5430` | `DeletingLeaf11c5430::~DeletingLeaf11c5430` (GUESS) | `sse-steam-1-7-104` / `0x11c5430` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11c5430.json` | matched | family | open |
@@ -25005,7 +25007,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf1220140` | `Leaf1220140::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220140` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220140.json` | matched | family | open |
 | `unmapped/leaves/Leaf1220150` | `Leaf1220150::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220150` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220150.json` | matched | family | open |
 | `unmapped/leaves/Leaf1220160` | `Leaf1220160::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220160` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220160.json` | matched | family | open |
-| - | `DeletingLeaf12204c0::~DeletingLeaf12204c0` (GUESS) | `sse-steam-1-7-104` / `0x12204c0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf12204c0` | `DeletingLeaf12204c0::~DeletingLeaf12204c0` (GUESS) | `sse-steam-1-7-104` / `0x12204c0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12204c0.json` | matched | full | - |
 | `unmapped/leaves/Leaf12204f0` | `Leaf12204f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x12204f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12204f0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf1220890` | `TableStoreLeaf1220890::~TableStoreLeaf1220890` (GUESS) | `sse-steam-1-7-104` / `0x1220890` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220890.json` | matched | family | open |
 | `unmapped/leaves/Leaf12208b0` | `Leaf12208b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x12208b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12208b0.json` | matched | family | open |
@@ -25020,7 +25022,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf1220940` | `ReturnLeaf1220940::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220940` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220940.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf1220950` | `ReturnLeaf1220950::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220950` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220950.json` | matched | family | open |
 | `unmapped/leaves/Leaf1220960` | `Leaf1220960::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220960` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220960.json` | matched | family | open |
-| - | `DeletingLeaf1220cc0::~DeletingLeaf1220cc0` (GUESS) | `sse-steam-1-7-104` / `0x1220cc0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1220cc0` | `DeletingLeaf1220cc0::~DeletingLeaf1220cc0` (GUESS) | `sse-steam-1-7-104` / `0x1220cc0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220cc0.json` | matched | full | - |
 | `unmapped/leaves/Leaf1220cf0` | `Leaf1220cf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1220cf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1220cf0.json` | matched | family | open |
 | `unmapped/leaves/VirtualTail1221090` | `VirtualTail1221090::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x1221090` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1221090.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf12210b0` | `DeletingLeaf12210b0::~DeletingLeaf12210b0` (GUESS) | `sse-steam-1-7-104` / `0x12210b0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12210b0.json` | matched | family | open |
@@ -26491,7 +26493,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/CheckedCopy1380970` | `CheckedCopy1380970::Copy` (GUESS) | `sse-steam-1-7-104` / `0x1380970` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1380970.json` | matched | family | open |
 | `unmapped/buffers/CheckedCopy1382120` | `CheckedCopy1382120::Copy` (GUESS) | `sse-steam-1-7-104` / `0x1382120` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1382120.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf1382630` | `TableStoreLeaf1382630::~TableStoreLeaf1382630` (GUESS) | `sse-steam-1-7-104` / `0x1382630` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1382630.json` | matched | full | - |
-| - | `DeletingLeaf13826f0::~DeletingLeaf13826f0` (GUESS) | `sse-steam-1-7-104` / `0x13826f0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf13826f0` | `DeletingLeaf13826f0::~DeletingLeaf13826f0` (GUESS) | `sse-steam-1-7-104` / `0x13826f0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x13826f0.json` | matched | full | - |
 | `unmapped/leaves/LeafForward1382d40` | `LeafForward1382d40::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1382d40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1382d40.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf1382e70` | `ReturnLeaf1382e70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1382e70` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1382e70.json` | matched | family | open |
 | `unmapped/buffers/CheckedCopy1383bf0` | `CheckedCopy1383bf0::Copy` (GUESS) | `sse-steam-1-7-104` / `0x1383bf0` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1383bf0.json` | matched | family | open |
@@ -26818,12 +26820,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/conditions/ConditionalVirtualCall` | `ConditionalCallAt1408d70` (GUESS) | `sse-steam-1-7-104` / `0x1408d70` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1408d70.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf1409c30` | `TableStoreLeaf1409c30::~TableStoreLeaf1409c30` (GUESS) | `sse-steam-1-7-104` / `0x1409c30` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409c30.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf1409c40` | `TableStoreLeaf1409c40::~TableStoreLeaf1409c40` (GUESS) | `sse-steam-1-7-104` / `0x1409c40` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409c40.json` | matched | full | - |
-| - | `DeletingLeaf1409c50::~DeletingLeaf1409c50` (GUESS) | `sse-steam-1-7-104` / `0x1409c50` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1409c80::~DeletingLeaf1409c80` (GUESS) | `sse-steam-1-7-104` / `0x1409c80` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1409cb0::~DeletingLeaf1409cb0` (GUESS) | `sse-steam-1-7-104` / `0x1409cb0` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1409ce0::~DeletingLeaf1409ce0` (GUESS) | `sse-steam-1-7-104` / `0x1409ce0` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1409d10::~DeletingLeaf1409d10` (GUESS) | `sse-steam-1-7-104` / `0x1409d10` / 43 | - | - | mapped | - | - |
-| - | `DeletingLeaf1409d40::~DeletingLeaf1409d40` (GUESS) | `sse-steam-1-7-104` / `0x1409d40` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf1409c50` | `DeletingLeaf1409c50::~DeletingLeaf1409c50` (GUESS) | `sse-steam-1-7-104` / `0x1409c50` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409c50.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1409c80` | `DeletingLeaf1409c80::~DeletingLeaf1409c80` (GUESS) | `sse-steam-1-7-104` / `0x1409c80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409c80.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1409cb0` | `DeletingLeaf1409cb0::~DeletingLeaf1409cb0` (GUESS) | `sse-steam-1-7-104` / `0x1409cb0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409cb0.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1409ce0` | `DeletingLeaf1409ce0::~DeletingLeaf1409ce0` (GUESS) | `sse-steam-1-7-104` / `0x1409ce0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409ce0.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1409d10` | `DeletingLeaf1409d10::~DeletingLeaf1409d10` (GUESS) | `sse-steam-1-7-104` / `0x1409d10` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409d10.json` | matched | full | - |
+| `unmapped/leaves/DeletingLeaf1409d40` | `DeletingLeaf1409d40::~DeletingLeaf1409d40` (GUESS) | `sse-steam-1-7-104` / `0x1409d40` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409d40.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1409df0` | `DeletingLeaf1409df0::~DeletingLeaf1409df0` (GUESS) | `sse-steam-1-7-104` / `0x1409df0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409df0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1409e20` | `DeletingLeaf1409e20::~DeletingLeaf1409e20` (GUESS) | `sse-steam-1-7-104` / `0x1409e20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1409e20.json` | matched | full | - |
 | `unmapped/buffers/CheckedCopy140ba30` | `CheckedCopy140ba30::Copy` (GUESS) | `sse-steam-1-7-104` / `0x140ba30` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x140ba30.json` | matched | family | open |
@@ -27324,7 +27326,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf14dc8a0` | `DeletingLeaf14dc8a0::~DeletingLeaf14dc8a0` (GUESS) | `sse-steam-1-7-104` / `0x14dc8a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dc8a0.json` | matched | full | - |
 | - | `DeletingLeaf14dc8d0::~DeletingLeaf14dc8d0` (GUESS) | `sse-steam-1-7-104` / `0x14dc8d0` / 43 | - | - | mapped | - | - |
 | `unmapped/leaves/DeletingLeaf14dc900` | `DeletingLeaf14dc900::~DeletingLeaf14dc900` (GUESS) | `sse-steam-1-7-104` / `0x14dc900` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dc900.json` | matched | family | open |
-| - | `DeletingLeaf14dcbc0::~DeletingLeaf14dcbc0` (GUESS) | `sse-steam-1-7-104` / `0x14dcbc0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf14dcbc0` | `DeletingLeaf14dcbc0::~DeletingLeaf14dcbc0` (GUESS) | `sse-steam-1-7-104` / `0x14dcbc0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcbc0.json` | matched | full | - |
 | `unmapped/storage/StorageInit14dcbf0` | `StorageInit14dcbf0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x14dcbf0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcbf0.json` | matched | family | open |
 | `unmapped/leaves/Leaf14dcc30` | `Leaf14dcc30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14dcc30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcc30.json` | matched | family | open |
 | `unmapped/leaves/Leaf14dcc40` | `Leaf14dcc40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14dcc40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcc40.json` | matched | family | open |
@@ -27411,7 +27413,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafAddress14e8b30` | `LeafAddress14e8b30::Address` (GUESS) | `sse-steam-1-7-104` / `0x14e8b30` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8b30.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf14e8b40` | `ReturnLeaf14e8b40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e8b40` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e8b40.json` | matched | family | open |
 | `unmapped/leaves/LeafForward14e9080` | `LeafForward14e9080::Forward` (GUESS) | `sse-steam-1-7-104` / `0x14e9080` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e9080.json` | matched | family | open |
-| - | `BSTreeNode::OnVisible` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e93d0` / 108 | - | - | mapped | - | - |
+| `bscore/BSTreeNode` | `BSTreeNode::OnVisible` (COMMUNITY) | `sse-steam-1-7-104` / `0x14e93d0` / 108 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e93d0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress14e9e70` | `LeafAddress14e9e70::Address` (GUESS) | `sse-steam-1-7-104` / `0x14e9e70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e9e70.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf14e9e80` | `ReturnLeaf14e9e80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14e9e80` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e9e80.json` | matched | family | open |
 | - | `Function14ea2d0` (GUESS) | `sse-steam-1-7-104` / `0x14ea2d0` / 3641 | - | - | mapped | - | - |
@@ -28509,7 +28511,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/fields/FieldLeaf159b4e0` | `FieldLeaf159b4e0::Read` (GUESS) | `sse-steam-1-7-104` / `0x159b4e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b4e0.json` | matched | full | - |
 | - | `ErasedSignature159b960CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x159b960` / 33 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward159d9c0` | `LeafForward159d9c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x159d9c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159d9c0.json` | matched | family | open |
-| - | `DeletingLeaf159de20::~DeletingLeaf159de20` (GUESS) | `sse-steam-1-7-104` / `0x159de20` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf159de20` | `DeletingLeaf159de20::~DeletingLeaf159de20` (GUESS) | `sse-steam-1-7-104` / `0x159de20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159de20.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf159df20` | `DeletingLeaf159df20::~DeletingLeaf159df20` (GUESS) | `sse-steam-1-7-104` / `0x159df20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159df20.json` | matched | full | - |
 | `unmapped/leaves/Leaf159df50` | `Leaf159df50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159df50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159df50.json` | matched | family | open |
 | `bssystem/BSStreamSystemUtility_159df60` | `BSStreamSystemUtility::Function159df60` (GUESS) | `sse-steam-1-7-104` / `0x159df60` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159df60.json` | matched | full | - |
@@ -28518,11 +28520,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bssystem/BSStreamSystemUtility` | `BSStreamSystemUtility::Slot4` (GUESS) | `sse-steam-1-7-104` / `0x159df90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159df90.json` | matched | family | open |
 | `unmapped/leaves/Leaf159dfa0` | `Leaf159dfa0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159dfa0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159dfa0.json` | matched | family | open |
 | `unmapped/leaves/Leaf159dfb0` | `Leaf159dfb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159dfb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159dfb0.json` | matched | family | open |
-| - | `DeletingLeaf159e2b0::~DeletingLeaf159e2b0` (GUESS) | `sse-steam-1-7-104` / `0x159e2b0` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf159e2b0` | `DeletingLeaf159e2b0::~DeletingLeaf159e2b0` (GUESS) | `sse-steam-1-7-104` / `0x159e2b0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159e2b0.json` | matched | full | - |
 | `unmapped/leaves/Leaf159e2e0` | `Leaf159e2e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159e2e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159e2e0.json` | matched | family | open |
 | `unmapped/leaves/Leaf159e2f0` | `Leaf159e2f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159e2f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159e2f0.json` | matched | family | open |
 | `unmapped/leaves/Leaf159e920` | `Leaf159e920::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159e920` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159e920.json` | matched | family | open |
-| - | `DeletingLeaf159ef50::~DeletingLeaf159ef50` (GUESS) | `sse-steam-1-7-104` / `0x159ef50` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf159ef50` | `DeletingLeaf159ef50::~DeletingLeaf159ef50` (GUESS) | `sse-steam-1-7-104` / `0x159ef50` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ef50.json` | matched | full | - |
 | `unmapped/leaves/Leaf159ef80` | `Leaf159ef80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159ef80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ef80.json` | matched | family | open |
 | `unmapped/leaves/Leaf159ef90` | `Leaf159ef90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159ef90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ef90.json` | matched | family | open |
 | `unmapped/leaves/Leaf159efa0` | `Leaf159efa0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159efa0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159efa0.json` | matched | family | open |
@@ -28540,18 +28542,18 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf159f280` | `Leaf159f280::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f280` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f280.json` | matched | family | open |
 | `unmapped/leaves/Leaf159f290` | `Leaf159f290::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f290` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f290.json` | matched | full | checked |
 | `unmapped/leaves/ReturnLeaf159f320` | `ReturnLeaf159f320::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f320` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f320.json` | matched | family | open |
-| - | `DeletingLeaf159f440::~DeletingLeaf159f440` (GUESS) | `sse-steam-1-7-104` / `0x159f440` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf159f440` | `DeletingLeaf159f440::~DeletingLeaf159f440` (GUESS) | `sse-steam-1-7-104` / `0x159f440` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f440.json` | matched | full | - |
 | `unmapped/leaves/Leaf159f470` | `Leaf159f470::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f470` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f470.json` | matched | family | open |
 | `unmapped/leaves/Leaf159f480` | `Leaf159f480::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f480` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f480.json` | matched | family | open |
 | `unmapped/leaves/Leaf159f490` | `Leaf159f490::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f490` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f490.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf159f4a0` | `ReturnLeaf159f4a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f4a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f4a0.json` | matched | family | open |
 | `unmapped/leaves/Leaf159f4b0` | `Leaf159f4b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f4b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f4b0.json` | matched | family | open |
 | `unmapped/leaves/Leaf159f6b0` | `Leaf159f6b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159f6b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f6b0.json` | matched | family | open |
-| - | `DeletingLeaf159f700::~DeletingLeaf159f700` (GUESS) | `sse-steam-1-7-104` / `0x159f700` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf159f700` | `DeletingLeaf159f700::~DeletingLeaf159f700` (GUESS) | `sse-steam-1-7-104` / `0x159f700` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159f700.json` | matched | full | - |
 | `unmapped/leaves/LeafForward15a64d0` | `LeafForward15a64d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15a64d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a64d0.json` | matched | family | open |
 | `unmapped/leaves/Leaf15a6ba0` | `Leaf15a6ba0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15a6ba0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a6ba0.json` | matched | full | checked |
 | `unmapped/leaves/Leaf15a6bb0` | `Leaf15a6bb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15a6bb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a6bb0.json` | matched | family | open |
-| - | `DeletingLeaf15a7410::~DeletingLeaf15a7410` (GUESS) | `sse-steam-1-7-104` / `0x15a7410` / 43 | - | - | mapped | - | - |
+| `unmapped/leaves/DeletingLeaf15a7410` | `DeletingLeaf15a7410::~DeletingLeaf15a7410` (GUESS) | `sse-steam-1-7-104` / `0x15a7410` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a7410.json` | matched | full | - |
 | `unmapped/leaves/LeafForward15a743c` | `LeafForward15a743c::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15a743c` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a743c.json` | matched | family | open |
 | `unmapped/leaves/LeafForward15a7f50` | `LeafForward15a7f50::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15a7f50` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a7f50.json` | matched | full | open |
 | `unmapped/leaves/Leaf15a8a80` | `Leaf15a8a80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15a8a80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a8a80.json` | matched | family | open |

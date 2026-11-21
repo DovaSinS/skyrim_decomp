@@ -79506,12 +79506,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2177472,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf2139c0::~DeletingLeaf2139c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2139c0.json",
+      "report": "reports/sse-steam-1-7-104/0x2139c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2139f0",
@@ -79530,12 +79531,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2177568,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf213a20::~DeletingLeaf213a20",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x213a20.json",
+      "report": "reports/sse-steam-1-7-104/0x213a20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x213a50",
@@ -79554,12 +79556,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2177664,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf213a80::~DeletingLeaf213a80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x213a80.json",
+      "report": "reports/sse-steam-1-7-104/0x213a80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x213ab0",
@@ -84550,12 +84553,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2643856,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf285790::~DeletingLeaf285790",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x285790.json",
+      "report": "reports/sse-steam-1-7-104/0x285790.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2857c0",
@@ -84576,12 +84580,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2643952,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf2857f0::~DeletingLeaf2857f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2857f0.json",
+      "report": "reports/sse-steam-1-7-104/0x2857f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x2859f0",
@@ -95070,12 +95075,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3868512,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf3b0760::~DeletingLeaf3b0760",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x3b0760.json",
+      "report": "reports/sse-steam-1-7-104/0x3b0760.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3b2640",
@@ -97007,12 +97013,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4159584,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf3f7860::~DeletingLeaf3f7860",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x3f7860.json",
+      "report": "reports/sse-steam-1-7-104/0x3f7860.json"
     },
     {
       "id": "sse-steam-1-7-104-0x3f7bc0",
@@ -97788,12 +97795,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4229328,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf4088d0::~DeletingLeaf4088d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x4088d0.json",
+      "report": "reports/sse-steam-1-7-104/0x4088d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x408bc0",
@@ -105629,12 +105637,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4662992,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf4726d0::~DeletingLeaf4726d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x4726d0.json",
+      "report": "reports/sse-steam-1-7-104/0x4726d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x472b50",
@@ -108420,12 +108429,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4810320,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf496650::~DeletingLeaf496650",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x496650.json",
+      "report": "reports/sse-steam-1-7-104/0x496650.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4969a0",
@@ -109263,12 +109273,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4890928,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf4aa130::~DeletingLeaf4aa130",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x4aa130.json",
+      "report": "reports/sse-steam-1-7-104/0x4aa130.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4aa860",
@@ -109947,12 +109958,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 4988336,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf4c1db0::~DeletingLeaf4c1db0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x4c1db0.json",
+      "report": "reports/sse-steam-1-7-104/0x4c1db0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4c3370",
@@ -111088,12 +111100,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5126784,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf4e3a80::~DeletingLeaf4e3a80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x4e3a80.json",
+      "report": "reports/sse-steam-1-7-104/0x4e3a80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4e5900",
@@ -113158,12 +113171,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5358720,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf51c480::~DeletingLeaf51c480",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x51c480.json",
+      "report": "reports/sse-steam-1-7-104/0x51c480.json"
     },
     {
       "id": "sse-steam-1-7-104-0x51c510",
@@ -172445,7 +172459,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xbc3c30; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xbc3c30.json",
       "report": "reports/sse-steam-1-7-104/0xbc3c30.json"
     },
     {
@@ -177777,12 +177791,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 14092432,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeafd70890::~DeletingLeafd70890",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0xd70890.json",
+      "report": "reports/sse-steam-1-7-104/0xd70890.json"
     },
     {
       "id": "sse-steam-1-7-104-0xd70900",
@@ -177803,24 +177818,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 14092592,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeafd70930::~DeletingLeafd70930",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0xd70930.json",
+      "report": "reports/sse-steam-1-7-104/0xd70930.json"
     },
     {
       "id": "sse-steam-1-7-104-0xd709e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 14092768,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeafd709e0::~DeletingLeafd709e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0xd709e0.json",
+      "report": "reports/sse-steam-1-7-104/0xd709e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xd70a10",
@@ -200535,12 +200552,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16798800,
       "size": 62,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSNiNode::~BSNiNode",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x1005450; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1005450.json",
+      "report": "reports/sse-steam-1-7-104/0x1005450.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1005490",
@@ -204685,12 +204703,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 17972928,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1123ec0::~DeletingLeaf1123ec0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1123ec0.json",
+      "report": "reports/sse-steam-1-7-104/0x1123ec0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1123ef0",
@@ -204945,36 +204964,39 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18059920,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1139290::~DeletingLeaf1139290",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1139290.json",
+      "report": "reports/sse-steam-1-7-104/0x1139290.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11392c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 18059968,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf11392c0::~DeletingLeaf11392c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x11392c0.json",
+      "report": "reports/sse-steam-1-7-104/0x11392c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11392f0",
       "build_id": "sse-steam-1-7-104",
       "rva": 18060016,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf11392f0::~DeletingLeaf11392f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x11392f0.json",
+      "report": "reports/sse-steam-1-7-104/0x11392f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1139320",
@@ -205187,24 +205209,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18159232,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1151680::~DeletingLeaf1151680",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1151680.json",
+      "report": "reports/sse-steam-1-7-104/0x1151680.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1151830",
       "build_id": "sse-steam-1-7-104",
       "rva": 18159664,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1151830::~DeletingLeaf1151830",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1151830.json",
+      "report": "reports/sse-steam-1-7-104/0x1151830.json"
     },
     {
       "id": "sse-steam-1-7-104-0x115ca80",
@@ -205963,12 +205987,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18370416,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1184f70::~DeletingLeaf1184f70",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1184f70.json",
+      "report": "reports/sse-steam-1-7-104/0x1184f70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1190480",
@@ -206017,12 +206042,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18428032,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1193080::~DeletingLeaf1193080",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1193080.json",
+      "report": "reports/sse-steam-1-7-104/0x1193080.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11974c0",
@@ -206222,12 +206248,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18633520,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf11c5330::~DeletingLeaf11c5330",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x11c5330.json",
+      "report": "reports/sse-steam-1-7-104/0x11c5330.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11c5360",
@@ -206248,12 +206275,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 18633616,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf11c5390::~DeletingLeaf11c5390",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x11c5390.json",
+      "report": "reports/sse-steam-1-7-104/0x11c5390.json"
     },
     {
       "id": "sse-steam-1-7-104-0x11c53c0",
@@ -209877,12 +209905,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19006656,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf12204c0::~DeletingLeaf12204c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12204c0.json",
+      "report": "reports/sse-steam-1-7-104/0x12204c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12204f0",
@@ -210043,12 +210072,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19008704,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1220cc0::~DeletingLeaf1220cc0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1220cc0.json",
+      "report": "reports/sse-steam-1-7-104/0x1220cc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1220cf0",
@@ -220954,12 +220984,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20457200,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf13826f0::~DeletingLeaf13826f0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13826f0.json",
+      "report": "reports/sse-steam-1-7-104/0x13826f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1382d40",
@@ -222716,72 +222747,78 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21011536,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409c50::~DeletingLeaf1409c50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409c50.json",
+      "report": "reports/sse-steam-1-7-104/0x1409c50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409c80",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011584,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409c80::~DeletingLeaf1409c80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409c80.json",
+      "report": "reports/sse-steam-1-7-104/0x1409c80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409cb0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011632,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409cb0::~DeletingLeaf1409cb0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409cb0.json",
+      "report": "reports/sse-steam-1-7-104/0x1409cb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409ce0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011680,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409ce0::~DeletingLeaf1409ce0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409ce0.json",
+      "report": "reports/sse-steam-1-7-104/0x1409ce0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409d10",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011728,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409d10::~DeletingLeaf1409d10",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409d10.json",
+      "report": "reports/sse-steam-1-7-104/0x1409d10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409d40",
       "build_id": "sse-steam-1-7-104",
       "rva": 21011776,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1409d40::~DeletingLeaf1409d40",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1409d40.json",
+      "report": "reports/sse-steam-1-7-104/0x1409d40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1409df0",
@@ -226079,12 +226116,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21875648,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14dcbc0::~DeletingLeaf14dcbc0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14dcbc0.json",
+      "report": "reports/sse-steam-1-7-104/0x14dcbc0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14dcbf0",
@@ -231772,12 +231810,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22666784,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf159de20::~DeletingLeaf159de20",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159de20.json",
+      "report": "reports/sse-steam-1-7-104/0x159de20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159df20",
@@ -231853,12 +231892,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22667952,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf159e2b0::~DeletingLeaf159e2b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159e2b0.json",
+      "report": "reports/sse-steam-1-7-104/0x159e2b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159e2e0",
@@ -231907,12 +231947,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22671184,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf159ef50::~DeletingLeaf159ef50",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159ef50.json",
+      "report": "reports/sse-steam-1-7-104/0x159ef50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159ef80",
@@ -232115,12 +232156,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22672448,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf159f440::~DeletingLeaf159f440",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159f440.json",
+      "report": "reports/sse-steam-1-7-104/0x159f440.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159f470",
@@ -232197,12 +232239,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22673152,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf159f700::~DeletingLeaf159f700",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159f700.json",
+      "report": "reports/sse-steam-1-7-104/0x159f700.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15a64d0",
@@ -232251,12 +232294,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22705168,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf15a7410::~DeletingLeaf15a7410",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15a7410.json",
+      "report": "reports/sse-steam-1-7-104/0x15a7410.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15a743c",
@@ -436918,12 +436962,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21926864,
       "size": 108,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSTreeNode::OnVisible",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 105604 (the list writes the name with a trailing _* marker, omitted here). RVA 0x14e93d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14e93d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14e93d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14ea2d0",
@@ -476194,6 +476239,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x14e6a10.json",
       "report": "reports/sse-steam-1-7-104/0x14e6a10.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xbc0e60",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 12324448,
+      "size": 9,
+      "status": "matched",
+      "name": "BSAnimationGraphManager::Functionbc0e60",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xbc0e60; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xbc0e60.json",
+      "report": "reports/sse-steam-1-7-104/0xbc0e60.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xbc0fb0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 12324784,
+      "size": 9,
+      "status": "matched",
+      "name": "BSAnimationGraphManager::Functionbc0fb0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xbc0fb0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xbc0fb0.json",
+      "report": "reports/sse-steam-1-7-104/0xbc0fb0.json"
     }
   ],
   "milestones": [
@@ -476236,7 +476307,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:49:59Z",
+  "updated_at": "2026-11-21T19:50:36Z",
   "work_items": [
     {
       "id": "pin-target",
