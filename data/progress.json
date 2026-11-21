@@ -110735,7 +110735,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): method spelling invented from RTTI/vtable owner PathingDoor and slot 2; no public method symbol verified.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x4e0ed0.json",
       "report": "reports/sse-steam-1-7-104/0x4e0ed0.json"
     },
     {
@@ -475721,6 +475721,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x15411e0.json",
       "report": "reports/sse-steam-1-7-104/0x15411e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4e0ee0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5115616,
+      "size": 16,
+      "status": "matched",
+      "name": "PathingDoor::Function4e0ee0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x4e0ee0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4e0ee0.json",
+      "report": "reports/sse-steam-1-7-104/0x4e0ee0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4e0f40",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5115712,
+      "size": 17,
+      "status": "matched",
+      "name": "PathingDoor::Function4e0f40",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x4e0f40; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4e0f40.json",
+      "report": "reports/sse-steam-1-7-104/0x4e0f40.json"
     }
   ],
   "milestones": [
@@ -475763,7 +475789,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T12:45:08Z",
+  "updated_at": "2026-11-21T18:54:45Z",
   "work_items": [
     {
       "id": "pin-target",
