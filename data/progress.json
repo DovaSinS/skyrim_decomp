@@ -177384,7 +177384,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xcfbde0.json",
       "report": "reports/sse-steam-1-7-104/0xcfbde0.json"
     },
     {
@@ -177418,12 +177418,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 13615440,
       "size": 24,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSGamepadDevice::IsEnabled",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 7. RVA 0xcfc150; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xcfc150.json",
+      "report": "reports/sse-steam-1-7-104/0xcfc150.json"
     },
     {
       "id": "sse-steam-1-7-104-0xcfc170",
@@ -177450,7 +177451,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 12. RVA 0xcfc180; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xcfc180.json",
       "report": "reports/sse-steam-1-7-104/0xcfc180.json"
     },
     {
@@ -177478,7 +177479,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): primitive interval stand-in; original signature and owning system unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0xcfc1a0.json",
       "report": "reports/sse-steam-1-7-104/0xcfc1a0.json"
     },
     {
@@ -440384,12 +440385,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15676704,
       "size": 24,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiSourceTexture::Unk_26",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 38. RVA 0xef3520; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xef3520.json",
+      "report": "reports/sse-steam-1-7-104/0xef3520.json"
     },
     {
       "id": "sse-steam-1-7-104-0xefd6e0",
@@ -476871,7 +476873,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T22:39:32Z",
+  "updated_at": "2026-11-21T22:50:14Z",
   "work_items": [
     {
       "id": "pin-target",

@@ -21643,7 +21643,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsinput/BSGamepadDevice` | `Leafcfbde0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcfbde0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfbde0.json` | matched | full | open |
 | `bsinput/BSIInputDevice` | `BSIInputDevice::~BSIInputDevice` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc0b0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfc0b0.json` | matched | full | open |
 | - | `BSInputDevice::~BSInputDevice` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc0e0` / 104 | - | - | mapped | - | - |
-| - | `BSGamepadDevice::IsEnabled` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc150` / 24 | - | - | mapped | - | - |
+| `bsinput/BSGamepadDevice` | `BSGamepadDevice::IsEnabled` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc150` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfc150.json` | matched | full | - |
 | `bsinput/BSInputDevice` | `BSInputDevice::IsEnabled` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc170` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfc170.json` | matched | family | open |
 | `bsinput/BSGamepadDevice` | `BSGamepadDevice::Unk_0C` (COMMUNITY) | `sse-steam-1-7-104` / `0xcfc180` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfc180.json` | matched | full | open |
 | `unmapped/leaves/Leafcfc190` | `Leafcfc190::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcfc190` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfc190.json` | matched | family | open |
@@ -22062,7 +22062,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardef28c0` | `LeafForwardef28c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef28c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef28c0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardef28d0` | `LeafForwardef28d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef28d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef28d0.json` | matched | family | open |
 | `gamebryo/nimain/NiSourceTexture` | `NiSourceTexture::Unk_25` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3500` / 24 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xef3500.json` | matched | full | - |
-| - | `NiSourceTexture::Unk_26` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3520` / 24 | - | - | mapped | - | - |
+| `gamebryo/nimain/NiSourceTexture` | `NiSourceTexture::Unk_26` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3520` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3520.json` | matched | full | - |
 | `unmapped/leaves/Leafef3be0` | `Leafef3be0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef3be0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3be0.json` | matched | family | open |
 | `unmapped/leaves/Leafef3bf0` | `Leafef3bf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef3bf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3bf0.json` | matched | family | open |
 | `contrib_nitexture/NiTexture` | `NiTexture::~NiTexture` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3ea0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3ea0.json` | matched | full | - |
