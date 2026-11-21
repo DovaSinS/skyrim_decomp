@@ -93494,7 +93494,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x392c60; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x392c60.json",
       "report": "reports/sse-steam-1-7-104/0x392c60.json"
     },
     {
@@ -475989,6 +475989,45 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xe11fb0.json",
       "report": "reports/sse-steam-1-7-104/0xe11fb0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3a2fe0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3813344,
+      "size": 17,
+      "status": "matched",
+      "name": "BGSRefAlias::Function3a2fe0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x3a2fe0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x3a2fe0.json",
+      "report": "reports/sse-steam-1-7-104/0x3a2fe0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3a3000",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3813376,
+      "size": 17,
+      "status": "matched",
+      "name": "BGSRefAlias::Function3a3000",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x3a3000; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x3a3000.json",
+      "report": "reports/sse-steam-1-7-104/0x3a3000.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3e0030",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 4063280,
+      "size": 15,
+      "status": "matched",
+      "name": "BGSRefAlias::Function3e0030",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x3e0030; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x3e0030.json",
+      "report": "reports/sse-steam-1-7-104/0x3e0030.json"
     }
   ],
   "milestones": [
@@ -476031,7 +476070,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:21:17Z",
+  "updated_at": "2026-11-21T19:21:42Z",
   "work_items": [
     {
       "id": "pin-target",
