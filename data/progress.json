@@ -475027,6 +475027,71 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1cf0f0.json",
       "report": "reports/sse-steam-1-7-104/0x1cf0f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf05630",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15750704,
+      "size": 24,
+      "status": "matched",
+      "name": "NiParticles::Functionf05630",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf05630; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf05630.json",
+      "report": "reports/sse-steam-1-7-104/0xf05630.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf05720",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15750944,
+      "size": 80,
+      "status": "matched",
+      "name": "NiParticles::Functionf05720",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf05720; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf05720.json",
+      "report": "reports/sse-steam-1-7-104/0xf05720.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf9d650",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16373328,
+      "size": 71,
+      "status": "matched",
+      "name": "NiPSysGravityModifier::Functionf9d650",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf9d650; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf9d650.json",
+      "report": "reports/sse-steam-1-7-104/0xf9d650.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf9d6d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16373456,
+      "size": 78,
+      "status": "matched",
+      "name": "NiPSysGravityModifier::Functionf9d6d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf9d6d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf9d6d0.json",
+      "report": "reports/sse-steam-1-7-104/0xf9d6d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf9d720",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16373536,
+      "size": 55,
+      "status": "matched",
+      "name": "NiPSysGravityModifier::Functionf9d720",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf9d720; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf9d720.json",
+      "report": "reports/sse-steam-1-7-104/0xf9d720.json"
     }
   ],
   "milestones": [
@@ -475069,7 +475134,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T01:04:14Z",
+  "updated_at": "2026-11-21T01:49:27Z",
   "work_items": [
     {
       "id": "pin-target",
