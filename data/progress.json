@@ -475825,6 +475825,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1005370.json",
       "report": "reports/sse-steam-1-7-104/0x1005370.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5166e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5334752,
+      "size": 16,
+      "status": "matched",
+      "name": "BGSTerrainManager::Function5166e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x5166e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x5166e0.json",
+      "report": "reports/sse-steam-1-7-104/0x5166e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x516c20",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5336096,
+      "size": 15,
+      "status": "matched",
+      "name": "BGSTerrainManager::Function516c20",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x516c20; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x516c20.json",
+      "report": "reports/sse-steam-1-7-104/0x516c20.json"
     }
   ],
   "milestones": [
@@ -475867,7 +475893,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:05:54Z",
+  "updated_at": "2026-11-21T19:08:39Z",
   "work_items": [
     {
       "id": "pin-target",

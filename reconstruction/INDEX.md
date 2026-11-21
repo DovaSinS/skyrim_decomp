@@ -13254,6 +13254,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function5158e0` (GUESS) | `sse-steam-1-7-104` / `0x5158e0` / 1521 | - | - | mapped | - | - |
 | - | `Function5160c0` (GUESS) | `sse-steam-1-7-104` / `0x5160c0` / 1018 | - | - | mapped | - | - |
 | `skyrim_shared/world/BGSTerrainManager` | `BGSTerrainManager::GetLODLandRootForLevel` (GUESS) | `sse-steam-1-7-104` / `0x5164c0` / 56 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5164c0.json` | matched | full | open |
+| `skyrim_shared/world/BGSTerrainManager` | `BGSTerrainManager::Function5166e0` (GUESS) | `sse-steam-1-7-104` / `0x5166e0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5166e0.json` | matched | full | - |
+| `skyrim_shared/world/BGSTerrainManager` | `BGSTerrainManager::Function516c20` (GUESS) | `sse-steam-1-7-104` / `0x516c20` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x516c20.json` | matched | full | - |
 | `skyrim_shared/world/BGSTerrainManager_516c40` | `BGSTerrainManager::Function516c40` (GUESS) | `sse-steam-1-7-104` / `0x516c40` / 69 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x516c40.json` | matched | full | - |
 | - | `Function517420` (GUESS) | `sse-steam-1-7-104` / `0x517420` / 95 | - | - | mapped | - | - |
 | `unmapped/storage/StorageInit517520` | `StorageInit517520::initialize` (GUESS) | `sse-steam-1-7-104` / `0x517520` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x517520.json` | matched | family | open |
