@@ -6,7 +6,7 @@
 // TESObject, TESBoundObject: STANDIN EXE_RTTI
 // TESObjectWEAP::GetPlayable, TESObjectWEAP::GetObjectTypeName, TESObjectWEAP::GetDescriptionOwnerFile, TESObjectWEAP::~TESObjectWEAP: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // BGSImpactDataSet, impactDataSet: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); the pointer at 0x1F8
-// unk19D, unk19E, unknown20, unknown19F, unknown200, unknown208, unknown210, Function28c020, Function28c260: GUESS(low)
+// unk19D, unk19E, unknown20, unknown19F, unknown170, unknown200, unknown208, unknown210, Function28c020, Function28c260: GUESS(low)
 #pragma once
 
 #include <cstdint>
@@ -35,8 +35,21 @@ public:
     void* Function28c020();  // compared: 0x28c020
     std::uint32_t Function28c260();  // compared: 0x28c260
 
+    // RangedData, RangedData::numProjectiles, rangedData: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+    struct RangedData
+    {
+        std::uint8_t unk00[0x18];     // 00
+        std::int8_t  numProjectiles;  // 18
+        std::uint8_t pad19[3];        // 19
+    };
+
+    // GetNumProjectiles: GUESS(low)
+    std::uint8_t GetNumProjectiles() const;
+
     // Members read by the compared bodies, split out of the padding; the size assert keeps the layout.
-    std::uint8_t unknown20[0x17D];  // 20
+    std::uint8_t unknown20[0x148];  // 20
+    RangedData* rangedData;         // 168
+    std::uint8_t unknown170[0x2D];  // 170
     std::int8_t unk19D;             // 19D, signed index into the name table
     std::uint8_t unk19E;            // 19E, flags; bit 7 is tested
     std::uint8_t unknown19F[0x59];  // 19F

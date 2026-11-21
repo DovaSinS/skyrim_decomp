@@ -9,7 +9,19 @@
 // 0x28e500 TESObjectWEAP::~TESObjectWEAP
 // 0x28c020 TESObjectWEAP::Function28c020
 // 0x28c260 TESObjectWEAP::Function28c260
+// 0x28e7d0 TESObjectWEAP::GetNumProjectiles
+// g_defaultNumProjectiles: GUESS(low); the byte returned when the weapon has no ranged data
 #include "TESObjectWEAP.h"
+
+extern std::uint8_t g_defaultNumProjectiles;
+
+std::uint8_t TESObjectWEAP::GetNumProjectiles() const
+{
+    if (rangedData) {
+        return rangedData->numProjectiles;
+    }
+    return g_defaultNumProjectiles;
+}
 
 // kObjectTypeNames: GUESS(low); the table of type name strings indexed by unk19D
 extern const char* kObjectTypeNames[];
