@@ -75747,7 +75747,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), src/RE/T/TESFile.cpp (nearest enclosing definition of the id, a heuristic), joined through Address Library 1.7.104.0. RVA 0x1ca460; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1ca460.json",
       "report": "reports/sse-steam-1-7-104/0x1ca460.json"
     },
     {
@@ -75760,7 +75760,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x1cd7d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1cd7d0.json",
       "report": "reports/sse-steam-1-7-104/0x1cd7d0.json"
     },
     {
@@ -75773,7 +75773,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x1cd860; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1cd860.json",
       "report": "reports/sse-steam-1-7-104/0x1cd860.json"
     },
     {
@@ -75786,7 +75786,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x1cdc10; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1cdc10.json",
       "report": "reports/sse-steam-1-7-104/0x1cdc10.json"
     },
     {
@@ -75799,7 +75799,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x1cdc60; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1cdc60.json",
       "report": "reports/sse-steam-1-7-104/0x1cdc60.json"
     },
     {
@@ -75812,7 +75812,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0x1ce7e0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1ce7e0.json",
       "report": "reports/sse-steam-1-7-104/0x1ce7e0.json"
     },
     {
@@ -475014,6 +475014,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xff3380.json",
       "report": "reports/sse-steam-1-7-104/0xff3380.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1cf0f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1896688,
+      "size": 481,
+      "status": "matched",
+      "name": "Function1cf0f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1cf0f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1cf0f0.json",
+      "report": "reports/sse-steam-1-7-104/0x1cf0f0.json"
     }
   ],
   "milestones": [
@@ -475056,7 +475069,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T00:40:44Z",
+  "updated_at": "2026-11-21T01:04:14Z",
   "work_items": [
     {
       "id": "pin-target",
