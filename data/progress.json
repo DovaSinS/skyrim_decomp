@@ -75280,7 +75280,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 20. RVA 0x1b4c40; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1b4c40.json",
       "report": "reports/sse-steam-1-7-104/0x1b4c40.json"
     },
     {
@@ -75294,7 +75294,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 19. RVA 0x1b4c50; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1b4c50.json",
       "report": "reports/sse-steam-1-7-104/0x1b4c50.json"
     },
     {
@@ -180889,7 +180889,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 23. RVA 0xedc740; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedc740.json",
       "report": "reports/sse-steam-1-7-104/0xedc740.json"
     },
     {
@@ -180945,7 +180945,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 28. RVA 0xedc7e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedc7e0.json",
       "report": "reports/sse-steam-1-7-104/0xedc7e0.json"
     },
     {
@@ -180971,7 +180971,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 70188. RVA 0xedc920; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedc920.json",
       "report": "reports/sse-steam-1-7-104/0xedc920.json"
     },
     {
@@ -180985,7 +180985,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 29. RVA 0xedca00; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedca00.json",
       "report": "reports/sse-steam-1-7-104/0xedca00.json"
     },
     {
@@ -181013,7 +181013,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 31. RVA 0xedcb60; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedcb60.json",
       "report": "reports/sse-steam-1-7-104/0xedcb60.json"
     },
     {
@@ -181027,7 +181027,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 34. RVA 0xedcb90; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedcb90.json",
       "report": "reports/sse-steam-1-7-104/0xedcb90.json"
     },
     {
@@ -181055,7 +181055,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321 Address Library name list (used with the author's permission as reported by the maintainer), Address Library id 70199. RVA 0xedcbc0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fourth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xedcbc0.json",
       "report": "reports/sse-steam-1-7-104/0xedcbc0.json"
     },
     {
@@ -476479,6 +476479,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x28f900.json",
       "report": "reports/sse-steam-1-7-104/0x28f900.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xedc7b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15583152,
+      "size": 16,
+      "status": "matched",
+      "name": "NiObject::Functionedc7b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xedc7b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xedc7b0.json",
+      "report": "reports/sse-steam-1-7-104/0xedc7b0.json"
     }
   ],
   "milestones": [
@@ -476521,7 +476534,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T22:14:27Z",
+  "updated_at": "2026-11-21T22:18:21Z",
   "work_items": [
     {
       "id": "pin-target",
