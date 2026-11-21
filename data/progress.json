@@ -475786,6 +475786,45 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x4a1320.json",
       "report": "reports/sse-steam-1-7-104/0x4a1320.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x224640",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2246208,
+      "size": 20,
+      "status": "matched",
+      "name": "NiNode::Function224640",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x224640; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x224640.json",
+      "report": "reports/sse-steam-1-7-104/0x224640.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xfd8fa0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16617376,
+      "size": 15,
+      "status": "matched",
+      "name": "NiNode::Functionfd8fa0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xfd8fa0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xfd8fa0.json",
+      "report": "reports/sse-steam-1-7-104/0xfd8fa0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1005370",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16798576,
+      "size": 15,
+      "status": "matched",
+      "name": "NiNode::Function1005370",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1005370; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1005370.json",
+      "report": "reports/sse-steam-1-7-104/0x1005370.json"
     }
   ],
   "milestones": [
@@ -475828,7 +475867,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:02:37Z",
+  "updated_at": "2026-11-21T19:05:54Z",
   "work_items": [
     {
       "id": "pin-target",

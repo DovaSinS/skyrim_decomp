@@ -9339,6 +9339,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/TableStoreLeaf221410` | `TableStoreLeaf221410::~TableStoreLeaf221410` (GUESS) | `sse-steam-1-7-104` / `0x221410` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x221410.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf221550` | `DeletingLeaf221550::~DeletingLeaf221550` (GUESS) | `sse-steam-1-7-104` / `0x221550` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x221550.json` | matched | family | open |
 | `unmapped/leaves/Leaf222d50` | `Leaf222d50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x222d50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x222d50.json` | matched | full | checked |
+| `gamebryo/nimain/NiNode` | `NiNode::Function224640` (GUESS) | `sse-steam-1-7-104` / `0x224640` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x224640.json` | matched | full | - |
 | `unmapped/wrappers/BSInlineHost226970` | `BSInlineHost226970::~BSInlineHost226970` (GUESS) | `sse-steam-1-7-104` / `0x226970` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x226970.json` | matched | full | open |
 | `unmapped/leaves/TableStoreLeaf226c20` | `TableStoreLeaf226c20::~TableStoreLeaf226c20` (GUESS) | `sse-steam-1-7-104` / `0x226c20` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x226c20.json` | matched | family | open |
 | `skyrim_shared/world/GridCellArray_226c40` | `GridCellArray::Function226c40` (GUESS) | `sse-steam-1-7-104` / `0x226c40` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x226c40.json` | matched | full | - |
@@ -23699,6 +23700,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nianimation/BSWindModifier_fd8cb0` | `BSWindModifier::Ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd8d90` / 47 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd8d90.json` | matched | full | - |
 | `gamebryo/nianimation/BSWindModifier` | `BSWindModifier::~BSWindModifier` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd8f50` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd8f50.json` | matched | full | open |
 | `gamebryo/nianimation/BSWindModifier` | `BSWindModifier::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd8f90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd8f90.json` | matched | full | open |
+| `gamebryo/nimain/NiNode` | `NiNode::Functionfd8fa0` (GUESS) | `sse-steam-1-7-104` / `0xfd8fa0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd8fa0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfd92b0` | `LeafAddressfd92b0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfd92b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfd92b0.json` | matched | family | open |
 | - | `Functionfd9500` (GUESS) | `sse-steam-1-7-104` / `0xfd9500` / 53 | - | - | mapped | - | - |
 | `gamebryo/nimain/BSPortalGraphEntry_fd96a0` | `BSPortalGraphEntry::ClearVisibility` (COMMUNITY) | `sse-steam-1-7-104` / `0xfd96a0` / 185 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfd96a0.json` | matched | full | - |
@@ -23980,6 +23982,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForward1004ca0` | `LeafForward1004ca0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1004ca0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1004ca0.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress1004f70` | `LeafAddress1004f70::Address` (GUESS) | `sse-steam-1-7-104` / `0x1004f70` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1004f70.json` | matched | family | open |
 | `unmapped/leaves/LeafForward1005030` | `LeafForward1005030::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1005030` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005030.json` | matched | family | open |
+| `gamebryo/nimain/NiNode` | `NiNode::Function1005370` (GUESS) | `sse-steam-1-7-104` / `0x1005370` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005370.json` | matched | full | - |
 | - | `BSNiNode::~BSNiNode` (COMMUNITY) | `sse-steam-1-7-104` / `0x1005450` / 62 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafAddress1005490` | `BSNiNode::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x1005490` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1005490.json` | matched | family | open |
 | `unmapped/storage/StorageInit1006f60` | `StorageInit1006f60::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1006f60` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1006f60.json` | matched | family | open |
