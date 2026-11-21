@@ -18,6 +18,19 @@ one comment per PR and edits it for each new push. Fix it and push to the same b
 big function is a fine PR on its own. Classes can be mixed; open one PR per batch rather than one
 per class, since each PR costs a full verification and merge cycle.
 
+## Skills
+
+`.claude/skills/` holds `matcher` (a near-miss you are iterating on), `permute` (only register
+allocation or ordering differs) and `wall-identifier` (a stalled function: classify the wall before
+giving up). They are adapted from lemiur's Game-Decompilation-Skill-For-Claude, CC-BY-4.0; see the
+`NOTICE.md` in each directory.
+
+Read `docs/contributor-lessons.md` before your first PR: common Reviewer rejections. Optional
+advanced parallel work is in `docs/contributor-parallel.md`. Optional bulk sources for a contributor
+with their own exe: `tools/static_data_generate.py` (`findings/static-data-families.md`) and
+`tools/fixed_argument_generate.py` (`findings/fixed-argument-wrappers.md`) draft whole families
+locally; their results are one-host until the PR's checks run.
+
 ## Tooling
 
 Drive one tool, `tools/contrib.py` (macOS/Linux: `./sr`; Windows: `.\sr.cmd`), always with
@@ -133,6 +146,12 @@ A PR that only names functions touches `data/progress.json` and, optionally, new
 
 Leave **Allow edits by maintainers** on and pull before continuing. Run `./sr feedback --json` at
 the start of each session; push fixes to the same branch and never force-push over reviewed commits.
+
+## Optional: sibling symbol names
+
+`data/symbol-names.json` and `data/name-corroboration.json` hold candidate names read from sibling
+symbol files (label `SYMBOLS(tesv-2013-map|fo4-pdb|fnv-x360-pdb)`; a name hint, never identity
+evidence); see `findings/sibling-symbol-files.md`. Contributed by lemiur (#572).
 
 ## Questions
 

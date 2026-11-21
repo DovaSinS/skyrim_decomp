@@ -18,9 +18,19 @@ including adaptations and sources. Community headers are
 hypotheses, not binary proof. Never write `asm`, `##`, `#pragma` (except `once`), byte arrays or
 `\x` strings, and never edit verifier inputs, tools, flags or another unit to force a pass.
 
+For Fallout 3 (`momusdigital/f3_decomp`, CC0-1.0) the same with `SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)`
+and `Sibling source: momusdigital/f3_decomp@f5bac1b5 <path>:<line>`. Read FO3 and FNV first for
+engine-shared classes (names, layouts, vtable order, body shape); both are 32-bit, never byte evidence.
 For FNV reuse use `SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence)` and cite each reused
 body in a `Sibling source: momusdigital/fnv_decomp@91e1b6e8 <path>:<line>` header line. Another
 game proves no Skyrim offset, layout or behavior. Follow LEGAL.md and PROVENANCE.md.
+
+Skills in `.claude/skills/` (adapted from lemiur's Game-Decompilation-Skill, CC-BY-4.0, see each
+`NOTICE.md`): `matcher` for a near-miss you are iterating on, `permute` when only register
+allocation or ordering differs, `wall-identifier` when a function stalls, to classify the wall
+before giving up.
+
+Read `docs/contributor-lessons.md` before your first PR: common Reviewer rejections.
 
 Header: keep it short. The skeleton writes all of it; a `.cpp` looks like
 
@@ -36,7 +46,7 @@ Header: keep it short. The skeleton writes all of it; a `.cpp` looks like
 Never paste licence text, and leave out Task, Labels, Evidence, Drafted by, Recipe (unless it is
 not the default) and any "a byte match shows..." disclaimer: the records and git hold them. Labels,
 `Sibling source:`, `0x<rva> <Name>` and `CI hash: 0x<rva> <symbol>` lines do not count; keep the rest to 6 lines or fewer. The
-PR check fails a new or changed header that is longer or holds licence text. The failure names the file, how many lines it is over and the lines that count.
+PR check fails a new or changed header that is longer or holds licence text. The failure names the file, how many lines it is over and the lines that count. To fix a `header` rejection run `python3 tools/compact_headers.py --apply <files>` (per file; it changes comments only and leaves a file alone if its digest or lint would change).
 
 A function is claimed only by its `// 0x<rva> <Name>` line (older units also use `RVA 0x<rva>, <n> bytes`
 or `compared at RVA 0x<rva>`). An address in prose, such as a callee or a global in a provenance line, is not
