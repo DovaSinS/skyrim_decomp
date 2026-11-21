@@ -210780,24 +210780,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19032960,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1226b80::~DeletingLeaf1226b80",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1226b80.json",
+      "report": "reports/sse-steam-1-7-104/0x1226b80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1226bb0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19033008,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1226bb0::~DeletingLeaf1226bb0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1226bb0.json",
+      "report": "reports/sse-steam-1-7-104/0x1226bb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1226be0",
@@ -212834,12 +212836,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19095760,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf12360d0::~DeletingLeaf12360d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12360d0.json",
+      "report": "reports/sse-steam-1-7-104/0x12360d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1236d50",
@@ -213238,12 +213241,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19151728,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf1243b70::~DeletingLeaf1243b70",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1243b70.json",
+      "report": "reports/sse-steam-1-7-104/0x1243b70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1243ba0",
@@ -226106,12 +226110,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21874896,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "DeletingLeaf14dc8d0::~DeletingLeaf14dc8d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): scalar deleting destructor ABI stand-in; original owner and layout unknown.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14dc8d0.json",
+      "report": "reports/sse-steam-1-7-104/0x14dc8d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14dc900",
@@ -227770,12 +227775,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22173808,
       "size": 44,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderMaterialGlowmap::Ctor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), joined through Address Library id 106752. RVA 0x1525870; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1525870.json",
+      "report": "reports/sse-steam-1-7-104/0x1525870.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1525ce0",
@@ -435679,12 +435685,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 11152448,
       "size": 89,
-      "status": "mapped",
+      "status": "matched",
       "name": "hkReferencedObject::CalcContentStatistics",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 2 of bhkCharacterState. RVA 0xaa2c40; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xaa2c40.json",
+      "report": "reports/sse-steam-1-7-104/0xaa2c40.json"
     },
     {
       "id": "sse-steam-1-7-104-0xaa7180",
@@ -440315,12 +440322,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2774640,
       "size": 52,
-      "status": "mapped",
+      "status": "matched",
       "name": "ImageSpaceModifierInstanceRB::dtor",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 18600 (the list writes the name with a trailing _* marker, omitted here). RVA 0x2a5670; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x2a5670.json",
+      "report": "reports/sse-steam-1-7-104/0x2a5670.json"
     },
     {
       "id": "sse-steam-1-7-104-0x31def0",
@@ -440603,12 +440611,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16380832,
       "size": 44,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysMeshEmitter::Functionf9f3a0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0xf9f3a0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf9f3a0.json",
+      "report": "reports/sse-steam-1-7-104/0xf9f3a0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf9fa10",
@@ -441704,12 +441713,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16489184,
       "size": 38,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysMeshEmitter::Functionfb9ae0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0xfb9ae0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfb9ae0.json",
+      "report": "reports/sse-steam-1-7-104/0xfb9ae0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfba0f0",
@@ -476861,7 +476871,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T22:24:57Z",
+  "updated_at": "2026-11-21T22:39:32Z",
   "work_items": [
     {
       "id": "pin-target",
