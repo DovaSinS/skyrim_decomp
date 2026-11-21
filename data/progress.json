@@ -182698,7 +182698,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 26. RVA 0xefc380; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefc380.json",
       "report": "reports/sse-steam-1-7-104/0xefc380.json"
     },
     {
@@ -182724,7 +182724,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 43. RVA 0xefc680; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefc680.json",
       "report": "reports/sse-steam-1-7-104/0xefc680.json"
     },
     {
@@ -182738,7 +182738,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 44. RVA 0xefc6e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefc6e0.json",
       "report": "reports/sse-steam-1-7-104/0xefc6e0.json"
     },
     {
@@ -182752,7 +182752,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 45. RVA 0xefc720; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefc720.json",
       "report": "reports/sse-steam-1-7-104/0xefc720.json"
     },
     {
@@ -182836,7 +182836,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefe1f0.json",
       "id": "sse-steam-1-7-104-0xefe1f0",
       "name": "NiPointLight::LoadBinary",
       "name_origin": "COMMUNITY",
@@ -182902,7 +182902,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefe4e0.json",
       "id": "sse-steam-1-7-104-0xefe4e0",
       "name": "NiPointLight::Ctor",
       "name_origin": "COMMUNITY",
@@ -182930,7 +182930,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xefe5f0.json",
       "id": "sse-steam-1-7-104-0xefe5f0",
       "name": "NiPointLight::~NiPointLight",
       "name_origin": "COMMUNITY",
@@ -475851,6 +475851,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x516c20.json",
       "report": "reports/sse-steam-1-7-104/0x516c20.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xee0a00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15600128,
+      "size": 16,
+      "status": "matched",
+      "name": "NiAVObject::Functionee0a00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xee0a00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xee0a00.json",
+      "report": "reports/sse-steam-1-7-104/0xee0a00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xee0ed0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15601360,
+      "size": 14,
+      "status": "matched",
+      "name": "NiAVObject::Functionee0ed0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xee0ed0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xee0ed0.json",
+      "report": "reports/sse-steam-1-7-104/0xee0ed0.json"
     }
   ],
   "milestones": [
@@ -475893,7 +475919,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:08:39Z",
+  "updated_at": "2026-11-21T19:10:05Z",
   "work_items": [
     {
       "id": "pin-target",
