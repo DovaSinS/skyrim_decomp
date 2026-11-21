@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "e354e2a2c25ac58ad7c92370510ddae805b8690109d41170895d58f896be6986",
+        "object_sha256": "cd053eeb91366aab8fc01e83dc828c27b51096b29f03f60608482c47fe48fade",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/skyrim_shared/forms/TESForm.h",
@@ -37,7 +37,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "c976958bce98f2f8873062ab7170901eaf617ecd",
+    "base_sha": "e6ecf84cd9d60a4121794023735cfd3775773bdb",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -48,7 +48,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "2c555faa402b16a876e02888d2d626219cb06f67",
+    "head_sha": "e8b745e8038a73bfebfdd0bbb9bb8e859c197ba1",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -61,10 +61,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44947936570,
+    "run_id": 44954941715,
     "rva": "0x28e500",
     "schema": 2,
-    "source_sha256": "e56adae9a1137b43ea6a185966a50408f02f05d80d9cb35acce13c7f67560e3e",
+    "source_sha256": "5cf89a2f017034282f83edcb1e6c1d9859769ba99ba9574db399d362c294e13a",
     "status": "pass",
     "symbols": [
       "??_GTESObjectWEAP@@UEAAPEAXI@Z"
@@ -99,7 +99,7 @@
         "candidate": {
           "code_section_sha256": "afcfaaf606bfd312841e589ac0e098a3810137b69916cd3973f90b673ea39919",
           "code_sections": 1,
-          "object_sha256": "e354e2a2c25ac58ad7c92370510ddae805b8690109d41170895d58f896be6986"
+          "object_sha256": "cd053eeb91366aab8fc01e83dc828c27b51096b29f03f60608482c47fe48fade"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -162,9 +162,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/skyrim_shared/forms/TESObjectWEAP.cpp",
-          "source_revision": "e56adae9a1137b43ea6a185966a50408f02f05d80d9cb35acce13c7f67560e3e"
+          "source_revision": "5cf89a2f017034282f83edcb1e6c1d9859769ba99ba9574db399d362c294e13a"
         },
-        "symbol_map_sha256": "c5c71b693583f358fc02e0928a4fb73e452105dcc2b9271ac7ce286d626f9278",
+        "symbol_map_sha256": "044dcf576beae6d683c51c3f4527b432e34866795af71b497c28206130de38d4",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -175,7 +175,7 @@
   ],
   "source": {
     "compiled": "reconstruction/skyrim_shared/forms/TESObjectWEAP.cpp",
-    "digest": "e56adae9a1137b43ea6a185966a50408f02f05d80d9cb35acce13c7f67560e3e",
+    "digest": "5cf89a2f017034282f83edcb1e6c1d9859769ba99ba9574db399d362c294e13a",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/skyrim_shared/forms/TESForm.h",
@@ -183,10 +183,10 @@
       "reconstruction/skyrim_shared/forms/TESObjectWEAP.h"
     ]
   },
-  "submitter": "wardboumans",
+  "submitter": "ariizona",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/c5c71b693583f358fc02e0928a4fb73e452105dcc2b9271ac7ce286d626f9278.json",
-    "sha256": "c5c71b693583f358fc02e0928a4fb73e452105dcc2b9271ac7ce286d626f9278"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/044dcf576beae6d683c51c3f4527b432e34866795af71b497c28206130de38d4.json",
+    "sha256": "044dcf576beae6d683c51c3f4527b432e34866795af71b497c28206130de38d4"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
