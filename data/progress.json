@@ -475916,6 +475916,58 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xff3470.json",
       "report": "reports/sse-steam-1-7-104/0xff3470.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xe11f30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 14753584,
+      "size": 17,
+      "status": "matched",
+      "name": "BSPCGamepadDeviceHandler::Functione11f30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xe11f30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xe11f30.json",
+      "report": "reports/sse-steam-1-7-104/0xe11f30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xe11f50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 14753616,
+      "size": 19,
+      "status": "matched",
+      "name": "BSPCGamepadDeviceHandler::Functione11f50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xe11f50; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xe11f50.json",
+      "report": "reports/sse-steam-1-7-104/0xe11f50.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xe11f90",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 14753680,
+      "size": 19,
+      "status": "matched",
+      "name": "BSPCGamepadDeviceHandler::Functione11f90",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xe11f90; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xe11f90.json",
+      "report": "reports/sse-steam-1-7-104/0xe11f90.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xe11fb0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 14753712,
+      "size": 17,
+      "status": "matched",
+      "name": "BSPCGamepadDeviceHandler::Functione11fb0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xe11fb0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xe11fb0.json",
+      "report": "reports/sse-steam-1-7-104/0xe11fb0.json"
     }
   ],
   "milestones": [
@@ -475958,7 +476010,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T19:13:23Z",
+  "updated_at": "2026-11-21T19:18:53Z",
   "work_items": [
     {
       "id": "pin-target",
