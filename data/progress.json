@@ -193267,7 +193267,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xf9b760.json",
       "report": "reports/sse-steam-1-7-104/0xf9b760.json"
     },
     {
@@ -193753,7 +193753,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfa0b60.json",
       "report": "reports/sse-steam-1-7-104/0xfa0b60.json"
     },
     {
@@ -440397,24 +440397,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16361680,
       "size": 45,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterCtlr::SaveBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74522 (the list writes the name with a trailing _* marker, omitted here). RVA 0xf9a8d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf9a8d0.json",
+      "report": "reports/sse-steam-1-7-104/0xf9a8d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf9aad0",
       "build_id": "sse-steam-1-7-104",
       "rva": 16362192,
       "size": 19,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysEmitterCtlr::Stop",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74526 (the list writes the name with a trailing _* marker, omitted here). RVA 0xf9aad0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xf9aad0.json",
+      "report": "reports/sse-steam-1-7-104/0xf9aad0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xf9b770",
@@ -440535,12 +440537,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16386560,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "NiPSysModifierCtlr::SaveBinary",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: meh321/AddressLibraryDatabase commit 0379cb6 (meh321 Address Library name list, used with the author's permission as reported by the maintainer), skyrimae.rename entry for Address Library id 74660 (the list writes the name with a trailing _* marker, omitted here). RVA 0xfa0a00; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfa0a00.json",
+      "report": "reports/sse-steam-1-7-104/0xfa0a00.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfa0b10",
@@ -475053,7 +475056,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T00:02:17Z",
+  "updated_at": "2026-11-21T00:40:44Z",
   "work_items": [
     {
       "id": "pin-target",

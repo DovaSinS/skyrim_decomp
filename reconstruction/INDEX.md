@@ -23130,9 +23130,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/niparticle/NiParticleSystem` | `NiParticleSystem::~NiParticleSystem` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a140` / 67 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xf9a140.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressf9a260` | `NiParticleSystem::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a260` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a260.json` | matched | family | open |
 | `gamebryo/niparticle/NiPSysEmitterCtlr_f9a4a0` | `NiPSysEmitterCtlr::LoadBinary` (GUESS) | `sse-steam-1-7-104` / `0xf9a4a0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a4a0.json` | matched | full | open |
-| - | `NiPSysEmitterCtlr::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a8d0` / 45 | - | - | mapped | - | - |
-| - | `NiPSysEmitterCtlr::Stop` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9aad0` / 19 | - | - | mapped | - | - |
-| `gamebryo/niparticle/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::GetInterpolatorCount` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9b760` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9b760.json` | matched | family | open |
+| `gamebryo/niparticle/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9a8d0` / 45 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9a8d0.json` | matched | full | - |
+| `gamebryo/niparticle/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::Stop` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9aad0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9aad0.json` | matched | full | - |
+| `gamebryo/niparticle/NiPSysEmitterCtlr` | `NiPSysEmitterCtlr::GetInterpolatorCount` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9b760` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9b760.json` | matched | full | open |
 | `gamebryo/niparticle/NiPSysEmitterCtlr_f9b770` | `NiPSysEmitterCtlr::GetInterpolatorID` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9b770` / 28 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9b770.json` | matched | full | - |
 | - | `NiPSysEmitterCtlr::GetInterpolator` (COMMUNITY) | `sse-steam-1-7-104` / `0xf9b800` / 24 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaff9b940` | `Leaff9b940::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf9b940` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf9b940.json` | matched | family | open |
@@ -23176,7 +23176,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `NiPSysEmitterCtlr::Functionfa0950` (GUESS) | `sse-steam-1-7-104` / `0xfa0950` / 44 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForwardfa09e0` | `LeafForwardfa09e0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa09e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa09e0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardfa09f0` | `LeafForwardfa09f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfa09f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa09f0.json` | matched | family | open |
-| - | `NiPSysModifierCtlr::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xfa0a00` / 43 | - | - | mapped | - | - |
+| `gamebryo/niparticle/NiPSysModifierCtlr` | `NiPSysModifierCtlr::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xfa0a00` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa0a00.json` | matched | full | - |
 | `gamebryo/niparticle/NiPSysModifierCtlr_fa0b10` | `NiPSysModifierCtlr::SetTarget` (COMMUNITY) | `sse-steam-1-7-104` / `0xfa0b10` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa0b10.json` | matched | full | - |
 | `unmapped/leaves/Leaffa0b50` | `Leaffa0b50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xfa0b50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa0b50.json` | matched | family | open |
 | `gamebryo/niparticle/NiPSysModifierCtlr` | `NiPSysModifierCtlr::GetCtlrID` (COMMUNITY) | `sse-steam-1-7-104` / `0xfa0b60` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfa0b60.json` | matched | full | open |
