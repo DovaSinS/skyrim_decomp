@@ -178965,12 +178965,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 15188656,
       "size": 15,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSPCOrbisGamepadDevice::Release",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 3. RVA 0xe7c2b0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-refill-held-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xe7c2b0.json",
+      "report": "reports/sse-steam-1-7-104/0xe7c2b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xe7c2d0",
@@ -475762,7 +475763,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-21T09:10:44Z",
+  "updated_at": "2026-11-21T12:45:08Z",
   "work_items": [
     {
       "id": "pin-target",

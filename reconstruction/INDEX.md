@@ -21712,7 +21712,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsinput/BSWin32GamepadDevice` | `BSWin32GamepadDevice::Reset` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7b060` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe7b060.json` | matched | full | - |
 | `bsinput/BSWin32GamepadDevice` | `Leafe7b080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xe7b080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe7b080.json` | matched | full | open |
 | `bsinput/BSPCOrbisGamepadDevice_e7bf50` | `BSPCOrbisGamepadDevice::Initialize` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7bf50` / 37 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe7bf50.json` | matched | full | open |
-| - | `BSPCOrbisGamepadDevice::Release` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7c2b0` / 15 | - | - | mapped | - | - |
+| `bsinput/BSPCOrbisGamepadDevice_e7c2b0` | `BSPCOrbisGamepadDevice::Release` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7c2b0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe7c2b0.json` | matched | full | - |
 | - | `BSPCOrbisGamepadDevice::Reset` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7c2d0` / 20 | - | - | mapped | - | - |
 | `bsinput/BSPCOrbisGamepadDevice` | `BSPCOrbisGamepadDevice::SetRumble` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7c2f0` / 76 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xe7c2f0.json` | matched | full | open |
 | - | `BSPCOrbisGamepadDevice::SetLEDColor` (COMMUNITY) | `sse-steam-1-7-104` / `0xe7c350` / 56 | - | - | mapped | - | - |
