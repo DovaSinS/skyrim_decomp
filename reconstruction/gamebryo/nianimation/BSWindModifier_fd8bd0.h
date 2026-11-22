@@ -1,0 +1,29 @@
+// Source exposure: mixed (names and declarations from community headers; base classes, sizes and
+// the compared functions from the pinned image).
+// Code origin: original reconstruction from the pinned image listing; names as labelled below.
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
+// BSWindModifier: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT) EXE_RTTI
+// BSWindModifier::GetRTTI, BSWindModifier::~BSWindModifier: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+// NiRTTI: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+// unknown30: GUESS(low)
+#pragma once
+
+#include <cstdint>
+#include <cstddef>
+#include "gamebryo/niparticle/NiPSysModifier.h"
+
+class NiRTTI;
+
+class BSWindModifier : public NiPSysModifier
+{
+public:
+    BSWindModifier();
+    void LoadBinary(NiStream& a_stream) override;  // compared: 0xfd8bd0
+    virtual const NiRTTI* GetRTTI() const;  // compared: 0xfd8f90
+    virtual ~BSWindModifier();  // compared: 0xfd8f50 (scalar deleting destructor)
+
+    // fStrength: SYMBOLS(fo4-pdb) CRASHLOGGER_PDB(59818@2026.10.24); the float at 0x30
+    float fStrength;               // 30
+    std::uint8_t unknown34[0x4];   // 34
+};
+static_assert(sizeof(BSWindModifier) == 0x38, "BSWindModifier size");
