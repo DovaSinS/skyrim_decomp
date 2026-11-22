@@ -22061,7 +22061,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardef26a0` | `LeafForwardef26a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef26a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef26a0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardef28c0` | `LeafForwardef28c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef28c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef28c0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardef28d0` | `LeafForwardef28d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xef28d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef28d0.json` | matched | family | open |
-| `gamebryo/nimain/NiSourceTexture` | `NiSourceTexture::Unk_25` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3500` / 24 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xef3500.json` | matched, STALE (unit changed) | full | - |
+| `gamebryo/nimain/NiSourceTexture` | `NiSourceTexture::Unk_25` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3500` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3500.json` | matched | full | - |
 | `gamebryo/nimain/NiSourceTexture` | `NiSourceTexture::Unk_26` (COMMUNITY) | `sse-steam-1-7-104` / `0xef3520` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3520.json` | matched | full | - |
 | `unmapped/leaves/Leafef3be0` | `Leafef3be0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef3be0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3be0.json` | matched | family | open |
 | `unmapped/leaves/Leafef3bf0` | `Leafef3bf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef3bf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef3bf0.json` | matched | family | open |
