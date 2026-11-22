@@ -1,6 +1,55 @@
 {
   "functions": [
     {
+      "rva": 19411824,
+      "size": 33,
+      "normalized_sha256": "e2c0da2a1a81b3111790f36cfd03b36bbdf914b7871c4d9a038f3cb38643e5f8",
+      "layout_sha256": "14bd7e4ac75f4188f365ef82ca4b6ed9618a731758b735757ce43a8661072738",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19411872,
+      "size": 33,
+      "normalized_sha256": "e2c0da2a1a81b3111790f36cfd03b36bbdf914b7871c4d9a038f3cb38643e5f8",
+      "layout_sha256": "14bd7e4ac75f4188f365ef82ca4b6ed9618a731758b735757ce43a8661072738",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19411920,
+      "size": 33,
+      "normalized_sha256": "e2c0da2a1a81b3111790f36cfd03b36bbdf914b7871c4d9a038f3cb38643e5f8",
+      "layout_sha256": "14bd7e4ac75f4188f365ef82ca4b6ed9618a731758b735757ce43a8661072738",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19411968,
+      "size": 33,
+      "normalized_sha256": "e2c0da2a1a81b3111790f36cfd03b36bbdf914b7871c4d9a038f3cb38643e5f8",
+      "layout_sha256": "14bd7e4ac75f4188f365ef82ca4b6ed9618a731758b735757ce43a8661072738",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19412016,
+      "size": 63,
+      "normalized_sha256": "513a741e37bc725f266bae0a4d1378dc53ad708b1fa5e3cef0d3d0b6a66142f0",
+      "layout_sha256": "c705ff63c6a6b64ac67e619500cb99c402884b8fbf53568054e4403340a6a2ba",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19412624,
+      "size": 9,
+      "normalized_sha256": "f08f155aedae3cb0d34a1c64aec807ae946947996c441d0bb673585fb860f956",
+      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 19415376,
+      "size": 3,
+      "normalized_sha256": "4bc724f3b1d0caf4fe369c18cba3102e6c4ea057f63fe1587e3973134a7f755e",
+      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 19415392,
       "size": 5,
       "normalized_sha256": "fc46ea8acdf166d47f2230b3d3975fbd0a4a0f5c898b7c2b2ec854359cb94b85",
@@ -13949,55 +13998,6 @@
       "size": 9,
       "normalized_sha256": "c851f49eb9901960f352f941c7fadbff924e8aef9cb6ca9a5b34531ea012844e",
       "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049188,
-      "size": 12,
-      "normalized_sha256": "d1e9b198d26890e78f525d9e5850e345a241edc637ae3cd8f0516fe0c8c55e33",
-      "layout_sha256": "a8a05a29e5269d2841c44335016c5a5e53839900ba9f96837b7763ba1a701322",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049200,
-      "size": 9,
-      "normalized_sha256": "c851f49eb9901960f352f941c7fadbff924e8aef9cb6ca9a5b34531ea012844e",
-      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049212,
-      "size": 12,
-      "normalized_sha256": "d1e9b198d26890e78f525d9e5850e345a241edc637ae3cd8f0516fe0c8c55e33",
-      "layout_sha256": "a8a05a29e5269d2841c44335016c5a5e53839900ba9f96837b7763ba1a701322",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049224,
-      "size": 9,
-      "normalized_sha256": "c851f49eb9901960f352f941c7fadbff924e8aef9cb6ca9a5b34531ea012844e",
-      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049236,
-      "size": 12,
-      "normalized_sha256": "d1e9b198d26890e78f525d9e5850e345a241edc637ae3cd8f0516fe0c8c55e33",
-      "layout_sha256": "a8a05a29e5269d2841c44335016c5a5e53839900ba9f96837b7763ba1a701322",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049248,
-      "size": 9,
-      "normalized_sha256": "c851f49eb9901960f352f941c7fadbff924e8aef9cb6ca9a5b34531ea012844e",
-      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 22049260,
-      "size": 12,
-      "normalized_sha256": "d1e9b198d26890e78f525d9e5850e345a241edc637ae3cd8f0516fe0c8c55e33",
-      "layout_sha256": "a8a05a29e5269d2841c44335016c5a5e53839900ba9f96837b7763ba1a701322",
       "extraction": "linked-reference-inference"
     }
   ]

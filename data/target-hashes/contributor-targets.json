@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "build_id": "sse-steam-1-7-104",
-  "snapshot_utc": "2026-11-22T19:58:34.104930+00:00",
+  "snapshot_utc": "2026-11-22T20:08:19.517725+00:00",
   "function_metadata_sha256": "15ba17036f4312634d884316084923fbf3e4bdad61101ab28ae476b187376710",
-  "claims_snapshot_sha256": "a8da6c6794b903b92f60103033d14e8fe0557316fbf08e2ccd5f69da48d48391",
+  "claims_snapshot_sha256": "dd9ae6d718a0b59df2c9ac4c2a120c5bcb0f0e6fdf10f47c2ab244dab545ffe8",
   "claims": [
     {
       "number": 871,
@@ -6756,6 +6756,42 @@
   "claim_function_count": 1498,
   "functions": [
     {
+      "rva": 1120800,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1156096,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1156416,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1229344,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1269824,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1274400,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 1335904,
       "size": 53,
       "extent_source": "local-function-table",
@@ -7100,6 +7136,12 @@
       "size": 92,
       "extent_source": "local-function-table",
       "class": "BGSLoadGameBuffer"
+    },
+    {
+      "rva": 1554784,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 1557216,
@@ -7780,6 +7822,348 @@
       "class": "TES"
     },
     {
+      "rva": 1763232,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763328,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763424,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763520,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763616,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763712,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763808,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1763904,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764000,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764096,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764192,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764288,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764384,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764480,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764576,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764672,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764768,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764864,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1764960,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765056,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765152,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765248,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765344,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765440,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765536,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765632,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765728,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765824,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1765920,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766016,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766112,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766208,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766304,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766400,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766496,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766592,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766688,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766784,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766880,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1766976,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767072,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767168,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767264,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767360,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767456,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767552,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767648,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767744,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767840,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1767936,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768032,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768128,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768224,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768320,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768416,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768512,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1768608,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 1779920,
       "size": 12,
       "extent_source": "local-function-table",
@@ -7796,6 +8180,18 @@
       "size": 118,
       "extent_source": "local-function-table",
       "class": "TESForm"
+    },
+    {
+      "rva": 1860688,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 1860784,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 1861536,
@@ -7904,6 +8300,12 @@
       "size": 66,
       "extent_source": "local-function-table",
       "class": "TESObjectREFR"
+    },
+    {
+      "rva": 1926224,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 1929792,
@@ -8302,6 +8704,12 @@
       "class": "TESProduceForm"
     },
     {
+      "rva": 2026880,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2029696,
       "size": 52,
       "extent_source": "local-function-table",
@@ -8410,6 +8818,18 @@
       "class": "TESWeightForm"
     },
     {
+      "rva": 2086000,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2105568,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2106128,
       "size": 12,
       "extent_source": "local-function-table",
@@ -8436,6 +8856,12 @@
     {
       "rva": 2121136,
       "size": 12,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2140736,
+      "size": 82,
       "extent_source": "local-function-table",
       "on_demand": true
     },
@@ -8582,6 +9008,12 @@
       "size": 82,
       "extent_source": "local-function-table",
       "class": "InventoryChanges"
+    },
+    {
+      "rva": 2359376,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 2359792,
@@ -8830,6 +9262,12 @@
       "class": "BGSConstructibleObject"
     },
     {
+      "rva": 2490048,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2495248,
       "size": 11,
       "extent_source": "local-function-table",
@@ -9028,6 +9466,12 @@
       "class": "TESFurniture"
     },
     {
+      "rva": 2555264,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2558032,
       "size": 52,
       "extent_source": "local-function-table",
@@ -9202,6 +9646,12 @@
       "class": "TESFile"
     },
     {
+      "rva": 2609984,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2614512,
       "size": 68,
       "extent_source": "local-function-table",
@@ -9302,6 +9752,18 @@
       "size": 126,
       "extent_source": "local-function-table",
       "class": "TESObjectDOOR"
+    },
+    {
+      "rva": 2643344,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2643440,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 2649376,
@@ -9490,6 +9952,12 @@
       "class": "TESObjectREFR"
     },
     {
+      "rva": 2702000,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2710448,
       "size": 52,
       "extent_source": "local-function-table",
@@ -9526,10 +9994,40 @@
       "class": "TempLoadGameBuffer"
     },
     {
+      "rva": 2737968,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2738064,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2738160,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2738256,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 2747712,
       "size": 52,
       "extent_source": "local-function-table",
       "class": "BGSReferenceEffect"
+    },
+    {
+      "rva": 2755104,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 2766176,
@@ -9914,6 +10412,18 @@
       "size": 65,
       "extent_source": "local-function-table",
       "class": "TESObjectCELL"
+    },
+    {
+      "rva": 2952624,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 2952720,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 2990816,
@@ -10372,6 +10882,24 @@
       "class": "TESObjectREFR"
     },
     {
+      "rva": 3112272,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3112368,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3112464,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 3127408,
       "size": 126,
       "extent_source": "local-function-table",
@@ -10540,6 +11068,12 @@
       "class": "Character"
     },
     {
+      "rva": 3162576,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 3166304,
       "size": 12,
       "extent_source": "local-function-table",
@@ -10586,6 +11120,12 @@
       "size": 52,
       "extent_source": "local-function-table",
       "class": "TESWaterForm"
+    },
+    {
+      "rva": 3185616,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 3201744,
@@ -11470,10 +12010,40 @@
       "class": "BGSPerk"
     },
     {
+      "rva": 3768032,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 3775712,
       "size": 92,
       "extent_source": "local-function-table",
       "class": "TempLoadGameBuffer"
+    },
+    {
+      "rva": 3777776,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3784368,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3784464,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3794672,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 3821104,
@@ -11552,6 +12122,18 @@
       "size": 23,
       "extent_source": "local-function-table",
       "class": "BGSSceneAction"
+    },
+    {
+      "rva": 3842848,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 3842944,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 3846048,
@@ -11818,6 +12400,12 @@
       "class": "TempLoadGameBuffer"
     },
     {
+      "rva": 3977920,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 3982912,
       "size": 7,
       "extent_source": "local-function-table",
@@ -11980,6 +12568,36 @@
       "class": "TempLoadGameBuffer"
     },
     {
+      "rva": 4055552,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4055648,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4055744,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4055840,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4055936,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
       "rva": 4063152,
       "size": 124,
       "extent_source": "local-function-table",
@@ -12050,6 +12668,24 @@
       "size": 96,
       "extent_source": "local-function-table",
       "class": "TESRace"
+    },
+    {
+      "rva": 4108480,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4108576,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 4108672,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
     },
     {
       "rva": 4121120,
@@ -13558,12 +14194,6 @@
       "on_demand": true
     },
     {
-      "rva": 5391504,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 5424736,
       "size": 8,
       "extent_source": "local-function-table",
@@ -13600,18 +14230,6 @@
       "class": "TESWaterSystem"
     },
     {
-      "rva": 5434384,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5460368,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 5462272,
       "size": 16,
       "extent_source": "local-function-table",
@@ -13642,46 +14260,10 @@
       "class": "BGSStoryTeller"
     },
     {
-      "rva": 5492576,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5509808,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5523856,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 5543424,
       "size": 52,
       "extent_source": "local-function-table",
       "class": "NiAVObject"
-    },
-    {
-      "rva": 5554720,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5575904,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5606512,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 5607472,
@@ -13702,34 +14284,10 @@
       "class": "BGSSoundDescriptorForm"
     },
     {
-      "rva": 5610896,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 5625120,
       "size": 106,
       "extent_source": "local-function-table",
       "class": "ThirdPersonState"
-    },
-    {
-      "rva": 5758688,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5791488,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 5928832,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 6005456,
@@ -14212,12 +14770,6 @@
       "class": "ValueModifierEffect"
     },
     {
-      "rva": 6200000,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 6203168,
       "size": 92,
       "extent_source": "local-function-table",
@@ -14230,76 +14782,10 @@
       "class": "TempLoadGameBuffer"
     },
     {
-      "rva": 6204608,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6234800,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 6235792,
       "size": 126,
       "extent_source": "local-function-table",
       "class": "TESTopicInfo"
-    },
-    {
-      "rva": 6275200,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6305360,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6319264,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6335984,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6352544,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6356048,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6356896,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6361264,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6361952,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 6416128,
@@ -14416,18 +14902,6 @@
       "class": "SaveStorageWrapper"
     },
     {
-      "rva": 6539616,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6557728,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 6571904,
       "size": 100,
       "extent_source": "local-function-table",
@@ -14456,18 +14930,6 @@
       "size": 117,
       "extent_source": "local-function-table",
       "class": "BGSSkillPerkTreeNode"
-    },
-    {
-      "rva": 6581632,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6597232,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 6603984,
@@ -14504,12 +14966,6 @@
       "size": 66,
       "extent_source": "local-function-table",
       "class": "EnhanceWeaponEffect"
-    },
-    {
-      "rva": 6620096,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 6657472,
@@ -14582,60 +15038,6 @@
       "size": 18,
       "extent_source": "local-function-table",
       "class": "Main"
-    },
-    {
-      "rva": 6686608,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686624,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686640,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686656,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686672,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686688,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686704,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6686720,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 6689152,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 6692384,
@@ -15813,18 +16215,6 @@
       "class": "Actor"
     },
     {
-      "rva": 7055968,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 7056464,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 7070352,
       "size": 50,
       "extent_source": "local-function-table",
@@ -16923,33 +17313,15 @@
       "class": "PlayerCharacter"
     },
     {
-      "rva": 7838656,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 7868096,
       "size": 87,
       "extent_source": "local-function-table",
       "class": "ProcessLists"
     },
     {
-      "rva": 7911424,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 7915648,
       "size": 7,
       "extent_source": "local-function-table"
-    },
-    {
-      "rva": 7948400,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 7955552,
@@ -16986,72 +17358,6 @@
       "size": 120,
       "extent_source": "local-function-table",
       "class": "MovementControllerNPC"
-    },
-    {
-      "rva": 7972144,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 7972160,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 7972176,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 7972192,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002784,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002800,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002816,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002832,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002848,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002864,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 8002880,
-      "size": 12,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 8011376,
@@ -17130,12 +17436,6 @@
       "size": 73,
       "extent_source": "local-function-table",
       "class": "MovementHandlerAgentStairsHelper"
-    },
-    {
-      "rva": 8032192,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 8032864,
@@ -17510,12 +17810,6 @@
       "class": "TempLoadGameBuffer"
     },
     {
-      "rva": 8429248,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 8430160,
       "size": 42,
       "extent_source": "local-function-table",
@@ -17562,12 +17856,6 @@
       "size": 62,
       "extent_source": "local-function-table",
       "class": "CombatAreaHoldPosition"
-    },
-    {
-      "rva": 8454176,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 8572208,
@@ -18224,12 +18512,6 @@
       "class": "VATSCameraState"
     },
     {
-      "rva": 9553232,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 9654432,
       "size": 7,
       "extent_source": "local-function-table"
@@ -18307,12 +18589,6 @@
       "class": "MagicItemData"
     },
     {
-      "rva": 9906448,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 10013040,
       "size": 61,
       "extent_source": "local-function-table",
@@ -18371,18 +18647,6 @@
       "size": 54,
       "extent_source": "local-function-table",
       "class": "BGSLoadGameBuffer"
-    },
-    {
-      "rva": 10275888,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 10285136,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 10287536,
@@ -18595,12 +18859,6 @@
       "class": "SaveStorageWrapper"
     },
     {
-      "rva": 11848624,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 12252720,
       "size": 12,
       "extent_source": "local-function-table",
@@ -18751,24 +19009,6 @@
       "class": "BSAnimationGraphManager"
     },
     {
-      "rva": 12338512,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 12465792,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 13063248,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 13411856,
       "size": 8,
       "extent_source": "local-function-table",
@@ -18899,12 +19139,6 @@
       "size": 45,
       "extent_source": "local-function-table",
       "class": "BSSmallBlockAllocator"
-    },
-    {
-      "rva": 13549072,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 13549936,
@@ -19119,12 +19353,6 @@
       "size": 31,
       "extent_source": "local-function-table",
       "class": "TES"
-    },
-    {
-      "rva": 15553792,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 15583056,
@@ -19475,28 +19703,10 @@
       "class": "NiFogProperty"
     },
     {
-      "rva": 15827904,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 15855488,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 15855552,
       "size": 89,
       "extent_source": "local-function-table",
       "class": "NiObject"
-    },
-    {
-      "rva": 15856576,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 15966208,
@@ -19581,12 +19791,6 @@
       "size": 52,
       "extent_source": "local-function-table",
       "class": "NiBlendAccumTransformInterpolator"
-    },
-    {
-      "rva": 16175168,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 16190480,
@@ -19997,12 +20201,6 @@
       "class": "NiAVObject"
     },
     {
-      "rva": 16593072,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 16616400,
       "size": 79,
       "extent_source": "local-function-table",
@@ -20145,12 +20343,6 @@
       "size": 63,
       "extent_source": "local-function-table",
       "class": "BSSubIndexTriShape"
-    },
-    {
-      "rva": 16740016,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 16757168,
@@ -20327,12 +20519,6 @@
       "class": "NiObject"
     },
     {
-      "rva": 17428592,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 17575664,
       "size": 49,
       "extent_source": "local-function-table",
@@ -20343,12 +20529,6 @@
       "size": 93,
       "extent_source": "local-function-table",
       "class": "NiObject"
-    },
-    {
-      "rva": 17601200,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 18556160,
@@ -20363,30 +20543,6 @@
       "class": "BGSMoviePlayer"
     },
     {
-      "rva": 18644640,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18647856,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18657024,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18657040,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 18660752,
       "size": 122,
       "extent_source": "local-function-table",
@@ -20397,54 +20553,6 @@
       "size": 66,
       "extent_source": "local-function-table",
       "class": "PathingRequest"
-    },
-    {
-      "rva": 18662816,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18663104,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18663184,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18663584,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18663856,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18688096,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18700528,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18700544,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 18704032,
@@ -20525,76 +20633,10 @@
       "class": "BSNavmesh"
     },
     {
-      "rva": 18872176,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18984304,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18990128,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18990160,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 18995584,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 19032720,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 19043936,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
       "rva": 19081664,
       "size": 52,
       "extent_source": "local-function-table",
       "class": "MovementTweenerAgentNodeFollower"
-    },
-    {
-      "rva": 19082432,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 19082448,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 19160624,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
-    },
-    {
-      "rva": 19163360,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "on_demand": true
     },
     {
       "rva": 21911760,
