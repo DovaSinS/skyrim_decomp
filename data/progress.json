@@ -409867,12 +409867,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19242304,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1259cb0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1259d40.json",
+      "report": "reports/sse-steam-1-7-104/0x1259d40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1259d10",
@@ -409892,12 +409893,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19242400,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1259d10CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1259da0.json",
+      "report": "reports/sse-steam-1-7-104/0x1259da0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283250",
@@ -409945,12 +409947,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19411824,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1283280CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1283370.json",
+      "report": "reports/sse-steam-1-7-104/0x1283370.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12832b0",
@@ -410278,12 +410281,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586928,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12addf0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12adf70.json",
+      "report": "reports/sse-steam-1-7-104/0x12adf70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ade20",
@@ -410331,12 +410335,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19587024,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12ade50CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12adfd0.json",
+      "report": "reports/sse-steam-1-7-104/0x12adfd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ade80",
@@ -410412,12 +410417,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19587168,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12adee0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12ae060.json",
+      "report": "reports/sse-steam-1-7-104/0x12ae060.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12bc5f0",
@@ -410437,12 +410443,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19646032,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12bc5f0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12bc650.json",
+      "report": "reports/sse-steam-1-7-104/0x12bc650.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12bc620",
@@ -410490,12 +410497,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19700208,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12c9990CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12c99f0.json",
+      "report": "reports/sse-steam-1-7-104/0x12c99f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12c99c0",
@@ -410515,12 +410523,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19700256,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12c99c0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12c9a20.json",
+      "report": "reports/sse-steam-1-7-104/0x12c9a20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12cdf40",
@@ -410652,12 +410661,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20155744,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1338ca0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1338d60.json",
+      "report": "reports/sse-steam-1-7-104/0x1338d60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338cd0",
@@ -410677,12 +410687,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20155792,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1338cd0CopyableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1338d90.json",
+      "report": "reports/sse-steam-1-7-104/0x1338d90.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338d00",
@@ -478801,6 +478812,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xcfad30.json",
       "report": "reports/sse-steam-1-7-104/0xcfad30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xec3f30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15482672,
+      "size": 52,
+      "status": "matched",
+      "name": "BSSearchPath::Functionec3f30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xec3f30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xec3f30.json",
+      "report": "reports/sse-steam-1-7-104/0xec3f30.json"
     }
   ],
   "milestones": [
@@ -478843,7 +478867,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-22T19:10:29Z",
+  "updated_at": "2026-11-22T19:15:18Z",
   "work_items": [
     {
       "id": "pin-target",
