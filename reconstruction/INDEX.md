@@ -9340,7 +9340,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf213a20` | `DeletingLeaf213a20::~DeletingLeaf213a20` (GUESS) | `sse-steam-1-7-104` / `0x213a20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213a20.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf213a50` | `DeletingLeaf213a50::~DeletingLeaf213a50` (GUESS) | `sse-steam-1-7-104` / `0x213a50` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213a50.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf213a80` | `DeletingLeaf213a80::~DeletingLeaf213a80` (GUESS) | `sse-steam-1-7-104` / `0x213a80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213a80.json` | matched | full | - |
-| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::~BSMultiBoundAABB` (COMMUNITY) | `sse-steam-1-7-104` / `0x213ab0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213ab0.json` | matched | full | checked |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::~BSMultiBoundAABB` (COMMUNITY) | `sse-steam-1-7-104` / `0x213ab0` / 50 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x213ab0.json` | matched | full | checked |
 | `gamebryo/nimain/BSMultiBoundOBB` | `BSMultiBoundOBB::~BSMultiBoundOBB` (COMMUNITY) | `sse-steam-1-7-104` / `0x213af0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213af0.json` | matched | full | checked |
 | `bsshader/BSTextureSet` | `NiRefObject::~NiRefObject` (COMMUNITY) | `sse-steam-1-7-104` / `0x213be0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213be0.json` | matched | full | open |
 | `unmapped/leaves/LeafAddress213c20` | `BSMultiBoundAABB::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x213c20` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213c20.json` | matched | family | open |
@@ -9348,7 +9348,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafAddress213c40` | `LeafAddress213c40::Address` (GUESS) | `sse-steam-1-7-104` / `0x213c40` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213c40.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress213c50` | `BSPortal::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x213c50` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213c50.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf213c60` | `ReturnLeaf213c60::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x213c60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x213c60.json` | matched | family | open |
-| - | `BSMultiBoundAABB::GetLength` (COMMUNITY) | `sse-steam-1-7-104` / `0x213c70` / 43 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::GetLength` (COMMUNITY) | `sse-steam-1-7-104` / `0x213c70` / 43 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x213c70.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf216150` | `TableStoreLeaf216150::~TableStoreLeaf216150` (GUESS) | `sse-steam-1-7-104` / `0x216150` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x216150.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf216300` | `DeletingLeaf216300::~DeletingLeaf216300` (GUESS) | `sse-steam-1-7-104` / `0x216300` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x216300.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf216330` | `DeletingLeaf216330::~DeletingLeaf216330` (GUESS) | `sse-steam-1-7-104` / `0x216330` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x216330.json` | matched | family | open |
@@ -23745,12 +23745,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardfce410` | `LeafForwardfce410::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfce410` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce410.json` | matched | family | open |
 | `unmapped/leaves/LeafAddressfce6d0` | `LeafAddressfce6d0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfce6d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce6d0.json` | matched | family | open |
 | `gamebryo/nimain/BSMultiBoundAABB_fce820` | `BSMultiBoundOBB::Functionfce820` (GUESS) | `sse-steam-1-7-104` / `0xfce820` / 66 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce820.json` | matched | full | - |
-| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xfce870` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce870.json` | matched | full | checked |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::LoadBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xfce870` / 55 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xfce870.json` | matched | full | checked |
 | `unmapped/leaves/LeafForwardfce8b0` | `LeafForwardfce8b0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfce8b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfce8b0.json` | matched | family | open |
-| - | `BSMultiBoundAABB::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xfce8c0` / 19 | - | - | mapped | - | - |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::RegisterStreamables` (COMMUNITY) | `sse-steam-1-7-104` / `0xfce8c0` / 19 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xfce8c0.json` | matched | full | - |
 | `gamebryo/nimain/BSMultiBoundAABB_fcea20` | `BSMultiBoundAABB::Functionfcea20` (GUESS) | `sse-steam-1-7-104` / `0xfcea20` / 111 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfcea20.json` | matched | full | - |
-| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceaa0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfceaa0.json` | matched | label-only | open |
-| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::SetCenter` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceab0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfceab0.json` | matched | full | - |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceaa0` / 6 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xfceaa0.json` | matched | full | open |
+| `gamebryo/nimain/BSMultiBoundAABB` | `BSMultiBoundAABB::SetCenter` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceab0` / 18 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xfceab0.json` | matched | full | - |
 | `gamebryo/nimain/BSMultiBoundAABB_fcea20` | `BSMultiBoundAABB::Unk_28` (COMMUNITY) | `sse-steam-1-7-104` / `0xfceba0` / 276 | `o2-fpfast-root-includes` | `reports/sse-steam-1-7-104/0xfceba0.json` | matched | full | - |
 | - | `BSMultiBoundAABB::Unk_2A` (COMMUNITY) | `sse-steam-1-7-104` / `0xfcf0a0` / 163 | - | - | mapped | - | - |
 | - | `BSMultiBoundAABB::Unk_2B` (COMMUNITY) | `sse-steam-1-7-104` / `0xfcf150` / 65 | - | - | mapped | - | - |

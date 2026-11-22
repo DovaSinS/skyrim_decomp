@@ -79671,12 +79671,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2178160,
       "size": 43,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSMultiBoundAABB::GetLength",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 38. RVA 0x213c70; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-normal-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x213c70.json",
+      "report": "reports/sse-steam-1-7-104/0x213c70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x216150",
@@ -197529,12 +197530,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 16574656,
       "size": 19,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSMultiBoundAABB::RegisterStreamables",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 26. RVA 0xfce8c0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xfce8c0.json",
+      "report": "reports/sse-steam-1-7-104/0xfce8c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xfceaa0",
@@ -197547,7 +197549,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfceaa0.json",
       "report": "reports/sse-steam-1-7-104/0xfceaa0.json"
     },
     {
@@ -477373,7 +477375,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-22T02:25:44Z",
+  "updated_at": "2026-11-22T06:16:20Z",
   "work_items": [
     {
       "id": "pin-target",
