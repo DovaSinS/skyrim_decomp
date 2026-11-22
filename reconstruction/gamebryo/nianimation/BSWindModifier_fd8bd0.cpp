@@ -3,6 +3,7 @@
 // Adapted bodies: none
 // Code origin:
 // SPDX-License-Identifier: CC0-1.0
+// Recipe: reconstruction/recipes/msvc-19.16.27054-o2-root-includes.json
 // 0xfd8bd0 BSWindModifier::LoadBinary
 #include "BSWindModifier_fd8bd0.h"
 
