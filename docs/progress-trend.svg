@@ -7,9 +7,9 @@
 <path d="M55 180h330" stroke="#30363d"/>
 <path d="M55 140h330" stroke="#30363d"/>
 <path d="M55 100h330" stroke="#30363d"/>
-<polyline points="55.0,259.9 85.0,258.6 115.0,194.4 145.0,136.9 175.0,125.7 205.0,121.8 235.0,121.3 265.0,120.6 295.0,118.7 325.0,111.8 355.0,110.8 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
+<polyline points="55.0,259.9 85.0,258.6 115.0,194.4 145.0,137.0 175.0,125.8 205.0,121.9 235.0,121.3 265.0,120.6 295.0,118.8 325.0,111.9 355.0,110.8 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
 <circle cx="385.0" cy="110.0" r="4" fill="#3fb950"/>
-<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,634,435</text>
+<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,635,011</text>
 <text x="55.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="385.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-22</text>
 <text x="465" y="65" fill="#e6edf3" font-size="14">Functions matched, cumulative</text>
@@ -18,9 +18,9 @@
 <path d="M465 180h330" stroke="#30363d"/>
 <path d="M465 140h330" stroke="#30363d"/>
 <path d="M465 100h330" stroke="#30363d"/>
-<polyline points="465.0,260.0 495.0,258.9 525.0,191.2 555.0,152.6 585.0,132.7 615.0,126.4 645.0,126.2 675.0,125.5 705.0,122.7 735.0,112.8 765.0,111.5 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<polyline points="465.0,260.0 495.0,258.9 525.0,191.3 555.0,152.7 585.0,132.9 615.0,126.6 645.0,126.4 675.0,125.7 705.0,122.9 735.0,113.0 765.0,111.7 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <circle cx="795.0" cy="110.0" r="4" fill="#58a6ff"/>
-<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">33,461</text>
+<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">33,509</text>
 <text x="465.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="795.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-22</text>
 </g></svg>
