@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "1e381edc42fd4f2058adadc68e4ddd472b702e98ef40e1c436c52660cb5dbf35",
+        "object_sha256": "e763771583c2f3eb171e6ecceccc388b2e36b61d1fdfe9d73fa59f1d65801621",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiSourceTexture.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "599c0febce2763c5880508d0ea39a065f26bb4aa",
+    "base_sha": "0e81b617640bcf97f2a35b96790f3cf8fd3a9052",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "71284c5bf1bf1a358a9855e687ed99e4b9e1fc78",
+    "head_sha": "26e3c33e88593e449566262b2afcb62c5ab29c34",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44963824226,
+    "run_id": 44965324980,
     "rva": "0xef3520",
     "schema": 2,
-    "source_sha256": "2a8f45b6e7d5d6ddf56d7a8560ff1810898e37773c2de1941c33d3dccaa56113",
+    "source_sha256": "d19ca5828ef5296bb2d741fa7cca4a92fd9eff6ae238e04d2509ceea2db9dece",
     "status": "pass",
     "symbols": [
       "?Unk_26@NiSourceTexture@@UEAA_KXZ"
@@ -98,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "7e438384ba43c930914ede05af0aff19b7d6d2c0af8d801b6ef7ce838cafed38",
           "code_sections": 1,
-          "object_sha256": "1e381edc42fd4f2058adadc68e4ddd472b702e98ef40e1c436c52660cb5dbf35"
+          "object_sha256": "e763771583c2f3eb171e6ecceccc388b2e36b61d1fdfe9d73fa59f1d65801621"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,7 +161,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/gamebryo/nimain/NiSourceTexture.cpp",
-          "source_revision": "2a8f45b6e7d5d6ddf56d7a8560ff1810898e37773c2de1941c33d3dccaa56113"
+          "source_revision": "d19ca5828ef5296bb2d741fa7cca4a92fd9eff6ae238e04d2509ceea2db9dece"
         },
         "symbol_map_sha256": "0b61d22f288167e2880bb988df62d0ddae77af34301009dceae26de95b4a7df1",
         "target": {
@@ -174,7 +174,7 @@
   ],
   "source": {
     "compiled": "reconstruction/gamebryo/nimain/NiSourceTexture.cpp",
-    "digest": "2a8f45b6e7d5d6ddf56d7a8560ff1810898e37773c2de1941c33d3dccaa56113",
+    "digest": "d19ca5828ef5296bb2d741fa7cca4a92fd9eff6ae238e04d2509ceea2db9dece",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiSourceTexture.cpp",
