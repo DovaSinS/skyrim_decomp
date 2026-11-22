@@ -6707,6 +6707,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 1682864,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 1683088,
       "size": 48,
       "normalized_sha256": "55bc20568ebad2e0473a43dea622a5440aafcc316251af2cae645d66ea19f74e",
@@ -7260,6 +7267,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 1779920,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 1780032,
       "size": 48,
       "normalized_sha256": "55bc20568ebad2e0473a43dea622a5440aafcc316251af2cae645d66ea19f74e",
@@ -7607,6 +7621,13 @@
       "size": 9,
       "normalized_sha256": "f08f155aedae3cb0d34a1c64aec807ae946947996c441d0bb673585fb860f956",
       "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 1861536,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -11005,6 +11026,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 2106128,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 2106144,
       "size": 48,
       "normalized_sha256": "55bc20568ebad2e0473a43dea622a5440aafcc316251af2cae645d66ea19f74e",
@@ -11187,6 +11215,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 2121136,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 2121456,
       "size": 63,
       "normalized_sha256": "39186b42470097bbf3abf722f6b8a87ef9b1d53ea1136ae7ebc5c01adc6bdb3e",
@@ -11282,6 +11317,13 @@
       "size": 9,
       "normalized_sha256": "f08f155aedae3cb0d34a1c64aec807ae946947996c441d0bb673585fb860f956",
       "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 2142240,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -12591,6 +12633,13 @@
       "size": 63,
       "normalized_sha256": "8880e9f887e03729bba3e5fc3d183e1aaefc7537853093b0c6801ca2d97fe14a",
       "layout_sha256": "c705ff63c6a6b64ac67e619500cb99c402884b8fbf53568054e4403340a6a2ba",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 2415216,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -13949,55 +13998,6 @@
       "size": 5,
       "normalized_sha256": "fc46ea8acdf166d47f2230b3d3975fbd0a4a0f5c898b7c2b2ec854359cb94b85",
       "layout_sha256": "ce48747805fa6095b09c856f63fbe54b1e093993cd3782b8ba4d2bff17e43fe1",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2508272,
-      "size": 6,
-      "normalized_sha256": "279b4c2ec00911bcb78ec8348032650f4d68528163caaa6f41696d5fad4af6ba",
-      "layout_sha256": "9d58643cbb3362a29a8815087d3a450e31762453b56a9c53690e7a652423f93d",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2508384,
-      "size": 5,
-      "normalized_sha256": "fc46ea8acdf166d47f2230b3d3975fbd0a4a0f5c898b7c2b2ec854359cb94b85",
-      "layout_sha256": "ce48747805fa6095b09c856f63fbe54b1e093993cd3782b8ba4d2bff17e43fe1",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2508400,
-      "size": 6,
-      "normalized_sha256": "4fca81642fa138e4f488d46af3673795d31a2bdacc5d04c60d89c234e99744c9",
-      "layout_sha256": "9d58643cbb3362a29a8815087d3a450e31762453b56a9c53690e7a652423f93d",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2508416,
-      "size": 6,
-      "normalized_sha256": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67",
-      "layout_sha256": "9d58643cbb3362a29a8815087d3a450e31762453b56a9c53690e7a652423f93d",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2508832,
-      "size": 108,
-      "normalized_sha256": "3da85fea9b59692e4b22a687d63de4a15fa65042317dc0f4dfacbb9bcaa807c6",
-      "layout_sha256": "09dfc28f5544040d2ed42296cec0990345fc32976c1f48cc0d509bf68a55179f",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2510144,
-      "size": 52,
-      "normalized_sha256": "e04e2d4d55e2fca8e496f3088edbc3f6047249ecdde45b0bc353fb865275e60d",
-      "layout_sha256": "40d9d8dc6de771e9398d80d6317ed515a132ac69041d3e833f2bef2a7a550f26",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 2510208,
-      "size": 223,
-      "normalized_sha256": "1a47b6658b34fe8ba768b73a8149a97a11376056cc85c43ca845d88bb8bb6d06",
-      "layout_sha256": "19e0139611ecf7527dcb32fdc303fb03695b78924fc96c02258bd5da56b07cc9",
       "extraction": "linked-reference-inference"
     }
   ]

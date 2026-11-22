@@ -1,6 +1,62 @@
 {
   "functions": [
     {
+      "rva": 3742384,
+      "size": 52,
+      "normalized_sha256": "4ff03f7c1b373e6f8d088f66ae881192511602a2a991c055f29b69582465285d",
+      "layout_sha256": "40d9d8dc6de771e9398d80d6317ed515a132ac69041d3e833f2bef2a7a550f26",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3742436,
+      "size": 9,
+      "normalized_sha256": "5f1dc29e53cef7b747bfb11ba92c0bfceb12a312a34d540bbeb53d9ec92178c3",
+      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3742448,
+      "size": 9,
+      "normalized_sha256": "a29580deb2aae76a34f5285fa3dffd836701ef1141dae73e8b2dd319a06f0355",
+      "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3742464,
+      "size": 115,
+      "normalized_sha256": "eff2978767a1e98aed530b00be895c3069441ca4e4b89e06327e32ede2828153",
+      "layout_sha256": "6c4eb885d883b027b427918e60e1a44c7d7cd4f4dbd5ffbc672175bc72183863",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3742592,
+      "size": 10,
+      "normalized_sha256": "f992b9587d369fc5ed4fbe361afe38a516947634b9971b1203d8d4656d6d7afb",
+      "layout_sha256": "d88488bef45e3fa537a1e71bd587e85bfe4c45975a32004fec2bcd2942b2163d",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3743296,
+      "size": 5,
+      "normalized_sha256": "fc46ea8acdf166d47f2230b3d3975fbd0a4a0f5c898b7c2b2ec854359cb94b85",
+      "layout_sha256": "ce48747805fa6095b09c856f63fbe54b1e093993cd3782b8ba4d2bff17e43fe1",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3743312,
+      "size": 6,
+      "normalized_sha256": "e36623525b7c35b277173e56616b2d865cf6515aa2be1d12d6814ef725cecffb",
+      "layout_sha256": "9d58643cbb3362a29a8815087d3a450e31762453b56a9c53690e7a652423f93d",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3743424,
+      "size": 5,
+      "normalized_sha256": "fc46ea8acdf166d47f2230b3d3975fbd0a4a0f5c898b7c2b2ec854359cb94b85",
+      "layout_sha256": "ce48747805fa6095b09c856f63fbe54b1e093993cd3782b8ba4d2bff17e43fe1",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 3743440,
       "size": 6,
       "normalized_sha256": "d5e862db03db586015ddbdc56a392c7a359a0e23f10a6eb388cdbd1b168f4a01",
@@ -1846,6 +1902,13 @@
       "size": 9,
       "normalized_sha256": "f08f155aedae3cb0d34a1c64aec807ae946947996c441d0bb673585fb860f956",
       "layout_sha256": "2e19d555d009fa99d24bbd537521d623e895493acdded1cd85f1376706868397",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 3910112,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -4145,6 +4208,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 4179760,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 4179776,
       "size": 11,
       "normalized_sha256": "bdd9467f6ba55c7b1ef4f07967e3221e492e8dbfbfd011b087d04daa8aad8490",
@@ -4534,6 +4604,13 @@
       "size": 3,
       "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
       "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 4240224,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -5468,6 +5545,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 4409168,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 4409640,
       "size": 9,
       "normalized_sha256": "5527c4b69adeed4200a41503ff0f4b386a34ddb7c177a988f3dc59251bfc33ca",
@@ -5846,6 +5930,13 @@
       "extraction": "linked-reference-inference"
     },
     {
+      "rva": 4460960,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 4460976,
       "size": 48,
       "normalized_sha256": "55bc20568ebad2e0473a43dea622a5440aafcc316251af2cae645d66ea19f74e",
@@ -5913,6 +6004,13 @@
       "size": 8,
       "normalized_sha256": "42bf2fe8994233d2e2eaf9d217f425ee1530fb5e5d6924672ca17f13bdf43411",
       "layout_sha256": "b0683700c0c970d3a39bb25dc4d20b03d5f5c429ece8a4b3d664468187f362bb",
+      "extraction": "linked-reference-inference"
+    },
+    {
+      "rva": 4484016,
+      "size": 12,
+      "normalized_sha256": "eed8114835129f61005e1bc113c120001debcb6b9112839ad849d1448f246e43",
+      "layout_sha256": "8c5019b3a914c04915e79ec940669c5628a92b3b48fc74ec36bdd88db5442fba",
       "extraction": "linked-reference-inference"
     },
     {
@@ -13900,104 +13998,6 @@
       "size": 3,
       "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
       "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4858672,
-      "size": 3,
-      "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
-      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4858688,
-      "size": 3,
-      "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
-      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4871744,
-      "size": 4,
-      "normalized_sha256": "cbc18d5e3d66ae414162c4a417b073a375f2804b50567d073ef1c62e50d8d523",
-      "layout_sha256": "c9ff3f77172dc6cbc4b9ea367653a87153524e8099ebb47f427202d935b0bc13",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4871872,
-      "size": 3,
-      "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
-      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4872736,
-      "size": 3,
-      "normalized_sha256": "b6cbececf1b07e74f37d57710c68c31f0b92cb08d51093252b321b07542e177b",
-      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877216,
-      "size": 100,
-      "normalized_sha256": "d1d86665648c241e374aa86928d18da9c8fbda3c126fc1e3b76d810b434f6f94",
-      "layout_sha256": "23d76f0baf6fa40e4b441937625662009b6eb28e10fc53c8fb54be5e273471c2",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877328,
-      "size": 38,
-      "normalized_sha256": "0310bdfc2723b3854d6fbd33ec0351a8e25525ff7ae12b7de782da04a3cea45f",
-      "layout_sha256": "560ce86927fec643c9010e0fb9b5aad7f38261e2f90c1c1d79be444b7d4ae64b",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877424,
-      "size": 96,
-      "normalized_sha256": "8184ed8a2c4f6a6231a3a95cf2d8d2a650c0da99bbe317f6d535f8a35658ef0f",
-      "layout_sha256": "2bff1bb55a68652564f01ef68b42940c15ceb6b7c05027fb5d09041277ace6dd",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877712,
-      "size": 78,
-      "normalized_sha256": "8e3b0c4db78eb3815358aa7d934e07315f7c6cc10afb0cf621b4543bda9d62fb",
-      "layout_sha256": "b0f775e41a6c2bf8fe58de5b31c8b83bc506e47c8ded52afe521309a9f899e0a",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877808,
-      "size": 29,
-      "normalized_sha256": "76b63e3ab6e7e429be1f6571c78a528e53c3a2859febff12786a8b87bcb3647a",
-      "layout_sha256": "8eed396ab6d1c1a26f7974ced019a63b2de7ce6ff858fa68c5daef57cdf8b279",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4877856,
-      "size": 59,
-      "normalized_sha256": "b4c1297531f9a4ee15805989e0796ca28607468c790fcf1cb2734c219a37caa5",
-      "layout_sha256": "50332bd112d0ce922a7227ae076fdd162a95880ce1b63dc2a444b5ee71ad0612",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4880016,
-      "size": 74,
-      "normalized_sha256": "aef7f2eb79c77953304cf98f9bd57a76614b4c177a211a5db6da141214bdf712",
-      "layout_sha256": "eb8910eb9384521cf352ff63cd612e27aea46dd27bf14726d830ce5f90afa6bf",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4880096,
-      "size": 85,
-      "normalized_sha256": "0e5e9506412fdaacf1118380f9e2c2fd036a65c3770b1e66f00748f18c1c32ba",
-      "layout_sha256": "c33be9ac8bd339238d42d8a5013a15a31b2768703f5840419ca36b7756df9325",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 4880944,
-      "size": 36,
-      "normalized_sha256": "e821e674aedbd28fd4d95923b29947b1877cf8c9dc82180ba33142c3f131b7ce",
-      "layout_sha256": "98a3199051caf8f44ba4b8a586b392fdacaae1df07943edfd7569fba8cdeaab4",
       "extraction": "linked-reference-inference"
     }
   ]
