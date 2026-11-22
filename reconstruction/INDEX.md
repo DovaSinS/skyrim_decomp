@@ -28464,8 +28464,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function15827a0` (GUESS) | `sse-steam-1-7-104` / `0x15827a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15827a0.json` | matched | full | - |
 | `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function1582870` (GUESS) | `sse-steam-1-7-104` / `0x1582870` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1582870.json` | matched | full | - |
 | - | `BSShaderResourceManager::Function1582890` (GUESS) | `sse-steam-1-7-104` / `0x1582890` / 25 | - | - | mapped | - | - |
-| - | `BSShaderResourceManager::Function15828b0` (GUESS) | `sse-steam-1-7-104` / `0x15828b0` / 7 | - | - | mapped | - | - |
-| - | `BSShaderResourceManager::Function15828c0` (GUESS) | `sse-steam-1-7-104` / `0x15828c0` / 9 | - | - | mapped | - | - |
+| `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function15828b0` (GUESS) | `sse-steam-1-7-104` / `0x15828b0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15828b0.json` | matched | full | - |
+| `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function15828c0` (GUESS) | `sse-steam-1-7-104` / `0x15828c0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15828c0.json` | matched | full | - |
 | `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function15829a0` (GUESS) | `sse-steam-1-7-104` / `0x15829a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15829a0.json` | matched | full | - |
 | `bsshader/BSShaderResourceManager` | `BSShaderResourceManager::Function15829c0` (GUESS) | `sse-steam-1-7-104` / `0x15829c0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15829c0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf15829d0` | `DeletingLeaf15829d0::~DeletingLeaf15829d0` (GUESS) | `sse-steam-1-7-104` / `0x15829d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15829d0.json` | matched | family | open |

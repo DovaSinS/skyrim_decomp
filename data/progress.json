@@ -445355,24 +445355,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22554800,
       "size": 7,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSShaderResourceManager::Function15828b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of BSShaderResourceManager that is not its primary vftable. No usable method name in the pinned sources. RVA 0x15828b0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15828b0.json",
+      "report": "reports/sse-steam-1-7-104/0x15828b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15828c0",
       "build_id": "sse-steam-1-7-104",
       "rva": 22554816,
       "size": 9,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSShaderResourceManager::Function15828c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class from an image RTTI vftable of BSShaderResourceManager that is not its primary vftable. No usable method name in the pinned sources. RVA 0x15828c0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x15828c0.json",
+      "report": "reports/sse-steam-1-7-104/0x15828c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x15829a0",
@@ -476873,7 +476875,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-22T00:14:24Z",
+  "updated_at": "2026-11-22T00:25:08Z",
   "work_items": [
     {
       "id": "pin-target",
