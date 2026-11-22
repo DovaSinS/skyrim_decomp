@@ -1,6 +1,13 @@
 {
   "functions": [
     {
+      "rva": 16479120,
+      "size": 5,
+      "normalized_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "layout_sha256": "1590fd3a1613a874ac5d81590a852650aa34f6d09308d8b24a20583091a31c49",
+      "extraction": "linked-reference-inference"
+    },
+    {
       "rva": 16479136,
       "size": 5,
       "normalized_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
@@ -13988,13 +13995,6 @@
     },
     {
       "rva": 19394496,
-      "size": 53,
-      "normalized_sha256": "c304fd3690b084c7db7b6413e711b0fd9145cfdd8ae7efa26c234fcd16d2e1e6",
-      "layout_sha256": "6108052d94aee6617d47c8fdc8a113c6ce8c408b5da232c36161acaf37ef3873",
-      "extraction": "linked-reference-inference"
-    },
-    {
-      "rva": 19394560,
       "size": 53,
       "normalized_sha256": "c304fd3690b084c7db7b6413e711b0fd9145cfdd8ae7efa26c234fcd16d2e1e6",
       "layout_sha256": "6108052d94aee6617d47c8fdc8a113c6ce8c408b5da232c36161acaf37ef3873",
