@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "d5ad75d69bebbac51f1f8f0966e5df10c506a9182510e55151a8d7d8c3b13506",
+        "object_sha256": "edffcfe0a898b120c03837df82c5b7de3851cb49a7d990825524d66d8b3bf8cd",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsshader/BSShaderResourceManager.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "471fc36c91a5bc64496e22e894c847db7374e7a0",
+    "base_sha": "65e3b0df1933f7c611db054ababbe4be56e3e656",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "9a074deffd84ac9119b8b87ef21e082017717bc8",
+    "head_sha": "aec4678e4d5f71ee58ad4b76255b33516f8b9ffc",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44966087753,
+    "run_id": 44967984790,
     "rva": "0x1582100",
     "schema": 2,
-    "source_sha256": "3a6a355b1304f00ca8e1433caef643ad774997370052240cbf27f3b785f624de",
+    "source_sha256": "7de62958c001a2d46bb40a72ff695552052c4369817eb5d0f1d77dd07f00769d",
     "status": "pass",
     "symbols": [
       "?Function1582100@BSShaderResourceManager@@QEAAXXZ"
@@ -98,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "9e3c3049234d24a2f4f666f5d62180924c2888f18b088dba271fab3ef6dd83f3",
           "code_sections": 1,
-          "object_sha256": "d5ad75d69bebbac51f1f8f0966e5df10c506a9182510e55151a8d7d8c3b13506"
+          "object_sha256": "edffcfe0a898b120c03837df82c5b7de3851cb49a7d990825524d66d8b3bf8cd"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,9 +161,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsshader/BSShaderResourceManager.cpp",
-          "source_revision": "3a6a355b1304f00ca8e1433caef643ad774997370052240cbf27f3b785f624de"
+          "source_revision": "7de62958c001a2d46bb40a72ff695552052c4369817eb5d0f1d77dd07f00769d"
         },
-        "symbol_map_sha256": "d738cd0f1e2f109caf0598621f6af1b74ad7164de1f66bc64853ed7e93cbd182",
+        "symbol_map_sha256": "1e2caa0393c1612ae9921c5035b1cb8a16f7c35a20f8ee8afd52e6f87406e56d",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -174,17 +174,17 @@
   ],
   "source": {
     "compiled": "reconstruction/bsshader/BSShaderResourceManager.cpp",
-    "digest": "3a6a355b1304f00ca8e1433caef643ad774997370052240cbf27f3b785f624de",
+    "digest": "7de62958c001a2d46bb40a72ff695552052c4369817eb5d0f1d77dd07f00769d",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsshader/BSShaderResourceManager.cpp",
       "reconstruction/bsshader/BSShaderResourceManager.h"
     ]
   },
-  "submitter": "v-macrev",
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/d738cd0f1e2f109caf0598621f6af1b74ad7164de1f66bc64853ed7e93cbd182.json",
-    "sha256": "d738cd0f1e2f109caf0598621f6af1b74ad7164de1f66bc64853ed7e93cbd182"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/1e2caa0393c1612ae9921c5035b1cb8a16f7c35a20f8ee8afd52e6f87406e56d.json",
+    "sha256": "1e2caa0393c1612ae9921c5035b1cb8a16f7c35a20f8ee8afd52e6f87406e56d"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
