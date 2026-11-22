@@ -3,7 +3,7 @@
 // Code origin: brown-room reconstruction from disassembly
 // BSPCGamepadDeviceHandler, currentPCGamePadDelegate, Process, IsEnabled: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT) EXE_RTTI
 // Shutdown, GetButtonNameFromID, GetMappingKey, GetKeyCodeFromID, ClearInputState, BSIInputDevice vtable order: CRASHLOGGER_PDB(59818@2026.10.24)
-// ProcessGamepadEnabledChange: GUESS(low)
+// ProcessGamepadEnabledChange, Functione11f70: GUESS(low)
 #pragma once
 #include <cstdint>
 #include <cstddef>
@@ -32,6 +32,7 @@ public:
     bool GetKeyCodeFromID(std::int32_t a_id, std::uint32_t* a_code) override;
     bool IsEnabled() const override;
     void ClearInputState() override;
+    std::uint32_t Functione11f70() const;
     void InitializeDelegate();
     BSPCGamepadDeviceDelegate* currentPCGamePadDelegate;
 };

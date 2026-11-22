@@ -1,10 +1,8 @@
-// Source exposure: mixed (community headers; the pinned image listing).
-// Adapted bodies: none
-// 0x15828b0 BSShaderResourceManager::Function15828b0
-// 0x15828c0 BSShaderResourceManager::Function15828c0
-// Source exposure: mixed (published inventory and listings from the pinned image).
+// Source exposure: mixed (published inventory and listings from the pinned image; the five new bodies from the pinned image listing).
 // Code origin: original forwarding methods inferred from the pinned image.
+// SPDX-License-Identifier: CC0-1.0
 // Adapted bodies: none
+// Drafted by v-macrev, assisted by claude-haiku-5-5.
 // 0x1582070 BSShaderResourceManager::Function1582070
 // 0x1582100 BSShaderResourceManager::Function1582100
 // 0x1582120 BSShaderResourceManager::Function1582120
@@ -22,11 +20,15 @@
 // 0x1582660 BSShaderResourceManager::Function1582660
 // 0x15826f0 BSShaderResourceManager::Function15826f0
 // 0x1582710 BSShaderResourceManager::Function1582710
+// 0x1582730 BSShaderResourceManager::Function1582730
+// 0x1582760 BSShaderResourceManager::Function1582760
 // 0x15827a0 BSShaderResourceManager::Function15827a0
 // 0x1582870 BSShaderResourceManager::Function1582870
+// 0x1582890 BSShaderResourceManager::Function1582890
+// 0x15828b0 BSShaderResourceManager::Function15828b0
+// 0x15828c0 BSShaderResourceManager::Function15828c0
 // 0x15829a0 BSShaderResourceManager::Function15829a0
 // 0x15829c0 BSShaderResourceManager::Function15829c0
-// Drafted by v-macrev, assisted by claude-haiku-5-5.
 #include "BSShaderResourceManager.h"
 
 // TextureLookupState, g_textureLookupState: STANDIN GUESS(low)
@@ -184,4 +186,26 @@ void BSShaderResourceManager::Function15829a0()
 void BSShaderResourceManager::Function15829c0()
 {
     return Function154afb0(g_shaderResourceState);
+}
+
+void BSShaderResourceManager::Function1582730(LookupSource* a_source, unsigned* a_out1, unsigned* a_out2)
+{
+    void* data = a_source->data48;
+    if (data) {
+        Function100f230(gLookupGlobal, data);
+    } else {
+        *a_out1 = 0;
+        *a_out2 = 0;
+    }
+}
+
+void BSShaderResourceManager::Function1582760(void* a_arg1, void* a_arg2, std::uint64_t a_arg3)
+{
+    unsigned mask = static_cast<unsigned>((a_arg3 << 2) & 0x3C);
+    Function100d6f0(gLookupGlobal, a_arg1, a_arg2, mask, a_arg3, true);
+}
+
+void BSShaderResourceManager::Function1582890(void* a1, void* a2, void* a3, void* a4)
+{
+    Function1019c00(a1, a2, a3, a4);
 }

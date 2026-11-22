@@ -6,9 +6,29 @@
 // 0xe11f50 BSPCGamepadDeviceHandler::GetButtonNameFromID
 // 0xe11f90 BSPCGamepadDeviceHandler::GetKeyCodeFromID
 // 0xe11fb0 BSPCGamepadDeviceHandler::ClearInputState
+// 0xe11f70 BSPCGamepadDeviceHandler::Functione11f70
 // 0xe12390 BSPCGamepadDeviceHandler::~BSPCGamepadDeviceHandler
 // 0xe12490 BSPCGamepadDeviceHandler::IsEnabled
 #include "BSPCGamepadDeviceHandler.h"
+// GamepadDelegateStub: GUESS(low); local view of the delegate's vtable slot 5, whose header name is
+// not used here so the call keeps the shape that was compared.
+class GamepadDelegateStub
+{
+public:
+    virtual ~GamepadDelegateStub() = default;
+    virtual void Slot01();
+    virtual void Slot02();
+    virtual void Slot03();
+    virtual bool Slot04();
+    virtual std::uint32_t Slot05();
+};
+std::uint32_t BSPCGamepadDeviceHandler::Functione11f70() const
+{
+    if (currentPCGamePadDelegate) {
+        return reinterpret_cast<GamepadDelegateStub*>(currentPCGamePadDelegate)->Slot05();
+    }
+    return 0xFFFFFFFFu;
+}
 BSPCGamepadDeviceHandler::BSPCGamepadDeviceHandler() {}
 BSPCGamepadDeviceHandler::~BSPCGamepadDeviceHandler() { if (currentPCGamePadDelegate) delete currentPCGamePadDelegate; }
 void BSPCGamepadDeviceHandler::Process(float a_elapsed) { if (!currentPCGamePadDelegate) { if (!ProcessGamepadEnabledChange) return; InitializeDelegate(); if (!currentPCGamePadDelegate) return; } currentPCGamePadDelegate->Process(a_elapsed); }
