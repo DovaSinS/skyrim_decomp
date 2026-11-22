@@ -44,7 +44,7 @@ counts exclude those and unreported claims. One KiB is
 | Claude | 20,740 |
 | GPT / Codex | 125,145 |
 | Other models | 8,456 |
-| Contributors (human / unstated) | 1,822 |
+| Contributors (human / unstated) | 1,886 |
 | Scripts and tools | 1,440,471 |
 | Not reported | 48,681 |
 <!-- /model-trend-totals -->
