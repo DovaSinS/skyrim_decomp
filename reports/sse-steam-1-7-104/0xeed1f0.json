@@ -27,7 +27,7 @@
           "/Ireconstruction",
           "/showIncludes"
         ],
-        "object_sha256": "ea5cd17615490376006b39f4bdebc56204e3db4479107dab98707d7a2c456a0e",
+        "object_sha256": "47a44b32b0aa5ad9916c716de082f33b579f77b2e0e4463273b2160896c5f140",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiAVObject.h",
@@ -39,7 +39,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "521df5ee2e9e1e9d674ddafa702e4bf5bdb74068",
+    "base_sha": "acc93363c6e6d62414ee3cd3a56de6902ec418c9",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -50,7 +50,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "9ad3e2adf9533b457f6d7591cbcbaa9acb2c1dde",
+    "head_sha": "0095a728b0a79c36acb8cdf2f35286ac8007e329",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -63,10 +63,10 @@
     "recipe_sha256": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44931470616,
+    "run_id": 45042950115,
     "rva": "0xeed1f0",
     "schema": 2,
-    "source_sha256": "148e4a3f74ac70ccbb5165818e63aecfb47fc403e9f2852c7cb0c9953528a77c",
+    "source_sha256": "2a5ef880835239b4e2f320366a005e319dfb14a56e30d7d6ad23bf94ed1850ed",
     "status": "pass",
     "symbols": [
       "??1NiLight@@UEAA@XZ"
@@ -82,6 +82,7 @@
     "unit": "reconstruction/gamebryo/nimain/NiLight_eed1f0.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0xeed1f0",
   "match_record_schema": 2,
   "notes": [
@@ -101,7 +102,7 @@
         "candidate": {
           "code_section_sha256": "d45c0dcb54fd50ab13a348805c2a2894d076ea9334e4e474b517916d9a08adb4",
           "code_sections": 1,
-          "object_sha256": "ea5cd17615490376006b39f4bdebc56204e3db4479107dab98707d7a2c456a0e"
+          "object_sha256": "47a44b32b0aa5ad9916c716de082f33b579f77b2e0e4463273b2160896c5f140"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -165,7 +166,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/gamebryo/nimain/NiLight_eed1f0.cpp",
-          "source_revision": "148e4a3f74ac70ccbb5165818e63aecfb47fc403e9f2852c7cb0c9953528a77c"
+          "source_revision": "2a5ef880835239b4e2f320366a005e319dfb14a56e30d7d6ad23bf94ed1850ed"
         },
         "symbol_map_sha256": "f9c8308fdc300ce634df641a44f988784866dee32c88c8a32bdbdb719dccbf8c",
         "target": {
@@ -178,7 +179,7 @@
   ],
   "source": {
     "compiled": "reconstruction/gamebryo/nimain/NiLight_eed1f0.cpp",
-    "digest": "148e4a3f74ac70ccbb5165818e63aecfb47fc403e9f2852c7cb0c9953528a77c",
+    "digest": "2a5ef880835239b4e2f320366a005e319dfb14a56e30d7d6ad23bf94ed1850ed",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiAVObject.h",
@@ -187,7 +188,7 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "eclepso",
+  "submitter": "aivv73",
   "symbol_map": {
     "path": "reports/sse-steam-1-7-104/unit-symbols/f9c8308fdc300ce634df641a44f988784866dee32c88c8a32bdbdb719dccbf8c.json",
     "sha256": "f9c8308fdc300ce634df641a44f988784866dee32c88c8a32bdbdb719dccbf8c"

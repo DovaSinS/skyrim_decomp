@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "d4a4c116cc9d2504d7b2fa25dd7120739c0cb4d06b6845ba67d8b117db11c311",
+        "object_sha256": "1f3229c4240e5f63cd63e2ef95c2e7463cb0eb4c4780d8c09e7fe951245f4cb1",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/BSGeometry.cpp",
@@ -38,7 +38,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "521df5ee2e9e1e9d674ddafa702e4bf5bdb74068",
+    "base_sha": "acc93363c6e6d62414ee3cd3a56de6902ec418c9",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -49,7 +49,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "9ad3e2adf9533b457f6d7591cbcbaa9acb2c1dde",
+    "head_sha": "0095a728b0a79c36acb8cdf2f35286ac8007e329",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -62,10 +62,10 @@
     "recipe_sha256": "82cadfcb4415b21c1f923d1c9f2f49e7a72cf49fbb5c4765d3fe6f78ad23c4a3",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44931470616,
+    "run_id": 45042950115,
     "rva": "0xefc380",
     "schema": 2,
-    "source_sha256": "49c029c5c27cf997d6d2ddbaace8c660a7474b67576ec8601e7b6078c9966386",
+    "source_sha256": "2cc8b9191bb91099c9ebb1a2bf2e852e3de33c94dddb64e33a107476206b2926",
     "status": "pass",
     "symbols": [
       "?RegisterStreamables@BSGeometry@@UEAA_NAEAVNiStream@@@Z"
@@ -81,6 +81,7 @@
     "unit": "reconstruction/gamebryo/nimain/BSGeometry.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0xefc380",
   "match_record_schema": 2,
   "notes": [
@@ -100,7 +101,7 @@
         "candidate": {
           "code_section_sha256": "378c934dd5e6079842b8826967f374a261cbda56a871f844023b598c5d086df3",
           "code_sections": 1,
-          "object_sha256": "d4a4c116cc9d2504d7b2fa25dd7120739c0cb4d06b6845ba67d8b117db11c311"
+          "object_sha256": "1f3229c4240e5f63cd63e2ef95c2e7463cb0eb4c4780d8c09e7fe951245f4cb1"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -163,7 +164,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/gamebryo/nimain/BSGeometry.cpp",
-          "source_revision": "49c029c5c27cf997d6d2ddbaace8c660a7474b67576ec8601e7b6078c9966386"
+          "source_revision": "2cc8b9191bb91099c9ebb1a2bf2e852e3de33c94dddb64e33a107476206b2926"
         },
         "symbol_map_sha256": "51035eee2dd08099df5b2ae6eec956c7464bfbf5e3b2d773c28cd9ea22e267f9",
         "target": {
@@ -176,7 +177,7 @@
   ],
   "source": {
     "compiled": "reconstruction/gamebryo/nimain/BSGeometry.cpp",
-    "digest": "49c029c5c27cf997d6d2ddbaace8c660a7474b67576ec8601e7b6078c9966386",
+    "digest": "2cc8b9191bb91099c9ebb1a2bf2e852e3de33c94dddb64e33a107476206b2926",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/BSGeometry.cpp",
@@ -185,7 +186,7 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "eclepso",
+  "submitter": "aivv73",
   "symbol_map": {
     "path": "reports/sse-steam-1-7-104/unit-symbols/51035eee2dd08099df5b2ae6eec956c7464bfbf5e3b2d773c28cd9ea22e267f9.json",
     "sha256": "51035eee2dd08099df5b2ae6eec956c7464bfbf5e3b2d773c28cd9ea22e267f9"

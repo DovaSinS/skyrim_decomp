@@ -27,7 +27,7 @@
           "/Ireconstruction",
           "/showIncludes"
         ],
-        "object_sha256": "7188a21daeb82c5b5ad09c799be98d27a44f528447939c17c68678c6fc893a49",
+        "object_sha256": "14ae7a92cf7a19ce8f19d1dd45c2324685b0fd6976a2ee9784be8d4d91cbc5fa",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiAVObject.h",
@@ -39,7 +39,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "a7fc5e0bc56d298d95e7e3d1b8781174f32f042e",
+    "base_sha": "acc93363c6e6d62414ee3cd3a56de6902ec418c9",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -50,7 +50,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "0d2552c423033a705520733c9da73ade82e2bd32",
+    "head_sha": "0095a728b0a79c36acb8cdf2f35286ac8007e329",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -63,10 +63,10 @@
     "recipe_sha256": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 45034404545,
+    "run_id": 45042950115,
     "rva": "0x516660",
     "schema": 2,
-    "source_sha256": "c6235e3febbc703418bbc530a74251f56cae5c9beb844a62546515be74e6d9e8",
+    "source_sha256": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88",
     "status": "pass",
     "symbols": [
       "?GetDiffuseTextureForPoint@BGSTerrainManager@@QEAAPEAVNiTexture@@AEBVNiPoint3@@@Z"
@@ -82,6 +82,7 @@
     "unit": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0x516660",
   "match_record_schema": 2,
   "notes": [
@@ -101,7 +102,7 @@
         "candidate": {
           "code_section_sha256": "a3daf25c9aef00375886dbb869c509c7d0ba984a94e89317add602885c294a92",
           "code_sections": 1,
-          "object_sha256": "7188a21daeb82c5b5ad09c799be98d27a44f528447939c17c68678c6fc893a49"
+          "object_sha256": "14ae7a92cf7a19ce8f19d1dd45c2324685b0fd6976a2ee9784be8d4d91cbc5fa"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -165,7 +166,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
-          "source_revision": "c6235e3febbc703418bbc530a74251f56cae5c9beb844a62546515be74e6d9e8"
+          "source_revision": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88"
         },
         "symbol_map_sha256": "0eda29373066902166ce1665e0e6a68c622358c75c1020a831786e5f8935b69f",
         "target": {
@@ -178,7 +179,7 @@
   ],
   "source": {
     "compiled": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
-    "digest": "c6235e3febbc703418bbc530a74251f56cae5c9beb844a62546515be74e6d9e8",
+    "digest": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiAVObject.h",

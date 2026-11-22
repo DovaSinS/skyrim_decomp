@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "c642cae0d6785158c5ab9866d77168c93927c9587bfe5ef8203cbfd3c521606f",
+        "object_sha256": "dedac5c4038753576840035597165d10da30bc6cf5cfea6eb4a1e033ce34f309",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiAVObject.cpp",
@@ -37,7 +37,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "521df5ee2e9e1e9d674ddafa702e4bf5bdb74068",
+    "base_sha": "acc93363c6e6d62414ee3cd3a56de6902ec418c9",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -48,7 +48,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "9ad3e2adf9533b457f6d7591cbcbaa9acb2c1dde",
+    "head_sha": "0095a728b0a79c36acb8cdf2f35286ac8007e329",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -61,10 +61,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44931470616,
+    "run_id": 45042950115,
     "rva": "0xee0a00",
     "schema": 2,
-    "source_sha256": "8097e0178b00f21f44cbf5e2055c060891d01d4eca72c951cda5432e2682e3d3",
+    "source_sha256": "727a2b2eccd7ca9f92146b1e235e9c4deed99100c3de8f43e1b2643bf85428f9",
     "status": "pass",
     "symbols": [
       "?PerformOp@NiAVObject@@UEAAXAEAVPerformOpFunc@@@Z"
@@ -80,6 +80,7 @@
     "unit": "reconstruction/gamebryo/nimain/NiAVObject.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0xee0a00",
   "match_record_schema": 2,
   "notes": [
@@ -99,7 +100,7 @@
         "candidate": {
           "code_section_sha256": "3cc7b77ce82981f907a1ff30e7fb456f0644a504c1cb30335020f0d00e445212",
           "code_sections": 1,
-          "object_sha256": "c642cae0d6785158c5ab9866d77168c93927c9587bfe5ef8203cbfd3c521606f"
+          "object_sha256": "dedac5c4038753576840035597165d10da30bc6cf5cfea6eb4a1e033ce34f309"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -160,9 +161,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/gamebryo/nimain/NiAVObject.cpp",
-          "source_revision": "8097e0178b00f21f44cbf5e2055c060891d01d4eca72c951cda5432e2682e3d3"
+          "source_revision": "727a2b2eccd7ca9f92146b1e235e9c4deed99100c3de8f43e1b2643bf85428f9"
         },
-        "symbol_map_sha256": "e441460e22c67e8e90dcf758f0d844def9928140c20f56d31df8f0ef81f31a71",
+        "symbol_map_sha256": "833f1901ea0acb64906b694bf45b9fd6f5c06c6ad24913bdacd8aa5a1d440add",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -173,7 +174,7 @@
   ],
   "source": {
     "compiled": "reconstruction/gamebryo/nimain/NiAVObject.cpp",
-    "digest": "8097e0178b00f21f44cbf5e2055c060891d01d4eca72c951cda5432e2682e3d3",
+    "digest": "727a2b2eccd7ca9f92146b1e235e9c4deed99100c3de8f43e1b2643bf85428f9",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiAVObject.cpp",
@@ -181,10 +182,10 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "eclepso",
+  "submitter": "aivv73",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/e441460e22c67e8e90dcf758f0d844def9928140c20f56d31df8f0ef81f31a71.json",
-    "sha256": "e441460e22c67e8e90dcf758f0d844def9928140c20f56d31df8f0ef81f31a71"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/833f1901ea0acb64906b694bf45b9fd6f5c06c6ad24913bdacd8aa5a1d440add.json",
+    "sha256": "833f1901ea0acb64906b694bf45b9fd6f5c06c6ad24913bdacd8aa5a1d440add"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
