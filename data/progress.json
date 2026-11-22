@@ -409854,12 +409854,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19242160,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1259cb0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1259cb0.json",
+      "report": "reports/sse-steam-1-7-104/0x1259cb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1259d40",
@@ -409878,12 +409879,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19242256,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1259d10CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1259d10.json",
+      "report": "reports/sse-steam-1-7-104/0x1259d10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1259da0",
@@ -409930,12 +409932,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19411584,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1283280CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1283280.json",
+      "report": "reports/sse-steam-1-7-104/0x1283280.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1283370",
@@ -410262,12 +410265,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586544,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12addf0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12addf0.json",
+      "report": "reports/sse-steam-1-7-104/0x12addf0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adf70",
@@ -410314,12 +410318,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586640,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12ade50CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12ade50.json",
+      "report": "reports/sse-steam-1-7-104/0x12ade50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12adfd0",
@@ -410394,12 +410399,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19586784,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12adee0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12adee0.json",
+      "report": "reports/sse-steam-1-7-104/0x12adee0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12ae060",
@@ -410418,12 +410424,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19645936,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12bc5f0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12bc5f0.json",
+      "report": "reports/sse-steam-1-7-104/0x12bc5f0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12bc650",
@@ -410470,12 +410477,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19700112,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12c9990CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12c9990.json",
+      "report": "reports/sse-steam-1-7-104/0x12c9990.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12c99f0",
@@ -410494,12 +410502,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19700160,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12c99c0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12c99c0.json",
+      "report": "reports/sse-steam-1-7-104/0x12c99c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12c9a20",
@@ -410630,12 +410639,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20155552,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1338ca0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1338ca0.json",
+      "report": "reports/sse-steam-1-7-104/0x1338ca0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338d60",
@@ -410654,12 +410664,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20155600,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1338cd0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(medium): target RTTI interface owner; source-container spelling unverified. Inventory identity only; no accepted function or complete original layout claimed.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1338cd0.json",
+      "report": "reports/sse-steam-1-7-104/0x1338cd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1338d90",
@@ -473531,12 +473542,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19411488,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1283220CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1283220; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1283220.json",
+      "report": "reports/sse-steam-1-7-104/0x1283220.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1284160",
@@ -473907,96 +473919,104 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19901216,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fab20CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fab20; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fab20.json",
+      "report": "reports/sse-steam-1-7-104/0x12fab20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fab50",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901264,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fab50CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fab50; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fab50.json",
+      "report": "reports/sse-steam-1-7-104/0x12fab50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fab80",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901312,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fab80CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fab80; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fab80.json",
+      "report": "reports/sse-steam-1-7-104/0x12fab80.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fabb0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901360,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fabb0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fabb0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fabb0.json",
+      "report": "reports/sse-steam-1-7-104/0x12fabb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fabe0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901408,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fabe0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fabe0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fabe0.json",
+      "report": "reports/sse-steam-1-7-104/0x12fabe0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fac10",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901456,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fac10CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fac10; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fac10.json",
+      "report": "reports/sse-steam-1-7-104/0x12fac10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fac40",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901504,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fac40CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fac40; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fac40.json",
+      "report": "reports/sse-steam-1-7-104/0x12fac40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fac70",
       "build_id": "sse-steam-1-7-104",
       "rva": 19901552,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature12fac70CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x12fac70; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x12fac70.json",
+      "report": "reports/sse-steam-1-7-104/0x12fac70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x12fc9e0",
@@ -474016,72 +474036,78 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 19940320,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13043e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13043e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13043e0.json",
+      "report": "reports/sse-steam-1-7-104/0x13043e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1304410",
       "build_id": "sse-steam-1-7-104",
       "rva": 19940368,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1304410CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1304410; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1304410.json",
+      "report": "reports/sse-steam-1-7-104/0x1304410.json"
     },
     {
       "id": "sse-steam-1-7-104-0x130dbe0",
       "build_id": "sse-steam-1-7-104",
       "rva": 19979232,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature130dbe0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x130dbe0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x130dbe0.json",
+      "report": "reports/sse-steam-1-7-104/0x130dbe0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x130dc10",
       "build_id": "sse-steam-1-7-104",
       "rva": 19979280,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature130dc10CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x130dc10; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x130dc10.json",
+      "report": "reports/sse-steam-1-7-104/0x130dc10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x130dc40",
       "build_id": "sse-steam-1-7-104",
       "rva": 19979328,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature130dc40CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x130dc40; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x130dc40.json",
+      "report": "reports/sse-steam-1-7-104/0x130dc40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x130dc70",
       "build_id": "sse-steam-1-7-104",
       "rva": 19979376,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature130dc70CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x130dc70; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x130dc70.json",
+      "report": "reports/sse-steam-1-7-104/0x130dc70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x133c360",
@@ -474231,24 +474257,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20214240,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13471e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13471e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13471e0.json",
+      "report": "reports/sse-steam-1-7-104/0x13471e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1347210",
       "build_id": "sse-steam-1-7-104",
       "rva": 20214288,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1347210CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1347210; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1347210.json",
+      "report": "reports/sse-steam-1-7-104/0x1347210.json"
     },
     {
       "id": "sse-steam-1-7-104-0x137a950",
@@ -474281,132 +474309,143 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 20475216,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1386d50CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1386d50; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1386d50.json",
+      "report": "reports/sse-steam-1-7-104/0x1386d50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1392ac0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20523712,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1392ac0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1392ac0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1392ac0.json",
+      "report": "reports/sse-steam-1-7-104/0x1392ac0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1392af0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20523760,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1392af0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1392af0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1392af0.json",
+      "report": "reports/sse-steam-1-7-104/0x1392af0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1392b20",
       "build_id": "sse-steam-1-7-104",
       "rva": 20523808,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1392b20CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1392b20; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1392b20.json",
+      "report": "reports/sse-steam-1-7-104/0x1392b20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1392b50",
       "build_id": "sse-steam-1-7-104",
       "rva": 20523856,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1392b50CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1392b50; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1392b50.json",
+      "report": "reports/sse-steam-1-7-104/0x1392b50.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13a9080",
       "build_id": "sse-steam-1-7-104",
       "rva": 20615296,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13a9080CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13a9080; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13a9080.json",
+      "report": "reports/sse-steam-1-7-104/0x13a9080.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13a90b0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20615344,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13a90b0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13a90b0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13a90b0.json",
+      "report": "reports/sse-steam-1-7-104/0x13a90b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13a90e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 20615392,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13a90e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13a90e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13a90e0.json",
+      "report": "reports/sse-steam-1-7-104/0x13a90e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13a9110",
       "build_id": "sse-steam-1-7-104",
       "rva": 20615440,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13a9110CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13a9110; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13a9110.json",
+      "report": "reports/sse-steam-1-7-104/0x13a9110.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13b3e10",
       "build_id": "sse-steam-1-7-104",
       "rva": 20659728,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13b3e10CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13b3e10; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13b3e10.json",
+      "report": "reports/sse-steam-1-7-104/0x13b3e10.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13b3e40",
       "build_id": "sse-steam-1-7-104",
       "rva": 20659776,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature13b3e40CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x13b3e40; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x13b3e40.json",
+      "report": "reports/sse-steam-1-7-104/0x13b3e40.json"
     },
     {
       "id": "sse-steam-1-7-104-0x13dc950",
@@ -474452,24 +474491,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21093280,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature141dba0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x141dba0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x141dba0.json",
+      "report": "reports/sse-steam-1-7-104/0x141dba0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x141dbd0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21093328,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature141dbd0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x141dbd0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x141dbd0.json",
+      "report": "reports/sse-steam-1-7-104/0x141dbd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14616d0",
@@ -474541,48 +474582,52 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21377712,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature14632b0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14632b0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14632b0.json",
+      "report": "reports/sse-steam-1-7-104/0x14632b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14632e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 21377760,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature14632e0CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x14632e0; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x14632e0.json",
+      "report": "reports/sse-steam-1-7-104/0x14632e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1463310",
       "build_id": "sse-steam-1-7-104",
       "rva": 21377808,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1463310CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1463310; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1463310.json",
+      "report": "reports/sse-steam-1-7-104/0x1463310.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1463340",
       "build_id": "sse-steam-1-7-104",
       "rva": 21377856,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1463340CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1463340; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1463340.json",
+      "report": "reports/sse-steam-1-7-104/0x1463340.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14713f0",
@@ -474615,24 +474660,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 21506304,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1482900CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482900; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482900.json",
+      "report": "reports/sse-steam-1-7-104/0x1482900.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1482930",
       "build_id": "sse-steam-1-7-104",
       "rva": 21506352,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature1482930CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x1482930; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1482930.json",
+      "report": "reports/sse-steam-1-7-104/0x1482930.json"
     },
     {
       "id": "sse-steam-1-7-104-0x159b4e0",
@@ -474652,12 +474699,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22657376,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "ErasedSignature159b960CallableLayout scalar deleting destructor",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder class name from the RVA; no owner or signature claimed. RVA 0x159b960; size from the image function table; strict twin (same code apart from relocated fields) of matched 0x1283250.",
       "owner": "awarebayes",
-      "evidence": "findings/twin-propagation.md"
+      "evidence": "reports/sse-steam-1-7-104/0x159b960.json",
+      "report": "reports/sse-steam-1-7-104/0x159b960.json"
     },
     {
       "id": "sse-steam-1-7-104-0x4f4f30",
@@ -478350,6 +478398,409 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x11b24e0.json",
       "report": "reports/sse-steam-1-7-104/0x11b24e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x162d00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1453312,
+      "size": 10,
+      "status": "matched",
+      "name": "Function162d00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x162d00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x162d00.json",
+      "report": "reports/sse-steam-1-7-104/0x162d00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x163990",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1456528,
+      "size": 10,
+      "status": "matched",
+      "name": "Function163990",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x163990; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x163990.json",
+      "report": "reports/sse-steam-1-7-104/0x163990.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x163ce0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1457376,
+      "size": 10,
+      "status": "matched",
+      "name": "Function163ce0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x163ce0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x163ce0.json",
+      "report": "reports/sse-steam-1-7-104/0x163ce0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x163e20",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1457696,
+      "size": 10,
+      "status": "matched",
+      "name": "Function163e20",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x163e20; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x163e20.json",
+      "report": "reports/sse-steam-1-7-104/0x163e20.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x164140",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1458496,
+      "size": 10,
+      "status": "matched",
+      "name": "Function164140",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x164140; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x164140.json",
+      "report": "reports/sse-steam-1-7-104/0x164140.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x164830",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1460272,
+      "size": 10,
+      "status": "matched",
+      "name": "Function164830",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x164830; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x164830.json",
+      "report": "reports/sse-steam-1-7-104/0x164830.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1695f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1480176,
+      "size": 10,
+      "status": "matched",
+      "name": "Function1695f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1695f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1695f0.json",
+      "report": "reports/sse-steam-1-7-104/0x1695f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16a760",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1484640,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16a760",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16a760; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16a760.json",
+      "report": "reports/sse-steam-1-7-104/0x16a760.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e7b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501104,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e7b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e7b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e7b0.json",
+      "report": "reports/sse-steam-1-7-104/0x16e7b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e7c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501120,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e7c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e7c0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e7c0.json",
+      "report": "reports/sse-steam-1-7-104/0x16e7c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e7d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501136,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e7d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e7d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e7d0.json",
+      "report": "reports/sse-steam-1-7-104/0x16e7d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e7e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501152,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e7e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e7e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e7e0.json",
+      "report": "reports/sse-steam-1-7-104/0x16e7e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e800",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501184,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e800",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e800; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e800.json",
+      "report": "reports/sse-steam-1-7-104/0x16e800.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e860",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501280,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e860",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e860; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e860.json",
+      "report": "reports/sse-steam-1-7-104/0x16e860.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e870",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501296,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e870",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e870; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e870.json",
+      "report": "reports/sse-steam-1-7-104/0x16e870.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e880",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501312,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e880",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e880; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e880.json",
+      "report": "reports/sse-steam-1-7-104/0x16e880.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e890",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501328,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e890",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e890; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e890.json",
+      "report": "reports/sse-steam-1-7-104/0x16e890.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e920",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501472,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e920",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e920; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e920.json",
+      "report": "reports/sse-steam-1-7-104/0x16e920.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e940",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501504,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e940",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e940; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e940.json",
+      "report": "reports/sse-steam-1-7-104/0x16e940.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16e950",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1501520,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16e950",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16e950; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16e950.json",
+      "report": "reports/sse-steam-1-7-104/0x16e950.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16eda0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1502624,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16eda0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16eda0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16eda0.json",
+      "report": "reports/sse-steam-1-7-104/0x16eda0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16fc00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1506304,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16fc00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16fc00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16fc00.json",
+      "report": "reports/sse-steam-1-7-104/0x16fc00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x16fc10",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1506320,
+      "size": 10,
+      "status": "matched",
+      "name": "Function16fc10",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x16fc10; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x16fc10.json",
+      "report": "reports/sse-steam-1-7-104/0x16fc10.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1702b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1508016,
+      "size": 10,
+      "status": "matched",
+      "name": "Function1702b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1702b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1702b0.json",
+      "report": "reports/sse-steam-1-7-104/0x1702b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x170f00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1511168,
+      "size": 10,
+      "status": "matched",
+      "name": "Function170f00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x170f00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x170f00.json",
+      "report": "reports/sse-steam-1-7-104/0x170f00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x171370",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1512304,
+      "size": 10,
+      "status": "matched",
+      "name": "Function171370",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x171370; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x171370.json",
+      "report": "reports/sse-steam-1-7-104/0x171370.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1713f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1512432,
+      "size": 10,
+      "status": "matched",
+      "name": "Function1713f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1713f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1713f0.json",
+      "report": "reports/sse-steam-1-7-104/0x1713f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x171680",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1513088,
+      "size": 10,
+      "status": "matched",
+      "name": "Function171680",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x171680; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x171680.json",
+      "report": "reports/sse-steam-1-7-104/0x171680.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1728d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1517776,
+      "size": 10,
+      "status": "matched",
+      "name": "Function1728d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1728d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1728d0.json",
+      "report": "reports/sse-steam-1-7-104/0x1728d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x173530",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1520944,
+      "size": 10,
+      "status": "matched",
+      "name": "Function173530",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x173530; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x173530.json",
+      "report": "reports/sse-steam-1-7-104/0x173530.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xcfad30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 13610288,
+      "size": 62,
+      "status": "matched",
+      "name": "BSWin32GamerProfile::Functioncfad30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xcfad30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xcfad30.json",
+      "report": "reports/sse-steam-1-7-104/0xcfad30.json"
     }
   ],
   "milestones": [
@@ -478392,7 +478843,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-22T18:49:55Z",
+  "updated_at": "2026-11-22T19:10:29Z",
   "work_items": [
     {
       "id": "pin-target",
