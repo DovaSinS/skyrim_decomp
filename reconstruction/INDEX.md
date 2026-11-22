@@ -11165,6 +11165,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/BGSDefaultObjectManager` | `BGSDefaultObjectManager::GetLeftHandEquip` (COMMUNITY) | `sse-steam-1-7-104` / `0x38fa30` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fa30.json` | matched | delta | open |
 | `skyrim_shared/world/BGSDefaultObjectManager` | `BGSDefaultObjectManager::GetRightHandEquip` (COMMUNITY) | `sse-steam-1-7-104` / `0x38fa40` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fa40.json` | matched | delta | open |
 | `skyrim_shared/world/BGSDefaultObjectManager` | `BGSDefaultObjectManager::GetVoiceEquip` (COMMUNITY) | `sse-steam-1-7-104` / `0x38fa60` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fa60.json` | matched | delta | open |
+| `skyrim_shared/forms/BGSEquipSlot` | `BGSEquipSlot::Function38fa70` (GUESS) | `sse-steam-1-7-104` / `0x38fa70` / 80 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fa70.json` | matched | full | - |
 | - | `BGSEquipSlot::~BGSEquipSlot` (COMMUNITY) | `sse-steam-1-7-104` / `0x38fb00` / 223 | - | - | mapped | - | - |
 | `unmapped/fields/FieldLeaf38fe20` | `FieldLeaf38fe20::Read` (GUESS) | `sse-steam-1-7-104` / `0x38fe20` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fe20.json` | matched | family | open |
 | `unmapped/leaves/Leaf38fe30` | `Leaf38fe30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x38fe30` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x38fe30.json` | matched | full | checked |
@@ -13515,7 +13516,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `TESCamera::ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0x558c80` / 96 | - | - | mapped | - | - |
 | `skyrim/camera/TESCamera` | `TESCamera::SetCameraRoot` (COMMUNITY) | `sse-steam-1-7-104` / `0x558dd0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558dd0.json` | matched | full | - |
 | `skyrim/camera/TESCamera` | `TESCamera::GetNode` (COMMUNITY) | `sse-steam-1-7-104` / `0x558e10` / 76 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558e10.json` | matched | full | - |
-| - | `TESCamera::Update` (COMMUNITY) | `sse-steam-1-7-104` / `0x558e70` / 281 | - | - | mapped | - | - |
+| `skyrim/camera/TESCamera` | `TESCamera::Update` (COMMUNITY) | `sse-steam-1-7-104` / `0x558e70` / 281 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558e70.json` | matched | full | - |
 | `skyrim/camera/TESCamera` | `TESCamera::SetState` (COMMUNITY) | `sse-steam-1-7-104` / `0x558f90` / 109 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558f90.json` | matched | full | - |
 | - | `TESCamera::~TESCamera` (COMMUNITY) | `sse-steam-1-7-104` / `0x559060` / 140 | - | - | mapped | - | - |
 | `skyrim_shared/audio/BGSSoundDescriptorForm_32a7a0` | `BGSSoundDescriptorForm::Function559a10` (GUESS) | `sse-steam-1-7-104` / `0x559a10` / 76 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x559a10.json` | matched | full | - |

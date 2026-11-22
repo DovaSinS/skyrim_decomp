@@ -92996,7 +92996,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x38ed10; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x38ed10.json",
       "report": "reports/sse-steam-1-7-104/0x38ed10.json"
     },
     {
@@ -93121,7 +93121,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x38eed0.json",
       "report": "reports/sse-steam-1-7-104/0x38eed0.json"
     },
     {
@@ -93205,7 +93205,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 4. RVA 0x38f480; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x38f480.json",
       "report": "reports/sse-steam-1-7-104/0x38f480.json"
     },
     {
@@ -433497,12 +433497,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5607024,
       "size": 281,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESCamera::Update",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 2 of LocalMapCamera. RVA 0x558e70; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x558e70.json",
+      "report": "reports/sse-steam-1-7-104/0x558e70.json"
     },
     {
       "id": "sse-steam-1-7-104-0x559060",
@@ -477333,6 +477334,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x159ded0.json",
       "report": "reports/sse-steam-1-7-104/0x159ded0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x38fa70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3734128,
+      "size": 80,
+      "status": "matched",
+      "name": "BGSEquipSlot::Function38fa70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x38fa70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x38fa70.json",
+      "report": "reports/sse-steam-1-7-104/0x38fa70.json"
     }
   ],
   "milestones": [
@@ -477375,7 +477389,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-22T06:16:20Z",
+  "updated_at": "2026-11-22T07:27:34Z",
   "work_items": [
     {
       "id": "pin-target",
