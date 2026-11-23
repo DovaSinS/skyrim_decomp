@@ -15,7 +15,7 @@
 void TESCamera::Function9969f0(float a_value)
 {
     unk4C = a_value;
-    return Function558E70(this, a_value);
+    TESCamera::Update();
 }
 
 void TESCamera::SetState(TESCameraState* a_state)

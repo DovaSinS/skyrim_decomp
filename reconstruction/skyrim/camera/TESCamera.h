@@ -131,7 +131,7 @@ class TESCamera
 public:
     virtual ~TESCamera();  // 00
     virtual void SetCameraRoot(NiPointer<NiNode> a_root);  // 01
-    virtual void Update();  // 02
+    __declspec(noinline) virtual void Update();  // 02
     bool GetNode(NiPointer<NiNode>& a_out);  // compared: 0x558e10
     void SetState(TESCameraState* a_state);  // compared: 0x558f90
     void Function9969f0(float a_value);  // compared: 0x9969f0
@@ -151,4 +151,3 @@ public:
 static_assert(sizeof(TESCamera) == 0x50, "TESCamera size");
 static_assert(offsetof(TESCamera, cameraRoot) == 0x20, "TESCamera::cameraRoot offset");
 
-void Function558E70(TESCamera* a_camera, float a_value);  // tail target, not defined here
