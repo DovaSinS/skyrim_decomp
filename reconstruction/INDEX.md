@@ -10878,6 +10878,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function30ba10` (GUESS) | `sse-steam-1-7-104` / `0x30ba10` / 2800 | - | - | mapped | - | - |
 | - | `Function30cb50` (GUESS) | `sse-steam-1-7-104` / `0x30cb50` / 644 | - | - | mapped | - | - |
 | `skyrim_shared/world/TESWorldSpace` | `TESWorldSpace::FindInFileFast` (COMMUNITY) | `sse-steam-1-7-104` / `0x30d050` / 136 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30d050.json` | matched | delta | open |
+| `skyrim_shared/world/TESWorldSpace_30dad0` | `TESWorldSpace::Function30dad0` (GUESS) | `sse-steam-1-7-104` / `0x30dad0` / 54 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x30dad0.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::sub_1402B2B90` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x30db60` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30db60.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::sub_1402B2BC0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x30dba0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30dba0.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::Function30dbf0` (GUESS) | `sse-steam-1-7-104` / `0x30dbf0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30dbf0.json` | matched | full | - |
@@ -10890,6 +10891,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::GetParentWorld` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x30e050` / 45 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30e050.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::Function30e090` (GUESS) | `sse-steam-1-7-104` / `0x30e090` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30e090.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30e100` | `TESWorldSpace::Function30e100` (GUESS) | `sse-steam-1-7-104` / `0x30e100` / 53 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x30e100.json` | matched | full | - |
+| `skyrim_shared/world/TESWorldSpace_30e140` | `TESWorldSpace::Function30e140` (GUESS) | `sse-steam-1-7-104` / `0x30e140` / 101 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x30e140.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::Function30e4f0` (GUESS) | `sse-steam-1-7-104` / `0x30e4f0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30e4f0.json` | matched | full | - |
 | `skyrim_shared/world/TESWorldSpace` | `TESWorldSpace::GetCellByPosition` (COMMUNITY) | `sse-steam-1-7-104` / `0x30e8d0` / 129 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30e8d0.json` | matched | delta | open |
 | `skyrim_shared/world/TESWorldSpace_30db60` | `TESWorldSpace::Function30ea50` (GUESS) | `sse-steam-1-7-104` / `0x30ea50` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x30ea50.json` | matched | full | - |
