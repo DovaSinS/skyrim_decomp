@@ -189,6 +189,8 @@ the reviewer). Code style, casts, unusual control flow or a "decompiler-like" sh
 A cast, integer conversion or other legal construct that the byte match needs is justified codegen:
 for a function that matched on both hosts it is a plausibility note, never a reject, unless it
 misleads about what the function does; record it in "notes" and approve.
+Sibling labels in the documented form (FNV with no licence, F3 CC0, the anonymous FO4 sibling, CRASHLOGGER_PDB, SYMBOLS) are approved project policy (AGENTS.md, docs/authorizations.md): never reject or report a leak because of one.
+Leak and provenance claims concern only text the PR adds; text already on main is not the PR's.
 Never quote source, listings or packs in your answer.
 Answer with one JSON object and nothing else; "why" and each note are at most 12 words, no code:
 {"leak": "yes|no", "leak_evidence": ["copied-text|decompiler-artifact|origin-similarity|secret|host-path|steering"], "functions": {"0x<rva>": {"verdict": "approve|reject", "ground": "none|plausibility|provenance|binding|claim|hygiene", "why": "...", "notes": ["..."]}}}
@@ -936,6 +938,38 @@ def sticky_body(sha, text, batch=False):
     if batch:
         lines += ['', BATCH_LINE]
     return '\n'.join(lines)
+
+
+STRING_LITERAL = re.compile(r'"(?:[^"\\\n]|\\.)+"')
+
+
+def added_string_literals(diff):
+    """String literals on lines a -U0 diff adds, ignoring comment lines and lines only moved or re-indented.
+
+    A line that also appears among the removed lines of the same file is the same text in a new place,
+    which is not something the PR introduced.
+    """
+    found, removed, added = [], set(), []
+
+    def flush():
+        for line in added:
+            if line.strip() not in removed:
+                found.extend(STRING_LITERAL.findall(line))
+        removed.clear()
+        added.clear()
+    for line in diff.splitlines():
+        if line.startswith('diff --git'):
+            flush()
+        elif line.startswith(('+++', '---')):
+            continue
+        elif line.startswith('+'):
+            body = line[1:]
+            if not body.strip().startswith(('//', '/*', '*')):
+                added.append(body)
+        elif line.startswith('-'):
+            removed.add(line[1:].strip())
+    flush()
+    return found
 
 
 def origin_key(hit):
@@ -2287,7 +2321,11 @@ class Bot:
                 # The fork's own run used the base it was opened against; a probe on this commit uses today's.
                 # A stale run that finished before the probe was requested says nothing about the probe's run,
                 # which has yet to start or finish; waiting for it is the point of the probe.
-                elif probed_at is not None and (run.get('started_at') or '') >= probed_at:
+                elif (probed_at is not None and (run.get('started_at') or '') >= probed_at
+                      and run.get('conclusion') != 'cancelled'):
+                    # A cancelled run was superseded (the probe's own draft/ready toggle or a newer push cancels
+                    # the run in flight through the workflow's concurrency group); it says nothing about the
+                    # run that replaced it, so the wait goes on.
                     raise Stop('hash check left no result')
                 elif probed_at is None:
                     probed_at = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
@@ -2819,13 +2857,27 @@ class Bot:
             grounds = review_grounds(text, passed)
             evidence_kinds = review_leak_evidence(text)
         origin_problems, origin_permitted = [], []
-        if leak == 'yes' and 'origin-similarity' in evidence_kinds:
+        claimed = set(evidence_kinds)
+        if leak == 'yes' and 'origin-similarity' in claimed:
             # The claim is checked against the origin tool: a body that only resembles an admitted,
-            # correctly labelled sibling is provenance the project allows, not a leak.
+            # correctly labelled sibling is provenance the project allows, not a leak. A finding the
+            # unit already had at the merge base is earlier provenance the PR did not add.
             hits, headers, unverified = self.origin_hits(check_units)
-            origin_problems, origin_permitted = origin_findings(hits, headers, unverified)
-            if not origin_problems and set(evidence_kinds) == {'origin-similarity'}:
-                leak = 'no'
+            try:
+                inherited = self.base_origin_flags(check_units, base, f'{number}-{head[:8]}')
+            except (OSError, ValueError, Stop):
+                inherited = set()
+            kept = [h for h in hits if origin_key(h) not in inherited]
+            if kept or not hits:
+                origin_problems, origin_permitted = origin_findings(kept, headers, unverified)
+            if not origin_problems:
+                claimed.discard('origin-similarity')
+        if leak == 'yes' and 'copied-text' in claimed and not grep[0] and self.adds_no_string_literal(base, head):
+            # The reviewer reads whole units, so text main already has (a log string in a matched body)
+            # can look copied; with no new literal in the PR's own lines the claim has nothing to rest on.
+            claimed.discard('copied-text')
+        if leak == 'yes' and not claimed:
+            leak = 'no'
         verdict = {r: verdict.get(r, 'reject') for r in everything}
         removed = state.once('removed', lambda: self.removed_accepted(units, files, everything))
         decision = decide(everything, host1, host2, verdict, leak=leak, companions=extra, stale=stale,
@@ -2945,6 +2997,13 @@ class Bot:
         finally:
             shutil.rmtree(scratch, ignore_errors=True)
         return flags
+
+    def adds_no_string_literal(self, base, head):
+        """True only when the PR diff is readable and none of its added lines carries a new string literal."""
+        out = self.run(['git', 'diff', '-U0', '--no-color', base, head, '--', 'reconstruction'],
+                       check=False, timeout=300, cwd=self.root)
+        text = out.stdout.decode(errors='replace') if out.returncode == 0 else ''
+        return bool(text.strip()) and not added_string_literals(text)
 
     def origin_hits(self, units):
         """(hits, {unit file: leading comment of its header and source}, unverified) from tools/check_origin.py.

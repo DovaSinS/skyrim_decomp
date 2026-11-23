@@ -492,6 +492,45 @@ class OriginProcessTests(unittest.TestCase):
         self.assertEqual(bot.process(PR)['blocked'], 'leak')
 
 
+    def test_copied_text_claim_on_text_main_already_has_does_not_block(self):
+        review = json.dumps({'leak': 'yes', 'leak_evidence': ['copied-text'],
+                             'functions': {'0x10': {'verdict': 'approve'}, '0x20': {'verdict': 'approve'}}})
+        moved = ('diff --git a/reconstruction/a/B.cpp b/reconstruction/a/B.cpp\n'
+                 '@@ -80,0 +81,2 @@\n+    int added = 1;\n+    // "quoted in a comment"\n'
+                 '@@ -86 +93 @@\n-            Log("It is time");\n+                Log("It is time");\n')
+        bot = OriginBot(self.work, [origin_hit()])
+        bot.review_text = review
+        run = bot.run
+        bot.run = lambda argv, **kw: (subprocess.CompletedProcess(argv, 0, moved.encode(), b'')
+                                      if [str(a) for a in argv][:2] == ['git', 'diff'] else run(argv, **kw))
+        self.assertIsNone(bot.process(PR)['blocked'])
+
+    def test_copied_text_claim_with_a_new_string_literal_still_blocks(self):
+        review = json.dumps({'leak': 'yes', 'leak_evidence': ['copied-text'],
+                             'functions': {'0x10': {'verdict': 'approve'}, '0x20': {'verdict': 'approve'}}})
+        added = ('diff --git a/reconstruction/a/B.cpp b/reconstruction/a/B.cpp\n'
+                 '@@ -80,0 +81 @@\n+    Log("a brand new message");\n')
+        bot = OriginBot(self.work, [origin_hit()])
+        bot.review_text = review
+        run = bot.run
+        bot.run = lambda argv, **kw: (subprocess.CompletedProcess(argv, 0, added.encode(), b'')
+                                      if [str(a) for a in argv][:2] == ['git', 'diff'] else run(argv, **kw))
+        self.assertEqual(bot.process(PR)['blocked'], 'leak')
+
+    def test_added_string_literals_ignores_moved_lines_and_comments(self):
+        diff = ('diff --git a/x b/x\n--- a/x\n+++ b/x\n@@ -1 +1 @@\n-  f("same");\n+      f("same");\n'
+                '+// "note"\n+  g("new\\"q");\n')
+        self.assertEqual(pr_bot.added_string_literals(diff), ['"new\\"q"'])
+
+    def test_an_unlabelled_hit_the_unit_already_had_at_the_base_does_not_block(self):
+        review = json.dumps({'leak': 'yes', 'leak_evidence': ['origin-similarity'],
+                             'functions': {'0x10': {'verdict': 'approve'}, '0x20': {'verdict': 'approve'}}})
+        hit = origin_hit(declared=False)
+        bot = OriginBot(self.work, [hit])
+        bot.review_text = review
+        bot.base_origin_flags = lambda units, base, tag: {pr_bot.origin_key(hit)}
+        self.assertIsNone(bot.process(PR)['blocked'])
+
 
 class ProcessTests(unittest.TestCase):
     def setUp(self):
@@ -1466,6 +1505,25 @@ class Host1Tests(unittest.TestCase):
         self.wait_with(on_sleep)
         with self.assertRaisesRegex(pr_bot.Stop, 'left no result'):
             self.host1()
+
+    def test_a_run_cancelled_by_the_probe_is_waited_past_not_a_stop(self):
+        self.bot.probe_hash_run = lambda number, head, force=False: True
+        self.bot.approve_pending = lambda head: None
+        self.job.update(id=1, started_at='2000-01-01T00:00:00Z')
+        self.files.pop('hash-result.json')
+        cancelled = dict(self.job, id=2, conclusion='cancelled', started_at='2999-01-01T00:00:00Z')
+        later = dict(self.job, id=3, conclusion='success', started_at='2999-06-01T00:00:00Z')
+        stale = self.job
+        calls = []
+
+        def on_sleep(seconds):
+            calls.append(seconds)
+            self.jobs = [stale, cancelled] if len(calls) == 1 else [stale, cancelled, later]
+            if len(calls) > 1:
+                self.files['hash-result.json'] = {'0x10': 'pass', '0x20': 'pass'}
+        self.wait_with(on_sleep)
+        got, _ = self.host1()
+        self.assertEqual(got, {0x10: 'pass', 0x20: 'pass'})
 
     def test_a_listed_artifact_that_will_not_download_is_not_a_run_without_a_result(self):
         self.artifacts = [{'name': 'hash-result', 'expired': False}]
