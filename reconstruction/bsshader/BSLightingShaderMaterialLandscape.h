@@ -5,6 +5,9 @@
 // BSLightingShaderMaterialLandscape::GetFeature, BSLightingShaderMaterialLandscape::~BSLightingShaderMaterialLandscape: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // unknownA0: GUESS(low)
 // Code origin: existing unit text, declarations after CommonLibSSE-NG names; this change only adds the origin line.
+// 0x15277e0 compared function
+// 0x1527560 compared function
+// BSLightingShaderMaterialLandscape::Create: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 #pragma once
 
 #include <cstdint>
@@ -27,10 +30,11 @@ class BSLightingShaderMaterialLandscape : public BSLightingShaderMaterialBase
 public:
     static void* operator new(std::size_t a_size) throw();
     BSShaderMaterial* Create() override;  // compared: 0x1527560
-    // the image's Create calls the constructor at its own address, so it stays a separate function
+    // noinline: the image's Create calls the constructor at its own address, so it stays a separate function
     __declspec(noinline) BSLightingShaderMaterialLandscape();
     std::uint32_t GetTextures(NiSourceTexture** a_textures);  // compared: 0x15279b0
     virtual Feature GetFeature() const;  // compared: 0x1527a80
+    void ClearTextures() override;  // compared: 0x15277e0
     virtual ~BSLightingShaderMaterialLandscape();  // compared: 0x1529030 (scalar deleting destructor)
 
     // LandscapeLayers: GUESS(low); layout read by GetTextures: a count, two parallel arrays of five textures, two trailing textures

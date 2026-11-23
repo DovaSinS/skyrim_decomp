@@ -5,6 +5,8 @@
 // GetType: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
+// 0x213ca0 compared function
+// Function213ca0, radius24: GUESS(low); getter and float at the offset the listing reads
 #pragma once
 #include <cstdint>
 // GetType: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
@@ -12,4 +14,8 @@ class BSMultiBoundSphere
 {
 public:
     virtual std::uint32_t GetType() const;
+    float Function213ca0() const;  // 0x213ca0
+
+    std::uint8_t padding[0x1C];  // 08
+    float radius24;  // 24
 };

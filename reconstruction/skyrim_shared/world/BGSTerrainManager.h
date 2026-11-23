@@ -43,6 +43,9 @@ struct TerrainGlobal
 // g_terrainGlobal, TerrainGlobal: GUESS(low)
 extern TerrainGlobal* g_terrainGlobal;
 
+// TerrainArgBlock: GUESS(low) STANDIN; the target reads the pointer at +0x60.
+struct TerrainArgBlock { std::uint8_t padding[0x60]; void* field60; };
+
 class BGSTerrainManager
 {
 public:
@@ -50,6 +53,9 @@ public:
     static NiNode* GetLODLandRootForLevel(unsigned level);
     void* Function5166e0(const void* a_point, bool a_flag);
     static bool Function516c20();
+    // Function516740, Function516750: GUESS(low); the second is the tail-call target, declared only.
+    void Function516740(void* a_block);
+    void Function516750(void* a_value);
 
     NiTexture* GetDiffuseTextureForPoint(const NiPoint3& a_point);
     NiTexture* GetNormalTextureForPoint(const NiPoint3& a_point);

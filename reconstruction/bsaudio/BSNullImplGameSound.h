@@ -5,6 +5,9 @@
 // Unk_08: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
+// 0xcd6bf0 compared function
+// 0xcd6bc0 compared function
+// Functioncd6bf0: GUESS(low)
 #pragma once
 #include <cstdint>
 // Unk_08: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
@@ -12,4 +15,9 @@ class BSNullImplGameSound
 {
 public:
     virtual std::uint8_t Unk_08() const;
+    void Functioncd6bf0();
+    void Functioncd6bc0();
+
+    std::uint8_t pad08[0x54];  // 08
+    std::uint32_t flags5C;     // 5C
 };

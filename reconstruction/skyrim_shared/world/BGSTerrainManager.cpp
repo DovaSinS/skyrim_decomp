@@ -13,6 +13,8 @@
 // 0x5166a0 BGSTerrainManager::GetNormalTextureForPoint
 // 0x516b80 BGSTerrainManager::Function516b80
 // 0x516bc0 BGSTerrainManager::Function516bc0
+// 0x516740 BGSTerrainManager::Function516740
+// Code origin: Function516740 original, from the listing and community declarations only
 #include "BGSTerrainManager.h"
 #include "gamebryo/nimain/NiAVObject.h"
 
@@ -76,4 +78,9 @@ void BGSTerrainManager::Function516bc0()
     g_terrainRootB->flags |= kApplicationCulled;
     g_terrainRootC->flags |= kApplicationCulled;
     SetTerrainVisibility(false);
+}
+
+void BGSTerrainManager::Function516740(void* a_block)
+{
+    Function516750(static_cast<TerrainArgBlock*>(a_block)->field60);
 }
