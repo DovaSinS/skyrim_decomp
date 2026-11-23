@@ -41,7 +41,7 @@ counts exclude those and unreported claims. One KiB is
 <!-- model-trend-totals -->
 | Model family | Gross accepted bytes |
 | --- | ---: |
-| Claude | 30,698 |
+| Claude | 39,615 |
 | GPT / Codex | 127,197 |
 | Other models | 8,456 |
 | Contributors (human / unstated) | 4,289 |
