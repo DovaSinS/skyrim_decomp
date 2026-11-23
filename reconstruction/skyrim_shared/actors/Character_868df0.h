@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Character: STANDIN GUESS(low); placeholder class, a view of the process member only
 // Character::IsWieldingMeleeOrUnarmed: GUESS(low)
 // Character::pad00, TESForm::pad00, TESObjectWEAP::unread1B: GUESS(low); unread bytes before the members used

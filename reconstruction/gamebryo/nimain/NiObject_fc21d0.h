@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; the pinned image listing).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // NiObject, NiPoint3, NiPSysCollider, NiPSysSpawnModifier, NiPSysColliderManager: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); minimal stand-ins, only what this unit touches
 // _refCount, _pad0C: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); NiRefObject members, declared here instead of a base class
 // x, y, z: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)

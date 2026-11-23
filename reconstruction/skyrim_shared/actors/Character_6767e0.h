@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Character: STANDIN GUESS(low); placeholder class, a view of the editor-location member only
 // Character::GetEditorInteriorCell: GUESS(low)
 // TESForm, TESObjectCELL, formType, cellFlags, editorLocForm, kCell, kIsInteriorCell: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT) OBSERVED; editorLocForm sits 8 bytes later in this build

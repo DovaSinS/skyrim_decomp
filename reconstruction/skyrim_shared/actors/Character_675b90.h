@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Character: STANDIN GUESS(low); placeholder class, a view of the virtual table and the actor-state word only
 // Character::UpdateWeaponDrawRequest: GUESS(low)
 // Character::SlotPad00 to Character::SlotPadA5, pad08: GUESS(low); slot and padding placeholders

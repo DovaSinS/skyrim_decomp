@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Character: STANDIN GUESS(low); placeholder class, a view of the actor-value owner base only
 // Character::GetActorValueRegenRate: GUESS(low)
 // Character::avOwner, Character::pad00: GUESS(low); NG's ActorValueOwner base, 8 bytes later in this build, modelled as a member

@@ -1,6 +1,6 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
-// SPDX-License-Identifier: CC0-1.0
+// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // NiAVObject, SetSelectiveUpdateTransformsRecursive: CRASHLOGGER_PDB(59818@2026.10.24)
 // NiNode, AsNode: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); only the slot and the child array used here
 // flags, children: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT) OBSERVED; the flag word at 0xF4 and the raw child array pointer at 0x118
