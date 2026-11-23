@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "d3545ea421b0f210f08a8a7afe9241dd9284d4659155c9c760addd46f7d07be5",
+        "object_sha256": "7514508efe3681a348caff089277b91aacab6bbbe1985127c3c29a8906916c02",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsshader/BSShaderProperty.h",
@@ -38,7 +38,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "6871664d22b4ba01749559f6873a231b8fa8940a",
+    "base_sha": "3194432c1dfb3b79c2dcdab5300546316fc7130c",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -49,7 +49,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "c60bf514c6137534831fb2c50bda447e3c6fe70a",
+    "head_sha": "a6bae294f9ac2c90d79cbfc7a5ac5f10fcf1d6d8",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -62,10 +62,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44715502992,
+    "run_id": 45100231039,
     "rva": "0x152c470",
     "schema": 2,
-    "source_sha256": "62979a04cb52da186780f8de9693d5846febc1e73664037015e7dfacf9f5a549",
+    "source_sha256": "5a794a159bbde199db09ce6eb4a57a64085baf34cd74d6f8ad109c8b93e3a42d",
     "status": "pass",
     "symbols": [
       "?IsEqual@BSWaterShaderProperty@@UEAA_NPEAVNiObject@@@Z"
@@ -81,6 +81,7 @@
     "unit": "reconstruction/bsshader/BSWaterShaderProperty.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "GPT-6",
   "function_id": "sse-steam-1-7-104-0x152c470",
   "match_record_schema": 2,
   "notes": [
@@ -100,7 +101,7 @@
         "candidate": {
           "code_section_sha256": "a113a46fc1c5b5c484087107b284dd3eba0860ba09b961c1a52d1e79463237bb",
           "code_sections": 1,
-          "object_sha256": "d3545ea421b0f210f08a8a7afe9241dd9284d4659155c9c760addd46f7d07be5"
+          "object_sha256": "7514508efe3681a348caff089277b91aacab6bbbe1985127c3c29a8906916c02"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,7 +162,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsshader/BSWaterShaderProperty.cpp",
-          "source_revision": "62979a04cb52da186780f8de9693d5846febc1e73664037015e7dfacf9f5a549"
+          "source_revision": "5a794a159bbde199db09ce6eb4a57a64085baf34cd74d6f8ad109c8b93e3a42d"
         },
         "symbol_map_sha256": "0ab0237b0d70fb94cbc963a8f1c54b97babad046a360e8f903b246b3ec59e9dd",
         "target": {
@@ -174,7 +175,7 @@
   ],
   "source": {
     "compiled": "reconstruction/bsshader/BSWaterShaderProperty.cpp",
-    "digest": "62979a04cb52da186780f8de9693d5846febc1e73664037015e7dfacf9f5a549",
+    "digest": "5a794a159bbde199db09ce6eb4a57a64085baf34cd74d6f8ad109c8b93e3a42d",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsshader/BSShaderProperty.h",
@@ -183,7 +184,7 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "awarebayes",
+  "submitter": "moreirapenna2",
   "symbol_map": {
     "path": "reports/sse-steam-1-7-104/unit-symbols/0ab0237b0d70fb94cbc963a8f1c54b97babad046a360e8f903b246b3ec59e9dd.json",
     "sha256": "0ab0237b0d70fb94cbc963a8f1c54b97babad046a360e8f903b246b3ec59e9dd"

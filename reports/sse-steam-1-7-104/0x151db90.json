@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "b3ca96562474f2674ed9e7780b6079bd274b9fe768f77a76643bd39edd33d1ed",
+        "object_sha256": "3de8038bc98bac4765807662500ef58924b007315cfd456d958de0cef90974e2",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsshader/BSGrassShaderProperty.cpp",
@@ -38,7 +38,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "abed46e060af0cb7efb4fb8a13ee54bfca6f54fd",
+    "base_sha": "3194432c1dfb3b79c2dcdab5300546316fc7130c",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -49,7 +49,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "25b3f056306fad1ea84600e0d31fbe8748aa35ea",
+    "head_sha": "a6bae294f9ac2c90d79cbfc7a5ac5f10fcf1d6d8",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -62,10 +62,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44975574751,
+    "run_id": 45100231039,
     "rva": "0x151db90",
     "schema": 2,
-    "source_sha256": "4782ca0b6f60b0f8c704c19988a62cae67593e06dc72e8f5af59228c385c40ff",
+    "source_sha256": "631c04aba5a99d9fd143f2987c751eb07b69e008f174db36eaf986fbc26ed5d9",
     "status": "pass",
     "symbols": [
       "?GetRenderPasses_ShadowMapOrMask@BSGrassShaderProperty@@UEAAXXZ"
@@ -81,6 +81,7 @@
     "unit": "reconstruction/bsshader/BSGrassShaderProperty.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "GPT-6",
   "function_id": "sse-steam-1-7-104-0x151db90",
   "match_record_schema": 2,
   "notes": [
@@ -100,7 +101,7 @@
         "candidate": {
           "code_section_sha256": "bea1cd4067db85cb4895d5acb6325d7aef1a9bc2fe4d270eff44db5cd70ed0b3",
           "code_sections": 1,
-          "object_sha256": "b3ca96562474f2674ed9e7780b6079bd274b9fe768f77a76643bd39edd33d1ed"
+          "object_sha256": "3de8038bc98bac4765807662500ef58924b007315cfd456d958de0cef90974e2"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,7 +162,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsshader/BSGrassShaderProperty.cpp",
-          "source_revision": "4782ca0b6f60b0f8c704c19988a62cae67593e06dc72e8f5af59228c385c40ff"
+          "source_revision": "631c04aba5a99d9fd143f2987c751eb07b69e008f174db36eaf986fbc26ed5d9"
         },
         "symbol_map_sha256": "924d826353a01b2ed6cdcdd1a3b8f4f90badfbf61db68accb86efecd5d021ad9",
         "target": {
@@ -174,7 +175,7 @@
   ],
   "source": {
     "compiled": "reconstruction/bsshader/BSGrassShaderProperty.cpp",
-    "digest": "4782ca0b6f60b0f8c704c19988a62cae67593e06dc72e8f5af59228c385c40ff",
+    "digest": "631c04aba5a99d9fd143f2987c751eb07b69e008f174db36eaf986fbc26ed5d9",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsshader/BSGrassShaderProperty.cpp",
@@ -183,7 +184,7 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "v0id-array",
+  "submitter": "moreirapenna2",
   "symbol_map": {
     "path": "reports/sse-steam-1-7-104/unit-symbols/924d826353a01b2ed6cdcdd1a3b8f4f90badfbf61db68accb86efecd5d021ad9.json",
     "sha256": "924d826353a01b2ed6cdcdd1a3b8f4f90badfbf61db68accb86efecd5d021ad9"

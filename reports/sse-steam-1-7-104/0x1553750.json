@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "f8655c784e1fbac92fb51e3bc25739865edc98435e5df5a12de2c9527db90759",
+        "object_sha256": "fd83d4c857e7dfce144e2a4a0bc1e1ca1d1bf79be07ac4f90b0c8d3407e5c0f3",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsshader/BSShaderProperty.h",
@@ -38,7 +38,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "6871664d22b4ba01749559f6873a231b8fa8940a",
+    "base_sha": "3194432c1dfb3b79c2dcdab5300546316fc7130c",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -49,7 +49,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "c60bf514c6137534831fb2c50bda447e3c6fe70a",
+    "head_sha": "a6bae294f9ac2c90d79cbfc7a5ac5f10fcf1d6d8",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -62,10 +62,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44715502992,
+    "run_id": 45100231039,
     "rva": "0x1553750",
     "schema": 2,
-    "source_sha256": "f209cb5e0eb72669ae1b31d27dab5bfaac58df6d32f4ec4c9090159f40189666",
+    "source_sha256": "97e06e611cf1a386b9bbe7150d61cf1a3e252fd7193c66c9185501b254cf540d",
     "status": "pass",
     "symbols": [
       "?ForEachTexture@BSSkyShaderProperty@@UEAAHAEAVForEachVisitor@BSShaderProperty@@@Z"
@@ -81,6 +81,7 @@
     "unit": "reconstruction/bsshader/BSSkyShaderProperty.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
+  "drafter_model": "GPT-6",
   "function_id": "sse-steam-1-7-104-0x1553750",
   "match_record_schema": 2,
   "notes": [
@@ -100,7 +101,7 @@
         "candidate": {
           "code_section_sha256": "d4eb197b4709ad065ba55937972e2fcd8a8e602091b3fff635d2ef7ff2b2da5c",
           "code_sections": 1,
-          "object_sha256": "f8655c784e1fbac92fb51e3bc25739865edc98435e5df5a12de2c9527db90759"
+          "object_sha256": "fd83d4c857e7dfce144e2a4a0bc1e1ca1d1bf79be07ac4f90b0c8d3407e5c0f3"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,7 +162,7 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsshader/BSSkyShaderProperty.cpp",
-          "source_revision": "f209cb5e0eb72669ae1b31d27dab5bfaac58df6d32f4ec4c9090159f40189666"
+          "source_revision": "97e06e611cf1a386b9bbe7150d61cf1a3e252fd7193c66c9185501b254cf540d"
         },
         "symbol_map_sha256": "21a5c5ed4a03b52a346b79b2206180cd68f8cdf116c76f229d1b9f9262bc790d",
         "target": {
@@ -174,7 +175,7 @@
   ],
   "source": {
     "compiled": "reconstruction/bsshader/BSSkyShaderProperty.cpp",
-    "digest": "f209cb5e0eb72669ae1b31d27dab5bfaac58df6d32f4ec4c9090159f40189666",
+    "digest": "97e06e611cf1a386b9bbe7150d61cf1a3e252fd7193c66c9185501b254cf540d",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsshader/BSShaderProperty.h",
@@ -183,7 +184,7 @@
       "reconstruction/gamebryo/nimain/NiObject.h"
     ]
   },
-  "submitter": "awarebayes",
+  "submitter": "moreirapenna2",
   "symbol_map": {
     "path": "reports/sse-steam-1-7-104/unit-symbols/21a5c5ed4a03b52a346b79b2206180cd68f8cdf116c76f229d1b9f9262bc790d.json",
     "sha256": "21a5c5ed4a03b52a346b79b2206180cd68f8cdf116c76f229d1b9f9262bc790d"

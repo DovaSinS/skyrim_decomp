@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "4c9dadef1d7d20fc4d95d4aa547383aa726eb7ebb830995bdada2630372b7d6e",
+        "object_sha256": "c3d533f5dde27851d60bef2030debe11c515b540e8b646113838baf15a9db1ef",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsmain/TES.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "c142e8ac00619b3776f619e24ccf776ff5086a65",
+    "base_sha": "3194432c1dfb3b79c2dcdab5300546316fc7130c",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "07dabcaf9e7e2415950132cdd935a0288e4a8465",
+    "head_sha": "a6bae294f9ac2c90d79cbfc7a5ac5f10fcf1d6d8",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 45033163051,
+    "run_id": 45100231039,
     "rva": "0x1a59d0",
     "schema": 2,
-    "source_sha256": "1a9d5e67ca48082b92fd7169c5f5c0061d0321484d1118f45bf1aa6512e80b4d",
+    "source_sha256": "d86f9c09096e81e03d6130647b0b81a6786ac6c820c8d406ff9f50565af44bd7",
     "status": "pass",
     "symbols": [
       "?GetLandMaterialType@TES@@QEAAIAEBVNiPoint3@@@Z"
@@ -79,7 +79,7 @@
     "unit": "reconstruction/bsmain/TES.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
-  "drafter_model": "not stated",
+  "drafter_model": "GPT-6",
   "function_id": "sse-steam-1-7-104-0x1a59d0",
   "match_record_schema": 2,
   "notes": [
@@ -99,7 +99,7 @@
         "candidate": {
           "code_section_sha256": "708fe4b7cac1e91d4406bad208b02799bd0757d80b55ccde4a1d06b97e200c36",
           "code_sections": 1,
-          "object_sha256": "4c9dadef1d7d20fc4d95d4aa547383aa726eb7ebb830995bdada2630372b7d6e"
+          "object_sha256": "c3d533f5dde27851d60bef2030debe11c515b540e8b646113838baf15a9db1ef"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -162,9 +162,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsmain/TES.cpp",
-          "source_revision": "1a9d5e67ca48082b92fd7169c5f5c0061d0321484d1118f45bf1aa6512e80b4d"
+          "source_revision": "d86f9c09096e81e03d6130647b0b81a6786ac6c820c8d406ff9f50565af44bd7"
         },
-        "symbol_map_sha256": "cc3561df036d743913f357ef896cd840c4ea8af414c5407aef2db2856c34597d",
+        "symbol_map_sha256": "9011eb1f0ce8c97a347e9b44eb681dd7f865d736c0b85d84072d5d1369f73392",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -175,17 +175,17 @@
   ],
   "source": {
     "compiled": "reconstruction/bsmain/TES.cpp",
-    "digest": "1a9d5e67ca48082b92fd7169c5f5c0061d0321484d1118f45bf1aa6512e80b4d",
+    "digest": "d86f9c09096e81e03d6130647b0b81a6786ac6c820c8d406ff9f50565af44bd7",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsmain/TES.cpp",
       "reconstruction/bsmain/TES.h"
     ]
   },
-  "submitter": "aivv73",
+  "submitter": "moreirapenna2",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/cc3561df036d743913f357ef896cd840c4ea8af414c5407aef2db2856c34597d.json",
-    "sha256": "cc3561df036d743913f357ef896cd840c4ea8af414c5407aef2db2856c34597d"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/9011eb1f0ce8c97a347e9b44eb681dd7f865d736c0b85d84072d5d1369f73392.json",
+    "sha256": "9011eb1f0ce8c97a347e9b44eb681dd7f865d736c0b85d84072d5d1369f73392"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
