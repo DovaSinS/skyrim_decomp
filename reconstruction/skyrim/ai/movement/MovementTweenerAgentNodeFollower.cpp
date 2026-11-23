@@ -1,7 +1,6 @@
 // Source exposure: mixed (community headers; the pinned image listing).
 // Code origin: Written for this reconstruction from the listing: a derived destructor that stores its vtable and tail-calls the base destructor.
 // 0x7ab9a0 MovementTweenerAgentNodeFollower::Function7ab9a0
-// Adapted bodies: none
 // Source exposure: mixed (authorized target analysis and anonymous permitted sibling source).
 // Origin: adapted from the cited game-code body under anonymous author permission.
 // Licence: fo4-private reused with author permission conditional on anonymity.

@@ -1,12 +1,13 @@
-// Code origin: written for this reconstruction from the listing; names and declarations from the header
-// Source exposure: mixed (community headers; the pinned image listing).
+// Code origin: original reconstruction from the pinned image and community declarations.
+// Source exposure: mixed (names and declarations from community headers; the listing of the pinned
+// image).
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
-// Adapted bodies: none
-// 0x9969f0 TESCamera::Function9969f0
+// Adapted bodies: none.
 // 0x558e10 TESCamera::GetNode
 // 0x558f90 TESCamera::SetState
 // 0x558dd0 TESCamera::SetCameraRoot
-// Drafted by v-macrev, assisted by claude-haiku-5-5.
+// 0x558e70 TESCamera::Update
+// 0x9969f0 TESCamera::Function9969f0
 #include "TESCamera.h"
 
 #include <intrin.h>
@@ -39,4 +40,23 @@ bool TESCamera::GetNode(NiPointer<NiNode>& a_out)
 void TESCamera::SetCameraRoot(NiPointer<NiNode> a_root)
 {
     cameraRoot = a_root;
+}
+
+// Update the active state and consume this frame's camera input.
+void TESCamera::Update()
+{
+    if (currentState.ptr && enabled) {
+        BSTSmartPointer<TESCameraState> nextState{};
+        currentState.ptr->Update(nextState);
+        if (nextState.ptr) {
+            SetState(nextState.ptr);
+        }
+    }
+
+    rotationInput.x = gNeutralCameraRotationInput.x;
+    rotationInput.y = gNeutralCameraRotationInput.y;
+    translationInput.x = gNeutralCameraTranslationInput.x;
+    translationInput.y = gNeutralCameraTranslationInput.y;
+    translationInput.z = gNeutralCameraTranslationInput.z;
+    zoomInput = 0.0f;
 }
