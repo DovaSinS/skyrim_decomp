@@ -1,4 +1,5 @@
 // Source exposure: mixed (binary-analysis of the pinned image, community-headers).
+// Code origin: Written for this reconstruction from the listing; the name Function1d7e30 is kept from the task spec and the return expression is a guess from a single-byte flag read.
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // BaseFormComponent: STANDIN EXE_RTTI COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); only class names, base chain,
 // slot order and sizes are claimed.
@@ -42,6 +43,9 @@ public:
 	void ClearDataComponent() override;  // 02
 	// BGSIdleCollection::CopyComponent: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); slot 3, target 0x1d77a0, inherited name
 	void CopyComponent() override;  // 03
+
+	// 0x1d7e30 BGSIdleCollection::Function1d7e30: GUESS; returns bit 0 of idleFlags
+	int Function1d7e30();
 
 		// idleFlags: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); NG wraps it in stl::enumeration<IdleFlags, std::int8_t>
 	std::int8_t idleFlags;  // 08

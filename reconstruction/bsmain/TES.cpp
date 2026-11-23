@@ -1,5 +1,5 @@
 // Source exposure: mixed (pinned listing, community names and the labelled sibling sources).
-// Code origin: original reconstruction and the sibling adaptations cited below.
+// Code origin: original reconstruction and the sibling adaptations cited below.; Written for this reconstruction from the listing; the two members at 0x13C and 0x2A8 are declared in the header with guessed names.
 // Adapted bodies: GetLandMaterialType, ResumeMasterFileLoads and CancelMasterFileLoads (author-permission).
 // Sibling source: fo4-private@1b765c70 src/Shared/FileIO/TES.cpp:158 (TES::GetLandMaterialType)
 // Sibling source: fo4-private@1b765c70 src/Shared/FileIO/TES.cpp:702 (TES::ResumeMasterFileLoads)
@@ -13,15 +13,10 @@
 // 0x1a4670 TES::CancelMasterFileLoads
 // 0x1a2200 TES::Function1a2200
 // 0x1b4660 TES::ScalarDeletingDestructor
-// CI hash: 0x1b4660 ?ScalarDeletingDestructor@TES@@QEAAPEAV1@I@Z
-// 0x1a2610 TES::GetWorldSpace
+// SPDX-License-Identifier: CC0-1.0
+// 0x1a9280 TES::Function1a9280
+// 0x1aa2d0 TES::Function1aa2d0
 #include "TES.h"
-
-// Return the worldspace containing the current exterior grid.
-TESWorldSpace* TES::GetWorldSpace() const
-{
-    return worldSpace;
-}
 
 namespace {
 constexpr unsigned kReleaseStorage = 1u;
@@ -63,3 +58,7 @@ TES* TES::ScalarDeletingDestructor(unsigned a_flags)
     }
     return this;
 }
+
+void TES::Function1a9280(unsigned char value) { field13C = value; }
+
+void TES::Function1aa2d0() { ++field2A8; }
