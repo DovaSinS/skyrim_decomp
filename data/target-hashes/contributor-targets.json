@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "build_id": "sse-steam-1-7-104",
-  "snapshot_utc": "2026-11-23T13:41:41.635053+00:00",
+  "snapshot_utc": "2026-11-23T13:45:20.102481+00:00",
   "function_metadata_sha256": "15ba17036f4312634d884316084923fbf3e4bdad61101ab28ae476b187376710",
   "claims_snapshot_sha256": "7cf7bfd5d803ac02f5a0e69af6c56d2dfb49876327a4e30f124cac8b26d46dc5",
   "claims": [
@@ -5017,6 +5017,1206 @@
   "next_candidate_count": 2320,
   "claim_function_count": 1105,
   "functions": [
+    {
+      "rva": 831680,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 831776,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 831872,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 831968,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832096,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832192,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832288,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832400,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832512,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832608,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832720,
+      "size": 89,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832816,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 832912,
+      "size": 111,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833024,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833120,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833216,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833312,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833408,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833504,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833600,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833696,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833824,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 833936,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834064,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834160,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834368,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834464,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834592,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834704,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834816,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 834912,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835008,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835104,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835200,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835296,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835504,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835600,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835728,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 835936,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836032,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836128,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836240,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836336,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836432,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 836640,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 837216,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 837312,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 837472,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 837632,
+      "size": 88,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838096,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838304,
+      "size": 119,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838544,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838656,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838864,
+      "size": 114,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 838992,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 839200,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 839408,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 839712,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 839920,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840128,
+      "size": 89,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840224,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840336,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840528,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840656,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 840960,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 841088,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 841392,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 841600,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 841808,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 841920,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842128,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842240,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842352,
+      "size": 117,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842480,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842784,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 842896,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 843104,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 843312,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 843616,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 843744,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 843840,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844144,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844352,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844464,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844576,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844880,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 844992,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 845232,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 845344,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 845648,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 845760,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846064,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846176,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846480,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846576,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846688,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 846800,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 847104,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 847200,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 847312,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 847616,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 847728,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848032,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848144,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848240,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848544,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848768,
+      "size": 111,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848880,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 848992,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 849104,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 849408,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 849536,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 849632,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 849936,
+      "size": 90,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850032,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850240,
+      "size": 111,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850368,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850480,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850688,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 850800,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851104,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851312,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851520,
+      "size": 111,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851648,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851856,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 851952,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852064,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852272,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852384,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852592,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852704,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852832,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 852944,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853152,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853248,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853344,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853440,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853536,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 853664,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 854000,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 854208,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 854320,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 854624,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 854736,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855040,
+      "size": 115,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855184,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855296,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855504,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855632,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855840,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 855952,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 856160,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 856368,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 856576,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 856688,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 856896,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 857008,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 857216,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 857328,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 857632,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 857744,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858048,
+      "size": 93,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858144,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858352,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858560,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858672,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 858880,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 859184,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 859392,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 859504,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 859808,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 860016,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 860224,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 860432,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 860640,
+      "size": 112,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 860752,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 861056,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 861184,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 861488,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 861600,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 861808,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862032,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862240,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862368,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862576,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862784,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 862896,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863104,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863312,
+      "size": 108,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863520,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863632,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863840,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 863984,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 864096,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 864400,
+      "size": 121,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 864528,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 864736,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 864848,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 865056,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
+    {
+      "rva": 865360,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "on_demand": true
+    },
     {
       "rva": 865456,
       "size": 106,
