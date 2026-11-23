@@ -13,6 +13,7 @@ const BSFixedString &MovementHandlerAgentSprintActionTrigger::QClassAgentType()
 {
     static BSFixedString typeString("Sprint Action Trigger");
     return typeString;
+
 }
 
 void MovementHandlerAgentSprintActionTrigger::Function7a6100(bool a_value)
