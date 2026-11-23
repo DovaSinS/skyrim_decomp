@@ -6,9 +6,16 @@
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // 0xfe54c0 BSMultiBoundSphere::GetType
+// Code origin: original; the listing and community declarations only
+// 0x213ca0 BSMultiBoundSphere::Function213ca0
 #include "BSMultiBoundSphere.h"
 // GetType: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 std::uint32_t BSMultiBoundSphere::GetType() const
 {
     return 0x3;
+}
+
+float BSMultiBoundSphere::Function213ca0() const
+{
+    return radius24;
 }

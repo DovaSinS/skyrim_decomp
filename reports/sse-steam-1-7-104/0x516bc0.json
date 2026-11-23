@@ -27,7 +27,7 @@
           "/Ireconstruction",
           "/showIncludes"
         ],
-        "object_sha256": "eee63272c853e8fa7f212eba997059299621a7465f7709284df1eeb56ccec771",
+        "object_sha256": "6b2b4ca83ce8564e6a59cfbaa15b508732b2cf85a6f8e8d3e13c8d90437f1215",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiAVObject.h",
@@ -39,7 +39,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "acc93363c6e6d62414ee3cd3a56de6902ec418c9",
+    "base_sha": "8d845b071788e6cbe1b8f3247a9ae75238e7dd0e",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -50,7 +50,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "0095a728b0a79c36acb8cdf2f35286ac8007e329",
+    "head_sha": "9c1f10e503507ab53b126b3aba4a9d5862d56cff",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -63,10 +63,10 @@
     "recipe_sha256": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 45042950115,
+    "run_id": 45152623264,
     "rva": "0x516bc0",
     "schema": 2,
-    "source_sha256": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88",
+    "source_sha256": "465732c06e43f3dae5fbaea0e8001008cb678778ff80a0e9e9ed11875da95a29",
     "status": "pass",
     "symbols": [
       "?Function516bc0@BGSTerrainManager@@SAXXZ"
@@ -82,7 +82,6 @@
     "unit": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
-  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0x516bc0",
   "match_record_schema": 2,
   "notes": [
@@ -102,7 +101,7 @@
         "candidate": {
           "code_section_sha256": "163df6d02fa4c8fba698c641c97ae0000ea285a96517c5341d9a01c5bccac193",
           "code_sections": 1,
-          "object_sha256": "eee63272c853e8fa7f212eba997059299621a7465f7709284df1eeb56ccec771"
+          "object_sha256": "6b2b4ca83ce8564e6a59cfbaa15b508732b2cf85a6f8e8d3e13c8d90437f1215"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -166,9 +165,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
-          "source_revision": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88"
+          "source_revision": "465732c06e43f3dae5fbaea0e8001008cb678778ff80a0e9e9ed11875da95a29"
         },
-        "symbol_map_sha256": "0eda29373066902166ce1665e0e6a68c622358c75c1020a831786e5f8935b69f",
+        "symbol_map_sha256": "26fb0bd3cf7fd2d970456b5ba84bb52fa058d72dd969c861e3373e79e299473f",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -179,7 +178,7 @@
   ],
   "source": {
     "compiled": "reconstruction/skyrim_shared/world/BGSTerrainManager.cpp",
-    "digest": "904c34e780073119b254a042b1bc5ca76da96d88cf82fde98d2be9066dc28f88",
+    "digest": "465732c06e43f3dae5fbaea0e8001008cb678778ff80a0e9e9ed11875da95a29",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiAVObject.h",
@@ -188,10 +187,10 @@
       "reconstruction/skyrim_shared/world/BGSTerrainManager.h"
     ]
   },
-  "submitter": "aivv73",
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/0eda29373066902166ce1665e0e6a68c622358c75c1020a831786e5f8935b69f.json",
-    "sha256": "0eda29373066902166ce1665e0e6a68c622358c75c1020a831786e5f8935b69f"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/26fb0bd3cf7fd2d970456b5ba84bb52fa058d72dd969c861e3373e79e299473f.json",
+    "sha256": "26fb0bd3cf7fd2d970456b5ba84bb52fa058d72dd969c861e3373e79e299473f"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",

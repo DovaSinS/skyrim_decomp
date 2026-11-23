@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "a39f8941875e1821a85847c5cf245bede5a290843b7fc82b8715e84280556327",
+        "object_sha256": "2100f1531b814f770b59f9c0d40d1429ccea79fad7576acce41721902d13899b",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bsaudio/BSAudioManager.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "c142e8ac00619b3776f619e24ccf776ff5086a65",
+    "base_sha": "8d845b071788e6cbe1b8f3247a9ae75238e7dd0e",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "07dabcaf9e7e2415950132cdd935a0288e4a8465",
+    "head_sha": "9c1f10e503507ab53b126b3aba4a9d5862d56cff",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 45033163051,
+    "run_id": 45152623264,
     "rva": "0xcca620",
     "schema": 2,
-    "source_sha256": "1ce7c1b06212241895784752803f6eb6453755afe25a529d7647ee2861e1d4c0",
+    "source_sha256": "71a74e1f5faf7483c9ffeb7140cfe9ae031f450c6ea0ff0c9432efcf7bb1a73f",
     "status": "pass",
     "symbols": [
       "?QPlatformInstance@BSAudioManager@@SAAEAVBSAudio@@XZ"
@@ -79,7 +79,6 @@
     "unit": "reconstruction/bsaudio/BSAudioManager.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
-  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0xcca620",
   "match_record_schema": 2,
   "notes": [
@@ -99,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "98407bd5c8d9f6b4ec45b53662ce56e8dee92a12cc2d04a934450ce8fce255c8",
           "code_sections": 1,
-          "object_sha256": "a39f8941875e1821a85847c5cf245bede5a290843b7fc82b8715e84280556327"
+          "object_sha256": "2100f1531b814f770b59f9c0d40d1429ccea79fad7576acce41721902d13899b"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -162,9 +161,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/bsaudio/BSAudioManager.cpp",
-          "source_revision": "1ce7c1b06212241895784752803f6eb6453755afe25a529d7647ee2861e1d4c0"
+          "source_revision": "71a74e1f5faf7483c9ffeb7140cfe9ae031f450c6ea0ff0c9432efcf7bb1a73f"
         },
-        "symbol_map_sha256": "720e3f2427b00408351739e1e87b49cd35f91ae91c1cf85945e792839a64cf12",
+        "symbol_map_sha256": "ddc4ebe2c9955821a10a5856ee417c83b248317de7e448934db3c1f76f9ab78e",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -175,17 +174,17 @@
   ],
   "source": {
     "compiled": "reconstruction/bsaudio/BSAudioManager.cpp",
-    "digest": "1ce7c1b06212241895784752803f6eb6453755afe25a529d7647ee2861e1d4c0",
+    "digest": "71a74e1f5faf7483c9ffeb7140cfe9ae031f450c6ea0ff0c9432efcf7bb1a73f",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/bsaudio/BSAudioManager.cpp",
       "reconstruction/bsaudio/BSAudioManager.h"
     ]
   },
-  "submitter": "aivv73",
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/720e3f2427b00408351739e1e87b49cd35f91ae91c1cf85945e792839a64cf12.json",
-    "sha256": "720e3f2427b00408351739e1e87b49cd35f91ae91c1cf85945e792839a64cf12"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/ddc4ebe2c9955821a10a5856ee417c83b248317de7e448934db3c1f76f9ab78e.json",
+    "sha256": "ddc4ebe2c9955821a10a5856ee417c83b248317de7e448934db3c1f76f9ab78e"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",

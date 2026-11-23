@@ -1,6 +1,6 @@
 // Source exposure: mixed (names and declarations from community headers; the listing of the pinned
 // image).
-// Adapted bodies: none
+// Adapted bodies: none in this file; the adapted bodies and the sibling-close helper are declared in the unit header.
 // 0x1525270 BSLightingShaderMaterialEye::Create
 // 0x1525770 BSLightingShaderMaterialEye::SaveBinary
 // 0x15257f0 BSLightingShaderMaterialEye::LoadBinary
@@ -8,6 +8,8 @@
 // 0x15250e0 BSLightingShaderMaterialEye::Ctor
 // 0x15255c0 BSLightingShaderMaterialEye::ClearTextures
 // 0x15253e0 BSLightingShaderMaterialEye::ComputeCRC32
+// 0x15256d0 BSLightingShaderMaterialEye::GetTextures
+// Code origin: GetTextures original, from the listing and community declarations only
 // Code origin: bodies written from local listings of the pinned image; names and declarations follow CommonLibSSE-NG; the reference-count release spelling follows cookbook rule 29.
 #include "BSLightingShaderMaterialEye.h"
 
@@ -169,4 +171,21 @@ std::uint32_t BSLightingShaderMaterialEye::ComputeCRC32(std::uint32_t a_crcSeed)
     std::uint32_t out;
     CRC32SizeOfSize(&out, &record, sizeof(record));
     return out;
+}
+
+inline void eyeAppend(NiSourceTexture** a_out, std::uint32_t& a_count, NiSourceTexture* a_tex)
+{
+    if (a_tex) { a_out[a_count++] = a_tex; }
+}
+
+std::uint32_t BSLightingShaderMaterialEye::GetTextures(NiSourceTexture** a_out)
+{
+    std::uint32_t count = 0;
+    eyeAppend(a_out, count, diffuseTexture._ptr);
+    eyeAppend(a_out, count, normalTexture._ptr);
+    eyeAppend(a_out, count, rimSoftLightingTexture._ptr);
+    eyeAppend(a_out, count, specularBackLightingTexture._ptr);
+    eyeAppend(a_out, count, eyeEnvMask._ptr);
+    eyeAppend(a_out, count, eyeCubemap._ptr);
+    return count;
 }

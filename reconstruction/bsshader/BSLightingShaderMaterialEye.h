@@ -1,3 +1,5 @@
+// Sibling source: momusdigital/f3_decomp@f5bac1b5 src/bsshader/distantlodshader_decls.h:21 (NiRefObject::IncRefCount is close to it, similarity 0.86 by tools/check_origin.py)
+// NiRefObject::IncRefCount: SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
 // Sibling source: momusdigital/fnv_decomp@91e1b6e8 src/bsshader/boltshader.cpp:27
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Sibling source: momusdigital/fnv_decomp@91e1b6e8 src/bsshader/boltshader.cpp:31
@@ -340,9 +342,10 @@ public:
     virtual void SaveBinary(NiStream& a_stream);  // compared: 0x1525770
     virtual void LoadBinary(NiStream& a_stream);  // compared: 0x15257f0
     virtual void ReceiveValuesFromRootMaterial(bool a_skinned, bool a_rimLighting, bool a_softLighting, bool a_backLighting, bool a_MSN, std::uintptr_t a_extra1, std::uintptr_t a_extra2);  // compared: 0x1525640
-    // the image's Create calls this constructor at its own address, so it stays a separate function
+    // noinline: the image's Create calls this constructor at its own address, so it stays a separate function
     __declspec(noinline) BSLightingShaderMaterialEye();  // compared: 0x15250e0
     std::uint32_t ComputeCRC32(std::uint32_t a_crcSeed) override;  // compared: 0x15253e0
+    std::uint32_t GetTextures(NiSourceTexture** a_out);  // compared: 0x15256d0
     void ClearTextures() override;  // compared: 0x15255c0
 
     NiPointer<NiSourceTexture> eyeEnvMask;  // A0

@@ -26,27 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "ebf83e6f4ad0b5c674c747d710156557510fe589de3e48b305f2b2eb1ea5874a",
-        "opened_equals_closure": true,
-        "repository_files_opened": [
-          "reconstruction/bscore/BSNiAllocator.cpp",
-          "reconstruction/bscore/BSNiAllocator.h"
-        ]
-      },
-      "winpc-native": {
-        "command_flags": [
-          "/nologo",
-          "/c",
-          "/O2",
-          "/MD",
-          "/GS-",
-          "/EHsc",
-          "/GR",
-          "/fp:precise",
-          "/Gy",
-          "/showIncludes"
-        ],
-        "object_sha256": "1ac91d3ff58eb52f309866c58846ef2f8d867861c75be7825bb0834cac2d3554",
+        "object_sha256": "92f65131230c5fecffb7b83dc45737749df1e3da570858c700c5f69fb945d098",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/bscore/BSNiAllocator.cpp",
@@ -55,22 +35,60 @@
       }
     }
   },
+  "ci_confirmation": {
+    "base_sha": "8d845b071788e6cbe1b8f3247a9ae75238e7dd0e",
+    "build_id": "sse-steam-1-7-104",
+    "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
+    "conclusion": "success",
+    "event": "pull_request",
+    "first_host": {
+      "host_id": "mac-wine",
+      "loader": "wine",
+      "machine": "maintainer-mac",
+      "os": "macos"
+    },
+    "head_sha": "9c1f10e503507ab53b126b3aba4a9d5862d56cff",
+    "host_id": "github-windows-native",
+    "job": "hash",
+    "kind": "pr-check-hash",
+    "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
+    "loader": "native",
+    "machine": "github-hosted-windows",
+    "map_status": "pass",
+    "normalized_sha256": "e18aacce29affcdddaa5f641ac1ec12552e0fe9d066e6408941b1792818b8619",
+    "os": "windows",
+    "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
+    "result": "hash-match",
+    "run_attempt": 1,
+    "run_id": 45152623264,
+    "rva": "0xeae910",
+    "schema": 2,
+    "source_sha256": "cec29c0029581c8e27d2e3ac4b736ea01be7026fb9d449d9324d2c3cc0f9f311",
+    "status": "pass",
+    "symbols": [
+      "?VerifyAddress@BSNiAllocator@@UEBAEXZ"
+    ],
+    "target": {
+      "extraction": "linked-reference-inference",
+      "layout_sha256": "e0b0ec0ddb465ea3980cf3b5dbcb5137a3c790d43af3982b09b9a5d47ea78661",
+      "normalized_sha256": "e18aacce29affcdddaa5f641ac1ec12552e0fe9d066e6408941b1792818b8619",
+      "rva": 15395088,
+      "size": 3
+    },
+    "toolset": "MATCH",
+    "unit": "reconstruction/bscore/BSNiAllocator.cpp",
+    "workflow": ".github/workflows/pr-check.yml"
+  },
   "function_id": "sse-steam-1-7-104-0xeae910",
   "match_record_schema": 2,
   "notes": [
-    "Comparator reports are embedded verbatim. Their acceptance field is the comparator's own and stays not-evaluated. Acceptance follows the acceptance rule in docs/verification.md: this record, a sanitized Reviewer approve bound to the same source digest, and integration by tools/accept_function.py.",
-    "independence: separate-machine, different-loader. The compile hosts are the maintainer's own machines, each with its own install of the pinned toolchain, reached by tools/verifier/runners.py: mac-wine (machine maintainer-mac; macos arm64; the pinned compiler run under Wine; compiler binaries sha256: c1xx.dll 4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be, c2.dll 03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b, cl.exe 5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e, link.exe 70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099); winpc-native (machine maintainer-winpc; windows amd64; the pinned compiler run natively; compiler binaries sha256: c1xx.dll 4d5f2f8c1ed3384ae15be5b31e2918e4a200913cb58374543b7a05762de234be, c2.dll 03627abf4cde10390bc086ba1a85625ed61c2708838db9fff0dc9830040bbf2b, cl.exe 5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e, link.exe 70e987473cc4c67f65cdcabb82b3dc4827cb9d224d6016843051363b4cacb099). Each host hashed its compiler binaries during this confirm run and checked them against pinned.sha256, checked its own copy of the image against builds/target.json before compiling, and compared its own object; the local host also compared the other hosts' objects. Host facts are self-reported by tools/verifier/unit_build.py.",
-    "Build environment on both compile hosts: INCLUDE, LIB, LIBPATH, CL, _CL_ and EXTERNAL_INCLUDE removed before the compile, INCLUDE then set to toolchain and SDK directories only (by the msvc-wine wrapper under Wine, by tools/verifier/unit_build.py from the same directory list natively); /showIncludes added after the recipe flags, and the repository files the compiler opened equalled the include closure. Each host's flags, cleared variables, object hash and opened files are in the build block, as that host reported them; the gate checks that block for presence and consistency with the runs, not for truth.",
-    "/showIncludes was measured once, on the first accepted unit, to change no object section except the object-path record in .debug$S (and the .chks64 checksum of it); it was not re-measured for this unit.",
-    "Whole-object hashes differ between compiles in the COFF timestamp, the object path recorded in .debug$S (each host compiles to its own path) and the .chks64 checksum of that section.",
-    "A byte match shows that this source and recipe produce the checked code. It does not verify the community name, and it does not show that the original source looked like this.",
-    "Source state: working tree on base commit a883f5a93d675f00b3ce90a536f342db60b7e733, with uncommitted changes to reconstruction/bsengine/BSNiAllocator.cpp, reconstruction/bsengine/BSNiAllocator.h at confirm time. The runs bind the unit digest, recipe and symbol-map hashes above and comparator source sha256 6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46 (each report's comparator.source_sha256), not a commit; tools/check.py recomputes them from whatever tree this record is committed in."
+    "Second host: the pr-check hash job (target-hash commitments, no game bytes in CI); the first host's comparator report is verbatim."
   ],
   "recipe": {
     "path": "reconstruction/recipes/msvc-19.16.27054-o2.json",
     "sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
   },
-  "reproduction": "From the repository root, on each compile host, with cl 19.16.27054 x64 unpacked at <msvc> (an MSVC toolset and Windows SDK whose compiler binaries match tools/verifier/pinned.sha256; tools/verifier/setup_boat_machine.sh shows one way to unpack them with msvc-wine) and CL, EXTERNAL_INCLUDE, INCLUDE, LIB, LIBPATH, _CL_ removed from the environment. Under Wine: <msvc>/bin/x64/cl /nologo /c /O2 /MD /GS- /EHsc /GR /fp:precise /Gy /showIncludes /Fo<work>/candidate.obj reconstruction/bsengine/BSNiAllocator.cpp (the msvc-wine wrapper sets INCLUDE to toolchain and SDK directories only). Natively on Windows: set INCLUDE to the directories the wrapper uses, in its order, <msvc>/VC/Tools/MSVC/<toolset>/atlmfc/include;<msvc>/VC/Tools/MSVC/<toolset>/include;<msvc>/Windows Kits/10/Include/<sdk>/shared;.../ucrt;.../um;.../winrt;.../km (tools/verifier/unit_build.py, MSVC_INCLUDE_DIRS), then run <msvc>/VC/Tools/MSVC/<toolset>/bin/Hostx64/x64/cl.exe /nologo /c /O2 /MD /GS- /EHsc /GR /fp:precise /Gy /showIncludes /Fo<work>/candidate.obj reconstruction/bsengine/BSNiAllocator.cpp. On both, the verifier required the repository files /showIncludes lists to equal --unit below ; python3 -I tools/verifier/tu_task.py --function-id sse-steam-1-7-104-0xeae910 --symbol '?VerifyAddress@BSNiAllocator@@UEBAEXZ' --compiled reconstruction/bsengine/BSNiAllocator.cpp --unit reconstruction/bsengine/BSNiAllocator.cpp reconstruction/bsengine/BSNiAllocator.h --recipe reconstruction/recipes/msvc-19.16.27054-o2.json --symbols reports/sse-steam-1-7-104/generator-const-return.symbol-map.json --object <work>/candidate.obj --out <work> ; python3 tools/verifier/verify_function.py --task-file <work>/task-file.json --object <work>/candidate.obj --build-record <work>/build-record.json --image <your SkyrimSE.exe> --report <work>/report.json",
+  "reproduction": "Compile with the pinned recipe and compare with tools/verifier/attempt on a registered first host; the second host is the pr-check.yml hash job of the recorded run, which compiles the same source and checks the published target hashes.",
   "runs": [
     {
       "compared_on": "mac-wine",
@@ -80,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "ec261b6e918d1b4881631d19b706b7c3b2541e9048588bb5d8ff60c0b3f4c9ff",
           "code_sections": 1,
-          "object_sha256": "ebf83e6f4ad0b5c674c747d710156557510fe589de3e48b305f2b2eb1ea5874a"
+          "object_sha256": "92f65131230c5fecffb7b83dc45737749df1e3da570858c700c5f69fb945d098"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -140,168 +158,10 @@
         "report_schema": 1,
         "result": "pass",
         "source": {
-          "path": "reconstruction/bsengine/BSNiAllocator.cpp",
-          "source_revision": "ff8b3dc969dabf93f2dd51fda0a0dbcc1151d2472a733314a77e9e5796c67256"
+          "path": "reconstruction/bscore/BSNiAllocator.cpp",
+          "source_revision": "cec29c0029581c8e27d2e3ac4b736ea01be7026fb9d449d9324d2c3cc0f9f311"
         },
-        "symbol_map_sha256": "c08ef12c25b1f5a29ad998b4e565ccb8e59d7314101365b78450ec6850a2decc",
-        "target": {
-          "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
-          "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
-        },
-        "task_id": "sse-steam-1-7-104-0xeae910"
-      }
-    },
-    {
-      "compared_on": "winpc-native",
-      "compiled_on": "winpc-native",
-      "report": {
-        "acceptance": "not-evaluated",
-        "candidate": {
-          "code_section_sha256": "ec261b6e918d1b4881631d19b706b7c3b2541e9048588bb5d8ff60c0b3f4c9ff",
-          "code_sections": 1,
-          "object_sha256": "1ac91d3ff58eb52f309866c58846ef2f8d867861c75be7825bb0834cac2d3554"
-        },
-        "comparator": {
-          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
-          "version": "0.6.1-runtime"
-        },
-        "contract_version": 2,
-        "coverage": {
-          "aliases_declared": [],
-          "code_bytes_by_reference": 0,
-          "code_bytes_exact": 3,
-          "code_bytes_total": 3,
-          "eh": {
-            "bytes": 0,
-            "handlers": {},
-            "int_fields": 0,
-            "ref_fields": 0,
-            "structures": {},
-            "type_names_compared": 0
-          },
-          "funclet_bytes_by_reference": 0,
-          "funclet_bytes_exact": 0,
-          "funclet_bytes_total": 0,
-          "funclet_end_evidence": {},
-          "funclet_ranges": [],
-          "funclet_sections": 0,
-          "relocations_by_type": {},
-          "self_rva_fields": 0,
-          "unwind": "none-in-range",
-          "unwind_bytes_exact": 0,
-          "unwind_chained_entries": 0,
-          "unwind_entries": 0
-        },
-        "detail": "all contract v2 checks passed",
-        "function": {
-          "build_id": "sse-steam-1-7-104",
-          "rva": 15395088,
-          "size": 3,
-          "symbol": "?VerifyAddress@BSNiAllocator@@UEBAEXZ"
-        },
-        "reason": "all-checks-passed",
-        "recipe": {
-          "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
-          "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
-          "flags": [
-            "/nologo",
-            "/c",
-            "/O2",
-            "/MD",
-            "/GS-",
-            "/EHsc",
-            "/GR",
-            "/fp:precise",
-            "/Gy"
-          ],
-          "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
-        },
-        "report_schema": 1,
-        "result": "pass",
-        "source": {
-          "path": "reconstruction/bsengine/BSNiAllocator.cpp",
-          "source_revision": "ff8b3dc969dabf93f2dd51fda0a0dbcc1151d2472a733314a77e9e5796c67256"
-        },
-        "symbol_map_sha256": "c08ef12c25b1f5a29ad998b4e565ccb8e59d7314101365b78450ec6850a2decc",
-        "target": {
-          "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
-          "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
-        },
-        "task_id": "sse-steam-1-7-104-0xeae910"
-      }
-    },
-    {
-      "compared_on": "mac-wine",
-      "compiled_on": "winpc-native",
-      "report": {
-        "acceptance": "not-evaluated",
-        "candidate": {
-          "code_section_sha256": "ec261b6e918d1b4881631d19b706b7c3b2541e9048588bb5d8ff60c0b3f4c9ff",
-          "code_sections": 1,
-          "object_sha256": "1ac91d3ff58eb52f309866c58846ef2f8d867861c75be7825bb0834cac2d3554"
-        },
-        "comparator": {
-          "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
-          "version": "0.6.1-runtime"
-        },
-        "contract_version": 2,
-        "coverage": {
-          "aliases_declared": [],
-          "code_bytes_by_reference": 0,
-          "code_bytes_exact": 3,
-          "code_bytes_total": 3,
-          "eh": {
-            "bytes": 0,
-            "handlers": {},
-            "int_fields": 0,
-            "ref_fields": 0,
-            "structures": {},
-            "type_names_compared": 0
-          },
-          "funclet_bytes_by_reference": 0,
-          "funclet_bytes_exact": 0,
-          "funclet_bytes_total": 0,
-          "funclet_end_evidence": {},
-          "funclet_ranges": [],
-          "funclet_sections": 0,
-          "relocations_by_type": {},
-          "self_rva_fields": 0,
-          "unwind": "none-in-range",
-          "unwind_bytes_exact": 0,
-          "unwind_chained_entries": 0,
-          "unwind_entries": 0
-        },
-        "detail": "all contract v2 checks passed",
-        "function": {
-          "build_id": "sse-steam-1-7-104",
-          "rva": 15395088,
-          "size": 3,
-          "symbol": "?VerifyAddress@BSNiAllocator@@UEBAEXZ"
-        },
-        "reason": "all-checks-passed",
-        "recipe": {
-          "compiler_binary_sha256": "5d118b3d66dd574616ea5be3b74d20793a4f37a0fa067cf09c52388a8c492e7e",
-          "compiler_version": "19.16.27054 for x64 (toolset dir 14.16.27023, VS 2017 15.9.85 manifest)",
-          "flags": [
-            "/nologo",
-            "/c",
-            "/O2",
-            "/MD",
-            "/GS-",
-            "/EHsc",
-            "/GR",
-            "/fp:precise",
-            "/Gy"
-          ],
-          "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838"
-        },
-        "report_schema": 1,
-        "result": "pass",
-        "source": {
-          "path": "reconstruction/bsengine/BSNiAllocator.cpp",
-          "source_revision": "ff8b3dc969dabf93f2dd51fda0a0dbcc1151d2472a733314a77e9e5796c67256"
-        },
-        "symbol_map_sha256": "c08ef12c25b1f5a29ad998b4e565ccb8e59d7314101365b78450ec6850a2decc",
+        "symbol_map_sha256": "64b6c885481bf05b845a04a5a2ced3647db6be7eb673f586c39aeef59cffaaa6",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -312,18 +172,17 @@
   ],
   "source": {
     "compiled": "reconstruction/bscore/BSNiAllocator.cpp",
-    "digest": "869ec1f19f3f3cbea4ccb6cbc1f361d9d568e3974bf5d2afdbf1666cff3d2bc9",
+    "digest": "cec29c0029581c8e27d2e3ac4b736ea01be7026fb9d449d9324d2c3cc0f9f311",
     "digest_method": "tu-sha256-v2",
-    "run_digest": "ff8b3dc969dabf93f2dd51fda0a0dbcc1151d2472a733314a77e9e5796c67256",
-    "run_digest_method": "tu-sha256-v1",
     "translation_unit": [
       "reconstruction/bscore/BSNiAllocator.cpp",
       "reconstruction/bscore/BSNiAllocator.h"
     ]
   },
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/generator-const-return.symbol-map.json",
-    "sha256": "c08ef12c25b1f5a29ad998b4e565ccb8e59d7314101365b78450ec6850a2decc"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/64b6c885481bf05b845a04a5a2ced3647db6be7eb673f586c39aeef59cffaaa6.json",
+    "sha256": "64b6c885481bf05b845a04a5a2ced3647db6be7eb673f586c39aeef59cffaaa6"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",
