@@ -28,7 +28,7 @@ static_assert(sizeof(BaseFormComponent) == 0x8, "layout");
 struct DestructibleObjectData
 {
 	// Destroy: GUESS(low); the target calls one helper with the data and 1, target 0x1d6850
-	void Destroy(std::uint32_t a_flags);
+	void Destroy(std::uint32_t a_flags) noexcept;
 
 	// unk00: GUESS(low); members not modelled
 	std::uint8_t unk00[0x20];  // 00

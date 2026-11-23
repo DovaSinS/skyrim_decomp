@@ -26,7 +26,7 @@
           "/Gy",
           "/showIncludes"
         ],
-        "object_sha256": "fd1d08279b712baf9a04c3426eef1f8475fe9f01eee4bedc2ddd6726cbc37341",
+        "object_sha256": "09394af6be29433effbd16bf2d3f6dd40702f65bac8f3acfc8f84b20ce8f76fb",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/skyrim_shared/quest/BGSMoviePlayer.cpp",
@@ -36,7 +36,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "638a5c1e0cc53ad49e68e53aba106c8da8b34bba",
+    "base_sha": "8d845b071788e6cbe1b8f3247a9ae75238e7dd0e",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -47,7 +47,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "20297bef31a19f150719b5c438d74ac0f8f5cbcd",
+    "head_sha": "93dc2e146b6ec03f1b960cac2ef726482f9584c6",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -60,10 +60,10 @@
     "recipe_sha256": "923a7ef7ea6d9792a66669014f059f40af29e111b065f2ae6b0a6835d7f4e838",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 45054142314,
+    "run_id": 45156334155,
     "rva": "0x11b24e0",
     "schema": 2,
-    "source_sha256": "2109416396282a6153685c499fca67e966e2613ac715e7341c0e52e329086a3b",
+    "source_sha256": "aaf12e58f412847c070bf935593aa6b9832bb187a628e26d6c86e0feb355b995",
     "status": "pass",
     "symbols": [
       "?Function11b24e0@BGSMoviePlayer@@QEAAX_N@Z"
@@ -79,7 +79,6 @@
     "unit": "reconstruction/skyrim_shared/quest/BGSMoviePlayer.cpp",
     "workflow": ".github/workflows/pr-check.yml"
   },
-  "drafter_model": "not stated",
   "function_id": "sse-steam-1-7-104-0x11b24e0",
   "match_record_schema": 2,
   "notes": [
@@ -99,7 +98,7 @@
         "candidate": {
           "code_section_sha256": "712c7f990062f5a606bde4ebe711fad1c0e1b7562389b41c37d1687ec89aa444",
           "code_sections": 1,
-          "object_sha256": "fd1d08279b712baf9a04c3426eef1f8475fe9f01eee4bedc2ddd6726cbc37341"
+          "object_sha256": "09394af6be29433effbd16bf2d3f6dd40702f65bac8f3acfc8f84b20ce8f76fb"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -162,9 +161,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/skyrim_shared/quest/BGSMoviePlayer.cpp",
-          "source_revision": "2109416396282a6153685c499fca67e966e2613ac715e7341c0e52e329086a3b"
+          "source_revision": "aaf12e58f412847c070bf935593aa6b9832bb187a628e26d6c86e0feb355b995"
         },
-        "symbol_map_sha256": "3fbcd62c4a965e3952e886f079f5466ebf79897020e6dc1400c0ef5e22536c40",
+        "symbol_map_sha256": "47e72f74fb0a2272232fbffb3f2150e4a411316e5d7aba69b8cee13d0688c5b8",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -175,17 +174,17 @@
   ],
   "source": {
     "compiled": "reconstruction/skyrim_shared/quest/BGSMoviePlayer.cpp",
-    "digest": "2109416396282a6153685c499fca67e966e2613ac715e7341c0e52e329086a3b",
+    "digest": "aaf12e58f412847c070bf935593aa6b9832bb187a628e26d6c86e0feb355b995",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/skyrim_shared/quest/BGSMoviePlayer.cpp",
       "reconstruction/skyrim_shared/quest/BGSMoviePlayer.h"
     ]
   },
-  "submitter": "samintanim",
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/3fbcd62c4a965e3952e886f079f5466ebf79897020e6dc1400c0ef5e22536c40.json",
-    "sha256": "3fbcd62c4a965e3952e886f079f5466ebf79897020e6dc1400c0ef5e22536c40"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/47e72f74fb0a2272232fbffb3f2150e4a411316e5d7aba69b8cee13d0688c5b8.json",
+    "sha256": "47e72f74fb0a2272232fbffb3f2150e4a411316e5d7aba69b8cee13d0688c5b8"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",

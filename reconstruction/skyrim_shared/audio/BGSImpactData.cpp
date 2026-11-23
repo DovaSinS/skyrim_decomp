@@ -1,6 +1,10 @@
 // Source exposure: mixed. Drafted by claude-sonnet-5-5 from the local instruction listing of the
 // pinned image, with the class layout from the header beside this file. Names are from CharmedBaryon/CommonLibSSE-NG b93280e (MIT) unless labelled in the header.
 // 0x31d7b0 BGSImpactData::InitializeData
+// 0x31def0 BGSImpactData::Function31def0
+// 0x31df40 BGSImpactData::~BGSImpactData
+// Code origin: Function31def0 and the destructor original, reconstructed from the pinned image listing
+// AIFormulas::GetSoundLevelValue, SOUND_LEVEL: CRASHLOGGER_PDB(59818@2026.10.24)
 #include "BGSImpactData.h"
 
 void BGSImpactData::InitializeData()
@@ -18,4 +22,23 @@ void BGSImpactData::InitializeData()
     sound1 = nullptr;
     sound2 = nullptr;
     hazard = nullptr;
+}
+
+enum SOUND_LEVEL : std::uint32_t
+{
+    kSoundLevelNormal = 0,
+};
+
+namespace AIFormulas
+{
+    int GetSoundLevelValue(SOUND_LEVEL a_level);
+}
+
+BGSImpactData::~BGSImpactData()
+{
+}
+
+int BGSImpactData::Function31def0()
+{
+    return AIFormulas::GetSoundLevelValue(static_cast<SOUND_LEVEL>(data.soundLevel));
 }

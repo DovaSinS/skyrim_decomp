@@ -27,7 +27,7 @@
           "/Ireconstruction",
           "/showIncludes"
         ],
-        "object_sha256": "15ada92f0909e078ac665d7f165ed5f3e6c0bd7dfbbfb1107376fb0edc3d211f",
+        "object_sha256": "2d047c168dbe1deca6276abf240c7e0982653a3d64b4e7daea199fc8ed2bb01e",
         "opened_equals_closure": true,
         "repository_files_opened": [
           "reconstruction/gamebryo/nimain/NiGeometry.cpp",
@@ -37,7 +37,7 @@
     }
   },
   "ci_confirmation": {
-    "base_sha": "f49449f9c7cc109c7faaafe8b683e7da726ea4ab",
+    "base_sha": "8d845b071788e6cbe1b8f3247a9ae75238e7dd0e",
     "build_id": "sse-steam-1-7-104",
     "compiler_pins_sha256": "af2c665cb3fc79c2b267bb1a72f0555412e7e22b8d74bb7d13e19539b5aaebcf",
     "conclusion": "success",
@@ -48,7 +48,7 @@
       "machine": "maintainer-mac",
       "os": "macos"
     },
-    "head_sha": "63f5b095aa96cdccc029ea1488042844d47fc500",
+    "head_sha": "93dc2e146b6ec03f1b960cac2ef726482f9584c6",
     "host_id": "github-windows-native",
     "job": "hash",
     "kind": "pr-check-hash",
@@ -61,10 +61,10 @@
     "recipe_sha256": "b1119bb6d7e96bcd776dd4e4ac598fb74441d25e055ecd1c733a71482655bcfc",
     "result": "hash-match",
     "run_attempt": 1,
-    "run_id": 44375216364,
+    "run_id": 45156334155,
     "rva": "0xf0b150",
     "schema": 2,
-    "source_sha256": "cb1719d927088846f17edd4c19254affde47f6df97ded0529eedf3faedddd7e3",
+    "source_sha256": "9e8dc6b28392ec38c576457bbeb4da0114ea237e32e0bb027ce68d72f8ba80e1",
     "status": "pass",
     "symbols": [
       "?Unk_37@NiGeometry@@QEAAXPEAVGeometryRefView@@@Z"
@@ -99,7 +99,7 @@
         "candidate": {
           "code_section_sha256": "2ee5b3b99e1bace22771356007f7c1d6e2fd52fda6a3f4ab2b48e183060bca65",
           "code_sections": 1,
-          "object_sha256": "15ada92f0909e078ac665d7f165ed5f3e6c0bd7dfbbfb1107376fb0edc3d211f"
+          "object_sha256": "2d047c168dbe1deca6276abf240c7e0982653a3d64b4e7daea199fc8ed2bb01e"
         },
         "comparator": {
           "source_sha256": "6bf71d89b21ea1da2659302269501becec45984942f017f52a1b71d339d08e46",
@@ -161,9 +161,9 @@
         "result": "pass",
         "source": {
           "path": "reconstruction/gamebryo/nimain/NiGeometry.cpp",
-          "source_revision": "cb1719d927088846f17edd4c19254affde47f6df97ded0529eedf3faedddd7e3"
+          "source_revision": "9e8dc6b28392ec38c576457bbeb4da0114ea237e32e0bb027ce68d72f8ba80e1"
         },
-        "symbol_map_sha256": "8cd22135b00eb52f877c06045b0c936b00d3e197d07da0201bac05585d49d134",
+        "symbol_map_sha256": "49e3b8f83e68620b7384c05848d934f54d3c5c34c928dcc85a2ad7ff79bc9282",
         "target": {
           "expected_image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f",
           "image_sha256": "846efccf0c1374d71f892907f46549560f2fcb0a75cb87a3eed438baa0f1402f"
@@ -174,17 +174,17 @@
   ],
   "source": {
     "compiled": "reconstruction/gamebryo/nimain/NiGeometry.cpp",
-    "digest": "cb1719d927088846f17edd4c19254affde47f6df97ded0529eedf3faedddd7e3",
+    "digest": "9e8dc6b28392ec38c576457bbeb4da0114ea237e32e0bb027ce68d72f8ba80e1",
     "digest_method": "tu-sha256-v2",
     "translation_unit": [
       "reconstruction/gamebryo/nimain/NiGeometry.cpp",
       "reconstruction/gamebryo/nimain/NiGeometry.h"
     ]
   },
-  "submitter": "v-macrev",
+  "submitter": "v0id-array",
   "symbol_map": {
-    "path": "reports/sse-steam-1-7-104/unit-symbols/8cd22135b00eb52f877c06045b0c936b00d3e197d07da0201bac05585d49d134.json",
-    "sha256": "8cd22135b00eb52f877c06045b0c936b00d3e197d07da0201bac05585d49d134"
+    "path": "reports/sse-steam-1-7-104/unit-symbols/49e3b8f83e68620b7384c05848d934f54d3c5c34c928dcc85a2ad7ff79bc9282.json",
+    "sha256": "49e3b8f83e68620b7384c05848d934f54d3c5c34c928dcc85a2ad7ff79bc9282"
   },
   "toolchain_pin": {
     "path": "tools/verifier/pinned.sha256",

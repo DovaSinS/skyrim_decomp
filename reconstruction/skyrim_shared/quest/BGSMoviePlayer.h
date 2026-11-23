@@ -43,6 +43,21 @@ public:
     std::uint32_t unk28;           // 28
 };
 
+// GetById, SourceType, LocalType, field30: GUESS(low); stand-ins for the objects the Unk_01 body uses
+class SourceType
+{
+public:
+    std::uint8_t unknown00[0x30];  // 00
+    std::uint32_t field30;  // 30
+};
+SourceType* GetById(unsigned a_id);
+class LocalType
+{
+public:
+    LocalType(std::uint32_t* a_value);
+    void Release(unsigned a_flag);
+};
+
 class BGSMoviePlayer : public MoviePlayer
 {
 public:
@@ -54,6 +69,7 @@ public:
     virtual std::uint8_t Unk_0B();  // compared: 0x644930
     virtual std::uint32_t Unk_0C();  // compared: 0x644940
     void Function11b24e0(bool a_flag);
+    void Unk_01();  // compared: 0x6447f0
 
     // TODO members: replace part of the padding with the members the bodies read,
     // keeping every offset and the size check true.

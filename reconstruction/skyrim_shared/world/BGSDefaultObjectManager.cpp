@@ -12,6 +12,12 @@
 // 0x31bd50 BGSDefaultObjectManager::~BGSDefaultObjectManager
 // 0x31b830 BGSDefaultObjectManager::ctor
 // 0x31bad0 BGSDefaultObjectManager::InitItemImpl
+// 0x31bab0 BGSDefaultObjectManager::Function31bab0
+// 0x38fa50 BGSDefaultObjectManager::Function38fa50
+// Adapted bodies: TestBit is close to the sibling helper (tools/check_origin.py similarity 0.82).
+// Sibling source: momusdigital/f3_decomp@f5bac1b5 src/f3staging/f3blk_004e0000_o2.cpp:49422
+// TestBit: SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
+// Code origin: Function31bab0 and Function38fa50 original, from the listing and community declarations only
 #include "BGSDefaultObjectManager.h"
 
 #include <cstring>
@@ -27,6 +33,7 @@ void                      SendDefaultObjectEvent(DefaultObjectEventSource* a_sou
 TESForm*                  ResolveFormRedirect(FormID a_formID);
 
 extern DEFAULT_OBJECT_DATA defaultObjectTable[];
+void                      ResetDefaultObjects(void* a_array, std::uint32_t a_value, std::uint32_t a_size);
 
 static inline bool TestBit(std::uint32_t a_flags, std::uint32_t a_bit)
 {
@@ -100,4 +107,14 @@ void BGSDefaultObjectManager::InitItemImpl()
     SetInitialized(true);
     DefaultObjectsInitializedEvent event;
     SendDefaultObjectEvent(GetDefaultObjectEventSource(), &event);
+}
+
+void BGSDefaultObjectManager::Function31bab0()
+{
+    ResetDefaultObjects(objects, 0, 0xD14);
+}
+
+TESForm* BGSDefaultObjectManager::Function38fa50()
+{
+    return GetDefaultObject(0x15);
 }

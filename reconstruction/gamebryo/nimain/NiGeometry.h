@@ -108,35 +108,39 @@ public:
     virtual void unk18();
     virtual void unk19();
     virtual bool RegisterObjectStreamables(NiStream& streamRef);
+    // Padding slots so the next virtual lands on the vtable offset used by Functionf0b7d0
+    virtual void SlotPad00() {}
+    virtual void SlotPad01() {}
+    virtual void SlotPad02() {}
+    virtual void SlotPad03() {}
+    virtual void SlotPad04() {}
+    virtual void SlotPad05() {}
+    virtual void SlotPad06() {}
+    virtual void SlotPad07() {}
+    virtual void SlotPad08() {}
+    virtual void SlotPad09() {}
+    virtual void SlotPad10() {}
+    virtual void SlotPad11() {}
+    virtual void SlotPad12() {}
+    virtual void SlotPad13() {}
+    // GeometryRefView::F0B7D0Target: GUESS(low); the virtual target of Functionf0b7d0
+    virtual void F0B7D0Target() {}
 
     long refCount;
 };
 
-// GeometryObjectView: STANDIN GUESS(low); common slots before controller and collision dispatch
+// GeometryObjectView: STANDIN GUESS(low); the observed build has no slots here between
+// GeometryRefView and the derived dispatch methods.
 class GeometryObjectView : public GeometryRefView
 {
 public:
-    virtual void unk1B();
-    virtual void unk1C();
-    virtual void unk1D();
-    virtual void unk1E();
-    virtual void unk1F();
-    virtual void unk20();
-    virtual void unk21();
-    virtual void unk22();
-    virtual void unk23();
-    virtual void unk24();
 };
 
 // Next pointer placement and the predicate slot are observed independently on this build.
+// HasVertexEffect must land at vtable +0x150, directly after GeometryRefView's last slot.
 class GeometryControllerView : public GeometryObjectView
 {
 public:
-    virtual void unk25();
-    virtual void unk26();
-    virtual void unk27();
-    virtual void unk28();
-    virtual void unk29();
     virtual bool HasVertexEffect() const;
 
     std::uint64_t member10;  // 10
@@ -148,10 +152,21 @@ public:
     GeometryControllerView* nextController;
 };
 
-class GeometryCollisionView : public GeometryObjectView
+// Collision dispatch stand-in: UpdateState/ClearState are at vtable +0x130/+0x138 on this build,
+// so the unused leading slots are spelled out explicitly.
+class GeometryCollisionView
 {
 public:
-    virtual void unk25();
+    virtual void cv00(); virtual void cv01(); virtual void cv02(); virtual void cv03();
+    virtual void cv04(); virtual void cv05(); virtual void cv06(); virtual void cv07();
+    virtual void cv08(); virtual void cv09(); virtual void cv0A(); virtual void cv0B();
+    virtual void cv0C(); virtual void cv0D(); virtual void cv0E(); virtual void cv0F();
+    virtual void cv10(); virtual void cv11(); virtual void cv12(); virtual void cv13();
+    virtual void cv14(); virtual void cv15(); virtual void cv16(); virtual void cv17();
+    virtual void cv18(); virtual void cv19(); virtual void cv1A(); virtual void cv1B();
+    virtual void cv1C(); virtual void cv1D(); virtual void cv1E(); virtual void cv1F();
+    virtual void cv20(); virtual void cv21(); virtual void cv22(); virtual void cv23();
+    virtual void cv24(); virtual void cv25();
     virtual void UpdateState(NiUpdateData& updateData);
     virtual void ClearState();
 };
@@ -268,6 +283,8 @@ public:
     void SetSelectiveUpdateFlags(bool& a_update, bool a_transforms, bool& rigidResult);
 
     void RefreshSkin(NiUpdateData& updateData);
+    // NiGeometry::Functionf0b7d0: GUESS(low); forwards to the skin instance's virtual slot
+    void Functionf0b7d0();
 
     std::uint64_t unk00;  // 00
     std::uint32_t _refCount;  // 08

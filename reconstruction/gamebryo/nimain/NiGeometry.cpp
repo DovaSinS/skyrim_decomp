@@ -1,4 +1,4 @@
-// Code origin: Reconstruction by v-macrev with Codex assistance from pinned-image analysis, with the reserved-field write structure in SaveBinary adapted from the cited sibling.
+// Code origin: Reconstruction by v-macrev with AI assistance from pinned-image analysis, with the reserved-field write structure in SaveBinary adapted from the cited sibling.
 // Source exposure: mixed (community declarations, sibling context, and local analysis of the pinned image).
 // NiGeometry::SaveBinary, NiGeometry::RegisterStreamables, NiGeometry::SetSelectiveUpdateFlags: SIBLING(momusdigital/fnv_decomp@91e1b6e8, no-licence); SaveBinary adapts the reserved-field write structure, the other two were consulted for context
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
@@ -16,6 +16,8 @@
 // 0xf0b7f0 NiGeometry::Unk_3A
 // 0xf0b9c0 NiGeometry::PostLinkObject
 // 0xf0ba20 NiGeometry::SetSelectiveUpdateFlags
+// 0xf0b7d0 NiGeometry::Functionf0b7d0
+// NiGeometry::Functionf0b7d0: GUESS(low)
 #include <intrin.h>
 #include "NiGeometry.h"
 
@@ -45,6 +47,11 @@ void BaseSetSelectiveUpdateFlags(NiGeometry* self, bool& a_update, bool a_transf
 
 // QuerySkin, a_skin, a_mode: GUESS(low); out-of-line skin query
 void* QuerySkin(GeometryRefView* a_skin, std::uint32_t a_mode);
+
+void NiGeometry::Functionf0b7d0()
+{
+    m_spSkinInstance->F0B7D0Target();
+}
 
 bool NiGeometry::RegisterStreamables(NiStream& streamRef)
 {

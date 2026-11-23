@@ -32,4 +32,20 @@ SOFTWARE.
 #pragma once
 #include "ValueModifierEffectLayout.h"
 class BGSSaveFormBuffer { public: void Write(const void*, unsigned, unsigned, unsigned); };
-class DualValueModifierEffect : public ResearchLayouts::ValueModifierEffectLayout { public: float secondaryAVWeight; void SaveGame(BGSSaveFormBuffer* buffer); };
+
+// Function5bb090Result, Function5bb090, Function5c6ae0, Function5c6b60: GUESS(low); the image returns a record whose dword at 0xE0 is read by 0x5c6ae0.
+struct Function5bb090Result
+{
+    std::uint8_t  pad[0xE0];  // 00
+    std::uint32_t value;     // E0
+};
+
+class DualValueModifierEffect : public ResearchLayouts::ValueModifierEffectLayout
+{
+public:
+    float secondaryAVWeight;
+    void SaveGame(BGSSaveFormBuffer* buffer); // compared: 0x5c6900
+    Function5bb090Result* Function5bb090();  // 0x5bb090
+    unsigned int Function5c6ae0();           // compared: 0x5c6ae0
+    float Function5c6b60() const;            // compared: 0x5c6b60
+};
