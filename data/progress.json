@@ -72634,7 +72634,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x1811e0.json",
       "report": "reports/sse-steam-1-7-104/0x1811e0.json"
     },
     {
@@ -78211,12 +78211,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 2033856,
       "size": 94,
-      "status": "mapped",
+      "status": "matched",
       "name": "TESReactionForm::~TESReactionForm",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x1f08c0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1f08c0.json",
+      "report": "reports/sse-steam-1-7-104/0x1f08c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x1f0ad0",
@@ -81005,7 +81006,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x2505a0.json",
       "report": "reports/sse-steam-1-7-104/0x2505a0.json"
     },
     {
@@ -93605,12 +93606,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 3742464,
       "size": 115,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSIdleMarker::~BGSIdleMarker",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0x391b00; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x391b00.json",
+      "report": "reports/sse-steam-1-7-104/0x391b00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x391b80",
@@ -93623,7 +93625,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 34. RVA 0x391b80; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-2-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x391b80.json",
       "report": "reports/sse-steam-1-7-104/0x391b80.json"
     },
     {
@@ -99741,7 +99743,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): method spelling invented from RTTI/vtable owner BGSPackageDataRefOLD and slot 6; no public method symbol verified.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x44dce0.json",
       "report": "reports/sse-steam-1-7-104/0x44dce0.json"
     },
     {
@@ -137079,7 +137081,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): method spelling invented from RTTI/vtable owner BeamProjectile and slot 165; no public method symbol verified.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x7dfeb0.json",
       "report": "reports/sse-steam-1-7-104/0x7dfeb0.json"
     },
     {
@@ -137093,7 +137095,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 14. RVA 0x7e0320; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-upstream-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x7e0320.json",
       "report": "reports/sse-steam-1-7-104/0x7e0320.json"
     },
     {
@@ -137135,7 +137137,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 18. RVA 0x7e03e0; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/queue-small-upstream-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x7e03e0.json",
       "report": "reports/sse-steam-1-7-104/0x7e03e0.json"
     },
     {
@@ -137143,12 +137145,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 8258576,
       "size": 3,
-      "status": "mapped",
+      "status": "matched",
       "name": "BeamProjectile::GetKillOnCollision",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 184. RVA 0x7e0410; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x7e0410.json",
+      "report": "reports/sse-steam-1-7-104/0x7e0410.json"
     },
     {
       "id": "sse-steam-1-7-104-0x7e1080",
@@ -139842,7 +139845,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x82e830.json",
       "report": "reports/sse-steam-1-7-104/0x82e830.json"
     },
     {
@@ -172368,7 +172371,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xbb82b0.json",
       "report": "reports/sse-steam-1-7-104/0xbb82b0.json"
     },
     {
@@ -199056,7 +199059,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 37. RVA 0xfe8100; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfe8100.json",
       "report": "reports/sse-steam-1-7-104/0xfe8100.json"
     },
     {
@@ -199070,7 +199073,7 @@
       "name_origin": "GUESS",
       "name_source": "GUESS(low): method spelling invented from RTTI/vtable owner BSOcclusionBox and slot 38; no public method symbol verified.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfe8110.json",
       "report": "reports/sse-steam-1-7-104/0xfe8110.json"
     },
     {
@@ -199084,7 +199087,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 2. RVA 0xfe8320; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xfe8320.json",
       "report": "reports/sse-steam-1-7-104/0xfe8320.json"
     },
     {
@@ -486653,6 +486656,84 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xcd6bf0.json",
       "report": "reports/sse-steam-1-7-104/0xcd6bf0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1811c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1577408,
+      "size": 13,
+      "status": "matched",
+      "name": "ExtraMapMarker::Function1811c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1811c0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1811c0.json",
+      "report": "reports/sse-steam-1-7-104/0x1811c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x250620",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2426400,
+      "size": 5,
+      "status": "matched",
+      "name": "TESRegionDataGrass::Function250620",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x250620; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x250620.json",
+      "report": "reports/sse-steam-1-7-104/0x250620.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x44dc60",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 4512864,
+      "size": 9,
+      "status": "matched",
+      "name": "BGSPackageDataRefOLD::Function44dc60",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x44dc60; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x44dc60.json",
+      "report": "reports/sse-steam-1-7-104/0x44dc60.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x64d400",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6607872,
+      "size": 7,
+      "status": "matched",
+      "name": "EnhanceWeaponEffect::Function64d400",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x64d400; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x64d400.json",
+      "report": "reports/sse-steam-1-7-104/0x64d400.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x82ed80",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8580480,
+      "size": 20,
+      "status": "matched",
+      "name": "CombatInventoryItemMagic::Function82ed80",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x82ed80; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x82ed80.json",
+      "report": "reports/sse-steam-1-7-104/0x82ed80.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xbb8310",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 12288784,
+      "size": 8,
+      "status": "matched",
+      "name": "BSInterpValueModifier::Functionbb8310",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xbb8310; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xbb8310.json",
+      "report": "reports/sse-steam-1-7-104/0xbb8310.json"
     }
   ],
   "milestones": [
@@ -486695,7 +486776,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-23T11:18:06Z",
+  "updated_at": "2026-11-23T11:52:58Z",
   "work_items": [
     {
       "id": "pin-target",

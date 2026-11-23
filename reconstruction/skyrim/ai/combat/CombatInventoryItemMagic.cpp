@@ -6,7 +6,15 @@
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // 0x82e830 CombatInventoryItemMagic::GetType
+// Code origin: original; the listing and community declarations only
+// 0x82ed80 CombatInventoryItemMagic::Function82ed80
 #include "CombatInventoryItemMagic.h"
+
+bool CombatInventoryItemMagic::Function82ed80() const
+{
+    return member10 != nullptr && member48 != nullptr;
+}
+
 // GetType: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 std::uint32_t CombatInventoryItemMagic::GetType() const
 {

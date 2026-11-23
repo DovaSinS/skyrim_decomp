@@ -6,9 +6,18 @@
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // 0xbb82b0 BSInterpValueModifier::Unk_0A
+// Code origin: original reconstruction; body written from the listing.
+// 0xbb8310 BSInterpValueModifier::Functionbb8310
+// Functionbb8310: GUESS(low)
 #include "BSInterpValueModifier.h"
+
 // Unk_0A: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 std::uint8_t BSInterpValueModifier::Unk_0A() const
 {
     return 0x1;
+}
+
+void BSInterpValueModifier::Functionbb8310()
+{
+    member = 0;
 }

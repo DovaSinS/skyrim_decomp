@@ -4,11 +4,18 @@
 // TESRegionDataGrass: EXE_RTTI
 // IsLoaded: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
 // member, padding: GUESS(low); storage names invented for the measured member offset
+// Code origin: original reconstruction; body written from the listing.
+// Function250620, padding, member: GUESS(low)
 #pragma once
+
 #include <cstdint>
-// IsLoaded: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
+
 class TESRegionDataGrass
 {
 public:
     virtual std::uint8_t IsLoaded() const;
+    void* Function250620() const;
+
+    std::uint8_t padding[0x8];  // 08
+    void*        member;        // 10
 };

@@ -5,7 +5,18 @@
 // GetType: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // 0x1811e0 ExtraMapMarker::GetType
+// Code origin: original; the pinned image listing and community declarations only
+// 0x1811c0 ExtraMapMarker::Function1811c0
 #include "ExtraMapMarker.h"
+
+// MapMarkerHelper: GUESS(low); the tail callee takes the two members by pointer
+bool MapMarkerHelper(const void* a_lhs, const void* a_rhs);
+
+bool ExtraMapMarker::Function1811c0(const ExtraMapMarker* a_other)
+{
+    return MapMarkerHelper(member10, a_other->member10);
+}
+
 // GetType: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
 std::uint32_t ExtraMapMarker::GetType() const
 {

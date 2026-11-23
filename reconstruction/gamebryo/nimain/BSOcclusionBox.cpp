@@ -5,7 +5,21 @@
 // Slot38: GUESS(low)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // 0xfe8110 BSOcclusionBox::Slot38
+// Code origin: original; the listing and community declarations only
+// 0xfe81e0 BSOcclusionBox::~BSOcclusionBox
 #include "BSOcclusionBox.h"
+
+#include <intrin.h>
+
+// gOcclusionBoxCount: GUESS(low); global instance count decremented by the destructor
+extern std::uint32_t gOcclusionBoxCount;
+
+BSOcclusionBox::~BSOcclusionBox()
+{
+    // interlocked: the instance count is decremented atomically; a plain decrement would not be a locked operation.
+    _InterlockedDecrement(reinterpret_cast<volatile long*>(&gOcclusionBoxCount));
+}
+
 // Slot38: GUESS(low); method name inferred from vtable owner and slot
 std::uint8_t BSOcclusionBox::Slot38() const
 {

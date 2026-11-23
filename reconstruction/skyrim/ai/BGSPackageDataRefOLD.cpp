@@ -5,9 +5,17 @@
 // Slot6: GUESS(low)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // 0x44dce0 BGSPackageDataRefOLD::Slot6
+// Code origin: original; the listing and community declarations only
+// 0x44dc60 BGSPackageDataRefOLD::Function44dc60
 #include "BGSPackageDataRefOLD.h"
 // Slot6: GUESS(low); method name inferred from vtable owner and slot
 std::uint32_t BGSPackageDataRefOLD::Slot6() const
 {
     return 0x1;
+}
+
+std::uint32_t* BGSPackageDataRefOLD::Function44dc60(std::uint32_t* a_out) const
+{
+    *a_out = value;
+    return a_out;
 }
