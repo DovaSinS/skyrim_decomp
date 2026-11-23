@@ -1,14 +1,4 @@
-// Source exposure: mixed (community headers; the pinned image listing).
-// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
-// Code origin: original; the listing and community declarations only
-// BGSCollisionLayer: EXE_RTTI
-// GetCollidesWithMask: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
+// Source exposure: mixed (the included community declarations).
+// Code origin: original forwarding header for the consolidated class declaration.
 #pragma once
-
-#include <cstdint>
-
-class BGSCollisionLayer
-{
-public:
-    std::uint64_t GetCollidesWithMask() const;
-};
+#include "BGSCollisionLayer.h"

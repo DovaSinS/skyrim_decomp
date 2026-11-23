@@ -1,14 +1,4 @@
-// Source exposure: mixed (community headers; the pinned image listing).
-// SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
-// Code origin: original; the listing and community declarations only
-// MovementControllerNPC: EXE_RTTI
-// Unk_0E: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+// Source exposure: mixed (the included community declarations).
+// Code origin: original forwarding header for the consolidated class declaration.
 #pragma once
-
-#include <cstdint>
-
-class MovementControllerNPC
-{
-public:
-    bool Unk_0E();
-};
+#include "MovementControllerNPC.h"
