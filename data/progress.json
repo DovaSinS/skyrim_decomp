@@ -484174,6 +484174,84 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x538c20.json",
       "report": "reports/sse-steam-1-7-104/0x538c20.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x276980",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2582912,
+      "size": 15,
+      "status": "matched",
+      "name": "Function276980",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x276980; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x276980.json",
+      "report": "reports/sse-steam-1-7-104/0x276980.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x279110",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2593040,
+      "size": 15,
+      "status": "matched",
+      "name": "Function279110",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x279110; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x279110.json",
+      "report": "reports/sse-steam-1-7-104/0x279110.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4edeb0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5168816,
+      "size": 15,
+      "status": "matched",
+      "name": "Function4edeb0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x4edeb0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4edeb0.json",
+      "report": "reports/sse-steam-1-7-104/0x4edeb0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4f01c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5177792,
+      "size": 15,
+      "status": "matched",
+      "name": "Function4f01c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x4f01c0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4f01c0.json",
+      "report": "reports/sse-steam-1-7-104/0x4f01c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x4f1230",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5182000,
+      "size": 15,
+      "status": "matched",
+      "name": "Function4f1230",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x4f1230; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x4f1230.json",
+      "report": "reports/sse-steam-1-7-104/0x4f1230.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1526e70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22179440,
+      "size": 15,
+      "status": "matched",
+      "name": "BSLightingShaderMaterialFacegenTint::Function1526e70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1526e70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1526e70.json",
+      "report": "reports/sse-steam-1-7-104/0x1526e70.json"
     }
   ],
   "milestones": [
@@ -484216,7 +484294,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-23T02:50:16Z",
+  "updated_at": "2026-11-23T03:14:03Z",
   "work_items": [
     {
       "id": "pin-target",
