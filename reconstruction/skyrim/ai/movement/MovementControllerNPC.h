@@ -111,8 +111,7 @@ public:
     virtual void Unk_0B();             // 0B
     virtual void Unk_0C();             // 0C
     virtual void Unk_0D();             // 0D
-    // Unk_0E return type: OBSERVED; tests whether the controller byte is zero
-    virtual bool Unk_0E();             // 0E
+    virtual void Unk_0E();             // 0E
     virtual std::uint8_t Unk_0F();     // 0F; compared: 0x796ac0
 
     void Function796460();  // 0x796460
