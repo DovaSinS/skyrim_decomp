@@ -131,6 +131,7 @@ class TESCamera
 public:
     virtual ~TESCamera();  // 00
     virtual void SetCameraRoot(NiPointer<NiNode> a_root);  // 01
+    // Kept out of line so Function9969f0 tail-jumps to Update as the game does, not an inlined copy.
     __declspec(noinline) virtual void Update();  // 02
     bool GetNode(NiPointer<NiNode>& a_out);  // compared: 0x558e10
     void SetState(TESCameraState* a_state);  // compared: 0x558f90
