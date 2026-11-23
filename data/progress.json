@@ -172460,7 +172460,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a, ng-slot association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xbbb380.json",
       "report": "reports/sse-steam-1-7-104/0xbbb380.json"
     },
     {
@@ -177627,7 +177627,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xcfc170.json",
       "report": "reports/sse-steam-1-7-104/0xcfc170.json"
     },
     {
@@ -182177,7 +182177,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 48. RVA 0xef1770; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xef1770.json",
       "report": "reports/sse-steam-1-7-104/0xef1770.json"
     },
     {
@@ -182191,7 +182191,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 47. RVA 0xef1950; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xef1950.json",
       "report": "reports/sse-steam-1-7-104/0xef1950.json"
     },
     {
@@ -182205,7 +182205,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 0. RVA 0xef1a10; size from the comparator v2 extent.",
       "owner": "awarebayes",
-      "evidence": "findings/fifth-batch-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xef1a10.json",
       "report": "reports/sse-steam-1-7-104/0xef1a10.json"
     },
     {
@@ -416675,7 +416675,7 @@
       "name_origin": "GUESS",
       "name_source": "SIBLING(fo4-private@1b765c70, author-permission): historical name hint; original Skyrim signature unverified.",
       "owner": "awarebayes",
-      "evidence": "findings/ghidra-import.md",
+      "evidence": "reports/sse-steam-1-7-104/0x7a6680.json",
       "report": "reports/sse-steam-1-7-104/0x7a6680.json",
       "drafter_model": "gpt-6.1-sol"
     },
@@ -444348,12 +444348,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22064160,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSImagespaceShader::GetShaderMacros",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 13. RVA 0x150ac20; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x150ac20.json",
+      "report": "reports/sse-steam-1-7-104/0x150ac20.json"
     },
     {
       "id": "sse-steam-1-7-104-0x150ac30",
@@ -444957,12 +444958,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22140192,
       "size": 9,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderProperty::GetBaseTexture",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 55. RVA 0x151d520; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x151d520.json",
+      "report": "reports/sse-steam-1-7-104/0x151d520.json"
     },
     {
       "id": "sse-steam-1-7-104-0x151d550",
@@ -444982,12 +444984,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22140256,
       "size": 13,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderProperty::SetMaterialAlpha",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 49. RVA 0x151d560; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding or the next function.",
       "owner": "awarebayes",
-      "evidence": "findings/e7-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x151d560.json",
+      "report": "reports/sse-steam-1-7-104/0x151d560.json"
     },
     {
       "id": "sse-steam-1-7-104-0x151db90",
@@ -489383,6 +489386,97 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x14723e0.json",
       "report": "reports/sse-steam-1-7-104/0x14723e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5d3e00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6110720,
+      "size": 7,
+      "status": "matched",
+      "name": "ActiveEffect::Function5d3e00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x5d3e00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x5d3e00.json",
+      "report": "reports/sse-steam-1-7-104/0x5d3e00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x5e2320",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6169376,
+      "size": 11,
+      "status": "matched",
+      "name": "ShaderReferenceEffect::Function5e2320",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x5e2320; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x5e2320.json",
+      "report": "reports/sse-steam-1-7-104/0x5e2320.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7a6750",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8021840,
+      "size": 9,
+      "status": "matched",
+      "name": "MovementHandlerAgentStairsHelper::Function7a6750",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x7a6750; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x7a6750.json",
+      "report": "reports/sse-steam-1-7-104/0x7a6750.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x7ab9a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 8042912,
+      "size": 15,
+      "status": "matched",
+      "name": "MovementTweenerAgentNodeFollower::Function7ab9a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x7ab9a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x7ab9a0.json",
+      "report": "reports/sse-steam-1-7-104/0x7ab9a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xbbb3e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 12301280,
+      "size": 8,
+      "status": "matched",
+      "name": "BSPassByTargetTriggerModifier::Functionbbb3e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xbbb3e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xbbb3e0.json",
+      "report": "reports/sse-steam-1-7-104/0xbbb3e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xe7c490",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15189136,
+      "size": 15,
+      "status": "matched",
+      "name": "BSInputDevice::Functione7c490",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xe7c490; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xe7c490.json",
+      "report": "reports/sse-steam-1-7-104/0xe7c490.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xeefac0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15661760,
+      "size": 15,
+      "status": "matched",
+      "name": "NiCamera::Functioneefac0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xeefac0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xeefac0.json",
+      "report": "reports/sse-steam-1-7-104/0xeefac0.json"
     }
   ],
   "milestones": [
@@ -489425,7 +489519,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-23T20:28:15Z",
+  "updated_at": "2026-11-23T21:13:02Z",
   "work_items": [
     {
       "id": "pin-target",
