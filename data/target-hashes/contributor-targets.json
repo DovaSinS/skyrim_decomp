@@ -1,10 +1,28 @@
 {
   "schema": 1,
   "build_id": "sse-steam-1-7-104",
-  "snapshot_utc": "2026-11-22T22:49:11.436144+00:00",
+  "snapshot_utc": "2026-11-23T01:51:29.528379+00:00",
   "function_metadata_sha256": "15ba17036f4312634d884316084923fbf3e4bdad61101ab28ae476b187376710",
-  "claims_snapshot_sha256": "efc394017b4ca8f6eecd79bcdde920dfea736510962e5048156eb21e148e6139",
+  "claims_snapshot_sha256": "83769c1d64be2d3f4028f737a2e74b49258bbfeb2b73cf97f68c29710551edfe",
   "claims": [
+    {
+      "number": 928,
+      "url": "https://github.com/Mudcrab-Team/skyrim_decomp/issues/928",
+      "entries": [
+        [
+          1713680,
+          1713681
+        ],
+        [
+          1909104,
+          1909105
+        ],
+        [
+          21921472,
+          21921473
+        ]
+      ]
+    },
     {
       "number": 871,
       "url": "https://github.com/Mudcrab-Team/skyrim_decomp/issues/871",
@@ -1646,10 +1664,6 @@
         [
           1641664,
           1641665
-        ],
-        [
-          1909104,
-          1909105
         ],
         [
           3062960,
@@ -4270,12 +4284,7 @@
     {
       "number": 597,
       "url": "https://github.com/Mudcrab-Team/skyrim_decomp/issues/597",
-      "entries": [
-        [
-          21921472,
-          21921473
-        ]
-      ]
+      "entries": []
     },
     {
       "number": 596,
@@ -5038,8 +5047,8 @@
       ]
     }
   ],
-  "next_candidate_count": 2569,
-  "claim_function_count": 1108,
+  "next_candidate_count": 2589,
+  "claim_function_count": 1109,
   "functions": [
     {
       "rva": 1335904,
