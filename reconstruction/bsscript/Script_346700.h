@@ -5,6 +5,9 @@
 // Sibling source: fo4-private@1b765c70 src/BSCore/BSSimpleList.h:66
 // Sibling source: momusdigital/f3_decomp@f5bac1b5 src/bssystem/archive.cpp:5561
 // BSSimpleList, BSSimpleList::RemoveAll, BSSimpleList::m_item, BSSimpleList::m_pkNext: SIBLING(fo4-private@1b765c70, author-permission)
+// Script: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); only the list member whose element destructor is compared
+// Script::refObjects: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+// Script::unknown00: GUESS(low)
 // SCRIPT_REFERENCED_OBJECT: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); which Script list this instantiation serves is a guess
 #pragma once
 
@@ -45,3 +48,10 @@ inline BSSimpleList<T>::~BSSimpleList()
 {
     RemoveAll(0, 0);
 }
+
+class Script
+{
+public:
+    std::uint8_t unknown00[0x60];                       // 00
+    BSSimpleList<SCRIPT_REFERENCED_OBJECT*> refObjects;  // 60
+};
