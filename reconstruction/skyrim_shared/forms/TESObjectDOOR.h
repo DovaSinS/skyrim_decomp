@@ -252,6 +252,10 @@ public:
     NiAVObject* Clone3D(TESObjectREFR* a_ref) override;  // 4A
     bool GetActivateText(TESObjectREFR* a_activator, BSString& a_dst) override;  // 4C
     bool CalculateDoFavor(Actor* a_activator, bool a_arg2, TESObjectREFR* a_toActivate, float a_arg3) override;  // 4D
+    // Function2830d0, Function283170, Function284a70: GUESS(low); the compared bodies read bits of flags and the randomTeleports size.
+    bool Function2830d0() const;
+    bool Function283170() const;
+    bool Function284a70() const;
 
     enum : std::uint8_t { kSliding = 1 << 4 };
     bool IsSliding() const;

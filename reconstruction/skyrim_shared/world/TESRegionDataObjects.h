@@ -3,6 +3,7 @@
 // Adapted bodies: none. Body synthesized from the bounded leaf template.
 // TESRegionDataObjects: EXE_RTTI
 // IsLoaded: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
+// Function252ba0: GUESS(low)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 #pragma once
 #include <cstdint>
@@ -11,4 +12,9 @@ class TESRegionDataObjects
 {
 public:
     virtual std::uint8_t IsLoaded() const;
+    void Function252ba0(std::uint8_t a_value);
+
+    std::uint8_t pad08[0x8];  // 08
+    const void* value10;      // 10
+    std::uint8_t value18;     // 18
 };

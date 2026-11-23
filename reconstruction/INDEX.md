@@ -9353,7 +9353,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/forms/TESValueForm` | `TESValueForm::~TESValueForm` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f36d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f36d0.json` | matched | full | open |
 | `skyrim_shared/forms/TESWeightForm_1f3700` | `TESWeightForm::Function1f3700` (GUESS) | `sse-steam-1-7-104` / `0x1f3700` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3700.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf1f3720` | `TableStoreLeaf1f3720::~TableStoreLeaf1f3720` (GUESS) | `sse-steam-1-7-104` / `0x1f3720` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3720.json` | matched | family | open |
-| - | `TESWeightForm::InitializeDataComponent` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f3740` / 8 | - | - | mapped | - | - |
+| `skyrim_shared/forms/TESWeightForm` | `TESWeightForm::InitializeDataComponent` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f3740` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3740.json` | matched | full | - |
 | `unmapped/leaves/Leaf1f3750` | `Leaf1f3750::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1f3750` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3750.json` | matched | family | open |
 | `skyrim_shared/forms/TESWeightForm` | `TESWeightForm::CopyComponent` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f3760` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3760.json` | matched | full | checked |
 | `skyrim_shared/forms/TESWeightForm_1f38d0` | `TESWeightForm::~TESWeightForm` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f38d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f38d0.json` | matched | full | - |
@@ -9642,8 +9642,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/TESRegionDataMap` | `TESRegionDataMap::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x251e60` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x251e60.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionDataMap` | `TESRegionDataMap::Unk_05` (COMMUNITY) | `sse-steam-1-7-104` / `0x251f10` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x251f10.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionDataMap` | `TESRegionDataMap::IsLoaded` (COMMUNITY) | `sse-steam-1-7-104` / `0x2520b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2520b0.json` | matched | full | open |
-| `skyrim_shared/world/TESRegionDataObjects` | `TESRegionDataObjects::IsLoaded` (COMMUNITY) | `sse-steam-1-7-104` / `0x252b00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x252b00.json` | matched | family | open |
+| `skyrim_shared/world/TESRegionDataObjects` | `TESRegionDataObjects::IsLoaded` (COMMUNITY) | `sse-steam-1-7-104` / `0x252b00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x252b00.json` | matched | full | open |
 | `unmapped/leaves/Leaf252b80` | `Leaf252b80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x252b80` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x252b80.json` | matched | family | open |
+| `skyrim_shared/world/TESRegionDataObjects` | `TESRegionDataObjects::Function252ba0` (GUESS) | `sse-steam-1-7-104` / `0x252ba0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x252ba0.json` | matched | full | - |
 | `skyrim_shared/world/TESRegionDataSound` | `TESRegionDataSound::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x253310` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x253310.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionDataSound` | `TESRegionDataSound::Unk_05` (COMMUNITY) | `sse-steam-1-7-104` / `0x253410` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x253410.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionDataSound` | `TESRegionDataSound::IsLoaded` (COMMUNITY) | `sse-steam-1-7-104` / `0x2535b0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2535b0.json` | matched | full | open |
@@ -10101,7 +10102,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectCONTExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x282330` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x282330.json` | matched | full | open |
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectCONTExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x28233c` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x28233c.json` | matched | full | open |
 | `skyrim_shared/forms/TESObjectCONTLargeFormPrefixLayout` | `TESObjectCONTLargeFormPrefixLayout represented member` (GUESS) | `sse-steam-1-7-104` / `0x282348` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x282348.json` | matched | full | checked |
-| - | `TESObjectCONT::~TESObjectCONT` (COMMUNITY) | `sse-steam-1-7-104` / `0x282370` / 242 | - | - | mapped | - | - |
+| `skyrim_shared/forms/TESObjectCONT` | `TESObjectCONT::~TESObjectCONT` (COMMUNITY) | `sse-steam-1-7-104` / `0x282370` / 242 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x282370.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf282470` | `ReturnLeaf282470::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x282470` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x282470.json` | matched | family | open |
 | `unmapped/fields/FieldLeaf282690` | `FieldLeaf282690::Read` (GUESS) | `sse-steam-1-7-104` / `0x282690` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x282690.json` | matched | family | open |
 | `unmapped/leaves/Leaf2826a0` | `Leaf2826a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2826a0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2826a0.json` | matched | family | open |
@@ -10112,7 +10113,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/RelayLeaf2827d0` | `RelayLeaf2827d0::Relay` (GUESS) | `sse-steam-1-7-104` / `0x2827d0` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2827d0.json` | matched | full | - |
 | `skyrim_shared/forms/TESObjectDOOR` | `TESObjectDOOR::InitializeData` (COMMUNITY) | `sse-steam-1-7-104` / `0x282a30` / 30 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x282a30.json` | matched | full | - |
 | - | `TESObjectDOOR::ClearData` (COMMUNITY) | `sse-steam-1-7-104` / `0x282a60` / 119 | - | - | mapped | - | - |
+| `skyrim_shared/forms/TESObjectDOOR` | `TESObjectDOOR::Function2830d0` (GUESS) | `sse-steam-1-7-104` / `0x2830d0` / 12 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x2830d0.json` | matched | full | - |
+| `skyrim_shared/forms/TESObjectDOOR` | `TESObjectDOOR::Function283170` (GUESS) | `sse-steam-1-7-104` / `0x283170` / 13 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x283170.json` | matched | full | - |
 | `skyrim_shared/forms/TESObjectDOOR` | `TESObjectDOOR::Function2831c0` (GUESS) | `sse-steam-1-7-104` / `0x2831c0` / 13 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x2831c0.json` | matched | full | - |
+| `skyrim_shared/forms/TESObjectDOOR` | `TESObjectDOOR::Function284a70` (GUESS) | `sse-steam-1-7-104` / `0x284a70` / 11 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x284a70.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf285590` | `Function285590` (GUESS) | `sse-steam-1-7-104` / `0x285590` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285590.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf2855f0` | `Function2855f0` (GUESS) | `sse-steam-1-7-104` / `0x2855f0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2855f0.json` | matched | full | - |
 | `skyrim_shared/actors/RaceComponentLayout` | `TESObjectDOORExtendedFormPrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x285758` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x285758.json` | matched | full | open |
@@ -10148,6 +10152,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf2872a0` | `Leaf2872a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2872a0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2872a0.json` | matched | family | open |
 | `unmapped/leaves/Leaf2878e0` | `Leaf2878e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2878e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2878e0.json` | matched | family | open |
 | `skyrim_shared/forms/TESObjectSTAT` | `TESObjectSTAT::Function2878f0` (GUESS) | `sse-steam-1-7-104` / `0x2878f0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2878f0.json` | matched | full | - |
+| `skyrim_shared/forms/TESObjectSTAT` | `TESObjectSTAT::Function287910` (GUESS) | `sse-steam-1-7-104` / `0x287910` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x287910.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf287b80` | `FieldLeaf287b80::Read` (GUESS) | `sse-steam-1-7-104` / `0x287b80` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x287b80.json` | matched | family | open |
 | `unmapped/leaves/Leaf287b90` | `Leaf287b90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x287b90` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x287b90.json` | matched | family | open |
 | `unmapped/fields/FieldLeaf287c00` | `FieldLeaf287c00::Read` (GUESS) | `sse-steam-1-7-104` / `0x287c00` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x287c00.json` | matched | family | open |
@@ -13194,7 +13199,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::Compare` (GUESS) | `sse-steam-1-7-104` / `0x4a1120` / 83 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1120.json` | matched | full | open |
 | `unmapped/leaves/Leaf4a1180` | `Leaf4a1180::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4a1180` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1180.json` | matched | family | open |
 | `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::LoadGame` (GUESS) | `sse-steam-1-7-104` / `0x4a11f0` / 68 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a11f0.json` | matched | full | open |
+| `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::Function4a1240` (GUESS) | `sse-steam-1-7-104` / `0x4a1240` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1240.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf4a1270` | `ThunkLeaf4a1270::Forward` (GUESS) | `sse-steam-1-7-104` / `0x4a1270` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1270.json` | matched | full | - |
+| `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::Function4a1280` (GUESS) | `sse-steam-1-7-104` / `0x4a1280` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1280.json` | matched | full | - |
 | `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::Function4a12b0` (GUESS) | `sse-steam-1-7-104` / `0x4a12b0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a12b0.json` | matched | full | - |
 | `skyrim/ai/TESPatrolPackageData` | `TESPatrolPackageData::Function4a1320` (GUESS) | `sse-steam-1-7-104` / `0x4a1320` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1320.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf4a1350` | `DeletingLeaf4a1350::~DeletingLeaf4a1350` (GUESS) | `sse-steam-1-7-104` / `0x4a1350` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a1350.json` | matched | full | - |
@@ -13732,6 +13739,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf527d70` | `DeletingLeaf527d70::~DeletingLeaf527d70` (GUESS) | `sse-steam-1-7-104` / `0x527d70` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x527d70.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf527e10` | `DeletingLeaf527e10::~DeletingLeaf527e10` (GUESS) | `sse-steam-1-7-104` / `0x527e10` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x527e10.json` | matched | full | checked |
 | - | `Function5299b0` (GUESS) | `sse-steam-1-7-104` / `0x5299b0` / 3788 | - | - | mapped | - | - |
+| `skyrim_shared/world/TESWaterSystem` | `TESWaterSystem::Function52c660` (GUESS) | `sse-steam-1-7-104` / `0x52c660` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52c660.json` | matched | full | - |
 | `skyrim_shared/world/TESWaterSystem` | `TESWaterSystem::RemoveLODWater` (GUESS) | `sse-steam-1-7-104` / `0x52d200` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52d200.json` | matched | full | open |
 | `skyrim_shared/world/TESWaterSystem` | `TESWaterSystem::Function52d380` (GUESS) | `sse-steam-1-7-104` / `0x52d380` / 25 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52d380.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress52dde0` | `LeafAddress52dde0::Address` (GUESS) | `sse-steam-1-7-104` / `0x52dde0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52dde0.json` | matched | family | open |

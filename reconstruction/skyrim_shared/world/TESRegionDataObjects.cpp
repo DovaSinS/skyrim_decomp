@@ -5,9 +5,15 @@
 // IsLoaded: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
 // member, padding: GUESS(low); storage names invented for the measured member offset
 // 0x252b00 TESRegionDataObjects::IsLoaded
+// 0x252ba0 TESRegionDataObjects::Function252ba0
 #include "TESRegionDataObjects.h"
 // IsLoaded: COMMUNITY(meh321/AddressLibraryDatabase@0379cb6, permission)
 std::uint8_t TESRegionDataObjects::IsLoaded() const
 {
     return 0x1;
+}
+
+void TESRegionDataObjects::Function252ba0(std::uint8_t a_value)
+{
+    value18 = a_value;
 }
