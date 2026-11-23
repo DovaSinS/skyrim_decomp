@@ -1,12 +1,9 @@
 // Source exposure: mixed (community headers; compared functions from the pinned image).
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
-// Sibling source: fo4-private@1b765c70 src/BSCore/BSSafeSleep.h:7
-// Sibling source: fo4-private@1b765c70 src/BSCore/BSSafeSleep.h:12
 // BSReadWriteLock, BSReadWriteLock::_writerThread, ::_lock, ::LockForWrite: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // BSReadWriteLock::kLockWrite, ::kLockCountMask: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
-// BSSafeSleep, BSSafeSleep::Sleep: SIBLING(fo4-private@1b765c70, author-permission)
-// BSSafeSleep::uiCounter: SIBLING(fo4-private@1b765c70, author-permission); used by the inline bodies in src/BSCore/BSSafeSleep.h
+// SpinBackoff, SpinBackoff::SpinBackoff, SpinBackoff::Pause, SpinBackoff::spins: GUESS(low); original names for a one-member spin counter object, the shape is read from the pinned image listing
 // GetCurrentThreadId, Sleep: OBSERVED; kernel32 imports called by the target
 #pragma once
 
@@ -16,25 +13,25 @@
 extern "C" __declspec(dllimport) unsigned long __stdcall GetCurrentThreadId();
 extern "C" __declspec(dllimport) void __stdcall Sleep(unsigned long);
 
-class BSSafeSleep
+class SpinBackoff
 {
 public:
-    BSSafeSleep();
-    void Sleep();
+    SpinBackoff();
+    void Pause();
 
 private:
-    std::uint32_t uiCounter;  // 0
+    std::uint32_t spins;  // 0
 };
 
-inline BSSafeSleep::BSSafeSleep()
-    : uiCounter()
+inline SpinBackoff::SpinBackoff()
+    : spins()
 {
 }
 
-inline void BSSafeSleep::Sleep()
+inline void SpinBackoff::Pause()
 {
-    if (uiCounter < 10000) {
-        ++uiCounter;
+    if (spins < 10000) {
+        ++spins;
         ::Sleep(0);
     } else {
         ::Sleep(1);

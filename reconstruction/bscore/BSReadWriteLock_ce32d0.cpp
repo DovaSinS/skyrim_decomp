@@ -2,7 +2,7 @@
 // Code origin: original reconstruction from the pinned image listing; names and prototypes as labelled below
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // 0xce32d0 BSReadWriteLock::LockForWrite
-// Adapted bodies: BSSafeSleep constructor and Sleep, listed in the header
+// Adapted bodies: none
 #include "BSReadWriteLock_ce32d0.h"
 
 #include <intrin.h>
@@ -16,10 +16,10 @@ void BSReadWriteLock::LockForWrite()
         return;
     }
 
-    BSSafeSleep kSleep;
+    SpinBackoff backoff;
     // atomic: claim the lock word only when it is free
     while (_InterlockedCompareExchange(reinterpret_cast<volatile long*>(&_lock), static_cast<long>(kLockWrite | 1), 0) != 0) {
-        kSleep.Sleep();
+        backoff.Pause();
     }
     _writerThread = threadId;
     // fence: publish the owner before the protected data is touched
