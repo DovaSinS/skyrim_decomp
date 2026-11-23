@@ -6,6 +6,7 @@
 // BGSTextureSet, BGSSoundDescriptorForm, BGSHazard: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); opaque, only used by pointer
 // TESModel: STANDIN COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); NG slots 04 to 06 (GetModel, SetModel, GetAsModelTextureSwap) as placeholders; size 0x28
 // TESModel::modelData: GUESS(low); filler bytes for model, textures, addons and counts
+// Function31def0: GUESS(low); generic inventory name for the compared wrapper
 #pragma once
 
 #include <cstdint>
@@ -42,12 +43,22 @@ struct IMPACT_DATA_DATA {
 };
 static_assert(sizeof(IMPACT_DATA_DATA) == 0x18, "layout");
 
+// The trailing component at 0x88 has a non-trivial destructor and the observed object size is 0xB0.
+struct ImpactTail
+{
+    ~ImpactTail();
+    std::uint8_t pad[0x28];
+};
+static_assert(sizeof(ImpactTail) == 0x28, "layout");
+
 class BGSImpactData :
     public TESForm,  // 00
     public TESModel  // 20
 {
 public:
+    ~BGSImpactData() override;  // 00
     void InitializeData() override;  // 04
+    int Function31def0();
 
     IMPACT_DATA_DATA        data;              // 48
     BGSTextureSet*          decalTextureSet;   // 60
@@ -55,4 +66,6 @@ public:
     BGSSoundDescriptorForm* sound1;            // 70
     BGSSoundDescriptorForm* sound2;            // 78
     BGSHazard*              hazard;            // 80
+    ImpactTail              tail;              // 88
 };
+static_assert(sizeof(BGSImpactData) == 0xB0, "layout");

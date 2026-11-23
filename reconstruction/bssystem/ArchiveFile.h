@@ -3,7 +3,7 @@
 // Adapted bodies: none. Body synthesized from the bounded leaf template.
 // ArchiveFile: EXE_RTTI
 // Unk_0A: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
-// member, padding: GUESS(low); storage names invented for the measured member offset
+// member, padding, handle: GUESS(low); storage names invented for the measured member offsets
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // NiBinaryStream::good, NiBinaryStream::seek, NiBinaryStream::tell, NiBinaryStream::get_info, NiBinaryStream::set_endian_swap, NiFile::seek, NiFile::size: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); get_info's BufferInfo reduced to void*
 // NiFile::Unk_08, NiFile::Unk_09: GUESS(low); placeholders for slots 08 and 09 (NG declares them on BSFile)
@@ -38,5 +38,9 @@ public:
     void seek(std::int32_t a_numBytes) override;  // 02
     virtual std::uint32_t Unk_0A() const;  // 0A
     std::uint8_t padding[0x16c];
+    // ArchiveFile::Functioneb97a0: GUESS(low); the compared body tests the pointer at 0x180
+    bool Functioneb97a0() const;
     std::uint32_t member;
+    std::uint8_t padding178[8];
+    void* handle;  // 180
 };

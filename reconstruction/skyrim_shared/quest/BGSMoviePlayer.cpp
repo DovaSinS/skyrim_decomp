@@ -11,6 +11,7 @@
 // 0x645130 Leaf645130::Invoke
 // 0x644920 BGSMoviePlayer::Unk_0A
 // 0x11b24e0 BGSMoviePlayer::Function11b24e0
+// 0x6447f0 BGSMoviePlayer::Unk_01
 #include "BGSMoviePlayer.h"
 std::uint32_t BGSMoviePlayer::Unk_09() { return g_moviePlayerValue09; }
 std::uint8_t BGSMoviePlayer::Unk_0B() { return g_moviePlayerFlag0B; }
@@ -47,5 +48,16 @@ void BGSMoviePlayer::Function11b24e0(bool a_flag)
 {
     if (a_flag) {
         MoviePlayerCursorOp(g_moviePlayerCursorArg, 0);
+    }
+}
+
+// Construct a scoped wrapper around the object's stored value; its destructor runs on scope exit.
+void BGSMoviePlayer::Unk_01()
+{
+    SourceType* source = GetById(0x91);
+    if (source)
+    {
+        LocalType local(&source->field30);
+        local.Release(0);
     }
 }

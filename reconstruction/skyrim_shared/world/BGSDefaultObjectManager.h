@@ -1,3 +1,4 @@
+// Code origin: Function31bab0 and Function38fa50 original, from the listing and community declarations; the other bodies and sibling-close helpers are described in the .cpp header
 // Source exposure: mixed (binary-analysis of the pinned image, community-headers).
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Adapted bodies: none declared in this header; tools/check_origin.py reports none above its
@@ -17,6 +18,7 @@
 // LogProgressMarker: GUESS(low); the function at 0x31c530 called with a string at one object index
 // DefaultObjectsInitializedEvent, GetDefaultObjectEventSource, SendDefaultObjectEvent: GUESS(low); the helpers at 0x31c080 and 0x31be40
 // ResolveFormRedirect: GUESS(low); the function at 0x559a10 called with a form ID when the looked-up form has type 0xF
+// Function31bab0, Function38fa50, ResetDefaultObjects: GUESS(low)
 #pragma once
 
 #include <cstdint>
@@ -149,6 +151,8 @@ public:
     static BGSEquipSlot* GetRightHandEquip();
     static BGSEquipSlot* GetVoiceEquip();
     static BGSEquipSlot* GetEquipSlot(std::uint32_t a_which);
+    void                 Function31bab0();  // compared: 0x31bab0
+    static TESForm*      Function38fa50();  // compared: 0x38fa50
 
     // members
     TESForm*     objects[kTotal];     // 20

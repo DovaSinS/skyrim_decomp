@@ -8,6 +8,7 @@
 // SEEK_CUR: GUESS(low); the relative-seek origin passed as 1
 // 0xeb9780 ArchiveFile::Unk_0A
 // 0xeb96e0 ArchiveFile::seek(std::int32_t)
+// 0xeb97a0 ArchiveFile::Functioneb97a0
 // NiBinaryStream::seek: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); this override forwards to NiFile::seek
 #include "ArchiveFile.h"
 // Unk_0A: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
@@ -20,4 +21,9 @@ std::uint32_t ArchiveFile::Unk_0A() const
 void ArchiveFile::seek(std::int32_t a_numBytes)
 {
     seek(a_numBytes, 1);
+}
+
+bool ArchiveFile::Functioneb97a0() const
+{
+    return handle != nullptr;
 }
