@@ -1,12 +1,17 @@
 // Source exposure: mixed (community headers; the pinned image listing).
 // Code origin: original reconstruction from the pinned image and pinned community declarations.
-// Source exposure: mixed (local binary analysis and pinned community declarations).
-// Code origin: original reconstruction from the pinned image and community declarations.
-// Adapted bodies: none.
+// Adapted bodies: none
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // 0x796460 MovementControllerNPC::Function796460
 // 0x796ac0 MovementControllerNPC::Unk_0F
+// 0x796aa0 MovementControllerNPC::Unk_0E
 #include "MovementControllerNPC.h"
+
+// Report whether the controller's status byte is clear.
+bool MovementControllerNPC::Unk_0E()
+{
+    return unknown1C5 == 0;
+}
 
 void MovementControllerNPC::Function798450()
 {
