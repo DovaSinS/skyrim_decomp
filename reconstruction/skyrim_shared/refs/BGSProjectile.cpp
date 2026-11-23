@@ -17,7 +17,7 @@ void BGSProjectile::UnClone3D(TESObjectREFR* ref) { UnCloneProjectile(this,ref);
 bool BGSProjectile::GetActivateText(TESObjectREFR* ref,BSString& text) { std::int32_t count=ref?ProjectileCount(&ref->extraList):0; if(TestBit(projectileData.flagsAndType,6)) { bool crime=ProjectileCrime(ref); if(count>1) { const char* action=TakeProjectileText; if(crime) action=StealProjectileText; auto* name=ProjectileName(ref); FormatProjectileText(&text,"%s\n%s (%i)",action,name,count); } else { const char* action=TakeProjectileText; if(crime) action=StealProjectileText; auto* name=ProjectileName(ref); FormatProjectileText(&text,"%s\n%s",action,name); } return true; } return false; }
 
 
-float Function266090(const void* p)
+float Function266090(const BGSProjectile* p)
 {
-    return p ? *reinterpret_cast<const float*>(static_cast<const char*>(p) + 0xF4) : DefaultProjectileRelaunch;
+    return p ? p->projectileData.relaunchInterval : DefaultProjectileRelaunch;
 }

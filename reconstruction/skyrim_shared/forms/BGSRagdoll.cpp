@@ -35,23 +35,27 @@ extern void AddCompileIndex(std::uint32_t* a_id, TESFile* a_file);
 extern SourceForm* LookupByID(std::uint32_t a_id);
 extern void SetFormFlag(BGSRagdoll* a_self, bool a_set);
 
+// The flags word of TESForm sits in the shared declaration's padding; this view names it.
+struct FormFlagsView
+{
+    std::uint8_t pad00[0x10];
+    std::uint32_t formFlags;
+};
+
 void BGSRagdoll::InitItemImpl()
 {
-    const std::uint32_t flags = *reinterpret_cast<const std::uint32_t*>(
-        reinterpret_cast<const std::uint8_t*>(this) + 0x10);
-    if (!TestBit(flags, 3)) {
-        std::uint8_t* self = reinterpret_cast<std::uint8_t*>(this);
-        std::uint32_t id = *reinterpret_cast<const std::uint32_t*>(self + 0x1A8);
+    if (!TestBit(reinterpret_cast<const FormFlagsView*>(this)->formFlags, 3)) {
+        std::uint32_t id = unk1A8Id;
         if (id) {
             TESFile* file = GetFile(reinterpret_cast<TESForm*>(this), -1);
             AddCompileIndex(&id, file);
-            *reinterpret_cast<RagdollRefForm**>(self + 0x1A8) = dynamic_cast<RagdollRefForm*>(LookupByID(id));
+            unk1A8 = dynamic_cast<RagdollRefForm*>(LookupByID(id));
         }
-        id = *reinterpret_cast<const std::uint32_t*>(self + 0x1B0);
+        id = unk1B0Id;
         if (id) {
             TESFile* file = GetFile(reinterpret_cast<TESForm*>(this), -1);
             AddCompileIndex(&id, file);
-            *reinterpret_cast<RagdollRefForm2**>(self + 0x1B0) = dynamic_cast<RagdollRefForm2*>(LookupByID(id));
+            unk1B0 = dynamic_cast<RagdollRefForm2*>(LookupByID(id));
         }
         SetFormFlag(this, true);
     }
