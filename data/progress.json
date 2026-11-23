@@ -199779,7 +199779,7 @@
     },
     {
       "build_id": "sse-steam-1-7-104",
-      "evidence": "findings/p92-unit-supply-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xff6bb0.json",
       "id": "sse-steam-1-7-104-0xff6bb0",
       "name": "BSSubIndexTriShape::AsSubIndexTriShape",
       "name_origin": "COMMUNITY",
@@ -439208,12 +439208,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5348864,
       "size": 28,
-      "status": "mapped",
+      "status": "matched",
       "name": "Function519e00",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder name from the RVA; no owner or signature claimed. RVA 0x519e00; size from the image function table.",
       "owner": "awarebayes",
-      "evidence": "findings/contributor-address-list-313.md"
+      "evidence": "reports/sse-steam-1-7-104/0x519e00.json",
+      "report": "reports/sse-steam-1-7-104/0x519e00.json"
     },
     {
       "id": "sse-steam-1-7-104-0x519e30",
@@ -439232,12 +439233,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5351104,
       "size": 21,
-      "status": "mapped",
+      "status": "matched",
       "name": "Function51a6c0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder name from the RVA; no owner or signature claimed. RVA 0x51a6c0; size from the image function table.",
       "owner": "awarebayes",
-      "evidence": "findings/contributor-address-list-313.md"
+      "evidence": "reports/sse-steam-1-7-104/0x51a6c0.json",
+      "report": "reports/sse-steam-1-7-104/0x51a6c0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x51a6e0",
@@ -483841,36 +483843,39 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5313824,
       "size": 105,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSTerrainBlock::Function511520",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x511520. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x511520.json",
+      "report": "reports/sse-steam-1-7-104/0x511520.json"
     },
     {
       "id": "sse-steam-1-7-104-0x51ac60",
       "build_id": "sse-steam-1-7-104",
       "rva": 5352544,
       "size": 136,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSQueuedTerrainDowngrade::Function51ac60",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x51ac60. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x51ac60.json",
+      "report": "reports/sse-steam-1-7-104/0x51ac60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x51b320",
       "build_id": "sse-steam-1-7-104",
       "rva": 5354272,
       "size": 136,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSQueuedObjectDowngrade::Function51b320",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x51b320. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x51b320.json",
+      "report": "reports/sse-steam-1-7-104/0x51b320.json"
     },
     {
       "id": "sse-steam-1-7-104-0x518a30",
@@ -483901,12 +483906,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22183520,
       "size": 163,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSLightingShaderMaterialLODLandscape::ReceiveValuesFromRootMaterial",
       "name_origin": "CRASHLOGGER_PDB",
       "name_source": "CRASHLOGGER_PDB(59818@2026.10.24): public name at RVA 0x1527e60 in the CrashLogger community PDB (reconstruction/generated/crashlogger_pdb/names); a community guess, not evidence. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x1527e60.json",
+      "report": "reports/sse-steam-1-7-104/0x1527e60.json"
     },
     {
       "id": "sse-steam-1-7-104-0x290e50",
@@ -483949,12 +483955,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5348816,
       "size": 28,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSTerrainNode::Function519dd0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x519dd0. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x519dd0.json",
+      "report": "reports/sse-steam-1-7-104/0x519dd0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x51a9b0",
@@ -483985,24 +483992,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 5314480,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSTerrainBlock::Function5117b0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x5117b0. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x5117b0.json",
+      "report": "reports/sse-steam-1-7-104/0x5117b0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x5117e0",
       "build_id": "sse-steam-1-7-104",
       "rva": 5314528,
       "size": 33,
-      "status": "mapped",
+      "status": "matched",
       "name": "BGSTerrainBlock::Function5117e0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name from the RVA. The class is a low-confidence reading from local static analysis of field use, unverified and not from a public table. No signature claimed. RVA 0x5117e0. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x5117e0.json",
+      "report": "reports/sse-steam-1-7-104/0x5117e0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14e7120",
@@ -490804,6 +490813,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x153b1b0.json",
       "report": "reports/sse-steam-1-7-104/0x153b1b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x51ada0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 5352864,
+      "size": 117,
+      "status": "matched",
+      "name": "BGSQueuedTerrainInitialLoad::Function51ada0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x51ada0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x51ada0.json",
+      "report": "reports/sse-steam-1-7-104/0x51ada0.json"
     }
   ],
   "milestones": [
@@ -490846,7 +490868,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-23T23:19:58Z",
+  "updated_at": "2026-11-23T23:26:40Z",
   "work_items": [
     {
       "id": "pin-target",
