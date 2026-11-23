@@ -26,6 +26,8 @@ static_assert(sizeof(BaseFormComponent) == 0x8, "layout");
 class TESReactionForm : public BaseFormComponent
 {
 public:
+	// TESReactionForm::TESReactionForm: GUESS(low); defined to emit the vftable and the deleting destructor.
+	TESReactionForm();
 	// TESReactionForm::~TESReactionForm: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); slot 0
 	~TESReactionForm() override;  // 00
 	// TESReactionForm::InitializeDataComponent: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT); slot 1
@@ -44,9 +46,11 @@ public:
 	};
 	static_assert(sizeof(GROUP_REACTION) == 0x10, "layout");
 
+	// BSSimpleList::~BSSimpleList: GUESS(low); out-of-line destructor the compared TESReactionForm destructor calls.
 	template <class T>
 	struct BSSimpleList
 	{
+		~BSSimpleList();
 		T item;                 // 00
 		BSSimpleList<T>* next;  // 08
 	};
