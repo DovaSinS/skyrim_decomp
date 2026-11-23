@@ -14,11 +14,26 @@
 // 0x4a1120 TESPatrolPackageData::Compare
 // 0x4a11f0 TESPatrolPackageData::LoadGame
 // 0x4a1320 PatrolRefData::InitItem
-// Adapted bodies: none
+// Adapted bodies: Copy, Compare and LoadGame from fo4-private@1b765c70 (author-permission), as labelled above.
+// Sibling source: fo4-private@1b765c70 src/Shared/AI/PackageDataPatrol.cpp:89
 // 0x4a12b0 PatrolRefData::Copy
+// 0x4a1240 PatrolRefData::Function4a1240
+// 0x4a1280 PatrolRefData::Function4a1280
 #include "TESPatrolPackageData.h"
 void TESPatrolPackageData::Copy(TESPackageData* src, TESForm*) { if (auto* p = dynamic_cast<TESPatrolPackageData*>(src)) { repeatable = p->repeatable; startAtNearestPoint = p->startAtNearestPoint; } }
 bool TESPatrolPackageData::Compare(TESPackageData* src) { auto* p = dynamic_cast<TESPatrolPackageData*>(src); return !p || repeatable != p->repeatable || startAtNearestPoint != p->startAtNearestPoint; }
 void TESPatrolPackageData::LoadGame(BGSLoadFormBuffer* b) { b->LoadDataEndian(&repeatable, 1, 1); b->LoadDataEndian(&startAtNearestPoint, 1, 1); }
 void PatrolRefData::InitItem(TESForm* a_form) { data.unk08 = 3; data.InitItem(a_form); }
 void PatrolRefData::Copy(PatrolRefData* a_src, TESForm* a_form) { unk00 = a_src->unk00; data.Copy(&a_src->data, a_form); }
+PatrolRefData* PatrolRefData::Function4a1240()
+{
+    unk00 = 0;
+    PatrolInit(reinterpret_cast<PatrolRaw*>(&data));
+    return this;
+}
+PatrolRefData* PatrolRefData::Function4a1280(PatrolRefData* a_dst, const PatrolRefData* a_src)
+{
+    a_dst->unk00 = a_src->unk00;
+    PatrolInit(reinterpret_cast<PatrolRaw*>(&a_dst->data));
+    return a_dst;
+}

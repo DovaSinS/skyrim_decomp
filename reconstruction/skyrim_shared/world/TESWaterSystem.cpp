@@ -4,7 +4,9 @@
 // Sibling source: fo4-private@1b765c70 src/Shared/Water/TESWater.cpp:159
 // Adapted bodies: RemoveLODWater from fo4-private@1b765c70; Function52d380 original.
 // 0x52d200 TESWaterSystem::RemoveLODWater
+// 0x52c660 TESWaterSystem::Function52c660
 // 0x52d380 TESWaterSystem::Function52d380
 #include "TESWaterSystem.h"
 void TESWaterSystem::RemoveLODWater(NiAVObject* water, NiNode* root) { RemoveWater(water); root->DetachChild2(water->parent); }
 void TESWaterSystem::Function52d380() { if (void* target = g_waterSystem->sub->target) ReleaseWaterTarget(target); }
+void TESWaterSystem::Function52c660(void* a_value) { unk98 = a_value; }

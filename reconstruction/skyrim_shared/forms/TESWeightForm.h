@@ -1,3 +1,4 @@
+// Code origin: original; the listing and community declarations only
 // Source exposure: mixed (binary-analysis of the pinned image, community-headers).
 // TESWeightForm: EXE_RTTI; class name and base from the image RTTI
 #pragma once

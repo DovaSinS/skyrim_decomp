@@ -2,6 +2,7 @@
 // Code origin: existing sibling-adapted method plus original reconstruction of Function52d380.
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // NiObject, NiAVObject, NiNode: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
+// TESWaterSystem::Function52c660, TESWaterSystem::unk98: GUESS(low); the name and the offset are hypotheses.
 // TESWaterSystem, WaterSystemHolder, WaterSystemSub, g_waterSystem, ReleaseWaterTarget, Function52d380: GUESS(low)
 #pragma once
 #include <cstdint>
@@ -73,4 +74,4 @@ struct WaterSystemSub { std::uint8_t unknown00[0x18]; void* target; };
 struct WaterSystemHolder { std::uint8_t unknown00[0x28]; WaterSystemSub* sub; };
 extern WaterSystemHolder* g_waterSystem;
 void ReleaseWaterTarget(void* a_target);
-class TESWaterSystem { public: void RemoveWater(NiAVObject*); void RemoveLODWater(NiAVObject*, NiNode*); static void Function52d380(); };
+class TESWaterSystem { public: void RemoveWater(NiAVObject*); void RemoveLODWater(NiAVObject*, NiNode*); static void Function52d380(); void Function52c660(void* a_value); private: std::uint8_t unknown00[0x98]; void* unk98; };

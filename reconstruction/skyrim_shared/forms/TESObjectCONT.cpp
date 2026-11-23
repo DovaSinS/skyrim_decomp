@@ -1,11 +1,16 @@
 // Source exposure: mixed (names and declarations from community headers; the listing of the pinned
 // image).
-// Adapted bodies: none
-// Code origin: original; the listing and community declarations only
+// Adapted bodies: TestBit is close to the sibling helper (tools/check_origin.py similarity 0.82).
+// Sibling source: momusdigital/f3_decomp@f5bac1b5 src/f3staging/f3blk_004e0000_o2.cpp:49422
+// TestBit: SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
+// Code origin: original from the listing and community declarations, except TestBit, which is close to the sibling helper named above
 // 0x281530 TESObjectCONT::InitializeData
 // 0x281a30 TESObjectCONT::InitItemImpl
 // SPDX-License-Identifier: CC0-1.0
 // 0x282130 TESObjectCONT::OpenForActivator
+// 0x282370 TESObjectCONT::~TESObjectCONT
+// TESObjectCONT::~TESObjectCONT: CRASHLOGGER_PDB(59818@2026.10.24)
+// CI hash: 0x279110 ??1TESBoundAnimObject@@UEAA@XZ
 #include "TESObjectCONT.h"
 
 void TESObjectCONT::OpenForActivator(TESObjectREFR* a_container, TESObjectREFR* a_activator)
@@ -59,4 +64,13 @@ void TESObjectCONT::InitItemImpl()
 
         FinishInitItem(this, true);
     }
+}
+
+// Not compared: defined so the compiler emits the vftables and, beside them, the deleting destructor.
+TESObjectCONT::TESObjectCONT()
+{
+}
+
+TESObjectCONT::~TESObjectCONT()
+{
 }
