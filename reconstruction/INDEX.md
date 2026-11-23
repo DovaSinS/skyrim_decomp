@@ -16177,7 +16177,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/movement/MovementControllerNPC_795ea0` | `MovementControllerNPC::Function796910` (GUESS) | `sse-steam-1-7-104` / `0x796910` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x796910.json` | matched | full | - |
 | - | `MovementControllerNPC::Unk_0C` (COMMUNITY) | `sse-steam-1-7-104` / `0x796940` / 170 | - | - | mapped | - | - |
 | - | `MovementControllerNPC::Unk_0D` (COMMUNITY) | `sse-steam-1-7-104` / `0x7969f0` / 170 | - | - | mapped | - | - |
-| - | `MovementControllerNPC::Unk_0E` (COMMUNITY) | `sse-steam-1-7-104` / `0x796aa0` / 11 | - | - | mapped | - | - |
+| `skyrim/ai/movement/MovementControllerNPC_796aa0` | `MovementControllerNPC::Unk_0E` (COMMUNITY) | `sse-steam-1-7-104` / `0x796aa0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x796aa0.json` | matched | full | - |
 | `skyrim/ai/movement/MovementControllerNPC` | `MovementControllerNPC::Unk_0F` (COMMUNITY) | `sse-steam-1-7-104` / `0x796ac0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x796ac0.json` | matched | full | - |
 | - | `MovementControllerNPC::Unk_10` (COMMUNITY) | `sse-steam-1-7-104` / `0x796ad0` / 114 | - | - | mapped | - | - |
 | - | `MovementControllerNPC::Unk_11` (COMMUNITY) | `sse-steam-1-7-104` / `0x796b50` / 128 | - | - | mapped | - | - |

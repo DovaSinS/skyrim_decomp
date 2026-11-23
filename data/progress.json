@@ -434854,12 +434854,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 7957152,
       "size": 11,
-      "status": "mapped",
+      "status": "matched",
       "name": "MovementControllerNPC::Unk_0E",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), virtual slot comment of the class header, joined through the image RTTI vftable slot 14. RVA 0x796aa0; leaf without .pdata: size from the Ghidra analysis body, followed by int3 padding.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x796aa0.json",
+      "report": "reports/sse-steam-1-7-104/0x796aa0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x796ac0",
@@ -489424,7 +489425,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-23T15:55:14Z",
+  "updated_at": "2026-11-23T20:28:15Z",
   "work_items": [
     {
       "id": "pin-target",
