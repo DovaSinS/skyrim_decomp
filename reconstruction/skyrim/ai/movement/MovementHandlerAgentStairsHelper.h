@@ -13,7 +13,6 @@ class MovementHandlerAgentStairsHelper
 public:
     static const BSFixedString &QClassAgentType();
 
-    void Function7a6740(void* a_value);
     void Function7a6750();
 
     char _unk00[0x28];  // 00, not accessed by these functions

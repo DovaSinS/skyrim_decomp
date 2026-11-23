@@ -15,8 +15,6 @@
 // 0x1b4660 TES::ScalarDeletingDestructor
 // CI hash: 0x1b4660 ?ScalarDeletingDestructor@TES@@QEAAPEAV1@I@Z
 // 0x1a2610 TES::GetWorldSpace
-// 0x1a9280 TES::Function1a9280
-// 0x1aa2d0 TES::Function1aa2d0
 #include "TES.h"
 
 // Return the worldspace containing the current exterior grid.
@@ -65,7 +63,3 @@ TES* TES::ScalarDeletingDestructor(unsigned a_flags)
     }
     return this;
 }
-
-void TES::Function1a9280(unsigned char value) { field13C = value; }
-
-void TES::Function1aa2d0() { ++field2A8; }

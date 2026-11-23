@@ -46,6 +46,5 @@ public:
     unsigned short uniqueID, pad86;
     unsigned castingSource;
 public:
-    void* Function5bb090();
     void* Function5d3e00();
 };

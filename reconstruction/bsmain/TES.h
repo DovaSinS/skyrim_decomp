@@ -9,8 +9,7 @@
 // TES, GetLandMaterialType, NiPoint3, TESLandTexture, GetLandTexture, GetHavokMaterialType, coord: GUESS(low)
 // TES::GetWorldSpace: GUESS(low); getter identified by the field it reads
 // TESWorldSpace, worldSpace: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
-// unk000, unk13D, unk150, unk2AC: GUESS(low); unaccessed regions between the named members
-// Function1a9280, Function1aa2d0, field13C, field2A8: GUESS(low)
+// unknown00: GUESS(low); unaccessed region before the worldspace pointer
 #pragma once
 
 #include <cstddef>
@@ -31,21 +30,11 @@ public:
     TESLandTexture* GetLandTexture(const NiPoint3& coord);
     unsigned int GetLandMaterialType(const NiPoint3& coord);
     TES* ScalarDeletingDestructor(unsigned a_flags);
-    void Function1a9280(unsigned char value);
-    void Function1aa2d0();
 
-    unsigned char unk000[0x13C];
-    unsigned char field13C;
-    unsigned char unk13D[0x148 - 0x13D];
+    unsigned char unknown00[0x148];
     TESWorldSpace* worldSpace;
-    unsigned char unk150[0x2A8 - 0x150];
-    unsigned int field2A8;
-    unsigned char unk2AC[0x2C0 - 0x2AC];
 };
 static_assert(offsetof(TES, worldSpace) == 0x148, "TES worldspace offset");
-static_assert(offsetof(TES, field13C) == 0x13C, "TES field13C offset");
-static_assert(offsetof(TES, field2A8) == 0x2A8, "TES field2A8 offset");
-static_assert(sizeof(TES) == 0x2C0, "TES size");
 
 void DestroyTES(TES* a_world);
 void FreeTES(TES* a_world, std::size_t a_size);
