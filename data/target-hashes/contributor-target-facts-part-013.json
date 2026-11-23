@@ -1,5 +1,1999 @@
 {
  "facts": {
+  "0x6f0750": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::SetProcessLevelLow",
+    "prototype": "void (AIProcess*)",
+    "size": 166
+   }
+  },
+  "0x6f0800": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 525
+   }
+  },
+  "0x6f0e30": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::StopCurrentIdle",
+    "size": 852
+   }
+  },
+  "0x6f1190": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 227
+   }
+  },
+  "0x6f1280": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 33
+   }
+  },
+  "0x6f12b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f12d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 134
+   }
+  },
+  "0x6f1360": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 38
+   }
+  },
+  "0x6f13b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 2029
+   }
+  },
+  "0x6f1bf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 854
+   }
+  },
+  "0x6f1f50": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 122
+   }
+  },
+  "0x6f1fd0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 487
+   }
+  },
+  "0x6f21f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x6f2210": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 15
+   }
+  },
+  "0x6f2230": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 14
+   }
+  },
+  "0x6f22b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6f22d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6f26a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 43
+   }
+  },
+  "0x6f26e0": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::CheckForExpiredDetectionEvent_14064CF70",
+    "size": 65
+   }
+  },
+  "0x6f2730": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 20
+   }
+  },
+  "0x6f2750": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 26
+   }
+  },
+  "0x6f2770": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 403
+   }
+  },
+  "0x6f2910": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 483
+   }
+  },
+  "0x6f2b00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 25
+   }
+  },
+  "0x6f2b20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 245
+   }
+  },
+  "0x6f2c20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 676
+   }
+  },
+  "0x6f2ed0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 538
+   }
+  },
+  "0x6f30f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 25
+   }
+  },
+  "0x6f3110": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 126
+   }
+  },
+  "0x6f31a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 447
+   }
+  },
+  "0x6f3370": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 563
+   }
+  },
+  "0x6f35b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x6f35d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 26
+   }
+  },
+  "0x6f35f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f3610": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 413
+   }
+  },
+  "0x6f37c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 117
+   }
+  },
+  "0x6f3840": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 288
+   }
+  },
+  "0x6f3970": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 194
+   }
+  },
+  "0x6f3a40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 137
+   }
+  },
+  "0x6f3ad0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 141
+   }
+  },
+  "0x6f3b70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 257
+   }
+  },
+  "0x6f3cc0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 103
+   }
+  },
+  "0x6f3d30": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 309
+   }
+  },
+  "0x6f3e70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 110
+   }
+  },
+  "0x6f3ef0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 314
+   }
+  },
+  "0x6f4030": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f4050": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x6f4070": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 331
+   }
+  },
+  "0x6f41d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 640
+   }
+  },
+  "0x6f44a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f44c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 59
+   }
+  },
+  "0x6f4510": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 27
+   }
+  },
+  "0x6f4540": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f4560": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x6f4580": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f45c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 344
+   }
+  },
+  "0x6f4720": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 128
+   }
+  },
+  "0x6f47b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 73
+   }
+  },
+  "0x6f4800": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 17
+   }
+  },
+  "0x6f4820": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 454
+   }
+  },
+  "0x6f49f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 328
+   }
+  },
+  "0x6f4b40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 121
+   }
+  },
+  "0x6f4bc0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x6f4be0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 285
+   }
+  },
+  "0x6f4d10": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 985
+   }
+  },
+  "0x6f50f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 40
+   }
+  },
+  "0x6f52d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 553
+   }
+  },
+  "0x6f5520": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::unk_Assault_14064FC50",
+    "size": 515
+   }
+  },
+  "0x6f5730": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 227
+   }
+  },
+  "0x6f5820": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 375
+   }
+  },
+  "0x6f59a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 344
+   }
+  },
+  "0x6f5b00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 787
+   }
+  },
+  "0x6f5e40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 53
+   }
+  },
+  "0x6f5ec0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 188
+   }
+  },
+  "0x6f6030": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::GetLipFileFailed",
+    "size": 46
+   }
+  },
+  "0x6f6070": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::GetLipAnim",
+    "size": 61
+   }
+  },
+  "0x6f60e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 72
+   }
+  },
+  "0x6f6130": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 252
+   }
+  },
+  "0x6f6240": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 275
+   }
+  },
+  "0x6f6420": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::sub_140650AF0",
+    "size": 62
+   }
+  },
+  "0x6f6560": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 263
+   }
+  },
+  "0x6f6690": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 82
+   }
+  },
+  "0x6f66f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 36
+   }
+  },
+  "0x6f6b80": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 19
+   }
+  },
+  "0x6f6ba0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 36
+   }
+  },
+  "0x6f6bd0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 53
+   }
+  },
+  "0x6f6c10": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 177
+   }
+  },
+  "0x6f6cd0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 201
+   }
+  },
+  "0x6f6e40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 219
+   }
+  },
+  "0x6f7080": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f70a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 233
+   }
+  },
+  "0x6f7190": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x6f71b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6f71d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 66
+   }
+  },
+  "0x6f7220": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6f7240": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f7280": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6f72a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6f72c0": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "convention": "fastcall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::SaveGame",
+    "prototype": "void (Explosion*, BGSSaveFormBuffer*)",
+    "size": 8362
+   }
+  },
+  "0x6f9370": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::LoadGame",
+    "prototype": "void (AITimeStamp*)",
+    "size": 11602
+   }
+  },
+  "0x6fc0d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 662
+   }
+  },
+  "0x6fc370": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::FinishLoadGame",
+    "prototype": "void (AIProcess*, BGSLoadFormBuffer*)",
+    "size": 1207
+   }
+  },
+  "0x6fc830": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::Revert",
+    "prototype": "void (CachedValues_ebedb0c3*)",
+    "size": 2981
+   }
+  },
+  "0x6fd3e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 426
+   }
+  },
+  "0x6fd590": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 371
+   }
+  },
+  "0x6fd710": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 584
+   }
+  },
+  "0x6fd960": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x6fd980": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6fd9a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 17
+   }
+  },
+  "0x6fd9c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6fd9e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6fda00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 212
+   }
+  },
+  "0x6fdae0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 623
+   }
+  },
+  "0x6fdd60": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6fdda0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 99
+   }
+  },
+  "0x6fde70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 384
+   }
+  },
+  "0x6fe050": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::FadeIn",
+    "size": 81
+   }
+  },
+  "0x6fe0b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 83
+   }
+  },
+  "0x6fe110": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 77
+   }
+  },
+  "0x6fe170": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 108
+   }
+  },
+  "0x6fe1f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 975
+   }
+  },
+  "0x6fe600": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 64
+   }
+  },
+  "0x6fe650": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 47
+   }
+  },
+  "0x6fe770": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 34
+   }
+  },
+  "0x6fe7c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 80
+   }
+  },
+  "0x6fe820": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 34
+   }
+  },
+  "0x6fe850": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 80
+   }
+  },
+  "0x6fe8b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 80
+   }
+  },
+  "0x6fe910": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6fe930": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 762
+   }
+  },
+  "0x6fec30": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 34
+   }
+  },
+  "0x6fec60": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::GetDetectionModifierTimer",
+    "size": 22
+   }
+  },
+  "0x6fec80": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 430
+   }
+  },
+  "0x6fee40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 333
+   }
+  },
+  "0x6fefa0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 62
+   }
+  },
+  "0x6ff0a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 45
+   }
+  },
+  "0x6ff0e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 39
+   }
+  },
+  "0x6ff270": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 55
+   }
+  },
+  "0x6ff2b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 161
+   }
+  },
+  "0x6ff3e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x6ff400": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 17
+   }
+  },
+  "0x6ff420": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 38
+   }
+  },
+  "0x6ff530": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x6ff550": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 554
+   }
+  },
+  "0x6ff780": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 767
+   }
+  },
+  "0x6ffa90": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 330
+   }
+  },
+  "0x6ffbe0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 80
+   }
+  },
+  "0x6ffc40": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 562
+   }
+  },
+  "0x6ffeb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 56
+   }
+  },
+  "0x6fff20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 64
+   }
+  },
+  "0x6fff70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 156
+   }
+  },
+  "0x700140": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::GetActorValueRegenDelay",
+    "size": 49
+   }
+  },
+  "0x700180": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 45
+   }
+  },
+  "0x7001c0": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::SetActorValueRegenDelay",
+    "size": 126
+   }
+  },
+  "0x700290": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 2495
+   }
+  },
+  "0x700c80": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 151
+   }
+  },
+  "0x700e00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 105
+   }
+  },
+  "0x700eb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 850
+   }
+  },
+  "0x701290": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 86
+   }
+  },
+  "0x7014a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 160
+   }
+  },
+  "0x7015e0": {
+   "crashlogger": {
+    "class": "ActorProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ActorProcess::GetReanimator",
+    "size": 108
+   }
+  },
+  "0x701680": {
+   "crashlogger": {
+    "class": "AIProcess",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "AIProcess::SetReanimateData",
+    "size": 67
+   }
+  },
+  "0x7016d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1554
+   }
+  },
+  "0x701cf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 229
+   }
+  },
+  "0x701e60": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1113
+   }
+  },
+  "0x7022e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 135
+   }
+  },
+  "0x7023c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x7023e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 39
+   }
+  },
+  "0x702430": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x702470": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x7024d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x7024f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 39
+   }
+  },
+  "0x702520": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 26
+   }
+  },
+  "0x702580": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x7025a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 22
+   }
+  },
+  "0x7025e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x702600": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 38
+   }
+  },
+  "0x702630": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x702650": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 170
+   }
+  },
+  "0x702720": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 605
+   }
+  },
+  "0x702990": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 18
+   }
+  },
+  "0x7029b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 27
+   }
+  },
+  "0x7029e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1266
+   }
+  },
+  "0x702ee0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 199
+   }
+  },
+  "0x702fb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x702ff0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x703010": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x703030": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x703070": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 488
+   }
+  },
+  "0x703260": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 178
+   }
+  },
+  "0x703320": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 24
+   }
+  },
+  "0x703340": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x703360": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 592
+   }
+  },
+  "0x7035c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 16
+   }
+  },
+  "0x7035e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1494
+   }
+  },
+  "0x703bf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 168
+   }
+  },
+  "0x7042a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1184
+   }
+  },
+  "0x704750": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 831
+   }
+  },
+  "0x704aa0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 385
+   }
+  },
+  "0x704c30": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 11
+   }
+  },
+  "0x707c70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 4988
+   }
+  },
+  "0x709000": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 763
+   }
+  },
+  "0x709310": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 5224
+   }
+  },
+  "0x70a780": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1116
+   }
+  },
+  "0x70abf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 627
+   }
+  },
+  "0x70ae70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 8352
+   }
+  },
+  "0x70d050": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 653
+   }
+  },
+  "0x70d2f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 715
+   }
+  },
+  "0x70d5d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1800
+   }
+  },
+  "0x70dce0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 6537
+   }
+  },
+  "0x710480": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 4851
+   }
+  },
+  "0x711780": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1326
+   }
+  },
+  "0x711cc0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1289
+   }
+  },
+  "0x7121d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 3068
+   }
+  },
+  "0x712de0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 2017
+   }
+  },
+  "0x7135d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 2598
+   }
+  },
+  "0x714000": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 125
+   }
+  },
+  "0x714090": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1605
+   }
+  },
+  "0x7146e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1393
+   }
+  },
+  "0x714c60": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 663
+   }
+  },
+  "0x714f00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 492
+   }
+  },
+  "0x715100": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 430
+   }
+  },
+  "0x7152c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1403
+   }
+  },
+  "0x715850": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 963
+   }
+  },
+  "0x715c20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1842
+   }
+  },
+  "0x716360": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 423
+   }
+  },
+  "0x716510": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "BSCompanionThread::Close",
+    "size": 26
+   }
+  },
+  "0x716530": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1710
+   }
+  },
+  "0x716bf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 940
+   }
+  },
+  "0x716fb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 240
+   }
+  },
+  "0x7170b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1679
+   }
+  },
+  "0x717eb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1000
+   }
+  },
+  "0x7182a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1186
+   }
+  },
+  "0x718750": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 551
+   }
+  },
+  "0x718980": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1092
+   }
+  },
+  "0x7197d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 509
+   }
+  },
+  "0x7199e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1264
+   }
+  },
+  "0x719ee0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 125
+   }
+  },
+  "0x719f70": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 143
+   }
+  },
+  "0x71a010": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 181
+   }
+  },
+  "0x71a0d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 143
+   }
+  },
+  "0x71a170": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 332
+   }
+  },
+  "0x71a2d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 216
+   }
+  },
+  "0x71a3b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 436
+   }
+  },
+  "0x71a570": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 130
+   }
+  },
+  "0x71a600": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 298
+   }
+  },
+  "0x71a730": {
+   "crashlogger": {
+    "class": "InstantInteractionCallback",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "InstantInteractionCallback::ctor",
+    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
+    "size": 70
+   }
+  },
+  "0x71a780": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 97
+   }
+  },
+  "0x71a7f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 182
+   }
+  },
+  "0x71a8b0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 203
+   }
+  },
+  "0x71a980": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 270
+   }
+  },
+  "0x71aa90": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 117
+   }
+  },
+  "0x71ab10": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 153
+   }
+  },
+  "0x71abb0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1060
+   }
+  },
+  "0x71afe0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 924
+   }
+  },
+  "0x71b380": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 92
+   }
+  },
+  "0x71b3e0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 92
+   }
+  },
+  "0x71b440": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 231
+   }
+  },
+  "0x71b590": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 54
+   }
+  },
+  "0x71bdf0": {
+   "crashlogger": {
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "RunActionAnimationLoadedCallback::ctor",
+    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
+    "size": 196
+   }
+  },
+  "0x71bec0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71bef0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 82
+   }
+  },
+  "0x71bf50": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 158
+   }
+  },
+  "0x71bff0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 49
+   }
+  },
+  "0x71c030": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 189
+   }
+  },
+  "0x71c0f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 130
+   }
+  },
+  "0x71c1d0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 70
+   }
+  },
+  "0x71c220": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 61
+   }
+  },
+  "0x71c260": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 35
+   }
+  },
+  "0x71c290": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71c2c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71c2f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71c320": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 49
+   }
+  },
+  "0x71c3f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 61
+   }
+  },
+  "0x71c430": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71c450": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 57
+   }
+  },
+  "0x71ca10": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 189
+   }
+  },
+  "0x71cad0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 56
+   }
+  },
+  "0x71cb30": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 68
+   }
+  },
+  "0x71cb80": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 68
+   }
+  },
+  "0x71cbd0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 72
+   }
+  },
+  "0x71cc20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 110
+   }
+  },
+  "0x71ccf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1091
+   }
+  },
+  "0x71d140": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "BSPathfindingTemporary_PathingRequestCover___dtor",
+    "size": 66
+   }
+  },
+  "0x71d190": {
+   "crashlogger": {
+    "class": "DetectionListener",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "DetectionListener::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 50
+   }
+  },
+  "0x71d1d0": {
+   "crashlogger": {
+    "class": "InstantInteractionCallback",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "InstantInteractionCallback::dtor_deleting",
+    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
+    "size": 66
+   }
+  },
+  "0x71d220": {
+   "crashlogger": {
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "RunActionAnimationLoadedCallback::dtor_deleting",
+    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
+    "size": 224
+   }
+  },
+  "0x71d300": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "_anonymous_namespace___StandardDetectionListener__dtor",
+    "size": 50
+   }
+  },
+  "0x71d340": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 99
+   }
+  },
+  "0x71d430": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 64
+   }
+  },
+  "0x71d470": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 204
+   }
+  },
+  "0x71d540": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 195
+   }
+  },
+  "0x71d610": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 382
+   }
+  },
+  "0x71d790": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 290
+   }
+  },
+  "0x71d8c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "`anonymous_namespace'::CheckShouldCallTrespassAlarm",
+    "size": 93
+   }
+  },
+  "0x71d920": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 169
+   }
+  },
+  "0x71d9d0": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::sub_1406773E0",
+    "prototype": "void (Character*)",
+    "size": 247
+   }
+  },
+  "0x71dad0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 175
+   }
+  },
+  "0x71db80": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::sub_140677590",
+    "prototype": "void (Character*)",
+    "size": 270
+   }
+  },
+  "0x71dc90": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 86
+   }
+  },
+  "0x71dda0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 91
+   }
+  },
+  "0x71de10": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71de20": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x71de30": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 137
+   }
+  },
+  "0x71dec0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 569
+   }
+  },
+  "0x71e100": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 231
+   }
+  },
+  "0x71e1f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "`anonymous_namespace'::GetLipAnim_Util",
+    "size": 52
+   }
+  },
+  "0x71e230": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 1134
+   }
+  },
+  "0x71e6a0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 149
+   }
+  },
+  "0x71e740": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 72
+   }
+  },
+  "0x71e790": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 38
+   }
+  },
+  "0x71e7c0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 575
+   }
+  },
+  "0x71ea00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 255
+   }
+  },
+  "0x71eb00": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 742
+   }
+  },
+  "0x71edf0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 537
+   }
+  },
+  "0x71f190": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 255
+   }
+  },
+  "0x71f290": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 94
+   }
+  },
+  "0x71f2f0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 267
+   }
+  },
+  "0x71f400": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 241
+   }
+  },
+  "0x71f500": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 539
+   }
+  },
+  "0x71f720": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 544
+   }
+  },
   "0x71f940": {
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
@@ -1585,6 +3579,16 @@
     "size": 38
    }
   },
+  "0x737ef0": {
+   "crashlogger": {
+    "class": "BSDoorHavokController",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "BSDoorHavokController::dtor_deleting",
+    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
+    "size": 62
+   }
+  },
   "0x737f40": {
    "crashlogger": {
     "class": "BSPlayerDistanceCheckController",
@@ -1611,12 +3615,24 @@
     "size": 19
    }
   },
+  "0x738110": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 5
+   }
+  },
   "0x738120": {
    "crashlogger": {
     "class": "BSPlayerDistanceCheckController",
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
     "name": "BSPlayerDistanceCheckController::Update_1406918F0",
     "size": 329
+   }
+  },
+  "0x738270": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 60
    }
   },
   "0x7382b0": {
@@ -1883,6 +3899,66 @@
     "size": 83
    }
   },
+  "0x73aac0": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
+  "0x73aacc": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
+  "0x73aad8": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
+  "0x73aae4": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
+  "0x73aaf0": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
+  "0x73aafc": {
+   "crashlogger": {
+    "class": "Character",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "Character::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 12
+   }
+  },
   "0x73ab10": {
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
@@ -1912,6 +3988,12 @@
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
     "name": "anonymous_namespace__GetClothingValueVisitor::Visit_1406945B0",
     "size": 62
+   }
+  },
+  "0x73afe0": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 36
    }
   },
   "0x73b010": {
@@ -2012,6 +4094,16 @@
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
     "size": 338
+   }
+  },
+  "0x73c770": {
+   "crashlogger": {
+    "class": "HighActorCuller",
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "HighActorCuller::dtor_deleting",
+    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
+    "size": 52
    }
   },
   "0x73c7e0": {
@@ -4673,6 +6765,15 @@
     "size": 84
    }
   },
+  "0x7694c0": {
+   "crashlogger": {
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "IAllowEGMCacheClear::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 54
+   }
+  },
   "0x769500": {
    "crashlogger": {
     "class": "PlayerCharacter",
@@ -5702,6 +7803,15 @@
     "size": 26
    }
   },
+  "0x779d90": {
+   "crashlogger": {
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "IMovementFormIDManager::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 54
+   }
+  },
   "0x779dd0": {
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
@@ -5718,6 +7828,20 @@
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
     "size": 278
+   }
+  },
+  "0x77a020": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
+   }
+  },
+  "0x77a030": {
+   "crashlogger": {
+    "convention": "thiscall",
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "name": "ProcessListMovementInterface::dtor",
+    "prototype": "void (IMovementControllerRegisterInterface*)",
+    "size": 54
    }
   },
   "0x77a090": {
@@ -7352,6 +9476,12 @@
     "size": 144
    }
   },
+  "0x78f830": {
+   "crashlogger": {
+    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
+    "size": 47
+   }
+  },
   "0x78f860": {
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
@@ -7562,2205 +9692,6 @@
    "crashlogger": {
     "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
     "size": 243
-   }
-  },
-  "0x792260": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 466
-   }
-  },
-  "0x792450": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 85
-   }
-  },
-  "0x7924b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 85
-   }
-  },
-  "0x792510": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 85
-   }
-  },
-  "0x792570": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 85
-   }
-  },
-  "0x7925d0": {
-   "crashlogger": {
-    "class": "Character",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "Character::sub_1406E9F40",
-    "prototype": "void (Character*)",
-    "size": 118
-   }
-  },
-  "0x792650": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1336
-   }
-  },
-  "0x792b90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 402
-   }
-  },
-  "0x792d50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 131
-   }
-  },
-  "0x792e60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 164
-   }
-  },
-  "0x792f10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 544
-   }
-  },
-  "0x793140": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "bhkCharacterCollisionHandler::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 75
-   }
-  },
-  "0x7931d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 540
-   }
-  },
-  "0x7933f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x793440": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "CharacterCollisionHandler::Func0_1406EB690",
-    "size": 60
-   }
-  },
-  "0x7934c0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementAvoidanceManager::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 153
-   }
-  },
-  "0x793560": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 125
-   }
-  },
-  "0x7935f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 308
-   }
-  },
-  "0x793730": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1485
-   }
-  },
-  "0x793d10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::Func3_1406EBE80",
-    "size": 176
-   }
-  },
-  "0x793dd0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::Func2_1406EBF40",
-    "size": 133
-   }
-  },
-  "0x793e60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::Func4_1406EBFD0",
-    "size": 61
-   }
-  },
-  "0x793eb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::sub_1406EC020",
-    "size": 199
-   }
-  },
-  "0x793f80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 222
-   }
-  },
-  "0x794060": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 323
-   }
-  },
-  "0x7941b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 476
-   }
-  },
-  "0x794390": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 596
-   }
-  },
-  "0x7945f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 465
-   }
-  },
-  "0x7947e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 59
-   }
-  },
-  "0x794820": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 59
-   }
-  },
-  "0x794880": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7948d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 379
-   }
-  },
-  "0x794a90": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementAvoidanceManager::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 160
-   }
-  },
-  "0x794bf0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 72
-   }
-  },
-  "0x794c40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 140
-   }
-  },
-  "0x794d20": {
-   "crashlogger": {
-    "class": "MovementControllerNPC",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementControllerNPC::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 324
-   }
-  },
-  "0x794e70": {
-   "crashlogger": {
-    "class": "MovementControllerNPC",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementControllerNPC::~MovementControllerNPC",
-    "prototype": "void (MovementControllerNPC_e268b6d4*)",
-    "size": 673
-   }
-  },
-  "0x795350": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 2312
-   }
-  },
-  "0x795c60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 283
-   }
-  },
-  "0x795d90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 252
-   }
-  },
-  "0x795eb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1283
-   }
-  },
-  "0x7964d0": {
-   "crashlogger": {
-    "class": "IMovementMotionDrivenControl",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementMotionDrivenControl::Func2_1406EDFA0",
-    "prototype": "void (IMovementMotionDrivenControl_e6312deb*)",
-    "size": 115
-   }
-  },
-  "0x796550": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 519
-   }
-  },
-  "0x796760": {
-   "crashlogger": {
-    "class": "IMovementMotionDrivenControl",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementMotionDrivenControl::Func3_1406EE1A0",
-    "prototype": "void (IMovementMotionDrivenControl_e6312deb*)",
-    "size": 95
-   }
-  },
-  "0x7967d0": {
-   "crashlogger": {
-    "class": "IMovementMotionDrivenControl",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementMotionDrivenControl::Func5_1406EE210",
-    "prototype": "void (IMovementMotionDrivenControl_e6312deb*)",
-    "size": 205
-   }
-  },
-  "0x7977b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 944
-   }
-  },
-  "0x797b70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 226
-   }
-  },
-  "0x797c60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 147
-   }
-  },
-  "0x797d30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x797dc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x797e50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x797ee0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction5_TESObjectREFR_bool_BSFixedString_const::_BSFixedString_const::_TESObjectREFR::_BSFixedString_const::_BSFixedString_const::_::Func1",
-    "prototype": "void (hkpWorldExtension*)",
-    "size": 146
-   }
-  },
-  "0x797f80": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction5_TESObjectREFR_bool_BSFixedString_const::_BSFixedString_const::_TESObjectREFR::_BSFixedString_const::_BSFixedString_const::_::Func2",
-    "prototype": "void (QueuedPromoteReferencesTask*)",
-    "size": 146
-   }
-  },
-  "0x798020": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction5_TESObjectREFR_bool_BSFixedString_const::_BSFixedString_const::_TESObjectREFR::_BSFixedString_const::_BSFixedString_const::_::Func3",
-    "size": 146
-   }
-  },
-  "0x7980c0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction5_TESObjectREFR_bool_BSFixedString_const::_BSFixedString_const::_TESObjectREFR::_BSFixedString_const::_BSFixedString_const::_::Func4",
-    "prototype": "void (CombatArea*)",
-    "size": 132
-   }
-  },
-  "0x798180": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x798210": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x7982a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 130
-   }
-  },
-  "0x798330": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 132
-   }
-  },
-  "0x798450": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 120
-   }
-  },
-  "0x798500": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 92
-   }
-  },
-  "0x798570": {
-   "crashlogger": {
-    "class": "MovementControllerNPC",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementControllerNPC::sub_1406F0250",
-    "prototype": "void (MovementControllerNPC_e268b6d4*)",
-    "size": 77
-   }
-  },
-  "0x7985d0": {
-   "crashlogger": {
-    "class": "MovementControllerNPC",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementControllerNPC::sub_1406F02B0",
-    "prototype": "void (MovementControllerNPC_e268b6d4*)",
-    "size": 94
-   }
-  },
-  "0x798640": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 100
-   }
-  },
-  "0x798770": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 120
-   }
-  },
-  "0x798880": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 120
-   }
-  },
-  "0x798900": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 120
-   }
-  },
-  "0x798b40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 91
-   }
-  },
-  "0x798c30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 219
-   }
-  },
-  "0x798d30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 231
-   }
-  },
-  "0x798e20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 191
-   }
-  },
-  "0x798ef0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction3_TESObjectREFR_bool_BSFixedString_const::_TESObjectREFR::_BSFixedString_const::_::Func1",
-    "prototype": "void (hkpWorldExtension*)",
-    "size": 162
-   }
-  },
-  "0x799040": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 69
-   }
-  },
-  "0x799090": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 118
-   }
-  },
-  "0x799110": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 274
-   }
-  },
-  "0x799230": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 157
-   }
-  },
-  "0x7992d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 561
-   }
-  },
-  "0x799510": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 578
-   }
-  },
-  "0x799760": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 622
-   }
-  },
-  "0x7999d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 622
-   }
-  },
-  "0x799c40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 415
-   }
-  },
-  "0x799de0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 417
-   }
-  },
-  "0x79a000": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 128
-   }
-  },
-  "0x79a080": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 119
-   }
-  },
-  "0x79a100": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 127
-   }
-  },
-  "0x79a180": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x79a210": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 152
-   }
-  },
-  "0x79a2f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 131
-   }
-  },
-  "0x79a380": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 140
-   }
-  },
-  "0x79a410": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 140
-   }
-  },
-  "0x79a4a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x79a4d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x79a500": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x79a7f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 159
-   }
-  },
-  "0x79a890": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 112
-   }
-  },
-  "0x79aa40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 133
-   }
-  },
-  "0x79aad0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 133
-   }
-  },
-  "0x79ab60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 61
-   }
-  },
-  "0x79aba0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 61
-   }
-  },
-  "0x79abe0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 86
-   }
-  },
-  "0x79ac40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 86
-   }
-  },
-  "0x79aca0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 73
-   }
-  },
-  "0x79adb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 431
-   }
-  },
-  "0x79af60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 343
-   }
-  },
-  "0x79b0c0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 322
-   }
-  },
-  "0x79b210": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 245
-   }
-  },
-  "0x79b310": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 247
-   }
-  },
-  "0x79b410": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 226
-   }
-  },
-  "0x79b500": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 226
-   }
-  },
-  "0x79b5f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 267
-   }
-  },
-  "0x79b700": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 266
-   }
-  },
-  "0x79b960": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 652
-   }
-  },
-  "0x79bc00": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 668
-   }
-  },
-  "0x79beb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 172
-   }
-  },
-  "0x79bf70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 188
-   }
-  },
-  "0x79c040": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 816
-   }
-  },
-  "0x79caa0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1304
-   }
-  },
-  "0x79cfc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1610
-   }
-  },
-  "0x79d610": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1296
-   }
-  },
-  "0x79db30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 792
-   }
-  },
-  "0x79de50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 904
-   }
-  },
-  "0x79e1e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1851
-   }
-  },
-  "0x79e930": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1115
-   }
-  },
-  "0x79eda0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1694
-   }
-  },
-  "0x79f450": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1946
-   }
-  },
-  "0x79fbf0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1176
-   }
-  },
-  "0x7a0090": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1014
-   }
-  },
-  "0x7a0490": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 396
-   }
-  },
-  "0x7a0630": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 396
-   }
-  },
-  "0x7a07d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1602
-   }
-  },
-  "0x7a0e20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1472
-   }
-  },
-  "0x7a13f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 495
-   }
-  },
-  "0x7a15e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 125
-   }
-  },
-  "0x7a1660": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 121
-   }
-  },
-  "0x7a16e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 154
-   }
-  },
-  "0x7a1780": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 154
-   }
-  },
-  "0x7a1820": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a18b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1940": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a19d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1a60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1af0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1b80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1c10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 144
-   }
-  },
-  "0x7a1d50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1d60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1d70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1d80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1d90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1da0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1db0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1dc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1dd0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1de0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1df0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1e00": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1e10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a1ed0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 31
-   }
-  },
-  "0x7a2010": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 180
-   }
-  },
-  "0x7a20d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 180
-   }
-  },
-  "0x7a2190": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 143
-   }
-  },
-  "0x7a2220": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 140
-   }
-  },
-  "0x7a22b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 67
-   }
-  },
-  "0x7a2300": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 67
-   }
-  },
-  "0x7a2350": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a2390": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 67
-   }
-  },
-  "0x7a23e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a2420": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a2460": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a24a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a24e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a2520": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a2560": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_256____dtor",
-    "size": 15
-   }
-  },
-  "0x7a2570": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_40____dtor",
-    "size": 15
-   }
-  },
-  "0x7a2580": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_48____dtor",
-    "size": 15
-   }
-  },
-  "0x7a2590": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_56____dtor",
-    "size": 15
-   }
-  },
-  "0x7a25a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a25b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a25c0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a25d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a25e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_256__::Resize",
-    "size": 42
-   }
-  },
-  "0x7a2610": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_40__::Resize",
-    "size": 42
-   }
-  },
-  "0x7a2640": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_48__::Resize",
-    "size": 42
-   }
-  },
-  "0x7a2670": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSTArrayAllocatorFunctor_BSTSmallArrayHeapAllocator_56__::Resize",
-    "size": 42
-   }
-  },
-  "0x7a26d0": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 330
-   }
-  },
-  "0x7a2900": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentDirectControl::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 252
-   }
-  },
-  "0x7a2a40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a2a50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a2a70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentDirectControl::Func7_1406FA5A0",
-    "size": 122
-   }
-  },
-  "0x7a2bc0": {
-   "crashlogger": {
-    "class": "IMovementHandlerAgent",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementHandlerAgent::Func1_1406FA6E0",
-    "size": 484
-   }
-  },
-  "0x7a2dc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 65
-   }
-  },
-  "0x7a2e10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 78
-   }
-  },
-  "0x7a2e70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 65
-   }
-  },
-  "0x7a2ec0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 114
-   }
-  },
-  "0x7a2f40": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 90
-   }
-  },
-  "0x7a2fa0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 114
-   }
-  },
-  "0x7a3020": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 561
-   }
-  },
-  "0x7a3260": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 152
-   }
-  },
-  "0x7a3300": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 188
-   }
-  },
-  "0x7a33d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentDirectControl::ClearForcedMovement",
-    "size": 172
-   }
-  },
-  "0x7a3480": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 214
-   }
-  },
-  "0x7a3560": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 432
-   }
-  },
-  "0x7a3750": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentDirectControl::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 89
-   }
-  },
-  "0x7a37b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 544
-   }
-  },
-  "0x7a39d0": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 191
-   }
-  },
-  "0x7a3b70": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 124
-   }
-  },
-  "0x7a3c00": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::~MovementHandlerAgentPlayerControls",
-    "size": 142
-   }
-  },
-  "0x7a3ca0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 451
-   }
-  },
-  "0x7a3ec0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::Func7_1406FB980",
-    "size": 47
-   }
-  },
-  "0x7a4900": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::Func11_1406FC1A0",
-    "size": 66
-   }
-  },
-  "0x7a4950": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::Func12_1406FC1F0",
-    "size": 74
-   }
-  },
-  "0x7a49a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a49b0": {
-   "crashlogger": {
-    "class": "IMovementSetPlayerControls",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementSetPlayerControls::Func1_1406FC250",
-    "size": 77
-   }
-  },
-  "0x7a4a10": {
-   "crashlogger": {
-    "class": "IMovementSetPlayerControls",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementSetPlayerControls::Func2_1406FC2B0",
-    "size": 75
-   }
-  },
-  "0x7a4a70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 549
-   }
-  },
-  "0x7a4ce0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 74
-   }
-  },
-  "0x7a4d90": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControls::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 179
-   }
-  },
-  "0x7a4e50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1268
-   }
-  },
-  "0x7a5350": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 64
-   }
-  },
-  "0x7a5390": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 377
-   }
-  },
-  "0x7a5510": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 131
-   }
-  },
-  "0x7a5680": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentPlayerControlsActionTrigger",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControlsActionTrigger::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 51
-   }
-  },
-  "0x7a57b0": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentPlayerControlsActionTrigger",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControlsActionTrigger::Activate",
-    "prototype": "bool (TESIdleForm*, TESObjectREFR_b225f218*, TESObjectREFR_b225f218*, unsigned char, TESBoundObject_fc790793*, int)",
-    "size": 86
-   }
-  },
-  "0x7a5810": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentPlayerControlsActionTrigger",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControlsActionTrigger::Deactivate",
-    "prototype": "void (hkbGenerator_a718bde7*, hkbContext*)",
-    "size": 54
-   }
-  },
-  "0x7a58a0": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentPlayerControlsActionTrigger",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentPlayerControlsActionTrigger::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 73
-   }
-  },
-  "0x7a58f0": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 150
-   }
-  },
-  "0x7a5a70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentSprintActionTrigger::MovementHandlerAgentSprintActionTrigger",
-    "size": 72
-   }
-  },
-  "0x7a5ac0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 62
-   }
-  },
-  "0x7a5c30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 59
-   }
-  },
-  "0x7a5cb0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentSprintActionTrigger::Activate",
-    "prototype": "bool (TESIdleForm*, TESObjectREFR_b225f218*, TESObjectREFR_b225f218*, unsigned char, TESBoundObject_fc790793*, int)",
-    "size": 64
-   }
-  },
-  "0x7a5d00": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 989
-   }
-  },
-  "0x7a6100": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a6120": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentSprintActionTrigger::Func11_1406FD7E0",
-    "size": 65
-   }
-  },
-  "0x7a6170": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentSprintActionTrigger::Func12_1406FD830",
-    "size": 100
-   }
-  },
-  "0x7a61e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 448
-   }
-  },
-  "0x7a6430": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentSprintActionTrigger::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 95
-   }
-  },
-  "0x7a6490": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a64a0": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 132
-   }
-  },
-  "0x7a6610": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentStairsHelper",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentStairsHelper::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 52
-   }
-  },
-  "0x7a6740": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a6750": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a67b0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 223
-   }
-  },
-  "0x7a68e0": {
-   "crashlogger": {
-    "class": "MovementHandlerAgentStairsHelper",
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementHandlerAgentStairsHelper::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 73
-   }
-  },
-  "0x7a6960": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction0_TESPackage_TESPackage_const::_::Func1",
-    "prototype": "void (hkpWorldExtension*)",
-    "size": 98
-   }
-  },
-  "0x7a6ad0": {
-   "crashlogger": {
-    "class": "MovementMessageActorCollision",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementMessageActorCollision::MovementMessageActorCollision",
-    "size": 26
-   }
-  },
-  "0x7a6b20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 131
-   }
-  },
-  "0x7a6be0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 402
-   }
-  },
-  "0x7a6e20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 164
-   }
-  },
-  "0x7a6ed0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 544
-   }
-  },
-  "0x7a70f0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementMessageMovementTypeChange::Create",
-    "prototype": "NavMesh*(NavMesh*)",
-    "size": 222
-   }
-  },
-  "0x7a7340": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementMessageMovementTypeChange::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 84
-   }
-  },
-  "0x7a73a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementMessageMovementTypeChange::sub_1406FEA80",
-    "size": 50
-   }
-  },
-  "0x7a73f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 131
-   }
-  },
-  "0x7a7480": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 47
-   }
-  },
-  "0x7a74c0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 47
-   }
-  },
-  "0x7a74f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 110
-   }
-  },
-  "0x7a7570": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementMessageMovementTypeChange::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 83
-   }
-  },
-  "0x7a75d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 247
-   }
-  },
-  "0x7a77b0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentDirectControl::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 169
-   }
-  },
-  "0x7a78a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a7990": {
-   "crashlogger": {
-    "class": "IMovementPlannerAgent",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementPlannerAgent::Func1_1406FF090",
-    "size": 124
-   }
-  },
-  "0x7a7a30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 65
-   }
-  },
-  "0x7a7a80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 78
-   }
-  },
-  "0x7a7ae0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 65
-   }
-  },
-  "0x7a7b30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 90
-   }
-  },
-  "0x7a7b90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 78
-   }
-  },
-  "0x7a7bf0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 90
-   }
-  },
-  "0x7a7c50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 145
-   }
-  },
-  "0x7a7d20": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentDirectControl::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 89
-   }
-  },
-  "0x7a7d80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 132
-   }
-  },
-  "0x7a7ef0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentHorseControls::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 52
-   }
-  },
-  "0x7a7f70": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a8060": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 376
-   }
-  },
-  "0x7a8220": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentHorseControls::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 89
-   }
-  },
-  "0x7a8280": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 252
-   }
-  },
-  "0x7a8460": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 96
-   }
-  },
-  "0x7a84d0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentKeepOffset::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 181
-   }
-  },
-  "0x7a8590": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentKeepOffset::~MovementPlannerAgentKeepOffset",
-    "size": 114
-   }
-  },
-  "0x7a8610": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a8640": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 45
-   }
-  },
-  "0x7a8750": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeLatentFunction1_TESQuest_bool_uint_::Func1",
-    "prototype": "void (hkpWorldExtension*)",
-    "size": 988
-   }
-  },
-  "0x7a8b50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a8b90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 245
-   }
-  },
-  "0x7a8c90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentKeepOffset::Func12_140700270",
-    "size": 203
-   }
-  },
-  "0x7a8de0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentKeepOffset::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 151
-   }
-  },
-  "0x7a8e80": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "BSScript::NativeFunction2_TESQuest_void_uint_bool_::Func2",
-    "prototype": "void (QueuedPromoteReferencesTask*)",
-    "size": 95
-   }
-  },
-  "0x7a8fe0": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentWarp::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 355
-   }
-  },
-  "0x7a9150": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 265
-   }
-  },
-  "0x7a9260": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a9290": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 51
-   }
-  },
-  "0x7a92d0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentWarp::Func7_140700880",
-    "size": 54
-   }
-  },
-  "0x7a9310": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7a9400": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1521
-   }
-  },
-  "0x7a9a10": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 603
-   }
-  },
-  "0x7a9c80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 155
-   }
-  },
-  "0x7a9d30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 146
-   }
-  },
-  "0x7a9dd0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentWarp::Func11_140701330",
-    "size": 123
-   }
-  },
-  "0x7a9e60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentWarp::Func12_1407013C0",
-    "size": 176
-   }
-  },
-  "0x7a9f20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 1225
-   }
-  },
-  "0x7aa3f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 500
-   }
-  },
-  "0x7aa5f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 419
-   }
-  },
-  "0x7aa7e0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7aa870": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementPlannerAgentWarp::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 302
-   }
-  },
-  "0x7aa9a0": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 135
-   }
-  },
-  "0x7aab10": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementTweenerAgentAnimationDriven::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 57
-   }
-  },
-  "0x7aab80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 149
-   }
-  },
-  "0x7aac20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 145
-   }
-  },
-  "0x7aacc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7aacd0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7aadc0": {
-   "crashlogger": {
-    "class": "IMovementTweenerAgent",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "IMovementTweenerAgent::Func1_140702050",
-    "size": 133
-   }
-  },
-  "0x7aae50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 736
-   }
-  },
-  "0x7ab140": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7ab160": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 133
-   }
-  },
-  "0x7ab220": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementTweenerAgentAnimationDriven::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 89
-   }
-  },
-  "0x7ab280": {
-   "crashlogger": {
-    "convention": "fastcall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "?_AutoRegisterMovementAgentCreator::vfunc_1",
-    "prototype": "IMemoryHeap*(void)",
-    "size": 166
-   }
-  },
-  "0x7ab410": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementTweenerAgentNodeFollower::ctor",
-    "prototype": "NiBoneMatrixSetterI_cb2536df*(NiBoneMatrixSetterI_cb2536df*)",
-    "size": 101
-   }
-  },
-  "0x7ab480": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 156
-   }
-  },
-  "0x7ab530": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 125
-   }
-  },
-  "0x7ab5c0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7ab5f0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 45
-   }
-  },
-  "0x7ab700": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 437
-   }
-  },
-  "0x7ab8c0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 140
-   }
-  },
-  "0x7ab9a0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)"
-   }
-  },
-  "0x7aba10": {
-   "crashlogger": {
-    "convention": "thiscall",
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "MovementTweenerAgentNodeFollower::dtor_deleting",
-    "prototype": "void (BSParticleShaderProperty_d994b2f7*)",
-    "size": 193
-   }
-  },
-  "0x7abae0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 18
-   }
-  },
-  "0x7abbb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "name": "PathingStreamLoadGame::GetDynamicDataVersionNumber",
-    "size": 22
-   }
-  },
-  "0x7abbd0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abc00": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abc30": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abc60": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abc90": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abcc0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abcf0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abd20": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abd50": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abd80": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 29
-   }
-  },
-  "0x7abdb0": {
-   "crashlogger": {
-    "label": "CRASHLOGGER_PDB(59818@2026.10.24)",
-    "size": 20
    }
   }
  }

@@ -1,6 +1,696 @@
 {
   "functions": [
     {
+      "rva": 2623888,
+      "size": 575,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2624464,
+      "size": 229,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2625088,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2625184,
+      "size": 112,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2625776,
+      "size": 334,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2626144,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2626288,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2626384,
+      "size": 245,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2626640,
+      "size": 207,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2626896,
+      "size": 1233,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2628352,
+      "size": 260,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2628624,
+      "size": 687,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2629328,
+      "size": 593,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2630016,
+      "size": 354,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2630384,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2630484,
+      "size": 12,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2630496,
+      "size": 12,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCONT",
+      "window": true
+    },
+    {
+      "rva": 2630784,
+      "size": 222,
+      "extent_source": "local-function-table",
+      "class": "BGSSoundDescriptorForm",
+      "window": true
+    },
+    {
+      "rva": 2631008,
+      "size": 302,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2631344,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2631488,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2631680,
+      "size": 224,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2631920,
+      "size": 307,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2632416,
+      "size": 944,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2633376,
+      "size": 539,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2634128,
+      "size": 39,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2634256,
+      "size": 1658,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2635920,
+      "size": 561,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2636496,
+      "size": 562,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2637072,
+      "size": 480,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2637568,
+      "size": 311,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2637888,
+      "size": 384,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2638288,
+      "size": 406,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2638704,
+      "size": 334,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2639056,
+      "size": 350,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 2639456,
+      "size": 74,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 2639536,
+      "size": 555,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2640112,
+      "size": 369,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2640528,
+      "size": 126,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2640672,
+      "size": 235,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2640928,
+      "size": 178,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2641120,
+      "size": 111,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2641296,
+      "size": 742,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2642048,
+      "size": 717,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2642784,
+      "size": 145,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 2642944,
+      "size": 37,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2642992,
+      "size": 213,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2643280,
+      "size": 59,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2643600,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2643836,
+      "size": 12,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2644000,
+      "size": 346,
+      "extent_source": "local-function-table",
+      "class": "TESObjectDOOR",
+      "window": true
+    },
+    {
+      "rva": 2644352,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2644656,
+      "size": 575,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2645232,
+      "size": 256,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2645488,
+      "size": 38,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2645536,
+      "size": 229,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2646160,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2646256,
+      "size": 141,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2646400,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2647056,
+      "size": 410,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2647504,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2647648,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2647744,
+      "size": 349,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2648112,
+      "size": 353,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2648480,
+      "size": 879,
+      "extent_source": "local-function-table",
+      "class": "TESObjectMISC",
+      "window": true
+    },
+    {
+      "rva": 2649376,
+      "size": 109,
+      "extent_source": "local-function-table",
+      "class": "TESObjectMISC",
+      "window": true
+    },
+    {
+      "rva": 2649504,
+      "size": 109,
+      "extent_source": "local-function-table",
+      "class": "TESObjectMISC",
+      "window": true
+    },
+    {
+      "rva": 2649632,
+      "size": 129,
+      "extent_source": "local-function-table",
+      "class": "BGSApparatus",
+      "window": true
+    },
+    {
+      "rva": 2649888,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectMISC",
+      "window": true
+    },
+    {
+      "rva": 2650048,
+      "size": 369,
+      "extent_source": "local-function-table",
+      "class": "TESObjectMISC",
+      "window": true
+    },
+    {
+      "rva": 2650432,
+      "size": 182,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2650656,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2650800,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2650896,
+      "size": 327,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2651232,
+      "size": 109,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2651360,
+      "size": 51,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2651424,
+      "size": 803,
+      "extent_source": "local-function-table",
+      "class": "TESObjectSTAT",
+      "window": true
+    },
+    {
+      "rva": 2652240,
+      "size": 138,
+      "extent_source": "local-function-table",
+      "class": "TESObjectSTAT",
+      "window": true
+    },
+    {
+      "rva": 2652512,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectSTAT",
+      "window": true
+    },
+    {
+      "rva": 2652564,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "TESObjectSTAT",
+      "window": true
+    },
+    {
+      "rva": 2652576,
+      "size": 84,
+      "extent_source": "local-function-table",
+      "class": "TESObjectSTAT",
+      "window": true
+    },
+    {
+      "rva": 2652672,
+      "size": 382,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2653088,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2653232,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2653440,
+      "size": 302,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2653760,
+      "size": 281,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2654048,
+      "size": 760,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2654816,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2654880,
+      "size": 131,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655024,
+      "size": 87,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655120,
+      "size": 123,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655264,
+      "size": 77,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655440,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655536,
+      "size": 318,
+      "extent_source": "local-function-table",
+      "class": "TESObjectTREE",
+      "window": true
+    },
+    {
+      "rva": 2655856,
+      "size": 95,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2655984,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2656128,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2656224,
+      "size": 350,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2656592,
+      "size": 64,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2656672,
+      "size": 91,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2656864,
+      "size": 446,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2657328,
+      "size": 442,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2657776,
+      "size": 272,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2658112,
+      "size": 966,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2659088,
+      "size": 667,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2659776,
+      "size": 391,
+      "extent_source": "local-function-table",
+      "class": "TESObjectWEAP",
+      "window": true
+    },
+    {
+      "rva": 2660176,
+      "size": 185,
+      "extent_source": "local-function-table",
+      "class": "TESObjectWEAP",
+      "window": true
+    },
+    {
       "rva": 2666768,
       "size": 1449,
       "extent_source": "local-function-table",
@@ -564,6 +1254,13 @@
       "rva": 2703056,
       "size": 35,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2703120,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "QueuedPromoteLargeReferencesTask",
       "window": true
     },
     {
@@ -1204,6 +1901,13 @@
       "rva": 2739232,
       "size": 35,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 2739520,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "QueuedPromoteLocationReferencesTask",
       "window": true
     },
     {
@@ -2766,6 +3470,13 @@
       "window": true
     },
     {
+      "rva": 2843952,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "class": "TESObjectLAND",
+      "window": true
+    },
+    {
       "rva": 2843968,
       "size": 122,
       "extent_source": "local-function-table",
@@ -2826,6 +3537,13 @@
     {
       "rva": 2846576,
       "size": 18,
+      "extent_source": "local-function-table",
+      "class": "TESLandTexture",
+      "window": true
+    },
+    {
+      "rva": 2846608,
+      "size": 5,
       "extent_source": "local-function-table",
       "class": "TESLandTexture",
       "window": true
@@ -4742,6 +5460,20 @@
       "window": true
     },
     {
+      "rva": 2963904,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESObjectCELL",
+      "window": true
+    },
+    {
+      "rva": 2963968,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "TESWindListener",
+      "window": true
+    },
+    {
       "rva": 2964032,
       "size": 139,
       "extent_source": "local-function-table",
@@ -5364,6 +6096,12 @@
       "window": true
     },
     {
+      "rva": 2996128,
+      "size": 21,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 2996160,
       "size": 102,
       "extent_source": "local-function-table",
@@ -5973,6 +6711,13 @@
       "window": true
     },
     {
+      "rva": 3033808,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "Character",
+      "window": true
+    },
+    {
       "rva": 3033824,
       "size": 27,
       "extent_source": "local-function-table",
@@ -6081,6 +6826,20 @@
       "rva": 3037616,
       "size": 144,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3037776,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "Character",
+      "window": true
+    },
+    {
+      "rva": 3037888,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
       "window": true
     },
     {
@@ -6285,6 +7044,13 @@
       "window": true
     },
     {
+      "rva": 3044704,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "Character",
+      "window": true
+    },
+    {
       "rva": 3044720,
       "size": 202,
       "extent_source": "local-function-table",
@@ -6343,6 +7109,13 @@
     {
       "rva": 3046080,
       "size": 121,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 3046208,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "TESObjectREFR",
       "window": true
@@ -6804,6 +7577,13 @@
     {
       "rva": 3082032,
       "size": 362,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 3082400,
+      "size": 38,
       "extent_source": "local-function-table",
       "class": "TESObjectREFR",
       "window": true
@@ -7418,6 +8198,18 @@
       "window": true
     },
     {
+      "rva": 3116044,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3116056,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 3116080,
       "size": 174,
       "extent_source": "local-function-table",
@@ -7438,6 +8230,12 @@
     {
       "rva": 3116512,
       "size": 78,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3116640,
+      "size": 52,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -7467,8 +8265,32 @@
       "window": true
     },
     {
+      "rva": 3117760,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3117888,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 3118144,
       "size": 153,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3118624,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3118688,
+      "size": 52,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -7583,6 +8405,12 @@
     {
       "rva": 3121760,
       "size": 42,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3121808,
+      "size": 4,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -7878,6 +8706,20 @@
       "window": true
     },
     {
+      "rva": 3138160,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "AnimationStreamLoadGame",
+      "window": true
+    },
+    {
+      "rva": 3138224,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "AnimationStreamSaveGame",
+      "window": true
+    },
+    {
       "rva": 3138384,
       "size": 99,
       "extent_source": "local-function-table",
@@ -8137,6 +8979,20 @@
       "window": true
     },
     {
+      "rva": 3148848,
+      "size": 38,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 3148896,
+      "size": 38,
+      "extent_source": "local-function-table",
+      "class": "Character",
+      "window": true
+    },
+    {
       "rva": 3149040,
       "size": 468,
       "extent_source": "local-function-table",
@@ -8265,6 +9121,13 @@
     {
       "rva": 3153760,
       "size": 130,
+      "extent_source": "local-function-table",
+      "class": "TESObjectREFR",
+      "window": true
+    },
+    {
+      "rva": 3154016,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "TESObjectREFR",
       "window": true
@@ -8455,6 +9318,18 @@
     {
       "rva": 3162816,
       "size": 136,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3162960,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3163024,
+      "size": 52,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -10116,6 +10991,13 @@
       "window": true
     },
     {
+      "rva": 3255848,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSCollisionLayer",
+      "window": true
+    },
+    {
       "rva": 3255872,
       "size": 193,
       "extent_source": "local-function-table",
@@ -10168,6 +11050,13 @@
     {
       "rva": 3258160,
       "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSColorForm",
+      "window": true
+    },
+    {
+      "rva": 3258212,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "BGSColorForm",
       "window": true
@@ -10363,6 +11252,13 @@
       "window": true
     },
     {
+      "rva": 3268404,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSImpactData",
+      "window": true
+    },
+    {
       "rva": 3268528,
       "size": 94,
       "extent_source": "local-function-table",
@@ -10485,6 +11381,13 @@
     {
       "rva": 3273792,
       "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSImpactDataSet",
+      "window": true
+    },
+    {
+      "rva": 3273844,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "BGSImpactDataSet",
       "window": true
@@ -10958,6 +11861,13 @@
       "window": true
     },
     {
+      "rva": 3289940,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSMenuIcon",
+      "window": true
+    },
+    {
       "rva": 3290080,
       "size": 241,
       "extent_source": "local-function-table",
@@ -11077,6 +11987,12 @@
       "window": true
     },
     {
+      "rva": 3295472,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 3295536,
       "size": 119,
       "extent_source": "local-function-table",
@@ -11135,6 +12051,12 @@
       "window": true
     },
     {
+      "rva": 3299760,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 3300368,
       "size": 124,
       "extent_source": "local-function-table",
@@ -11143,6 +12065,12 @@
     {
       "rva": 3300688,
       "size": 265,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 3301136,
+      "size": 47,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -11567,6 +12495,13 @@
       "window": true
     },
     {
+      "rva": 3317036,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSSoundCategory",
+      "window": true
+    },
+    {
       "rva": 3317072,
       "size": 107,
       "extent_source": "local-function-table",
@@ -11688,6 +12623,13 @@
       "window": true
     },
     {
+      "rva": 3320652,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSSoundDescriptorForm",
+      "window": true
+    },
+    {
       "rva": 3320672,
       "size": 240,
       "extent_source": "local-function-table",
@@ -11778,6 +12720,13 @@
       "window": true
     },
     {
+      "rva": 3324364,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSSoundOutput",
+      "window": true
+    },
+    {
       "rva": 3324384,
       "size": 137,
       "extent_source": "local-function-table",
@@ -11807,6 +12756,12 @@
       "size": 150,
       "extent_source": "local-function-table",
       "class": "BGSStandardSoundDef",
+      "window": true
+    },
+    {
+      "rva": 3326416,
+      "size": 47,
+      "extent_source": "local-function-table",
       "window": true
     },
     {
@@ -17552,6 +18507,12 @@
       "window": true
     },
     {
+      "rva": 3558624,
+      "size": 16,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 3558688,
       "size": 80,
       "extent_source": "local-function-table",
@@ -18142,897 +19103,6 @@
     {
       "rva": 3579808,
       "size": 145,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3579968,
-      "size": 229,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3580256,
-      "size": 177,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3580448,
-      "size": 117,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3580576,
-      "size": 114,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3580704,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3580832,
-      "size": 93,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3581040,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3581168,
-      "size": 120,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3581296,
-      "size": 346,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3581648,
-      "size": 378,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582032,
-      "size": 189,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582240,
-      "size": 189,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582448,
-      "size": 160,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582624,
-      "size": 111,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582752,
-      "size": 200,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3582960,
-      "size": 114,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3583120,
-      "size": 346,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3583472,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3583600,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3583760,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3583888,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584016,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584144,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584272,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584400,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584528,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584656,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584784,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3584912,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585040,
-      "size": 123,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585184,
-      "size": 122,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585312,
-      "size": 123,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585456,
-      "size": 122,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585584,
-      "size": 122,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585712,
-      "size": 123,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585856,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3585984,
-      "size": 123,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586128,
-      "size": 141,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586288,
-      "size": 122,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586416,
-      "size": 181,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586608,
-      "size": 122,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586736,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586864,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3586992,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3587216,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3587344,
-      "size": 336,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3587760,
-      "size": 111,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3587888,
-      "size": 111,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3588016,
-      "size": 111,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3588144,
-      "size": 281,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3588432,
-      "size": 257,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3588704,
-      "size": 501,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3589216,
-      "size": 263,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3589488,
-      "size": 114,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3589648,
-      "size": 117,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3589776,
-      "size": 117,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590000,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590160,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590384,
-      "size": 209,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590608,
-      "size": 149,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590768,
-      "size": 166,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3590944,
-      "size": 166,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3591824,
-      "size": 385,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3592224,
-      "size": 353,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3592592,
-      "size": 453,
-      "extent_source": "local-function-table",
-      "class": "TESObjectREFR",
-      "window": true
-    },
-    {
-      "rva": 3593152,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593216,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593280,
-      "size": 127,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593472,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593552,
-      "size": 64,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593616,
-      "size": 117,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593744,
-      "size": 199,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3593968,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3594464,
-      "size": 126,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3594592,
-      "size": 116,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3594720,
-      "size": 679,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3595408,
-      "size": 133,
-      "extent_source": "local-function-table",
-      "class": "BGSStoryEventManager",
-      "window": true
-    },
-    {
-      "rva": 3595552,
-      "size": 84,
-      "extent_source": "local-function-table",
-      "class": "TESFullName",
-      "window": true
-    },
-    {
-      "rva": 3595648,
-      "size": 187,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3596128,
-      "size": 172,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3596384,
-      "size": 403,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3596800,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3596896,
-      "size": 30,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3596944,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597040,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597136,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597248,
-      "size": 131,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597424,
-      "size": 103,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597536,
-      "size": 232,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597776,
-      "size": 115,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3597920,
-      "size": 216,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3598144,
-      "size": 131,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3598288,
-      "size": 144,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3598576,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3598656,
-      "size": 126,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3598800,
-      "size": 1028,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3599840,
-      "size": 143,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3600000,
-      "size": 288,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3600304,
-      "size": 2880,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3603232,
-      "size": 169,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3603424,
-      "size": 507,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3603952,
-      "size": 239,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3604208,
-      "size": 132,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3604352,
-      "size": 144,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3604544,
-      "size": 196,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3604752,
-      "size": 299,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3605104,
-      "size": 1303,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3606432,
-      "size": 533,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3606976,
-      "size": 398,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3607392,
-      "size": 104,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3607504,
-      "size": 104,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3607616,
-      "size": 286,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3607920,
-      "size": 124,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3608064,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3608176,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3608288,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3608400,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3608512,
-      "size": 551,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3609072,
-      "size": 104,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3609184,
-      "size": 148,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3609344,
-      "size": 597,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3609952,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3610048,
-      "size": 1269,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3611360,
-      "size": 23,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3611392,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3611504,
-      "size": 23,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3611536,
-      "size": 291,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3611840,
-      "size": 284,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612160,
-      "size": 30,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612208,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612288,
-      "size": 30,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612336,
-      "size": 30,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612464,
-      "size": 98,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612576,
-      "size": 23,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3612640,
-      "size": 355,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3613040,
-      "size": 572,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3613632,
-      "size": 272,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3613920,
-      "size": 41,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3613968,
-      "size": 195,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3614208,
-      "size": 28,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3614256,
-      "size": 251,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3614528,
-      "size": 387,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3614928,
-      "size": 172,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3615120,
-      "size": 60,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3615216,
-      "size": 157,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3615392,
-      "size": 207,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3615664,
-      "size": 98,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 3615776,
-      "size": 300,
       "extent_source": "local-function-table",
       "window": true
     }

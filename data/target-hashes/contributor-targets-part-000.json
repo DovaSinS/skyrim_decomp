@@ -6010,6 +6010,12 @@
       "window": true
     },
     {
+      "rva": 1152112,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1152208,
       "size": 262,
       "extent_source": "local-function-table",
@@ -7012,8 +7018,20 @@
       "window": true
     },
     {
+      "rva": 1183248,
+      "size": 4,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1183264,
       "size": 5,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1183280,
+      "size": 4,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -7110,6 +7128,12 @@
     {
       "rva": 1184336,
       "size": 23,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1184400,
+      "size": 9,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -8068,6 +8092,12 @@
       "window": true
     },
     {
+      "rva": 1220400,
+      "size": 21,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1220432,
       "size": 189,
       "extent_source": "local-function-table",
@@ -8202,6 +8232,12 @@
     {
       "rva": 1224112,
       "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1224144,
+      "size": 9,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -8601,6 +8637,12 @@
     {
       "rva": 1237776,
       "size": 11,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1238416,
+      "size": 62,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -9133,6 +9175,13 @@
       "window": true
     },
     {
+      "rva": 1254992,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "UI_page",
+      "window": true
+    },
+    {
       "rva": 1255072,
       "size": 52,
       "extent_source": "local-function-table",
@@ -9185,6 +9234,13 @@
       "rva": 1256704,
       "size": 47,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1256960,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "UI_Text",
       "window": true
     },
     {
@@ -9712,6 +9768,12 @@
       "window": true
     },
     {
+      "rva": 1273888,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1273968,
       "size": 139,
       "extent_source": "local-function-table",
@@ -9956,6 +10018,13 @@
       "rva": 1281616,
       "size": 48,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1281664,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "UI_Text2",
       "window": true
     },
     {
@@ -11390,6 +11459,13 @@
       "window": true
     },
     {
+      "rva": 1331808,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "class": "UI_listEntry",
+      "window": true
+    },
+    {
       "rva": 1331824,
       "size": 52,
       "extent_source": "local-function-table",
@@ -11690,6 +11766,12 @@
     {
       "rva": 1342528,
       "size": 26,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1342560,
+      "size": 62,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -12081,6 +12163,13 @@
     {
       "rva": 1361456,
       "size": 52,
+      "extent_source": "local-function-table",
+      "class": "EffectSetting",
+      "window": true
+    },
+    {
+      "rva": 1361536,
+      "size": 44,
       "extent_source": "local-function-table",
       "class": "EffectSetting",
       "window": true
@@ -12794,6 +12883,18 @@
       "window": true
     },
     {
+      "rva": 1385556,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1385568,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1385584,
       "size": 119,
       "extent_source": "local-function-table",
@@ -12813,8 +12914,20 @@
       "window": true
     },
     {
+      "rva": 1386480,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 1386544,
       "size": 73,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 1386620,
+      "size": 9,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -16206,6 +16319,13 @@
       "window": true
     },
     {
+      "rva": 1556624,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BaseExtraList",
+      "window": true
+    },
+    {
       "rva": 1556864,
       "size": 84,
       "extent_source": "local-function-table",
@@ -16353,6 +16473,20 @@
       "window": true
     },
     {
+      "rva": 1563184,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "ExtraSavedAnimation",
+      "window": true
+    },
+    {
+      "rva": 1563248,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "ExtraSavedHavokData",
+      "window": true
+    },
+    {
       "rva": 1563408,
       "size": 128,
       "extent_source": "local-function-table",
@@ -16364,6 +16498,13 @@
       "size": 66,
       "extent_source": "local-function-table",
       "class": "ExtraTextDisplayData",
+      "window": true
+    },
+    {
+      "rva": 1564016,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "ExtraTresPassPackage",
       "window": true
     },
     {
@@ -17272,6 +17413,13 @@
       "window": true
     },
     {
+      "rva": 1592480,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "ExtraLastFinishedSequence",
+      "window": true
+    },
+    {
       "rva": 1592688,
       "size": 24,
       "extent_source": "local-function-table",
@@ -17609,6 +17757,13 @@
     {
       "rva": 1601392,
       "size": 18,
+      "extent_source": "local-function-table",
+      "class": "ExtraSayToTopicInfo",
+      "window": true
+    },
+    {
+      "rva": 1601424,
+      "size": 5,
       "extent_source": "local-function-table",
       "class": "ExtraSayToTopicInfo",
       "window": true
@@ -18409,163 +18564,6 @@
       "size": 75,
       "extent_source": "local-function-table",
       "class": "ExtraGroupConstraint",
-      "window": true
-    },
-    {
-      "rva": 1635168,
-      "size": 116,
-      "extent_source": "local-function-table",
-      "class": "ExtraInfoGeneralTopic",
-      "window": true
-    },
-    {
-      "rva": 1635296,
-      "size": 92,
-      "extent_source": "local-function-table",
-      "class": "ExtraInteraction",
-      "window": true
-    },
-    {
-      "rva": 1635440,
-      "size": 142,
-      "extent_source": "local-function-table",
-      "class": "ExtraLight",
-      "window": true
-    },
-    {
-      "rva": 1635632,
-      "size": 108,
-      "extent_source": "local-function-table",
-      "class": "ExtraMapMarker",
-      "window": true
-    },
-    {
-      "rva": 1635744,
-      "size": 100,
-      "extent_source": "local-function-table",
-      "class": "ExtraOcclusionShape",
-      "window": true
-    },
-    {
-      "rva": 1636000,
-      "size": 196,
-      "extent_source": "local-function-table",
-      "class": "ExtraPlayerCrimeList",
-      "window": true
-    },
-    {
-      "rva": 1636208,
-      "size": 100,
-      "extent_source": "local-function-table",
-      "class": "ExtraPortal",
-      "window": true
-    },
-    {
-      "rva": 1636320,
-      "size": 102,
-      "extent_source": "local-function-table",
-      "class": "ExtraRaceData",
-      "window": true
-    },
-    {
-      "rva": 1636432,
-      "size": 184,
-      "extent_source": "local-function-table",
-      "class": "ExtraResourcesPreload",
-      "window": true
-    },
-    {
-      "rva": 1636624,
-      "size": 306,
-      "extent_source": "local-function-table",
-      "class": "ExtraRunOncePacks",
-      "window": true
-    },
-    {
-      "rva": 1636944,
-      "size": 105,
-      "extent_source": "local-function-table",
-      "class": "ExtraSayToTopicInfo",
-      "window": true
-    },
-    {
-      "rva": 1637056,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "class": "ExtraSayTopicInfoOnceADay",
-      "window": true
-    },
-    {
-      "rva": 1637456,
-      "size": 91,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1637936,
-      "size": 127,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638064,
-      "size": 127,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638192,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638272,
-      "size": 282,
-      "extent_source": "local-function-table",
-      "class": "BSPointerHandleManagerInterface",
-      "window": true
-    },
-    {
-      "rva": 1638656,
-      "size": 117,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638784,
-      "size": 72,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638864,
-      "size": 19,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1638912,
-      "size": 94,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1639008,
-      "size": 94,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1639104,
-      "size": 169,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 1639280,
-      "size": 154,
-      "extent_source": "local-function-table",
       "window": true
     }
   ]

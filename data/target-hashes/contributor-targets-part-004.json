@@ -1,6 +1,1538 @@
 {
   "functions": [
     {
+      "rva": 4527392,
+      "size": 276,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4527696,
+      "size": 31,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4527744,
+      "size": 41,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4527792,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4527888,
+      "size": 165,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4528064,
+      "size": 369,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4528464,
+      "size": 414,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4528896,
+      "size": 148,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529056,
+      "size": 317,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529392,
+      "size": 92,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529504,
+      "size": 37,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529552,
+      "size": 120,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529680,
+      "size": 20,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529712,
+      "size": 207,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529936,
+      "size": 8,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4529952,
+      "size": 148,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4530112,
+      "size": 20,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4530144,
+      "size": 8,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4530160,
+      "size": 316,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4530496,
+      "size": 88,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4530592,
+      "size": 564,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531168,
+      "size": 114,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531296,
+      "size": 116,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531440,
+      "size": 244,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531712,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531728,
+      "size": 133,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4531872,
+      "size": 190,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4532240,
+      "size": 412,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4532672,
+      "size": 444,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4533120,
+      "size": 465,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4533600,
+      "size": 214,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4533824,
+      "size": 77,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4533904,
+      "size": 286,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4534192,
+      "size": 286,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4534528,
+      "size": 129,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4534720,
+      "size": 101,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4534920,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4534944,
+      "size": 116,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535152,
+      "size": 110,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535280,
+      "size": 63,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535376,
+      "size": 133,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535520,
+      "size": 72,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535616,
+      "size": 207,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4535840,
+      "size": 228,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536256,
+      "size": 215,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536480,
+      "size": 147,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536640,
+      "size": 14,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536656,
+      "size": 46,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536736,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4536800,
+      "size": 346,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537152,
+      "size": 27,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537200,
+      "size": 112,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537344,
+      "size": 124,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537536,
+      "size": 117,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537664,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4537776,
+      "size": 336,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538128,
+      "size": 14,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538160,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538176,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538192,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538208,
+      "size": 284,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538512,
+      "size": 220,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538736,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSPackageDataRef",
+      "window": true
+    },
+    {
+      "rva": 4538800,
+      "size": 251,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539232,
+      "size": 131,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539392,
+      "size": 73,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539472,
+      "size": 162,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539648,
+      "size": 31,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539696,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539712,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4539728,
+      "size": 371,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540112,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540128,
+      "size": 206,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540352,
+      "size": 186,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540704,
+      "size": 90,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540800,
+      "size": 131,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4540992,
+      "size": 6919,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4547920,
+      "size": 8,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4547936,
+      "size": 432,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4548368,
+      "size": 432,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4548800,
+      "size": 432,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4549264,
+      "size": 106,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4549392,
+      "size": 62,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4550144,
+      "size": 140,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4550288,
+      "size": 140,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4550496,
+      "size": 44,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4550544,
+      "size": 62,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4550608,
+      "size": 355,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4555376,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4555536,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4555808,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4558128,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureEatExecState",
+      "window": true
+    },
+    {
+      "rva": 4558192,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureFindExecState",
+      "window": true
+    },
+    {
+      "rva": 4558256,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureGuardExecState",
+      "window": true
+    },
+    {
+      "rva": 4558320,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureHoldPositionExecState",
+      "window": true
+    },
+    {
+      "rva": 4558384,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureKeepAnEyeOnExecState",
+      "window": true
+    },
+    {
+      "rva": 4558448,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureSayExecState",
+      "window": true
+    },
+    {
+      "rva": 4558576,
+      "size": 76,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeConditionalItem",
+      "window": true
+    },
+    {
+      "rva": 4558656,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4558816,
+      "size": 156,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4559040,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeSequenceExecState",
+      "window": true
+    },
+    {
+      "rva": 4559136,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeSimultaneous",
+      "window": true
+    },
+    {
+      "rva": 4559200,
+      "size": 377,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4559648,
+      "size": 96,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeStackedExecState",
+      "window": true
+    },
+    {
+      "rva": 4559744,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureWaitExecState",
+      "window": true
+    },
+    {
+      "rva": 4559904,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeBranch",
+      "window": true
+    },
+    {
+      "rva": 4560112,
+      "size": 17,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560144,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560256,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560352,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560448,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560544,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560640,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560736,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560832,
+      "size": 143,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4560976,
+      "size": 84,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561072,
+      "size": 105,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561184,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561280,
+      "size": 103,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561392,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561488,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561584,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561680,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561792,
+      "size": 92,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561888,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4561984,
+      "size": 100,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562096,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562192,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562288,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562384,
+      "size": 95,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562480,
+      "size": 88,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562576,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562672,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562768,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562864,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4562960,
+      "size": 117,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563088,
+      "size": 219,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563312,
+      "size": 113,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563440,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563552,
+      "size": 125,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563680,
+      "size": 148,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563840,
+      "size": 113,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4563968,
+      "size": 99,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4564080,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4564176,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4564272,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4564368,
+      "size": 91,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4564464,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4565840,
+      "size": 165,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566032,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureDialogueExecState",
+      "window": true
+    },
+    {
+      "rva": 4566048,
+      "size": 19,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566080,
+      "size": 92,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566208,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureTreeSimultaneous",
+      "window": true
+    },
+    {
+      "rva": 4566240,
+      "size": 19,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566272,
+      "size": 92,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566464,
+      "size": 164,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566640,
+      "size": 164,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4566816,
+      "size": 11,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4567152,
+      "size": 32,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4567184,
+      "size": 269,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4567456,
+      "size": 544,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4568000,
+      "size": 544,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4568544,
+      "size": 544,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4569264,
+      "size": 216,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4569488,
+      "size": 222,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4569728,
+      "size": 983,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4570736,
+      "size": 166,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4570912,
+      "size": 184,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4571248,
+      "size": 445,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4571776,
+      "size": 84,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4571872,
+      "size": 82,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572032,
+      "size": 31,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572080,
+      "size": 310,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572400,
+      "size": 87,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572496,
+      "size": 86,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572592,
+      "size": 59,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572672,
+      "size": 60,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572752,
+      "size": 70,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4572848,
+      "size": 30,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureDone",
+      "window": true
+    },
+    {
+      "rva": 4572896,
+      "size": 206,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4573120,
+      "size": 141,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4573264,
+      "size": 147,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4573424,
+      "size": 147,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4573600,
+      "size": 77,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4573680,
+      "size": 432,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4574192,
+      "size": 140,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4574352,
+      "size": 118,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4574880,
+      "size": 62,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureDone",
+      "window": true
+    },
+    {
+      "rva": 4575056,
+      "size": 182,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4575344,
+      "size": 137,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4575488,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4575536,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4575584,
+      "size": 7,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4575632,
+      "size": 7,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureBase",
+      "window": true
+    },
+    {
+      "rva": 4575728,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4575760,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4575792,
+      "size": 24,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4575824,
+      "size": 164,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4576016,
+      "size": 544,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4576576,
+      "size": 113,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4577248,
+      "size": 523,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4577792,
+      "size": 104,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4577904,
+      "size": 206,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4578128,
+      "size": 549,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4578688,
+      "size": 419,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4579120,
+      "size": 202,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4579328,
+      "size": 266,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureAcquire",
+      "window": true
+    },
+    {
+      "rva": 4579600,
+      "size": 216,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4579824,
+      "size": 149,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4579984,
+      "size": 11,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4580016,
+      "size": 129,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4580160,
+      "size": 948,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4581120,
+      "size": 269,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4581408,
+      "size": 326,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4581744,
+      "size": 76,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4581840,
+      "size": 141,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582048,
+      "size": 97,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582544,
+      "size": 184,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582736,
+      "size": 113,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582896,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582928,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582960,
+      "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4582992,
+      "size": 24,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4583024,
+      "size": 122,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4583200,
+      "size": 209,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureActivate",
+      "window": true
+    },
+    {
+      "rva": 4583424,
+      "size": 122,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureActivate",
+      "window": true
+    },
+    {
+      "rva": 4583552,
+      "size": 210,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureActivate",
+      "window": true
+    },
+    {
+      "rva": 4583776,
+      "size": 206,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584000,
+      "size": 46,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584064,
+      "size": 41,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584160,
+      "size": 185,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584352,
+      "size": 136,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584496,
+      "size": 138,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584640,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584656,
+      "size": 56,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4584720,
+      "size": 413,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4585152,
+      "size": 583,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4585760,
+      "size": 5650,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4591424,
+      "size": 916,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4592352,
+      "size": 610,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4592976,
+      "size": 294,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4593280,
+      "size": 141,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4593440,
+      "size": 35,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4593504,
+      "size": 68,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4593904,
+      "size": 220,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4594128,
+      "size": 113,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4594288,
+      "size": 137,
+      "extent_source": "local-function-table",
+      "class": "BGSAIWorldLocation",
+      "window": true
+    },
+    {
       "rva": 4594432,
       "size": 18,
       "extent_source": "local-function-table",
@@ -259,6 +1791,13 @@
     {
       "rva": 4606416,
       "size": 53,
+      "extent_source": "local-function-table",
+      "class": "BGSProcedureEatExecState",
+      "window": true
+    },
+    {
+      "rva": 4606480,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "BGSProcedureEatExecState",
       "window": true
@@ -1155,8 +2694,26 @@
       "window": true
     },
     {
+      "rva": 4663520,
+      "size": 6,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4663536,
       "size": 60,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4663616,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4663664,
+      "size": 6,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -1181,6 +2738,12 @@
     {
       "rva": 4663744,
       "size": 18,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4663776,
+      "size": 47,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -2689,6 +4252,12 @@
       "window": true
     },
     {
+      "rva": 4739504,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4739888,
       "size": 292,
       "extent_source": "local-function-table",
@@ -3672,6 +5241,12 @@
       "window": true
     },
     {
+      "rva": 4787920,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4788256,
       "size": 362,
       "extent_source": "local-function-table",
@@ -4532,6 +6107,13 @@
       "window": true
     },
     {
+      "rva": 4844480,
+      "size": 87,
+      "extent_source": "local-function-table",
+      "class": "TESAmbushPackageData",
+      "window": true
+    },
+    {
       "rva": 4844704,
       "size": 23,
       "extent_source": "local-function-table",
@@ -4683,6 +6265,12 @@
       "window": true
     },
     {
+      "rva": 4849504,
+      "size": 5,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4849536,
       "size": 30,
       "extent_source": "local-function-table",
@@ -4767,6 +6355,12 @@
       "window": true
     },
     {
+      "rva": 4851536,
+      "size": 94,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4851664,
       "size": 86,
       "extent_source": "local-function-table",
@@ -4775,6 +6369,12 @@
     {
       "rva": 4851760,
       "size": 155,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4851920,
+      "size": 87,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -4860,6 +6460,12 @@
       "window": true
     },
     {
+      "rva": 4853456,
+      "size": 115,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4853584,
       "size": 176,
       "extent_source": "local-function-table",
@@ -4926,6 +6532,13 @@
     {
       "rva": 4855200,
       "size": 155,
+      "extent_source": "local-function-table",
+      "class": "TESUseItemPackageData",
+      "window": true
+    },
+    {
+      "rva": 4855360,
+      "size": 87,
       "extent_source": "local-function-table",
       "class": "TESUseItemPackageData",
       "window": true
@@ -5358,6 +6971,12 @@
       "window": true
     },
     {
+      "rva": 4873120,
+      "size": 4,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 4873136,
       "size": 13,
       "extent_source": "local-function-table",
@@ -5552,6 +7171,12 @@
     {
       "rva": 4879248,
       "size": 65,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 4879328,
+      "size": 9,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -6679,6 +8304,13 @@
       "window": true
     },
     {
+      "rva": 4949608,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "BSTerrainEffect",
+      "window": true
+    },
+    {
       "rva": 4949744,
       "size": 100,
       "extent_source": "local-function-table",
@@ -7619,6 +9251,13 @@
     {
       "rva": 5011296,
       "size": 177,
+      "extent_source": "local-function-table",
+      "class": "NavMeshInfoMap",
+      "window": true
+    },
+    {
+      "rva": 5011516,
+      "size": 9,
       "extent_source": "local-function-table",
       "class": "NavMeshInfoMap",
       "window": true
@@ -8870,6 +10509,13 @@
       "window": true
     },
     {
+      "rva": 5090672,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "class": "Pathing",
+      "window": true
+    },
+    {
       "rva": 5090688,
       "size": 160,
       "extent_source": "local-function-table",
@@ -9241,6 +10887,13 @@
       "window": true
     },
     {
+      "rva": 5107760,
+      "size": 54,
+      "extent_source": "local-function-table",
+      "class": "BSPathingCellManager",
+      "window": true
+    },
+    {
       "rva": 5107824,
       "size": 182,
       "extent_source": "local-function-table",
@@ -9329,6 +10982,12 @@
     {
       "rva": 5111696,
       "size": 32,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5111776,
+      "size": 47,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -9590,6 +11249,13 @@
       "window": true
     },
     {
+      "rva": 5121424,
+      "size": 33,
+      "extent_source": "local-function-table",
+      "class": "PathingLockData",
+      "window": true
+    },
+    {
       "rva": 5121472,
       "size": 33,
       "extent_source": "local-function-table",
@@ -9675,6 +11341,13 @@
       "window": true
     },
     {
+      "rva": 5124928,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequest",
+      "window": true
+    },
+    {
       "rva": 5125024,
       "size": 402,
       "extent_source": "local-function-table",
@@ -9728,6 +11401,12 @@
     {
       "rva": 5126672,
       "size": 44,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5126832,
+      "size": 47,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -9986,6 +11665,12 @@
     {
       "rva": 5135120,
       "size": 177,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5135312,
+      "size": 52,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -10254,6 +11939,12 @@
       "window": true
     },
     {
+      "rva": 5150288,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 5150448,
       "size": 103,
       "extent_source": "local-function-table",
@@ -10485,6 +12176,12 @@
     {
       "rva": 5160400,
       "size": 177,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5160592,
+      "size": 52,
       "extent_source": "local-function-table",
       "window": true
     },
@@ -11065,6 +12762,13 @@
       "window": true
     },
     {
+      "rva": 5194560,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestCover",
+      "window": true
+    },
+    {
       "rva": 5194624,
       "size": 217,
       "extent_source": "local-function-table",
@@ -11152,6 +12856,13 @@
       "window": true
     },
     {
+      "rva": 5197024,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestCover",
+      "window": true
+    },
+    {
       "rva": 5197088,
       "size": 124,
       "extent_source": "local-function-table",
@@ -11173,6 +12884,13 @@
       "rva": 5197568,
       "size": 33,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5197744,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlee",
       "window": true
     },
     {
@@ -11228,6 +12946,13 @@
       "window": true
     },
     {
+      "rva": 5199552,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFly",
+      "window": true
+    },
+    {
       "rva": 5199616,
       "size": 206,
       "extent_source": "local-function-table",
@@ -11273,6 +12998,13 @@
       "window": true
     },
     {
+      "rva": 5201600,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyAction",
+      "window": true
+    },
+    {
       "rva": 5201664,
       "size": 209,
       "extent_source": "local-function-table",
@@ -11299,6 +13031,13 @@
     {
       "rva": 5202704,
       "size": 92,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyHover",
+      "window": true
+    },
+    {
+      "rva": 5202880,
+      "size": 47,
       "extent_source": "local-function-table",
       "class": "PathingRequestFlyHover",
       "window": true
@@ -11408,6 +13147,13 @@
       "window": true
     },
     {
+      "rva": 5206320,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyLand",
+      "window": true
+    },
+    {
       "rva": 5206576,
       "size": 182,
       "extent_source": "local-function-table",
@@ -11459,6 +13205,13 @@
       "window": true
     },
     {
+      "rva": 5207776,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyOrbit",
+      "window": true
+    },
+    {
       "rva": 5207840,
       "size": 114,
       "extent_source": "local-function-table",
@@ -11468,6 +13221,20 @@
       "rva": 5208288,
       "size": 33,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5208416,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyTakeOff",
+      "window": true
+    },
+    {
+      "rva": 5208528,
+      "size": 52,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestFlyTakeOff",
       "window": true
     },
     {
@@ -11639,6 +13406,13 @@
       "window": true
     },
     {
+      "rva": 5213440,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestOptimalLocation",
+      "window": true
+    },
+    {
       "rva": 5213504,
       "size": 100,
       "extent_source": "local-function-table",
@@ -11725,6 +13499,13 @@
       "rva": 5215776,
       "size": 67,
       "extent_source": "local-function-table",
+      "window": true
+    },
+    {
+      "rva": 5215920,
+      "size": 47,
+      "extent_source": "local-function-table",
+      "class": "PathingRequestStopMoving",
       "window": true
     },
     {
@@ -14510,6 +16291,12 @@
       "window": true
     },
     {
+      "rva": 5405288,
+      "size": 12,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 5405376,
       "size": 155,
       "extent_source": "local-function-table",
@@ -14677,6 +16464,13 @@
     {
       "rva": 5424224,
       "size": 217,
+      "extent_source": "local-function-table",
+      "class": "TESWaterSystem",
+      "window": true
+    },
+    {
+      "rva": 5424448,
+      "size": 8,
       "extent_source": "local-function-table",
       "class": "TESWaterSystem",
       "window": true
@@ -15474,6 +17268,12 @@
       "window": true
     },
     {
+      "rva": 5454688,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 5454832,
       "size": 61,
       "extent_source": "local-function-table",
@@ -15952,6 +17752,13 @@
     {
       "rva": 5481120,
       "size": 141,
+      "extent_source": "local-function-table",
+      "class": "BGSStoryTeller",
+      "window": true
+    },
+    {
+      "rva": 5481280,
+      "size": 42,
       "extent_source": "local-function-table",
       "class": "BGSStoryTeller",
       "window": true
@@ -16749,6 +18556,12 @@
       "window": true
     },
     {
+      "rva": 5532824,
+      "size": 9,
+      "extent_source": "local-function-table",
+      "window": true
+    },
+    {
       "rva": 5532848,
       "size": 110,
       "extent_source": "local-function-table",
@@ -17012,1801 +18825,6 @@
     {
       "rva": 5548128,
       "size": 383,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5548528,
-      "size": 421,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5548960,
-      "size": 48,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5549024,
-      "size": 157,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5549200,
-      "size": 598,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5549824,
-      "size": 719,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5550560,
-      "size": 45,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5550720,
-      "size": 672,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5551488,
-      "size": 552,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5552048,
-      "size": 387,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5552448,
-      "size": 426,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5552880,
-      "size": 474,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5553360,
-      "size": 567,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5553936,
-      "size": 421,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5554368,
-      "size": 129,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5554528,
-      "size": 177,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5554768,
-      "size": 86,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5554912,
-      "size": 100,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5555024,
-      "size": 100,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5555136,
-      "size": 85,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5555232,
-      "size": 63,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5555312,
-      "size": 634,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5555952,
-      "size": 228,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5556192,
-      "size": 34,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5556272,
-      "size": 466,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5556752,
-      "size": 42,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5556800,
-      "size": 129,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5556944,
-      "size": 848,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5557792,
-      "size": 47,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5557872,
-      "size": 54,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5557984,
-      "size": 197,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5558192,
-      "size": 305,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5558512,
-      "size": 765,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5559296,
-      "size": 175,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5559488,
-      "size": 180,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5559680,
-      "size": 208,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5559904,
-      "size": 302,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5560224,
-      "size": 956,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5561200,
-      "size": 408,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5561616,
-      "size": 827,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5562464,
-      "size": 93,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5562576,
-      "size": 144,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5562736,
-      "size": 1800,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5564608,
-      "size": 187,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5564816,
-      "size": 35,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5564864,
-      "size": 1851,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5566736,
-      "size": 1129,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5567872,
-      "size": 251,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5568144,
-      "size": 91,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5568256,
-      "size": 188,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5568464,
-      "size": 423,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5568896,
-      "size": 306,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5569216,
-      "size": 869,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5570096,
-      "size": 338,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5570448,
-      "size": 295,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5570752,
-      "size": 528,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5571296,
-      "size": 264,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5571568,
-      "size": 180,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5571760,
-      "size": 196,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5571968,
-      "size": 423,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5572400,
-      "size": 364,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5572784,
-      "size": 679,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5573472,
-      "size": 206,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5573696,
-      "size": 244,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5573952,
-      "size": 148,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5574112,
-      "size": 212,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5574336,
-      "size": 521,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5574864,
-      "size": 493,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5575472,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5575536,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5575600,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5575664,
-      "size": 146,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5575920,
-      "size": 70,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5576000,
-      "size": 45,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5576048,
-      "size": 321,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5576384,
-      "size": 31,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5576448,
-      "size": 93,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5576784,
-      "size": 409,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577200,
-      "size": 64,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577264,
-      "size": 136,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577472,
-      "size": 64,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577600,
-      "size": 64,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577792,
-      "size": 15,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577808,
-      "size": 9,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5577824,
-      "size": 466,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5578304,
-      "size": 205,
-      "extent_source": "local-function-table",
-      "class": "Character",
-      "window": true
-    },
-    {
-      "rva": 5578512,
-      "size": 42,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5578560,
-      "size": 232,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5578800,
-      "size": 233,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5579040,
-      "size": 720,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5580192,
-      "size": 13,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5580224,
-      "size": 49,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5580288,
-      "size": 150,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5580448,
-      "size": 180,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5580640,
-      "size": 53,
-      "extent_source": "local-function-table",
-      "class": "BSLimbIKModifierUtility",
-      "window": true
-    },
-    {
-      "rva": 5580752,
-      "size": 563,
-      "extent_source": "local-function-table",
-      "class": "BSLimbIKModifierUtility",
-      "window": true
-    },
-    {
-      "rva": 5581328,
-      "size": 902,
-      "extent_source": "local-function-table",
-      "class": "BSLimbIKModifierUtility",
-      "window": true
-    },
-    {
-      "rva": 5582240,
-      "size": 73,
-      "extent_source": "local-function-table",
-      "class": "BSLimbIKModifierUtility",
-      "window": true
-    },
-    {
-      "rva": 5582320,
-      "size": 187,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5582512,
-      "size": 78,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5582608,
-      "size": 271,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5582896,
-      "size": 166,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5583072,
-      "size": 110,
-      "extent_source": "local-function-table",
-      "class": "AnimationStreamSaveGame",
-      "window": true
-    },
-    {
-      "rva": 5583200,
-      "size": 190,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5583408,
-      "size": 135,
-      "extent_source": "local-function-table",
-      "class": "AnimationStreamLoadGame",
-      "window": true
-    },
-    {
-      "rva": 5583552,
-      "size": 351,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5584416,
-      "size": 435,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5584864,
-      "size": 973,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5585856,
-      "size": 219,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5586096,
-      "size": 343,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5586448,
-      "size": 141,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5586608,
-      "size": 73,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5586688,
-      "size": 173,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5587040,
-      "size": 436,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5587488,
-      "size": 118,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5587616,
-      "size": 134,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5587952,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5588256,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5588560,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "class": "IAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5588864,
-      "size": 83,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5588960,
-      "size": 411,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5589392,
-      "size": 416,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5589824,
-      "size": 67,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerLoadingTask",
-      "window": true
-    },
-    {
-      "rva": 5589904,
-      "size": 160,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5590080,
-      "size": 223,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5590320,
-      "size": 230,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5590560,
-      "size": 209,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5590784,
-      "size": 204,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5591008,
-      "size": 49,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5591088,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5591392,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5591696,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5592000,
-      "size": 292,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5592304,
-      "size": 342,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5592656,
-      "size": 363,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5593024,
-      "size": 399,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5593424,
-      "size": 356,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5593792,
-      "size": 344,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594144,
-      "size": 59,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594224,
-      "size": 144,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594368,
-      "size": 35,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594560,
-      "size": 119,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594688,
-      "size": 164,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5594928,
-      "size": 68,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595008,
-      "size": 60,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595088,
-      "size": 60,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595168,
-      "size": 41,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595216,
-      "size": 37,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595264,
-      "size": 37,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595312,
-      "size": 37,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595360,
-      "size": 41,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595408,
-      "size": 40,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595456,
-      "size": 37,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595504,
-      "size": 42,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595552,
-      "size": 41,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595600,
-      "size": 37,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5595648,
-      "size": 43,
-      "extent_source": "local-function-table",
-      "class": "MenuEventHandler",
-      "window": true
-    },
-    {
-      "rva": 5595712,
-      "size": 280,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5596000,
-      "size": 358,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5596416,
-      "size": 77,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5596512,
-      "size": 162,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5596864,
-      "size": 159,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5597056,
-      "size": 64,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5597136,
-      "size": 321,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5597472,
-      "size": 101,
-      "extent_source": "local-function-table",
-      "class": "SimpleAnimationGraphManagerLoadingTask",
-      "window": true
-    },
-    {
-      "rva": 5597632,
-      "size": 268,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5597904,
-      "size": 42,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5597952,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5598032,
-      "size": 71,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598144,
-      "size": 76,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598240,
-      "size": 69,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598320,
-      "size": 159,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598496,
-      "size": 157,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598672,
-      "size": 154,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5598832,
-      "size": 285,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599136,
-      "size": 85,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599232,
-      "size": 158,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599408,
-      "size": 158,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599584,
-      "size": 152,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599808,
-      "size": 119,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5599936,
-      "size": 100,
-      "extent_source": "local-function-table",
-      "class": "WeaponAnimationGraphManagerHolder",
-      "window": true
-    },
-    {
-      "rva": 5600192,
-      "size": 46,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5600256,
-      "size": 223,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5602000,
-      "size": 863,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5602880,
-      "size": 1200,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5604080,
-      "size": 295,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5604384,
-      "size": 107,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5604864,
-      "size": 1569,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5606480,
-      "size": 17,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5606640,
-      "size": 105,
-      "extent_source": "local-function-table",
-      "class": "RaceSexCamera",
-      "window": true
-    },
-    {
-      "rva": 5606752,
-      "size": 25,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5606784,
-      "size": 31,
-      "extent_source": "local-function-table",
-      "class": "MapCamera",
-      "window": true
-    },
-    {
-      "rva": 5606832,
-      "size": 11,
-      "extent_source": "local-function-table",
-      "class": "MapCamera",
-      "window": true
-    },
-    {
-      "rva": 5607472,
-      "size": 35,
-      "extent_source": "local-function-table",
-      "class": "TESCamera",
-      "window": true
-    },
-    {
-      "rva": 5607664,
-      "size": 121,
-      "extent_source": "local-function-table",
-      "class": "Transition",
-      "window": true
-    },
-    {
-      "rva": 5607792,
-      "size": 89,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5607888,
-      "size": 914,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5608816,
-      "size": 239,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5609056,
-      "size": 80,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5609152,
-      "size": 141,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5609472,
-      "size": 173,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5609664,
-      "size": 167,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5609840,
-      "size": 154,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5610192,
-      "size": 78,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5610288,
-      "size": 133,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5610432,
-      "size": 143,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5610592,
-      "size": 126,
-      "extent_source": "local-function-table",
-      "class": "BGSSoundDescriptorForm",
-      "window": true
-    },
-    {
-      "rva": 5610752,
-      "size": 114,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5610960,
-      "size": 95,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5611056,
-      "size": 401,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5611472,
-      "size": 150,
-      "extent_source": "local-function-table",
-      "class": "BSMusicManager",
-      "window": true
-    },
-    {
-      "rva": 5611632,
-      "size": 80,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5611728,
-      "size": 525,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5612272,
-      "size": 8,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5612288,
-      "size": 275,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5612608,
-      "size": 234,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5612848,
-      "size": 514,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5613520,
-      "size": 240,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5613824,
-      "size": 148,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5613984,
-      "size": 523,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5614528,
-      "size": 968,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5615504,
-      "size": 129,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5615648,
-      "size": 1173,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5616832,
-      "size": 329,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5617168,
-      "size": 286,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5617472,
-      "size": 108,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5617600,
-      "size": 750,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5618544,
-      "size": 72,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5618688,
-      "size": 150,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5618848,
-      "size": 236,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5619088,
-      "size": 429,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5619520,
-      "size": 384,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5619936,
-      "size": 82,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5620032,
-      "size": 82,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5620160,
-      "size": 177,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5620544,
-      "size": 649,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5621200,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5621392,
-      "size": 166,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5621744,
-      "size": 160,
-      "extent_source": "local-function-table",
-      "class": "DragonCameraState",
-      "window": true
-    },
-    {
-      "rva": 5622880,
-      "size": 379,
-      "extent_source": "local-function-table",
-      "class": "DragonCameraState",
-      "window": true
-    },
-    {
-      "rva": 5624784,
-      "size": 113,
-      "extent_source": "local-function-table",
-      "class": "ThirdPersonState",
-      "window": true
-    },
-    {
-      "rva": 5625120,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "class": "ThirdPersonState",
-      "window": true
-    },
-    {
-      "rva": 5625424,
-      "size": 543,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5625984,
-      "size": 203,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5626208,
-      "size": 562,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5626784,
-      "size": 233,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5627024,
-      "size": 223,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5627296,
-      "size": 235,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5627552,
-      "size": 60,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5627632,
-      "size": 155,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5627808,
-      "size": 594,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5628416,
-      "size": 1028,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5629456,
-      "size": 81,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5629552,
-      "size": 43,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5629616,
-      "size": 43,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5629680,
-      "size": 1210,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5630928,
-      "size": 65,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5631056,
-      "size": 56,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5631120,
-      "size": 173,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5631296,
-      "size": 67,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632080,
-      "size": 33,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632128,
-      "size": 33,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632176,
-      "size": 33,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632224,
-      "size": 33,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632272,
-      "size": 248,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632528,
-      "size": 116,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632656,
-      "size": 92,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632752,
-      "size": 227,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5632992,
-      "size": 62,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633056,
-      "size": 62,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633120,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633200,
-      "size": 95,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633296,
-      "size": 95,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633392,
-      "size": 5,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633408,
-      "size": 5,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633424,
-      "size": 98,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633536,
-      "size": 5,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5633552,
-      "size": 72,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5634528,
-      "size": 286,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5634816,
-      "size": 93,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5634912,
-      "size": 82,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635008,
-      "size": 106,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635120,
-      "size": 88,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635232,
-      "size": 41,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635280,
-      "size": 66,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635360,
-      "size": 53,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635424,
-      "size": 17,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635456,
-      "size": 55,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635520,
-      "size": 17,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635552,
-      "size": 82,
-      "extent_source": "local-function-table",
-      "window": true
-    },
-    {
-      "rva": 5635648,
-      "size": 14,
       "extent_source": "local-function-table",
       "window": true
     }
