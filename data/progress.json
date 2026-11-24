@@ -176890,24 +176890,26 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 13513296,
       "size": 112,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSReadWriteLock::LockForRead",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0xce3250; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xce3250.json",
+      "report": "reports/sse-steam-1-7-104/0xce3250.json"
     },
     {
       "id": "sse-steam-1-7-104-0xce32d0",
       "build_id": "sse-steam-1-7-104",
       "rva": 13513424,
       "size": 126,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSReadWriteLock::LockForWrite",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: CharmedBaryon/CommonLibSSE-NG commit b93280e832f263dbef44e44cbe2936622a02f91a (MIT), include/RE/Offsets.h (the identifier NG declares for the id), joined through Address Library 1.7.104.0. RVA 0xce32d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/third-batch-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0xce32d0.json",
+      "report": "reports/sse-steam-1-7-104/0xce32d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0xce3510",
@@ -498626,6 +498628,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0xee320.json",
       "report": "reports/sse-steam-1-7-104/0xee320.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6a1120",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6951200,
+      "size": 61,
+      "status": "matched",
+      "name": "Character::Function6a1120",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x6a1120; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x6a1120.json",
+      "report": "reports/sse-steam-1-7-104/0x6a1120.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6d6820",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 7170080,
+      "size": 102,
+      "status": "matched",
+      "name": "PlayerCharacter::Function6d6820",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x6d6820; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x6d6820.json",
+      "report": "reports/sse-steam-1-7-104/0x6d6820.json"
     }
   ],
   "milestones": [
@@ -498668,7 +498696,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-24T00:21:52Z",
+  "updated_at": "2026-11-24T00:27:53Z",
   "work_items": [
     {
       "id": "pin-target",

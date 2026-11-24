@@ -15850,6 +15850,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Character_6a0380` | `Character::Function6a0380` (GUESS) | `sse-steam-1-7-104` / `0x6a0380` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a0380.json` | matched | full | - |
 | `skyrim_shared/actors/Character_6a03b0` | `Character::Function6a03b0` (GUESS) | `sse-steam-1-7-104` / `0x6a03b0` / 25 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a03b0.json` | matched | full | - |
 | `skyrim_shared/actors/Character_6a03d0` | `Character::Function6a03d0` (GUESS) | `sse-steam-1-7-104` / `0x6a03d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a03d0.json` | matched | full | - |
+| `skyrim_shared/actors/Character_6a1120` | `Character::Function6a1120` (GUESS) | `sse-steam-1-7-104` / `0x6a1120` / 61 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x6a1120.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_674b70` | `Actor::Function6a15c0` (GUESS) | `sse-steam-1-7-104` / `0x6a15c0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a15c0.json` | matched | full | - |
 | `skyrim_shared/actors/ActorPass` | `P2061::Actor::unk_IsInDialogue` (GUESS) | `sse-steam-1-7-104` / `0x6a15e0` / 46 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6a15e0.json` | mapped, record awaiting review | - | - |
 | `unmapped/leaves/Leaf6a1bd0` | `Leaf6a1bd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x6a1bd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6a1bd0.json` | matched | family | open |
@@ -16148,6 +16149,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/Actor_674b70` | `Actor::GetMagicCasterAt` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6d4d20` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d4d20.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6d51c0` | `Actor::Function6d51c0` (GUESS) | `sse-steam-1-7-104` / `0x6d51c0` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d51c0.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6767b0` | `Actor::IsInCastPowerList` (GUESS) | `sse-steam-1-7-104` / `0x6d5350` / 36 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d5350.json` | matched | full | open |
+| `skyrim_shared/actors/PlayerCharacter_6d6820` | `PlayerCharacter::Function6d6820` (GUESS) | `sse-steam-1-7-104` / `0x6d6820` / 102 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x6d6820.json` | matched | full | - |
 | `skyrim_shared/actors/Character_6d6ad0` | `Character::Function6d6ad0` (GUESS) | `sse-steam-1-7-104` / `0x6d6ad0` / 78 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d6ad0.json` | matched | full | - |
 | `skyrim_shared/actors/Actor_6d6d00` | `HasSelectedSpell` (GUESS) | `sse-steam-1-7-104` / `0x6d6d00` / 48 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6d6d00.json` | matched | full | open |
 | `skyrim_shared/actors/Actor_674b70` | `Actor::Function6d7070` (GUESS) | `sse-steam-1-7-104` / `0x6d7070` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6d7070.json` | matched | full | - |
@@ -22916,8 +22918,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/LockedSource_F063_ce1eb0` | `p117_ce1eb0::LockedSource_F063_ce1eb0::Add` (GUESS) | `sse-steam-1-7-104` / `0xce1eb0` / 373 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce1eb0.json` | mapped, record awaiting review | - | - |
 | `unmapped/buffers/LockedSource_F068_ce2090` | `p117_ce2090::LockedSource_F068_ce2090::Remove` (GUESS) | `sse-steam-1-7-104` / `0xce2090` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce2090.json` | mapped, record awaiting review | - | - |
 | `unmapped/leaves/TableStoreLeafce2220` | `TableStoreLeafce2220::~TableStoreLeafce2220` (GUESS) | `sse-steam-1-7-104` / `0xce2220` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce2220.json` | matched | full | - |
-| - | `BSReadWriteLock::LockForRead` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3250` / 112 | - | - | mapped | - | - |
-| - | `BSReadWriteLock::LockForWrite` (COMMUNITY) | `sse-steam-1-7-104` / `0xce32d0` / 126 | - | - | mapped | - | - |
+| `bscore/BSReadWriteLock_ce3250` | `BSReadWriteLock::LockForRead` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3250` / 112 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3250.json` | matched | full | - |
+| `bscore/BSReadWriteLock_ce32d0` | `BSReadWriteLock::LockForWrite` (COMMUNITY) | `sse-steam-1-7-104` / `0xce32d0` / 126 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce32d0.json` | matched | full | - |
 | `bscore/BSReadWriteLock_ce3360` | `BSReadWriteLock::Functionce3360` (GUESS) | `sse-steam-1-7-104` / `0xce3360` / 102 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3360.json` | matched | full | - |
 | `bscore/BSReadWriteLock_ce3450` | `BSReadWriteLock::Functionce3450` (GUESS) | `sse-steam-1-7-104` / `0xce3450` / 93 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3450.json` | matched | full | - |
 | `bscore/BSReadWriteLock_ce3450` | `BSReadWriteLock::Functionce34c0` (GUESS) | `sse-steam-1-7-104` / `0xce34c0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce34c0.json` | matched | full | - |
