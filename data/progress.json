@@ -483933,12 +483933,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22262736,
       "size": 226,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSShaderTextureSet::SetTexture",
       "name_origin": "CRASHLOGGER_PDB",
       "name_source": "CRASHLOGGER_PDB(59818@2026.10.24): public name at RVA 0x153b3d0 in the CrashLogger community PDB (reconstruction/generated/crashlogger_pdb/names); a community guess, not evidence. Size is the extent of local static analysis of the pinned image, not yet compared with the project's extent table.",
       "owner": "awarebayes",
-      "evidence": "findings/lod-mapping-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x153b3d0.json",
+      "report": "reports/sse-steam-1-7-104/0x153b3d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x14ec0a0",
@@ -498654,6 +498655,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x6d6820.json",
       "report": "reports/sse-steam-1-7-104/0x6d6820.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x153b250",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22262352,
+      "size": 116,
+      "status": "matched",
+      "name": "BSShaderTextureSet::Function153b250",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x153b250; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x153b250.json",
+      "report": "reports/sse-steam-1-7-104/0x153b250.json"
     }
   ],
   "milestones": [
@@ -498696,7 +498710,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-24T00:27:53Z",
+  "updated_at": "2026-11-24T00:47:16Z",
   "work_items": [
     {
       "id": "pin-target",
