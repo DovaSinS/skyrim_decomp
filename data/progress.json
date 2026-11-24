@@ -74104,7 +74104,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0x186fb0.json",
       "report": "reports/sse-steam-1-7-104/0x186fb0.json"
     },
     {
@@ -180178,7 +180178,7 @@
       "name_origin": "COMMUNITY",
       "name_source": "Community name, unverified: meh321/AddressLibraryDatabase commit 0379cb6fdaa0d68e69ef9ad1a2d39caa6611ac91, meh321 association in the pinned local function inventory; a code pass does not verify the name.",
       "owner": "awarebayes",
-      "evidence": "findings/generator-leaves-selection.md",
+      "evidence": "reports/sse-steam-1-7-104/0xec18e0.json",
       "report": "reports/sse-steam-1-7-104/0xec18e0.json"
     },
     {
@@ -515744,6 +515744,32 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x10d3ff0.json",
       "report": "reports/sse-steam-1-7-104/0x10d3ff0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x186f70",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 1601392,
+      "size": 18,
+      "status": "matched",
+      "name": "ExtraSayToTopicInfo::Function186f70",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x186f70; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x186f70.json",
+      "report": "reports/sse-steam-1-7-104/0x186f70.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xec18f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15472880,
+      "size": 19,
+      "status": "matched",
+      "name": "BSCounterStorage::Functionec18f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xec18f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xec18f0.json",
+      "report": "reports/sse-steam-1-7-104/0xec18f0.json"
     }
   ],
   "milestones": [
@@ -515786,7 +515812,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-24T09:23:26Z",
+  "updated_at": "2026-11-24T09:30:32Z",
   "work_items": [
     {
       "id": "pin-target",

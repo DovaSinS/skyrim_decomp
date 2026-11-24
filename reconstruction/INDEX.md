@@ -9652,8 +9652,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/extradata/ExtraGuardedRefData_1869c0` | `ExtraGuardedRefData::Function1869c0` (GUESS) | `sse-steam-1-7-104` / `0x1869c0` / 79 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1869c0.json` | matched | full | - |
 | `skyrim_shared/extradata/ExtraGuardedRefData` | `ExtraGuardedRefData::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x186b70` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186b70.json` | matched | family | open |
 | `skyrim_shared/extradata/ExtraSayTopicInfoOnceADay` | `ExtraSayTopicInfoOnceADay::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x186e20` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186e20.json` | matched | family | open |
+| `skyrim_shared/extradata/ExtraSayToTopicInfo` | `ExtraSayToTopicInfo::Function186f70` (GUESS) | `sse-steam-1-7-104` / `0x186f70` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186f70.json` | matched | full | - |
 | `skyrim_shared/extradata/ExtraSayToTopicInfo_186fa0` | `ExtraSayToTopicInfo::Function186fa0` (GUESS) | `sse-steam-1-7-104` / `0x186fa0` / 9 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x186fa0.json` | matched | full | - |
-| `skyrim_shared/extradata/ExtraSayToTopicInfo` | `ExtraSayToTopicInfo::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x186fb0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186fb0.json` | matched | family | open |
+| `skyrim_shared/extradata/ExtraSayToTopicInfo` | `ExtraSayToTopicInfo::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x186fb0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186fb0.json` | matched | full | open |
 | `skyrim_shared/extradata/ExtraIgnoredBySandbox` | `ExtraIgnoredBySandbox::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x186fc0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x186fc0.json` | matched | family | open |
 | `skyrim_shared/extradata/ExtraFollowerSwimBreadcrumbs` | `ExtraFollowerSwimBreadcrumbs::Function1872c0` (GUESS) | `sse-steam-1-7-104` / `0x1872c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1872c0.json` | matched | full | - |
 | `skyrim_shared/extradata/ExtraFollowerSwimBreadcrumbs` | `ExtraFollowerSwimBreadcrumbs::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x187390` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x187390.json` | matched | full | open |
@@ -24409,7 +24410,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeafec0160` | `DeletingLeafec0160::~DeletingLeafec0160` (GUESS) | `sse-steam-1-7-104` / `0xec0160` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec0160.json` | matched | full | - |
 | `bscore/BSMemStorage` | `BSMemStorage::GetFileSize` (COMMUNITY) | `sse-steam-1-7-104` / `0xec1710` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec1710.json` | matched | delta | open |
 | `bscore/BSMemStorage` | `BSMemStorage::GetPosition` (COMMUNITY) | `sse-steam-1-7-104` / `0xec1720` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec1720.json` | matched | full | open |
-| `bscore/BSCounterStorage` | `BSCounterStorage::ReadFile` (COMMUNITY) | `sse-steam-1-7-104` / `0xec18e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec18e0.json` | matched | family | open |
+| `bscore/BSCounterStorage` | `BSCounterStorage::ReadFile` (COMMUNITY) | `sse-steam-1-7-104` / `0xec18e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec18e0.json` | matched | full | open |
+| `bscore/BSCounterStorage` | `BSCounterStorage::Functionec18f0` (GUESS) | `sse-steam-1-7-104` / `0xec18f0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec18f0.json` | matched | full | - |
 | - | `BSSystemFileStorage::GetSize` (COMMUNITY) | `sse-steam-1-7-104` / `0xec3340` / 88 | - | - | mapped | - | - |
 | - | `BSSystemFileStorage::GetPosition` (COMMUNITY) | `sse-steam-1-7-104` / `0xec33f0` / 94 | - | - | mapped | - | - |
 | - | `BSSystemFileStorage::Seek` (COMMUNITY) | `sse-steam-1-7-104` / `0xec34c0` / 120 | - | - | mapped | - | - |
