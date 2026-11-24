@@ -3119,6 +3119,34 @@ class Bot:
             return bound
         return again
 
+    def record_workers(self, jobs):
+        return max(1, min(self.config.get('compare_workers', COMPARE_WORKERS), len(jobs)))
+
+    def confirm_all(self, dests):
+        """Confirm every one-function directory: a few batches on the preferred runner first, then the rest one
+        by one in parallel on the ordinary host. A directory whose kept result is current is not run again, so a
+        restarted record build carries on where it stopped. A run that never completes stops the build."""
+        if not dests:
+            return
+        if self.config.get('compare_prefetch', True):
+            try:
+                self.run([sys.executable, 'tools/verifier/compare_batch.py', '--confirm', '--deadline',
+                          str(self.config.get('compare_prefetch_wait', 1800)), *map(str, dests)],
+                         cwd=self.tree, check=False, timeout=self.config['compare_timeout'])
+            except (Stop, subprocess.TimeoutExpired, OSError):
+                pass  # only a speed-up; the loop below does the work either way
+
+        def confirm(dest):
+            # A compile that only timed out under host load usually passes on a second try; a repeat is a real fault.
+            for attempt in range(2):
+                if self.run([sys.executable, 'tools/verifier/wine_confirm.py', dest], cwd=self.tree,
+                            check=False, timeout=self.config['compare_timeout']).returncode in (0, 1):
+                    return
+            raise Stop('record build did not complete')
+        with ThreadPoolExecutor(max_workers=self.record_workers(dests)) as pool:
+            for future in [pool.submit(confirm, dest) for dest in dests]:
+                future.result()
+
     def build_records(self, tag, units, rvas, state):
         """Match records for the accepted functions: the Mac's fresh comparator output plus the CI map.
 
@@ -3139,6 +3167,7 @@ class Bot:
         carried -= unchanged
         built |= unchanged
         out.mkdir(parents=True, exist_ok=True)
+        jobs = []  # (rva, confirm directory, unit info) of every function that needs a confirmation
         for task in sorted((self.tree / '.local/tasks').glob(f'prbot-{tag.split("/")[0]}-*')):
             info = json.loads((task / 'task.json').read_text())
             wanted = {int(str(fn['rva']), 0) for fn in info['functions']} & set(rvas) - carried - unchanged
@@ -3156,26 +3185,23 @@ class Bot:
                 dest.mkdir(exist_ok=True)
                 (dest / 'task.json').write_text(json.dumps(dict(
                     info, task_id=info['task_id'] + f'-{rva:x}', functions=[fn])))
-                # A compile that only timed out under host load usually passes on a second try; a repeat is a real fault.
-                for attempt in range(2):
-                    if self.run([sys.executable, 'tools/verifier/wine_confirm.py', dest], cwd=self.tree,
-                                check=False, timeout=self.config['compare_timeout']).returncode in (0, 1):
-                        break
-                else:
-                    raise Stop('record build did not complete')
-                row = ci['rows'].get(str(rva))
-                made = out / info['build_id'] / f'0x{rva:x}.json'
-                made.unlink(missing_ok=True)
-                if row is None:
-                    failed.add(rva)
-                    continue
-                built_run = self.run([sys.executable, '-c', RECORD_CALL, self.tree, dest, out, json.dumps(
-                    dict(run=ci['run'], report=ci['report'], row=row, map_status=ci['map'].get(str(rva))))],
-                    cwd=self.tree, check=False, timeout=self.config['compare_timeout'])
-                if not built_run.returncode and made.is_file():
-                    built.add(rva)
-                else:
-                    failed.add(rva)  # the validator refused it: the function stays drafted
+                jobs.append((rva, dest, info))
+        self.confirm_all([dest for _, dest, _ in jobs])
+
+        def make(job):
+            rva, dest, info = job
+            row = ci['rows'].get(str(rva))
+            made = out / info['build_id'] / f'0x{rva:x}.json'
+            made.unlink(missing_ok=True)
+            if row is None:
+                return rva, False
+            built_run = self.run([sys.executable, '-c', RECORD_CALL, self.tree, dest, out, json.dumps(
+                dict(run=ci['run'], report=ci['report'], row=row, map_status=ci['map'].get(str(rva))))],
+                cwd=self.tree, check=False, timeout=self.config['compare_timeout'])
+            return rva, not built_run.returncode and made.is_file()  # a refusal by the validator leaves it drafted
+        with ThreadPoolExecutor(max_workers=self.record_workers(jobs)) as pool:
+            for rva, ok in pool.map(make, jobs):
+                (built if ok else failed).add(rva)
         # A function with no task directory in the tree was never confirmed at all; leaving it out of `failed`
         # let a merge go ahead with nothing to record, and the record step then stopped after the PR had landed.
         if carried:
@@ -5305,8 +5331,16 @@ def _housekeeping(bot, directory, due):
             print(f'{stamp()} probe sweep: {type(exc).__name__}: {exc}', file=sys.stderr, flush=True)
 
 
+def marker_text(path):
+    """The text of the deploy marker file, or None when it is absent or unreadable."""
+    try:
+        return Path(path).read_text().strip()
+    except OSError:
+        return None
+
+
 def poll(bot, interval, restart_after=None, workers=POOL_SIZE, gh=None, sleep=time.sleep, rounds=None,
-         refill_every=None, await_housekeeping=None):
+         refill_every=None, await_housekeeping=None, restart_on=None):
     """List the open PRs every `interval` seconds and work on up to `workers` at once, each on its own tree.
 
     A PR is never queued twice, and a finished head or one that is backing off costs no worker. After a
@@ -5314,6 +5348,9 @@ def poll(bot, interval, restart_after=None, workers=POOL_SIZE, gh=None, sleep=ti
     loop for tests. With `refill_every`, an idle bot checks the offered window at most that often. That check
     and the other housekeeping run beside the loop (`housekeeping`), never in it; `await_housekeeping`
     (default: when `rounds` is set) makes each tick wait for a pass it started, so a test counts exactly.
+    `restart_on` names a deploy marker file: once its text differs from what it held at start the loop stops
+    taking new work, lets the running PRs finish and returns, so a busy queue (which is never idle at the
+    `restart_after` check) still moves onto the newly pinned revision when the supervisor restarts it.
     """
     if await_housekeeping is None:
         await_housekeeping = rounds is not None
@@ -5324,6 +5361,8 @@ def poll(bot, interval, restart_after=None, workers=POOL_SIZE, gh=None, sleep=ti
         print('another pr_bot --poll holds the lock', file=sys.stderr)
         return 1
     started = time.time()
+    marker_at_start = marker_text(restart_on) if restart_on else None
+    draining = False
     gh = gh or GhBackoff()
     slots = queue.Queue()
     for index in range(workers):
@@ -5355,8 +5394,17 @@ def poll(bot, interval, restart_after=None, workers=POOL_SIZE, gh=None, sleep=ti
                 del inflight[number]
                 on_pool.discard(number)
                 owner_on_pool.discard(number)
-            if restart_after and time.time() - started > restart_after and not inflight and maint is None:
+            if maint is not None and maint.done():
+                maint = None
+            if restart_on and not draining and marker_text(restart_on) != marker_at_start:
+                draining = True
+                print(f'{stamp()} poll: a new revision is pinned; taking no new work until {len(inflight)} '
+                      'running PR(s) finish, then restarting', flush=True)
+            if (draining or restart_after and time.time() - started > restart_after) and not inflight and maint is None:
                 return 0  # between cycles only; the supervisor restarts it on freshly fetched tools
+            if draining:
+                sleep(interval)
+                continue
             wait = gh.remaining()
             if wait:
                 sleep(min(wait, interval))
@@ -5479,6 +5527,8 @@ def main(argv=None):
     p.add_argument('--poll', action='store_true')
     p.add_argument('--interval', type=int, default=60)
     p.add_argument('--restart-after', type=int, help='--poll: exit between cycles after this many seconds')
+    p.add_argument('--restart-on', type=Path, help='--poll: marker file a deploy rewrites; when its text changes, '
+                   'take no new work, let the running PRs finish, then exit for the supervisor to restart')
     p.add_argument('--dry-run', action='store_true',
                    help='no merge, push, comment, label or live state write; alone, run every open PR once and '
                         'exit non-zero on any exception')
@@ -5499,7 +5549,8 @@ def main(argv=None):
     bot.work.mkdir(parents=True, exist_ok=True)
     if a.poll:
         signal.signal(signal.SIGTERM, stop_on_sigterm)
-        return poll(bot, a.interval, a.restart_after, refill_every=REFILL_EVERY)
+        return poll(bot, a.interval, a.restart_after, refill_every=REFILL_EVERY,
+                    restart_on=a.restart_on)
     if a.dry_run and a.command is None:
         return 1 if dry_run_open_prs(bot, a.seed_state) else 0
     if a.command != 'pr' or not a.number:
