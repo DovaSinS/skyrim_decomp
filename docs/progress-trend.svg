@@ -9,7 +9,7 @@
 <path d="M55 100h330" stroke="#30363d"/>
 <polyline points="55.0,260.0 80.4,258.8 105.8,201.5 131.2,150.2 156.5,140.1 181.9,136.7 207.3,136.2 232.7,135.5 258.1,133.9 283.5,127.7 308.8,126.8 334.2,124.5 359.6,118.5 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
 <circle cx="385.0" cy="110.0" r="4" fill="#3fb950"/>
-<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,831,078</text>
+<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">1,831,158</text>
 <text x="55.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="385.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-24</text>
 <text x="465" y="65" fill="#e6edf3" font-size="14">Functions matched, cumulative</text>
@@ -18,9 +18,9 @@
 <path d="M465 180h330" stroke="#30363d"/>
 <path d="M465 140h330" stroke="#30363d"/>
 <path d="M465 100h330" stroke="#30363d"/>
-<polyline points="465.0,260.0 490.4,259.0 515.8,195.8 541.2,159.7 566.5,141.2 591.9,135.3 617.3,135.1 642.7,134.4 668.1,131.9 693.5,122.6 718.8,121.4 744.2,118.7 769.6,114.8 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<polyline points="465.0,260.0 490.4,259.0 515.8,195.8 541.2,159.7 566.5,141.2 591.9,135.4 617.3,135.1 642.7,134.5 668.1,131.9 693.5,122.6 718.8,121.4 744.2,118.8 769.6,114.9 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <circle cx="795.0" cy="110.0" r="4" fill="#58a6ff"/>
-<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">35,848</text>
+<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">35,857</text>
 <text x="465.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="795.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-24</text>
 </g></svg>
