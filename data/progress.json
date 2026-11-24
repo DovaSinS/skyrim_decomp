@@ -542878,6 +542878,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x537eb0.json",
       "report": "reports/sse-steam-1-7-104/0x537eb0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x3286a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 3311264,
+      "size": 200,
+      "status": "matched",
+      "name": "BGSMusicType::Function3286a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x3286a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x3286a0.json",
+      "report": "reports/sse-steam-1-7-104/0x3286a0.json"
     }
   ],
   "milestones": [
@@ -542920,7 +542933,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-24T17:19:06Z",
+  "updated_at": "2026-11-24T17:47:01Z",
   "work_items": [
     {
       "id": "pin-target",
