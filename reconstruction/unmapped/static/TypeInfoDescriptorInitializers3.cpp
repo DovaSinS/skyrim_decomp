@@ -105,7 +105,9 @@
 // CI hash: 0xd67d0 ?Initd67d0@TypeInfoDescriptorInitializers3@@SAXXZ
 #include "TypeInfoDescriptorInitializers3.h"
 
-// Fill the type-info record.
+// The CRT startup table calls these entries as void initializers with no arguments.
+// Each fills a static type-info record. This use conflicts with the member names
+// and prototypes CrashLogger lists at these RVAs.
 void TypeInfoDescriptorInitializers3::Initd2910()
 {
     const void* vtable = GetVtable_ae6bc0();
