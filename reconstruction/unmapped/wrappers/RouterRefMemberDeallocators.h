@@ -1,105 +1,107 @@
 // Source exposure: mixed (pinned image and community function boundaries).
 // Boundary source: CRASHLOGGER_PDB(59818@2026.10.24)
-// Code origin: original custom-allocator deleting-destructor template.
-// RouterRefMemberDeallocators, types, methods and referenced symbols: GUESS(low) STANDIN; original ownership and layouts unknown.
+// Code origin: original Havok TLS-router scalar deleting destructor wrappers.
+// RouterRefMemberDeallocators, types, methods and referenced globals: GUESS(low) STANDIN CRASHLOGGER_PDB(59818@2026.10.24); original ownership unknown.
 // Adapted bodies: none
 #pragma once
 
-struct RouterRefMemberDeallocatorsBlockHeap
+struct RouterRefBlockHeap
 {
-    virtual void Slot00();
-    virtual void Slot01();
+    virtual ~RouterRefBlockHeap();
+    virtual void ReservedSlot01();
     virtual void BlockFree(void* block, int size);
 };
 
-struct RouterRefMemberDeallocatorsMemoryRouter
+struct RouterRefMemoryRouter
 {
-    unsigned char unk00[0x58];
-    RouterRefMemberDeallocatorsBlockHeap* heap;
+    unsigned char reservedHeader[0x58];
+    RouterRefBlockHeap* heap;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_50
+// Typed stand-in for hkStringPtr (at +0x38 in hkbNode).
+struct RouterRefStringPtr
 {
-    void* table;
+    const char* dataAndFlags;
+};
+
+// Layout matching hkbNode (size 0x48: hkReferencedObject + hkbBindable + userData + name + id/cloneState).
+struct RouterRefNodeBase
+{
+    void* vftable;
     unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x18];
-    void* refObj;
+    short referenceCount;
+    void* variableBindingSet;
+    void* cachedBindablesData;
+    int cachedBindablesSize;
+    int cachedBindablesCapacityAndFlags;
+    bool areBindablesCached;
+    unsigned long long userData;
+    RouterRefStringPtr name;
+    unsigned short id;
+    unsigned char cloneState;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_58
+struct RefNodeWithTargetAt50 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x20];
-    void* refObj;
+    unsigned long long modifierFields48;
+    void* refTarget;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_60
+struct RefNodeWithTargetAt58 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x28];
-    void* refObj;
+    unsigned long long modifierFields48[2];
+    void* refTarget;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_70
+struct RefNodeWithTargetAt60 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x38];
-    void* refObj;
+    unsigned long long modifierFields48[3];
+    void* refTarget;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_88
+struct RefNodeWithTargetAt70 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x50];
-    void* refObj;
+    unsigned long long modifierFields48[5];
+    void* refTarget;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_90
+struct RefNodeWithTargetAt88 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0x58];
-    void* refObj;
+    unsigned long long modifierFields48[8];
+    void* refTarget;
 };
 
-struct RouterRefMemberDeallocatorsRefMemberObject38_f8
+struct RefNodeWithTargetAt90 : RouterRefNodeBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x2e];
-    unsigned char member38[0xc0];
-    void* refObj;
+    unsigned long long modifierFields48[9];
+    void* refTarget;
 };
 
-extern "C" unsigned int RouterTlsSlot325a844;
-extern "C" void* (*const TlsGetValueSlot17c8418)(unsigned int slot);
-extern "C" void GlobalDeallocTarget1177a80(void* object, unsigned long long size);
-extern "C" void CleanupTargetaa2770(void* object);
-extern "C" void CleanupTargetaa77d0(void* object);
-extern "C" void CleanupTargetad1a70(void* object);
+struct RefNodeWithTargetAtF8 : RouterRefNodeBase
+{
+    unsigned long long modifierFields48[22];
+    void* refTarget;
+};
+
+extern "C" unsigned int g_memoryRouterTlsSlot;
+extern "C" void* (*const g_tlsGetValue)(unsigned int tlsIndex);
+extern "C" void GlobalSizedDelete(void* object, unsigned long long objectSize);
+extern "C" void RemoveReferencedObject(void* referencedObject);
+extern "C" void DestroyOwnedStringPtr(RouterRefStringPtr* stringPtr);
+extern "C" void DestroyBindableBase(RouterRefNodeBase* object);
 
 struct RouterRefMemberDeallocators
 {
-    static void* Deleteae2be0(RouterRefMemberDeallocatorsRefMemberObject38_50* object, unsigned int flags);
-    static void* Deleteae2d10(RouterRefMemberDeallocatorsRefMemberObject38_58* object, unsigned int flags);
-    static void* Deleteae3030(RouterRefMemberDeallocatorsRefMemberObject38_50* object, unsigned int flags);
-    static void* Deleteae3890(RouterRefMemberDeallocatorsRefMemberObject38_50* object, unsigned int flags);
-    static void* Deleteae4640(RouterRefMemberDeallocatorsRefMemberObject38_50* object, unsigned int flags);
-    static void* Deleteae4ca0(RouterRefMemberDeallocatorsRefMemberObject38_f8* object, unsigned int flags);
-    static void* Deleteae4fe0(RouterRefMemberDeallocatorsRefMemberObject38_90* object, unsigned int flags);
-    static void* Deleteae5700(RouterRefMemberDeallocatorsRefMemberObject38_60* object, unsigned int flags);
-    static void* Deletebb6ee0(RouterRefMemberDeallocatorsRefMemberObject38_70* object, unsigned int flags);
-    static void* Deletebb77a0(RouterRefMemberDeallocatorsRefMemberObject38_58* object, unsigned int flags);
-    static void* Deletebbb840(RouterRefMemberDeallocatorsRefMemberObject38_88* object, unsigned int flags);
-    static void* Deletebbbf00(RouterRefMemberDeallocatorsRefMemberObject38_60* object, unsigned int flags);
+    static void* Deleteae2be0(RefNodeWithTargetAt50* object, unsigned int deleteFlags);
+    static void* Deleteae2d10(RefNodeWithTargetAt58* object, unsigned int deleteFlags);
+    static void* Deleteae3030(RefNodeWithTargetAt50* object, unsigned int deleteFlags);
+    static void* Deleteae3890(RefNodeWithTargetAt50* object, unsigned int deleteFlags);
+    static void* Deleteae4640(RefNodeWithTargetAt50* object, unsigned int deleteFlags);
+    static void* Deleteae4ca0(RefNodeWithTargetAtF8* object, unsigned int deleteFlags);
+    static void* Deleteae4fe0(RefNodeWithTargetAt90* object, unsigned int deleteFlags);
+    static void* Deleteae5700(RefNodeWithTargetAt60* object, unsigned int deleteFlags);
+    static void* Deletebb6ee0(RefNodeWithTargetAt70* object, unsigned int deleteFlags);
+    static void* Deletebb77a0(RefNodeWithTargetAt58* object, unsigned int deleteFlags);
+    static void* Deletebbb840(RefNodeWithTargetAt88* object, unsigned int deleteFlags);
+    static void* Deletebbbf00(RefNodeWithTargetAt60* object, unsigned int deleteFlags);
 };

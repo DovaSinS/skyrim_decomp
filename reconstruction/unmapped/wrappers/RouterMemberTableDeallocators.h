@@ -1,68 +1,91 @@
 // Source exposure: mixed (pinned image and community function boundaries).
 // Boundary source: CRASHLOGGER_PDB(59818@2026.10.24)
-// Code origin: original custom-allocator deleting-destructor template.
-// RouterMemberTableDeallocators, types, methods and referenced symbols: GUESS(low) STANDIN; original ownership and layouts unknown.
+// Code origin: original Havok TLS-router scalar deleting destructor wrappers.
+// RouterMemberTableDeallocators, types, methods and referenced globals: GUESS(low) STANDIN CRASHLOGGER_PDB(59818@2026.10.24); original ownership unknown.
 // Adapted bodies: none
 #pragma once
 
-struct RouterMemberTableDeallocatorsBlockHeap
+struct RouterTableBlockHeap
 {
-    virtual void Slot00();
-    virtual void Slot01();
+    virtual ~RouterTableBlockHeap();
+    virtual void ReservedSlot01();
     virtual void BlockFree(void* block, int size);
 };
 
-struct RouterMemberTableDeallocatorsMemoryRouter
+struct RouterTableMemoryRouter
 {
-    unsigned char unk00[0x58];
-    RouterMemberTableDeallocatorsBlockHeap* heap;
+    unsigned char reservedHeader[0x58];
+    RouterTableBlockHeap* heap;
 };
 
-struct RouterMemberTableDeallocatorsMemberObject10
+// Typed stand-in for hkStringPtr and owned member subobjects destroyed before base vftable reset.
+struct RouterTableStringPtr
 {
-    void* table;
+    const char* dataAndFlags;
+};
+
+struct RouterTableOwnedMember
+{
+    void* storage;
+};
+
+struct RouterReferencedBase
+{
+    void* vftable;
     unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x6];
-    unsigned char member10[1];
+    short referenceCount;
 };
 
-struct RouterMemberTableDeallocatorsMemberObject18
+struct StringAt10Object : RouterReferencedBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0xe];
-    unsigned char member18[1];
+    RouterTableStringPtr member;
 };
 
-struct RouterMemberTableDeallocatorsMemberObject20
+struct StringAt18Object : RouterReferencedBase
 {
-    void* table;
-    unsigned short memSizeAndFlags;
-    unsigned char unk0a[0x16];
-    unsigned char member20[1];
+    unsigned long long field10;
+    RouterTableStringPtr member;
 };
 
-extern "C" unsigned int RouterTlsSlot325a844;
-extern "C" void* (*const TlsGetValueSlot17c8418)(unsigned int slot);
-extern "C" void GlobalDeallocTarget1177a80(void* object, unsigned long long size);
-extern "C" void CleanupTargetaa77d0(void* object);
-extern "C" void CleanupTargetab55b0(void* object);
-extern "C" void CleanupTargetcc08a0(void* object);
-extern "C" unsigned char TableTarget1820b98[];
+struct StringAt20Object : RouterReferencedBase
+{
+    unsigned long long field10;
+    unsigned long long field18;
+    RouterTableStringPtr member;
+};
+
+struct SubobjectAt10Object : RouterReferencedBase
+{
+    RouterTableOwnedMember member;
+};
+
+struct SubobjectAt18Object : RouterReferencedBase
+{
+    unsigned long long field10;
+    RouterTableOwnedMember member;
+};
+
+extern "C" unsigned int g_memoryRouterTlsSlot;
+extern "C" void* (*const g_tlsGetValue)(unsigned int tlsIndex);
+extern "C" void GlobalSizedDelete(void* object, unsigned long long objectSize);
+extern "C" void DestroyOwnedStringPtr(RouterTableStringPtr* stringPtr);
+extern "C" void DestroyOwnedSubobjectB(RouterTableOwnedMember* member);
+extern "C" void DestroyOwnedSubobjectC(RouterTableOwnedMember* member);
+extern "C" unsigned char kReferencedObjectVftable[];
 
 struct RouterMemberTableDeallocators
 {
-    static void* Deleteaaa370(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteae4800(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteae4890(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteae4920(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteae55e0(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteae5670(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteb2e460(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags);
-    static void* Deleteb2e700(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags);
-    static void* Deleteb2eb20(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Deleteca1d40(RouterMemberTableDeallocatorsMemberObject20* object, unsigned int flags);
-    static void* Deletecc8180(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags);
-    static void* Delete10d1d00(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags);
-    static void* Delete10d2320(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags);
+    static void* Deleteaaa370(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteae4800(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteae4890(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteae4920(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteae55e0(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteae5670(StringAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteb2e460(SubobjectAt18Object* object, unsigned int deleteFlags);
+    static void* Deleteb2e700(SubobjectAt18Object* object, unsigned int deleteFlags);
+    static void* Deleteb2eb20(SubobjectAt10Object* object, unsigned int deleteFlags);
+    static void* Deleteca1d40(StringAt20Object* object, unsigned int deleteFlags);
+    static void* Deletecc8180(SubobjectAt10Object* object, unsigned int deleteFlags);
+    static void* Delete10d1d00(StringAt18Object* object, unsigned int deleteFlags);
+    static void* Delete10d2320(StringAt18Object* object, unsigned int deleteFlags);
 };

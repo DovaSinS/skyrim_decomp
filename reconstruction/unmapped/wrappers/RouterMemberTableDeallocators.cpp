@@ -1,7 +1,7 @@
 // Source exposure: mixed (pinned image and community function boundaries).
 // Boundary source: CRASHLOGGER_PDB(59818@2026.10.24)
-// Code origin: original custom-allocator deleting-destructor template.
-// RouterMemberTableDeallocators, types, methods and referenced symbols: GUESS(low) STANDIN; original ownership and layouts unknown.
+// Code origin: original Havok TLS-router scalar deleting destructor wrappers.
+// RouterMemberTableDeallocators, types, methods and referenced globals: GUESS(low) STANDIN CRASHLOGGER_PDB(59818@2026.10.24); original ownership unknown.
 // Adapted bodies: none
 // 0xaaa370 RouterMemberTableDeallocators::Deleteaaa370
 // 0xae4800 RouterMemberTableDeallocators::Deleteae4800
@@ -16,290 +16,119 @@
 // 0xcc8180 RouterMemberTableDeallocators::Deletecc8180
 // 0x10d1d00 RouterMemberTableDeallocators::Delete10d1d00
 // 0x10d2320 RouterMemberTableDeallocators::Delete10d2320
-// CI hash: 0xaaa370 ?Deleteaaa370@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xae4800 ?Deleteae4800@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xae4890 ?Deleteae4890@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xae4920 ?Deleteae4920@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xae55e0 ?Deleteae55e0@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xae5670 ?Deleteae5670@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xb2e460 ?Deleteb2e460@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject18@@I@Z
-// CI hash: 0xb2e700 ?Deleteb2e700@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject18@@I@Z
-// CI hash: 0xb2eb20 ?Deleteb2eb20@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0xca1d40 ?Deleteca1d40@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject20@@I@Z
-// CI hash: 0xcc8180 ?Deletecc8180@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject10@@I@Z
-// CI hash: 0x10d1d00 ?Delete10d1d00@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject18@@I@Z
-// CI hash: 0x10d2320 ?Delete10d2320@RouterMemberTableDeallocators@@SAPEAXPEAURouterMemberTableDeallocatorsMemberObject18@@I@Z
+// CI hash: 0xaaa370 ?Deleteaaa370@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xae4800 ?Deleteae4800@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xae4890 ?Deleteae4890@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xae4920 ?Deleteae4920@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xae55e0 ?Deleteae55e0@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xae5670 ?Deleteae5670@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt10Object@@I@Z
+// CI hash: 0xb2e460 ?Deleteb2e460@RouterMemberTableDeallocators@@SAPEAXPEAUSubobjectAt18Object@@I@Z
+// CI hash: 0xb2e700 ?Deleteb2e700@RouterMemberTableDeallocators@@SAPEAXPEAUSubobjectAt18Object@@I@Z
+// CI hash: 0xb2eb20 ?Deleteb2eb20@RouterMemberTableDeallocators@@SAPEAXPEAUSubobjectAt10Object@@I@Z
+// CI hash: 0xca1d40 ?Deleteca1d40@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt20Object@@I@Z
+// CI hash: 0xcc8180 ?Deletecc8180@RouterMemberTableDeallocators@@SAPEAXPEAUSubobjectAt10Object@@I@Z
+// CI hash: 0x10d1d00 ?Delete10d1d00@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt18Object@@I@Z
+// CI hash: 0x10d2320 ?Delete10d2320@RouterMemberTableDeallocators@@SAPEAXPEAUStringAt18Object@@I@Z
 #include "RouterMemberTableDeallocators.h"
 
-void* RouterMemberTableDeallocators::Deleteaaa370(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+// CrashLogger PDB records deleting destructors with 0-arg void() prototypes; MSVC x64 scalar
+// deleting destructors take (this, deleteFlags) and return this.
+namespace
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
+
+constexpr unsigned int kDeleteMemoryFlag = 1u;
+constexpr unsigned int kGlobalDeleteFlag = 4u;
+constexpr unsigned short kDynamicAllocSizeTag = 0xffffu;
+
+template <typename ObjectType, typename MemberType>
+inline void* DestroyMemberAndRelease(
+    ObjectType* object,
+    void (*destroyMember)(MemberType*),
+    unsigned int deleteFlags,
+    unsigned long long objectSize)
+{
+    destroyMember(&object->member);
+    object->vftable = kReferencedObjectVftable;
+    if ((deleteFlags & kDeleteMemoryFlag) != 0u)
     {
-        if ((flags & 4u) == 0u)
+        if ((deleteFlags & kGlobalDeleteFlag) == 0u)
         {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 24 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
+            unsigned short taggedSize = object->memSizeAndFlags;
+            int allocSize = (taggedSize == kDynamicAllocSizeTag) ? static_cast<int>(objectSize) : taggedSize;
+            RouterTableMemoryRouter* router = static_cast<RouterTableMemoryRouter*>(g_tlsGetValue(g_memoryRouterTlsSlot));
             router->heap->BlockFree(object, allocSize);
         }
         else
         {
-            GlobalDeallocTarget1177a80(object, 24ull);
+            GlobalSizedDelete(object, objectSize);
         }
     }
     return object;
 }
 
-void* RouterMemberTableDeallocators::Deleteae4800(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+} // namespace
+
+void* RouterMemberTableDeallocators::Deleteaaa370(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 24 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 24ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 24ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteae4890(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteae4800(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 32 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 32ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 24ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteae4920(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteae4890(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 32 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 32ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 32ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteae55e0(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteae4920(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 24 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 24ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 32ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteae5670(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteae55e0(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 24 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 24ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 24ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteb2e460(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteae5670(StringAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetab55b0(object->member18);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 48 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 48ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 24ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteb2e700(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteb2e460(SubobjectAt18Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetab55b0(object->member18);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 56 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 56ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedSubobjectB, deleteFlags, 48ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteb2eb20(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteb2e700(SubobjectAt18Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetab55b0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 48 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 48ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedSubobjectB, deleteFlags, 56ull);
 }
 
-void* RouterMemberTableDeallocators::Deleteca1d40(RouterMemberTableDeallocatorsMemberObject20* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteb2eb20(SubobjectAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member20);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 40 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 40ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedSubobjectB, deleteFlags, 48ull);
 }
 
-void* RouterMemberTableDeallocators::Deletecc8180(RouterMemberTableDeallocatorsMemberObject10* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deleteca1d40(StringAt20Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetcc08a0(object->member10);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 88 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 88ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 40ull);
 }
 
-void* RouterMemberTableDeallocators::Delete10d1d00(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Deletecc8180(SubobjectAt10Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member18);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 48 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 48ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedSubobjectC, deleteFlags, 88ull);
 }
 
-void* RouterMemberTableDeallocators::Delete10d2320(RouterMemberTableDeallocatorsMemberObject18* object, unsigned int flags)
+void* RouterMemberTableDeallocators::Delete10d1d00(StringAt18Object* object, unsigned int deleteFlags)
 {
-    CleanupTargetaa77d0(object->member18);
-    object->table = TableTarget1820b98;
-    if ((flags & 1u) != 0u)
-    {
-        if ((flags & 4u) == 0u)
-        {
-            unsigned short tagged = object->memSizeAndFlags;
-            int allocSize = (tagged == 0xffffu) ? 32 : tagged;
-            RouterMemberTableDeallocatorsMemoryRouter* router = static_cast<RouterMemberTableDeallocatorsMemoryRouter*>(TlsGetValueSlot17c8418(RouterTlsSlot325a844));
-            router->heap->BlockFree(object, allocSize);
-        }
-        else
-        {
-            GlobalDeallocTarget1177a80(object, 32ull);
-        }
-    }
-    return object;
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 48ull);
+}
+
+void* RouterMemberTableDeallocators::Delete10d2320(StringAt18Object* object, unsigned int deleteFlags)
+{
+    return DestroyMemberAndRelease(object, &DestroyOwnedStringPtr, deleteFlags, 32ull);
 }
