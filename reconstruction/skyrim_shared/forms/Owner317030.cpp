@@ -1,6 +1,6 @@
-// Source exposure: mixed. Drafted by claude-sonnet-5-5 from local instruction listings of the
+// Source exposure: mixed (pinned image analysis and community names).
 // Code origin: Stamped as a twin of matched 0x1e88f0 (skyrim_shared/forms/TESLeveledList): source copied, names replaced by placeholders. Loose twin: member offsets differ from the exemplar and follow this function's code.
-// pinned image. Names are from CharmedBaryon/CommonLibSSE-NG b93280e (MIT).
+// Names are from CharmedBaryon/CommonLibSSE-NG b93280e (MIT).
 // 0x317030 Owner317030::GetMultCalc
 #include "Owner317030.h"
 
