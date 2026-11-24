@@ -41,6 +41,15 @@ rebuilds it from the forks' `x64-msvc1916` branches and publishes a new tag with
 the top sibling candidates from the downloaded index, also saved as `sibling_x64.json` in the task directory. Names,
 paths and scores only. A missing index or objdump gives one line and never stops `start`.
 
+**Library-shape index (`tools/msvclib`).** CRT/STL-heavy leftovers have no sibling source to transplant, so a third
+index is built from code we write and compile ourselves with the same recipe: `catalog.py gen` writes explicit
+instantiations of the standard headers the compiler ships (containers, smart pointers, `std::function`, algorithms,
+small wrapper functions) over scalar, pointer, plain-struct and nested element types; `build.py` compiles each as
+its own unit natively on Windows (at most four jobs); `index.py sigs`/`leads` and the `tools/f3x64` match, score and
+`cmp_run.py --tag msvclib` steps find unmatched target functions of the same shape. The sources copy no library
+text. `docs/resource-guidelines.md` lists CRT/STL as out of scope for drafting and counting, so a pass here is a lead
+list, not a reconstruction unit, until that row is changed by the maintainer.
+
 **Checking the cookbook against the compiler.** `tools/f3x64/lab_experiments.py` compiles toy spelling variants on the Windows
 runner with the recipe and judges a stated claim per experiment (`lab_compile.py` is the transport and listing parser);
 `corpus.py` counts a source pattern's effect over the sibling listings (line effects, the UnwindHelp store with and without a handler, vftable
