@@ -93,6 +93,10 @@ extern "C" void CleanupTargetbb0810(void* object);
 extern "C" void CleanupTargetbb1e40(void* object);
 extern "C" void CleanupTargetc2e4f0(void* object);
 
+struct RouterCleanupDeallocators5
+{
+};
+
 struct Router5
 {
     static void* Deleteb36e30(void* rawObject, unsigned int flags);
