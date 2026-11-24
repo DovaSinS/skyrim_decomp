@@ -508334,6 +508334,123 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1596df0.json",
       "report": "reports/sse-steam-1-7-104/0x1596df0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6233b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6435760,
+      "size": 7,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function6233b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x6233b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x6233b0.json",
+      "report": "reports/sse-steam-1-7-104/0x6233b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x623450",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6435920,
+      "size": 7,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function623450",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x623450; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x623450.json",
+      "report": "reports/sse-steam-1-7-104/0x623450.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x623460",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6435936,
+      "size": 8,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function623460",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x623460; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x623460.json",
+      "report": "reports/sse-steam-1-7-104/0x623460.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x623910",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6437136,
+      "size": 12,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function623910",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x623910; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x623910.json",
+      "report": "reports/sse-steam-1-7-104/0x623910.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6239f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6437360,
+      "size": 8,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function6239f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x6239f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x6239f0.json",
+      "report": "reports/sse-steam-1-7-104/0x6239f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x623d90",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6438288,
+      "size": 7,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function623d90",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x623d90; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x623d90.json",
+      "report": "reports/sse-steam-1-7-104/0x623d90.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x624780",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6440832,
+      "size": 11,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function624780",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x624780; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x624780.json",
+      "report": "reports/sse-steam-1-7-104/0x624780.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x6247a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6440864,
+      "size": 8,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function6247a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x6247a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x6247a0.json",
+      "report": "reports/sse-steam-1-7-104/0x6247a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x624d50",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 6442320,
+      "size": 12,
+      "status": "matched",
+      "name": "BGSSaveLoadManager::Function624d50",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x624d50; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x624d50.json",
+      "report": "reports/sse-steam-1-7-104/0x624d50.json"
     }
   ],
   "milestones": [
@@ -508376,7 +508493,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-24T05:17:59Z",
+  "updated_at": "2026-11-24T05:46:33Z",
   "work_items": [
     {
       "id": "pin-target",
