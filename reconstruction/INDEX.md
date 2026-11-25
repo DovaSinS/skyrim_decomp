@@ -9497,6 +9497,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nianimation/CleanupLeaf147c60_147c60` | `Function147c60` (GUESS) | `sse-steam-1-7-104` / `0x147c60` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x147c60.json` | matched | full | - |
 | `skyrim/camera/FirstPersonCameraDataStorageLayout` | `represented complete public storage member` (GUESS) | `sse-steam-1-7-104` / `0x148010` / 52 | `represented-magic-wrapper-o2` | `reports/sse-steam-1-7-104/0x148010.json` | matched | full | open |
 | `skyrim_shared/magic/Unlock1489c0` | `Effect::Function1489c0` (GUESS) | `sse-steam-1-7-104` / `0x1489c0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1489c0.json` | matched | full | - |
+| `skyrim_shared/magic/Effect_148a10` | `Effect::Function148a10` (GUESS) | `sse-steam-1-7-104` / `0x148a10` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x148a10.json` | matched | full | - |
 | `skyrim_shared/magic/Effect_148ad0` | `Effect::Function148ad0` (GUESS) | `sse-steam-1-7-104` / `0x148ad0` / 85 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x148ad0.json` | matched | full | - |
 | `skyrim_shared/magic/Effect_148c90` | `Function148c90` (GUESS) | `sse-steam-1-7-104` / `0x148c90` / 70 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x148c90.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadGameBuffer_148de0` | `TempLoadGameBuffer::Function148de0` (GUESS) | `sse-steam-1-7-104` / `0x148de0` / 92 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x148de0.json` | matched | full | - |
@@ -10362,6 +10363,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/extradata/MultiBoundMarkerData` | `MultiBoundMarkerData::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x191740` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x191740.json` | matched | full | open |
 | `skyrim_shared/extradata/MultiBoundMarkerDataStorageLayout` | `DeletingLeaf191750::~DeletingLeaf191750` (GUESS) | `sse-steam-1-7-104` / `0x191750` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x191750.json` | matched | family | open |
 | `unmapped/leaves/Leaf1917c0` | `Leaf1917c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1917c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1917c0.json` | matched | family | open |
+| `unmapped/leaves/Unk191880_191880` | `Function191880` (GUESS) | `sse-steam-1-7-104` / `0x191880` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x191880.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf191890` | `FieldLeaf191890::Read` (GUESS) | `sse-steam-1-7-104` / `0x191890` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x191890.json` | matched | full | - |
 | `bsaudio/Owner191be0` | `Function191be0` (GUESS) | `sse-steam-1-7-104` / `0x191be0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x191be0.json` | matched | full | - |
 | `unmapped/support/SettingCollectionList_Setting__192560` | `Function192560` (GUESS) | `sse-steam-1-7-104` / `0x192560` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x192560.json` | matched | full | - |
@@ -10376,6 +10378,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/magic/Owner194bf0` | `QueuedTempEffect::Function194bf0` (GUESS) | `sse-steam-1-7-104` / `0x194bf0` / 15 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x194bf0.json` | matched | full | - |
 | `unmapped/leaves/Leaf194c10` | `Leaf194c10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x194c10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x194c10.json` | matched | family | open |
 | `skyrim/magic/QueuedTempEffect_194c70` | `QueuedTempEffect::Function194c70` (GUESS) | `sse-steam-1-7-104` / `0x194c70` / 46 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x194c70.json` | matched | full | - |
+| `unmapped/leaves/Unk196600_196600` | `Function196600` (GUESS) | `sse-steam-1-7-104` / `0x196600` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x196600.json` | matched | full | - |
 | `gamebryo/nimain/Owner199b80` | `Function199b80` (GUESS) | `sse-steam-1-7-104` / `0x199b80` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x199b80.json` | matched | full | - |
 | `unmapped/leaves/LeafForward19a980` | `LeafForward19a980::Forward` (GUESS) | `sse-steam-1-7-104` / `0x19a980` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x19a980.json` | matched | full | checked |
 | `skyrim_shared/world/Unlock19aa10` | `Function19aa10` (GUESS) | `sse-steam-1-7-104` / `0x19aa10` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x19aa10.json` | matched | full | - |
@@ -10572,6 +10575,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/controls/TESDataHandler_1badf0` | `TESDataHandler::Function1badf0` (GUESS) | `sse-steam-1-7-104` / `0x1badf0` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1badf0.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf1c1040` | `ReturnLeaf1c1040::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1c1040` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1c1040.json` | matched | family | open |
 | `skyrim/ai/movement/Owner1c2280` | `Function1c2280` (GUESS) | `sse-steam-1-7-104` / `0x1c2280` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1c2280.json` | matched | full | - |
+| `unmapped/leaves/Unk1c2290_1c2290` | `Function1c2290` (GUESS) | `sse-steam-1-7-104` / `0x1c2290` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1c2290.json` | matched | full | - |
 | `skyrim/controls/TESDataHandler_1c3680` | `TESDataHandler::Function1c3680` (GUESS) | `sse-steam-1-7-104` / `0x1c3680` / 10 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1c3680.json` | matched | full | - |
 | `unmapped/wrappers/BSTArrayFindEraseOrdered` | `Function1c5810` (GUESS) | `sse-steam-1-7-104` / `0x1c5810` / 164 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1c5810.json` | matched | full | - |
 | `unmapped/wrappers/BSTArrayFindEraseOrdered` | `Function1c58c0` (GUESS) | `sse-steam-1-7-104` / `0x1c58c0` / 164 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1c58c0.json` | matched | full | - |
@@ -10630,6 +10634,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/magic/Owner1cbd00` | `Function1cbd00` (GUESS) | `sse-steam-1-7-104` / `0x1cbd00` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cbd00.json` | matched | full | - |
 | `skyrim/ai/movement/Owner1cc6b0` | `Function1cc6b0` (GUESS) | `sse-steam-1-7-104` / `0x1cc6b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cc6b0.json` | matched | full | - |
 | `skyrim_shared/forms/TESFile_1cc6f0` | `Function1cc6f0` (GUESS) | `sse-steam-1-7-104` / `0x1cc6f0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cc6f0.json` | matched | full | - |
+| `unmapped/leaves/Unk1cc700_1cc700` | `Function1cc700` (GUESS) | `sse-steam-1-7-104` / `0x1cc700` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cc700.json` | matched | full | - |
 | `skyrim_shared/forms/TESFile_1cd5d0` | `TESFile::Function1cd5d0` (GUESS) | `sse-steam-1-7-104` / `0x1cd5d0` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cd5d0.json` | matched | full | - |
 | `skyrim_shared/forms/TESFile_1cd5d0` | `TESFile::Function1cd780` (GUESS) | `sse-steam-1-7-104` / `0x1cd780` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cd780.json` | matched | full | - |
 | `skyrim_shared/forms/TESFile` | `TESFile::GetFormType` (COMMUNITY) | `sse-steam-1-7-104` / `0x1cd7d0` / 72 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1cd7d0.json` | matched | full | - |
@@ -10884,6 +10889,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/forms/TESForm_1e6260` | `SetTemporary` (GUESS) | `sse-steam-1-7-104` / `0x1e6260` / 49 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x1e6260.json` | matched | full | open |
 | `skyrim_shared/world/Owner1e6450` | `Function1e6450` (GUESS) | `sse-steam-1-7-104` / `0x1e6450` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6450.json` | matched | full | - |
 | `skyrim_shared/refs/TESObjectREFR` | `TESObjectREFR::Function1e64c0` (GUESS) | `sse-steam-1-7-104` / `0x1e64c0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e64c0.json` | matched | full | - |
+| `unmapped/leaves/Unk1e6600_1e6600` | `Function1e6600` (GUESS) | `sse-steam-1-7-104` / `0x1e6600` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6600.json` | matched | full | - |
 | `unmapped/leaves/LeafForward1e68f0` | `LeafForward1e68f0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1e68f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e68f0.json` | matched | family | open |
 | `skyrim_shared/forms/TESForm_1466a0` | `TESForm::Function1e6900` (GUESS) | `sse-steam-1-7-104` / `0x1e6900` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6900.json` | matched | full | - |
 | `unmapped/leaves/Leaf1e6920` | `Leaf1e6920::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1e6920` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6920.json` | matched | family | open |
@@ -10893,6 +10899,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf1e6b40` | `ReturnLeaf1e6b40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1e6b40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6b40.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf1e6b50` | `ReturnLeaf1e6b50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1e6b50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6b50.json` | matched | family | open |
 | `skyrim_shared/refs/TESObjectREFR_1e6b60` | `TESObjectREFR::Function1e6b60` (GUESS) | `sse-steam-1-7-104` / `0x1e6b60` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6b60.json` | matched | full | - |
+| `unmapped/leaves/Unk1e6bb0_1e6bb0` | `Function1e6bb0` (GUESS) | `sse-steam-1-7-104` / `0x1e6bb0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6bb0.json` | matched | full | - |
 | `skyrim_shared/forms/TESForm_1e6d00` | `TESForm::AddCompileIndex` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x1e6d00` / 75 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e6d00.json` | matched | full | open |
 | `skyrim_shared/forms/TESBoundObject` | `TESBoundObject::Function1e71b0` (GUESS) | `sse-steam-1-7-104` / `0x1e71b0` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e71b0.json` | matched | full | - |
 | `unmapped/leaves/LeafForward1e76c0` | `LeafForward1e76c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1e76c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1e76c0.json` | matched | family | open |
@@ -11014,7 +11021,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/forms/TESWeightForm` | `TESWeightForm::CopyComponent` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f3760` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3760.json` | matched | full | checked |
 | `skyrim_shared/forms/TESWeightForm_1f38d0` | `TESWeightForm::~TESWeightForm` (COMMUNITY) | `sse-steam-1-7-104` / `0x1f38d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f38d0.json` | matched | full | - |
 | - | `Function1f3900` (GUESS) | `sse-steam-1-7-104` / `0x1f3900` / 120 | - | - | mapped | - | - |
-| - | `Function1f3a20` (GUESS) | `sse-steam-1-7-104` / `0x1f3a20` / 53 | - | - | mapped | - | - |
+| `unmapped/leaves/ActionInput_1f3a20` | `Function1f3a20` (GUESS) | `sse-steam-1-7-104` / `0x1f3a20` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3a20.json` | matched | full | - |
 | `unmapped/represented/F004Recovered1f3a60` | `F004Recovered1f3a60::~F004Recovered1f3a60` (GUESS) | `sse-steam-1-7-104` / `0x1f3a60` / 52 | `represented-magic-wrapper-o2` | `reports/sse-steam-1-7-104/0x1f3a60.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf1f3aa0` | `ReturnLeaf1f3aa0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1f3aa0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3aa0.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf1f3ab0` | `ReturnLeaf1f3ab0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1f3ab0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1f3ab0.json` | matched | family | open |
@@ -11141,7 +11148,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf20c300` | `Leaf20c300::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x20c300` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20c300.json` | matched | family | open |
 | `unmapped/leaves/Leaf20c310` | `Leaf20c310::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x20c310` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20c310.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf20ceb0` | `NiAlphaProperty::GetType` (COMMUNITY) | `sse-steam-1-7-104` / `0x20ceb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20ceb0.json` | matched | family | open |
+| `unmapped/leaves/Unk20d030_20d030` | `Function20d030` (GUESS) | `sse-steam-1-7-104` / `0x20d030` / 34 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x20d030.json` | matched | full | - |
 | `skyrim_shared/forms/Unlock20d100` | `Function20d100` (GUESS) | `sse-steam-1-7-104` / `0x20d100` / 59 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20d100.json` | matched | full | - |
+| `unmapped/leaves/Unk20d6b0_20d6b0` | `Function20d6b0` (GUESS) | `sse-steam-1-7-104` / `0x20d6b0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20d6b0.json` | matched | full | - |
 | `unmapped/leaves/Leaf20dfa0` | `Leaf20dfa0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x20dfa0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20dfa0.json` | matched | family | open |
 | `unmapped/leaves/ThunkLeaf20ed10` | `ThunkLeaf20ed10::Forward` (GUESS) | `sse-steam-1-7-104` / `0x20ed10` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x20ed10.json` | matched | full | - |
 | `unmapped/leaves/Leaf210e80` | `Leaf210e80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x210e80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x210e80.json` | matched | family | open |
@@ -11186,6 +11195,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/TableStoreLeaf217860` | `TableStoreLeaf217860::~TableStoreLeaf217860` (GUESS) | `sse-steam-1-7-104` / `0x217860` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x217860.json` | matched | family | open |
 | - | `DeletingLeaf217870::~DeletingLeaf217870` (GUESS) | `sse-steam-1-7-104` / `0x217870` / 43 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafAddress2178c0` | `LeafAddress2178c0::Address` (GUESS) | `sse-steam-1-7-104` / `0x2178c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2178c0.json` | matched | family | open |
+| `unmapped/leaves/Unk217bd0_217bd0` | `Function217bd0` (GUESS) | `sse-steam-1-7-104` / `0x217bd0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x217bd0.json` | matched | full | - |
 | `skyrim_shared/actors/BipedAnim_21ad20` | `BipedAnim::Function21ad20` (GUESS) | `sse-steam-1-7-104` / `0x21ad20` / 83 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x21ad20.json` | matched | full | - |
 | `skyrim_shared/actors/BipedAnim_21aff0` | `BipedAnim::Function21aff0` (GUESS) | `sse-steam-1-7-104` / `0x21aff0` / 28 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x21aff0.json` | matched | full | - |
 | `gamebryo/nimain/NiAVObject_21cba0` | `NiAVObject::Function21cba0` (GUESS) | `sse-steam-1-7-104` / `0x21cba0` / 103 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x21cba0.json` | matched | full | - |
@@ -11211,6 +11221,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nianimation/ArrayDtorLeaf221420_221420` | `Function221420` (GUESS) | `sse-steam-1-7-104` / `0x221420` / 78 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x221420.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf221550` | `DeletingLeaf221550::~DeletingLeaf221550` (GUESS) | `sse-steam-1-7-104` / `0x221550` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x221550.json` | matched | family | open |
 | `unmapped/leaves/Leaf222d50` | `Leaf222d50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x222d50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x222d50.json` | matched | full | checked |
+| `unmapped/leaves/Unk222d70_222d70` | `Function222d70` (GUESS) | `sse-steam-1-7-104` / `0x222d70` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x222d70.json` | matched | full | - |
 | `bsscript/GlobalFunc_2240f0` | `Function2240f0` (GUESS) | `sse-steam-1-7-104` / `0x2240f0` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2240f0.json` | matched | full | - |
 | `bsscript/GlobalFunc_224130` | `Function224130` (GUESS) | `sse-steam-1-7-104` / `0x224130` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x224130.json` | matched | full | - |
 | `gamebryo/nimain/NiNode` | `NiNode::Function224640` (GUESS) | `sse-steam-1-7-104` / `0x224640` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x224640.json` | matched | full | - |
@@ -11237,6 +11248,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/RelayLeaf227e00` | `RelayLeaf227e00::Relay` (GUESS) | `sse-steam-1-7-104` / `0x227e00` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x227e00.json` | matched | full | - |
 | `unmapped/leaves/RelayLeaf227e30` | `RelayLeaf227e30::Relay` (GUESS) | `sse-steam-1-7-104` / `0x227e30` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x227e30.json` | matched | full | - |
 | `skyrim_shared/forms/Unlock228e80` | `InventoryEntryData::Function228e80` (GUESS) | `sse-steam-1-7-104` / `0x228e80` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x228e80.json` | matched | full | - |
+| `skyrim_shared/inventory/InventoryEntryData_22a560` | `InventoryEntryData::Function22a560` (GUESS) | `sse-steam-1-7-104` / `0x22a560` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x22a560.json` | matched | full | - |
 | `skyrim_shared/refs/TESObjectREFR_22b2c0` | `TESObjectREFR::GetInventoryChanges` (COMMUNITY) | `sse-steam-1-7-104` / `0x22b2c0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x22b2c0.json` | matched | full | - |
 | `skyrim_shared/inventory/InventoryChanges_22b5a0` | `InventoryChanges::Function22b5a0` (GUESS) | `sse-steam-1-7-104` / `0x22b5a0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x22b5a0.json` | matched | full | - |
 | `skyrim_shared/inventory/InventoryChanges` | `InventoryUtils::ItemFilter::~ItemFilter` (GUESS) | `sse-steam-1-7-104` / `0x22b710` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x22b710.json` | matched | label-only | - |
@@ -11334,6 +11346,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/TESRegion_24f9e0` | `TESRegion::Function24f9e0` (GUESS) | `sse-steam-1-7-104` / `0x24f9e0` / 86 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24f9e0.json` | matched | full | - |
 | `skyrim_shared/world/TESRegion_24fa40` | `TESRegion::Function24fa40` (GUESS) | `sse-steam-1-7-104` / `0x24fa40` / 86 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24fa40.json` | matched | full | - |
 | `skyrim_shared/world/TESRegion` | `TESRegion::Validate` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x24faa0` / 77 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24faa0.json` | matched | full | open |
+| `unmapped/leaves/Unk24fe90_24fe90` | `Function24fe90` (GUESS) | `sse-steam-1-7-104` / `0x24fe90` / 35 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24fe90.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf24fec0` | `TableStoreLeaf24fec0::~TableStoreLeaf24fec0` (GUESS) | `sse-steam-1-7-104` / `0x24fec0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24fec0.json` | matched | family | open |
 | `skyrim_shared/world/TESRegionData` | `TESRegionData::LoadDataHeader` (COMMUNITY) | `sse-steam-1-7-104` / `0x24fee0` / 29 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24fee0.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionData` | `TESRegionData::Function24ff10` (GUESS) | `sse-steam-1-7-104` / `0x24ff10` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x24ff10.json` | matched | full | - |
@@ -11396,6 +11409,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf2586f0` | `ReturnLeaf2586f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2586f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2586f0.json` | matched | family | open |
 | `skyrim_shared/world/TESRegionObject` | `TESRegionObject::Slot2` (GUESS) | `sse-steam-1-7-104` / `0x258700` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x258700.json` | matched | full | open |
 | `skyrim_shared/world/TESRegionObjectList_258d90` | `Function258d90` (GUESS) | `sse-steam-1-7-104` / `0x258d90` / 254 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x258d90.json` | matched | full | - |
+| `unmapped/leaves/Unk2591e0_2591e0` | `Function2591e0` (GUESS) | `sse-steam-1-7-104` / `0x2591e0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2591e0.json` | matched | full | - |
+| `unmapped/leaves/Unk259200_259200` | `Function259200` (GUESS) | `sse-steam-1-7-104` / `0x259200` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x259200.json` | matched | full | - |
 | `unmapped/support/Globals_259640` | `Function259640` (GUESS) | `sse-steam-1-7-104` / `0x259640` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x259640.json` | matched | full | - |
 | `skyrim_shared/forms/Owner259d40` | `Function259d40` (GUESS) | `sse-steam-1-7-104` / `0x259d40` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x259d40.json` | matched | full | - |
 | `skyrim_shared/world/TESRegionPointList_25b250` | `Function25b250` (GUESS) | `sse-steam-1-7-104` / `0x25b250` / 115 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x25b250.json` | matched | full | - |
@@ -12261,6 +12276,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf2b63a0` | `DeletingLeaf2b63a0::~DeletingLeaf2b63a0` (GUESS) | `sse-steam-1-7-104` / `0x2b63a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b63a0.json` | matched | family | open |
 | `unmapped/storage/StorageInit2b64f0` | `StorageInit2b64f0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x2b64f0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b64f0.json` | matched | family | open |
 | `skyrim_shared/world/TESObjectLAND_2b2600` | `TESObjectLAND::Function2b6530` (GUESS) | `sse-steam-1-7-104` / `0x2b6530` / 5 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x2b6530.json` | matched | full | - |
+| `unmapped/leaves/Unk2b6540_2b6540` | `Function2b6540` (GUESS) | `sse-steam-1-7-104` / `0x2b6540` / 122 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x2b6540.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf2b6670` | `FieldLeaf2b6670::Read` (GUESS) | `sse-steam-1-7-104` / `0x2b6670` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b6670.json` | matched | family | open |
 | `unmapped/leaves/Leaf2b6680` | `Leaf2b6680::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x2b6680` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b6680.json` | matched | family | open |
 | `unmapped/fields/FieldLeaf2b66f0` | `FieldLeaf2b66f0::Read` (GUESS) | `sse-steam-1-7-104` / `0x2b66f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x2b66f0.json` | matched | full | open |
@@ -13646,6 +13662,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bshavok/PhantomOverlapListenerPrefixLayout` | `BGSIdleMarkerRemainingStoragePrefixLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x391af0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391af0.json` | matched | full | open |
 | `skyrim_shared/forms/BGSIdleMarker` | `BGSIdleMarker::~BGSIdleMarker` (COMMUNITY) | `sse-steam-1-7-104` / `0x391b00` / 115 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391b00.json` | matched | full | - |
 | `skyrim_shared/forms/BGSIdleMarker` | `BGSIdleMarker::GetIgnoredBySandbox` (COMMUNITY) | `sse-steam-1-7-104` / `0x391b80` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391b80.json` | matched | full | open |
+| `unmapped/leaves/Unk391bd0_391bd0` | `Function391bd0` (GUESS) | `sse-steam-1-7-104` / `0x391bd0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391bd0.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf391e40` | `FieldLeaf391e40::Read` (GUESS) | `sse-steam-1-7-104` / `0x391e40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391e40.json` | matched | family | open |
 | `unmapped/leaves/Leaf391e50` | `Leaf391e50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x391e50` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391e50.json` | matched | family | open |
 | `skyrim_shared/forms/ConcreteFormFactory_30ac70` | `Function391e60` (GUESS) | `sse-steam-1-7-104` / `0x391e60` / 86 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x391e60.json` | matched | full | - |
@@ -13866,6 +13883,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/Owner3adc50` | `Function3adc50` (GUESS) | `sse-steam-1-7-104` / `0x3adc50` / 43 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x3adc50.json` | matched | full | - |
 | `skyrim_shared/tempeffects/Owner3ae190` | `Function3ae190` (GUESS) | `sse-steam-1-7-104` / `0x3ae190` / 35 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ae190.json` | matched | full | - |
 | `unmapped/storage/StorageInit3ae270` | `StorageInit3ae270::initialize` (GUESS) | `sse-steam-1-7-104` / `0x3ae270` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ae270.json` | matched | family | open |
+| `unmapped/leaves/Unk3ae540_3ae540` | `Function3ae540` (GUESS) | `sse-steam-1-7-104` / `0x3ae540` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ae540.json` | matched | full | - |
+| `unmapped/leaves/Unk3ae560_3ae560` | `Function3ae560` (GUESS) | `sse-steam-1-7-104` / `0x3ae560` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ae560.json` | matched | full | - |
+| `unmapped/leaves/Unk3ae600_3ae600` | `Function3ae600` (GUESS) | `sse-steam-1-7-104` / `0x3ae600` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3ae600.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf3aea40` | `FieldLeaf3aea40::Read` (GUESS) | `sse-steam-1-7-104` / `0x3aea40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3aea40.json` | matched | family | open |
 | `unmapped/leaves/Leaf3aea50` | `Leaf3aea50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x3aea50` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3aea50.json` | matched | family | open |
 | `skyrim_shared/forms/ConcreteFormFactory_30ac70` | `Function3aea60` (GUESS) | `sse-steam-1-7-104` / `0x3aea60` / 86 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x3aea60.json` | matched | full | - |
@@ -14466,6 +14486,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf42edd0` | `Leaf42edd0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x42edd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x42edd0.json` | matched | family | open |
 | `unmapped/leaves/Leaf42ede0` | `Leaf42ede0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x42ede0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x42ede0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf430830` | `TableStoreLeaf430830::~TableStoreLeaf430830` (GUESS) | `sse-steam-1-7-104` / `0x430830` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x430830.json` | matched | family | open |
+| `unmapped/leaves/Unk430870_430870` | `Function430870` (GUESS) | `sse-steam-1-7-104` / `0x430870` / 17 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x430870.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf430ff0` | `ReturnLeaf430ff0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x430ff0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x430ff0.json` | matched | family | open |
 | `skyrim_shared/facegen/BSFaceGenKeyframeMultiple_431ad0` | `BSFaceGenKeyframeMultiple::Function431ad0` (GUESS) | `sse-steam-1-7-104` / `0x431ad0` / 66 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x431ad0.json` | matched | full | - |
 | `skyrim_shared/facegen/BSFaceGenKeyframeMultiple_431d20` | `BSFaceGenKeyframeMultiple::Unk_08` (COMMUNITY) | `sse-steam-1-7-104` / `0x431d20` / 108 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x431d20.json` | matched | full | - |
@@ -14556,9 +14577,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/storage/StorageInit441420` | `StorageInit441420::initialize` (GUESS) | `sse-steam-1-7-104` / `0x441420` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x441420.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress441480` | `LeafAddress441480::Address` (GUESS) | `sse-steam-1-7-104` / `0x441480` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x441480.json` | matched | family | open |
 | `unmapped/wrappers/BSTArrayResizeTrivial1` | `Function441690` (GUESS) | `sse-steam-1-7-104` / `0x441690` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x441690.json` | matched | full | - |
+| `unmapped/leaves/Unk441910_441910` | `Function441910` (GUESS) | `sse-steam-1-7-104` / `0x441910` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x441910.json` | matched | full | - |
+| `unmapped/leaves/Unk441920_441920` | `Function441920` (GUESS) | `sse-steam-1-7-104` / `0x441920` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x441920.json` | matched | full | - |
 | `unmapped/leaves/BGSLoadGameBuffer_442ae0` | `Function442ae0` (GUESS) | `sse-steam-1-7-104` / `0x442ae0` / 92 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x442ae0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress442e20` | `LeafAddress442e20::Address` (GUESS) | `sse-steam-1-7-104` / `0x442e20` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x442e20.json` | matched | family | open |
 | `unmapped/leaves/Leaf442e30` | `Leaf442e30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x442e30` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x442e30.json` | matched | family | open |
+| `skyrim_shared/actors/ActorValueList_4430e0` | `Function4430e0` (GUESS) | `sse-steam-1-7-104` / `0x4430e0` / 36 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4430e0.json` | matched | full | - |
+| `skyrim_shared/actors/ActorValueList_4432f0` | `Function4432f0` (GUESS) | `sse-steam-1-7-104` / `0x4432f0` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4432f0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress446200` | `LeafAddress446200::Address` (GUESS) | `sse-steam-1-7-104` / `0x446200` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x446200.json` | matched | family | open |
 | `unmapped/leaves/ArrayLeaf446ac0` | `Function446ac0` (GUESS) | `sse-steam-1-7-104` / `0x446ac0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x446ac0.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf446bb0` | `Function446bb0` (GUESS) | `sse-steam-1-7-104` / `0x446bb0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x446bb0.json` | matched | full | - |
@@ -14575,6 +14600,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf447170` | `ReturnLeaf447170::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x447170` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447170.json` | matched | family | open |
 | `skyrim_shared/actors/ActorValueOwner_447180` | `ActorValueOwner::Function447180` (GUESS) | `sse-steam-1-7-104` / `0x447180` / 119 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447180.json` | matched | full | - |
 | `unmapped/leaves/BGSAIOperationsMeter_4478e0` | `Function4478e0` (GUESS) | `sse-steam-1-7-104` / `0x4478e0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4478e0.json` | matched | full | - |
+| `unmapped/leaves/Unk447920_447920` | `Function447920` (GUESS) | `sse-steam-1-7-104` / `0x447920` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447920.json` | matched | full | - |
+| `unmapped/leaves/Unk447980_447980` | `Function447980` (GUESS) | `sse-steam-1-7-104` / `0x447980` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447980.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf447a10` | `TableStoreLeaf447a10::~TableStoreLeaf447a10` (GUESS) | `sse-steam-1-7-104` / `0x447a10` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447a10.json` | matched | family | open |
 | `unmapped/leaves/Leaf447a30` | `Leaf447a30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x447a30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447a30.json` | matched | family | open |
 | `skyrim/ai/BGSAIWorldLocation_447a40` | `BGSAIWorldLocation::Function447a40` (GUESS) | `sse-steam-1-7-104` / `0x447a40` / 114 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x447a40.json` | matched | full | - |
@@ -14627,6 +14654,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/combat/BGSAttackDataMap` | `BGSAttackDataMap::GetAttackData` (COMMUNITY) | `sse-steam-1-7-104` / `0x44ab10` / 9 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x44ab10.json` | matched | full | - |
 | `skyrim/ai/combat/BGSAttackData` | `BGSAttackData::~BGSAttackData` (COMMUNITY) | `sse-steam-1-7-104` / `0x44afe0` / 73 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44afe0.json` | matched | full | - |
 | `unmapped/leaves/Leaf44b170` | `Leaf44b170::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x44b170` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44b170.json` | matched | family | open |
+| `unmapped/leaves/Unk44b560_44b560` | `Function44b560` (GUESS) | `sse-steam-1-7-104` / `0x44b560` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44b560.json` | matched | full | - |
 | `unmapped/leaves/BGSPackageDataList_44b9e0` | `Function44b9e0` (GUESS) | `sse-steam-1-7-104` / `0x44b9e0` / 74 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44b9e0.json` | matched | full | - |
 | `unmapped/leaves/BGSPackageDataList_44bcd0` | `Function44bcd0` (GUESS) | `sse-steam-1-7-104` / `0x44bcd0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44bcd0.json` | matched | full | - |
 | `unmapped/leaves/BGSPackageDataList_44c140` | `Function44c140` (GUESS) | `sse-steam-1-7-104` / `0x44c140` / 112 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44c140.json` | matched | full | - |
@@ -14646,6 +14674,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf44d5c0` | `Leaf44d5c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x44d5c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d5c0.json` | matched | family | open |
 | `unmapped/leaves/Leaf44d5d0` | `Leaf44d5d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x44d5d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d5d0.json` | matched | family | open |
 | `skyrim/ai/Owner44d730` | `Function44d730` (GUESS) | `sse-steam-1-7-104` / `0x44d730` / 81 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d730.json` | matched | full | - |
+| `unmapped/leaves/Unk44d790_44d790` | `Function44d790` (GUESS) | `sse-steam-1-7-104` / `0x44d790` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x44d790.json` | matched | full | - |
 | - | `BGSPackageDataBool::GetDataAsString` (COMMUNITY) | `sse-steam-1-7-104` / `0x44d7b0` / 40 | - | - | mapped | - | - |
 | - | `BGSPackageDataBool::Assign` (COMMUNITY) | `sse-steam-1-7-104` / `0x44d7e0` / 87 | - | - | mapped | - | - |
 | - | `BGSPackageDataBool::IsNotEqual` (COMMUNITY) | `sse-steam-1-7-104` / `0x44d840` / 151 | - | - | mapped | - | - |
@@ -15096,6 +15125,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/BGSProcedureBase_45bfe0` | `BGSProcedureBase::Func7_1403FA5B0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x45bfe0` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45bfe0.json` | matched | full | - |
 | `skyrim/ai/BGSProcedureBase_45bfe0` | `BGSProcedureBase::CreateExecState` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x45c020` / 60 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45c020.json` | matched | full | - |
 | `skyrim/ai/BGSProcedureBase_45bfe0` | `CombatInventoryItemMagic::CreateCaster` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x45c240` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45c240.json` | matched | full | - |
+| `unmapped/leaves/Unk45c380_45c380` | `Function45c380` (GUESS) | `sse-steam-1-7-104` / `0x45c380` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45c380.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf45c6a0` | `ReturnLeaf45c6a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x45c6a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45c6a0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf45cbe0` | `TableStoreLeaf45cbe0::~TableStoreLeaf45cbe0` (GUESS) | `sse-steam-1-7-104` / `0x45cbe0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45cbe0.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf45cd20` | `TableStoreLeaf45cd20::~TableStoreLeaf45cd20` (GUESS) | `sse-steam-1-7-104` / `0x45cd20` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x45cd20.json` | matched | family | open |
@@ -15635,6 +15665,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/VirtualTail496320` | `VirtualTail496320::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x496320` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x496320.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress4963c0` | `LeafAddress4963c0::Address` (GUESS) | `sse-steam-1-7-104` / `0x4963c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4963c0.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress4963d0` | `LeafAddress4963d0::Address` (GUESS) | `sse-steam-1-7-104` / `0x4963d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4963d0.json` | matched | family | open |
+| `skyrim_shared/forms/BGSVisitProceduresInitActorLocation_4964f0` | `Function4964f0` (GUESS) | `sse-steam-1-7-104` / `0x4964f0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4964f0.json` | matched | full | - |
 | `skyrim/ai/Unlock4965e0` | `Function4965e0` (GUESS) | `sse-steam-1-7-104` / `0x4965e0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4965e0.json` | matched | full | - |
 | `skyrim/ai/Unlock496600` | `Function496600` (GUESS) | `sse-steam-1-7-104` / `0x496600` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x496600.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf496650` | `DeletingLeaf496650::~DeletingLeaf496650` (GUESS) | `sse-steam-1-7-104` / `0x496650` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x496650.json` | matched | full | - |
@@ -15746,10 +15777,23 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf4a2340` | `Leaf4a2340::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4a2340` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a2340.json` | matched | family | open |
 | `skyrim/ai/PackageList_4a2ff0` | `Function4a2ff0` (GUESS) | `sse-steam-1-7-104` / `0x4a2ff0` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a2ff0.json` | matched | full | - |
 | `skyrim/ai/Unlock4a3370` | `Function4a3370` (GUESS) | `sse-steam-1-7-104` / `0x4a3370` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a3370.json` | matched | full | - |
+| `skyrim/ai/PackageLocation_4a3480` | `PackageLocation::Function4a3480` (GUESS) | `sse-steam-1-7-104` / `0x4a3480` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a3480.json` | matched | full | - |
+| `skyrim/ai/PackageLocation_4a35f0` | `PackageLocation::Function4a35f0` (GUESS) | `sse-steam-1-7-104` / `0x4a35f0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a35f0.json` | matched | full | - |
+| `skyrim/ai/PackageLocation_4a3670` | `PackageLocation::Function4a3670` (GUESS) | `sse-steam-1-7-104` / `0x4a3670` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a3670.json` | matched | full | - |
+| `skyrim/ai/PackageLocation_4a3710` | `PackageLocation::Function4a3710` (GUESS) | `sse-steam-1-7-104` / `0x4a3710` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a3710.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf4a5640` | `ReturnLeaf4a5640::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4a5640` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5640.json` | matched | family | open |
 | `unmapped/leaves/Leaf4a56c0` | `Leaf4a56c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4a56c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a56c0.json` | matched | family | open |
+| `unmapped/leaves/Unk4a5820_4a5820` | `Function4a5820` (GUESS) | `sse-steam-1-7-104` / `0x4a5820` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5820.json` | matched | full | - |
 | `unmapped/leaves/Leaf4a5a20` | `Leaf4a5a20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x4a5a20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5a20.json` | matched | family | open |
+| `unmapped/leaves/Unk4a5b10_4a5b10` | `Function4a5b10` (GUESS) | `sse-steam-1-7-104` / `0x4a5b10` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5b10.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5b20_4a5b20` | `Function4a5b20` (GUESS) | `sse-steam-1-7-104` / `0x4a5b20` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5b20.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5b40_4a5b40` | `Function4a5b40` (GUESS) | `sse-steam-1-7-104` / `0x4a5b40` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5b40.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5b60_4a5b60` | `Function4a5b60` (GUESS) | `sse-steam-1-7-104` / `0x4a5b60` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5b60.json` | matched | full | - |
 | `skyrim/ai/Owner4a5ba0` | `Function4a5ba0` (GUESS) | `sse-steam-1-7-104` / `0x4a5ba0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5ba0.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5bb0_4a5bb0` | `Function4a5bb0` (GUESS) | `sse-steam-1-7-104` / `0x4a5bb0` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5bb0.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5c90_4a5c90` | `Function4a5c90` (GUESS) | `sse-steam-1-7-104` / `0x4a5c90` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5c90.json` | matched | full | - |
+| `unmapped/leaves/Unk4a5cf0_4a5cf0` | `Function4a5cf0` (GUESS) | `sse-steam-1-7-104` / `0x4a5cf0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a5cf0.json` | matched | full | - |
+| `unmapped/leaves/Unk4a6610_4a6610` | `Function4a6610` (GUESS) | `sse-steam-1-7-104` / `0x4a6610` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a6610.json` | matched | full | - |
 | `skyrim/ai/Unlock4a67f0` | `Function4a67f0` (GUESS) | `sse-steam-1-7-104` / `0x4a67f0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a67f0.json` | matched | full | - |
 | `skyrim_shared/conditions/TESCondition_4a6940` | `Function4a6940` (GUESS) | `sse-steam-1-7-104` / `0x4a6940` / 51 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a6940.json` | matched | full | - |
 | `skyrim_shared/conditions/TESCondition_4a6ba0` | `TESCondition::Function4a6ba0` (GUESS) | `sse-steam-1-7-104` / `0x4a6ba0` / 100 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x4a6ba0.json` | matched | full | - |
@@ -16355,6 +16399,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/world/BGSTerrainUtils_51ca70` | `Function51ca70` (GUESS) | `sse-steam-1-7-104` / `0x51ca70` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51ca70.json` | matched | full | - |
 | `skyrim_shared/world/BGSTerrainUtils_51ccd0` | `Function51ccd0` (GUESS) | `sse-steam-1-7-104` / `0x51ccd0` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51ccd0.json` | matched | full | - |
 | - | `Function51cd40` (GUESS) | `sse-steam-1-7-104` / `0x51cd40` / 255 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk51ce40_51ce40` | `Function51ce40` (GUESS) | `sse-steam-1-7-104` / `0x51ce40` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51ce40.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf51d570` | `ReturnLeaf51d570::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x51d570` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51d570.json` | matched | family | open |
 | `unmapped/leaves/Leaf51fe60` | `Leaf51fe60::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x51fe60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51fe60.json` | matched | family | open |
 | `unmapped/leaves/Leaf51fe70` | `Leaf51fe70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x51fe70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x51fe70.json` | matched | family | open |
@@ -16366,6 +16411,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bscore/ArrayAllocatorLeafLayout` | `DeletingLeaf5244d0::~DeletingLeaf5244d0` (GUESS) | `sse-steam-1-7-104` / `0x5244d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5244d0.json` | matched | full | open |
 | `skyrim_shared/extradata/Owner524550` | `Function524550` (GUESS) | `sse-steam-1-7-104` / `0x524550` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x524550.json` | matched | full | - |
 | `unmapped/leaves/Leaf5245d0` | `Leaf5245d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x5245d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5245d0.json` | matched | family | open |
+| `skyrim_shared/forms/BGSWaterCollisionManager__BGSWaterUpdateI_525000` | `Function525000` (GUESS) | `sse-steam-1-7-104` / `0x525000` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x525000.json` | matched | full | - |
 | `unmapped/leaves/LeafForward527960` | `LeafForward527960::Forward` (GUESS) | `sse-steam-1-7-104` / `0x527960` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x527960.json` | matched | family | open |
 | `skyrim/ai/movement/Owner527a68` | `Function527a68` (GUESS) | `sse-steam-1-7-104` / `0x527a68` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x527a68.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf527a80` | `DeletingLeaf527a80::~DeletingLeaf527a80` (GUESS) | `sse-steam-1-7-104` / `0x527a80` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x527a80.json` | matched | full | - |
@@ -16404,7 +16450,13 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/MemoryCreateObject1` | `Function52f870` (GUESS) | `sse-steam-1-7-104` / `0x52f870` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52f870.json` | matched | full | - |
 | `bscore/MapView_52f8d0` | `Function52f8d0` (GUESS) | `sse-steam-1-7-104` / `0x52f8d0` / 163 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x52f8d0.json` | matched | full | - |
 | `unmapped/storage/StorageInit530100` | `StorageInit530100::initialize` (GUESS) | `sse-steam-1-7-104` / `0x530100` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x530100.json` | matched | family | open |
+| `unmapped/leaves/Unk5329f0_5329f0` | `Function5329f0` (GUESS) | `sse-steam-1-7-104` / `0x5329f0` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5329f0.json` | matched | full | - |
+| `unmapped/leaves/Unk532a10_532a10` | `Function532a10` (GUESS) | `sse-steam-1-7-104` / `0x532a10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x532a10.json` | matched | full | - |
+| `unmapped/leaves/Unk532a20_532a20` | `Function532a20` (GUESS) | `sse-steam-1-7-104` / `0x532a20` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x532a20.json` | matched | full | - |
+| `unmapped/leaves/Unk532a30_532a30` | `Function532a30` (GUESS) | `sse-steam-1-7-104` / `0x532a30` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x532a30.json` | matched | full | - |
+| `unmapped/leaves/Unk532a40_532a40` | `Function532a40` (GUESS) | `sse-steam-1-7-104` / `0x532a40` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x532a40.json` | matched | full | - |
 | `skyrim_shared/audio/Owner532f30` | `Function532f30` (GUESS) | `sse-steam-1-7-104` / `0x532f30` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x532f30.json` | matched | full | - |
+| `unmapped/leaves/Unk5331e0_5331e0` | `Function5331e0` (GUESS) | `sse-steam-1-7-104` / `0x5331e0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5331e0.json` | matched | full | - |
 | `skyrim_shared/quest/BGSStoryEventManager_533200` | `Function533200` (GUESS) | `sse-steam-1-7-104` / `0x533200` / 108 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x533200.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf533b50` | `ThunkLeaf533b50::Forward` (GUESS) | `sse-steam-1-7-104` / `0x533b50` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x533b50.json` | matched | full | - |
 | `skyrim/ai/combat/Owner533b60` | `Function533b60` (GUESS) | `sse-steam-1-7-104` / `0x533b60` / 9 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x533b60.json` | matched | full | - |
@@ -16568,6 +16620,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/Owner558c50` | `Function558c50` (GUESS) | `sse-steam-1-7-104` / `0x558c50` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558c50.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf558c70` | `Function558c70` (GUESS) | `sse-steam-1-7-104` / `0x558c70` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558c70.json` | matched | full | - |
 | - | `TESCamera::ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0x558c80` / 96 | - | - | mapped | - | - |
+| `skyrim/camera/MapCamera_558d80` | `MapCamera::Function558d80` (GUESS) | `sse-steam-1-7-104` / `0x558d80` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558d80.json` | matched | full | - |
+| `skyrim/camera/MapCamera_558db0` | `MapCamera::Function558db0` (GUESS) | `sse-steam-1-7-104` / `0x558db0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558db0.json` | matched | full | - |
 | `skyrim/camera/TESCamera` | `TESCamera::SetCameraRoot` (COMMUNITY) | `sse-steam-1-7-104` / `0x558dd0` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558dd0.json` | matched | full | - |
 | `skyrim/camera/TESCamera` | `TESCamera::GetNode` (COMMUNITY) | `sse-steam-1-7-104` / `0x558e10` / 76 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558e10.json` | matched | full | - |
 | `skyrim/camera/TESCamera` | `TESCamera::Update` (COMMUNITY) | `sse-steam-1-7-104` / `0x558e70` / 281 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x558e70.json` | matched | full | - |
@@ -16646,6 +16700,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf560fb0` | `Leaf560fb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x560fb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x560fb0.json` | matched | family | open |
 | `skyrim/ai/Unlock561300` | `Function561300` (GUESS) | `sse-steam-1-7-104` / `0x561300` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x561300.json` | matched | full | - |
 | `skyrim_shared/world/Owner561bf0` | `Function561bf0` (GUESS) | `sse-steam-1-7-104` / `0x561bf0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x561bf0.json` | matched | full | - |
+| `unmapped/leaves/Unk561c00_561c00` | `Function561c00` (GUESS) | `sse-steam-1-7-104` / `0x561c00` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x561c00.json` | matched | full | - |
+| `unmapped/leaves/Unk563180_563180` | `Function563180` (GUESS) | `sse-steam-1-7-104` / `0x563180` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x563180.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf564670` | `Function564670` (GUESS) | `sse-steam-1-7-104` / `0x564670` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x564670.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf5646d0` | `Function5646d0` (GUESS) | `sse-steam-1-7-104` / `0x5646d0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5646d0.json` | matched | full | - |
 | `unmapped/wrappers/BSInlineHost5648b0` | `BSInlineHost5648b0::~BSInlineHost5648b0` (GUESS) | `sse-steam-1-7-104` / `0x5648b0` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5648b0.json` | matched | full | open |
@@ -17270,7 +17326,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSTArrayEraseUnordered1` | `Function5eb960` (GUESS) | `sse-steam-1-7-104` / `0x5eb960` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5eb960.json` | matched | full | - |
 | - | `p117_5eba40::LockedSource_F068_5eba40::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5eba40` / 386 | - | - | mapped | - | - |
 | - | `p117_5ebbd0::LockedSource_F068_5ebbd0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x5ebbd0` / 386 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk5ec790_5ec790` | `Function5ec790` (GUESS) | `sse-steam-1-7-104` / `0x5ec790` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ec790.json` | matched | full | - |
 | `gamebryo/nimain/Owner5ece60` | `Function5ece60` (GUESS) | `sse-steam-1-7-104` / `0x5ece60` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ece60.json` | matched | full | - |
+| `unmapped/leaves/Unk5ece70_5ece70` | `Function5ece70` (GUESS) | `sse-steam-1-7-104` / `0x5ece70` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5ece70.json` | matched | full | - |
+| `unmapped/leaves/Unk5edf10_5edf10` | `Function5edf10` (GUESS) | `sse-steam-1-7-104` / `0x5edf10` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5edf10.json` | matched | full | - |
 | `bscore/Unlock5f2120` | `Function5f2120` (GUESS) | `sse-steam-1-7-104` / `0x5f2120` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5f2120.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf5f2230` | `Function5f2230` (GUESS) | `sse-steam-1-7-104` / `0x5f2230` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5f2230.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf5f22b0` | `Function5f22b0` (GUESS) | `sse-steam-1-7-104` / `0x5f22b0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5f22b0.json` | matched | full | - |
@@ -17441,6 +17500,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `std/StdCallableDeleteThis1` | `Function60d5e0` (GUESS) | `sse-steam-1-7-104` / `0x60d5e0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60d5e0.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf60d620` | `FieldLeaf60d620::Read` (GUESS) | `sse-steam-1-7-104` / `0x60d620` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60d620.json` | matched | family | open |
 | `unmapped/leaves/LeafAddress60d650` | `LeafAddress60d650::Address` (GUESS) | `sse-steam-1-7-104` / `0x60d650` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60d650.json` | matched | family | open |
+| `unmapped/leaves/Unk60e940_60e940` | `Function60e940` (GUESS) | `sse-steam-1-7-104` / `0x60e940` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60e940.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf60eea0` | `Function60eea0` (GUESS) | `sse-steam-1-7-104` / `0x60eea0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60eea0.json` | matched | full | - |
 | `unmapped/storage/StorageInit60f190` | `StorageInit60f190::initialize` (GUESS) | `sse-steam-1-7-104` / `0x60f190` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60f190.json` | matched | family | open |
 | `bscore/BSThread` | `Leaf60f1d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x60f1d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x60f1d0.json` | matched | full | open |
@@ -17463,6 +17523,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf613d50` | `Leaf613d50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x613d50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x613d50.json` | matched | family | open |
 | `bssystem/Win32FileType_614140` | `Win32FileType::Function614140` (GUESS) | `sse-steam-1-7-104` / `0x614140` / 42 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x614140.json` | matched | full | - |
 | `bssystem/Win32FileType_614170` | `Win32FileType::Function614170` (GUESS) | `sse-steam-1-7-104` / `0x614170` / 42 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x614170.json` | matched | full | - |
+| `bssystem/Win32FileType_6141c0` | `Win32FileType::Function6141c0` (GUESS) | `sse-steam-1-7-104` / `0x6141c0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6141c0.json` | matched | full | - |
 | `skyrim/ai/combat/Owner614860` | `Function614860` (GUESS) | `sse-steam-1-7-104` / `0x614860` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x614860.json` | matched | full | - |
 | `skyrim_shared/forms/Owner6149b0` | `Function6149b0` (GUESS) | `sse-steam-1-7-104` / `0x6149b0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6149b0.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSSaveLoadGame` | `BGSSaveLoadGame::GetChange` (GUESS) | `sse-steam-1-7-104` / `0x616dc0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x616dc0.json` | matched | full | open |
@@ -17540,6 +17601,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `p117_6309a0::LockedSource_F068_6309a0::Remove` (GUESS) | `sse-steam-1-7-104` / `0x6309a0` / 386 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf632610` | `Leaf632610::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x632610` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632610.json` | matched | family | open |
 | `unmapped/leaves/Leaf632620` | `Leaf632620::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x632620` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632620.json` | matched | family | open |
+| `unmapped/leaves/Unk632c40_632c40` | `Function632c40` (GUESS) | `sse-steam-1-7-104` / `0x632c40` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632c40.json` | matched | full | - |
+| `unmapped/leaves/Unk632cb0_632cb0` | `Function632cb0` (GUESS) | `sse-steam-1-7-104` / `0x632cb0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x632cb0.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf6368a0` | `Function6368a0` (GUESS) | `sse-steam-1-7-104` / `0x6368a0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6368a0.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf636900` | `ThunkLeaf636900::Forward` (GUESS) | `sse-steam-1-7-104` / `0x636900` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x636900.json` | matched | full | - |
 | `gamebryo/nimain/NiTMapBaseStub_636a60` | `Function636a60` (GUESS) | `sse-steam-1-7-104` / `0x636a60` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x636a60.json` | matched | full | - |
@@ -17553,6 +17616,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf636d00` | `Leaf636d00::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x636d00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x636d00.json` | matched | family | open |
 | `bscore/MapView_6372b0` | `Function6372b0` (GUESS) | `sse-steam-1-7-104` / `0x6372b0` / 163 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6372b0.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadFormBuffer` | `BGSLoadFormBuffer::GetVersion` (COMMUNITY) | `sse-steam-1-7-104` / `0x637580` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x637580.json` | matched | full | open |
+| `unmapped/leaves/Unk637820_637820` | `Function637820` (GUESS) | `sse-steam-1-7-104` / `0x637820` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x637820.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadFormBuffer` | `BGSLoadFormBuffer::Function6379f0` (GUESS) | `sse-steam-1-7-104` / `0x6379f0` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6379f0.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadGameBuffer` | `BGSLoadGameBuffer::GetVersion` (COMMUNITY) | `sse-steam-1-7-104` / `0x637a90` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x637a90.json` | matched | label-only | open |
 | `skyrim_shared/saveload/BGSLoadGameBuffer` | `BGSLoadGameBuffer::ReadFormID` (COMMUNITY) | `sse-steam-1-7-104` / `0x637ab0` / 110 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x637ab0.json` | matched | label-only | open |
@@ -17645,6 +17709,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/RelayLeaf645c20` | `RelayLeaf645c20::Relay` (GUESS) | `sse-steam-1-7-104` / `0x645c20` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645c20.json` | matched | full | - |
 | `unmapped/leaves/RelayLeaf645c50` | `RelayLeaf645c50::Relay` (GUESS) | `sse-steam-1-7-104` / `0x645c50` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645c50.json` | matched | full | - |
 | `skyrim_shared/world/Unlock645fe0` | `Function645fe0` (GUESS) | `sse-steam-1-7-104` / `0x645fe0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x645fe0.json` | matched | full | - |
+| `unmapped/leaves/Calendar_646020` | `Function646020` (GUESS) | `sse-steam-1-7-104` / `0x646020` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x646020.json` | matched | full | - |
+| `unmapped/leaves/Calendar_646160` | `Function646160` (GUESS) | `sse-steam-1-7-104` / `0x646160` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x646160.json` | matched | full | - |
 | `skyrim_shared/world/Calendar_646580` | `Function646580` (GUESS) | `sse-steam-1-7-104` / `0x646580` / 51 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x646580.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf646d00` | `Function646d00` (GUESS) | `sse-steam-1-7-104` / `0x646d00` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x646d00.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf646d80` | `Function646d80` (GUESS) | `sse-steam-1-7-104` / `0x646d80` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x646d80.json` | matched | full | - |
@@ -17811,6 +17877,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/SceneGraph_665840` | `SceneGraph::Function665840` (GUESS) | `sse-steam-1-7-104` / `0x665840` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x665840.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress665880` | `LeafAddress665880::Address` (GUESS) | `sse-steam-1-7-104` / `0x665880` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x665880.json` | matched | family | open |
 | `bsshader/Owner665f80` | `Function665f80` (GUESS) | `sse-steam-1-7-104` / `0x665f80` / 11 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x665f80.json` | matched | full | - |
+| `unmapped/leaves/Unk665fc0_665fc0` | `Function665fc0` (GUESS) | `sse-steam-1-7-104` / `0x665fc0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x665fc0.json` | matched | full | - |
 | `unmapped/leaves/IntSeenData_6668b0` | `Function6668b0` (GUESS) | `sse-steam-1-7-104` / `0x6668b0` / 54 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6668b0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf666b40` | `DeletingLeaf666b40::~DeletingLeaf666b40` (GUESS) | `sse-steam-1-7-104` / `0x666b40` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x666b40.json` | matched | full | - |
 | `skyrim/magic/SpawnHazardEffect` | `SpawnHazardEffect::HandleQueuedStart` (GUESS) | `sse-steam-1-7-104` / `0x666bf0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x666bf0.json` | matched | full | open |
@@ -18562,6 +18629,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForward6e0da0` | `LeafForward6e0da0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x6e0da0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e0da0.json` | matched | family | open |
 | `skyrim_shared/actors/ActorPackage_6e0db0` | `Function6e0db0` (GUESS) | `sse-steam-1-7-104` / `0x6e0db0` / 105 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e0db0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf6e0fe0` | `TableStoreLeaf6e0fe0::~TableStoreLeaf6e0fe0` (GUESS) | `sse-steam-1-7-104` / `0x6e0fe0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e0fe0.json` | matched | family | open |
+| `unmapped/leaves/Unk6e13b0_6e13b0` | `Function6e13b0` (GUESS) | `sse-steam-1-7-104` / `0x6e13b0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e13b0.json` | matched | full | - |
 | `skyrim_shared/actors/ActorState_6c2cc0` | `ActorState::Unk_15` (COMMUNITY) | `sse-steam-1-7-104` / `0x6e13c0` / 60 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e13c0.json` | matched | full | - |
 | `skyrim_shared/actors/ActorState_6e1410` | `ActorState::Function6e1410` (GUESS) | `sse-steam-1-7-104` / `0x6e1410` / 72 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e1410.json` | matched | full | - |
 | `skyrim_shared/actors/ActorState_6e1460` | `ActorState::Function6e1460` (GUESS) | `sse-steam-1-7-104` / `0x6e1460` / 37 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e1460.json` | matched | full | - |
@@ -18587,6 +18655,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsmain/Owner6e5280` | `Function6e5280` (GUESS) | `sse-steam-1-7-104` / `0x6e5280` / 32 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e5280.json` | matched | full | - |
 | `skyrim_shared/refs/Owner6e5bd0` | `Function6e5bd0` (GUESS) | `sse-steam-1-7-104` / `0x6e5bd0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e5bd0.json` | matched | full | - |
 | `skyrim/ai/AIProcess207Pass` | `P2071::AIProcess207Pass::UpdateTimeBits` (GUESS) | `sse-steam-1-7-104` / `0x6e8370` / 44 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x6e8370.json` | matched | full | open |
+| `unmapped/leaves/Unk6e8420_6e8420` | `Function6e8420` (GUESS) | `sse-steam-1-7-104` / `0x6e8420` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e8420.json` | matched | full | - |
+| `unmapped/leaves/Unk6e8430_6e8430` | `Function6e8430` (GUESS) | `sse-steam-1-7-104` / `0x6e8430` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e8430.json` | matched | full | - |
+| `unmapped/leaves/Unk6e8440_6e8440` | `Function6e8440` (GUESS) | `sse-steam-1-7-104` / `0x6e8440` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e8440.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::Function6e9330` (GUESS) | `sse-steam-1-7-104` / `0x6e9330` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9330.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6e9330` | `AIProcess::ModEssentialDownTimer` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6e9670` / 25 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9670.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::Function6e9690` (GUESS) | `sse-steam-1-7-104` / `0x6e9690` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9690.json` | matched | full | - |
@@ -18611,6 +18682,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_6e9a20` | `AIProcess::GetInstanceDataThatIsRunning` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6e9a20` / 42 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9a20.json` | matched | full | open |
 | `skyrim/ai/ActorProcess_6e9a50` | `ActorProcess::Function6e9a50` (GUESS) | `sse-steam-1-7-104` / `0x6e9a50` / 29 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9a50.json` | matched | full | open |
 | `skyrim/ai/ActorProcess_6e9a50` | `ActorProcess::GetPackageThatIsRunning` (GUESS) | `sse-steam-1-7-104` / `0x6e9a80` / 29 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9a80.json` | matched | full | open |
+| `unmapped/leaves/Unk6e9ab0_6e9ab0` | `Function6e9ab0` (GUESS) | `sse-steam-1-7-104` / `0x6e9ab0` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6e9ab0.json` | matched | full | - |
 | - | `AIProcess::AddToProcedureIndexRunning` (COMMUNITY) | `sse-steam-1-7-104` / `0x6e9b70` / 337 | - | - | mapped | - | - |
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::Function6ea000` (GUESS) | `sse-steam-1-7-104` / `0x6ea000` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ea000.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::SetIsAlerted` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x6ea020` / 39 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6ea020.json` | matched | full | - |
@@ -18629,6 +18701,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::Function6eaf00` (GUESS) | `sse-steam-1-7-104` / `0x6eaf00` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eaf00.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::GetEquippedLeftHand` (COMMUNITY) | `sse-steam-1-7-104` / `0x6eb4a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eb4a0.json` | matched | full | open |
 | `skyrim/ai/ActorProcess_6e9330` | `ActorProcess::Function6eb4b0` (GUESS) | `sse-steam-1-7-104` / `0x6eb4b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eb4b0.json` | matched | full | - |
+| `unmapped/leaves/Unk6eb4e0_6eb4e0` | `Function6eb4e0` (GUESS) | `sse-steam-1-7-104` / `0x6eb4e0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eb4e0.json` | matched | full | - |
+| `unmapped/leaves/Unk6eb4f0_6eb4f0` | `Function6eb4f0` (GUESS) | `sse-steam-1-7-104` / `0x6eb4f0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eb4f0.json` | matched | full | - |
+| `unmapped/leaves/Unk6eb550_6eb550` | `Function6eb550` (GUESS) | `sse-steam-1-7-104` / `0x6eb550` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6eb550.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf6efb00` | `Function6efb00` (GUESS) | `sse-steam-1-7-104` / `0x6efb00` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6efb00.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf6efb70` | `TableStoreLeaf6efb70::~TableStoreLeaf6efb70` (GUESS) | `sse-steam-1-7-104` / `0x6efb70` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6efb70.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf6efb80` | `TableStoreLeaf6efb80::~TableStoreLeaf6efb80` (GUESS) | `sse-steam-1-7-104` / `0x6efb80` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x6efb80.json` | matched | family | open |
@@ -18773,6 +18848,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::Function702370` (GUESS) | `sse-steam-1-7-104` / `0x702370` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x702370.json` | matched | full | - |
 | `skyrim/ai/AIProcess207Pass` | `P2071::AIProcess207Pass::SetHighFloat` (GUESS) | `sse-steam-1-7-104` / `0x7023a0` / 18 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x7023a0.json` | matched | full | open |
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::Function702560` (GUESS) | `sse-steam-1-7-104` / `0x702560` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x702560.json` | matched | full | - |
+| `unmapped/leaves/Unk704c30_704c30` | `Function704c30` (GUESS) | `sse-steam-1-7-104` / `0x704c30` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x704c30.json` | matched | full | - |
 | `skyrim/ai/ActorProcess_700020` | `ActorProcess::Function704c50` (GUESS) | `sse-steam-1-7-104` / `0x704c50` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x704c50.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadGameBuffer_71b380` | `TempLoadGameBuffer::Function71b380` (GUESS) | `sse-steam-1-7-104` / `0x71b380` / 92 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x71b380.json` | matched | full | - |
 | `skyrim_shared/saveload/BGSLoadGameBuffer_71b3e0` | `TempLoadGameBuffer::Function71b3e0` (GUESS) | `sse-steam-1-7-104` / `0x71b3e0` / 92 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x71b3e0.json` | matched | full | - |
@@ -18831,6 +18907,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function723390` (GUESS) | `sse-steam-1-7-104` / `0x723390` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x723390.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function7233b0` (GUESS) | `sse-steam-1-7-104` / `0x7233b0` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7233b0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067CFE0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x7233d0` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7233d0.json` | matched | full | - |
+| `unmapped/leaves/Unk7233f0_7233f0` | `Function7233f0` (GUESS) | `sse-steam-1-7-104` / `0x7233f0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7233f0.json` | matched | full | - |
 | `skyrim/ai/AIProcess` | `AIProcess::SetHeadtrackTarget` (COMMUNITY) | `sse-steam-1-7-104` / `0x723510` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x723510.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::ClearHeadTrackTarget_14067D190` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x723580` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x723580.json` | matched | full | - |
 | - | `AIProcess::KnockParalyze` (COMMUNITY) | `sse-steam-1-7-104` / `0x723620` / 402 | - | - | mapped | - | - |
@@ -18839,6 +18916,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067E370` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x7245c0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7245c0.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::sub_14067E3B0` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x724600` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x724600.json` | matched | full | - |
 | `skyrim/ai/AIProcess_720400` | `ActorProcess::Function724640` (GUESS) | `sse-steam-1-7-104` / `0x724640` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x724640.json` | matched | full | - |
+| `unmapped/leaves/Unk7252c0_7252c0` | `Function7252c0` (GUESS) | `sse-steam-1-7-104` / `0x7252c0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7252c0.json` | matched | full | - |
 | `skyrim/ai/Unlock725300` | `Function725300` (GUESS) | `sse-steam-1-7-104` / `0x725300` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x725300.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function7265a0` (GUESS) | `sse-steam-1-7-104` / `0x7265a0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7265a0.json` | matched | full | - |
 | `skyrim/ai/ActorProcess` | `ActorProcess::Function726eb0` (GUESS) | `sse-steam-1-7-104` / `0x726eb0` / 38 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x726eb0.json` | matched | full | - |
@@ -19347,6 +19425,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/actors/TESActionData` | `TESActionData::Unk_02` (COMMUNITY) | `sse-steam-1-7-104` / `0x78db50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78db50.json` | matched | full | open |
 | `skyrim_shared/actors/TESActionData` | `TESActionData::Function78db60` (GUESS) | `sse-steam-1-7-104` / `0x78db60` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78db60.json` | matched | full | - |
 | `skyrim_shared/actors/TESActionData_78db20` | `TESActionData::Process` (COMMUNITY) | `sse-steam-1-7-104` / `0x78db80` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78db80.json` | matched | full | - |
+| `unmapped/leaves/Unk78e250_78e250` | `Function78e250` (GUESS) | `sse-steam-1-7-104` / `0x78e250` / 15 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x78e250.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf78f930` | `DeletingLeaf78f930::~DeletingLeaf78f930` (GUESS) | `sse-steam-1-7-104` / `0x78f930` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78f930.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf78f960` | `DeletingLeaf78f960::~DeletingLeaf78f960` (GUESS) | `sse-steam-1-7-104` / `0x78f960` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78f960.json` | matched | family | open |
 | `unmapped/leaves/VirtualTail78fa10` | `VirtualTail78fa10::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x78fa10` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x78fa10.json` | matched | family | open |
@@ -19755,9 +19834,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `DialoguePackage::LoadGame` (COMMUNITY) | `sse-steam-1-7-104` / `0x7b9070` / 216 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward7b9150` | `LeafForward7b9150::Forward` (GUESS) | `sse-steam-1-7-104` / `0x7b9150` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b9150.json` | matched | full | open |
 | - | `DialoguePackage::IsPackageOwner` (COMMUNITY) | `sse-steam-1-7-104` / `0x7b9160` / 101 | - | - | mapped | - | - |
+| `skyrim/ai/DialoguePackage_7b9430` | `DialoguePackage::Function7b9430` (GUESS) | `sse-steam-1-7-104` / `0x7b9430` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b9430.json` | matched | full | - |
+| `skyrim/ai/DialoguePackage_7b9450` | `DialoguePackage::Function7b9450` (GUESS) | `sse-steam-1-7-104` / `0x7b9450` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b9450.json` | matched | full | - |
 | `unmapped/leaves/Leaf7b9ac0` | `Leaf7b9ac0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7b9ac0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7b9ac0.json` | matched | family | open |
 | - | `DeletingLeaf7bc0b0::~DeletingLeaf7bc0b0` (GUESS) | `sse-steam-1-7-104` / `0x7bc0b0` / 43 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf7bc0e0` | `Leaf7bc0e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7bc0e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7bc0e0.json` | matched | full | checked |
+| `unmapped/leaves/PatrolActorPackageData_7bc510` | `Function7bc510` (GUESS) | `sse-steam-1-7-104` / `0x7bc510` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7bc510.json` | matched | full | - |
 | `unmapped/leaves/Leaf7bd370` | `Leaf7bd370::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7bd370` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7bd370.json` | matched | family | open |
 | `skyrim/ai/Owner7bf310` | `Function7bf310` (GUESS) | `sse-steam-1-7-104` / `0x7bf310` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7bf310.json` | matched | full | - |
 | `unmapped/storage/StorageInit7c0160` | `StorageInit7c0160::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c0160` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c0160.json` | matched | family | open |
@@ -19766,6 +19848,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/magic/Owner7c1f30` | `Function7c1f30` (GUESS) | `sse-steam-1-7-104` / `0x7c1f30` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c1f30.json` | matched | full | - |
 | `unmapped/leaves/RelayLeaf7c2d80` | `RelayLeaf7c2d80::Relay` (GUESS) | `sse-steam-1-7-104` / `0x7c2d80` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c2d80.json` | matched | full | - |
 | `unmapped/leaves/RelayLeaf7c2db0` | `RelayLeaf7c2db0::Relay` (GUESS) | `sse-steam-1-7-104` / `0x7c2db0` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c2db0.json` | matched | full | - |
+| `unmapped/leaves/Unk7c2fe0_7c2fe0` | `Function7c2fe0` (GUESS) | `sse-steam-1-7-104` / `0x7c2fe0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c2fe0.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf7c31a0` | `TrespassPackage::Function7c31a0` (GUESS) | `sse-steam-1-7-104` / `0x7c31a0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c31a0.json` | matched | full | - |
 | `unmapped/storage/StorageInit7c3340` | `StorageInit7c3340::initialize` (GUESS) | `sse-steam-1-7-104` / `0x7c3340` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c3340.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaf7c3380` | `ReturnLeaf7c3380::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x7c3380` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x7c3380.json` | matched | family | open |
@@ -20719,6 +20802,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/combat/CombatProjectileAimController` | `CombatProjectileAimController::GetClassType` (GUESS) | `sse-steam-1-7-104` / `0x80db80` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80db80.json` | matched | full | open |
 | `skyrim/ai/combat/CombatTrackTargetAimController` | `CombatTrackTargetAimController::GetClassType` (GUESS) | `sse-steam-1-7-104` / `0x80dc00` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80dc00.json` | matched | full | open |
 | `unmapped/leaves/Leaf80dc80` | `Leaf80dc80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x80dc80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80dc80.json` | matched | family | open |
+| `skyrim/ai/combat/CombatAnimation_80e1a0` | `CombatAnimation::Function80e1a0` (GUESS) | `sse-steam-1-7-104` / `0x80e1a0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80e1a0.json` | matched | full | - |
 | `skyrim_shared/forms/Owner80e1c0` | `CombatAnimation::Function80e1c0` (GUESS) | `sse-steam-1-7-104` / `0x80e1c0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80e1c0.json` | matched | full | - |
 | `skyrim/ai/combat/CombatAnimation_80e1d0` | `CombatAnimation::Function80e1d0` (GUESS) | `sse-steam-1-7-104` / `0x80e1d0` / 114 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80e1d0.json` | matched | full | - |
 | `unmapped/leaves/Leaf80e740` | `Leaf80e740::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x80e740` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x80e740.json` | matched | full | checked |
@@ -20805,6 +20889,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/combat/CombatCoverSearchResult` | `CombatCoverSearchResult::GetObjectType` (GUESS) | `sse-steam-1-7-104` / `0x816e00` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x816e00.json` | matched | full | open |
 | `unmapped/wrappers/BSTArrayResizeTrivial2` | `Function816e80` (GUESS) | `sse-steam-1-7-104` / `0x816e80` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x816e80.json` | matched | full | - |
 | `gamebryo/nimain/Owner818090` | `CombatGroupDetectionListener::Function818090` (GUESS) | `sse-steam-1-7-104` / `0x818090` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x818090.json` | matched | full | - |
+| `unmapped/leaves/Unk8197f0_8197f0` | `Function8197f0` (GUESS) | `sse-steam-1-7-104` / `0x8197f0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8197f0.json` | matched | full | - |
 | `skyrim/ai/combat/CombatGroup_81f450` | `Function81f450` (GUESS) | `sse-steam-1-7-104` / `0x81f450` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x81f450.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf8227f0` | `Function8227f0` (GUESS) | `sse-steam-1-7-104` / `0x8227f0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8227f0.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf822850` | `Function822850` (GUESS) | `sse-steam-1-7-104` / `0x822850` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x822850.json` | matched | full | - |
@@ -22087,6 +22172,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/ai/combat/CombatMagicCasterOffensive` | `CombatMagicCasterOffensive::GetObjectType` (GUESS) | `sse-steam-1-7-104` / `0x850af0` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x850af0.json` | matched | full | open |
 | `skyrim/ai/combat/CombatMagicCasterWard` | `CombatMagicCasterWard::GetObjectType` (GUESS) | `sse-steam-1-7-104` / `0x850ef0` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x850ef0.json` | matched | full | open |
 | `unmapped/leaves/Leaf850f70` | `Leaf850f70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x850f70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x850f70.json` | matched | family | open |
+| `gamebryo/nimain/NiTPrimitiveArray_CombatGroup___852bb0` | `Function852bb0` (GUESS) | `sse-steam-1-7-104` / `0x852bb0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x852bb0.json` | matched | full | - |
 | `unmapped/leaves/LeafForward854950` | `LeafForward854950::Forward` (GUESS) | `sse-steam-1-7-104` / `0x854950` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x854950.json` | matched | family | open |
 | `unmapped/leaves/Leaf854ca0` | `Leaf854ca0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x854ca0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x854ca0.json` | matched | full | checked |
 | `gamebryo/nianimation/Owner854f30` | `Function854f30` (GUESS) | `sse-steam-1-7-104` / `0x854f30` / 18 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x854f30.json` | matched | full | - |
@@ -22224,10 +22310,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSTArrayResizeTrivial2` | `Function872a60` (GUESS) | `sse-steam-1-7-104` / `0x872a60` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x872a60.json` | matched | full | - |
 | `skyrim/ai/combat/CombatBehaviorThread` | `CombatBehaviorThread::Ascend` (GUESS) | `sse-steam-1-7-104` / `0x872fa0` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x872fa0.json` | matched | full | open |
 | `skyrim/ai/combat/Unlock872ff0` | `Function872ff0` (GUESS) | `sse-steam-1-7-104` / `0x872ff0` / 40 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x872ff0.json` | matched | full | - |
+| `unmapped/leaves/Unk873020_873020` | `Function873020` (GUESS) | `sse-steam-1-7-104` / `0x873020` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x873020.json` | matched | full | - |
 | `skyrim/ai/combat/Unlock8732d0` | `Function8732d0` (GUESS) | `sse-steam-1-7-104` / `0x8732d0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8732d0.json` | matched | full | - |
 | `unmapped/leaves/CombatBehaviorThread_8734d0` | `Function8734d0` (GUESS) | `sse-steam-1-7-104` / `0x8734d0` / 79 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8734d0.json` | matched | full | - |
 | `unmapped/leaves/Unk873b80_873b80` | `Function873b80` (GUESS) | `sse-steam-1-7-104` / `0x873b80` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x873b80.json` | matched | full | - |
 | `unmapped/wrappers/BSTSmallArrayEraseOrdered` | `Function873dd0` (GUESS) | `sse-steam-1-7-104` / `0x873dd0` / 117 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x873dd0.json` | matched | full | - |
+| `unmapped/leaves/Unk873f10_873f10` | `Function873f10` (GUESS) | `sse-steam-1-7-104` / `0x873f10` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x873f10.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf874030` | `ReturnLeaf874030::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x874030` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x874030.json` | matched | family | open |
 | `unmapped/leaves/ArrayLeaf874420` | `Function874420` (GUESS) | `sse-steam-1-7-104` / `0x874420` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x874420.json` | matched | full | - |
 | `skyrim/ai/combat/CombatBehaviorTreeNodeLayout` | `CombatBehaviorTreeNodeLayout::~CombatBehaviorTreeNodeLayout` (GUESS) | `sse-steam-1-7-104` / `0x8744c0` / 52 | `represented-wrapper-o2` | `reports/sse-steam-1-7-104/0x8744c0.json` | matched | family | open |
@@ -23117,7 +23205,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ClassTypeLeaf8d8960` | `ClassTypeLeaf8d8960::QClassType` (GUESS) | `sse-steam-1-7-104` / `0x8d8960` / 140 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8d8960.json` | matched | full | - |
 | `unmapped/leaves/Leaf8d8b40` | `Leaf8d8b40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x8d8b40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8d8b40.json` | matched | family | open |
 | `unmapped/leaves/ForwardLeaf8d8b90` | `ForwardLeaf8d8b90::Forward` (GUESS) | `sse-steam-1-7-104` / `0x8d8b90` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8d8b90.json` | matched | full | - |
+| `unmapped/leaves/Unk8d8fd0_8d8fd0` | `Function8d8fd0` (GUESS) | `sse-steam-1-7-104` / `0x8d8fd0` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8d8fd0.json` | matched | full | - |
 | `skyrim/ai/combat/Owner8d9500` | `CombatPath::Function8d9500` (GUESS) | `sse-steam-1-7-104` / `0x8d9500` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8d9500.json` | matched | full | - |
+| `unmapped/leaves/Unk8daed0_8daed0` | `Function8daed0` (GUESS) | `sse-steam-1-7-104` / `0x8daed0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8daed0.json` | matched | full | - |
 | `skyrim/ai/combat/Unlock8db820` | `Function8db820` (GUESS) | `sse-steam-1-7-104` / `0x8db820` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8db820.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf8dd6d0` | `Function8dd6d0` (GUESS) | `sse-steam-1-7-104` / `0x8dd6d0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8dd6d0.json` | matched | full | - |
 | `skyrim_shared/tempeffects/Owner8dd6e0` | `Function8dd6e0` (GUESS) | `sse-steam-1-7-104` / `0x8dd6e0` / 35 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8dd6e0.json` | matched | full | - |
@@ -23135,6 +23225,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/storage/StorageInit8e39c0` | `StorageInit8e39c0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x8e39c0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e39c0.json` | matched | family | open |
 | `unmapped/leaves/ThunkLeaf8e3a00` | `ThunkLeaf8e3a00::Forward` (GUESS) | `sse-steam-1-7-104` / `0x8e3a00` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e3a00.json` | matched | full | - |
 | `unmapped/leaves/Leaf8e3b10` | `Leaf8e3b10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x8e3b10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e3b10.json` | matched | family | open |
+| `unmapped/leaves/Unk8e4420_8e4420` | `Function8e4420` (GUESS) | `sse-steam-1-7-104` / `0x8e4420` / 63 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x8e4420.json` | matched | full | - |
 | `unmapped/leaves/VirtualTail8e4720` | `VirtualTail8e4720::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x8e4720` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e4720.json` | matched | full | open |
 | `unmapped/leaves/DeletingLeaf8e4740` | `DeletingLeaf8e4740::~DeletingLeaf8e4740` (GUESS) | `sse-steam-1-7-104` / `0x8e4740` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e4740.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf8e4770` | `DeletingLeaf8e4770::~DeletingLeaf8e4770` (GUESS) | `sse-steam-1-7-104` / `0x8e4770` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x8e4770.json` | matched | full | checked |
@@ -23750,6 +23841,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf983e50` | `DeletingLeaf983e50::~DeletingLeaf983e50` (GUESS) | `sse-steam-1-7-104` / `0x983e50` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x983e50.json` | matched | family | open |
 | `unmapped/leaves/StaticDataReaders` | `Function9844b0` (GUESS) | `sse-steam-1-7-104` / `0x9844b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9844b0.json` | matched | full | - |
 | `unmapped/leaves/StaticDataReaders` | `Function9844c0` (GUESS) | `sse-steam-1-7-104` / `0x9844c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9844c0.json` | matched | full | - |
+| `unmapped/leaves/Unk9844d0_9844d0` | `Function9844d0` (GUESS) | `sse-steam-1-7-104` / `0x9844d0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9844d0.json` | matched | full | - |
+| `unmapped/leaves/Unk9844e0_9844e0` | `Function9844e0` (GUESS) | `sse-steam-1-7-104` / `0x9844e0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9844e0.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf984c80` | `ThunkLeaf984c80::Forward` (GUESS) | `sse-steam-1-7-104` / `0x984c80` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x984c80.json` | matched | full | - |
 | `unmapped/storage/StorageInit984cd0` | `StorageInit984cd0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x984cd0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x984cd0.json` | matched | family | open |
 | `unmapped/leaves/RelayLeaf985330` | `RelayLeaf985330::Relay` (GUESS) | `sse-steam-1-7-104` / `0x985330` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x985330.json` | matched | full | - |
@@ -25184,6 +25277,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `std/Std_map_std__string_P24_a81b00` | `Functiona81b00` (GUESS) | `sse-steam-1-7-104` / `0xa81b00` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa81b00.json` | matched | full | - |
 | `std/Std_mset_std__string` | `Functiona84350` (GUESS) | `sse-steam-1-7-104` / `0xa84350` / 394 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa84350.json` | matched | full | - |
 | `unmapped/leaves/ReturnSecondWrappers` | `Functiona848b0` (GUESS) | `sse-steam-1-7-104` / `0xa848b0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa848b0.json` | matched | full | - |
+| `unmapped/leaves/Unka876a0_a876a0` | `Functiona876a0` (GUESS) | `sse-steam-1-7-104` / `0xa876a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa876a0.json` | matched | full | - |
+| `unmapped/leaves/Unka87700_a87700` | `Functiona87700` (GUESS) | `sse-steam-1-7-104` / `0xa87700` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa87700.json` | matched | full | - |
+| `unmapped/leaves/Unka87720_a87720` | `Functiona87720` (GUESS) | `sse-steam-1-7-104` / `0xa87720` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa87720.json` | matched | full | - |
 | `skyrim_shared/audio/Ownera91470` | `Functiona91470` (GUESS) | `sse-steam-1-7-104` / `0xa91470` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa91470.json` | matched | full | - |
 | `unmapped/leaves/ForwardLeafa9b490` | `ForwardLeafa9b490::Forward` (GUESS) | `sse-steam-1-7-104` / `0xa9b490` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa9b490.json` | matched | full | - |
 | `unmapped/leaves/LeafForwarda9bf90` | `LeafForwarda9bf90::Forward` (GUESS) | `sse-steam-1-7-104` / `0xa9bf90` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xa9bf90.json` | matched | family | open |
@@ -26739,6 +26835,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsaudio/BSAudioManager_ccb060` | `BSAudioManager::Functionccb060` (GUESS) | `sse-steam-1-7-104` / `0xccb060` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xccb060.json` | matched | full | - |
 | `bsaudio/BSAudioManager` | `BSAudioManager::Functionccb0a0` (GUESS) | `sse-steam-1-7-104` / `0xccb0a0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xccb0a0.json` | matched | full | - |
 | `skyrim_shared/world/Ownercccf30` | `Functioncccf30` (GUESS) | `sse-steam-1-7-104` / `0xcccf30` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcccf30.json` | matched | full | - |
+| `unmapped/leaves/Unkcccf50_cccf50` | `Functioncccf50` (GUESS) | `sse-steam-1-7-104` / `0xcccf50` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcccf50.json` | matched | full | - |
 | `unmapped/leaves/StaticDataReaders` | `Functionccd650` (GUESS) | `sse-steam-1-7-104` / `0xccd650` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xccd650.json` | matched | full | - |
 | `bsaudio/BSAudioManagerThread` | `BSAudioManagerThread::Unk_01` (COMMUNITY) | `sse-steam-1-7-104` / `0xcd1030` / 153 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd1030.json` | matched | full | open |
 | `unmapped/leaves/ThunkLeafcd22c0` | `ThunkLeafcd22c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xcd22c0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd22c0.json` | matched | full | - |
@@ -26763,7 +26860,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsaudio/BSAudio` | `BSAudio::GetReceiver` (COMMUNITY) | `sse-steam-1-7-104` / `0xcd4c20` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd4c20.json` | matched | full | open |
 | `unmapped/leaves/Leafcd4c30` | `Leafcd4c30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcd4c30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd4c30.json` | matched | family | open |
 | `unmapped/leaves/Leafcd4c40` | `Leafcd4c40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcd4c40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd4c40.json` | matched | family | open |
+| `bsaudio/BSXAudio2GameSound_cd53d0` | `BSXAudio2GameSound::Functioncd53d0` (GUESS) | `sse-steam-1-7-104` / `0xcd53d0` / 45 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd53d0.json` | matched | full | - |
 | `unmapped/leaves/Leafcd56a0` | `Leafcd56a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcd56a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd56a0.json` | matched | family | open |
+| `bsaudio/BSXAudio2GameSound_cd5aa0` | `BSXAudio2GameSound::Functioncd5aa0` (GUESS) | `sse-steam-1-7-104` / `0xcd5aa0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd5aa0.json` | matched | full | - |
 | `unmapped/leaves/Leafcd6070` | `Leafcd6070::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcd6070` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd6070.json` | matched | family | open |
 | `bsaudio/Ownercd6170` | `Functioncd6170` (GUESS) | `sse-steam-1-7-104` / `0xcd6170` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd6170.json` | matched | full | - |
 | `unmapped/leaves/LeafAddresscd6290` | `LeafAddresscd6290::Address` (GUESS) | `sse-steam-1-7-104` / `0xcd6290` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcd6290.json` | matched | family | open |
@@ -26836,6 +26935,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsaudio/BSXAudio2DataSrc` | `BSXAudio2DataSrc::~BSXAudio2DataSrc` (COMMUNITY) | `sse-steam-1-7-104` / `0xcdc8e0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdc8e0.json` | matched | full | open |
 | `unmapped/leaves/RelayLeafcdd120` | `RelayLeafcdd120::Relay` (GUESS) | `sse-steam-1-7-104` / `0xcdd120` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdd120.json` | matched | full | - |
 | `unmapped/leaves/RelayLeafcdd150` | `RelayLeafcdd150::Relay` (GUESS) | `sse-steam-1-7-104` / `0xcdd150` / 30 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdd150.json` | matched | full | - |
+| `unmapped/leaves/Unkcdd660_cdd660` | `Functioncdd660` (GUESS) | `sse-steam-1-7-104` / `0xcdd660` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdd660.json` | matched | full | - |
 | `gamebryo/niparticle/Ownercdd6a0` | `Functioncdd6a0` (GUESS) | `sse-steam-1-7-104` / `0xcdd6a0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdd6a0.json` | matched | full | - |
 | `unmapped/support/MemoryManager_cddda0` | `Functioncddda0` (GUESS) | `sse-steam-1-7-104` / `0xcddda0` / 142 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcddda0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeafcde9c0` | `TableStoreLeafcde9c0::~TableStoreLeafcde9c0` (GUESS) | `sse-steam-1-7-104` / `0xcde9c0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcde9c0.json` | matched | family | open |
@@ -26846,6 +26946,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/LockedSource_F068_cdf170` | `p117_cdf170::LockedSource_F068_cdf170::Remove` (GUESS) | `sse-steam-1-7-104` / `0xcdf170` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdf170.json` | mapped, record awaiting review | - | - |
 | `bscore/ScrapHeap_cdf620` | `ScrapHeap::Functioncdf620` (GUESS) | `sse-steam-1-7-104` / `0xcdf620` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdf620.json` | matched | full | - |
 | `unmapped/leaves/Leafcdfdb0` | `Leafcdfdb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcdfdb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfdb0.json` | matched | family | open |
+| `bscore/ScrapHeap_cdfe00` | `ScrapHeap::Functioncdfe00` (GUESS) | `sse-steam-1-7-104` / `0xcdfe00` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfe00.json` | matched | full | - |
+| `bscore/ScrapHeap_cdfe10` | `ScrapHeap::Functioncdfe10` (GUESS) | `sse-steam-1-7-104` / `0xcdfe10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfe10.json` | matched | full | - |
 | `bscore/ScrapHeap_cdfe20` | `ScrapHeap::Functioncdfe20` (GUESS) | `sse-steam-1-7-104` / `0xcdfe20` / 186 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfe20.json` | matched | full | - |
 | `unmapped/leaves/Leafcdfee0` | `Leafcdfee0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcdfee0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcdfee0.json` | matched | family | open |
 | `bscore/Unlockce0970` | `Functionce0970` (GUESS) | `sse-steam-1-7-104` / `0xce0970` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce0970.json` | matched | full | - |
@@ -26886,6 +26988,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bscore/BSTimer` | `BSTimer::Update` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0xce36b0` / 696 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xce36b0.json` | matched | full | - |
 | `bscore/BSTimer` | `BSTimer::SetGlobalTimeMultiplier` (COMMUNITY) | `sse-steam-1-7-104` / `0xce3970` / 76 | `o2-fpfast` | `reports/sse-steam-1-7-104/0xce3970.json` | matched | full | - |
 | `unmapped/leaves/Leafce3f60` | `Leafce3f60::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce3f60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce3f60.json` | matched | family | open |
+| `bscore/BSThread_ce4190` | `BSThread::Functionce4190` (GUESS) | `sse-steam-1-7-104` / `0xce4190` / 138 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4190.json` | matched | full | - |
 | `bscore/BSThread_ce4220` | `BSThread::Exit` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0xce4220` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4220.json` | matched | full | open |
 | `unmapped/leaves/Leafce4240` | `Leafce4240::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce4240` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4240.json` | matched | family | open |
 | `unmapped/leaves/Leafce4250` | `Leafce4250::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xce4250` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4250.json` | matched | family | open |
@@ -26901,6 +27004,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bscore/Unlockce4800` | `Functionce4800` (GUESS) | `sse-steam-1-7-104` / `0xce4800` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce4800.json` | matched | full | - |
 | `bscore/Unlockce48c0` | `Functionce48c0` (GUESS) | `sse-steam-1-7-104` / `0xce48c0` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce48c0.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeafce7b10` | `ThunkLeafce7b10::Forward` (GUESS) | `sse-steam-1-7-104` / `0xce7b10` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce7b10.json` | matched | full | - |
+| `unmapped/leaves/Unkce8290_ce8290` | `Functionce8290` (GUESS) | `sse-steam-1-7-104` / `0xce8290` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce8290.json` | matched | full | - |
 | `bscore/MemoryHeap` | `MemoryHeap::Allocate` (GUESS) | `sse-steam-1-7-104` / `0xce8510` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce8510.json` | matched | full | open |
 | `bscore/MemoryHeap` | `MemoryHeap::Deallocate` (GUESS) | `sse-steam-1-7-104` / `0xce8530` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce8530.json` | matched | full | open |
 | `bscore/MemoryHeap` | `MemoryHeap::Size` (GUESS) | `sse-steam-1-7-104` / `0xce8540` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xce8540.json` | matched | full | open |
@@ -26980,6 +27084,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeafcf3650` | `DeletingLeafcf3650::~DeletingLeafcf3650` (GUESS) | `sse-steam-1-7-104` / `0xcf3650` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf3650.json` | matched | full | - |
 | `skyrim_shared/dialogue/Ownercf9000` | `Functioncf9000` (GUESS) | `sse-steam-1-7-104` / `0xcf9000` / 5 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xcf9000.json` | matched | full | - |
 | `bsinput/BSInputDeviceManager_cf9700` | `BSInputDeviceManager::Functioncf9700` (GUESS) | `sse-steam-1-7-104` / `0xcf9700` / 50 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf9700.json` | matched | full | - |
+| `bsinput/BSInputDeviceManager_cf9840` | `BSInputDeviceManager::Functioncf9840` (GUESS) | `sse-steam-1-7-104` / `0xcf9840` / 37 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf9840.json` | matched | full | - |
 | `unmapped/leaves/Leafcf9870` | `Leafcf9870::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcf9870` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf9870.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeafcf9890` | `ReturnLeafcf9890::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcf9890` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf9890.json` | matched | family | open |
 | `bsshader/Ownercf98b0` | `BSInputDeviceManager::Functioncf98b0` (GUESS) | `sse-steam-1-7-104` / `0xcf98b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcf98b0.json` | matched | full | - |
@@ -26990,6 +27095,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardcfa380` | `LeafForwardcfa380::Forward` (GUESS) | `sse-steam-1-7-104` / `0xcfa380` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfa380.json` | matched | family | open |
 | `bsinput/CharEventStorageLayout` | `DeletingLeafcfa500::~DeletingLeafcfa500` (GUESS) | `sse-steam-1-7-104` / `0xcfa500` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfa500.json` | matched | full | checked |
 | `bsinput/DeviceConnectEventStorageLayout` | `DeletingLeafcfa530::~DeletingLeafcfa530` (GUESS) | `sse-steam-1-7-104` / `0xcfa530` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfa530.json` | matched | full | checked |
+| `unmapped/leaves/Unkcfac60_cfac60` | `Functioncfac60` (GUESS) | `sse-steam-1-7-104` / `0xcfac60` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfac60.json` | matched | full | - |
+| `unmapped/leaves/Unkcfac70_cfac70` | `Functioncfac70` (GUESS) | `sse-steam-1-7-104` / `0xcfac70` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfac70.json` | matched | full | - |
 | `unmapped/wrappers/TableCleanupDeallocators` | `BSWin32GamerProfile::Functioncfad30` (GUESS) | `sse-steam-1-7-104` / `0xcfad30` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfad30.json` | matched | full | - |
 | `unmapped/leaves/Leafcfad70` | `Leafcfad70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcfad70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfad70.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeafcfad80` | `ReturnLeafcfad80::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xcfad80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xcfad80.json` | matched | family | open |
@@ -27515,6 +27622,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bscore/BSFixedString_eb1300` | `BSFixedString::Functioneb1300` (GUESS) | `sse-steam-1-7-104` / `0xeb1300` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb1300.json` | matched | full | - |
 | `bscore/BSFixedString_eb1340` | `BSFixedString::Functioneb1340` (GUESS) | `sse-steam-1-7-104` / `0xeb1340` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb1340.json` | matched | full | - |
 | `bscore/Unlockeb1380` | `BSFixedString::Functioneb1380` (GUESS) | `sse-steam-1-7-104` / `0xeb1380` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb1380.json` | matched | full | - |
+| `unmapped/leaves/Unkeb1be0_eb1be0` | `Functioneb1be0` (GUESS) | `sse-steam-1-7-104` / `0xeb1be0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb1be0.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeafeb27a0` | `DeletingLeafeb27a0::~DeletingLeafeb27a0` (GUESS) | `sse-steam-1-7-104` / `0xeb27a0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb27a0.json` | matched | family | open |
 | `unmapped/storage/StorageIniteb4140` | `StorageIniteb4140::initialize` (GUESS) | `sse-steam-1-7-104` / `0xeb4140` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb4140.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeafeb73a0` | `ReturnLeafeb73a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xeb73a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeb73a0.json` | matched | family | open |
@@ -27540,6 +27648,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/storage/StorageIniteba7a0` | `StorageIniteba7a0::initialize` (GUESS) | `sse-steam-1-7-104` / `0xeba7a0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xeba7a0.json` | matched | family | open |
 | `unmapped/support/BSJobs_ebabb0` | `Functionebabb0` (GUESS) | `sse-steam-1-7-104` / `0xebabb0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebabb0.json` | matched | full | - |
 | `bscore/Unlockebb260` | `Functionebb260` (GUESS) | `sse-steam-1-7-104` / `0xebb260` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebb260.json` | matched | full | - |
+| `unmapped/leaves/Unkebb350_ebb350` | `Functionebb350` (GUESS) | `sse-steam-1-7-104` / `0xebb350` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebb350.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeafebb430` | `ReturnLeafebb430::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xebb430` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebb430.json` | matched | family | open |
 | `unmapped/leaves/Leafebb440` | `Leafebb440::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xebb440` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebb440.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardebda40` | `LeafForwardebda40::Forward` (GUESS) | `sse-steam-1-7-104` / `0xebda40` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebda40.json` | matched | family | open |
@@ -27559,6 +27668,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/TableStoreLeafebff20` | `TableStoreLeafebff20::~TableStoreLeafebff20` (GUESS) | `sse-steam-1-7-104` / `0xebff20` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebff20.json` | matched | family | open |
 | `unmapped/leaves/Leafebff40` | `Leafebff40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xebff40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xebff40.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeafec0160` | `DeletingLeafec0160::~DeletingLeafec0160` (GUESS) | `sse-steam-1-7-104` / `0xec0160` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec0160.json` | matched | full | - |
+| `unmapped/leaves/Unkec0190_ec0190` | `Functionec0190` (GUESS) | `sse-steam-1-7-104` / `0xec0190` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec0190.json` | matched | full | - |
 | `bscore/BSMemStorage` | `BSMemStorage::GetFileSize` (COMMUNITY) | `sse-steam-1-7-104` / `0xec1710` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec1710.json` | matched | delta | open |
 | `bscore/BSMemStorage` | `BSMemStorage::GetPosition` (COMMUNITY) | `sse-steam-1-7-104` / `0xec1720` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec1720.json` | matched | full | open |
 | `bscore/BSCounterStorage` | `BSCounterStorage::ReadFile` (COMMUNITY) | `sse-steam-1-7-104` / `0xec18e0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec18e0.json` | matched | full | open |
@@ -27571,6 +27681,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSSystemFileStorage::Write` (COMMUNITY) | `sse-steam-1-7-104` / `0xec3770` / 173 | - | - | mapped | - | - |
 | - | `BSSystemFileStorage::~BSSystemFileStorage` (COMMUNITY) | `sse-steam-1-7-104` / `0xec3820` / 74 | - | - | mapped | - | - |
 | `unmapped/leaves/TableStoreLeafec39b0` | `TableStoreLeafec39b0::~TableStoreLeafec39b0` (GUESS) | `sse-steam-1-7-104` / `0xec39b0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec39b0.json` | matched | family | open |
+| `unmapped/leaves/Unkec39d0_ec39d0` | `Functionec39d0` (GUESS) | `sse-steam-1-7-104` / `0xec39d0` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec39d0.json` | matched | full | - |
 | `bscore/BSTaskletManager_ec3aa0` | `Functionec3aa0` (GUESS) | `sse-steam-1-7-104` / `0xec3aa0` / 101 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec3aa0.json` | matched | full | - |
 | `unmapped/leaves/Leafec3bf0` | `Leafec3bf0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xec3bf0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec3bf0.json` | matched | family | open |
 | `unmapped/leaves/Leafec3ca0` | `Leafec3ca0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xec3ca0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xec3ca0.json` | matched | family | open |
@@ -27617,6 +27728,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/LockedSource_F068_ecd110` | `p117_ecd110::LockedSource_F068_ecd110::Remove` (GUESS) | `sse-steam-1-7-104` / `0xecd110` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecd110.json` | mapped, record awaiting review | - | - |
 | `unmapped/leaves/TableStoreLeafecd3f0` | `TableStoreLeafecd3f0::~TableStoreLeafecd3f0` (GUESS) | `sse-steam-1-7-104` / `0xecd3f0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecd3f0.json` | matched | family | open |
 | `skyrim_shared/forms/Ownerecd7b0` | `Functionecd7b0` (GUESS) | `sse-steam-1-7-104` / `0xecd7b0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecd7b0.json` | matched | full | - |
+| `unmapped/leaves/Unkecdb80_ecdb80` | `Functionecdb80` (GUESS) | `sse-steam-1-7-104` / `0xecdb80` / 24 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecdb80.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeafecdbb0` | `ReturnLeafecdbb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xecdbb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecdbb0.json` | matched | family | open |
 | - | `DeletingLeafecde10::~DeletingLeafecde10` (GUESS) | `sse-steam-1-7-104` / `0xecde10` / 43 | - | - | mapped | - | - |
 | `skyrim_shared/world/Ownerecf900` | `Functionecf900` (GUESS) | `sse-steam-1-7-104` / `0xecf900` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xecf900.json` | matched | full | - |
@@ -27648,6 +27760,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/buffers/LockedSource_F068_ed3730` | `p117_ed3730::LockedSource_F068_ed3730::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed3730` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3730.json` | mapped, record awaiting review | - | - |
 | `unmapped/buffers/LockedSource_F068_ed38c0` | `p117_ed38c0::LockedSource_F068_ed38c0::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed38c0` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed38c0.json` | mapped, record awaiting review | - | - |
 | `unmapped/buffers/LockedSource_F068_ed3a50` | `p117_ed3a50::LockedSource_F068_ed3a50::Remove` (GUESS) | `sse-steam-1-7-104` / `0xed3a50` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3a50.json` | mapped, record awaiting review | - | - |
+| `unmapped/leaves/Unked3d40_ed3d40` | `Functioned3d40` (GUESS) | `sse-steam-1-7-104` / `0xed3d40` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed3d40.json` | matched | full | - |
 | - | `Functioned4140` (GUESS) | `sse-steam-1-7-104` / `0xed4140` / 325 | - | - | mapped | - | - |
 | `unmapped/fields/FieldLeafed5100` | `Functioned5100` (GUESS) | `sse-steam-1-7-104` / `0xed5100` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed5100.json` | matched | full | - |
 | `skyrim_shared/forms/Ownered5110` | `Functioned5110` (GUESS) | `sse-steam-1-7-104` / `0xed5110` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed5110.json` | matched | full | - |
@@ -27663,6 +27776,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeafed75f0` | `ReturnLeafed75f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed75f0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed75f0.json` | matched | family | open |
 | `unmapped/leaves/Leafed7600` | `Leafed7600::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed7600` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed7600.json` | matched | family | open |
 | `unmapped/leaves/Leafed79c0` | `Leafed79c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed79c0` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed79c0.json` | matched | family | open |
+| `unmapped/leaves/Unked79d0_ed79d0` | `Functioned79d0` (GUESS) | `sse-steam-1-7-104` / `0xed79d0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed79d0.json` | matched | full | - |
 | `unmapped/leaves/ClearLeafed7d30` | `Functioned7d30` (GUESS) | `sse-steam-1-7-104` / `0xed7d30` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed7d30.json` | matched | full | - |
 | `unmapped/leaves/Leafed9440` | `Leafed9440::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed9440` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed9440.json` | matched | family | open |
 | `unmapped/leaves/Leafed9450` | `Leafed9450::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xed9450` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xed9450.json` | matched | family | open |
@@ -27902,6 +28016,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leafef88f0` | `Leafef88f0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xef88f0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef88f0.json` | matched | family | open |
 | `gamebryo/nianimation/NiTimeController` | `NiTimeController::ProcessClone` (COMMUNITY) | `sse-steam-1-7-104` / `0xef8900` / 53 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef8900.json` | matched | delta | open |
 | `unmapped/leaves/LeafAddressef89c0` | `LeafAddressef89c0::Address` (GUESS) | `sse-steam-1-7-104` / `0xef89c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef89c0.json` | matched | family | open |
+| `unmapped/leaves/Unkef89d0_ef89d0` | `Functionef89d0` (GUESS) | `sse-steam-1-7-104` / `0xef89d0` / 20 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef89d0.json` | matched | full | - |
 | `bscore/Unlockef8a30` | `Functionef8a30` (GUESS) | `sse-steam-1-7-104` / `0xef8a30` / 29 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef8a30.json` | matched | full | - |
 | `gamebryo/nimain/NiQuaternion_ef8d30` | `Functionef8d30` (GUESS) | `sse-steam-1-7-104` / `0xef8d30` / 55 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xef8d30.json` | matched | full | - |
 | `gamebryo/nimain/NiExtraData_ef9840` | `NiExtraData::CopyMembers` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0xef9840` / 44 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xef9840.json` | matched | full | - |
@@ -28199,6 +28314,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardf171c0` | `LeafForwardf171c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf171c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf171c0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf171d0` | `LeafForwardf171d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf171d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf171d0.json` | matched | family | open |
 | `gamebryo/nimain/NiTriShapeData_f172f0` | `NiTriShapeData::Functionf172f0` (GUESS) | `sse-steam-1-7-104` / `0xf172f0` / 80 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf172f0.json` | matched | full | - |
+| `gamebryo/nimain/NiTriShapeData_f17860` | `NiTriShapeData::Functionf17860` (GUESS) | `sse-steam-1-7-104` / `0xf17860` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf17860.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressf17a80` | `LeafAddressf17a80::Address` (GUESS) | `sse-steam-1-7-104` / `0xf17a80` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf17a80.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaff17a90` | `ReturnLeaff17a90::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf17a90` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf17a90.json` | matched | family | open |
 | `unmapped/leaves/Leaff17aa0` | `Leaff17aa0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf17aa0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf17aa0.json` | matched | family | open |
@@ -29167,8 +29283,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nianimation/NiTransformController_f8a460` | `Functionf8a460` (GUESS) | `sse-steam-1-7-104` / `0xf8a460` / 60 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a460.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressf8a5f0` | `LeafAddressf8a5f0::Address` (GUESS) | `sse-steam-1-7-104` / `0xf8a5f0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a5f0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardf8a690` | `LeafForwardf8a690::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf8a690` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a690.json` | matched | family | open |
+| `gamebryo/nianimation/BSAnimNote_f8a6a0` | `BSAnimNote::Functionf8a6a0` (GUESS) | `sse-steam-1-7-104` / `0xf8a6a0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a6a0.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaff8a7a0` | `ReturnLeaff8a7a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf8a7a0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a7a0.json` | matched | family | open |
 | `gamebryo/nianimation/Ownerf8a7f0` | `BSAnimNote::Functionf8a7f0` (GUESS) | `sse-steam-1-7-104` / `0xf8a7f0` / 18 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xf8a7f0.json` | matched | full | - |
+| `gamebryo/nianimation/BSAnimNote_f8a810` | `BSAnimNote::Functionf8a810` (GUESS) | `sse-steam-1-7-104` / `0xf8a810` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a810.json` | matched | full | - |
 | `gamebryo/nianimation/AnimNotesLinkLeaff8a900_f8a900` | `Functionf8a900` (GUESS) | `sse-steam-1-7-104` / `0xf8a900` / 111 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8a900.json` | matched | full | - |
 | `unmapped/leaves/LeafForwardf8aaa0` | `LeafForwardf8aaa0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xf8aaa0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8aaa0.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaff8ab70` | `ReturnLeaff8ab70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xf8ab70` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xf8ab70.json` | matched | full | open |
@@ -29797,6 +29915,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardfc0380` | `LeafForwardfc0380::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfc0380` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0380.json` | matched | family | open |
 | `gamebryo/niparticle/NiPSysVolumeEmitter` | `NiPSysVolumeEmitter::SaveBinary` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc0390` / 45 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0390.json` | matched | full | - |
 | `gamebryo/niparticle/VolumeEmitterLeaffc03d0_fc03d0` | `NiPSysVolumeEmitter::Functionfc03d0` (GUESS) | `sse-steam-1-7-104` / `0xfc03d0` / 72 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc03d0.json` | matched | full | - |
+| `gamebryo/niparticle/NiPSysVolumeEmitter_fc05f0` | `NiPSysVolumeEmitter::Functionfc05f0` (GUESS) | `sse-steam-1-7-104` / `0xfc05f0` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc05f0.json` | matched | full | - |
 | `gamebryo/niparticle/NiPSysVolumeEmitter_fc08d0` | `NiPSysVolumeEmitter::dtor` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc08d0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc08d0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfc0910` | `LeafAddressfc0910::Address` (GUESS) | `sse-steam-1-7-104` / `0xfc0910` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0910.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardfc0920` | `LeafForwardfc0920::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfc0920` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0920.json` | matched | family | open |
@@ -29809,6 +29928,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/niparticle/NiPSysModifierFloatCtlr` | `NiPSysModifierFloatCtlr::InterpolatorIsCorrectType` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc0d60` / 13 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0xfc0d60.json` | matched | full | - |
 | `gamebryo/niparticle/NiPSysModifierFloatCtlr_fc0930` | `NiPSysModifierFloatCtlr::dtor` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc0d70` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0d70.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfc0db0` | `LeafAddressfc0db0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfc0db0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0db0.json` | matched | family | open |
+| `unmapped/leaves/Unkfc0dc0_fc0dc0` | `Functionfc0dc0` (GUESS) | `sse-steam-1-7-104` / `0xfc0dc0` / 71 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0dc0.json` | matched | full | - |
 | `gamebryo/niparticle/NiPSysFieldModifier` | `NiPSysFieldModifier::LinkObject` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc0f20` / 44 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0f20.json` | matched | full | - |
 | `unmapped/leaves/LeafForwardfc0f60` | `LeafForwardfc0f60::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfc0f60` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0f60.json` | matched | family | open |
 | `gamebryo/niparticle/NiPSysFieldModifier_fc0f70` | `NiPSysFieldModifier::Functionfc0f70` (GUESS) | `sse-steam-1-7-104` / `0xfc0f70` / 252 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc0f70.json` | matched | full | - |
@@ -29829,6 +29949,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/NiObject_fc21d0` | `NiObject::Functionfc21d0` (GUESS) | `sse-steam-1-7-104` / `0xfc21d0` / 102 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc21d0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfc22b0` | `LeafAddressfc22b0::Address` (GUESS) | `sse-steam-1-7-104` / `0xfc22b0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc22b0.json` | matched | family | open |
 | `unmapped/leaves/ReturnLeaffc26a0` | `ReturnLeaffc26a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xfc26a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc26a0.json` | matched | family | open |
+| `bscore/BSTask_fc26b0` | `IOTask::Functionfc26b0` (GUESS) | `sse-steam-1-7-104` / `0xfc26b0` / 18 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc26b0.json` | matched | full | - |
 | `unmapped/leaves/Leaffc26d0` | `Leaffc26d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0xfc26d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc26d0.json` | matched | family | open |
 | - | `BSTask::GetDescription` (COMMUNITY) | `sse-steam-1-7-104` / `0xfc26e0` / 34 | - | - | mapped | - | - |
 | `bssystem/Unlockfc27b0` | `Functionfc27b0` (GUESS) | `sse-steam-1-7-104` / `0xfc27b0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfc27b0.json` | matched | full | - |
@@ -29979,6 +30100,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSTArrayEraseOrdered3` | `Functionfdd350` (GUESS) | `sse-steam-1-7-104` / `0xfdd350` / 94 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdd350.json` | matched | full | - |
 | `gamebryo/nimain/BSRangeNode_fdd480` | `Functionfdd480` (GUESS) | `sse-steam-1-7-104` / `0xfdd480` / 72 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdd480.json` | matched | full | - |
 | `unmapped/leaves/LeafForwardfdd5c0` | `LeafForwardfdd5c0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xfdd5c0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdd5c0.json` | matched | family | open |
+| `gamebryo/nimain/BSRangeNode_fdd5d0` | `BSRangeNode::Functionfdd5d0` (GUESS) | `sse-steam-1-7-104` / `0xfdd5d0` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdd5d0.json` | matched | full | - |
 | `gamebryo/nimain/BSRangeNode_fdd6e0` | `BSRangeNode::Functionfdd6e0` (GUESS) | `sse-steam-1-7-104` / `0xfdd6e0` / 96 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdd6e0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddressfdda00` | `LeafAddressfdda00::Address` (GUESS) | `sse-steam-1-7-104` / `0xfdda00` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfdda00.json` | matched | family | open |
 | `gamebryo/nimain/NiAVObject` | `NiAVObject::GetBoneFromName` (COMMUNITY) | `sse-steam-1-7-104` / `0xfddac0` / 215 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xfddac0.json` | matched | full | open |
@@ -30115,6 +30237,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafForwardff11a0` | `LeafForwardff11a0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff11a0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff11a0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardff11b0` | `LeafForwardff11b0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff11b0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff11b0.json` | matched | family | open |
 | `unmapped/leaves/LeafForwardff12d0` | `LeafForwardff12d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0xff12d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff12d0.json` | matched | family | open |
+| `gamebryo/nimain/BSFurnitureMarkerNode_ff13a0` | `BSFurnitureMarkerNode::Functionff13a0` (GUESS) | `sse-steam-1-7-104` / `0xff13a0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff13a0.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeafff14a0` | `BSFurnitureMarkerNode::Functionff14a0` (GUESS) | `sse-steam-1-7-104` / `0xff14a0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff14a0.json` | matched | full | - |
 | `unmapped/storage/StorageInitff1620` | `StorageInitff1620::initialize` (GUESS) | `sse-steam-1-7-104` / `0xff1620` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff1620.json` | matched | family | open |
 | `unmapped/leaves/LeafAddressff16c0` | `LeafAddressff16c0::Address` (GUESS) | `sse-steam-1-7-104` / `0xff16c0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0xff16c0.json` | matched | family | open |
@@ -30334,7 +30457,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ArrayLeaf1007910` | `Function1007910` (GUESS) | `sse-steam-1-7-104` / `0x1007910` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1007910.json` | matched | full | - |
 | `skyrim/camera/Owner1008580` | `Renderer::Function1008580` (GUESS) | `sse-steam-1-7-104` / `0x1008580` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1008580.json` | matched | full | - |
 | `bsshader/Renderer_1008ba0` | `Renderer::Function1008ba0` (GUESS) | `sse-steam-1-7-104` / `0x1008ba0` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1008ba0.json` | matched | full | - |
+| `bsshader/Renderer_1009cf0` | `Renderer::Function1009cf0` (GUESS) | `sse-steam-1-7-104` / `0x1009cf0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1009cf0.json` | matched | full | - |
+| `bsshader/Renderer_1009d10` | `Renderer::Function1009d10` (GUESS) | `sse-steam-1-7-104` / `0x1009d10` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1009d10.json` | matched | full | - |
 | - | `Function100ae80` (GUESS) | `sse-steam-1-7-104` / `0x100ae80` / 1697 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk100d880_100d880` | `Function100d880` (GUESS) | `sse-steam-1-7-104` / `0x100d880` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x100d880.json` | matched | full | - |
 | `bsshader/Renderer_100e410` | `Renderer::Function100e410` (GUESS) | `sse-steam-1-7-104` / `0x100e410` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x100e410.json` | matched | full | - |
 | `bsshader/Renderer_100e480` | `Renderer::Function100e480` (GUESS) | `sse-steam-1-7-104` / `0x100e480` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x100e480.json` | matched | full | - |
 | `bsshader/Renderer_100e4f0` | `Renderer::Function100e4f0` (GUESS) | `sse-steam-1-7-104` / `0x100e4f0` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x100e4f0.json` | matched | full | - |
@@ -30345,6 +30471,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf10104d0` | `ReturnLeaf10104d0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x10104d0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10104d0.json` | matched | family | open |
 | `unmapped/leaves/Leaf10104e0` | `Leaf10104e0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x10104e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10104e0.json` | matched | family | open |
 | `bsshader/Unlock10104f0` | `Function10104f0` (GUESS) | `sse-steam-1-7-104` / `0x10104f0` / 121 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10104f0.json` | matched | full | - |
+| `unmapped/leaves/Unk1010600_1010600` | `Function1010600` (GUESS) | `sse-steam-1-7-104` / `0x1010600` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1010600.json` | matched | full | - |
+| `unmapped/leaves/Unk10106a0_10106a0` | `Function10106a0` (GUESS) | `sse-steam-1-7-104` / `0x10106a0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10106a0.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf1010890` | `ReturnLeaf1010890::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1010890` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1010890.json` | matched | family | open |
 | `unmapped/leaves/Leaf10108a0` | `Leaf10108a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x10108a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10108a0.json` | matched | family | open |
 | `skyrim/magic/Owner1010dd0` | `Function1010dd0` (GUESS) | `sse-steam-1-7-104` / `0x1010dd0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1010dd0.json` | matched | full | - |
@@ -30359,6 +30487,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf10157c0` | `Leaf10157c0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x10157c0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10157c0.json` | matched | family | open |
 | `unmapped/leaves/ArrayLeaf101ed50` | `Function101ed50` (GUESS) | `sse-steam-1-7-104` / `0x101ed50` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x101ed50.json` | matched | full | - |
 | `unmapped/storage/StorageInit101ee00` | `StorageInit101ee00::initialize` (GUESS) | `sse-steam-1-7-104` / `0x101ee00` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x101ee00.json` | matched | family | open |
+| `unmapped/leaves/Unk1020aa0_1020aa0` | `Function1020aa0` (GUESS) | `sse-steam-1-7-104` / `0x1020aa0` / 88 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1020aa0.json` | matched | full | - |
 | `unmapped/buffers/CheckedCopy10243c0` | `CheckedCopy10243c0::Copy` (GUESS) | `sse-steam-1-7-104` / `0x10243c0` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x10243c0.json` | matched | full | checked |
 | `unmapped/buffers/CheckedCopy102ab20` | `CheckedCopy102ab20::Copy` (GUESS) | `sse-steam-1-7-104` / `0x102ab20` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x102ab20.json` | matched | full | checked |
 | `unmapped/buffers/CheckedCopy1031520` | `CheckedCopy1031520::Copy` (GUESS) | `sse-steam-1-7-104` / `0x1031520` / 171 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1031520.json` | matched | full | checked |
@@ -31178,6 +31307,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf1168fe0` | `DeletingLeaf1168fe0::~DeletingLeaf1168fe0` (GUESS) | `sse-steam-1-7-104` / `0x1168fe0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1168fe0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf1169010` | `DeletingLeaf1169010::~DeletingLeaf1169010` (GUESS) | `sse-steam-1-7-104` / `0x1169010` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1169010.json` | matched | family | open |
 | `bsscaleform/BSUIScaleformData` | `BSUIScaleformData::~BSUIScaleformData` (COMMUNITY) | `sse-steam-1-7-104` / `0x1169040` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1169040.json` | matched | full | open |
+| `unmapped/leaves/Unk11696e0_11696e0` | `Function11696e0` (GUESS) | `sse-steam-1-7-104` / `0x11696e0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11696e0.json` | matched | full | - |
 | - | `Function116ac80` (GUESS) | `sse-steam-1-7-104` / `0x116ac80` / 1013 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward116c250` | `LeafForward116c250::Forward` (GUESS) | `sse-steam-1-7-104` / `0x116c250` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116c250.json` | matched | family | open |
 | `unmapped/leaves/ArrayLeaf116c260` | `Function116c260` (GUESS) | `sse-steam-1-7-104` / `0x116c260` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116c260.json` | matched | full | - |
@@ -31204,6 +31334,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf116cf50` | `Leaf116cf50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x116cf50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116cf50.json` | matched | family | open |
 | `unmapped/storage/StorageInit116e790` | `StorageInit116e790::initialize` (GUESS) | `sse-steam-1-7-104` / `0x116e790` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116e790.json` | matched | family | open |
 | `unmapped/leaves/Leaf116eee0` | `Leaf116eee0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x116eee0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116eee0.json` | matched | family | open |
+| `unmapped/leaves/Unk116f610_116f610` | `Function116f610` (GUESS) | `sse-steam-1-7-104` / `0x116f610` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x116f610.json` | matched | full | - |
 | `skyrim_shared/extradata/Owner11706c0` | `Function11706c0` (GUESS) | `sse-steam-1-7-104` / `0x11706c0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11706c0.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf11720b0` | `Function11720b0` (GUESS) | `sse-steam-1-7-104` / `0x11720b0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11720b0.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf11720c0` | `Function11720c0` (GUESS) | `sse-steam-1-7-104` / `0x11720c0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11720c0.json` | matched | full | - |
@@ -31278,6 +31409,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/HeapTableDeallocators` | `Function11a4010` (GUESS) | `sse-steam-1-7-104` / `0x11a4010` / 73 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11a4010.json` | matched | full | - |
 | `skyrim_shared/actors/Owner11a6db0` | `Function11a6db0` (GUESS) | `sse-steam-1-7-104` / `0x11a6db0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11a6db0.json` | matched | full | - |
 | `skyrim_shared/pathfinding/Unlock11a6ee0` | `Function11a6ee0` (GUESS) | `sse-steam-1-7-104` / `0x11a6ee0` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11a6ee0.json` | matched | full | - |
+| `unmapped/leaves/Unk11a7690_11a7690` | `Function11a7690` (GUESS) | `sse-steam-1-7-104` / `0x11a7690` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11a7690.json` | matched | full | - |
+| `unmapped/leaves/Unk11a7740_11a7740` | `Function11a7740` (GUESS) | `sse-steam-1-7-104` / `0x11a7740` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11a7740.json` | matched | full | - |
 | `skyrim_shared/quest/BGSMoviePlayer` | `BGSMoviePlayer::Function11b24e0` (GUESS) | `sse-steam-1-7-104` / `0x11b24e0` / 21 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b24e0.json` | matched | full | - |
 | `skyrim_shared/quest/BGSMoviePlayer_11b2500` | `BGSMoviePlayer::Function11b2500` (GUESS) | `sse-steam-1-7-104` / `0x11b2500` / 47 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b2500.json` | matched | full | - |
 | `skyrim_shared/quest/BGSMoviePlayer_11b2540` | `MoviePlayer::PlaySequenceThread` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x11b2540` / 26 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b2540.json` | matched | full | open |
@@ -31303,6 +31436,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/pathfinding/BSPathingLocation_11b6df0` | `Function11b6df0` (GUESS) | `sse-steam-1-7-104` / `0x11b6df0` / 85 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b6df0.json` | matched | full | - |
 | `skyrim_shared/pathfinding/BSPathingLocation_11b6e50` | `Function11b6e50` (GUESS) | `sse-steam-1-7-104` / `0x11b6e50` / 91 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b6e50.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf11b7070` | `FieldLeaf11b7070::Read` (GUESS) | `sse-steam-1-7-104` / `0x11b7070` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b7070.json` | matched | full | - |
+| `skyrim_shared/pathfinding/BSPathingLocation_11b7080` | `BSPathingLocation::Function11b7080` (GUESS) | `sse-steam-1-7-104` / `0x11b7080` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b7080.json` | matched | full | - |
+| `unmapped/leaves/Unk11b7d80_11b7d80` | `Function11b7d80` (GUESS) | `sse-steam-1-7-104` / `0x11b7d80` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b7d80.json` | matched | full | - |
 | `unmapped/wrappers/BSTArrayResizeTrivial2` | `Function11b8c70` (GUESS) | `sse-steam-1-7-104` / `0x11b8c70` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b8c70.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf11b8d40` | `TableStoreLeaf11b8d40::~TableStoreLeaf11b8d40` (GUESS) | `sse-steam-1-7-104` / `0x11b8d40` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11b8d40.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf11be700` | `TableStoreLeaf11be700::~TableStoreLeaf11be700` (GUESS) | `sse-steam-1-7-104` / `0x11be700` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11be700.json` | matched | family | open |
@@ -31503,6 +31638,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf11d71e0` | `DeletingLeaf11d71e0::~DeletingLeaf11d71e0` (GUESS) | `sse-steam-1-7-104` / `0x11d71e0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11d71e0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf11d7210` | `DeletingLeaf11d7210::~DeletingLeaf11d7210` (GUESS) | `sse-steam-1-7-104` / `0x11d7210` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11d7210.json` | matched | full | checked |
 | `unmapped/leaves/DeletingLeaf11d7240` | `DeletingLeaf11d7240::~DeletingLeaf11d7240` (GUESS) | `sse-steam-1-7-104` / `0x11d7240` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11d7240.json` | matched | family | open |
+| `unmapped/leaves/Unk11d7bc0_11d7bc0` | `Function11d7bc0` (GUESS) | `sse-steam-1-7-104` / `0x11d7bc0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11d7bc0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf11dc810` | `TableStoreLeaf11dc810::~TableStoreLeaf11dc810` (GUESS) | `sse-steam-1-7-104` / `0x11dc810` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11dc810.json` | matched | family | open |
 | `unmapped/leaves/LeafForward11dc820` | `LeafForward11dc820::Forward` (GUESS) | `sse-steam-1-7-104` / `0x11dc820` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11dc820.json` | matched | family | open |
 | `bscore/BSTArray_11dca30` | `Function11dca30` (GUESS) | `sse-steam-1-7-104` / `0x11dca30` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11dca30.json` | matched | full | - |
@@ -31541,6 +31677,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf11e9c10` | `Leaf11e9c10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x11e9c10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11e9c10.json` | matched | family | open |
 | `unmapped/leaves/Leaf11e9c20` | `Leaf11e9c20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x11e9c20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11e9c20.json` | matched | family | open |
 | `unmapped/wrappers/BSTArrayResizeTrivial2` | `Function11e9e50` (GUESS) | `sse-steam-1-7-104` / `0x11e9e50` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11e9e50.json` | matched | full | - |
+| `unmapped/leaves/Unk11eaaa0_11eaaa0` | `Function11eaaa0` (GUESS) | `sse-steam-1-7-104` / `0x11eaaa0` / 16 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11eaaa0.json` | matched | full | - |
+| `unmapped/leaves/Unk11eaac0_11eaac0` | `Function11eaac0` (GUESS) | `sse-steam-1-7-104` / `0x11eaac0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11eaac0.json` | matched | full | - |
 | `unmapped/leaves/LeafForward11eafd0` | `LeafForward11eafd0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x11eafd0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11eafd0.json` | matched | family | open |
 | `unmapped/wrappers/BSTArrayResizeTrivial3` | `Function11eb340` (GUESS) | `sse-steam-1-7-104` / `0x11eb340` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11eb340.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf11eb520` | `ReturnLeaf11eb520::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x11eb520` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x11eb520.json` | matched | family | open |
@@ -31633,6 +31771,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ThunkLeaf120dd10` | `ThunkLeaf120dd10::Forward` (GUESS) | `sse-steam-1-7-104` / `0x120dd10` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x120dd10.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf120dde0` | `DeletingLeaf120dde0::~DeletingLeaf120dde0` (GUESS) | `sse-steam-1-7-104` / `0x120dde0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x120dde0.json` | matched | full | - |
 | `unmapped/leaves/Leaf120df50` | `Leaf120df50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x120df50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x120df50.json` | matched | family | open |
+| `unmapped/leaves/Unk120e4a0_120e4a0` | `Function120e4a0` (GUESS) | `sse-steam-1-7-104` / `0x120e4a0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x120e4a0.json` | matched | full | - |
+| `unmapped/leaves/Unk120eb60_120eb60` | `Function120eb60` (GUESS) | `sse-steam-1-7-104` / `0x120eb60` / 32 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x120eb60.json` | matched | full | - |
+| `unmapped/leaves/Unk120f780_120f780` | `Function120f780` (GUESS) | `sse-steam-1-7-104` / `0x120f780` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x120f780.json` | matched | full | - |
 | `unmapped/leaves/ClearLeaf12114e0` | `Function12114e0` (GUESS) | `sse-steam-1-7-104` / `0x12114e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12114e0.json` | matched | full | - |
 | `unmapped/wrappers/BSInlineHost12114f0` | `BSInlineHost12114f0::~BSInlineHost12114f0` (GUESS) | `sse-steam-1-7-104` / `0x12114f0` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12114f0.json` | matched | full | open |
 | `unmapped/leaves/ThunkLeaf1211520` | `ThunkLeaf1211520::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1211520` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1211520.json` | matched | full | - |
@@ -31670,6 +31811,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf1216d20` | `DeletingLeaf1216d20::~DeletingLeaf1216d20` (GUESS) | `sse-steam-1-7-104` / `0x1216d20` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1216d20.json` | matched | family | open |
 | `unmapped/storage/StorageInit1216d50` | `StorageInit1216d50::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1216d50` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1216d50.json` | matched | family | open |
 | `unmapped/storage/StorageInit1216de0` | `StorageInit1216de0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1216de0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1216de0.json` | matched | family | open |
+| `unmapped/leaves/Unk1217010_1217010` | `Function1217010` (GUESS) | `sse-steam-1-7-104` / `0x1217010` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1217010.json` | matched | full | - |
 | `unmapped/leaves/VirtualTail1217090` | `VirtualTail1217090::Dispatch` (GUESS) | `sse-steam-1-7-104` / `0x1217090` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1217090.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf12170b0` | `DeletingLeaf12170b0::~DeletingLeaf12170b0` (GUESS) | `sse-steam-1-7-104` / `0x12170b0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12170b0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf12170e0` | `DeletingLeaf12170e0::~DeletingLeaf12170e0` (GUESS) | `sse-steam-1-7-104` / `0x12170e0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12170e0.json` | matched | family | open |
@@ -32113,6 +32255,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ClassTypeLeaf1230c40` | `ClassTypeLeaf1230c40::QClassType` (GUESS) | `sse-steam-1-7-104` / `0x1230c40` / 140 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1230c40.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf1230ce0` | `ReturnLeaf1230ce0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1230ce0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1230ce0.json` | matched | full | open |
 | `unmapped/leaves/Leaf1230e40` | `Leaf1230e40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1230e40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1230e40.json` | matched | family | open |
+| `skyrim/ai/movement/MovementTweenerAgentAnimationDriven_1232950` | `Function1232950` (GUESS) | `sse-steam-1-7-104` / `0x1232950` / 51 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1232950.json` | matched | full | - |
 | `skyrim/ai/movement/MovementTweenerAgentNodeFollower_12329c0` | `MovementTweenerAgentNodeFollower::Function12329c0` (GUESS) | `sse-steam-1-7-104` / `0x12329c0` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12329c0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf1232c80` | `TableStoreLeaf1232c80::~TableStoreLeaf1232c80` (GUESS) | `sse-steam-1-7-104` / `0x1232c80` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1232c80.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf1232c90` | `TableStoreLeaf1232c90::~TableStoreLeaf1232c90` (GUESS) | `sse-steam-1-7-104` / `0x1232c90` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1232c90.json` | matched | family | open |
@@ -32206,6 +32349,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf1243c30` | `DeletingLeaf1243c30::~DeletingLeaf1243c30` (GUESS) | `sse-steam-1-7-104` / `0x1243c30` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1243c30.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1243c60` | `DeletingLeaf1243c60::~DeletingLeaf1243c60` (GUESS) | `sse-steam-1-7-104` / `0x1243c60` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1243c60.json` | matched | full | checked |
 | `unmapped/storage/StorageInit1243d30` | `StorageInit1243d30::initialize` (GUESS) | `sse-steam-1-7-104` / `0x1243d30` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1243d30.json` | matched | family | open |
+| `unmapped/leaves/Unk12442c0_12442c0` | `Function12442c0` (GUESS) | `sse-steam-1-7-104` / `0x12442c0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12442c0.json` | matched | full | - |
 | `gamebryo/nianimation/Owner1245570` | `Function1245570` (GUESS) | `sse-steam-1-7-104` / `0x1245570` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245570.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf1245590` | `TableStoreLeaf1245590::~TableStoreLeaf1245590` (GUESS) | `sse-steam-1-7-104` / `0x1245590` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245590.json` | matched | family | open |
 | `gamebryo/nianimation/Owner1245660` | `Function1245660` (GUESS) | `sse-steam-1-7-104` / `0x1245660` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245660.json` | matched | full | - |
@@ -32216,12 +32360,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingLeaf12456d0` | `DeletingLeaf12456d0::~DeletingLeaf12456d0` (GUESS) | `sse-steam-1-7-104` / `0x12456d0` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12456d0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf1245700` | `DeletingLeaf1245700::~DeletingLeaf1245700` (GUESS) | `sse-steam-1-7-104` / `0x1245700` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245700.json` | matched | family | open |
 | `unmapped/wrappers/TableTailCleanups` | `Function1245e30` (GUESS) | `sse-steam-1-7-104` / `0x1245e30` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245e30.json` | matched | full | - |
+| `skyrim_shared/pathfinding/PathFollowerStateFollowPathToParameter_1245e50` | `PathFollowerStateFollowPathToParameter::Function1245e50` (GUESS) | `sse-steam-1-7-104` / `0x1245e50` / 31 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1245e50.json` | matched | full | - |
 | `gamebryo/nianimation/CleanupLeaf1246840_1246840` | `PathFollowerStateFollowPathToParameter::Function1246840` (GUESS) | `sse-steam-1-7-104` / `0x1246840` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246840.json` | matched | full | - |
 | `unmapped/wrappers/TableTailCleanups` | `Function12468e0` (GUESS) | `sse-steam-1-7-104` / `0x12468e0` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12468e0.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf1246a90` | `ThunkLeaf1246a90::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1246a90` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246a90.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf1246aa0` | `ThunkLeaf1246aa0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x1246aa0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246aa0.json` | matched | full | - |
 | `gamebryo/nianimation/CleanupLeaf1246ab0_1246ab0` | `PathFollowerStateTurnToAngle::Function1246ab0` (GUESS) | `sse-steam-1-7-104` / `0x1246ab0` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246ab0.json` | matched | full | - |
 | `unmapped/leaves/DtorBaseLeaf1246b50` | `PathFollowerStateKeepLastDirection::Function1246b50` (GUESS) | `sse-steam-1-7-104` / `0x1246b50` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246b50.json` | matched | full | - |
+| `skyrim_shared/pathfinding/PathFollowerStateKeepLastDirection_1246b70` | `PathFollowerStateKeepLastDirection::Function1246b70` (GUESS) | `sse-steam-1-7-104` / `0x1246b70` / 35 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246b70.json` | matched | full | - |
 | `gamebryo/nianimation/CleanupLeaf1246d90_1246d90` | `PathFollowerStateKeepLastDirection::Function1246d90` (GUESS) | `sse-steam-1-7-104` / `0x1246d90` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1246d90.json` | matched | full | - |
 | `unmapped/leaves/Leaf12479a0` | `Leaf12479a0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x12479a0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x12479a0.json` | matched | family | open |
 | `unmapped/leaves/Leaf1248540` | `Leaf1248540::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1248540` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1248540.json` | matched | family | open |
@@ -35062,6 +35208,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/DeletingWrapper14a1520` | `DeletingWrapper14a1520::~DeletingWrapper14a1520` (GUESS) | `sse-steam-1-7-104` / `0x14a1520` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a1520.json` | matched | full | checked |
 | `unmapped/support/Owner14a1560_14a1560` | `Function14a1560` (GUESS) | `sse-steam-1-7-104` / `0x14a1560` / 52 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a1560.json` | matched | full | - |
 | `unmapped/leaves/Leaf14a1ef0` | `Leaf14a1ef0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14a1ef0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a1ef0.json` | matched | family | open |
+| `unmapped/leaves/Unk14a3130_14a3130` | `Function14a3130` (GUESS) | `sse-steam-1-7-104` / `0x14a3130` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a3130.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf14a33f0` | `TableStoreLeaf14a33f0::~TableStoreLeaf14a33f0` (GUESS) | `sse-steam-1-7-104` / `0x14a33f0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a33f0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf14a3a80` | `DeletingLeaf14a3a80::~DeletingLeaf14a3a80` (GUESS) | `sse-steam-1-7-104` / `0x14a3a80` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a3a80.json` | matched | family | open |
 | `unmapped/leaves/TableStoreLeaf14a3bf0` | `TableStoreLeaf14a3bf0::~TableStoreLeaf14a3bf0` (GUESS) | `sse-steam-1-7-104` / `0x14a3bf0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14a3bf0.json` | matched | family | open |
@@ -35223,6 +35370,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf14dcc30` | `Leaf14dcc30::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14dcc30` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcc30.json` | matched | family | open |
 | `unmapped/leaves/Leaf14dcc40` | `Leaf14dcc40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14dcc40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcc40.json` | matched | family | open |
 | `unmapped/leaves/Leaf14dcc50` | `Leaf14dcc50::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14dcc50` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcc50.json` | matched | family | open |
+| `unmapped/leaves/Unk14dcfd0_14dcfd0` | `Function14dcfd0` (GUESS) | `sse-steam-1-7-104` / `0x14dcfd0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14dcfd0.json` | matched | full | - |
 | `skyrim_shared/extradata/Owner14e1d00` | `Function14e1d00` (GUESS) | `sse-steam-1-7-104` / `0x14e1d00` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e1d00.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf14e3530` | `ThunkLeaf14e3530::Forward` (GUESS) | `sse-steam-1-7-104` / `0x14e3530` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e3530.json` | matched | full | - |
 | `unmapped/leaves/ThunkLeaf14e3540` | `ThunkLeaf14e3540::Forward` (GUESS) | `sse-steam-1-7-104` / `0x14e3540` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e3540.json` | matched | full | - |
@@ -35323,7 +35471,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSTArrayResizeTrivial3` | `Function14e9e90` (GUESS) | `sse-steam-1-7-104` / `0x14e9e90` / 113 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14e9e90.json` | matched | full | - |
 | - | `Function14ea2d0` (GUESS) | `sse-steam-1-7-104` / `0x14ea2d0` / 3641 | - | - | mapped | - | - |
 | - | `Function14ebf00` (GUESS) | `sse-steam-1-7-104` / `0x14ebf00` / 49 | - | - | mapped | - | - |
-| - | `Function14ec040` (GUESS) | `sse-steam-1-7-104` / `0x14ec040` / 22 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk14ec000_14ec000` | `Function14ec000` (GUESS) | `sse-steam-1-7-104` / `0x14ec000` / 15 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ec000.json` | matched | full | - |
+| `unmapped/leaves/Unk14ec040_14ec040` | `Function14ec040` (GUESS) | `sse-steam-1-7-104` / `0x14ec040` / 22 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ec040.json` | matched | full | - |
 | - | `BSShaderManager::GetTexture` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x14ec0a0` / 476 | - | - | mapped | - | - |
 | - | `Function14ec3b0` (GUESS) | `sse-steam-1-7-104` / `0x14ec3b0` / 889 | - | - | mapped | - | - |
 | - | `Function14ec730` (GUESS) | `sse-steam-1-7-104` / `0x14ec730` / 800 | - | - | mapped | - | - |
@@ -35337,6 +35486,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSInlineHost14ed280` | `BSInlineHost14ed280::~BSInlineHost14ed280` (GUESS) | `sse-steam-1-7-104` / `0x14ed280` / 48 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ed280.json` | matched | full | open |
 | `unmapped/leaves/Leaf14ed360` | `Leaf14ed360::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x14ed360` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14ed360.json` | matched | family | open |
 | - | `Function14eeaf0` (GUESS) | `sse-steam-1-7-104` / `0x14eeaf0` / 8 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk14eeb00_14eeb00` | `Function14eeb00` (GUESS) | `sse-steam-1-7-104` / `0x14eeb00` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14eeb00.json` | matched | full | - |
+| `unmapped/leaves/Unk14eeb10_14eeb10` | `Function14eeb10` (GUESS) | `sse-steam-1-7-104` / `0x14eeb10` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14eeb10.json` | matched | full | - |
 | `skyrim_shared/world/Owner14eece0` | `Function14eece0` (GUESS) | `sse-steam-1-7-104` / `0x14eece0` / 12 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x14eece0.json` | matched | full | - |
 | `skyrim_shared/world/Owner14eed00` | `Function14eed00` (GUESS) | `sse-steam-1-7-104` / `0x14eed00` / 12 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x14eed00.json` | matched | full | - |
 | `bssystem/Owner14eedd0` | `Function14eedd0` (GUESS) | `sse-steam-1-7-104` / `0x14eedd0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x14eedd0.json` | matched | full | - |
@@ -36024,6 +36175,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsshader/BSEffectShaderProperty` | `BSEffectShaderProperty::Unk_3C` (COMMUNITY) | `sse-steam-1-7-104` / `0x152add0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152add0.json` | matched | full | open |
 | `bsshader/BSEffectShaderProperty` | `BSEffectShaderProperty::QMaterialAlpha` (COMMUNITY) | `sse-steam-1-7-104` / `0x152ade0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152ade0.json` | matched | full | - |
 | `bsshader/BSEffectShaderProperty` | `BSEffectShaderProperty::SetMaterialAlpha` (COMMUNITY) | `sse-steam-1-7-104` / `0x152adf0` / 17 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152adf0.json` | matched | full | - |
+| `bsshader/ImageSpaceShaderParam_152b1e0` | `ImageSpaceShaderParam::Function152b1e0` (GUESS) | `sse-steam-1-7-104` / `0x152b1e0` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152b1e0.json` | matched | full | - |
 | `unmapped/leaves/TableStoreLeaf152b2e0` | `TableStoreLeaf152b2e0::~TableStoreLeaf152b2e0` (GUESS) | `sse-steam-1-7-104` / `0x152b2e0` / 11 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152b2e0.json` | matched | family | open |
 | `unmapped/leaves/DeletingLeaf152b560` | `DeletingLeaf152b560::~DeletingLeaf152b560` (GUESS) | `sse-steam-1-7-104` / `0x152b560` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152b560.json` | matched | family | open |
 | `skyrim_shared/extradata/Owner152bb40` | `Function152bb40` (GUESS) | `sse-steam-1-7-104` / `0x152bb40` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x152bb40.json` | matched | full | - |
@@ -36138,6 +36290,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function154bb90` (GUESS) | `sse-steam-1-7-104` / `0x154bb90` / 627 | - | - | mapped | - | - |
 | - | `Function154c010` (GUESS) | `sse-steam-1-7-104` / `0x154c010` / 438 | - | - | mapped | - | - |
 | `bsshader/BSLightingShaderThunkLayout` | `BSLightingShaderThunkLayout secondary destructor adjustor` (GUESS) | `sse-steam-1-7-104` / `0x154cf08` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154cf08.json` | matched | full | checked |
+| `unmapped/leaves/Unk154d070_154d070` | `Function154d070` (GUESS) | `sse-steam-1-7-104` / `0x154d070` / 14 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154d070.json` | matched | full | - |
 | - | `Function154d330` (GUESS) | `sse-steam-1-7-104` / `0x154d330` / 960 | - | - | mapped | - | - |
 | - | `BSWaterShader::Func4` (GUESS) | `sse-steam-1-7-104` / `0x154d700` / 1715 | - | - | mapped | - | - |
 | `unmapped/leaves/Leaf154ddc0` | `Leaf154ddc0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x154ddc0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x154ddc0.json` | matched | family | open |
@@ -36155,8 +36308,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `bsshader/BSSkyShaderProperty` | `BSSkyShaderProperty::ForEachTexture` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x1553750` / 77 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553750.json` | matched | full | - |
 | `bsshader/BSSkyShaderProperty` | `BSSkyShaderProperty::GetBaseTexture` (COMMUNITY) | `sse-steam-1-7-104` / `0x1553930` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553930.json` | matched | full | open |
 | `unmapped/leaves/LeafAddress1553940` | `BSSkyShaderProperty::GetRTTI` (COMMUNITY) | `sse-steam-1-7-104` / `0x1553940` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1553940.json` | matched | family | open |
+| `unmapped/leaves/Unk1554f40_1554f40` | `Function1554f40` (GUESS) | `sse-steam-1-7-104` / `0x1554f40` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1554f40.json` | matched | full | - |
+| `unmapped/leaves/Unk15550a0_15550a0` | `Function15550a0` (GUESS) | `sse-steam-1-7-104` / `0x15550a0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15550a0.json` | matched | full | - |
 | `skyrim_shared/forms/Owner15550b0` | `Function15550b0` (GUESS) | `sse-steam-1-7-104` / `0x15550b0` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15550b0.json` | matched | full | - |
+| `unmapped/leaves/Unk15550d0_15550d0` | `Function15550d0` (GUESS) | `sse-steam-1-7-104` / `0x15550d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15550d0.json` | matched | full | - |
 | `bscore/Unlock1555120` | `Function1555120` (GUESS) | `sse-steam-1-7-104` / `0x1555120` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555120.json` | matched | full | - |
+| `unmapped/leaves/Unk1555130_1555130` | `Function1555130` (GUESS) | `sse-steam-1-7-104` / `0x1555130` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555130.json` | matched | full | - |
+| `unmapped/leaves/Unk1555400_1555400` | `Function1555400` (GUESS) | `sse-steam-1-7-104` / `0x1555400` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555400.json` | matched | full | - |
+| `unmapped/leaves/Unk1555420_1555420` | `Function1555420` (GUESS) | `sse-steam-1-7-104` / `0x1555420` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555420.json` | matched | full | - |
 | `gamebryo/nimain/BSFadeNodeCuller` | `BSFadeNodeCuller::Function1555fc0` (GUESS) | `sse-steam-1-7-104` / `0x1555fc0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555fc0.json` | matched | full | - |
 | `gamebryo/nimain/BSFadeNodeCuller` | `BSFadeNodeCuller::Process1` (COMMUNITY) | `sse-steam-1-7-104` / `0x1555fd0` / 195 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1555fd0.json` | matched | full | - |
 | `bsshader/BSEffectShaderMaterial` | `BSEffectShaderMaterial::GetDefault` (COMMUNITY) | `sse-steam-1-7-104` / `0x1556500` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1556500.json` | matched | full | - |
@@ -36260,6 +36419,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/NiCollisionObject_156aff0` | `NiCollisionObject::Function156aff0` (GUESS) | `sse-steam-1-7-104` / `0x156aff0` / 41 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156aff0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress156b020` | `LeafAddress156b020::Address` (GUESS) | `sse-steam-1-7-104` / `0x156b020` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156b020.json` | matched | family | open |
 | `gamebryo/nimain/NiString_156b660` | `Function156b660` (GUESS) | `sse-steam-1-7-104` / `0x156b660` / 54 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156b660.json` | matched | full | - |
+| `unmapped/leaves/Unk156b750_156b750` | `Function156b750` (GUESS) | `sse-steam-1-7-104` / `0x156b750` / 13 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156b750.json` | matched | full | - |
 | `gamebryo/nimain/StringReverseLeaf156be60_156be60` | `Function156be60` (GUESS) | `sse-steam-1-7-104` / `0x156be60` / 61 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156be60.json` | matched | full | - |
 | `gamebryo/nimain/NiStringSearch156beb0_156beb0` | `Function156beb0` (GUESS) | `sse-steam-1-7-104` / `0x156beb0` / 59 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156beb0.json` | matched | full | - |
 | `leaves/ReturnFirstWrappers` | `Function156e0a0` (GUESS) | `sse-steam-1-7-104` / `0x156e0a0` / 23 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x156e0a0.json` | matched | full | - |
@@ -36489,6 +36649,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function1589240` (GUESS) | `sse-steam-1-7-104` / `0x1589240` / 1108 | - | - | mapped | - | - |
 | `bsshader/BSLightingShader` | `BSLightingShader::GetVertexTechnique` (COMMUNITY) | `sse-steam-1-7-104` / `0x15896a0` / 38 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x15896a0.json` | matched | full | - |
 | - | `Function15896d0` (GUESS) | `sse-steam-1-7-104` / `0x15896d0` / 18 | - | - | mapped | - | - |
+| `unmapped/leaves/Unk15896f0_15896f0` | `Function15896f0` (GUESS) | `sse-steam-1-7-104` / `0x15896f0` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15896f0.json` | matched | full | - |
 | `unmapped/leaves/Leaf1589a70` | `Leaf1589a70::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1589a70` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1589a70.json` | matched | family | open |
 | - | `BSComputeShader::Dispatch` (COMMUNITY) | `sse-steam-1-7-104` / `0x1589cf0` / 126 | - | - | mapped | - | - |
 | `unmapped/leaves/ThunkLeaf158a170` | `ThunkLeaf158a170::Forward` (GUESS) | `sse-steam-1-7-104` / `0x158a170` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x158a170.json` | matched | full | - |
@@ -36517,11 +36678,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/Leaf1599080` | `Leaf1599080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599080` / 6 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599080.json` | matched | family | open |
 | `skyrim_shared/world/Owner15990d0` | `Function15990d0` (GUESS) | `sse-steam-1-7-104` / `0x15990d0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15990d0.json` | matched | full | - |
 | `skyrim_shared/world/Owner15990e0` | `Function15990e0` (GUESS) | `sse-steam-1-7-104` / `0x15990e0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15990e0.json` | matched | full | - |
+| `bsinput/BSWin32SystemUtility_15993c0` | `BSWin32SystemUtility::Function15993c0` (GUESS) | `sse-steam-1-7-104` / `0x15993c0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15993c0.json` | matched | full | - |
+| `bsinput/BSWin32SystemUtility_15993d0` | `BSWin32SystemUtility::Function15993d0` (GUESS) | `sse-steam-1-7-104` / `0x15993d0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15993d0.json` | matched | full | - |
 | `skyrim/ai/combat/Owner15993e0` | `BSWin32SystemUtility::Function15993e0` (GUESS) | `sse-steam-1-7-104` / `0x15993e0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15993e0.json` | matched | full | - |
+| `bsinput/BSWin32SystemUtility_15993f0` | `BSWin32SystemUtility::Function15993f0` (GUESS) | `sse-steam-1-7-104` / `0x15993f0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15993f0.json` | matched | full | - |
 | `skyrim/magic/Owner1599430` | `Function1599430` (GUESS) | `sse-steam-1-7-104` / `0x1599430` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599430.json` | matched | full | - |
 | `unmapped/leaves/ReturnLeaf1599440` | `ReturnLeaf1599440::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599440` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599440.json` | matched | full | open |
 | `unmapped/leaves/ReturnLeaf1599510` | `ReturnLeaf1599510::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1599510` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599510.json` | matched | family | open |
 | `skyrim/magic/Owner1599520` | `BSWin32SystemUtility::Function1599520` (GUESS) | `sse-steam-1-7-104` / `0x1599520` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599520.json` | matched | full | - |
+| `bsinput/BSWin32SystemUtility_1599530` | `BSWin32SystemUtility::Function1599530` (GUESS) | `sse-steam-1-7-104` / `0x1599530` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599530.json` | matched | full | - |
 | `unmapped/leaves/ArrayLeaf1599700` | `Function1599700` (GUESS) | `sse-steam-1-7-104` / `0x1599700` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599700.json` | matched | full | - |
 | `unmapped/leaves/DeletingLeaf1599830` | `DeletingLeaf1599830::~DeletingLeaf1599830` (GUESS) | `sse-steam-1-7-104` / `0x1599830` / 43 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1599830.json` | matched | family | open |
 | `unmapped/leaves/Leaf15998b0` | `Leaf15998b0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15998b0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15998b0.json` | matched | family | open |
@@ -36558,9 +36723,12 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf159aa10` | `ReturnLeaf159aa10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159aa10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aa10.json` | matched | family | open |
 | `unmapped/leaves/Leaf159aa20` | `Leaf159aa20::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159aa20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aa20.json` | matched | family | open |
 | `unmapped/leaves/Leaf159ab10` | `Leaf159ab10::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159ab10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ab10.json` | matched | family | open |
+| `bsinput/BSWin32SaveDataSystemUtility_159ab20` | `BSWin32SaveDataSystemUtility::Function159ab20` (GUESS) | `sse-steam-1-7-104` / `0x159ab20` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ab20.json` | matched | full | - |
 | `skyrim_shared/saveload/BSSaveDataSystemUtility` | `BSSaveDataSystemUtility::Unk_0A` (COMMUNITY) | `sse-steam-1-7-104` / `0x159ab30` / 34 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159ab30.json` | matched | delta | open |
+| `bsinput/BSWin32SaveDataSystemUtility_159aca0` | `BSWin32SaveDataSystemUtility::Function159aca0` (GUESS) | `sse-steam-1-7-104` / `0x159aca0` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aca0.json` | matched | full | - |
 | `skyrim/magic/Owner159aea0` | `Function159aea0` (GUESS) | `sse-steam-1-7-104` / `0x159aea0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aea0.json` | matched | full | - |
 | `skyrim/magic/Owner159aeb0` | `Function159aeb0` (GUESS) | `sse-steam-1-7-104` / `0x159aeb0` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aeb0.json` | matched | full | - |
+| `unmapped/leaves/Unk159aed0_159aed0` | `Function159aed0` (GUESS) | `sse-steam-1-7-104` / `0x159aed0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159aed0.json` | matched | full | - |
 | `skyrim_shared/actors/Owner159af20` | `Function159af20` (GUESS) | `sse-steam-1-7-104` / `0x159af20` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159af20.json` | matched | full | - |
 | `skyrim_shared/magic/Owner159af30` | `Function159af30` (GUESS) | `sse-steam-1-7-104` / `0x159af30` / 8 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x159af30.json` | matched | full | - |
 | `skyrim/magic/Owner159af60` | `Function159af60` (GUESS) | `sse-steam-1-7-104` / `0x159af60` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159af60.json` | matched | full | - |
@@ -36572,9 +36740,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ArrayLeaf159b200` | `BSSaveDataSystemUtility::Function159b200` (GUESS) | `sse-steam-1-7-104` / `0x159b200` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b200.json` | matched | full | - |
 | `unmapped/leaves/Leaf159b370` | `Leaf159b370::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159b370` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b370.json` | matched | family | open |
 | `unmapped/leaves/Leaf159b380` | `Leaf159b380::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x159b380` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b380.json` | matched | family | open |
+| `unmapped/leaves/Unk159b3e0_159b3e0` | `Function159b3e0` (GUESS) | `sse-steam-1-7-104` / `0x159b3e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b3e0.json` | matched | full | - |
+| `unmapped/leaves/Unk159b3f0_159b3f0` | `Function159b3f0` (GUESS) | `sse-steam-1-7-104` / `0x159b3f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b3f0.json` | matched | full | - |
+| `unmapped/leaves/Unk159b400_159b400` | `Function159b400` (GUESS) | `sse-steam-1-7-104` / `0x159b400` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b400.json` | matched | full | - |
 | `skyrim_shared/forms/Owner159b410` | `Function159b410` (GUESS) | `sse-steam-1-7-104` / `0x159b410` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b410.json` | matched | full | - |
+| `unmapped/leaves/Unk159b420_159b420` | `Function159b420` (GUESS) | `sse-steam-1-7-104` / `0x159b420` / 4 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b420.json` | matched | full | - |
 | `skyrim_shared/facegen/Owner159b430` | `Function159b430` (GUESS) | `sse-steam-1-7-104` / `0x159b430` / 5 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x159b430.json` | matched | full | - |
 | `unmapped/fields/FieldLeaf159b4e0` | `FieldLeaf159b4e0::Read` (GUESS) | `sse-steam-1-7-104` / `0x159b4e0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b4e0.json` | matched | full | - |
+| `unmapped/leaves/Unk159b4f0_159b4f0` | `Function159b4f0` (GUESS) | `sse-steam-1-7-104` / `0x159b4f0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b4f0.json` | matched | full | - |
 | `skyrim_shared/perks/Owner159b500` | `Function159b500` (GUESS) | `sse-steam-1-7-104` / `0x159b500` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b500.json` | matched | full | - |
 | `skyrim/papyrus/ErasedSignature159b960CallableLayout` | `ErasedSignature159b960CallableLayout scalar deleting destructor` (GUESS) | `sse-steam-1-7-104` / `0x159b960` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b960.json` | matched | full | - |
 | `leaves/ConditionalDeallocators` | `Function159b990` (GUESS) | `sse-steam-1-7-104` / `0x159b990` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x159b990.json` | matched | full | - |
@@ -36636,6 +36809,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim_shared/forms/Owner15a0920` | `Function15a0920` (GUESS) | `sse-steam-1-7-104` / `0x15a0920` / 7 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a0920.json` | matched | full | - |
 | `std/Std_pqueue_short` | `Function15a3c70` (GUESS) | `sse-steam-1-7-104` / `0x15a3c70` / 94 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a3c70.json` | matched | full | - |
 | `std/Std_pqueue_char` | `Function15a3ed0` (GUESS) | `sse-steam-1-7-104` / `0x15a3ed0` / 132 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a3ed0.json` | matched | full | - |
+| `unmapped/leaves/Unk15a4eb0_15a4eb0` | `Function15a4eb0` (GUESS) | `sse-steam-1-7-104` / `0x15a4eb0` / 33 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a4eb0.json` | matched | full | - |
+| `unmapped/leaves/Unk15a5140_15a5140` | `Function15a5140` (GUESS) | `sse-steam-1-7-104` / `0x15a5140` / 42 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a5140.json` | matched | full | - |
 | `unmapped/leaves/LeafForward15a64d0` | `LeafForward15a64d0::Forward` (GUESS) | `sse-steam-1-7-104` / `0x15a64d0` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a64d0.json` | matched | family | open |
 | `unmapped/leaves/Leaf15a6ba0` | `Leaf15a6ba0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15a6ba0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a6ba0.json` | matched | full | checked |
 | `unmapped/leaves/Leaf15a6bb0` | `Leaf15a6bb0::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x15a6bb0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15a6bb0.json` | matched | family | open |
