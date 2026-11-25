@@ -1,9 +1,8 @@
 // Source exposure: mixed (pinned-image listing and community declarations).
 // Code origin: original reconstruction from the local listing.
-// Adapted bodies: none.
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // BSBatchRenderer, SetupAndDrawPass, AutoMemContext, BSRenderPass, BSShaderProperty, material: CRASHLOGGER_PDB(59818@2026.10.24)
-// SetupPassTechnique, currentShader, currentTechnique, currentMaterial, requestedTechnique, forceSkinning, RenderSkinned, g_memoryContext_tls_0x768, forceSetupTechnique, customDrawFlag, renderMemoryContext: GUESS(low)
+// SetupPassTechnique, currentShader, currentTechnique, currentMaterial, requestedTechnique, forceSkinning, DrawUnskinnedGeometry, g_memoryContext_tls_0x768, forceSetupTechnique, customDrawFlag, renderMemoryContext: GUESS(low)
 #pragma once
 #include "BSGeometry_1560ae0.h"
 

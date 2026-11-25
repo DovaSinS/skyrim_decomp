@@ -10,7 +10,7 @@
 
 BSCompoundFrustum* BSCompoundFrustum::AllocateFromPool()
 {
-    PoolGuard guard(poolLock);
+    PoolGuard guard(&poolLock);
     if (poolEnabled && freeSlots) {
         unsigned long slot;
         // Reuse the highest available slot first.

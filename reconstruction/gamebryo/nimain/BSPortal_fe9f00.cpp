@@ -8,6 +8,13 @@
 // CI hash: 0xfe9f00 ?CreateClone@BSPortal@@UEAAPEAVNiObject@@AEAVNiCloningProcess@@@Z
 #include "BSPortal_fe9f00.h"
 
+// The separate BSPortal::Create factory also assigns null after the NiPointer is constructed.
+BSPortal::BSPortal()
+{
+    portalSharedNode = nullptr;
+}
+
+// The clone shares both rooms and starts without shared geometry.
 NiObject* BSPortal::CreateClone(NiCloningProcess&)
 {
     BSPortal* clone = new BSPortal;

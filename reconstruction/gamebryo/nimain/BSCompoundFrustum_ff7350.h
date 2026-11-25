@@ -11,27 +11,38 @@
 #include <intrin.h>
 extern "C" __declspec(dllimport) void __stdcall Sleep(unsigned long milliseconds);
 void operator delete(void* object, std::size_t size) noexcept;
-struct PoolGuard {
-    explicit PoolGuard(long& lock) : held(&lock)
+
+class PoolGuard {
+public:
+    explicit PoolGuard(long* lock) : held(lock)
     {
-        // Yield while another thread owns the pool.
-        while (_InterlockedCompareExchange(held, 1, 0) != 0) {
-            Sleep(0);
+        if (held) {
+            // Yield while another thread owns the pool.
+            while (_InterlockedCompareExchange(held, 1, 0) != 0) {
+                Sleep(0);
+            }
+            // Finish acquiring the lock before accessing the pool.
+            _mm_mfence();
         }
-        // Finish acquiring the pool before accessing its entries.
-        _mm_mfence();
     }
+
+    PoolGuard(const PoolGuard&) = delete;
+    PoolGuard& operator=(const PoolGuard&) = delete;
+
     ~PoolGuard()
     {
-        if (!held) {
-            return;
+        if (held) {
+            *held = 0;
+            // Order the unlock before subsequent memory accesses.
+            _mm_mfence();
         }
-        *held = 0;
-        // Publish changes to the free slots before the caller continues.
-        _mm_mfence();
     }
-    long* held;
+
+private:
+    // The unwind cleanup tests this pointer before releasing the lock.
+    long* const held;
 };
+
 extern long poolLock;
 extern bool poolEnabled;
 extern unsigned int freeSlots;

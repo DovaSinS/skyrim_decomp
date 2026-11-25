@@ -1,9 +1,10 @@
 // Source exposure: mixed (pinned-image listing and community declarations).
 // Code origin: original reconstruction from the local listing.
-// Adapted bodies: none.
+// AutoMemContext::AutoMemContext: SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
+// Sibling source: momusdigital/f3_decomp@f5bac1b5 src/f3staging/f3blk_005e0000_o2.cpp:27019 (allocation-context save and install).
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // BSBatchRenderer, SetupAndDrawPass, AutoMemContext, BSRenderPass, BSShaderProperty, material: CRASHLOGGER_PDB(59818@2026.10.24)
-// SetupPassTechnique, currentShader, currentTechnique, currentMaterial, requestedTechnique, forceSkinning, RenderSkinned, g_memoryContext_tls_0x768, forceSetupTechnique, customDrawFlag, renderMemoryContext: GUESS(low)
+// SetupPassTechnique, currentShader, currentTechnique, currentMaterial, requestedTechnique, forceSkinning, DrawUnskinnedGeometry, g_memoryContext_tls_0x768, forceSetupTechnique, customDrawFlag, renderMemoryContext: GUESS(low)
 // Recipe: reconstruction/recipes/msvc-19.16.27054-o2-reconstruction.json
 // 0x1560340 BSBatchRenderer::SetupAndDrawPass
 // CI hash: 0x1560340 ?SetupAndDrawPass@BSBatchRenderer@@SAXPEAUBSRenderPass@@I_NI@Z
@@ -26,7 +27,7 @@ private:
     unsigned int previous;
 };
 
-static void RenderSkinned(BSRenderPass* pass, bool alpha, unsigned int flags)
+static void DrawUnskinnedGeometry(BSRenderPass* pass, bool alpha, unsigned int flags)
 {
     constexpr unsigned int renderMemoryContext = 26;
     AutoMemContext context(renderMemoryContext);
@@ -77,7 +78,7 @@ void BSBatchRenderer::SetupAndDrawPass(BSRenderPass* pass, unsigned int techniqu
         } else if (geometry->unk109[0] & customDrawFlag) {
             pass->DrawCustomGeometry(flags);
         } else {
-            RenderSkinned(pass, alpha, flags);
+            DrawUnskinnedGeometry(pass, alpha, flags);
         }
     } else {
         currentShader = nullptr;
