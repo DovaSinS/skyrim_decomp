@@ -4,21 +4,20 @@
 
 - Function: 0x5bb350 ActiveEffect::CheckDisplacementSpellOnTarget
 - Label: SYMBOLS(tesv-2013-map)
-- Outcome: unsolved
+- Outcome: fixed
 - Cause: vtable-or-virtual
-- Best score: 88/88 aligned code bytes; comparator FAIL, unresolved-symbol in exception cleanup
-- Attempts: 1 counted comparisons; 3 invocations total, including binding-only and final-source provenance checks as applicable
+- Best score: 88/88 code bytes; comparator PASS, unwind covered
+- Attempts: 1 counted comparison on the first draft after the pack was exported again
 
 ## What differed
 
-The first compiled visitor used an implicit derived destructor and scored 23/88 matching bytes, with a shorter body and a missing exception-state slot. An explicit empty derived virtual destructor produced 88/88 aligned code bytes, but the comparator could not resolve the destructor referenced by its exception cleanup. The assigned pack contains no reference binding for that destructor. Code alignment does not establish the exception metadata match or a comparator pass.
+The first compiled visitor used an implicit derived destructor and scored 23/88 matching bytes, with a shorter body and a missing exception-state slot. An explicit empty derived virtual destructor produced 88/88 aligned code bytes, but the comparator could not resolve the destructor named by the exception cleanup. The cleanup funclet has no unwind entry of its own and ends in a jump to the out-of-line destructor, and the old pack only listed targets of the function body, so no reference or hint could name it.
 
 ## Spellings tried that did not help
 
 - The implicit derived destructor omitted the required exception-state setup.
-- Explicitly defining the empty derived destructor closed the code alignment but left the cleanup binding unresolved.
-- The initial offset assertions needed messages under the pinned language mode; that invocation did not compare.
+- A hint for the destructor address worked locally, but a hint the pack does not list is not allowed, so it could not be published.
 
 ## Spelling that fixed it
 
-None. The best source is retained privately, withheld from passing-source paths. The lead needs an authorized complete cleanup reference before further comparison. Cookbook rule 13 helped classify the initial exception-state difference; no passing rule hit is claimed.
+No source change. Exporting the pack again lists the jump target of the cleanup funclet, the comparator binds the explicit empty derived destructor by that reference, and the unchanged draft passes with no hint file. Lesson: when code aligns fully and only an exception-cleanup symbol is unresolved, export the pack again with the current exporter before suspecting the source.
