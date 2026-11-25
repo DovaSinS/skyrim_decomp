@@ -145,16 +145,16 @@ The PR bot refreshes this block and the tracking and task issue bodies during ho
 
 <!-- inventory:start -->
 
-Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 22 open claim issues are counted as claimed.
+Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 21 open claim issues are counted as claimed.
 
 | Workstream | Known | Matched | Matched % | Claimed | Ready | Waiting | Unlisted | Open bytes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | A: Foundation | 416 | 176 | 42.3% | 4 | 54 | 182 | 0 | 62989 |
 | B: Shaders and materials | 454 | 236 | 52.0% | 3 | 37 | 178 | 0 | 89018 |
-| C: Batching, passes, camera, culling | 327 | 150 | 45.9% | 83 | 10 | 84 | 0 | 57336 |
+| C: Batching, passes, camera, culling | 331 | 181 | 54.7% | 2 | 28 | 120 | 0 | 70859 |
 | D: Image space, sky, water system | 724 | 543 | 75.0% | 2 | 38 | 141 | 0 | 86395 |
-| E: Shadows | 122 | 55 | 45.1% | 29 | 1 | 37 | 0 | 43704 |
-| **Total A-E** | 2043 | 1160 | 56.8% | 121 | 140 | 622 | 0 | 339442 |
+| E: Shadows | 122 | 55 | 45.1% | 33 | 1 | 33 | 0 | 42240 |
+| **Total A-E** | 2047 | 1191 | 58.2% | 44 | 158 | 654 | 0 | 351501 |
 | Adjacent, not assigned | 991 | 453 | 45.7% | 32 | 125 | 381 | 0 | 163807 |
 
 Known counts functions named in the CrashLogger tables or `data/progress.json`. Ready counts available functions in the published queue. Waiting covers give-ups, functions of unknown size and functions absent from the portion of the queue with complete coverage. Unlisted marks unknown readiness when the queue has incomplete coverage or is unavailable. Open bytes sum the sizes of the Ready, Waiting and Unlisted functions.
@@ -290,50 +290,44 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| C1 Render passes, batch renderer, accumulators | 124 | 64 | 31 | 2 | 27 | 0 | absent from the ready queue (27) | bsshader |
-| C2 Camera, frustum, culling, occlusion and portals | 203 | 86 | 52 | 8 | 57 | 0 | absent from the ready queue (57) | gamebryo |
+| C1 Render passes, batch renderer, accumulators | 127 | 76 | 1 | 3 | 47 | 0 | absent from the ready queue (47) | bsshader |
+| C2 Camera, frustum, culling, occlusion and portals | 204 | 105 | 1 | 25 | 73 | 0 | absent from the ready queue (73) | gamebryo |
 
 <details><summary>Classes of workstream C with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| BSShaderAccumulator | C1 | 48 | 25 | 6 | 0 | 17 | 0 | 145 |
-| BSBatchRenderer | C1 | 28 | 9 | 11 | 1 | 7 | 0 | 0 |
-| NiAlphaAccumulator | C1 | 10 | 8 | 2 | 0 | 0 | 0 | 12 |
-| BSShaderProperty::RenderPassArray | C1 | 7 | 5 | 1 | 0 | 1 | 0 | 0 |
-| BSRenderPass | C1 | 6 | 5 | 1 | 0 | 0 | 0 | 0 |
-| NiBackToFrontAccumulator | C1 | 5 | 3 | 2 | 0 | 0 | 0 | 0 |
+| BSShaderAccumulator | C1 | 48 | 29 | 1 | 0 | 18 | 0 | 145 |
+| BSBatchRenderer | C1 | 31 | 12 | 0 | 2 | 17 | 0 | 0 |
+| NiAlphaAccumulator | C1 | 10 | 8 | 0 | 0 | 2 | 0 | 12 |
+| BSShaderProperty::RenderPassArray | C1 | 7 | 5 | 0 | 0 | 2 | 0 | 0 |
+| BSRenderPass | C1 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
+| NiBackToFrontAccumulator | C1 | 5 | 4 | 0 | 0 | 1 | 0 | 0 |
 | AccumulateNodeChildren | C1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
-| AccumulateSceneGraphNode | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| AccumulateSceneGraphNode | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | BSAccumProcess | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| BSRenderPassCache | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| CullJob_AccumulateAndFlush | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| CullJob_SetupDeferredAppend | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| DrainRenderPassDeferredFreeQueue | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| FinishAccumulatingMode25_VolumetricOrOcclusion | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
+| BSRenderPassCache | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| CullJob_SetupDeferredAppend | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| DrainRenderPassDeferredFreeQueue | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | FirstListAccumulationJob | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| RenderPassImmediately_Custom | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| RenderPassImmediately_Standard | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| BSCompoundFrustum | C2 | 29 | 5 | 12 | 2 | 10 | 0 | 0 |
-| BSCullingProcess | C2 | 25 | 9 | 6 | 1 | 9 | 0 | 0 |
-| NiCamera | C2 | 25 | 8 | 3 | 2 | 12 | 0 | 36 |
-| BSOcclusionPlane | C2 | 17 | 8 | 1 | 1 | 7 | 0 | 30 |
+| BSCompoundFrustum | C2 | 29 | 8 | 0 | 8 | 13 | 0 | 0 |
+| BSCullingProcess | C2 | 25 | 12 | 0 | 3 | 10 | 0 | 0 |
+| NiCamera | C2 | 25 | 10 | 0 | 2 | 13 | 0 | 36 |
+| BSOcclusionPlane | C2 | 17 | 9 | 0 | 1 | 7 | 0 | 30 |
 | BSOcclusionBox | C2 | 15 | 10 | 0 | 0 | 5 | 0 | 19 |
-| BSPortalGraph | C2 | 15 | 5 | 8 | 0 | 2 | 0 | 0 |
-| BSParabolicCullingProcess | C2 | 12 | 4 | 6 | 0 | 2 | 0 | 0 |
-| BSPortalGraphEntry | C2 | 12 | 9 | 2 | 0 | 1 | 0 | 19 |
-| BSCubeMapCamera | C2 | 7 | 2 | 2 | 0 | 3 | 0 | 11 |
-| BSGeometryListCullingProcess | C2 | 6 | 5 | 1 | 0 | 0 | 0 | 0 |
-| BSPortalSharedNode | C2 | 5 | 2 | 3 | 0 | 0 | 0 | 0 |
-| BSFrustumFOVController | C2 | 4 | 1 | 2 | 0 | 1 | 0 | 0 |
-| BSPortal | C2 | 4 | 1 | 1 | 1 | 1 | 0 | 0 |
-| HighActorCuller | C2 | 4 | 2 | 1 | 0 | 1 | 0 | 3 |
+| BSPortalGraph | C2 | 15 | 9 | 0 | 3 | 3 | 0 | 0 |
+| BSParabolicCullingProcess | C2 | 13 | 5 | 0 | 3 | 5 | 0 | 0 |
+| BSPortalGraphEntry | C2 | 12 | 9 | 0 | 2 | 1 | 0 | 19 |
+| BSCubeMapCamera | C2 | 7 | 2 | 0 | 0 | 5 | 0 | 11 |
+| BSGeometryListCullingProcess | C2 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
+| BSFrustumFOVController | C2 | 4 | 1 | 1 | 0 | 2 | 0 | 0 |
+| BSPortal | C2 | 4 | 1 | 0 | 1 | 2 | 0 | 0 |
+| HighActorCuller | C2 | 4 | 2 | 0 | 1 | 1 | 0 | 3 |
 | NiCullingProcess | C2 | 4 | 3 | 0 | 1 | 0 | 0 | 0 |
-| NiFrustumPlanes | C2 | 2 | 0 | 1 | 0 | 1 | 0 | 0 |
-| SubmitCullResultsJob | C2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 |
+| NiFrustumPlanes | C2 | 2 | 1 | 0 | 0 | 1 | 0 | 0 |
+| SubmitCullResultsJob | C2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | PruneFrustumPlanes | C2 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | SetupCullingJobManager | C2 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| SetupCullingJobManager2 | C2 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 
 </details>
 
@@ -412,14 +406,14 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| E1 Shadow lights, scene node, maps and passes | 122 | 55 | 29 | 1 | 37 | 0 | absent from the ready queue (37) | bsshader |
+| E1 Shadow lights, scene node, maps and passes | 122 | 55 | 33 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
 
 <details><summary>Classes of workstream E with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| ShadowSceneNode | E1 | 52 | 24 | 9 | 0 | 19 | 0 | 120 |
-| BSShadowDirectionalLight | E1 | 18 | 9 | 4 | 0 | 5 | 0 | 10 |
+| ShadowSceneNode | E1 | 52 | 24 | 12 | 0 | 16 | 0 | 120 |
+| BSShadowDirectionalLight | E1 | 18 | 9 | 5 | 0 | 4 | 0 | 10 |
 | BSShadowLight | E1 | 18 | 11 | 5 | 0 | 2 | 0 | 55 |
 | BSShadowParabolicLight | E1 | 12 | 8 | 1 | 0 | 3 | 0 | 9 |
 | BSShadowFrustumLight | E1 | 7 | 2 | 4 | 0 | 1 | 0 | 10 |
@@ -642,16 +636,21 @@ Scope: listed for context, owned by the general rounds.
 
 | RVA | Name | Size | State | Callers unlocked |
 |---|---|---:|---|---:|
+| `0xff91e0` | BSCompoundFrustum::GetActivePlaneState | 66 | ready | 0 |
+| `0xff9230` | BSCompoundFrustum::SetActivePlaneState | 67 | ready | 0 |
 | `0x152b6d0` | BSCullingProcess::InitCullDescriptor | 68 | ready | 0 |
+| `0x1587090` | BSParabolicCullingProcess::TestBaseVisibility2 | 72 | ready | 0 |
 | `0x155fed0` | BSBatchRenderer::GetNextPassSlotInGroup | 100 | ready | 0 |
+| `0x15870e0` | BSParabolicCullingProcess::TestBaseVisibility1_14132C900 | 100 | ready | 0 |
 | `0x213b70` | BSPortal::dtor_deleting | 110 | ready | 0 |
-| `0xfe8770` | BSOcclusionPlane::UpdateCorners | 327 | ready | 3 |
-| `0xff8a60` | BSCompoundFrustum::ShiftOperators | 329 | ready | 0 |
-| `0xef1180` | NiCamera::WorldPtToScreenPt3 | 380 | ready | 0 |
-| `0xf04ae0` | NiCullingProcess::Process1 | 408 | ready | 0 |
-| `0xef0df0` | NiCamera::WorldPtToScrPt | 437 | ready | 1 |
-| `0x1521ad0` | AccumulateNodeChildren | 513 | ready | 1 |
-| `0xff7790` | BSCompoundFrustum::Process | 552 | ready | 0 |
+| `0xfda080` | BSPortalGraph::AddRoom | 171 | ready | 0 |
+| `0x15617f0` | BSBatchRenderer::ComputeAlphaGroupDepth | 175 | ready | 0 |
+| `0xfd95c0` | BSPortalGraphEntry::AddRoomToAccumList | 203 | ready | 0 |
+| `0xff9280` | BSCompoundFrustum::RemoveEmptyGroups | 205 | ready | 0 |
+| `0x1587150` | BSParabolicCullingProcess::GetHemisphereMask | 222 | ready | 1 |
+| `0xfdacc0` | BSPortalGraph::RemoveByPointer | 228 | ready | 0 |
+| `0xfd97a0` | BSPortalGraphEntry::HasSharedRoomVisibility | 250 | ready | 0 |
+| `0xf049c0` | BSCullingProcess::CullNodeAgainstFrustum | 273 | ready | 0 |
 
 **Workstream D entry points** (names are CrashLogger-derived, CRASHLOGGER_PDB(59818@2026.10.24))
 
