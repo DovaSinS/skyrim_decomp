@@ -9,6 +9,57 @@
 #pragma once
 #include "IFormFactory.h"
 
+class AlchemyItem;
+class BGSDualCastData;
+class EffectSetting;
+class EnchantmentItem;
+class IngredientItem;
+class ScrollItem;
+class SpellItem;
+class TESRegion;
+class BGSAddonNode;
+class BGSApparatus;
+class BGSArtObject;
+class BGSConstructibleObject;
+class BGSDebris;
+class BGSExplosion;
+class BGSHazard;
+class BGSLensFlare;
+class BGSVolumetricLighting;
+class BGSMovableStatic;
+class BGSOutfit;
+class BGSProjectile;
+class BGSStaticCollection;
+class BGSTalkingActivator;
+class TESAmmo;
+class TESCombatStyle;
+class TESEffectShader;
+class TESFlora;
+class TESFurniture;
+class TESGrass;
+class TESKey;
+class TESLevCharacter;
+class TESLevItem;
+class TESLevSpell;
+class TESObjectLIGH;
+class TESObjectACTI;
+class TESObjectANIO;
+class TESObjectARMA;
+class TESObjectARMO;
+class TESObjectBOOK;
+class TESObjectCONT;
+class TESObjectDOOR;
+class TESObjectMISC;
+class TESObjectSTAT;
+class TESObjectTREE;
+class TESObjectWEAP;
+class TESSoulGem;
+class BGSEncounterZone;
+class BGSLightingTemplate;
+class BGSLocation;
+class BGSLocationRefType;
+class BGSReferenceEffect;
+
 template<class T, unsigned char FormType>
 class ConcreteFormFactory : public IFormFactory
 {

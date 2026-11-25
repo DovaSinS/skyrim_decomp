@@ -589348,6 +589348,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x576230.json",
       "report": "reports/sse-steam-1-7-104/0x576230.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x29ed40",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 2747712,
+      "size": 52,
+      "status": "matched",
+      "name": "BGSReferenceEffect::Function29ed40",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x29ed40; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x29ed40.json",
+      "report": "reports/sse-steam-1-7-104/0x29ed40.json"
     }
   ],
   "milestones": [
@@ -589390,7 +589403,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T19:39:46Z",
+  "updated_at": "2026-11-25T19:57:56Z",
   "work_items": [
     {
       "id": "pin-target",
