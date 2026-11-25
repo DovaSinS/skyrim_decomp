@@ -16853,6 +16853,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `skyrim/magic/ActiveEffect` | `ActiveEffect::GetVisualsTarget` (GUESS) | `sse-steam-1-7-104` / `0x5bb070` / 19 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb070.json` | matched | full | open |
 | `skyrim/magic/ActiveEffect_5bb090` | `ActiveEffect::Function5bb090` (GUESS) | `sse-steam-1-7-104` / `0x5bb090` / 9 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb090.json` | matched | full | - |
 | `skyrim/magic/ValueModifierEffect` | `ValueModifierEffect::Function5bb320` (GUESS) | `sse-steam-1-7-104` / `0x5bb320` / 27 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb320.json` | matched | full | - |
+| `skyrim/magic/ActiveEffect_5bb350` | `ActiveEffect::Function5bb350` (GUESS) | `sse-steam-1-7-104` / `0x5bb350` / 88 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb350.json` | matched | full | - |
 | `skyrim/magic/ActiveEffect_5bb750` | `ActiveEffect::Function5bb750` (GUESS) | `sse-steam-1-7-104` / `0x5bb750` / 152 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb750.json` | matched | full | - |
 | `skyrim/magic/ActiveEffect_5bb090` | `ActiveEffect::Function5bb910` (GUESS) | `sse-steam-1-7-104` / `0x5bb910` / 44 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb910.json` | matched | full | - |
 | `skyrim/magic/ActiveEffect_5bb090` | `ActiveEffect::SetNoHitEffectFlags` (CRASHLOGGER_PDB) | `sse-steam-1-7-104` / `0x5bb950` / 57 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x5bb950.json` | matched | full | - |
