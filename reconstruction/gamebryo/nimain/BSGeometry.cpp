@@ -13,7 +13,7 @@
 void BSGeometry::UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
 {
     BaseUpdateDownwardPass(a_data, a_arg2);
-    if ((a_data.flags & NiUpdateData::kDirty) != 0) {
+    if ((FieldAt<std::uint8_t>(&a_data, 0x4) & 1) != 0) {
         UpdateBoundFromFlags(a_data);
     }
 }
@@ -24,7 +24,7 @@ void BSGeometry::UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
 void BSGeometry::UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
 {
     BaseUpdateSelectedDownwardPass(a_data, a_arg2);
-    if (TestBit(flags, selectiveUpdateControllerBit)) {
+    if ((static_cast<std::uint8_t>(FieldAt<std::uint32_t>(this, 0xf4) >> 3) & 1) != 0) {
         UpdateBoundFromFlags(a_data);
     }
 }
@@ -33,10 +33,10 @@ void BSGeometry::UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t 
 void BSGeometry::SetSelectiveUpdateFlags(bool& a_selectiveUpdate, bool a_selectiveUpdateTransforms, bool& a_rigid)
 {
     BaseSetSelectiveUpdateFlags(a_selectiveUpdate, a_selectiveUpdateTransforms, a_rigid);
-    if (skinInstance.pointer) {
-        flags |= kSelectiveUpdateTransforms;
+    if (FieldAt<void*>(this, 0x130) != nullptr) {
+        FieldAt<std::uint32_t>(this, 0xf4) |= 0x4;
         a_selectiveUpdate = true;
-        flags |= kSelectiveUpdate;
+        FieldAt<std::uint32_t>(this, 0xf4) |= 0x2;
         a_rigid = false;
     }
 }
@@ -47,14 +47,14 @@ bool BSGeometry::RegisterStreamables(NiStream& a_stream)
     if (!BaseRegisterStreamables(a_stream)) {
         return false;
     }
-    if (skinInstance.pointer) {
-        skinInstance.pointer->RegisterStreamables(a_stream);
+    if (NiObject* child130 = FieldAt<NiObject*>(this, 0x130)) {
+        child130->RegisterStreamables(a_stream);
     }
-    if (shaderProperty.pointer) {
-        shaderProperty.pointer->RegisterStreamables(a_stream);
+    if (NiObject* child128 = FieldAt<NiObject*>(this, 0x128)) {
+        child128->RegisterStreamables(a_stream);
     }
-    if (alphaProperty.pointer) {
-        alphaProperty.pointer->RegisterStreamables(a_stream);
+    if (NiObject* child120 = FieldAt<NiObject*>(this, 0x120)) {
+        child120->RegisterStreamables(a_stream);
     }
     return true;
 }
