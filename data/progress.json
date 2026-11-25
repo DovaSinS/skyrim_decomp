@@ -587835,6 +587835,71 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1593b60.json",
       "report": "reports/sse-steam-1-7-104/0x1593b60.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15123a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22094752,
+      "size": 102,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function15123a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15123a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15123a0.json",
+      "report": "reports/sse-steam-1-7-104/0x15123a0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1512410",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22094864,
+      "size": 93,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function1512410",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1512410; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1512410.json",
+      "report": "reports/sse-steam-1-7-104/0x1512410.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1512470",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22094960,
+      "size": 102,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function1512470",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1512470; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1512470.json",
+      "report": "reports/sse-steam-1-7-104/0x1512470.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15124e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22095072,
+      "size": 93,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function15124e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15124e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15124e0.json",
+      "report": "reports/sse-steam-1-7-104/0x15124e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x155db00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22403840,
+      "size": 133,
+      "status": "matched",
+      "name": "BSShadowLight::Function155db00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x155db00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x155db00.json",
+      "report": "reports/sse-steam-1-7-104/0x155db00.json"
     }
   ],
   "milestones": [
@@ -587877,7 +587942,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T15:02:46Z",
+  "updated_at": "2026-11-25T15:17:16Z",
   "work_items": [
     {
       "id": "pin-target",
