@@ -9,6 +9,16 @@
 // 0xefc380 BSGeometry::RegisterStreamables
 #include "BSGeometry.h"
 
+#include <cstdint>
+#include <cstddef>
+
+// FieldAt: GUESS(low); typed access at a fixed byte offset inside the opaque base layout.
+template <class T>
+static inline T& FieldAt(void* a_base, std::size_t a_offset)
+{
+    return *reinterpret_cast<T*>(static_cast<std::uint8_t*>(a_base) + a_offset);
+}
+
 // Body done: RVA 0xefc6e0, 49 bytes, BSGeometry::UpdateDownwardPass.
 void BSGeometry::UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
 {
@@ -18,8 +28,6 @@ void BSGeometry::UpdateDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
     }
 }
 
-// The CommonLibSSE-NG virtual slots identify these update methods. The conflicting
-// CrashLogger movement-factory names do not describe their calls through NiAVObject.
 // Body done: RVA 0xefc720, 56 bytes, BSGeometry::UpdateSelectedDownwardPass.
 void BSGeometry::UpdateSelectedDownwardPass(NiUpdateData& a_data, std::uint32_t a_arg2)
 {
