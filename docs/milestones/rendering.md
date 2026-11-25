@@ -145,16 +145,16 @@ The PR bot refreshes this block and the tracking and task issue bodies during ho
 
 <!-- inventory:start -->
 
-Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 21 open claim issues are counted as claimed.
+Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 22 open claim issues are counted as claimed.
 
 | Workstream | Known | Matched | Matched % | Claimed | Ready | Waiting | Unlisted | Open bytes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | A: Foundation | 416 | 176 | 42.3% | 4 | 54 | 182 | 0 | 62989 |
 | B: Shaders and materials | 454 | 236 | 52.0% | 3 | 37 | 178 | 0 | 89018 |
-| C: Batching, passes, camera, culling | 331 | 181 | 54.7% | 2 | 28 | 120 | 0 | 70859 |
+| C: Batching, passes, camera, culling | 332 | 189 | 56.9% | 3 | 28 | 112 | 0 | 68639 |
 | D: Image space, sky, water system | 724 | 543 | 75.0% | 2 | 38 | 141 | 0 | 86395 |
-| E: Shadows | 122 | 55 | 45.1% | 33 | 1 | 33 | 0 | 42240 |
-| **Total A-E** | 2047 | 1191 | 58.2% | 44 | 158 | 654 | 0 | 351501 |
+| E: Shadows | 124 | 65 | 52.4% | 25 | 1 | 33 | 0 | 42240 |
+| **Total A-E** | 2050 | 1209 | 59.0% | 37 | 158 | 646 | 0 | 349281 |
 | Adjacent, not assigned | 991 | 453 | 45.7% | 32 | 125 | 381 | 0 | 163807 |
 
 Known counts functions named in the CrashLogger tables or `data/progress.json`. Ready counts available functions in the published queue. Waiting covers give-ups, functions of unknown size and functions absent from the portion of the queue with complete coverage. Unlisted marks unknown readiness when the queue has incomplete coverage or is unavailable. Open bytes sum the sizes of the Ready, Waiting and Unlisted functions.
@@ -290,15 +290,15 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| C1 Render passes, batch renderer, accumulators | 127 | 76 | 1 | 3 | 47 | 0 | absent from the ready queue (47) | bsshader |
-| C2 Camera, frustum, culling, occlusion and portals | 204 | 105 | 1 | 25 | 73 | 0 | absent from the ready queue (73) | gamebryo |
+| C1 Render passes, batch renderer, accumulators | 127 | 76 | 2 | 3 | 46 | 0 | absent from the ready queue (46) | bsshader |
+| C2 Camera, frustum, culling, occlusion and portals | 205 | 113 | 1 | 25 | 66 | 0 | absent from the ready queue (66) | gamebryo |
 
 <details><summary>Classes of workstream C with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | BSShaderAccumulator | C1 | 48 | 29 | 1 | 0 | 18 | 0 | 145 |
-| BSBatchRenderer | C1 | 31 | 12 | 0 | 2 | 17 | 0 | 0 |
+| BSBatchRenderer | C1 | 31 | 12 | 1 | 2 | 16 | 0 | 0 |
 | NiAlphaAccumulator | C1 | 10 | 8 | 0 | 0 | 2 | 0 | 12 |
 | BSShaderProperty::RenderPassArray | C1 | 7 | 5 | 0 | 0 | 2 | 0 | 0 |
 | BSRenderPass | C1 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
@@ -310,18 +310,18 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 | CullJob_SetupDeferredAppend | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | DrainRenderPassDeferredFreeQueue | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | FirstListAccumulationJob | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| BSCompoundFrustum | C2 | 29 | 8 | 0 | 8 | 13 | 0 | 0 |
+| BSCompoundFrustum | C2 | 29 | 10 | 0 | 8 | 11 | 0 | 0 |
 | BSCullingProcess | C2 | 25 | 12 | 0 | 3 | 10 | 0 | 0 |
-| NiCamera | C2 | 25 | 10 | 0 | 2 | 13 | 0 | 36 |
+| NiCamera | C2 | 25 | 11 | 0 | 2 | 12 | 0 | 36 |
 | BSOcclusionPlane | C2 | 17 | 9 | 0 | 1 | 7 | 0 | 30 |
 | BSOcclusionBox | C2 | 15 | 10 | 0 | 0 | 5 | 0 | 19 |
 | BSPortalGraph | C2 | 15 | 9 | 0 | 3 | 3 | 0 | 0 |
-| BSParabolicCullingProcess | C2 | 13 | 5 | 0 | 3 | 5 | 0 | 0 |
+| BSParabolicCullingProcess | C2 | 14 | 7 | 0 | 3 | 4 | 0 | 0 |
 | BSPortalGraphEntry | C2 | 12 | 9 | 0 | 2 | 1 | 0 | 19 |
-| BSCubeMapCamera | C2 | 7 | 2 | 0 | 0 | 5 | 0 | 11 |
+| BSCubeMapCamera | C2 | 7 | 4 | 0 | 0 | 3 | 0 | 11 |
 | BSGeometryListCullingProcess | C2 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
 | BSFrustumFOVController | C2 | 4 | 1 | 1 | 0 | 2 | 0 | 0 |
-| BSPortal | C2 | 4 | 1 | 0 | 1 | 2 | 0 | 0 |
+| BSPortal | C2 | 4 | 2 | 0 | 1 | 1 | 0 | 0 |
 | HighActorCuller | C2 | 4 | 2 | 0 | 1 | 1 | 0 | 3 |
 | NiCullingProcess | C2 | 4 | 3 | 0 | 1 | 0 | 0 | 0 |
 | NiFrustumPlanes | C2 | 2 | 1 | 0 | 0 | 1 | 0 | 0 |
@@ -406,17 +406,17 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| E1 Shadow lights, scene node, maps and passes | 122 | 55 | 33 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
+| E1 Shadow lights, scene node, maps and passes | 124 | 65 | 25 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
 
 <details><summary>Classes of workstream E with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| ShadowSceneNode | E1 | 52 | 24 | 12 | 0 | 16 | 0 | 120 |
-| BSShadowDirectionalLight | E1 | 18 | 9 | 5 | 0 | 4 | 0 | 10 |
+| ShadowSceneNode | E1 | 54 | 27 | 11 | 0 | 16 | 0 | 120 |
+| BSShadowDirectionalLight | E1 | 18 | 11 | 3 | 0 | 4 | 0 | 10 |
 | BSShadowLight | E1 | 18 | 11 | 5 | 0 | 2 | 0 | 55 |
 | BSShadowParabolicLight | E1 | 12 | 8 | 1 | 0 | 3 | 0 | 9 |
-| BSShadowFrustumLight | E1 | 7 | 2 | 4 | 0 | 1 | 0 | 10 |
+| BSShadowFrustumLight | E1 | 7 | 6 | 0 | 0 | 1 | 0 | 10 |
 | BSTArray_ShadowmapDescriptor_ | E1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 |
 | BSShadowParabolicLight_RenderImpl | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | CalculateActiveShadowCasterLights | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
@@ -428,7 +428,6 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 | RenderVolumetricLightingShadowMaps | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | ResetCalculatedShadowCasterLights | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | ShadowSceneNode_SetShadowCasterLightArrayEntry | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| ShadowmapDescriptor | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | UpdateOrAssignShadowCSTexture | E1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 
 </details>
