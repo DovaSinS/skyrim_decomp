@@ -7,9 +7,9 @@
 <path d="M55 180h330" stroke="#30363d"/>
 <path d="M55 140h330" stroke="#30363d"/>
 <path d="M55 100h330" stroke="#30363d"/>
-<polyline points="55.0,260.0 78.6,259.0 102.1,213.4 125.7,172.6 149.3,164.7 172.9,161.9 196.4,161.5 220.0,161.0 243.6,159.7 267.1,154.8 290.7,154.0 314.3,152.2 337.9,147.4 361.4,119.7 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
+<polyline points="55.0,260.0 78.6,259.0 102.1,213.5 125.7,172.8 149.3,164.8 172.9,162.1 196.4,161.7 220.0,161.2 243.6,159.8 267.1,155.0 290.7,154.2 314.3,152.4 337.9,147.6 361.4,120.0 385.0,110.0" fill="none" stroke="#3fb950" stroke-width="3"/>
 <circle cx="385.0" cy="110.0" r="4" fill="#3fb950"/>
-<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">2,301,956</text>
+<text x="385.0" y="100.0" text-anchor="end" fill="#3fb950" font-size="13">2,305,835</text>
 <text x="55.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="385.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-25</text>
 <text x="465" y="65" fill="#e6edf3" font-size="14">Functions matched, cumulative</text>
@@ -18,9 +18,9 @@
 <path d="M465 180h330" stroke="#30363d"/>
 <path d="M465 140h330" stroke="#30363d"/>
 <path d="M465 100h330" stroke="#30363d"/>
-<polyline points="465.0,260.0 488.6,259.1 512.1,205.3 535.7,174.6 559.3,158.9 582.9,153.9 606.4,153.7 630.0,153.1 653.6,150.9 677.1,143.0 700.7,142.0 724.3,139.8 747.9,136.4 771.4,120.4 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
+<polyline points="465.0,260.0 488.6,259.1 512.1,205.4 535.7,174.7 559.3,158.9 582.9,154.0 606.4,153.8 630.0,153.2 653.6,151.0 677.1,143.1 700.7,142.1 724.3,139.9 747.9,136.5 771.4,120.5 795.0,110.0" fill="none" stroke="#58a6ff" stroke-width="3"/>
 <circle cx="795.0" cy="110.0" r="4" fill="#58a6ff"/>
-<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">42,113</text>
+<text x="795.0" y="100.0" text-anchor="end" fill="#58a6ff" font-size="13">42,151</text>
 <text x="465.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-11</text>
 <text x="795.0" y="284" fill="#9ba3ad" font-size="11" text-anchor="middle">2026-11-25</text>
 </g></svg>
