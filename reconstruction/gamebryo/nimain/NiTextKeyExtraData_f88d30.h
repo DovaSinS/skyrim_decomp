@@ -1,11 +1,9 @@
-// Exposure detail: (community names; pinned-image observations).
-// Source exposure: mixed
+// Source exposure: mixed (community names; pinned-image observations).
 // Code origin: original; pinned-image observations and labelled naming sources
 // SPDX-License-Identifier: CC0-1.0
 // NiTextKeyExtraData, NiTextKeyExtraData::IsEqual: CRASHLOGGER_PDB(59818@2026.10.24)
 // NiObject, NiObject::IsEqual, NiTextKey, time, text, keyCount, keys: GUESS(low)
 // objectStorage, keyCount offset, keys offset: OBSERVED
-
 #pragma once
 #include <cstdint>
 #include <cstddef>

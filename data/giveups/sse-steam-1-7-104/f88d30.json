@@ -15,7 +15,7 @@
       "harness": "historical comparison",
       "lane": "internal",
       "best_code": {
-        "kind": "draft",
+        "kind": "draft-history",
         "ref": "drafts/sse-steam-1-7-104/f88d30.cpp"
       }
     }

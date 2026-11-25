@@ -583290,6 +583290,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x4f76e0.json",
       "report": "reports/sse-steam-1-7-104/0x4f76e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xf88d30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16289072,
+      "size": 127,
+      "status": "matched",
+      "name": "NiTextKeyExtraData::Functionf88d30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xf88d30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xf88d30.json",
+      "report": "reports/sse-steam-1-7-104/0xf88d30.json"
     }
   ],
   "milestones": [
@@ -583332,7 +583345,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T10:41:56Z",
+  "updated_at": "2026-11-25T12:19:24Z",
   "work_items": [
     {
       "id": "pin-target",
