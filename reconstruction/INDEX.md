@@ -35191,6 +35191,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static173c5d0` | `Static173c5d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c5d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c5d0.json` | matched | family | open |
 | `unmapped/static/Static173c620` | `Static173c620::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c620` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c620.json` | matched | family | open |
 | `unmapped/static/Static173c670` | `Static173c670::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c670` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c670.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function173c810` (GUESS) | `sse-steam-1-7-104` / `0x173c810` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c810.json` | matched | full | - |
 | `unmapped/static/Static173c820` | `Static173c820::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c820` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c820.json` | matched | family | open |
 | `unmapped/static/Static173c870` | `Static173c870::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c870` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c870.json` | matched | family | open |
 | `unmapped/static/Static173c8c0` | `Static173c8c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x173c8c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x173c8c0.json` | matched | family | open |
@@ -35409,6 +35410,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1741510` | `Static1741510::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1741510` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1741510.json` | matched | family | open |
 | `unmapped/static/Static1741560` | `Static1741560::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1741560` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1741560.json` | matched | family | open |
 | `unmapped/static/Static1741680` | `Static1741680::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1741680` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1741680.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17416e0` (GUESS) | `sse-steam-1-7-104` / `0x17416e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17416e0.json` | matched | full | - |
 | `unmapped/static/Static17417e0` | `Static17417e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17417e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17417e0.json` | matched | family | open |
 | `unmapped/static/Static1741830` | `Static1741830::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1741830` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1741830.json` | matched | family | open |
 | `unmapped/static/Static1741880` | `Static1741880::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1741880` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1741880.json` | matched | family | open |
@@ -35441,10 +35443,15 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1742140` | `Static1742140::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742140` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742140.json` | matched | family | open |
 | `unmapped/static/Static1742190` | `Static1742190::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742190` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742190.json` | matched | family | open |
 | `unmapped/static/Static17421e0` | `Static17421e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17421e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17421e0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1742230` (GUESS) | `sse-steam-1-7-104` / `0x1742230` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742230.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1742250` (GUESS) | `sse-steam-1-7-104` / `0x1742250` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742250.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1742260` (GUESS) | `sse-steam-1-7-104` / `0x1742260` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742260.json` | matched | full | - |
 | `unmapped/static/Static1742270` | `Static1742270::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742270` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742270.json` | matched | family | open |
 | `unmapped/static/Static17422c0` | `Static17422c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17422c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17422c0.json` | matched | family | open |
 | `unmapped/static/Static1742310` | `Static1742310::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742310` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742310.json` | matched | family | open |
 | `unmapped/static/Static1742370` | `Static1742370::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742370` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742370.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1742440` (GUESS) | `sse-steam-1-7-104` / `0x1742440` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742440.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1742450` (GUESS) | `sse-steam-1-7-104` / `0x1742450` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742450.json` | matched | full | - |
 | `unmapped/static/Static1742520` | `Static1742520::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742520` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742520.json` | matched | family | open |
 | `unmapped/static/Static1742570` | `Static1742570::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1742570` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1742570.json` | matched | family | open |
 | `unmapped/static/Static17425c0` | `Static17425c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17425c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17425c0.json` | matched | family | open |
@@ -35506,6 +35513,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17438e0` | `Static17438e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17438e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17438e0.json` | matched | family | open |
 | `unmapped/static/Static1743930` | `Static1743930::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1743930` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743930.json` | matched | family | open |
 | `unmapped/static/Static1743990` | `Static1743990::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1743990` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743990.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1743a70` (GUESS) | `sse-steam-1-7-104` / `0x1743a70` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743a70.json` | matched | full | - |
 | `unmapped/static/Static1743a90` | `Static1743a90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1743a90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743a90.json` | matched | family | open |
 | `unmapped/static/Static1743b10` | `Static1743b10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1743b10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743b10.json` | matched | family | open |
 | `unmapped/static/Static1743b60` | `Static1743b60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1743b60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1743b60.json` | matched | family | open |
@@ -35601,6 +35609,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1746550` | `Static1746550::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1746550` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1746550.json` | matched | family | open |
 | `unmapped/static/Static17465a0` | `Static17465a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17465a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17465a0.json` | matched | family | open |
 | `unmapped/static/Static17465f0` | `Static17465f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17465f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17465f0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17466c0` (GUESS) | `sse-steam-1-7-104` / `0x17466c0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17466c0.json` | matched | full | - |
 | `unmapped/static/Static1746760` | `Static1746760::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1746760` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1746760.json` | matched | family | open |
 | `unmapped/static/Static1746800` | `Static1746800::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1746800` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1746800.json` | matched | family | open |
 | `unmapped/static/Static1746850` | `Static1746850::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1746850` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1746850.json` | matched | full | checked |
@@ -35652,6 +35661,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1747c90` | `Static1747c90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1747c90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747c90.json` | matched | family | open |
 | `unmapped/static/Static1747ce0` | `Static1747ce0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1747ce0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747ce0.json` | matched | family | open |
 | `unmapped/static/Static1747d30` | `Static1747d30::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1747d30` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747d30.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1747dc0` (GUESS) | `sse-steam-1-7-104` / `0x1747dc0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747dc0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1747dd0` (GUESS) | `sse-steam-1-7-104` / `0x1747dd0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747dd0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1747de0` (GUESS) | `sse-steam-1-7-104` / `0x1747de0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747de0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1747df0` (GUESS) | `sse-steam-1-7-104` / `0x1747df0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747df0.json` | matched | full | - |
 | `unmapped/static/Static1747ff0` | `Static1747ff0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1747ff0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1747ff0.json` | matched | family | open |
 | `unmapped/static/Static17481d0` | `Static17481d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17481d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17481d0.json` | matched | family | open |
 | `unmapped/static/Static1748220` | `Static1748220::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748220` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748220.json` | matched | family | open |
@@ -35670,6 +35683,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1748640` | `Static1748640::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748640` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748640.json` | matched | family | open |
 | `unmapped/static/Static1748690` | `Static1748690::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748690` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748690.json` | matched | family | open |
 | `unmapped/static/Static1748770` | `Static1748770::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748770` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748770.json` | matched | full | open |
+| `leaves/StaticObjectWrappers` | `Function1748780` (GUESS) | `sse-steam-1-7-104` / `0x1748780` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748780.json` | matched | full | - |
 | `unmapped/static/Static1748830` | `Static1748830::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748830` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748830.json` | matched | family | open |
 | `unmapped/static/Static1748880` | `Static1748880::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748880` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748880.json` | matched | family | open |
 | `unmapped/static/Static17488d0` | `Static17488d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17488d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17488d0.json` | matched | family | open |
@@ -35677,6 +35691,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1748970` | `Static1748970::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748970` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748970.json` | matched | family | open |
 | `unmapped/static/Static17489c0` | `Static17489c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17489c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17489c0.json` | matched | family | open |
 | `unmapped/static/Static1748a10` | `Static1748a10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748a10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748a10.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1748b00` (GUESS) | `sse-steam-1-7-104` / `0x1748b00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748b00.json` | matched | full | - |
 | `unmapped/static/Static1748bc0` | `Static1748bc0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748bc0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748bc0.json` | matched | family | open |
 | `unmapped/static/Static1748c10` | `Static1748c10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748c10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748c10.json` | matched | family | open |
 | `unmapped/static/Static1748c60` | `Static1748c60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1748c60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1748c60.json` | matched | family | open |
@@ -35698,13 +35713,22 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17499f0` | `Static17499f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17499f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17499f0.json` | matched | family | open |
 | `unmapped/static/Static1749a40` | `Static1749a40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1749a40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749a40.json` | matched | family | open |
 | `unmapped/static/Static1749a90` | `Static1749a90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1749a90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749a90.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1749b20` (GUESS) | `sse-steam-1-7-104` / `0x1749b20` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749b20.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1749e10` (GUESS) | `sse-steam-1-7-104` / `0x1749e10` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749e10.json` | matched | full | - |
 | `unmapped/static/Static1749ea0` | `Static1749ea0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1749ea0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749ea0.json` | matched | family | open |
 | `unmapped/static/Static1749f60` | `Static1749f60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1749f60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749f60.json` | matched | family | open |
 | `unmapped/static/Static1749fb0` | `Static1749fb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1749fb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1749fb0.json` | matched | family | open |
 | `unmapped/static/Static174a000` | `Static174a000::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174a000` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a000.json` | matched | family | open |
 | `unmapped/static/Static174a050` | `Static174a050::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174a050` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a050.json` | matched | family | open |
 | `unmapped/static/Static174a310` | `Static174a310::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174a310` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a310.json` | matched | full | open |
+| `leaves/StaticObjectWrappers` | `Function174a320` (GUESS) | `sse-steam-1-7-104` / `0x174a320` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a320.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174a330` (GUESS) | `sse-steam-1-7-104` / `0x174a330` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a330.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174a420` (GUESS) | `sse-steam-1-7-104` / `0x174a420` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a420.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174a430` (GUESS) | `sse-steam-1-7-104` / `0x174a430` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a430.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174a440` (GUESS) | `sse-steam-1-7-104` / `0x174a440` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a440.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174a450` (GUESS) | `sse-steam-1-7-104` / `0x174a450` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a450.json` | matched | full | - |
 | `unmapped/static/Static174a480` | `Static174a480::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174a480` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a480.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174a510` (GUESS) | `sse-steam-1-7-104` / `0x174a510` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174a510.json` | matched | full | - |
 | `unmapped/static/Static174aad0` | `Static174aad0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174aad0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174aad0.json` | matched | family | open |
 | `unmapped/static/Static174ab20` | `Static174ab20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174ab20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ab20.json` | matched | family | open |
 | `unmapped/static/Static174ab70` | `Static174ab70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174ab70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ab70.json` | matched | full | checked |
@@ -35717,12 +35741,26 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static174ada0` | `Static174ada0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174ada0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ada0.json` | matched | family | open |
 | `unmapped/static/Static174adf0` | `Static174adf0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174adf0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174adf0.json` | matched | family | open |
 | `unmapped/static/Static174ae40` | `Static174ae40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174ae40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ae40.json` | matched | full | checked |
+| `leaves/StaticObjectWrappers` | `Function174b170` (GUESS) | `sse-steam-1-7-104` / `0x174b170` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b170.json` | matched | full | - |
 | `unmapped/static/Static174b440` | `Static174b440::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174b440` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b440.json` | matched | family | open |
 | `unmapped/static/Static174b490` | `Static174b490::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174b490` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b490.json` | matched | family | open |
 | `unmapped/static/Static174b520` | `Static174b520::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174b520` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b520.json` | matched | family | open |
 | `unmapped/static/Static174b570` | `Static174b570::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174b570` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b570.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174b5c0` (GUESS) | `sse-steam-1-7-104` / `0x174b5c0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b5c0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b5d0` (GUESS) | `sse-steam-1-7-104` / `0x174b5d0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b5d0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b5e0` (GUESS) | `sse-steam-1-7-104` / `0x174b5e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b5e0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b5f0` (GUESS) | `sse-steam-1-7-104` / `0x174b5f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b5f0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b600` (GUESS) | `sse-steam-1-7-104` / `0x174b600` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b600.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b610` (GUESS) | `sse-steam-1-7-104` / `0x174b610` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b610.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b620` (GUESS) | `sse-steam-1-7-104` / `0x174b620` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b620.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b630` (GUESS) | `sse-steam-1-7-104` / `0x174b630` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b630.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b650` (GUESS) | `sse-steam-1-7-104` / `0x174b650` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b650.json` | matched | full | - |
 | `unmapped/static/Static174b910` | `Static174b910::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174b910` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b910.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174b9e0` (GUESS) | `sse-steam-1-7-104` / `0x174b9e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b9e0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174b9f0` (GUESS) | `sse-steam-1-7-104` / `0x174b9f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174b9f0.json` | matched | full | - |
 | `unmapped/static/Static174ba00` | `Static174ba00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174ba00` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ba00.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174ba60` (GUESS) | `sse-steam-1-7-104` / `0x174ba60` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174ba60.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174bb00` (GUESS) | `sse-steam-1-7-104` / `0x174bb00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174bb00.json` | matched | full | - |
 | `unmapped/static/Static174bb10` | `Static174bb10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174bb10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174bb10.json` | matched | family | open |
 | `unmapped/static/Static174bb60` | `Static174bb60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174bb60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174bb60.json` | matched | family | open |
 | `unmapped/static/Static174bbb0` | `Static174bbb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174bbb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174bbb0.json` | matched | family | open |
@@ -35748,7 +35786,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static174c230` | `Static174c230::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174c230` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174c230.json` | matched | family | open |
 | `unmapped/static/Static174c280` | `Static174c280::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174c280` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174c280.json` | matched | family | open |
 | `unmapped/static/Static174c2d0` | `Static174c2d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174c2d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174c2d0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174c4a0` (GUESS) | `sse-steam-1-7-104` / `0x174c4a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174c4a0.json` | matched | full | - |
 | `unmapped/static/Static174c620` | `Static174c620::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174c620` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174c620.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174cae0` (GUESS) | `sse-steam-1-7-104` / `0x174cae0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cae0.json` | matched | full | - |
 | `unmapped/static/Static174cb10` | `Static174cb10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cb10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cb10.json` | matched | family | open |
 | `unmapped/static/Static174cb60` | `Static174cb60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cb60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cb60.json` | matched | full | checked |
 | `unmapped/static/Static174cbb0` | `Static174cbb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cbb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cbb0.json` | matched | family | open |
@@ -35759,6 +35799,10 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static174cd80` | `Static174cd80::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cd80` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cd80.json` | matched | family | open |
 | `unmapped/static/Static174cdd0` | `Static174cdd0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cdd0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cdd0.json` | matched | family | open |
 | `unmapped/static/Static174cee0` | `Static174cee0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cee0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cee0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174cf70` (GUESS) | `sse-steam-1-7-104` / `0x174cf70` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cf70.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174cfb0` (GUESS) | `sse-steam-1-7-104` / `0x174cfb0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cfb0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174cfc0` (GUESS) | `sse-steam-1-7-104` / `0x174cfc0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cfc0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function174cfe0` (GUESS) | `sse-steam-1-7-104` / `0x174cfe0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cfe0.json` | matched | full | - |
 | `unmapped/static/Static174cff0` | `Static174cff0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174cff0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174cff0.json` | matched | family | open |
 | `unmapped/static/Static174d040` | `Static174d040::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174d040` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174d040.json` | matched | family | open |
 | `unmapped/static/Static174d090` | `Static174d090::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174d090` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174d090.json` | matched | family | open |
@@ -35794,6 +35838,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static174db50` | `Static174db50::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174db50` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174db50.json` | matched | family | open |
 | `unmapped/static/Static174dba0` | `Static174dba0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dba0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dba0.json` | matched | family | open |
 | `unmapped/static/Static174dbf0` | `Static174dbf0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dbf0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dbf0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174dc70` (GUESS) | `sse-steam-1-7-104` / `0x174dc70` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dc70.json` | matched | full | - |
 | `unmapped/static/Static174dc80` | `Static174dc80::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dc80` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dc80.json` | matched | family | open |
 | `unmapped/static/Static174dcd0` | `Static174dcd0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dcd0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dcd0.json` | matched | family | open |
 | `unmapped/static/Static174dd20` | `Static174dd20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dd20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dd20.json` | matched | full | checked |
@@ -35808,6 +35853,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static174dff0` | `Static174dff0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174dff0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174dff0.json` | matched | family | open |
 | `unmapped/static/Static174e040` | `Static174e040::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174e040` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e040.json` | matched | family | open |
 | `unmapped/static/Static174e410` | `Static174e410::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174e410` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e410.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function174e460` (GUESS) | `sse-steam-1-7-104` / `0x174e460` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e460.json` | matched | full | - |
 | `unmapped/static/Static174e480` | `Static174e480::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174e480` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e480.json` | matched | family | open |
 | `unmapped/static/Static174e4d0` | `Static174e4d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174e4d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e4d0.json` | matched | family | open |
 | `unmapped/static/Static174e520` | `Static174e520::teardown` (GUESS) | `sse-steam-1-7-104` / `0x174e520` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x174e520.json` | matched | family | open |
@@ -38867,6 +38913,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static178a000` | `Static178a000::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a000` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a000.json` | matched | family | open |
 | `unmapped/static/Static178a050` | `Static178a050::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a050` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a050.json` | matched | family | open |
 | `unmapped/static/Static178a0a0` | `Static178a0a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a0a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a0a0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178a0f0` (GUESS) | `sse-steam-1-7-104` / `0x178a0f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a0f0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function178a120` (GUESS) | `sse-steam-1-7-104` / `0x178a120` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a120.json` | matched | full | - |
 | `unmapped/static/Static178a1e0` | `Static178a1e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a1e0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a1e0.json` | matched | full | open |
 | `unmapped/static/Static178a200` | `Static178a200::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a200` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a200.json` | matched | family | open |
 | `unmapped/static/Static178a2b0` | `Static178a2b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178a2b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178a2b0.json` | matched | family | open |
@@ -38903,13 +38951,17 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static178ac70` | `Static178ac70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ac70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ac70.json` | matched | family | open |
 | `unmapped/static/Static178acc0` | `Static178acc0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178acc0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178acc0.json` | matched | family | open |
 | `unmapped/static/Static178ad10` | `Static178ad10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ad10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ad10.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178ad60` (GUESS) | `sse-steam-1-7-104` / `0x178ad60` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ad60.json` | matched | full | - |
 | `unmapped/static/Static178ad70` | `Static178ad70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ad70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ad70.json` | matched | family | open |
 | `unmapped/static/Static178ae00` | `Static178ae00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ae00` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ae00.json` | matched | family | open |
 | `unmapped/static/Static178ae50` | `Static178ae50::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ae50` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ae50.json` | matched | family | open |
 | `unmapped/static/Static178aea0` | `Static178aea0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178aea0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178aea0.json` | matched | family | open |
 | `unmapped/static/Static178aef0` | `Static178aef0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178aef0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178aef0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178b100` (GUESS) | `sse-steam-1-7-104` / `0x178b100` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178b100.json` | matched | full | - |
 | `unmapped/static/Static178b860` | `Static178b860::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178b860` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178b860.json` | matched | family | open |
 | `unmapped/static/Static178b8b0` | `Static178b8b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178b8b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178b8b0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178b9d0` (GUESS) | `sse-steam-1-7-104` / `0x178b9d0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178b9d0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function178bb50` (GUESS) | `sse-steam-1-7-104` / `0x178bb50` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178bb50.json` | matched | full | - |
 | `unmapped/static/Static178bc00` | `Static178bc00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178bc00` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178bc00.json` | matched | family | open |
 | `unmapped/static/Static178bc50` | `Static178bc50::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178bc50` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178bc50.json` | matched | family | open |
 | `unmapped/static/Static178bca0` | `Static178bca0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178bca0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178bca0.json` | matched | family | open |
@@ -38970,6 +39022,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static178cdd0` | `Static178cdd0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178cdd0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178cdd0.json` | matched | family | open |
 | `unmapped/static/Static178ce20` | `Static178ce20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ce20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ce20.json` | matched | family | open |
 | `unmapped/static/Static178d1a0` | `Static178d1a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d1a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d1a0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178d230` (GUESS) | `sse-steam-1-7-104` / `0x178d230` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d230.json` | matched | full | - |
 | `unmapped/static/Static178d2d0` | `Static178d2d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d2d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d2d0.json` | matched | family | open |
 | `unmapped/static/Static178d320` | `Static178d320::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d320` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d320.json` | matched | family | open |
 | `unmapped/static/Static178d370` | `Static178d370::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d370` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d370.json` | matched | family | open |
@@ -38991,6 +39044,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static178d920` | `Static178d920::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d920` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d920.json` | matched | family | open |
 | `unmapped/static/Static178d970` | `Static178d970::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d970` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d970.json` | matched | family | open |
 | `unmapped/static/Static178d9c0` | `Static178d9c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178d9c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178d9c0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178da10` (GUESS) | `sse-steam-1-7-104` / `0x178da10` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178da10.json` | matched | full | - |
 | `unmapped/static/Static178da20` | `Static178da20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178da20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178da20.json` | matched | family | open |
 | `unmapped/static/Static178da70` | `Static178da70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178da70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178da70.json` | matched | full | checked |
 | `unmapped/static/Static178dad0` | `Static178dad0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178dad0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178dad0.json` | matched | family | open |
@@ -39015,6 +39069,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static178ead0` | `Static178ead0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ead0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ead0.json` | matched | family | open |
 | `unmapped/static/Static178eb20` | `Static178eb20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178eb20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178eb20.json` | matched | family | open |
 | `unmapped/static/Static178eb70` | `Static178eb70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178eb70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178eb70.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function178ec10` (GUESS) | `sse-steam-1-7-104` / `0x178ec10` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ec10.json` | matched | full | - |
 | `unmapped/static/Static178ec80` | `Static178ec80::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ec80` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ec80.json` | matched | family | open |
 | `unmapped/static/Static178ecd0` | `Static178ecd0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ecd0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ecd0.json` | matched | family | open |
 | `unmapped/static/Static178ed20` | `Static178ed20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x178ed20` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x178ed20.json` | matched | full | open |
@@ -39110,11 +39165,18 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1791b30` | `Static1791b30::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791b30` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791b30.json` | matched | family | open |
 | `unmapped/static/Static1791c40` | `Static1791c40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791c40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791c40.json` | matched | family | open |
 | `unmapped/static/Static1791c90` | `Static1791c90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791c90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791c90.json` | matched | full | checked |
+| `leaves/StaticObjectWrappers` | `Function1791ce0` (GUESS) | `sse-steam-1-7-104` / `0x1791ce0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791ce0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1791d00` (GUESS) | `sse-steam-1-7-104` / `0x1791d00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791d00.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1791d80` (GUESS) | `sse-steam-1-7-104` / `0x1791d80` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791d80.json` | matched | full | - |
 | `unmapped/static/Static1791d90` | `Static1791d90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791d90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791d90.json` | matched | family | open |
 | `unmapped/static/Static1791e10` | `Static1791e10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791e10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791e10.json` | matched | family | open |
 | `unmapped/static/Static1791e60` | `Static1791e60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791e60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791e60.json` | matched | family | open |
 | `unmapped/static/Static1791eb0` | `Static1791eb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1791eb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791eb0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1791f00` (GUESS) | `sse-steam-1-7-104` / `0x1791f00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791f00.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1791f50` (GUESS) | `sse-steam-1-7-104` / `0x1791f50` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791f50.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function1791fb0` (GUESS) | `sse-steam-1-7-104` / `0x1791fb0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1791fb0.json` | matched | full | - |
 | `unmapped/static/Static1792080` | `Static1792080::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792080.json` | matched | full | open |
+| `leaves/StaticObjectWrappers` | `Function17920a0` (GUESS) | `sse-steam-1-7-104` / `0x17920a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17920a0.json` | matched | full | - |
 | `unmapped/static/Static1792160` | `Static1792160::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792160` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792160.json` | matched | family | open |
 | `unmapped/static/Static17921b0` | `Static17921b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17921b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17921b0.json` | matched | family | open |
 | `unmapped/static/Static1792200` | `Static1792200::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792200` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792200.json` | matched | family | open |
@@ -39134,6 +39196,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1792650` | `Static1792650::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792650` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792650.json` | matched | family | open |
 | `unmapped/static/Static17926a0` | `Static17926a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17926a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17926a0.json` | matched | family | open |
 | `unmapped/static/Static17926f0` | `Static17926f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17926f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17926f0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17928b0` (GUESS) | `sse-steam-1-7-104` / `0x17928b0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17928b0.json` | matched | full | - |
 | `unmapped/static/Static17928c0` | `Static17928c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17928c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17928c0.json` | matched | family | open |
 | `unmapped/static/Static1792920` | `Static1792920::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792920` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792920.json` | matched | family | open |
 | `unmapped/static/Static1792970` | `Static1792970::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1792970` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1792970.json` | matched | family | open |
@@ -39175,6 +39238,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17945d0` | `Static17945d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17945d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17945d0.json` | matched | family | open |
 | `unmapped/static/Static17947a0` | `Static17947a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17947a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17947a0.json` | matched | family | open |
 | `unmapped/static/Static1794830` | `Static1794830::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1794830` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1794830.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1794a00` (GUESS) | `sse-steam-1-7-104` / `0x1794a00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1794a00.json` | matched | full | - |
 | `unmapped/static/Static1794ac0` | `Static1794ac0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1794ac0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1794ac0.json` | matched | family | open |
 | `unmapped/static/Static1794b10` | `Static1794b10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1794b10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1794b10.json` | matched | family | open |
 | `unmapped/static/Static1794b60` | `Static1794b60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1794b60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1794b60.json` | matched | family | open |
@@ -39304,6 +39368,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1797cc0` | `Static1797cc0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1797cc0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1797cc0.json` | matched | family | open |
 | `unmapped/static/Static1797d10` | `Static1797d10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1797d10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1797d10.json` | matched | family | open |
 | `unmapped/static/Static1797d70` | `Static1797d70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1797d70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1797d70.json` | matched | full | checked |
+| `leaves/StaticObjectWrappers` | `Function1798210` (GUESS) | `sse-steam-1-7-104` / `0x1798210` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1798210.json` | matched | full | - |
 | `unmapped/static/Static1798290` | `Static1798290::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1798290` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1798290.json` | matched | family | open |
 | `unmapped/static/Static17982e0` | `Static17982e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17982e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17982e0.json` | matched | family | open |
 | `unmapped/static/Static1798330` | `Static1798330::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1798330` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1798330.json` | matched | family | open |
@@ -39353,9 +39418,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static1799670` | `Static1799670::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1799670` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799670.json` | matched | family | open |
 | `unmapped/static/Static1799710` | `Static1799710::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1799710` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799710.json` | matched | family | open |
 | `unmapped/static/Static1799760` | `Static1799760::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1799760` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799760.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17997b0` (GUESS) | `sse-steam-1-7-104` / `0x17997b0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17997b0.json` | matched | full | - |
 | `unmapped/static/Static1799880` | `Static1799880::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1799880` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799880.json` | matched | full | open |
 | `unmapped/static/Static17998b0` | `Static17998b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17998b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17998b0.json` | matched | family | open |
 | `unmapped/static/Static1799b40` | `Static1799b40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x1799b40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799b40.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function1799b90` (GUESS) | `sse-steam-1-7-104` / `0x1799b90` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1799b90.json` | matched | full | - |
 | `unmapped/static/Static179a2b0` | `Static179a2b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a2b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a2b0.json` | matched | family | open |
 | `unmapped/static/Static179a300` | `Static179a300::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a300` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a300.json` | matched | family | open |
 | `unmapped/static/Static179a350` | `Static179a350::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a350` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a350.json` | matched | family | open |
@@ -39373,6 +39440,9 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static179a7e0` | `Static179a7e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a7e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a7e0.json` | matched | family | open |
 | `unmapped/static/Static179a830` | `Static179a830::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a830` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a830.json` | matched | family | open |
 | `unmapped/static/Static179a880` | `Static179a880::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179a880` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179a880.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function179aa80` (GUESS) | `sse-steam-1-7-104` / `0x179aa80` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179aa80.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function179ac90` (GUESS) | `sse-steam-1-7-104` / `0x179ac90` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ac90.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function179aca0` (GUESS) | `sse-steam-1-7-104` / `0x179aca0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179aca0.json` | matched | full | - |
 | `unmapped/static/Static179acf0` | `Static179acf0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179acf0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179acf0.json` | matched | family | open |
 | `unmapped/static/Static179ad40` | `Static179ad40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179ad40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ad40.json` | matched | family | open |
 | `unmapped/static/Static179ad90` | `Static179ad90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179ad90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ad90.json` | matched | family | open |
@@ -39428,6 +39498,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static179c8f0` | `Static179c8f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179c8f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179c8f0.json` | matched | family | open |
 | `unmapped/static/Static179c950` | `Static179c950::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179c950` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179c950.json` | matched | family | open |
 | `unmapped/static/Static179cda0` | `Static179cda0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179cda0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179cda0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function179cdf0` (GUESS) | `sse-steam-1-7-104` / `0x179cdf0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179cdf0.json` | matched | full | - |
 | `unmapped/static/Static179ce10` | `Static179ce10::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179ce10` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ce10.json` | matched | family | open |
 | `unmapped/static/Static179ce60` | `Static179ce60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179ce60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ce60.json` | matched | family | open |
 | `unmapped/static/Static179ceb0` | `Static179ceb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179ceb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179ceb0.json` | matched | family | open |
@@ -39446,6 +39517,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static179d2c0` | `Static179d2c0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d2c0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d2c0.json` | matched | family | open |
 | `unmapped/static/Static179d310` | `Static179d310::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d310` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d310.json` | matched | family | open |
 | `unmapped/static/Static179d360` | `Static179d360::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d360` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d360.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function179d4f0` (GUESS) | `sse-steam-1-7-104` / `0x179d4f0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d4f0.json` | matched | full | - |
 | `unmapped/static/Static179d5f0` | `Static179d5f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d5f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d5f0.json` | matched | family | open |
 | `unmapped/static/Static179d640` | `Static179d640::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d640` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d640.json` | matched | family | open |
 | `unmapped/static/Static179d690` | `Static179d690::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179d690` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179d690.json` | matched | family | open |
@@ -39477,6 +39549,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static179e0e0` | `Static179e0e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e0e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e0e0.json` | matched | family | open |
 | `unmapped/static/Static179e130` | `Static179e130::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e130` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e130.json` | matched | family | open |
 | `unmapped/static/Static179e1a0` | `Static179e1a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e1a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e1a0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function179e240` (GUESS) | `sse-steam-1-7-104` / `0x179e240` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e240.json` | matched | full | - |
 | `unmapped/static/Static179e250` | `Static179e250::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e250` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e250.json` | matched | family | open |
 | `unmapped/static/Static179e2a0` | `Static179e2a0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e2a0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e2a0.json` | matched | family | open |
 | `unmapped/static/Static179e2f0` | `Static179e2f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179e2f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179e2f0.json` | matched | full | checked |
@@ -39556,6 +39629,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static179fad0` | `Static179fad0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179fad0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179fad0.json` | matched | family | open |
 | `unmapped/static/Static179fb40` | `Static179fb40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179fb40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179fb40.json` | matched | family | open |
 | `unmapped/static/Static179fbe0` | `Static179fbe0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x179fbe0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179fbe0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function179fdc0` (GUESS) | `sse-steam-1-7-104` / `0x179fdc0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x179fdc0.json` | matched | full | - |
 | `unmapped/static/Static17a0390` | `Static17a0390::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a0390` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a0390.json` | matched | family | open |
 | `unmapped/static/Static17a0420` | `Static17a0420::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a0420` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a0420.json` | matched | family | open |
 | `unmapped/static/Static17a0480` | `Static17a0480::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a0480` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a0480.json` | matched | family | open |
@@ -39597,6 +39671,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17a1440` | `Static17a1440::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1440` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1440.json` | matched | family | open |
 | `unmapped/static/Static17a1490` | `Static17a1490::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1490` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1490.json` | matched | family | open |
 | `unmapped/static/Static17a14e0` | `Static17a14e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a14e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a14e0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17a1530` (GUESS) | `sse-steam-1-7-104` / `0x17a1530` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1530.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17a1590` (GUESS) | `sse-steam-1-7-104` / `0x17a1590` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1590.json` | matched | full | - |
 | `unmapped/static/Static17a1a20` | `Static17a1a20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1a20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1a20.json` | matched | family | open |
 | `unmapped/static/Static17a1ac0` | `Static17a1ac0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1ac0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1ac0.json` | matched | family | open |
 | `unmapped/static/Static17a1b40` | `Static17a1b40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1b40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1b40.json` | matched | family | open |
@@ -39607,6 +39683,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17a1d00` | `Static17a1d00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1d00` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1d00.json` | matched | family | open |
 | `unmapped/static/Static17a1d50` | `Static17a1d50::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1d50` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1d50.json` | matched | family | open |
 | `unmapped/static/Static17a1da0` | `Static17a1da0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a1da0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a1da0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17a2640` (GUESS) | `sse-steam-1-7-104` / `0x17a2640` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a2640.json` | matched | full | - |
 | `unmapped/static/Static17a2a80` | `Static17a2a80::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a2a80` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a2a80.json` | matched | family | open |
 | `unmapped/static/Static17a2ad0` | `Static17a2ad0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a2ad0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a2ad0.json` | matched | full | checked |
 | `unmapped/static/Static17a2b20` | `Static17a2b20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17a2b20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17a2b20.json` | matched | family | open |
@@ -40018,6 +40095,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17adde0` | `Static17adde0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17adde0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17adde0.json` | matched | family | open |
 | `unmapped/static/Static17ade30` | `Static17ade30::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17ade30` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17ade30.json` | matched | family | open |
 | `unmapped/static/Static17ade80` | `Static17ade80::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17ade80` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17ade80.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17aeb00` (GUESS) | `sse-steam-1-7-104` / `0x17aeb00` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17aeb00.json` | matched | full | - |
 | `unmapped/static/Static17aeca0` | `Static17aeca0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17aeca0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17aeca0.json` | matched | family | open |
 | `unmapped/static/Static17afb40` | `Static17afb40::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17afb40` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17afb40.json` | matched | family | open |
 | `unmapped/static/Static17b0100` | `Static17b0100::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0100` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0100.json` | matched | family | open |
@@ -40027,6 +40105,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b0240` | `Static17b0240::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0240` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0240.json` | matched | family | open |
 | `unmapped/static/Static17b0290` | `Static17b0290::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0290` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0290.json` | matched | family | open |
 | `unmapped/static/Static17b02e0` | `Static17b02e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b02e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b02e0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b0480` (GUESS) | `sse-steam-1-7-104` / `0x17b0480` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0480.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17b0490` (GUESS) | `sse-steam-1-7-104` / `0x17b0490` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0490.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17b0590` (GUESS) | `sse-steam-1-7-104` / `0x17b0590` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0590.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17b05a0` (GUESS) | `sse-steam-1-7-104` / `0x17b05a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b05a0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17b05b0` (GUESS) | `sse-steam-1-7-104` / `0x17b05b0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b05b0.json` | matched | full | - |
 | `unmapped/static/Static17b0600` | `Static17b0600::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0600` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0600.json` | matched | family | open |
 | `unmapped/static/Static17b0650` | `Static17b0650::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0650` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0650.json` | matched | family | open |
 | `unmapped/static/Static17b06b0` | `Static17b06b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b06b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b06b0.json` | matched | family | open |
@@ -40049,6 +40132,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b0c90` | `Static17b0c90::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0c90` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0c90.json` | matched | family | open |
 | `unmapped/static/Static17b0cf0` | `Static17b0cf0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0cf0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0cf0.json` | matched | family | open |
 | `unmapped/static/Static17b0d60` | `Static17b0d60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0d60` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0d60.json` | matched | full | open |
+| `leaves/StaticObjectWrappers` | `Function17b0d80` (GUESS) | `sse-steam-1-7-104` / `0x17b0d80` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0d80.json` | matched | full | - |
 | `unmapped/static/Static17b0f20` | `Static17b0f20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b0f20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b0f20.json` | matched | family | open |
 | - | `Function17b1040` (GUESS) | `sse-steam-1-7-104` / `0x17b1040` / 93 | - | - | mapped | - | - |
 | `unmapped/static/Static17b1210` | `Static17b1210::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b1210` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1210.json` | matched | family | open |
@@ -40060,6 +40144,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b1440` | `Static17b1440::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b1440` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1440.json` | matched | family | open |
 | `unmapped/static/Static17b1490` | `Static17b1490::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b1490` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1490.json` | matched | family | open |
 | `unmapped/static/Static17b14e0` | `Static17b14e0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b14e0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b14e0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b1540` (GUESS) | `sse-steam-1-7-104` / `0x17b1540` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1540.json` | matched | full | - |
 | `unmapped/static/Static17b1710` | `Static17b1710::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b1710` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1710.json` | matched | family | open |
 | `unmapped/static/Static17b1760` | `Static17b1760::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b1760` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b1760.json` | matched | family | open |
 | `unmapped/static/Static17b17b0` | `Static17b17b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b17b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b17b0.json` | matched | family | open |
@@ -40078,6 +40163,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b22b0` | `Static17b22b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b22b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b22b0.json` | matched | family | open |
 | `unmapped/static/Static17b2300` | `Static17b2300::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2300` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2300.json` | matched | family | open |
 | `unmapped/static/Static17b23b0` | `Static17b23b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b23b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b23b0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b2410` (GUESS) | `sse-steam-1-7-104` / `0x17b2410` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2410.json` | matched | full | - |
 | `unmapped/static/Static17b2470` | `Static17b2470::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2470` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2470.json` | matched | full | open |
 | `unmapped/static/Static17b2540` | `Static17b2540::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2540` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2540.json` | matched | family | open |
 | `unmapped/static/Static17b2590` | `Static17b2590::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2590` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2590.json` | matched | family | open |
@@ -40096,6 +40182,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b2b00` | `Static17b2b00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2b00` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2b00.json` | matched | full | open |
 | `unmapped/static/Static17b2c70` | `Static17b2c70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2c70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2c70.json` | matched | family | open |
 | `unmapped/static/Static17b2cc0` | `Static17b2cc0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2cc0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2cc0.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b2d10` (GUESS) | `sse-steam-1-7-104` / `0x17b2d10` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2d10.json` | matched | full | - |
 | `unmapped/static/Static17b2d70` | `Static17b2d70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2d70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2d70.json` | matched | full | open |
 | `unmapped/static/Static17b2da0` | `Static17b2da0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2da0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2da0.json` | matched | family | open |
 | `unmapped/static/Static17b2df0` | `Static17b2df0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b2df0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b2df0.json` | matched | family | open |
@@ -40150,6 +40237,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b3e60` | `Static17b3e60::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b3e60` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3e60.json` | matched | full | open |
 | `unmapped/static/Static17b3eb0` | `Static17b3eb0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b3eb0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3eb0.json` | matched | family | open |
 | `unmapped/static/Static17b3f00` | `Static17b3f00::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b3f00` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3f00.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b3f50` (GUESS) | `sse-steam-1-7-104` / `0x17b3f50` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3f50.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17b3f60` (GUESS) | `sse-steam-1-7-104` / `0x17b3f60` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3f60.json` | matched | full | - |
 | `unmapped/static/Static17b3f70` | `Static17b3f70::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b3f70` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3f70.json` | matched | family | open |
 | `unmapped/static/Static17b3fc0` | `Static17b3fc0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b3fc0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b3fc0.json` | matched | family | open |
 | `unmapped/static/Static17b4010` | `Static17b4010::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b4010` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b4010.json` | matched | family | open |
@@ -40203,6 +40292,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17b4f20` | `Static17b4f20::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b4f20` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b4f20.json` | matched | family | open |
 | `unmapped/static/Static17b4fd0` | `Static17b4fd0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b4fd0` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b4fd0.json` | matched | full | open |
 | `unmapped/static/Static17b5040` | `Static17b5040::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b5040` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b5040.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17b50e0` (GUESS) | `sse-steam-1-7-104` / `0x17b50e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b50e0.json` | matched | full | - |
 | `unmapped/static/Static17b50f0` | `Static17b50f0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b50f0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b50f0.json` | matched | family | open |
 | `unmapped/static/Static17b5140` | `Static17b5140::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b5140` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b5140.json` | matched | family | open |
 | `unmapped/static/Static17b5190` | `Static17b5190::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17b5190` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17b5190.json` | matched | family | open |
@@ -40744,6 +40834,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17c0fe0` | `Static17c0fe0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c0fe0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c0fe0.json` | matched | family | open |
 | `unmapped/static/Static17c1030` | `Static17c1030::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c1030` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c1030.json` | matched | family | open |
 | `unmapped/static/Static17c1080` | `Static17c1080::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c1080` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c1080.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17c10d0` (GUESS) | `sse-steam-1-7-104` / `0x17c10d0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c10d0.json` | matched | full | - |
+| `leaves/StaticObjectWrappers` | `Function17c10e0` (GUESS) | `sse-steam-1-7-104` / `0x17c10e0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c10e0.json` | matched | full | - |
 | `unmapped/static/Static17c1230` | `Static17c1230::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c1230` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c1230.json` | matched | family | open |
 | `unmapped/static/Static17c1280` | `Static17c1280::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c1280` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c1280.json` | matched | family | open |
 | `unmapped/static/Static17c12d0` | `Static17c12d0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c12d0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c12d0.json` | matched | family | open |
@@ -40824,6 +40916,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/static/Static17c36b0` | `Static17c36b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c36b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c36b0.json` | matched | family | open |
 | `unmapped/static/Static17c3700` | `Static17c3700::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c3700` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c3700.json` | matched | family | open |
 | `unmapped/static/Static17c3750` | `Static17c3750::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c3750` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c3750.json` | matched | family | open |
+| `leaves/StaticObjectWrappers` | `Function17c37a0` (GUESS) | `sse-steam-1-7-104` / `0x17c37a0` / 12 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c37a0.json` | matched | full | - |
 | `unmapped/static/Static17c37b0` | `Static17c37b0::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c37b0` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c37b0.json` | matched | family | open |
 | `unmapped/static/Static17c3800` | `Static17c3800::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c3800` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c3800.json` | matched | family | open |
 | `unmapped/static/Static17c3850` | `Static17c3850::teardown` (GUESS) | `sse-steam-1-7-104` / `0x17c3850` / 67 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x17c3850.json` | matched | family | open |
