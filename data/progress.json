@@ -437436,12 +437436,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22082512,
       "size": 420,
-      "status": "mapped",
+      "status": "matched",
       "name": "ShadowSceneNode::Function150f3d0",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0x150f3d0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x150f3d0.json",
+      "report": "reports/sse-steam-1-7-104/0x150f3d0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x150f8b0",
@@ -437822,12 +437823,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22401296,
       "size": 340,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSShadowDirectionalLight::Function155d110",
       "name_origin": "GUESS",
       "name_source": "GUESS(low): placeholder method name; class attribution only from a class-only placeholder of a community name list, unverified. No usable method name in the pinned sources. RVA 0x155d110; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x155d110.json",
+      "report": "reports/sse-steam-1-7-104/0x155d110.json"
     },
     {
       "id": "sse-steam-1-7-104-0x155d270",
@@ -588504,6 +588506,58 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1560340.json",
       "report": "reports/sse-steam-1-7-104/0x1560340.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x150e1f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22077936,
+      "size": 253,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function150e1f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x150e1f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x150e1f0.json",
+      "report": "reports/sse-steam-1-7-104/0x150e1f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x150e780",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22079360,
+      "size": 208,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function150e780",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x150e780; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x150e780.json",
+      "report": "reports/sse-steam-1-7-104/0x150e780.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x150f580",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22082944,
+      "size": 382,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function150f580",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x150f580; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x150f580.json",
+      "report": "reports/sse-steam-1-7-104/0x150f580.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15120a0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22093984,
+      "size": 241,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function15120a0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15120a0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15120a0.json",
+      "report": "reports/sse-steam-1-7-104/0x15120a0.json"
     }
   ],
   "milestones": [
@@ -588546,7 +588600,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T18:10:45Z",
+  "updated_at": "2026-11-25T18:18:46Z",
   "work_items": [
     {
       "id": "pin-target",

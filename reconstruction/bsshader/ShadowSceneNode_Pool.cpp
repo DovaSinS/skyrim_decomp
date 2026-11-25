@@ -6,17 +6,11 @@
 // 0x150c780 ShadowSceneNode::FillShadowScratch
 // 0x150c710 ShadowSceneNode::BeginShadowFrame
 // 0x15122e0 BSTArray<NiPointer<BSLight>, BSTArrayHeapAllocator>::Add<BSLight*>
-// 0x150e090 ShadowSceneNode::ClearLightArrays
 // 0x150fff0 ShadowSceneNode::UpdateActiveLightsLODFadeAndCull
-// 0x150e680 ShadowSceneNode::QueueLightRemoveUnscoped
-// 0x150e5e0 ShadowSceneNode::QueueLightRemoveByNode
 // 0x150e400 ShadowSceneNode::EnableLight
 // CI hash: 0x150c710 ?BeginShadowFrame@ShadowSceneNode@@QEAAXPEAUShadowFrameSource@@@Z
 // CI hash: 0x150c780 ?FillShadowScratch@ShadowSceneNode@@QEAAPEAXH@Z
-// CI hash: 0x150e090 ?ClearLightArrays@ShadowSceneNode@@QEAAXXZ
 // CI hash: 0x150e400 ?EnableLight@ShadowSceneNode@@QEAAXPEAVBSLight@@@Z
-// CI hash: 0x150e5e0 ?QueueLightRemoveByNode@ShadowSceneNode@@QEAAXPEAVNiLight@@@Z
-// CI hash: 0x150e680 ?QueueLightRemoveUnscoped@ShadowSceneNode@@QEAAXPEAVBSLight@@@Z
 // CI hash: 0x150fff0 ?UpdateActiveLightsLODFadeAndCull@ShadowSceneNode@@QEAAXPEAVNiCamera@@@Z
 // CI hash: 0x15122e0 ??$Add@PEAVBSLight@@@?$BSTArray@V?$NiPointer@VBSLight@@@@VBSTArrayHeapAllocator@@@@QEAAXPEAVBSLight@@@Z
 #include <intrin.h>
