@@ -578270,6 +578270,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1555fc0.json",
       "report": "reports/sse-steam-1-7-104/0x1555fc0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x98b0d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 10006736,
+      "size": 62,
+      "status": "matched",
+      "name": "UI3DSceneManager::Function98b0d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x98b0d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x98b0d0.json",
+      "report": "reports/sse-steam-1-7-104/0x98b0d0.json"
     }
   ],
   "milestones": [
@@ -578312,7 +578325,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T08:59:57Z",
+  "updated_at": "2026-11-25T09:11:26Z",
   "work_items": [
     {
       "id": "pin-target",

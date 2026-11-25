@@ -23563,6 +23563,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/wrappers/BSTArrayEraseUnordered3` | `Function9869d0` (GUESS) | `sse-steam-1-7-104` / `0x9869d0` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x9869d0.json` | matched | full | - |
 | `unmapped/buffers/LockedSource_F068_986a30` | `p117_986a30::LockedSource_F068_986a30::Remove` (GUESS) | `sse-steam-1-7-104` / `0x986a30` / 386 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x986a30.json` | mapped, record awaiting review | - | - |
 | `unmapped/storage/StorageInit988fc0` | `StorageInit988fc0::initialize` (GUESS) | `sse-steam-1-7-104` / `0x988fc0` / 63 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x988fc0.json` | matched | family | open |
+| `skyrim/interface/UI3DSceneManager_98b0d0` | `UI3DSceneManager::Function98b0d0` (GUESS) | `sse-steam-1-7-104` / `0x98b0d0` / 62 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x98b0d0.json` | matched | full | - |
 | - | `Function98c020` (GUESS) | `sse-steam-1-7-104` / `0x98c020` / 536 | - | - | mapped | - | - |
 | `unmapped/leaves/LeafForward98c330` | `LeafForward98c330::Forward` (GUESS) | `sse-steam-1-7-104` / `0x98c330` / 5 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x98c330.json` | matched | family | open |
 | `unmapped/leaves/ArrayLeaf98c340` | `Function98c340` (GUESS) | `sse-steam-1-7-104` / `0x98c340` / 82 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x98c340.json` | matched | full | - |
