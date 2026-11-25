@@ -36114,6 +36114,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/ReturnLeaf150ba40` | `ReturnLeaf150ba40::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x150ba40` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x150ba40.json` | matched | family | open |
 | - | `ShadowSceneNode::ctor` (COMMUNITY) | `sse-steam-1-7-104` / `0x150ba50` / 1436 | - | - | mapped | - | - |
 | - | `Function150c280` (GUESS) | `sse-steam-1-7-104` / `0x150c280` / 1149 | - | - | mapped | - | - |
+| `bsshader/ShadowSceneNode_Pool` | `ShadowSceneNode::Function150c710` (GUESS) | `sse-steam-1-7-104` / `0x150c710` / 99 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150c710.json` | matched | full | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function150c7b0` (GUESS) | `sse-steam-1-7-104` / `0x150c7b0` / 78 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150c7b0.json` | matched | full | - |
 | - | `ShadowSceneNode::AddLight` (COMMUNITY) | `sse-steam-1-7-104` / `0x150c810` / 758 | - | - | mapped | - | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function150cb10` (GUESS) | `sse-steam-1-7-104` / `0x150cb10` / 217 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150cb10.json` | matched | full | - |
@@ -36133,12 +36134,14 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `Function150fe80` (GUESS) | `sse-steam-1-7-104` / `0x150fe80` / 85 | - | - | mapped | - | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function150fee0` (GUESS) | `sse-steam-1-7-104` / `0x150fee0` / 14 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150fee0.json` | matched | full | - |
 | `bsshader/ShadowSceneNode` | `Function150ff00` (GUESS) | `sse-steam-1-7-104` / `0x150ff00` / 84 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150ff00.json` | matched | full | - |
+| `bsshader/ShadowSceneNode_Pool` | `ShadowSceneNode::Function150fff0` (GUESS) | `sse-steam-1-7-104` / `0x150fff0` / 119 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x150fff0.json` | matched | full | - |
 | `bscore/Owner1510070` | `ShadowSceneNode::Function1510070` (GUESS) | `sse-steam-1-7-104` / `0x1510070` / 10 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1510070.json` | matched | full | - |
 | `unmapped/leaves/Leaf1510080` | `Leaf1510080::Invoke` (GUESS) | `sse-steam-1-7-104` / `0x1510080` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1510080.json` | matched | family | open |
 | - | `Function15100b0` (GUESS) | `sse-steam-1-7-104` / `0x15100b0` / 2180 | - | - | mapped | - | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function1511f00` (GUESS) | `sse-steam-1-7-104` / `0x1511f00` / 115 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1511f00.json` | matched | full | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function1511f80` (GUESS) | `sse-steam-1-7-104` / `0x1511f80` / 105 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1511f80.json` | matched | full | - |
 | `bsshader/ShadowSceneNode` | `ShadowSceneNode::Function1511ff0` (GUESS) | `sse-steam-1-7-104` / `0x1511ff0` / 168 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1511ff0.json` | matched | full | - |
+| `bsshader/ShadowSceneNode_Pool` | `ShadowSceneNode::Function15122e0` (GUESS) | `sse-steam-1-7-104` / `0x15122e0` / 102 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x15122e0.json` | matched | full | - |
 | `bscore/BSTArray_RE__NiPointer_RE__BSLight` | `ShadowSceneNode::Function15123a0` (GUESS) | `sse-steam-1-7-104` / `0x15123a0` / 102 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x15123a0.json` | matched | full | - |
 | `bscore/BSTArray_RE__NiPointer_RE__BSLight` | `ShadowSceneNode::Function1512410` (GUESS) | `sse-steam-1-7-104` / `0x1512410` / 93 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x1512410.json` | matched | full | - |
 | `bscore/BSTArray_RE__NiPointer_RE__BSLight` | `ShadowSceneNode::Function1512470` (GUESS) | `sse-steam-1-7-104` / `0x1512470` / 102 | `msvc-19.16.27054-o2-reconstruction` | `reports/sse-steam-1-7-104/0x1512470.json` | matched | full | - |
@@ -36543,6 +36546,7 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | - | `BSShadowDirectionalLight::Function155d110` (GUESS) | `sse-steam-1-7-104` / `0x155d110` / 340 | - | - | mapped | - | - |
 | - | `BSShadowParabolicLight::Function155d270` (GUESS) | `sse-steam-1-7-104` / `0x155d270` / 1348 | - | - | mapped | - | - |
 | `bscore/BSTArray_155d7f0` | `Function155d7f0` (GUESS) | `sse-steam-1-7-104` / `0x155d7f0` / 49 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155d7f0.json` | matched | full | - |
+| `bsshader/BSShadowLight_Pool` | `Function155d830` (GUESS) | `sse-steam-1-7-104` / `0x155d830` / 93 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x155d830.json` | matched | full | - |
 | `bsshader/BSShadowLight` | `BSShadowLight::Unk_04` (COMMUNITY) | `sse-steam-1-7-104` / `0x155d960` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155d960.json` | matched | full | open |
 | `bsshader/BSShadowLight_Members` | `BSShadowLight::Function155db00` (GUESS) | `sse-steam-1-7-104` / `0x155db00` / 133 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x155db00.json` | matched | full | - |
 | `bsshader/BSShadowLight` | `BSShadowLight::Unk_06` (COMMUNITY) | `sse-steam-1-7-104` / `0x155db90` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x155db90.json` | matched | full | open |
@@ -36782,7 +36786,8 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `unmapped/leaves/LeafAddress157e480` | `LeafAddress157e480::Address` (GUESS) | `sse-steam-1-7-104` / `0x157e480` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157e480.json` | matched | family | open |
 | - | `Function157e490` (GUESS) | `sse-steam-1-7-104` / `0x157e490` / 1114 | - | - | mapped | - | - |
 | `bsshader/BSShadowDirectionalLight_Members` | `BSShadowDirectionalLight::Function157ea50` (GUESS) | `sse-steam-1-7-104` / `0x157ea50` / 120 | `msvc-19.16.27054-o2-noeh-root-includes` | `reports/sse-steam-1-7-104/0x157ea50.json` | matched | full | - |
-| - | `BSShadowDirectionalLight::Render` (COMMUNITY) | `sse-steam-1-7-104` / `0x157ebb0` / 335 | - | - | mapped | - | - |
+| `bsshader/BSShadowDirectionalLight_Pool` | `BSShadowDirectionalLight::Function157ead0` (GUESS) | `sse-steam-1-7-104` / `0x157ead0` / 208 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x157ead0.json` | matched | full | - |
+| `bsshader/BSShadowDirectionalLight_Pool` | `BSShadowDirectionalLight::Render` (COMMUNITY) | `sse-steam-1-7-104` / `0x157ebb0` / 335 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x157ebb0.json` | matched | full | - |
 | `bsshader/BSShadowDirectionalLight` | `BSShadowDirectionalLight::GetPassExtraParam` (COMMUNITY) | `sse-steam-1-7-104` / `0x157ed10` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x157ed10.json` | matched | full | open |
 | `bsshader/BSShadowDirectionalLight_Members` | `BSShadowDirectionalLight::Function157ed20` (GUESS) | `sse-steam-1-7-104` / `0x157ed20` / 76 | `msvc-19.16.27054-o2-noeh-root-includes` | `reports/sse-steam-1-7-104/0x157ed20.json` | matched | full | - |
 | - | `BSShadowDirectionalLight::UpdateCamera` (COMMUNITY) | `sse-steam-1-7-104` / `0x157f080` / 9883 | - | - | mapped | - | - |
@@ -36834,7 +36839,11 @@ integrated source (`docs/verification.md`, "Stale acceptances and delta reviews"
 | `gamebryo/nimain/BSParabolicCullingProcess_1586fc0` | `BSParabolicCullingProcess::Function1586fc0` (GUESS) | `sse-steam-1-7-104` / `0x1586fc0` / 189 | `o2-fpfast` | `reports/sse-steam-1-7-104/0x1586fc0.json` | matched | full | - |
 | `unmapped/leaves/LeafAddress15872d0` | `LeafAddress15872d0::Address` (GUESS) | `sse-steam-1-7-104` / `0x15872d0` / 8 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x15872d0.json` | matched | family | open |
 | - | `BSShadowLight::Function15872e0` (GUESS) | `sse-steam-1-7-104` / `0x15872e0` / 824 | - | - | mapped | - | - |
+| `bsshader/BSShadowFrustumLight_Pool` | `BSShadowFrustumLight::Function15879d0` (GUESS) | `sse-steam-1-7-104` / `0x15879d0` / 87 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x15879d0.json` | matched | full | - |
+| `bsshader/BSShadowFrustumLight_Pool` | `BSShadowFrustumLight::Function1587a30` (GUESS) | `sse-steam-1-7-104` / `0x1587a30` / 162 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1587a30.json` | matched | full | - |
+| `bsshader/BSShadowFrustumLight_Pool` | `BSShadowFrustumLight::Function1587ae0` (GUESS) | `sse-steam-1-7-104` / `0x1587ae0` / 208 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1587ae0.json` | matched | full | - |
 | - | `BSShadowFrustumLight::UpdateCamera` (COMMUNITY) | `sse-steam-1-7-104` / `0x1587bc0` / 805 | - | - | mapped | - | - |
+| `bsshader/BSShadowFrustumLight_Pool` | `BSShadowFrustumLight::Function1587ef0` (GUESS) | `sse-steam-1-7-104` / `0x1587ef0` / 124 | `msvc-19.16.27054-o2-root-includes` | `reports/sse-steam-1-7-104/0x1587ef0.json` | matched | full | - |
 | `bsshader/BSShadowFrustumLight` | `BSShadowFrustumLight::Slot4` (GUESS) | `sse-steam-1-7-104` / `0x1587f70` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1587f70.json` | matched | full | open |
 | `bsshader/BSShadowFrustumLight` | `BSShadowFrustumLight::GetIsFrustumLight` (COMMUNITY) | `sse-steam-1-7-104` / `0x1587f80` / 3 | `msvc-19.16.27054-o2` | `reports/sse-steam-1-7-104/0x1587f80.json` | matched | full | open |
 | - | `Function1587f90` (GUESS) | `sse-steam-1-7-104` / `0x1587f90` / 1473 | - | - | mapped | - | - |

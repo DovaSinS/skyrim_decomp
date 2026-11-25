@@ -437918,12 +437918,13 @@
       "build_id": "sse-steam-1-7-104",
       "rva": 22539184,
       "size": 335,
-      "status": "mapped",
+      "status": "matched",
       "name": "BSShadowDirectionalLight::Render",
       "name_origin": "COMMUNITY",
       "name_source": "Community name, not verified: powerof3/CommonLibSSE commit 654e55f7979c1733033d5dbef176e43827bac944 (GPL-3.0), virtual slot comment of the class header, joined through the image RTTI vftable slot 10. RVA 0x157ebb0; size from the image's single .pdata entry.",
       "owner": "awarebayes",
-      "evidence": "findings/movement-unit-supply-selection.md"
+      "evidence": "reports/sse-steam-1-7-104/0x157ebb0.json",
+      "report": "reports/sse-steam-1-7-104/0x157ebb0.json"
     },
     {
       "id": "sse-steam-1-7-104-0x157f080",
@@ -588269,6 +588270,123 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1586fc0.json",
       "report": "reports/sse-steam-1-7-104/0x1586fc0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x150c710",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22071056,
+      "size": 99,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function150c710",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x150c710; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x150c710.json",
+      "report": "reports/sse-steam-1-7-104/0x150c710.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x150fff0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22085616,
+      "size": 119,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function150fff0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x150fff0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x150fff0.json",
+      "report": "reports/sse-steam-1-7-104/0x150fff0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15122e0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22094560,
+      "size": 102,
+      "status": "matched",
+      "name": "ShadowSceneNode::Function15122e0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15122e0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15122e0.json",
+      "report": "reports/sse-steam-1-7-104/0x15122e0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x155d830",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22403120,
+      "size": 93,
+      "status": "matched",
+      "name": "Function155d830",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x155d830; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x155d830.json",
+      "report": "reports/sse-steam-1-7-104/0x155d830.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x157ead0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22538960,
+      "size": 208,
+      "status": "matched",
+      "name": "BSShadowDirectionalLight::Function157ead0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x157ead0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x157ead0.json",
+      "report": "reports/sse-steam-1-7-104/0x157ead0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15879d0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22575568,
+      "size": 87,
+      "status": "matched",
+      "name": "BSShadowFrustumLight::Function15879d0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15879d0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15879d0.json",
+      "report": "reports/sse-steam-1-7-104/0x15879d0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1587a30",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22575664,
+      "size": 162,
+      "status": "matched",
+      "name": "BSShadowFrustumLight::Function1587a30",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1587a30; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1587a30.json",
+      "report": "reports/sse-steam-1-7-104/0x1587a30.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1587ae0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22575840,
+      "size": 208,
+      "status": "matched",
+      "name": "BSShadowFrustumLight::Function1587ae0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1587ae0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1587ae0.json",
+      "report": "reports/sse-steam-1-7-104/0x1587ae0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1587ef0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22576880,
+      "size": 124,
+      "status": "matched",
+      "name": "BSShadowFrustumLight::Function1587ef0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1587ef0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1587ef0.json",
+      "report": "reports/sse-steam-1-7-104/0x1587ef0.json"
     }
   ],
   "milestones": [
@@ -588311,7 +588429,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T15:40:17Z",
+  "updated_at": "2026-11-25T16:50:45Z",
   "work_items": [
     {
       "id": "pin-target",
