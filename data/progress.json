@@ -577837,6 +577837,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1624ca0.json",
       "report": "reports/sse-steam-1-7-104/0x1624ca0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1124500",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 17974528,
+      "size": 7,
+      "status": "matched",
+      "name": "Function1124500",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0x1124500; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1124500.json",
+      "report": "reports/sse-steam-1-7-104/0x1124500.json"
     }
   ],
   "milestones": [
@@ -577879,7 +577892,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T05:15:02Z",
+  "updated_at": "2026-11-25T06:38:52Z",
   "work_items": [
     {
       "id": "pin-target",
