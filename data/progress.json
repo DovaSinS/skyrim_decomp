@@ -588387,6 +588387,110 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1587ef0.json",
       "report": "reports/sse-steam-1-7-104/0x1587ef0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xeef3f0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 15660016,
+      "size": 232,
+      "status": "matched",
+      "name": "NiCamera::Functioneef3f0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xeef3f0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xeef3f0.json",
+      "report": "reports/sse-steam-1-7-104/0xeef3f0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xfe9f00",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16686848,
+      "size": 163,
+      "status": "matched",
+      "name": "BSPortal::Functionfe9f00",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0xfe9f00; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xfe9f00.json",
+      "report": "reports/sse-steam-1-7-104/0xfe9f00.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xff7350",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16741200,
+      "size": 210,
+      "status": "matched",
+      "name": "Functionff7350",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0xff7350; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xff7350.json",
+      "report": "reports/sse-steam-1-7-104/0xff7350.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0xff7430",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 16741424,
+      "size": 170,
+      "status": "matched",
+      "name": "Functionff7430",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; no class claimed. RVA 0xff7430; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0xff7430.json",
+      "report": "reports/sse-steam-1-7-104/0xff7430.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x15599b0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22387120,
+      "size": 160,
+      "status": "matched",
+      "name": "BSCubeMapCamera::Function15599b0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x15599b0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x15599b0.json",
+      "report": "reports/sse-steam-1-7-104/0x15599b0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x155a2c0",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22389440,
+      "size": 197,
+      "status": "matched",
+      "name": "BSCubeMapCamera::Function155a2c0",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x155a2c0; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x155a2c0.json",
+      "report": "reports/sse-steam-1-7-104/0x155a2c0.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1586980",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22571392,
+      "size": 116,
+      "status": "matched",
+      "name": "BSParabolicCullingProcess::Function1586980",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1586980; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1586980.json",
+      "report": "reports/sse-steam-1-7-104/0x1586980.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1586c90",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22572176,
+      "size": 223,
+      "status": "matched",
+      "name": "BSParabolicCullingProcess::Function1586c90",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1586c90; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1586c90.json",
+      "report": "reports/sse-steam-1-7-104/0x1586c90.json"
     }
   ],
   "milestones": [
@@ -588429,7 +588533,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T16:50:45Z",
+  "updated_at": "2026-11-25T17:01:26Z",
   "work_items": [
     {
       "id": "pin-target",

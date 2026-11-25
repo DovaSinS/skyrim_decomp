@@ -9,7 +9,7 @@
 
 void BSCompoundFrustum::ReleaseToPool(BSCompoundFrustum* frustum)
 {
-    PoolGuard guard(poolLock);
+    PoolGuard guard(&poolLock);
     auto offset = reinterpret_cast<std::uintptr_t>(frustum) -
                   reinterpret_cast<std::uintptr_t>(frustumPool);
     if (offset < sizeof(frustumPool)) {

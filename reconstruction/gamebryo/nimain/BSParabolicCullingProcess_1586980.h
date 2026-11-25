@@ -1,5 +1,8 @@
 // Source exposure: mixed (local pinned-image analysis and community PDB and CommonLibSSE-NG declarations).
-// Code origin: original reconstruction from the contributor-owned image.
+// Code origin: original reconstruction from the contributor-owned image. The release idiom also occurs in both public siblings.
+// NiPointer::~NiPointer: SIBLING(momusdigital/fnv_decomp@2b07cb3e, CC0-1.0) SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
+// Sibling source: momusdigital/fnv_decomp@2b07cb3e src/bsmenu/debugtext_ob1_variant.cpp:1535 (NiPointer destructor similarity).
+// Sibling source: momusdigital/f3_decomp@f5bac1b5 src/bssystem/archive.cpp:2513 (NiPointer destructor similarity).
 // BSParabolicCullingProcess: EXE_RTTI
 // BSCullingProcess, NiCamera, BSShaderAccumulator, NiPlane, NiPoint3, backHemisphereAccumulator, lightCamera: CRASHLOGGER_PDB(59818@2026.10.24)
 // NiPointer, _ptr, unk301F8, equatorialPlane, lightPosition, lightRadius: CRASHLOGGER_PDB(59818@2026.10.24)
@@ -34,14 +37,17 @@ struct NiCamera : NiRefObject {};
 struct BSShaderAccumulator : NiRefObject {};
 
 template<class T>
-struct NiPointer {
-    T* _ptr;
+class NiPointer {
+public:
     ~NiPointer()
     {
         if (_ptr) {
             _ptr->DecRefCount();
         }
     }
+
+private:
+    T* _ptr = nullptr;
 };
 
 struct BSCullingProcess {

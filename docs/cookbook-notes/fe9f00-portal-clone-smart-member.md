@@ -7,7 +7,7 @@
 - Outcome: fixed
 - Cause: inlining
 - Best score: 163/163 aligned matching bytes
-- Attempts: 7 comparisons, first local pass on comparison 4
+- Attempts: the original draft first passed on comparison 4 of 7. The typed assignment first passed on comparison 4 of the revision.
 
 ## What differed
 
@@ -19,4 +19,8 @@ A reference wrapper with a null initializer and an external destructor left the 
 
 ## Spelling that fixed it
 
-Model the portal-owned node as an intrusive reference. In the reset path save the previous node, clear the field, and issue the final release only if the reference count reaches zero. The compiler removes the redundant clear of an already empty reference while retaining the construction unwind states.
+The CrashLogger layout identifies `portalSharedNode` as a `NiPointer<BSPortalSharedNode>`. An independent construction site, `BSPortal::Create` at RVA `0x213170` in the pinned build, calls a plane constructor, installs the portal vtable and initializes the shared-node member to null. It then sets the plane flags and clears the room links. After those writes it reads the shared-node member again. If occupied, it clears the member, drops the old node's reference and calls its virtual deletion method on the last release.
+
+That factory constructs a portal without cloning one. Its ordering supports putting the null assignment in portal construction. The clone's own work is to copy the two room links. The two sites call different plane constructors, so the flag and room initialization in the factory is specific evidence for that path.
+
+Use the ordinary `NiPointer<T>::operator=(T*)` ownership sequence from the project's `NiObjectNET.h`. It handles self-assignment, retains the incoming object, replaces the pointer and releases the old object. With an empty member and a null argument the clone needs only one null store. The full comparator also verifies the allocation, base and member cleanup funclets.
