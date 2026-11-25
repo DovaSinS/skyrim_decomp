@@ -3,7 +3,7 @@
 // AutoMemContext::AutoMemContext: SIBLING(momusdigital/f3_decomp@f5bac1b5, CC0-1.0)
 // Sibling source: momusdigital/f3_decomp@f5bac1b5 src/f3staging/f3blk_005e0000_o2.cpp:27019 (allocation-context save and install).
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
-// BSBatchRenderer, SetupAndDrawPass, AutoMemContext, BSRenderPass, BSShaderProperty, material: CRASHLOGGER_PDB(59818@2026.10.24)
+// BSBatchRenderer, SetupAndDrawPass, AutoMemContext, BSRenderPass, BSShaderProperty, material, lodMode, flags02: CRASHLOGGER_PDB(59818@2026.10.24)
 // SetupPassTechnique, currentShader, currentTechnique, currentMaterial, requestedTechnique, forceSkinning, DrawUnskinnedGeometry, g_memoryContext_tls_0x768, forceSetupTechnique, customDrawFlag, renderMemoryContext: GUESS(low)
 // Recipe: reconstruction/recipes/msvc-19.16.27054-o2-reconstruction.json
 // 0x1560340 BSBatchRenderer::SetupAndDrawPass
@@ -71,11 +71,10 @@ void BSBatchRenderer::SetupAndDrawPass(BSRenderPass* pass, unsigned int techniqu
             }
             currentMaterial = material;
         }
-        // The geometry keeps its LOD mode and custom-draw flag in adjacent bytes.
-        geometry->unk108 = pass->lodMode;
+        geometry->lodMode = pass->lodMode;
         if (geometry->skinInstance) {
             pass->DrawStandardGeometry(alpha, flags);
-        } else if (geometry->unk109[0] & customDrawFlag) {
+        } else if (geometry->flags02 & customDrawFlag) {
             pass->DrawCustomGeometry(flags);
         } else {
             DrawUnskinnedGeometry(pass, alpha, flags);

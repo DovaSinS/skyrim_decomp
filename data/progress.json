@@ -588491,6 +588491,19 @@
       "owner": "claim-time",
       "evidence": "reports/sse-steam-1-7-104/0x1586c90.json",
       "report": "reports/sse-steam-1-7-104/0x1586c90.json"
+    },
+    {
+      "id": "sse-steam-1-7-104-0x1560340",
+      "build_id": "sse-steam-1-7-104",
+      "rva": 22414144,
+      "size": 865,
+      "status": "matched",
+      "name": "BSBatchRenderer::Function1560340",
+      "name_origin": "GUESS",
+      "name_source": "GUESS(low): placeholder name from the RVA; the class is the vtable owner in the project function table. RVA 0x1560340; size from the published function bounds.",
+      "owner": "claim-time",
+      "evidence": "reports/sse-steam-1-7-104/0x1560340.json",
+      "report": "reports/sse-steam-1-7-104/0x1560340.json"
     }
   ],
   "milestones": [
@@ -588533,7 +588546,7 @@
     "notes": "Inventory and exclusions have not been established. No completion percentage is meaningful yet."
   },
   "target_build_id": "sse-steam-1-7-104",
-  "updated_at": "2026-11-25T17:01:26Z",
+  "updated_at": "2026-11-25T18:10:45Z",
   "work_items": [
     {
       "id": "pin-target",
