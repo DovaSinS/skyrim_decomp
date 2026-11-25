@@ -12,14 +12,11 @@
 // 0x150fe20 ShadowSceneNode::CountLitShadowLights
 // 0x150c7b0 ShadowSceneNode::AddLight(NiLight*, bool)
 // 0x150f340 ShadowSceneNode::ClearLights_Flagged
-// 0x150e330 ShadowSceneNode::QueueLightRemove
 // 0x150e300 ShadowSceneNode::TryQueueLightRemove
-// 0x150cf20 ShadowSceneNode::AttachObject
 // 0x1511f00 ShadowSceneNode::ClearShadowLightShadowmaps
 // 0x1511f80 ShadowSceneNode::UnlinkLightFromPortalGraph
 // 0x1511ff0 ShadowSceneNode::UnlinkChildLights
 // 0x150cb10 ShadowSceneNode::AddLight(BSLight*)
-// 0x150d120 ShadowSceneNode::QueueLightAdd
 // 0x150cff0 ShadowSceneNode::RemoveLightByNode
 // 0x1516b90 ShadowSceneNode::CollectLightingShaderGeometry
 // 0x1516f50 ShadowSceneNode::CollectLitGeometry
@@ -161,6 +158,8 @@ void ShadowSceneNode::ClearLights_Flagged(bool a_clear, bool a_keepArrays)
     }
 }
 
+// QueueLightRemove, QueueLightAdd, AttachObject: not compared here; each reads the thread-local memory context, whose
+// relocation the published target layout cannot express
 // QueueLightRemove: CRASHLOGGER_PDB(59818@2026.10.24)
 void ShadowSceneNode::QueueLightRemove(BSLight* a_light)
 {
@@ -225,7 +224,7 @@ void ShadowSceneNode::UnlinkLightFromPortalGraph(NiAVObject* a_object)
 // UnlinkChildLights: CRASHLOGGER_PDB(59818@2026.10.24)
 void ShadowSceneNode::UnlinkChildLights(NiNode* a_node)
 {
-    NiNodeChildren& kids = *reinterpret_cast<NiNodeChildren*>(a_node->unknown110);
+    NiNodeChildren& kids = static_cast<NiNodeView*>(static_cast<NiAVObject*>(a_node))->children;
     for (std::uint32_t i = 0; i < kids.emptyRunStart; ++i) {
         NiAVObject* child = kids.data[i];
         if (child) {

@@ -4,7 +4,6 @@
 // Sibling source: fo4-private@1b765c70 src/BSCore/BSTArray.h:425
 // Recipe: reconstruction/recipes/msvc-19.16.27054-o2-root-includes.json
 // Adapted bodies: BSTArray::SetSize, Clear, ConstructDefaultItems, DestructItems from fo4-private@1b765c70 src/BSCore/BSTArray.h:425
-// CI hash: 0x155db00 ?DestructItems@?$BSTArray@UShadowmapDescriptor@@VBSTArrayHeapAllocator@@@@QEAAXII@Z
 // 0x155db00 BSTArray<ShadowmapDescriptor, BSTArrayHeapAllocator>::DestructItems
 #include "BSShadowLight_Members.h"
 

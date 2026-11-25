@@ -3,7 +3,6 @@
 // SPDX-License-Identifier: MIT (CommonLibSSE-NG declarations, Copyright (c) 2018 Ryan-rsm-McKenzie; full text: licenses/CommonLibSSE-NG.txt)
 // Recipe: reconstruction/recipes/msvc-19.16.27054-o2-noeh-root-includes.json
 // 0x1588c80 BSShadowParabolicLight::Render
-// CI hash: 0x1588dc0 ??_GBSShadowParabolicLight@@UEAAPEAXI@Z
 // 0x1588dc0 BSShadowParabolicLight::dtor_deleting
 // Adapted bodies: none
 #include "BSShadowParabolicLight_Members.h"

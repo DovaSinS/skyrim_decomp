@@ -4,7 +4,7 @@
 // BSTArray_RE__NiPointer_RE__BSLight: CRASHLOGGER_PDB(59818@2026.10.24) STANDIN; the PDB's instance name for a counted light array
 #pragma once
 
-#include "bsshader/ShadowKit.h"
+#include "bsshader/ShadowSceneNode.h"
 
 class BSTArray_RE__NiPointer_RE__BSLight : public BSTArray<NiPointer<BSLight>, BSTArrayHeapAllocator>
 {
