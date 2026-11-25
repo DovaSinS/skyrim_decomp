@@ -145,16 +145,16 @@ The PR bot refreshes this block and the tracking and task issue bodies during ho
 
 <!-- inventory:start -->
 
-Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 22 open claim issues are counted as claimed.
+Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 21 open claim issues are counted as claimed.
 
 | Workstream | Known | Matched | Matched % | Claimed | Ready | Waiting | Unlisted | Open bytes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | A: Foundation | 416 | 176 | 42.3% | 4 | 54 | 182 | 0 | 62989 |
 | B: Shaders and materials | 454 | 236 | 52.0% | 3 | 37 | 178 | 0 | 89018 |
-| C: Batching, passes, camera, culling | 332 | 189 | 56.9% | 3 | 28 | 112 | 0 | 68639 |
+| C: Batching, passes, camera, culling | 332 | 190 | 57.2% | 2 | 28 | 112 | 0 | 68639 |
 | D: Image space, sky, water system | 724 | 543 | 75.0% | 2 | 38 | 141 | 0 | 86395 |
-| E: Shadows | 124 | 65 | 52.4% | 25 | 1 | 33 | 0 | 42240 |
-| **Total A-E** | 2050 | 1209 | 59.0% | 37 | 158 | 646 | 0 | 349281 |
+| E: Shadows | 126 | 71 | 56.3% | 21 | 1 | 33 | 0 | 42240 |
+| **Total A-E** | 2052 | 1216 | 59.3% | 32 | 158 | 646 | 0 | 349281 |
 | Adjacent, not assigned | 991 | 453 | 45.7% | 32 | 125 | 381 | 0 | 163807 |
 
 Known counts functions named in the CrashLogger tables or `data/progress.json`. Ready counts available functions in the published queue. Waiting covers give-ups, functions of unknown size and functions absent from the portion of the queue with complete coverage. Unlisted marks unknown readiness when the queue has incomplete coverage or is unavailable. Open bytes sum the sizes of the Ready, Waiting and Unlisted functions.
@@ -290,7 +290,7 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| C1 Render passes, batch renderer, accumulators | 127 | 76 | 2 | 3 | 46 | 0 | absent from the ready queue (46) | bsshader |
+| C1 Render passes, batch renderer, accumulators | 127 | 77 | 1 | 3 | 46 | 0 | absent from the ready queue (46) | bsshader |
 | C2 Camera, frustum, culling, occlusion and portals | 205 | 113 | 1 | 25 | 66 | 0 | absent from the ready queue (66) | gamebryo |
 
 <details><summary>Classes of workstream C with unmatched functions</summary>
@@ -298,7 +298,7 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
 | BSShaderAccumulator | C1 | 48 | 29 | 1 | 0 | 18 | 0 | 145 |
-| BSBatchRenderer | C1 | 31 | 12 | 1 | 2 | 16 | 0 | 0 |
+| BSBatchRenderer | C1 | 31 | 13 | 0 | 2 | 16 | 0 | 0 |
 | NiAlphaAccumulator | C1 | 10 | 8 | 0 | 0 | 2 | 0 | 12 |
 | BSShaderProperty::RenderPassArray | C1 | 7 | 5 | 0 | 0 | 2 | 0 | 0 |
 | BSRenderPass | C1 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
@@ -406,14 +406,14 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| E1 Shadow lights, scene node, maps and passes | 124 | 65 | 25 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
+| E1 Shadow lights, scene node, maps and passes | 126 | 71 | 21 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
 
 <details><summary>Classes of workstream E with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| ShadowSceneNode | E1 | 54 | 27 | 11 | 0 | 16 | 0 | 120 |
-| BSShadowDirectionalLight | E1 | 18 | 11 | 3 | 0 | 4 | 0 | 10 |
+| ShadowSceneNode | E1 | 56 | 32 | 8 | 0 | 16 | 0 | 120 |
+| BSShadowDirectionalLight | E1 | 18 | 12 | 2 | 0 | 4 | 0 | 10 |
 | BSShadowLight | E1 | 18 | 11 | 5 | 0 | 2 | 0 | 55 |
 | BSShadowParabolicLight | E1 | 12 | 8 | 1 | 0 | 3 | 0 | 9 |
 | BSShadowFrustumLight | E1 | 7 | 6 | 0 | 0 | 1 | 0 | 10 |
