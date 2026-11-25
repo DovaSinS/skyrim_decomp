@@ -20,6 +20,9 @@
 // 0x150cff0 ShadowSceneNode::RemoveLightByNode
 // 0x1516b90 ShadowSceneNode::CollectLightingShaderGeometry
 // 0x1516f50 ShadowSceneNode::CollectLitGeometry
+// 0x150cf20 ShadowSceneNode::AttachObject
+// 0x150d120 ShadowSceneNode::QueueLightAdd
+// 0x150e330 ShadowSceneNode::QueueLightRemove
 #include <intrin.h>
 #include "ShadowSceneNode.h"
 
@@ -158,8 +161,6 @@ void ShadowSceneNode::ClearLights_Flagged(bool a_clear, bool a_keepArrays)
     }
 }
 
-// QueueLightRemove, QueueLightAdd, AttachObject: not compared here; each reads the thread-local memory context, whose
-// relocation the published target layout cannot express
 // QueueLightRemove: CRASHLOGGER_PDB(59818@2026.10.24)
 void ShadowSceneNode::QueueLightRemove(BSLight* a_light)
 {
