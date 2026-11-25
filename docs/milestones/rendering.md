@@ -145,16 +145,16 @@ The PR bot refreshes this block and the tracking and task issue bodies during ho
 
 <!-- inventory:start -->
 
-Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 21 open claim issues are counted as claimed.
+Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 25 open claim issues are counted as claimed.
 
 | Workstream | Known | Matched | Matched % | Claimed | Ready | Waiting | Unlisted | Open bytes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | A: Foundation | 416 | 176 | 42.3% | 94 | 31 | 115 | 0 | 50023 |
 | B: Shaders and materials | 454 | 236 | 52.0% | 3 | 37 | 178 | 0 | 89018 |
 | C: Batching, passes, camera, culling | 332 | 190 | 57.2% | 2 | 28 | 112 | 0 | 68639 |
-| D: Image space, sky, water system | 724 | 543 | 75.0% | 2 | 38 | 141 | 0 | 86395 |
-| E: Shadows | 129 | 77 | 59.7% | 18 | 1 | 33 | 0 | 42240 |
-| **Total A-E** | 2055 | 1222 | 59.5% | 119 | 135 | 579 | 0 | 336315 |
+| D: Image space, sky, water system | 724 | 581 | 80.2% | 16 | 23 | 104 | 0 | 74458 |
+| E: Shadows | 132 | 92 | 69.7% | 15 | 0 | 25 | 0 | 39747 |
+| **Total A-E** | 2058 | 1275 | 62.0% | 130 | 119 | 534 | 0 | 321885 |
 | Adjacent, not assigned | 995 | 460 | 46.2% | 33 | 124 | 378 | 0 | 163585 |
 
 Known counts functions named in the CrashLogger tables or `data/progress.json`. Ready counts available functions in the published queue. Waiting covers give-ups, functions of unknown size and functions absent from the portion of the queue with complete coverage. Unlisted marks unknown readiness when the queue has incomplete coverage or is unavailable. Open bytes sum the sizes of the Ready, Waiting and Unlisted functions.
@@ -337,52 +337,47 @@ Scope: image space, sky, weather, fog, water.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| D2 Image space: manager, effects and image-space shaders | 614 | 505 | 2 | 22 | 85 | 0 | absent from the ready queue (85) | bsshader |
-| D3 Sky, sun, clouds, weather and fog | 71 | 21 | 0 | 8 | 42 | 0 | absent from the ready queue (42) | skyrim_shared |
-| D4 Water system, displacement and reflections | 39 | 17 | 0 | 8 | 14 | 0 | absent from the ready queue (14) | skyrim_shared |
+| D2 Image space: manager, effects and image-space shaders | 614 | 533 | 9 | 15 | 57 | 0 | absent from the ready queue (57) | bsshader |
+| D3 Sky, sun, clouds, weather and fog | 71 | 28 | 5 | 3 | 35 | 0 | absent from the ready queue (35) | skyrim_shared |
+| D4 Water system, displacement and reflections | 39 | 20 | 2 | 5 | 12 | 0 | absent from the ready queue (12) | skyrim_shared |
 
 <details><summary>Classes of workstream D with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| BSImagespaceShader | D2 | 19 | 15 | 0 | 0 | 4 | 0 | 29 |
-| TESImageSpaceModifier | D2 | 13 | 3 | 0 | 3 | 7 | 0 | 0 |
-| ImageSpaceEffect | D2 | 7 | 1 | 0 | 1 | 5 | 0 | 0 |
-| ImageSpaceEffectNoise | D2 | 7 | 0 | 0 | 2 | 5 | 0 | 0 |
-| ImageSpaceModifierInstanceForm | D2 | 7 | 1 | 0 | 2 | 4 | 0 | 19 |
-| BSImagespaceShaderCopyCustomViewport | D2 | 6 | 4 | 0 | 0 | 2 | 0 | 0 |
-| BSImagespaceShaderWaterFlow | D2 | 6 | 4 | 0 | 0 | 2 | 0 | 0 |
-| ImageSpaceEffectGetHit | D2 | 6 | 1 | 0 | 0 | 5 | 0 | 0 |
-| TESImagespaceManager | D2 | 6 | 0 | 0 | 2 | 4 | 0 | 0 |
+| BSImagespaceShader | D2 | 19 | 16 | 1 | 0 | 2 | 0 | 29 |
+| TESImageSpaceModifier | D2 | 13 | 3 | 1 | 2 | 7 | 0 | 0 |
+| ImageSpaceEffect | D2 | 7 | 2 | 1 | 1 | 3 | 0 | 0 |
+| ImageSpaceEffectNoise | D2 | 7 | 3 | 0 | 1 | 3 | 0 | 0 |
+| ImageSpaceModifierInstanceForm | D2 | 7 | 1 | 1 | 1 | 4 | 0 | 19 |
+| BSImagespaceShaderWaterFlow | D2 | 6 | 5 | 0 | 0 | 1 | 0 | 0 |
+| ImageSpaceEffectGetHit | D2 | 6 | 2 | 0 | 0 | 4 | 0 | 0 |
+| TESImagespaceManager | D2 | 6 | 2 | 0 | 0 | 4 | 0 | 0 |
 | BSImagespaceShaderISBlur | D2 | 5 | 4 | 0 | 0 | 1 | 0 | 0 |
 | ImageSpaceEffectDepthOfField | D2 | 5 | 0 | 0 | 0 | 5 | 0 | 0 |
-| ImageSpaceEffectFullScreenBlur | D2 | 5 | 1 | 0 | 0 | 4 | 0 | 0 |
-| ImageSpaceEffectRefraction | D2 | 5 | 0 | 0 | 0 | 5 | 0 | 0 |
-| ImageSpaceShaderParam | D2 | 5 | 1 | 0 | 2 | 2 | 0 | 0 |
-| TESImageSpace | D2 | 5 | 1 | 1 | 1 | 2 | 0 | 0 |
-| BSImagespaceShaderFXAA | D2 | 4 | 3 | 0 | 0 | 1 | 0 | 2 |
+| ImageSpaceEffectFullScreenBlur | D2 | 5 | 3 | 0 | 0 | 2 | 0 | 0 |
+| ImageSpaceEffectRefraction | D2 | 5 | 1 | 1 | 0 | 3 | 0 | 0 |
+| ImageSpaceShaderParam | D2 | 5 | 2 | 0 | 1 | 2 | 0 | 0 |
+| TESImageSpace | D2 | 5 | 1 | 2 | 1 | 1 | 0 | 0 |
 | BSImagespaceShaderISLightingCompositeMenu | D2 | 4 | 3 | 0 | 1 | 0 | 0 | 0 |
-| BSImagespaceShaderLensFlareVisibility | D2 | 4 | 3 | 0 | 0 | 1 | 0 | 4 |
-| BSImagespaceShaderLensFlare | D2 | 3 | 2 | 0 | 0 | 1 | 0 | 0 |
-| ImageSpaceEffectBlur | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
-| ImageSpaceEffectHDR | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
-| ImageSpaceEffectMap | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
-| ImageSpaceEffectVolumetricLighting | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
+| ImageSpaceEffectBlur | D2 | 3 | 2 | 0 | 0 | 1 | 0 | 0 |
+| ImageSpaceEffectHDR | D2 | 3 | 1 | 0 | 0 | 2 | 0 | 0 |
+| ImageSpaceEffectMap | D2 | 3 | 2 | 0 | 0 | 1 | 0 | 0 |
+| ImageSpaceEffectVolumetricLighting | D2 | 3 | 1 | 0 | 0 | 2 | 0 | 0 |
 | ImageSpaceEffectWaterDisplacement | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
-| ImageSpaceEffectWorldMap | D2 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
+| ImageSpaceEffectWorldMap | D2 | 3 | 1 | 0 | 0 | 2 | 0 | 0 |
 | ImageSpaceManager | D2 | 3 | 0 | 1 | 2 | 0 | 0 | 0 |
 | ImageSpaceModifierInstance | D2 | 3 | 1 | 0 | 2 | 0 | 0 | 0 |
 | ImageSpaceModifierInstanceDOF | D2 | 3 | 2 | 0 | 0 | 1 | 0 | 0 |
-| ImageSpaceModifierInstanceTemp | D2 | 3 | 2 | 0 | 1 | 0 | 0 | 0 |
-| ImageSpaceEffectOption | D2 | 2 | 0 | 0 | 1 | 1 | 0 | 0 |
+| ImageSpaceModifierInstanceTemp | D2 | 3 | 2 | 1 | 0 | 0 | 0 | 0 |
+| ImageSpaceEffectOption | D2 | 2 | 1 | 0 | 1 | 0 | 0 | 0 |
 | ImageSpaceEffectParam | D2 | 2 | 1 | 0 | 0 | 1 | 0 | 0 |
-| ImageSpaceEffectRadialBlur | D2 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
-| ImageSpaceModifierInstanceRB | D2 | 2 | 1 | 0 | 0 | 1 | 0 | 0 |
+| ImageSpaceEffectRadialBlur | D2 | 2 | 1 | 0 | 0 | 1 | 0 | 0 |
 | GetVLTemporalAccumulationFactor | D2 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 | UpdateVolumetricLightingRenderData | D2 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 | VolumetricLightingDescriptor | D2 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| Sky | D3 | 31 | 8 | 0 | 3 | 20 | 0 | 145 |
-| Sun | D3 | 6 | 1 | 0 | 3 | 2 | 0 | 0 |
+| Sky | D3 | 31 | 12 | 4 | 1 | 14 | 0 | 145 |
+| Sun | D3 | 6 | 4 | 1 | 0 | 1 | 0 | 0 |
 | BSFogProperty | D3 | 5 | 3 | 0 | 0 | 2 | 0 | 0 |
 | Precipitation | D3 | 5 | 0 | 0 | 0 | 5 | 0 | 0 |
 | TESWeather | D3 | 5 | 1 | 0 | 1 | 3 | 0 | 0 |
@@ -392,8 +387,8 @@ Scope: image space, sky, weather, fog, water.
 | Stars | D3 | 2 | 0 | 0 | 0 | 2 | 0 | 0 |
 | Precipitation::OcclusionMapData | D3 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | SkyObject | D3 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
-| TESWaterForm | D4 | 15 | 9 | 0 | 3 | 3 | 0 | 134 |
-| TESWaterSystem | D4 | 15 | 8 | 0 | 2 | 5 | 0 | 0 |
+| TESWaterForm | D4 | 15 | 10 | 2 | 1 | 2 | 0 | 134 |
+| TESWaterSystem | D4 | 15 | 10 | 0 | 1 | 4 | 0 | 0 |
 | TESWaterDisplacement | D4 | 4 | 0 | 0 | 2 | 2 | 0 | 0 |
 | TESWaterReflections | D4 | 3 | 0 | 0 | 0 | 3 | 0 | 0 |
 | TESWaterNormals | D4 | 2 | 0 | 0 | 1 | 1 | 0 | 0 |
@@ -406,15 +401,15 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| E1 Shadow lights, scene node, maps and passes | 129 | 77 | 18 | 1 | 33 | 0 | absent from the ready queue (33) | bsshader |
+| E1 Shadow lights, scene node, maps and passes | 132 | 92 | 15 | 0 | 25 | 0 | absent from the ready queue (25) | bsshader |
 
 <details><summary>Classes of workstream E with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| ShadowSceneNode | E1 | 59 | 37 | 6 | 0 | 16 | 0 | 120 |
+| ShadowSceneNode | E1 | 61 | 45 | 4 | 0 | 12 | 0 | 120 |
+| BSShadowLight | E1 | 19 | 13 | 5 | 0 | 1 | 0 | 55 |
 | BSShadowDirectionalLight | E1 | 18 | 13 | 1 | 0 | 4 | 0 | 10 |
-| BSShadowLight | E1 | 18 | 11 | 5 | 0 | 2 | 0 | 55 |
 | BSShadowParabolicLight | E1 | 12 | 8 | 1 | 0 | 3 | 0 | 9 |
 | BSShadowFrustumLight | E1 | 7 | 6 | 0 | 0 | 1 | 0 | 10 |
 | BSTArray_ShadowmapDescriptor_ | E1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 |
@@ -422,13 +417,8 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 | CalculateActiveShadowCasterLights | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | CalculateAndDrawShadowCasterLights | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | DrawWorld_RenderShadowCasters | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| ProcessAllQueuedLights | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| RenderActiveShadowCasterLights | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| RenderShadowmasks | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | RenderVolumetricLightingShadowMaps | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
-| ResetCalculatedShadowCasterLights | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | ShadowSceneNode_SetShadowCasterLightArrayEntry | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| UpdateOrAssignShadowCSTexture | E1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 
 </details>
 
@@ -655,27 +645,26 @@ Scope: listed for context, owned by the general rounds.
 
 | RVA | Name | Size | State | Callers unlocked |
 |---|---|---:|---|---:|
-| `0x52af40` | TESWaterSystem::ResetWaterDisplacementSimulation | 22 | ready | 0 |
 | `0x1530d70` | GetVLTemporalAccumulationFactor | 22 | ready | 0 |
 | `0x2a8440` | TESImageSpaceModifier::MakeDefaultGetHit | 25 | ready | 0 |
-| `0x14eedf0` | TESImagespaceManager::IsScreenshotSaved | 25 | ready | 0 |
-| `0x152b1b0` | ImageSpaceShaderParam::sub_1412D6730 | 32 | ready | 0 |
-| `0x1586480` | ImageSpaceEffectNoise::Bias | 48 | ready | 0 |
 | `0x150a7e0` | BSImagespaceShaderISLightingCompositeMenu::Unk_0D | 50 | ready | 0 |
-| `0x41ad30` | Sun::GetSunOcclusionPercent | 64 | ready | 0 |
 | `0x14edb20` | ImageSpaceManager::SetupEffects | 65 | ready | 0 |
-| `0x3070b0` | TESWaterForm::sub_1402ACA10 | 67 | ready | 0 |
-| `0x419d00` | Sky::CalcSunriseEnd | 67 | ready | 0 |
-| `0x419d50` | Sky::CalcSunsetBegin | 67 | ready | 0 |
-| `0x2a8120` | TESImageSpaceModifier::InitializeData | 68 | ready | 0 |
-| `0x41cbb0` | Sun::GetSunPositionData | 69 | ready | 3 |
-| `0x41b230` | Sun::sub_1403BA8B0 | 82 | ready | 0 |
+| `0x528b30` | TESWaterDisplacement::sub_1404C4730 | 98 | ready | 0 |
+| `0x416a20` | Sky::sub_1403B5FD0 | 104 | ready | 0 |
+| `0x1585a20` | ImageSpaceEffectNoise::sub_14132B340 | 115 | ready | 1 |
+| `0x528ba0` | TESWaterNormals::ctor | 125 | ready | 0 |
+| `0x2a52d0` | ImageSpaceModifierInstance::~ImageSpaceModifierInstance | 128 | ready | 2 |
+| `0xfcd900` | ImageSpaceModifierInstance::~ImageSpaceModifierInstance | 128 | ready | 0 |
+| `0x15308a0` | UpdateVolumetricLightingRenderData | 141 | ready | 0 |
+| `0x41a320` | SkyObject::dtor_deleting | 146 | ready | 0 |
+| `0x152ae10` | ImageSpaceShaderParam::ctor | 148 | ready | 0 |
+| `0x52ef20` | TESWaterDisplacement::dtor_deleting | 196 | ready | 0 |
+| `0x1e50c0` | TESWaterForm::sub_140193D00 | 211 | ready | 0 |
 
 **Workstream E entry points** (names are CrashLogger-derived, CRASHLOGGER_PDB(59818@2026.10.24))
 
 | RVA | Name | Size | State | Callers unlocked |
 |---|---|---:|---|---:|
-| `0x100f7e0` | UpdateOrAssignShadowCSTexture | 99 | ready | 0 |
 
 </details>
 
