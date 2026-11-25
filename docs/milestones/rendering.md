@@ -145,16 +145,16 @@ The PR bot refreshes this block and the tracking and task issue bodies during ho
 
 <!-- inventory:start -->
 
-Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 21 open claim issues are counted as claimed.
+Build `sse-steam-1-7-104`. The published queue lists 18868 of 18868 ready functions. Matched functions come from `data/progress.json`, and functions under 22 open claim issues are counted as claimed.
 
 | Workstream | Known | Matched | Matched % | Claimed | Ready | Waiting | Unlisted | Open bytes |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | A: Foundation | 416 | 176 | 42.3% | 4 | 54 | 182 | 0 | 62989 |
 | B: Shaders and materials | 454 | 236 | 52.0% | 3 | 37 | 178 | 0 | 89018 |
-| C: Batching, passes, camera, culling | 328 | 150 | 45.7% | 83 | 11 | 84 | 0 | 57438 |
+| C: Batching, passes, camera, culling | 327 | 150 | 45.9% | 83 | 10 | 84 | 0 | 57336 |
 | D: Image space, sky, water system | 724 | 543 | 75.0% | 2 | 38 | 141 | 0 | 86395 |
-| E: Shadows | 118 | 50 | 42.4% | 29 | 2 | 37 | 0 | 43837 |
-| **Total A-E** | 2040 | 1155 | 56.6% | 121 | 142 | 622 | 0 | 339677 |
+| E: Shadows | 122 | 55 | 45.1% | 29 | 1 | 37 | 0 | 43704 |
+| **Total A-E** | 2043 | 1160 | 56.8% | 121 | 140 | 622 | 0 | 339442 |
 | Adjacent, not assigned | 991 | 453 | 45.7% | 32 | 125 | 381 | 0 | 163807 |
 
 Known counts functions named in the CrashLogger tables or `data/progress.json`. Ready counts available functions in the published queue. Waiting covers give-ups, functions of unknown size and functions absent from the portion of the queue with complete coverage. Unlisted marks unknown readiness when the queue has incomplete coverage or is unavailable. Open bytes sum the sizes of the Ready, Waiting and Unlisted functions.
@@ -290,7 +290,7 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| C1 Render passes, batch renderer, accumulators | 125 | 64 | 31 | 3 | 27 | 0 | absent from the ready queue (27) | bsshader |
+| C1 Render passes, batch renderer, accumulators | 124 | 64 | 31 | 2 | 27 | 0 | absent from the ready queue (27) | bsshader |
 | C2 Camera, frustum, culling, occlusion and portals | 203 | 86 | 52 | 8 | 57 | 0 | absent from the ready queue (57) | gamebryo |
 
 <details><summary>Classes of workstream C with unmatched functions</summary>
@@ -305,7 +305,6 @@ Scope: render passes, batch renderer, accumulators, camera, frustum, culling, po
 | NiBackToFrontAccumulator | C1 | 5 | 3 | 2 | 0 | 0 | 0 | 0 |
 | AccumulateNodeChildren | C1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 | AccumulateSceneGraphNode | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
-| AppendRoomToAccumList | C1 | 1 | 0 | 0 | 1 | 0 | 0 | 0 |
 | BSAccumProcess | C1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | BSRenderPassCache | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | CullJob_AccumulateAndFlush | C1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
@@ -413,18 +412,18 @@ Scope: shadow lights, shadow scene node, shadow-map setup and shadow passes.
 
 | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Main blocker | Unit area |
 |---|---:|---:|---:|---:|---:|---:|---|---|
-| E1 Shadow lights, scene node, maps and passes | 118 | 50 | 29 | 2 | 37 | 0 | absent from the ready queue (37) | bsshader |
+| E1 Shadow lights, scene node, maps and passes | 122 | 55 | 29 | 1 | 37 | 0 | absent from the ready queue (37) | bsshader |
 
 <details><summary>Classes of workstream E with unmatched functions</summary>
 
 | Class | Group | Known | Matched | Claimed | Ready | Waiting | Unlisted | Sibling names not placed |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
-| ShadowSceneNode | E1 | 48 | 20 | 9 | 0 | 19 | 0 | 120 |
+| ShadowSceneNode | E1 | 52 | 24 | 9 | 0 | 19 | 0 | 120 |
 | BSShadowDirectionalLight | E1 | 18 | 9 | 4 | 0 | 5 | 0 | 10 |
 | BSShadowLight | E1 | 18 | 11 | 5 | 0 | 2 | 0 | 55 |
 | BSShadowParabolicLight | E1 | 12 | 8 | 1 | 0 | 3 | 0 | 9 |
 | BSShadowFrustumLight | E1 | 7 | 2 | 4 | 0 | 1 | 0 | 10 |
-| BSTArray_ShadowmapDescriptor_ | E1 | 3 | 0 | 2 | 1 | 0 | 0 | 0 |
+| BSTArray_ShadowmapDescriptor_ | E1 | 3 | 1 | 2 | 0 | 0 | 0 | 0 |
 | BSShadowParabolicLight_RenderImpl | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | CalculateActiveShadowCasterLights | E1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 |
 | CalculateAndDrawShadowCasterLights | E1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
@@ -645,7 +644,6 @@ Scope: listed for context, owned by the general rounds.
 |---|---|---:|---|---:|
 | `0x152b6d0` | BSCullingProcess::InitCullDescriptor | 68 | ready | 0 |
 | `0x155fed0` | BSBatchRenderer::GetNextPassSlotInGroup | 100 | ready | 0 |
-| `0x1512470` | AppendRoomToAccumList | 102 | ready | 0 |
 | `0x213b70` | BSPortal::dtor_deleting | 110 | ready | 0 |
 | `0xfe8770` | BSOcclusionPlane::UpdateCorners | 327 | ready | 3 |
 | `0xff8a60` | BSCompoundFrustum::ShiftOperators | 329 | ready | 0 |
@@ -680,7 +678,6 @@ Scope: listed for context, owned by the general rounds.
 | RVA | Name | Size | State | Callers unlocked |
 |---|---|---:|---|---:|
 | `0x100f7e0` | UpdateOrAssignShadowCSTexture | 99 | ready | 0 |
-| `0x155db00` | BSTArray_ShadowmapDescriptor_::DestructRange | 133 | ready | 0 |
 
 </details>
 
