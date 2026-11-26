@@ -11,6 +11,9 @@
 // hkMemoryAllocator, BlockAlloc, BlockFree, BufAlloc, BufFree, hkReferencedObject::GetClassType, hkReferencedObject::CalcContentStatistics: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // hkContainerHeapAllocator, Allocator, hkArrayBase, kCapacityMask, data, size, hkInplaceArray::storage: COMMUNITY(CharmedBaryon/CommonLibSSE-NG@b93280e, MIT)
 // hkTimerCommand, name, time, hkTimerBeginListCommand, firstName, hkMonitorStream, start, current, capacity, end, g_hkMonitorStreamTlsIndex, hkTimerBeginList, hkTimerSplitList, hkTimerEndList: GUESS(low)
+// g_timerListBroadPhase, g_timerListTrees, g_timer3AxisBroadPhase, g_timer3AxisNarrowPhase, g_timerAabbTreeBroadPhase, g_timerAabbTreeNarrowPhase, g_timerKdTreeBroadPhase, g_timerKdTreeNarrowPhase, g_timerEndList: GUESS(low)
+// hkpBroadPhase::Unk_03-Unk_11, hkpTreeWorldManager::Unk_03: GUESS(low); slot names unknown, placeholders by slot
+// hkpBroadPhase base hkReferencedObject: CRASHLOGGER_PDB(59818@2026.10.24)
 // hkContainerTempAllocator, s_alloc, getAllocator, kDontDeallocate, kElementSize, capacityAndFlags, hkInplaceArray, hkTempArray: GUESS(low)
 // getOwningObject, querySingleAabb, hasTrees, value, hkpTreeQueryAabbFunc, g_aabbTreeQueryAabb, g_kdTreeQueryAabb: GUESS(low)
 #pragma once
@@ -45,6 +48,17 @@ struct hkMonitorStream
 
 extern std::uint32_t g_hkMonitorStreamTlsIndex;
 
+// timer names in the image, bound by address: the list names, the step names (broad and narrow phase) and the end mark
+extern const char g_timerListBroadPhase[];
+extern const char g_timerListTrees[];
+extern const char g_timer3AxisBroadPhase[];
+extern const char g_timer3AxisNarrowPhase[];
+extern const char g_timerAabbTreeBroadPhase[];
+extern const char g_timerAabbTreeNarrowPhase[];
+extern const char g_timerKdTreeBroadPhase[];
+extern const char g_timerKdTreeNarrowPhase[];
+extern const char g_timerEndList[];
+
 // open a timer list and start its first timer
 inline void hkTimerBeginList(const char* a_list, const char* a_first)
 {
@@ -78,7 +92,7 @@ inline void hkTimerEndList()
     hkMonitorStream& stream = *static_cast<hkMonitorStream*>(TlsGetValue(g_hkMonitorStreamTlsIndex));
     if (stream.current < stream.end) {
         hkTimerCommand* command = stream.current;
-        command->name = "lt";
+        command->name = g_timerEndList;
         // the time stamp is the low half of the cpu counter
         command->time = static_cast<std::uint32_t>(__rdtsc());
         stream.current = command + 1;
@@ -241,34 +255,32 @@ struct hkpTypedBroadPhaseHandlePair
     hkpTypedBroadPhaseHandle* b;  // 08
 };
 
-class hkpBroadPhase
+// the CrashLogger layout gives it the reference count fields, so slots 00-02 come from hkReferencedObject
+class hkpBroadPhase : public hkReferencedObject
 {
 public:
-    virtual void slot00();
-    virtual void slot01();
-    virtual void slot02();
-    virtual void slot03();
-    virtual void slot04();
-    virtual void slot05();
-    virtual void slot06();
-    virtual void slot07();
-    virtual void slot08();
-    virtual void slot09();
-    virtual void slot0A();
-    virtual void slot0B();
-    virtual void slot0C();
-    virtual void slot0D();
-    virtual void slot0E();
-    virtual void slot0F();
-    virtual void slot10();
-    virtual void slot11();
+    virtual void Unk_03();  // 03
+    virtual void Unk_04();  // 04
+    virtual void Unk_05();  // 05
+    virtual void Unk_06();  // 06
+    virtual void Unk_07();  // 07
+    virtual void Unk_08();  // 08
+    virtual void Unk_09();  // 09
+    virtual void Unk_0A();  // 0A
+    virtual void Unk_0B();  // 0B
+    virtual void Unk_0C();  // 0C
+    virtual void Unk_0D();  // 0D
+    virtual void Unk_0E();  // 0E
+    virtual void Unk_0F();  // 0F
+    virtual void Unk_10();  // 10
+    virtual void Unk_11();  // 11
     virtual void querySingleAabb(const hkAabb& a_aabb, hkInplaceArray<hkpTypedBroadPhaseHandlePair, 128>* a_hits) const noexcept;  // 12
 };
 
 class hkpTreeWorldManager : public hkReferencedObject
 {
 public:
-    virtual void slot03();
+    virtual void Unk_03();  // 03
     virtual bool hasTrees() const noexcept;  // 04
 
     std::int32_t type;  // 10

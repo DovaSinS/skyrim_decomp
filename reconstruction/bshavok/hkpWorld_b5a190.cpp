@@ -13,12 +13,12 @@ void hkpWorld::getClosestPoints(const hkpCollidable* a_collidable, const hkpColl
     a_collidable->shape->GetAabbImpl(a_collidable->motion, a_input->tolerance - collisionInput->tolerance * 0.5f, aabb);
 
     if (!kdTreeManager || !kdTreeManager->hasTrees()) {
-        hkTimerBeginList("LthkpWorld::getClosestPoints(Broadphase)", "St3AxisBp");
+        hkTimerBeginList(g_timerListBroadPhase, g_timer3AxisBroadPhase);
         hkInplaceArray<hkpTypedBroadPhaseHandlePair, 128> hits;
         broadPhase->querySingleAabb(aabb, &hits);
         const hkpTypedBroadPhaseHandlePair* pair = hits.data;
         const int typeA = a_collidable->shape->type;
-        hkTimerSplitList("St3AxisNp");
+        hkTimerSplitList(g_timer3AxisNarrowPhase);
         for (int i = hits.size - 1; i >= 0; --i) {
             const hkpCollidable* other = static_cast<const hkpCollidable*>(pair->b->getOwningObject());
             // skip the body itself and filtered pairs, then call the closest-point function of the two shape types
@@ -30,13 +30,13 @@ void hkpWorld::getClosestPoints(const hkpCollidable* a_collidable, const hkpColl
         }
         hkTimerEndList();
     } else {
-        hkTimerBeginList("LthkpWorld::getClosestPoints(Trees)", "StAabbTreeBp");
+        hkTimerBeginList(g_timerListTrees, g_timerAabbTreeBroadPhase);
         void* aabbTree = kdTreeManager->inactiveTree;
         void* kdTree = kdTreeManager->kdTree;
         if (aabbTree) {
             hkInplaceArray<const hkpCollidable*, 128> hits;
             g_aabbTreeQueryAabb(aabbTree, &aabb, &hits);
-            hkTimerSplitList("StAabbTreeNp");
+            hkTimerSplitList(g_timerAabbTreeNarrowPhase);
             const int typeA = a_collidable->shape->type;
             for (int i = 0; i < hits.size; ++i) {
                 const hkpCollidable* other = hits.data[i];
@@ -47,10 +47,10 @@ void hkpWorld::getClosestPoints(const hkpCollidable* a_collidable, const hkpColl
             }
         }
         if (kdTree) {
-            hkTimerSplitList("StKdTreeBp");
+            hkTimerSplitList(g_timerKdTreeBroadPhase);
             hkTempArray<const hkpCollidable*> hits;
             g_kdTreeQueryAabb(kdTree, &aabb, &hits);
-            hkTimerSplitList("StKdTreeNp");
+            hkTimerSplitList(g_timerKdTreeNarrowPhase);
             const int typeA = a_collidable->shape->type;
             for (int i = 0; i < hits.size; ++i) {
                 const hkpCollidable* other = hits.data[i];
